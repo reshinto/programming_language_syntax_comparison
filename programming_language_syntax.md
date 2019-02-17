@@ -234,9 +234,9 @@
 * !=  # condition is True if both operand do not have equal contents
 * is not  # condition is True if both operand do not points to the same identical object
 * ＜＞ # py2 only, condition is True if both operands do not equal contents
-* >  # condition is True if right operand is less than left operand
+* ＞  # condition is True if right operand is less than left operand
 * ＜  # condition is True if left operand is less than right operand
-* >=  # condition is True if right operand is less than or equal to left operand
+* ＞=  # condition is True if right operand is less than or equal to left operand
 * ＜=  # condition is True is left operand is less than or equal to right operand
 
 ### javascript
@@ -246,25 +246,25 @@
     * var x = 5; x === 5;  // is true, x === "5"  // is false
 * !=
 * !==
-* >
-* <
-* >=
+* ＞
+* ＜
+* ＞=
 * ＜=
 
 ### java
 * ==
 * !=
-* >
-* <
-* >=
+* ＞
+* ＜
+* ＞=
 * ＜=
 
 ### c++
 * ==
 * !=
-* >
-* <
-* >=
+* ＞
+* ＜
+* ＞=
 * ＜=
 
 
