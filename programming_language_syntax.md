@@ -162,6 +162,8 @@
 * var boolean_name; boolean_name = true;
 * var boolean_name = false;
 ### javascript ES6
+* var boolean_name; boolean_name = true;
+* var boolean_name = false;
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
 * const boolean_name = true;
