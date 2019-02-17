@@ -5,6 +5,25 @@
 * java, c++
 
 
+## Comments
+
+### python 2 & 3
+* single line # coment
+* multiline """comments"""
+
+### javascript
+* single line // comment
+* multiline /* comments */
+
+### java
+* single line // comment
+* multiline /* comments */
+
+### c++
+* single line // comment
+* multiline /* comments */
+
+
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 
 ### python 2 
@@ -49,8 +68,8 @@
     * integer are signed by default: can assign both positive & negative values
     * unsigned integer (use when dealing with bit values): 0 ~ ...
         * e.g. char: -128 ~ 127
-        * e.g. unsigned char: 0 ~ 255(128 + 127)
-#### char: 1 byte, -128 ~ 127, use C code to print "printf("%d", char_name);"
+        * e.g. unsigned char: 0 ~ 255  // 128 + 127 = 255
+#### char: 1 byte, -128 ~ 127, use C code to print "#include＜stdio.h＞ printf("%d", char_name);"
 * char char_name; char_name = 123;
 * similar to the rest of int variable declaration
 #### short/short int: 16 bits, 2 bytes, -32768 ~ 32767
@@ -62,7 +81,7 @@
 * int integer_name = 123;  // C-like initialization
 * int integer_name (123);  // Constructor initialization
 * int age {123};  // C++11 list initialization syntax
-#### long/long int: 32 bits, 4 bytes, -2147483648 ~ 21474836474 bytes
+#### long/long int: 32 bits, 4 bytes, -2147483648 ~ 2147483647 bytes
 * long long_name; long_name = 123;
 * long int long_name; long_name = 123;
 * similar to the rest of int variable declaration
