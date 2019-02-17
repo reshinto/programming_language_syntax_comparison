@@ -146,7 +146,7 @@
 * char string_name[7] = "string";  // need give 7 slots for chars and null char
 * char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
 * char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
-##### C++ strings: must add at the top "#include<string>", must use double quotes ""
+##### C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 * std::string string_name; string_name = "string";
 * std::string string_name ("string");
 * std::string string_name {"string"};
@@ -221,7 +221,7 @@
 * division: double double_name = 3.0/2  # output 1.5, 3/2 output 1
 * modulus: %
 * exponent:
-    * must add this to the top #include<cmath> 
+    * must add this to the top #include＜cmath＞
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  # output 1
 
