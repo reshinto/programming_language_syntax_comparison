@@ -1,0 +1,393 @@
+# PROGRAMMING LANGUAGE SYNTAX
+## Interpreted Language
+* python, javascript
+## Compiled Language
+* java, c++
+
+///////////////////////////////////////////////////////////////////////
+## Variable declaration: integer ...-2, -1, 0, 1, 2...
+/////////////////////////////////
+### python 2: 
+#### int: -2147483648 ~ 2147483647
+* integer_name = 123
+#### long: -9223372036854775808L ~ 9223372036854775807L
+* long_name = 123L  // int beyond int size will automatically be converted to long
+### python 3: int and long are combined into int
+* integer_name = 123
+/////////////////////////////////
+### javascript ES5
+* var integer_name; integer_name = 123;  // accessible within the function
+* var integer_name = 123;
+### javascript ES6
+* var integer_name; integer_name = 123;
+* let integer_name; integer_name = 123;  // accessible only within the block {}
+* var integer_name = 123;
+* let integer_name = 123;
+* const integer_name = 123;  // variable value cannot be reassigned
+/////////////////////////////////
+### java:
+* public/private/protected static final byte/short/int/long integer_name = 123;
+    * public: visible to all classes
+    * protected: visible to class they belong and any subclasses
+    * private (most restricted): visible only to class they belong
+    * static: can be accessed without creating a class instance
+    * final: constant value, value cannot be changed
+#### byte: -128 ~ 127, 8 bits
+* byte byte_name = 123;
+#### short: -32768 ~ 32767, 16 bits
+* short short_name = 123;
+#### int: -2147483648 ~ 2147483647, -2_147_483_648 ~ 2_147_483_647, 32 bits
+* int integer_name; integer_name = 123;
+* int integer_name = 123;  // default is visible within the same package
+#### long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
+* long long_name = 123l;
+* long long_name = 123L;
+/////////////////////////////////
+### c++:
+* const unsigned char/short/int/long/long long integer_name = 123;
+    * const: constant value, value cannot be changed
+    * integer are signed by default: can assign both positive & negative values
+    * unsigned integer (use when dealing with bit values): 0 ~ ...
+        * e.g. char: -128 ~ 127
+        * e.g. unsigned char: 0 ~ 255(128 + 127)
+#### char: 1 byte, -128 ~ 127, use C code to print "printf("%d", char_name);"
+* char char_name; char_name = 123;
+* similar to the rest of int variable declaration
+#### short/short int: 16 bits, 2 bytes, -32768 ~ 32767
+* short short_name; short_name = 123;
+* short int short_name; short_name = 123;
+* similar to the rest of int variable declaration
+#### int: 16 bits, 4 bytes, -2147483648 ~ 2147483647
+    * int integer_name; integer_name = 123;  // uninitialized
+    * int integer_name = 123;  // C-like initialization
+    * int integer_name (123);  // Constructor initialization
+    * int age {123};  // C++11 list initialization syntax
+#### long/long int: 32 bits, 4 bytes, -2147483648 ~ 21474836474 bytes
+* long long_name; long_name = 123;
+* long int long_name; long_name = 123;
+* similar to the rest of int variable declaration
+#### long long/long long int: 64 bits, 8 bytes, -9223372036854775808 ~ 9223372036854775807
+* long long long_name; long_name = 123;
+* long long int long_name; long_name = 123;
+* similar to the rest of int variable declaration
+
+///////////////////////////////////////////////////////////////////////
+## Variable declaration: float, double
+/////////////////////////////////
+### python 2 & 3
+* float_name = 1.123
+* float_name = 0.1123e1  // equals to 1.123
+* float_name = 0.1123E1  // equals to 1.123
+* float_name = 1123e-3  // equals to 1.123
+* float_name = 1123E-3  // equals to 1.123
+/////////////////////////////////
+### javascript ES5
+* var float_name = 1.123;
+### javascript ES6
+* var float_name = 1.123;
+* let float_name = 1.123;
+* const float_name = 1.123;
+/////////////////////////////////
+### java:
+#### float: 32 bits, 4 bytes
+* float float_name = 1.123f;  // have 7 decimal digits
+* float float_name = (float) 1.123;
+#### double: 64 bits, 8 bytes
+* double double_name = 1.123d;  // have 16 decimal digits
+* double double_name = 1.123;
+/////////////////////////////////
+### c++
+#### float: 4 bytes
+* float float_name; float_name = 1.123;  // have 7 decimal digits
+* similar to the rest of int variable declaration
+#### double: 8 bytes
+* double double_name; double_name = 1.123;  // have 15 decimal digits
+* similar to the rest of int variable declaration
+#### long double: 12 bytes
+* long double double_name; double_name = 1.123;  // have 19 decimal digits
+* similar to the rest of int variable declaration
+
+///////////////////////////////////////////////////////////////////////
+## Strings
+/////////////////////////////////
+### python 2 & 3
+* string_name = "string"
+* string_name = 'string'
+* string_name = """string"""  // multiline string or comment
+/////////////////////////////////
+### javascript ES5
+* var string_name = "string";
+* var string_name = 'string';
+### javascript ES6
+* var string_name = "string";
+* var string_name = 'string';
+* let string_name = "string";
+* const string_name = "string";
+/////////////////////////////////
+### java
+#### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
+* char char_name = 'a';
+* char char_name = '\u0061';  // unicode character for the letter a
+#### strings: must use double quotes ""
+* String string_name = "string";
+/////////////////////////////////
+### c++
+#### character: only have 1 character, must use single quotes ''
+* char char_name; char_name = 'a';
+* char char_name = 'a';
+* char char_name ('a');
+* char char_name {'a'};
+#### strings
+##### C-style strings: an ARRAY of characters, must use double quotes ""
+* THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
+* char * string_name = "string";
+* const char * string_name = "string";  // const is normally used
+* char string_name[] = "string";  // creates array of 7 chars, last char is null "\0"
+* char string_name[7] = "string";  // need give 7 slots for chars and null char
+* char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
+* char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
+##### C++ strings: must add at the top "#include<string>", must use double quotes ""
+* std::string string_name; string_name = "string";
+* std::string string_name ("string");
+* std::string string_name {"string"};
+
+///////////////////////////////////////////////////////////////////////
+## Boolean
+/////////////////////////////////
+### python 2 & 3
+* boolean_name = True
+* boolean_name = False
+/////////////////////////////////
+### javascript ES5
+* var boolean_name; boolean_name = true;
+* var boolean_name = false;
+### javascript ES6
+* let boolean_name; boolean_name = true;
+* let boolean_name = false;
+* const boolean_name = true;
+/////////////////////////////////
+### java
+* boolean boolean_name = true;
+* boolean boolean_name = false;
+/////////////////////////////////
+### c++: 8 bits
+* bool boolean_name; boolean_name = true;  // produces a 1 output
+* bool boolean_name = false;  // produces a 0 output
+* bool boolean_name (true);
+* bool boolean_name {false};
+
+///////////////////////////////////////////////////////////////////////
+## Arithmetic Operators
+/////////////////////////////////
+### python 2
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: 3.0/2  # output 1.5, 3/2 output 1
+* modulus: %
+* exponent: **
+* floor division: 3//2  # output 1
+### python 3
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: 3/2  # output 1.5
+* modulus: %
+* exponent: **
+* floor division: 3//2  # output 1
+/////////////////////////////////
+### javascript
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: 3/2  # output 1.5
+* modulus: %
+* exponent: **
+* floor division: 3//2  # output 1
+/////////////////////////////////
+### java
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: double double_name = 3.0/2;  // output 1.5, 3/2 output 1
+* modulus: %
+* exponent: Math.pow(3, 2);  // output 9
+* floor division: int integer_name = 3/2;  // output 1
+/////////////////////////////////
+### c++
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: double double_name = 3.0/2  # output 1.5, 3/2 output 1
+* modulus: %
+* exponent:
+    * must add this to the top #include<cmath> 
+    * int integer_name = pow(3, 2);  // output 9
+* floor division: 3/2  # output 1
+
+///////////////////////////////////////////////////////////////////////
+## Comparison Operators
+/////////////////////////////////
+### python 2 & 3
+* ==  # condition is True if both operand have equal contents
+* is  # condition is True if both operand points to the same identical object
+* !=  # condition is True if both operand do not have equal contents
+* is not  # condition is True if both operand do not points to the same identical object
+* ＜＞ # py2 only, condition is True if both operands do not equal contents
+* >  # condition is True if right operand is less than left operand
+* ＜  # condition is True if left operand is less than right operand
+* >=  # condition is True if right operand is less than or equal to left operand
+* ＜=  # condition is True is left operand is less than or equal to right operand
+/////////////////////////////////
+### javascript
+* ==  // string or int will be automatically converted before comparison
+    * var x = 5; x == 5;  // is true, x == "5"  // is also true
+* ===  // string or int will NOT be converted before comparison
+    * var x = 5; x === 5;  // is true, x === "5"  // is false
+* !=
+* !==
+* >
+* <
+* >=
+* ＜=
+/////////////////////////////////
+### java
+* ==
+* !=
+* >
+* <
+* >=
+* ＜=
+/////////////////////////////////
+### c++
+* ==
+* !=
+* >
+* <
+* >=
+* ＜=
+
+///////////////////////////////////////////////////////////////////////
+## Increment
+/////////////////////////////////
+### python 2 & 3
+* x = x + 1  # increment
+* x += 1
+/////////////////////////////////
+### javascript
+* x = x + 1;  // add 1 now
+* x += 1;  // add 1 now
+* ++x;  // preincrement, add 1 now
+* x++;  // postincrement, display without addition now then add 1 later when called again
+/////////////////////////////////
+### java
+* x = x + 1;
+* x += 1;
+* ++x;  // preincrement, add 1 now
+* x++;  // postincrement, display without addition now then add 1 later when called again
+/////////////////////////////////
+### c++
+* x = x + 1;
+* x += 1;
+* ++x;  // preincrement, add 1 now
+* x++;  // postincrement, display without addition now then add 1 later when called again
+
+///////////////////////////////////////////////////////////////////////
+## Arrays & Lists
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Hash Tables, Dictionaries, Objects
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Conditional Statement
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Loops
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Functions
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Class
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Importing Libraries
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## Type Conversions
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
+///////////////////////////////////////////////////////////////////////
+## String Concatenation
+/////////////////////////////////
+### python 2 & 3
+/////////////////////////////////
+### javascript
+/////////////////////////////////
+### java
+/////////////////////////////////
+### c++
+
