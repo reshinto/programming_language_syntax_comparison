@@ -8,7 +8,7 @@
 ## Comments
 
 ### python 2 & 3
-* single line # coment
+* single line # comment
 * multiline """comments"""
 
 ### javascript
