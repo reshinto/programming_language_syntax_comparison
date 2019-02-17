@@ -7,11 +7,11 @@
 
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 
-### python 2: 
+### python 2 
 #### int: -2147483648 ~ 2147483647
 * integer_name = 123
 #### long: -9223372036854775808L ~ 9223372036854775807L
-* long_name = 123L  // int beyond int size will automatically be converted to long
+* long_name = 123L  # int beyond int size will automatically be converted to long
 ### python 3: int and long are combined into int
 * integer_name = 123
 
@@ -25,7 +25,7 @@
 * let integer_name = 123;
 * const integer_name = 123;  // variable value cannot be reassigned
 
-### java:
+### java
 * public/private/protected static final byte/short/int/long integer_name = 123;
     * public: visible to all classes
     * protected: visible to class they belong and any subclasses
@@ -43,7 +43,7 @@
 * long long_name = 123l;
 * long long_name = 123L;
 
-### c++:
+### c++
 * const unsigned char/short/int/long/long long integer_name = 123;
     * const: constant value, value cannot be changed
     * integer are signed by default: can assign both positive & negative values
@@ -76,10 +76,10 @@
 
 ### python 2 & 3
 * float_name = 1.123
-* float_name = 0.1123e1  // equals to 1.123
-* float_name = 0.1123E1  // equals to 1.123
-* float_name = 1123e-3  // equals to 1.123
-* float_name = 1123E-3  // equals to 1.123
+* float_name = 0.1123e1  # equals to 1.123
+* float_name = 0.1123E1  # equals to 1.123
+* float_name = 1123e-3  # equals to 1.123
+* float_name = 1123E-3  # equals to 1.123
 
 ### javascript ES5
 * var float_name = 1.123;
@@ -113,7 +113,7 @@
 ### python 2 & 3
 * string_name = "string"
 * string_name = 'string'
-* string_name = """string"""  // multiline string or comment
+* string_name = """string"""  # multiline string or comment
 
 ### javascript ES5
 * var string_name = "string";
