@@ -200,10 +200,10 @@
 * addition: +
 * subtraction: -
 * multiplication: *
-* division: 3/2  # output 1.5
+* division: 3/2  // output 1.5
 * modulus: %
 * exponent: **
-* floor division: 3//2  # output 1
+* floor division: 3//2  // output 1
 
 ### java
 * addition: +
@@ -218,12 +218,12 @@
 * addition: +
 * subtraction: -
 * multiplication: *
-* division: double double_name = 3.0/2  # output 1.5, 3/2 output 1
+* division: double double_name = 3.0/2  // output 1.5, 3/2 output 1
 * modulus: %
 * exponent:
-    * must add this to the top #include＜cmath＞
+    * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
-* floor division: 3/2  # output 1
+* floor division: 3/2  // output 1
 
 
 ## Comparison Operators
