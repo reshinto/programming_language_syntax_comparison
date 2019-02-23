@@ -36,17 +36,49 @@
 ```
 ## Comments
 ### python 2 & 3
-* single line # comment
-* multiline """comments"""
+* single line
+```python
+    # Singale line comment
+```
+* multiline
+```python
+    """
+    multi-line comments
+    """
+```
 ### javascript
-* single line // comment
-* multiline /* comments */
+* single line
+```javascript
+    // Single line comment
+```
+* multiline
+```javascript
+    /*
+    multi-line comments
+    */
+```
 ### java
-* single line // comment
-* multiline /* comments */
+* single line
+```java
+    // Single line comment
+```
+* multiline
+```java
+    /*
+    multi-line comments
+    */
+```
 ### c++
-* single line // comment
-* multiline /* comments */
+* single line
+```c++
+    // Single line comment
+```
+* multiline
+```c++
+    /*
+    multi-line comments
+    */
+```
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 ### python 2 
 #### int: -2147483648 ~ 2147483647
