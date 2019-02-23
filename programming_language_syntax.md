@@ -3,6 +3,29 @@
 * python, javascript
 ## Compiled Language
 * java, c++
+## Hello World
+### python 2
+    print "Hello World"
+### python 3
+    print("Hello World")
+### javascript
+    console.log("Hello World");
+### java
+    public class HelloWorld {
+        public static void main(String args[]) {
+            System.out.println("Hello World");
+        }
+    }
+### c++
+```c++
+    #include <iostream>
+
+    int main() 
+    {
+        std::cout << "Hello, World!";
+        return 0;
+    }
+```
 ## Comments
 ### python 2 & 3
 * single line # comment
