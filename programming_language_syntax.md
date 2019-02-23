@@ -175,7 +175,8 @@
 ```python
     string_name = "string"
     string_name = 'string'
-    string_name = """multi-line \  # back slash not required, but will produce a new line if not given
+    # back slash not required, but will produce a new line if not given
+    string_name = """multi-line \
     string\
     """
 ```
@@ -183,16 +184,19 @@
 ```javascript
     var string_name = "string";
     var string_name = 'string';
-    var string_name = "multi-line \  // back slash required
+    // back slash required
+    var string_name = "multi-line \
     string"
 ```
 ### javascript ES6
 ```javascript
     var string_name = "string";
     var string_name = 'string';
-    var string_name = "multi-line \  // back slash required
+    // back slash required
+    var string_name = "multi-line \
     string"
-    var string_name = `multi-line \  // back slash not required, but will produce a new line if not given
+    // back slash not required, but will produce a new line if not given
+    var string_name = `multi-line \
     string`
     let string_name = "string";
     const string_name = "string";
@@ -225,6 +229,7 @@
 ##### C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 ```c++
     std::string string_name; string_name = "string";
+    // backslash not required, but can use if want to
     string_name = "multi-line"
                   "string";
     std::string string_name ("string");
