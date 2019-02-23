@@ -483,7 +483,7 @@
     // Add element to vector (left to right), vector size will automatically increase
     int_vector.push_back(element);
     // Add element to vector at index
-    std::vector<int>::iterator it;  // Must create iterator for inserting or emplacing to work to work
+    std::vector<int>::iterator it;  // Must create iterator for inserting or emplacing to work
     it = int_vector.begin()  // Set it at index 0
     // insert method: copies or moves the elements into the container by calling copy constructor or move constructor
     int_vector.insert(it + index, element);  // Add element at index
