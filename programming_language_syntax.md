@@ -38,7 +38,7 @@
 ### python 2 & 3
 * single line
 ```python
-    # Singale line comment
+    # Single line comment
 ```
 * multiline
 ```python
