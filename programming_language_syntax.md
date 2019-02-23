@@ -172,23 +172,41 @@
 * similar to the rest of int variable declaration
 ## Strings
 ### python 2 & 3
-* string_name = "string"
-* string_name = 'string'
-* string_name = """string"""  # multiline string or comment
+```python
+    string_name = "string"
+    string_name = 'string'
+    string_name = """multi-line \  # back slash not required, but will produce a new line if not given
+    string\
+    """
+```
 ### javascript ES5
-* var string_name = "string";
-* var string_name = 'string';
+```javascript
+    var string_name = "string";
+    var string_name = 'string';
+    var string_name = "multi-line \  // back slash required
+    string"
+```
 ### javascript ES6
-* var string_name = "string";
-* var string_name = 'string';
-* let string_name = "string";
-* const string_name = "string";
+```javascript
+    var string_name = "string";
+    var string_name = 'string';
+    var string_name = "multi-line \  // back slash required
+    string"
+    var string_name = `multi-line \  // back slash not required, but will produce a new line if not given
+    string`
+    let string_name = "string";
+    const string_name = "string";
+```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
 * char char_name = 'a';
 * char char_name = '\u0061';  // unicode character for the letter a
 #### strings: must use double quotes ""
-* String string_name = "string";
+```java
+    String string_name = "string";
+    String string_name = "multi-line " +
+                         "string";
+```
 ### c++
 #### character: only have 1 character, must use single quotes ''
 * char char_name; char_name = 'a';
@@ -205,9 +223,13 @@
 * char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
 * char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
 ##### C++ strings: must add at the top "#include＜string＞", must use double quotes ""
-* std::string string_name; string_name = "string";
-* std::string string_name ("string");
-* std::string string_name {"string"};
+```c++
+    std::string string_name; string_name = "string";
+    string_name = "multi-line"
+                  "string";
+    std::string string_name ("string");
+    std::string string_name {"string"};
+```
 ## Boolean
 ### python 2 & 3
 * boolean_name = True
