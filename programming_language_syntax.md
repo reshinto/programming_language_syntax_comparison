@@ -424,7 +424,7 @@
     String[] string_array = {string1, string2,...};
     // Add string element, limited to array size
     // Modify string element value
-    string_array[index] = string_value;
+    string_array[index] = element;
     // Access an element
     string_array[index];
     // Find array size
@@ -457,7 +457,7 @@
     int int_array[] = {element1, element2,...};  // size automatically calculated
     // Assign int element, limited to array size
     // Modify int element value
-    int_array[index] = int_value;
+    int_array[index] = element;
     // Access an element
     int_array[index];
     // Find array size: size of array (bytes) / size of an element of an array (bytes)
@@ -476,6 +476,7 @@
     std::vector <int> int_vector;
     int_vector.assign(length_of_desired_array, constant_value_for_all_elements);
     // Assign int element
+    int_vector[index] = element;
     // Access an element
     int_vector[index];
     int_vector.at(index);
