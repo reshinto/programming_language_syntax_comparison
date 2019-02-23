@@ -475,7 +475,7 @@
     // Method 2
     std::vector <int> int_vector;
     int_vector.assign(length_of_desired_array, constant_value_for_all_elements);
-    // Asign int element
+    // Assign int element
     // Access an element
     int_vector[index];
     int_vector.at(index);
