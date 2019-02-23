@@ -229,8 +229,8 @@
 ##### C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 ```c++
     std::string string_name; string_name = "string";
-    // backslash not required, but can use if want to
-    string_name = "multi-line"
+    // back slash not required, but can use if want to
+    std::string string_name = "multi-line"
                   "string";
     std::string string_name ("string");
     std::string string_name {"string"};
@@ -355,15 +355,153 @@
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
 ## Arrays & Lists
-
 ### python 2 & 3
-
+```python
+    # Empty list
+    list_name = []
+    # List with elements
+    list_name = [1, "one", True]
+    # Nested lists
+    list_name = [1, ["two", 3]]
+    # Add element to list (left to right)
+    list_name.append(element)
+    # Modify an element
+    list_name[index] = element
+    # Access an element
+    list_name[index]
+    # Remove element from list (right to left)
+    list_name.pop()
+    # Add element to list at index
+    list_name.insert(index, element)
+    # Remove element from list at index
+    list_name.pop(index)
+    # Find list size
+    len(list_name)
+    # Method 1: remove all elements
+    del list_name[:]
+    # Method 2: remove all elements
+    list_name = []
+    # Method 3: remove all elements, only in python 3
+    list_name.clear()
+```
 ### javascript
-
+```javascript
+    // Method 1: empty list
+    var list_name = [];
+    // Method 2: empty list
+    var list_name = new Array();
+    // List with elements
+    var list_name = [1, "one", true];
+    // Nested lists
+    var list_name = [1, ["two", 3]];
+    // Add element to list (left to right)
+    list_name.push(element);
+    // Add element to list (right to left)
+    list_name.unshift(element);
+    // Modify an element
+    list_name[index] = element;
+    // Access an element
+    list_name[index];
+    // Remove element from list (right to left)
+    list_name.pop();
+    // Remove element from list (left to right)
+    list_name.shift();
+    // Add element to list at index (left to right)
+    // Remove number of elements (left to right) from index and insert new elemeents (left to right)
+    // Add & Remove elements to & from list at index (left to right)
+    list_name.spice(index, number_of_element, new_element1, new_element2...);
+    // Find list size
+    list_name.length;
+    // Remove all elements
+    list_name = [];
+```
 ### java
+```java
+    // Arrays: can only have 1 data type: string, int, etc.
+    // Empty string array of desired array size
+    String[] string_array = new String[length_of_desired_array];
+    // New string array with elements inside
+    String[] string_array = {string1, string2,...};
+    // Add string element, limited to array size
+    // Modify string element value
+    string_array[index] = string_value;
+    // Access an element
+    string_array[index];
+    // Find array size
+    string_array.length;
 
+    // Arraylists: can only have 1 data type: string, int, etc.
+    import java.util.ArrayList;  // Must import to use
+    // Empty string arrayList
+    ArrayList<String> string_arrayList = new ArrayList<String>();
+    // Add string element to string arrayList (left to right)
+    string_arrayList.add(element);
+    // Modify an element at index
+    string_arrayList.set(index, element);
+    // Access an element
+    string_arrayList.get(index);
+    // Remove element from arrayList at index
+    string_arrayList.remove(index);
+    // Find arrayList size
+    string_arrayList.size();
+    // Remove all elements
+    string_arrayList.clear();
+```
 ### c++
+```c++
+    // Arrays
+    // Empty int array of desired array size
+    int int_array[length_of_desired_array];
+    // New int array with elements inside
+    int int_array [length_of_desired_array] {element1, element2,...};  // size declared
+    int int_array[] = {element1, element2,...};  // size automatically calculated
+    // Assign int element, limited to array size
+    // Modify int element value
+    int_array[index] = int_value;
+    // Access an element
+    int_array[index];
+    // Find array size: size of array (bytes) / size of an element of an array (bytes)
+    sizeof(int_array) / sizeof(int_array[0]);
 
+    // Vectors: a type of dynamic array
+    #include <vector>  // Must import to use
+    // Empty int vector of desired vector size, each element of 0 value will automatically be included
+    std::vector <int> int_vector (length_of_desired_array);
+    // New int vector with elements inside
+    std::vector <int> int_vector {element1, element2,...};
+    // New int vector with length of desired array and all value in parameter
+    // Method 1
+    std::vector <int> int_vector (length_of_desired_array, constant_value_for_all_elements);
+    // Method 2
+    std::vector <int> int_vector;
+    int_vector.assign(length_of_desired_array, constant_value_for_all_elements);
+    // Asign int element
+    // Access an element
+    int_vector[index];
+    int_vector.at(index);
+    // Add element to vector (left to right), vector size will automatically increase
+    int_vector.push_back(element);
+    // Add element to vector at index
+    std::vector<int>::iterator it;  // Must create iterator for inserting or emplacing to work to work
+    it = int_vector.begin()  // Set it at index 0
+    // insert method: copies or moves the elements into the container by calling copy constructor or move constructor
+    int_vector.insert(it + index, element);  // Add element at index
+    // emplace method: elements are constructed in place, no copy or move operations are performed (better performance)
+    int_vector.emplace(it + index, element);  // Add element at index
+    // Remove element from vector at index
+    std::vector<int>::iterator it;  // Must create iterator for erase to work to work
+    it = int_vector.begin()  // Set it at index 0
+    int_vector.erase(it + index)  // Remove element at index
+    int_vector.erase(it + index, it + index)  // Remove a range of elements in the vector
+    // Remove element from vector (right to left)
+    int_vector.pop_back();  // does not return value
+    // Find vector size
+    int_vector.size();
+    // Resize vector
+    int_vector.resize(length_of_desired_array);
+    // Remove all elements
+    int_vector.clear();
+```
 
 ## Hash Tables, Dictionaries, Objects
 
