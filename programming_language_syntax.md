@@ -490,7 +490,7 @@
     // emplace method: elements are constructed in place, no copy or move operations are performed (better performance)
     int_vector.emplace(it + index, element);  // Add element at index
     // Remove element from vector at index
-    std::vector<int>::iterator it;  // Must create iterator for erase to work to work
+    std::vector<int>::iterator it;  // Must create iterator for erase to work
     it = int_vector.begin()  // Set it at index 0
     int_vector.erase(it + index)  // Remove element at index
     int_vector.erase(it + index, it + index)  // Remove a range of elements in the vector
