@@ -5,17 +5,25 @@
 * java, c++
 ## Hello World
 ### python 2
+```python
     print "Hello World"
+```
 ### python 3
+```python
     print("Hello World")
+```
 ### javascript
+```javascript
     console.log("Hello World");
+```
 ### java
+```java
     public class HelloWorld {
         public static void main(String args[]) {
             System.out.println("Hello World");
         }
     }
+```
 ### c++
 ```c++
     #include <iostream>
