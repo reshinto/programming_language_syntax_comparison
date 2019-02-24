@@ -503,19 +503,124 @@
     // Remove all elements
     int_vector.clear();
 ```
-
-## Hash Tables, Dictionaries, Objects
-
-### python 2 & 3
-
-### javascript
-
-### java
-
-### c++
-
-
 ## Conditional Statement
+### python 2 & 3
+```python
+    # If else statement
+    if condition_a:
+        do_A
+    elif condition_b:
+        do_B
+    else:
+        do_something_else
+
+    # Ternary operator
+    do_A if condition_a else do_B
+
+    # Switch Statement is not available in python, but can create similar function
+    def switch(choice):
+        case = {
+            1: do_A,
+            2: do_B,
+        }
+        case.get(choice, do_something_else)
+```
+### javascript
+```javascript
+    // If else statement
+    if (condition_a) {
+        do_A;
+    } else if (condition_b) {
+        do_B;
+    } else {
+        do_something_else;
+    }
+
+    // Ternary operator
+    condition_a ? do_A : do_B;
+
+    // Switch statement
+    switch(choice) {
+        case choice_A:
+            do_A;
+            break;
+        case choice_B:
+            do_B;
+            break;
+        default:
+            do_something_else;
+    }
+```
+### java
+```java
+    // If else statement
+    if (condition_a) {
+        do_A;
+    } else if (condition_b) {
+        do_B;
+    } else {
+        do_something_else;
+    }
+
+    // {} not required if statement is a single line
+    if (condition_a)
+        do_A;  // Single line statement
+    else if (condition_b)
+        do_B;  // Single line statement
+    else
+        do_something_else;  // Single line statement
+
+    // Ternary operator
+    condition_a ? do_A : do_B;
+
+    // Switch statement
+    switch(choice) {
+        case choice_A:
+            do_A;
+            break;
+        case choice_B:
+            do_B;
+            break;
+        default:
+            do_something_else;
+            break;  // not required, but good to have in Java
+    }
+```
+### c++
+```c++
+    // If else statement
+    if (condition_a) {
+        do_A;
+    } else if (condition_b) {
+        do_B;
+    } else {
+        do_something_else;
+    }
+
+    // {} not required if statement is a single line
+    if (condition_a)
+        do_A;  // Single line statement
+    else if (condition_b)
+        do_B;  // Single line statement
+    else
+        do_something_else;  // Single line statement
+
+    // Ternary operator
+    condition_a ? do_A : do_B;
+
+    // Switch statement
+    switch(choice) {
+        case choice_A:
+            do_A;
+            break;
+        case choice_B:
+            do_B;
+            break;
+        default:
+            do_something_else;
+    }
+```
+## Hash Tables, Dictionaries, Objects
 
 ### python 2 & 3
 
