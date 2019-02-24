@@ -91,9 +91,7 @@
 * var integer_name; integer_name = 123;  // accessible within the function
 * var integer_name = 123;
 ### javascript ES6
-* var integer_name; integer_name = 123;
 * let integer_name; integer_name = 123;  // accessible only within the block {}
-* var integer_name = 123;
 * let integer_name = 123;
 * const integer_name = 123;  // variable value cannot be reassigned
 ### java
@@ -188,13 +186,8 @@
     var string_name = "multi-line \
     string"
 ```
-### javascript ES6
+### javascript ES6  // Almost all of ES5 are included in ES6
 ```javascript
-    var string_name = "string";
-    var string_name = 'string';
-    // back slash required
-    var string_name = "multi-line \
-    string"
     // back slash not required, but will produce a new line if not given
     var string_name = `multi-line \
     string`
@@ -243,8 +236,6 @@
 * var boolean_name; boolean_name = true;
 * var boolean_name = false;
 ### javascript ES6
-* var boolean_name; boolean_name = true;
-* var boolean_name = false;
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
 * const boolean_name = true;
@@ -266,12 +257,7 @@
 * exponent: **
 * floor division: 3//2  # output 1
 ### python 3
-* addition: +
-* subtraction: -
-* multiplication: *
 * division: 3/2  # output 1.5
-* modulus: %
-* exponent: **
 * floor division: 3//2  # output 1
 ### javascript
 * addition: +
@@ -312,9 +298,13 @@
 * ＜=  # condition is True is left operand is less than or equal to right operand
 ### javascript
 * ==  // string or int will be automatically converted before comparison
-    * var x = 5; x == 5;  // is true, x == "5"  // is also true
+    * var x = 5;
+        * x == 5;  // is true
+        * x == "5"  // is also true
 * ===  // string or int will NOT be converted before comparison
-    * var x = 5; x === 5;  // is true, x === "5"  // is false
+    * var x = 5;
+        * x === 5;  // is true
+        * x === "5"  // is false
 * !=
 * !==
 * ＞
@@ -421,7 +411,8 @@
     // Empty string array of desired array size
     String[] string_array = new String[length_of_desired_array];
     // New string array with elements inside
-    String[] string_array = {string1, string2,...};
+    String [] string_array = new String [] {string1, string2,...};  // Method 1
+    String[] string_array = {string1, string2,...};  // Method 2
     // Add string element, limited to array size
     // Modify string element value
     string_array[index] = element;
@@ -620,18 +611,213 @@
             do_something_else;
     }
 ```
-## Hash Tables, Dictionaries, Objects
-
-### python 2 & 3
-
-### javascript
-
-### java
-
-### c++
-
-
 ## Loops
+### python 2
+```python
+    # While loop
+    # declare_initial_conditional_value
+    i = 0
+    # Set condition
+    while i<5:  # Start from 0 to 4
+        do_this
+        # Include condition_increment_or_decrement
+        i += 1
+        # Can use break, continue, and pass statements to add additional functionality, or not use any
+        break  # Breaks out of the current closest enclosing loop
+        continue  # Goes to the top of the closest enclosing loop
+        pass  # Does nothing at all
+
+    # For loop
+    # range() creates a list in python 2
+    # Looping with xrange()
+    for i in xrange(5):  # Starts from 0 to 4 (5 - 1)
+        do_this
+        # Can use break, continue, and pass statements to add additional functionality, or not use any
+        break  # Breaks out of the current closest enclosing loop
+        continue  # Goes to the top of the closest enclosing loop
+        pass  # Does nothing at all
+    # Looping with xrange() and multiple parameters
+    for i in xrange(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
+        do_this
+    # Reverse loop
+    for i in xrange(4, -1, -1):  # Start from 4 to 0 at every -1 steps
+        do_this
+
+    # Looping and getting each value
+    for value in list_name:  # [i1_value, i2_value, i3_value,...]
+        print value
+
+    # Looping and getting index and value
+    for index, value in enumerate(list_name):
+        print index, value  # output index, value
+```
+### python 3
+```python
+    # For loop
+    # Looping with range()
+    for i in range(5):  # Starts from 0 to (5 - 1)
+        do_this
+        # Can use break, continue, and pass statements to add additional functionality, or not use any
+        break  # Breaks out of the current closest enclosing loop
+        continue  # Goes to the top of the closest enclosing loop
+        pass  # Does nothing at all
+    # Looping with range() and multiple parameters
+    for i in range(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
+        do_this
+    # Reverse loop
+    for i in range(4, -1, -1):  # Start from 4 to 0 at every -1 steps
+        do_this
+
+    # Looping and getting each value
+    for value in list_name:  # [value1, value2, value3,...]
+        print(value)
+
+    # Looping and getting index and value
+    for index, value in enumerate(list_name):
+        print(index, value)  # output index, value
+```
+### javascript ES5
+```javascript
+    // While loop
+    // declare_initial_conditional_value
+    var i = 0;
+    // Set condition
+    while (i<5) {  // Start from 0 to 4
+        do_this;
+        // Include condition_increment_or_decrement;
+        i++;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+
+    // For loop
+    for (var i=0; i<5; i++) {  // Start from 0 to 4
+        do_this;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+    // Reverse loop
+    for (var i=4; i>=0; i--) {  // Start from 4 to 0
+        do_this;
+    }
+    // forEach loop
+    // Looping through a list while calling a function
+    list_name.forEach(function(value, index, list){  // do not need to include all 3 parameters, but must be in order
+        console.log(index, value, list);  // outputs index value list
+    });
+```
+### javascript ES6: Use let in loops when declaring
+```javascript
+    // For of loop
+    // Looping and getting each value
+    for (let value of list_name) {  // [value1, value2, value3,...]
+        console.log(value);  // output value
+    }
+    // Looping and getting index and value
+    for (let index_and_value of list_name.entries()) {
+        console.log(index_and_value);  // output a list [index, value]
+    }
+    // For in loop
+    for (let index in list_name) {
+        console.log(list_name[index]);
+    }
+    // For in loop normally used to get values from objects (hash table, dictionaries) than to arrays
+    // object = {key1:value1, key2:value2,...}
+    for (let index in object) {
+        console.log(object[index]);  // outputs value, normally calling this way will not output value from objects
+    }
+```
+### java
+```java
+    // While loop
+    // declare_initial_conditional_value
+    int i = 0;
+    // Set condition
+    while (i<5) {  // Start from 0 to 4
+        do_this;
+        // Include condition_increment_or_decrement;
+        i++;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+    
+    // Do while loop: execute first before setting conditions
+    // declare_initial_conditional_value
+    int i = 0;
+    do {  // Start from 0 to 4
+        do_this;
+        // Include condition_increment_or_decrement;
+        i++;
+    // Set condition
+    } while (i<5);
+
+    // For loop
+    for (int i=0; i<5; i++) {  // Start from 0 to 4
+        do_this;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+    // Reverse loop
+    for (int i=4; i>=0; i--) {  // Start from 4 to 0
+        do_this;
+    }
+```
+### c++
+```c++
+    // While loop
+    // declare_initial_conditional_value
+    int i = 0;
+    // Set condition
+    while (i<5) {  // Start from 0 to 4
+        do_this;
+        // Include condition_increment_or_decrement;
+        i++;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+    
+    // Do while loop: execute first before setting conditions
+    // declare_initial_conditional_value
+    int i = 0;
+    do {  // Start from 0 to 4
+        do_this;
+        // Include condition_increment_or_decrement;
+        i++;
+    // Set condition
+    } while (i<5);
+
+    // For loop
+    for (int i=0; i<5; i++) {  // Start from 0 to 4
+        do_this;
+        // Can use break or continue to add additional functionality, or not use any
+        break;  // Breaks out of the current closest enclosing loop
+        continue;  // Goes to the top of the closest enclosing loop
+    }
+    // Reverse loop
+    for (int i=4; i>=0; i--) {  // Start from 4 to 0
+        do_this;
+    }
+
+    // Range-based for loop
+    // Looping and getting each value
+    for (int value : int_array) {
+        cout << value << endl;  // output value per line
+    }
+    // Use auto to automatically detect array data type
+    for (auto value : array_name) {
+        cout  << value << endl;
+    }
+
+    // Infinite for loops
+    for (;;)
+        cout << "This will print forever" << endl;
+```
+## Hash Tables, Dictionaries, Objects
 
 ### python 2 & 3
 
