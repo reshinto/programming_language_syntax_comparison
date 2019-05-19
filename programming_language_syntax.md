@@ -399,7 +399,7 @@
     // Add element to list at index (left to right)
     // Remove number of elements (left to right) from index and insert new elemeents (left to right)
     // Add & Remove elements to & from list at index (left to right)
-    list_name.spice(index, number_of_element, new_element1, new_element2...);
+    list_name.splice(index, number_of_element, new_element1, new_element2...);
     // Find list size
     list_name.length;
     // Remove all elements
@@ -816,6 +816,26 @@
     // Infinite for loops
     for (;;)
         cout << "This will print forever" << endl;
+```
+## Instantiation
+### python 2 & 3
+```python
+    t = getThing  # everything
+```
+### javascript
+```javascript
+    v = getValue();  // plain function
+    t = new Thing();  // instantiation
+```
+### java
+```java
+    v = getValue();  // plain function
+    t = new Thing();  // instantiation
+```
+### c++
+```c++
+    v = getValue();  // plain function
+    t = new Thing();  // instantiation
 ```
 ## Hash Tables, Dictionaries, Objects
 
