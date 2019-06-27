@@ -670,6 +670,7 @@
         continue  # Goes to the top of the closest enclosing loop
         pass  # Does nothing at all
 
+
     # For loop
     # range() creates a list in python 2
     # Looping with xrange()
@@ -679,16 +680,20 @@
         break  # Breaks out of the current closest enclosing loop
         continue  # Goes to the top of the closest enclosing loop
         pass  # Does nothing at all
+        
     # Looping with xrange() and multiple parameters
     for i in xrange(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
         do_this
+        
     # Reverse loop
     for i in xrange(4, -1, -1):  # Start from 4 to 0 at every -1 steps
         do_this
 
+
     # Looping and getting each value
     for value in list_name:  # [i1_value, i2_value, i3_value,...]
         print value
+
 
     # Looping and getting index and value
     for index, value in enumerate(list_name):
@@ -704,16 +709,20 @@
         break  # Breaks out of the current closest enclosing loop
         continue  # Goes to the top of the closest enclosing loop
         pass  # Does nothing at all
+        
     # Looping with range() and multiple parameters
     for i in range(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
         do_this
+        
     # Reverse loop
     for i in range(4, -1, -1):  # Start from 4 to 0 at every -1 steps
         do_this
 
+
     # Looping and getting each value
     for value in list_name:  # [value1, value2, value3,...]
         print(value)
+
 
     # Looping and getting index and value
     for index, value in enumerate(list_name):
@@ -734,6 +743,7 @@
         continue;  // Goes to the top of the closest enclosing loop
     }
 
+
     // For loop
     for (var i=0; i<5; i++) {  // Start from 0 to 4
         do_this;
@@ -741,10 +751,12 @@
         break;  // Breaks out of the current closest enclosing loop
         continue;  // Goes to the top of the closest enclosing loop
     }
+    
     // Reverse loop
     for (var i=4; i>=0; i--) {  // Start from 4 to 0
         do_this;
     }
+    
     // forEach loop
     // Looping through a list while calling a function
     list_name.forEach(function(value, index, list){  // do not need to include all 3 parameters, but must be in order
@@ -762,6 +774,7 @@
     for (let index_and_value of list_name.entries()) {
         console.log(index_and_value);  // output a list [index, value]
     }
+    
     // For in loop
     for (let index in list_name) {
         console.log(list_name[index]);
@@ -960,6 +973,115 @@
 ### java
 
 ### c++
+
+
+## Higher order functions
+### python 2
+```python
+    # Map: applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results
+    # map(function, iterable, ...)
+    arr = [1, 2, 3]
+    def add(n):
+        return n + n
+    map(add, arr)  # return <map object at 0x10473e518>
+    list(map(add, arr))  # return [2, 4, 6]
+    
+    
+    # Filter: filter and return a new array based on the conditions
+    # filter(function, iterable)
+    arr = [1, 2, 3]
+    def condition(n):
+        if n < 3:
+            return n
+    filter(condition, arr)  # return <filter object at 0x10473e550>
+    list(filter(condition, arr))  # return [1, 2]
+    
+    
+    # Reduce: executes a function on each element, resulting in a single output value
+    arr = [1, 2, 3]
+    def compute(n, m):
+        return n * m
+    reduce(compute, arr)  # return 6
+```
+### python 3
+```python
+    # Reduce: executes a function on each element, resulting in a single output value
+    arr = [1, 2, 3]
+    def compute(n, m):
+        return n * m
+    from functools import reduce  # requires import in python 3
+    reduce(compute, arr)  # return 6
+```
+### javascript
+```javascript
+    // Map: create a new array from a current array
+    // array.map(element, currentIndex, originalArray)
+    const companies = [
+        {name: "company1", category: "industry1"},
+        {name: "company2", category: "industry2"}
+    ];
+    // callback method
+    const companyNames = companies.map(function(company) {
+        return company.name;
+    }
+    // arrow function method
+    const companynames = companies.map((company) => company.name);
+    
+    
+    // Filter: creates a new array with all elements that pass the condition implemented by the provided function
+    // array.filter(element, currentIndex, originalArray)
+    const ages = [age1, age2, age3];
+    // callback method
+    const canDrink = ages.filter(function(age) {
+        if (condition) {
+            return true;
+        }
+    }
+    // arrow function method
+    const canDrink = ages.filter(age => condition);
+    
+    
+    // Reduce: executes a function on each element of the array, resulting in a single output value
+    // array.reduce(function(accumulator, currentValue){ do_something }, initialValue)
+    let arr = [1, 2, 3];
+    // no initial value
+    arr.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+    });  // returns a value of 6
+    /*
+    accumulator | currentValue | returned value
+        1       |       2      |        3
+        3       |       3      |        6
+    */
+    
+    // initial value included
+    arr.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+    }, 10);  // returns a value of 16
+    /*
+    accumulator | currentValue | returned value
+        10      |       1      |        11
+        11      |       2      |        13
+        13      |       3      |        16
+    */
+    
+    
+    // Sort: sorts the elements of an array in place and returns the sorted array
+    // array.sort(compareFunction)
+    // if compareFunction is not used, all sorted elements will be sorted based on it's string value
+    let array = ["1", 30, 4, 21, 100000];
+    array.sort();  // returns ["1", 100000, 21, 30, 4]
+    
+    // sort in ascending order
+    array.sort((a, b) => a - b);  // returns ["1", 4, 21, 30, 100000]
+    
+    // sort in descending order
+    array.sort((a, b) => b - a);  // returns [100000, 30, 21, 4, "1"]
+```
+### java
+
+### c++
+
 
 ## Hash Tables, Dictionaries, Objects
 
