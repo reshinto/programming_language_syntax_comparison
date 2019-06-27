@@ -1035,6 +1035,7 @@
     // join multiple arrays together
     let arr1 = [a, b, c];
     let arr2 = [d, e, f];
+    let totalArr = arr1.concat(arr2);  // concat method
     let totalArr = [...arr1, ...arr2];
 ```
 ### java
