@@ -891,12 +891,16 @@
     def myFunction(a):
         do_something_with_a
         
+    # Default parameters
+    def myFunction(a=value):
+        do_something_with_a
+        
     # Lambda function: a small anonymous function
     # can take any number of arguments, but can only have 1 expression
     myFunction = lambda a : do_something_with_a
     myFunction = lambda a, b : do_something_with_a_and_b
 ```
-### javascript
+### javascript ES5
 ```javascript
     // Normal function
     function myFunction() {
@@ -945,6 +949,13 @@
     !function() {
         do_something;
     }();
+```
+### javascript ES6
+```javascript
+    // Default parameters
+    function myFunction(a=value) {
+        do_something_with_a;
+    }
 ```
 ### java
 
