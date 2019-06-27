@@ -863,7 +863,7 @@
 ## Instantiation
 ### python 2 & 3
 ```python
-    t = getThing  # everything
+    t = Thing()  # everything
 ```
 ### javascript
 ```javascript
@@ -880,18 +880,77 @@
     v = getValue();  // plain function
     t = new Thing();  // instantiation
 ```
-## Hash Tables, Dictionaries, Objects
-
+## Functions
 ### python 2 & 3
-
+```python
+    # Normal function
+    def myFunction():
+        do_something
+    
+    # Normal function with arguments
+    def myFunction(a):
+        do_something_with_a
+        
+    # Lambda function: a small anonymous function
+    # can take any number of arguments, but can only have 1 expression
+    myFunction = lambda a : do_something_with_a
+    myFunction = lambda a, b : do_something_with_a_and_b
+```
 ### javascript
-
+```javascript
+    // Normal function
+    function myFunction() {
+        do_something;
+    }
+    // Normal function with arguments
+    function myFunction(a) {
+        do_something_with_a;
+    }
+    
+    // Function expression
+    let myFunction = function() {
+        do_something;
+    }
+    // Function expression with arguments
+    let myFunction = function(a) {
+        do_something_with_a;
+    }
+    
+    // Arrow function: do not have their own "this" keyword
+    // 1 line arrow function
+    let myFunction = () => do_something;  // () at (do_something) not necessary if on single line
+    // 1 line arrow function with arguments
+    let myFunction = (a) => (
+        do_something_with_a
+    );
+    // arrow function, must use return keyword
+    let myFunction = () => {
+        return do_something
+    };
+    // arrow function with arguments
+    let myFunction = (a) => {
+        return do_something_with_a
+    };
+    
+    // Immediately Invoked Function Expressions (IIFE)
+    // method 1
+    (function() {
+        do_something;
+    })();
+    // method 2
+    (function() {
+        do_something;
+    }());
+    // method 3: no returning of value
+    !function() {
+        do_something;
+    }();
+```
 ### java
 
 ### c++
 
-
-## Functions
+## Hash Tables, Dictionaries, Objects
 
 ### python 2 & 3
 
