@@ -961,6 +961,30 @@
 ### c++
 
 
+## Destructuring
+### python 2 & 3
+
+### javascript ES6
+```javascript
+    // Arrays
+    const [xVariable, yVariable] = [xValue, yValue];
+    
+    // Objects
+    const obj = {
+        xKey: xValue,
+        yKey: yValue
+    }
+    // declaring variables
+    const {xKey, yKey} = obj;  // variable names must be the same as object key names
+    
+    // assigning different variable names
+    const {xKey: xNewKey, yKey: yNewKey} = obj;
+```
+### java
+
+### c++
+
+
 ## Class
 
 ### python 2 & 3
