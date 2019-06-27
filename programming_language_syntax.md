@@ -920,6 +920,11 @@
         do_something_with_a;
     }
     
+    // Default parameters
+    function myFunction(a=value) {
+        do_something_with_a;
+    }
+    
     // Arrow function: do not have their own "this" keyword
     // 1 line arrow function
     let myFunction = () => do_something;  // () at (do_something) not necessary if on single line
@@ -949,13 +954,6 @@
     !function() {
         do_something;
     }();
-```
-### javascript ES6
-```javascript
-    // Default parameters
-    function myFunction(a=value) {
-        do_something_with_a;
-    }
 ```
 ### java
 
