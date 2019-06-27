@@ -963,7 +963,19 @@
 
 ## Destructuring
 ### python 2 & 3
-
+```python
+    # Tuples
+    xVariable, yVariable = (xValue, yValue)
+    
+    # Arrays
+    xVariable, yVariable = [xValue, yValue]
+    
+    # String
+    xVariable, yVariable = "xy"
+    
+    # Dictionaries
+    xKey, yKey = {"xKey": xValue, "yKey": yValue}
+```
 ### javascript ES6
 ```javascript
     // Arrays
@@ -979,6 +991,67 @@
     
     // assigning different variable names
     const {xKey: xNewKey, yKey: yNewKey} = obj;
+```
+### java
+
+### c++
+
+
+## Spread Operator
+### python 2 & 3
+```python
+    # *args (splat)
+    # Takes an array and transform (unpacks) it into single values
+    # Must utitlize all of the element of the array to work
+    myFunction(a, b, c)  // normal method
+    myFunction(*Tuple)  // (a, b, c)
+    myFunction(*List)  // [a, b, c]
+    myFunction(*String)  // "abc"
+    myFunction(*Dict)  // {"a": value1, "b": value2}  only utilize the keys
+    
+    # **kwargs
+    myFunction(**Dict) // {"a": value1, "b": value2}  utilize both keys and values
+```
+### javascript ES6
+```javascript
+    // Takes an array and transform (unpacks) it into single values
+    // Must utitlize all of the element of the array to work
+    let arr = [a, b, c];
+    myFunction(a, b, c);  // normal method
+    myFunction.apply(null, arr)  // using the apply() method
+    myFunction(...arr);  // spread method
+    
+    // join multiple arrays together
+    let arr1 = [a, b, c];
+    let arr2 = [d, e, f];
+    let totalArr = [...arr1, ...arr2];
+```
+### java
+
+### c++
+
+
+## Rest parameters
+### python 2 & 3
+```python
+    # *args
+    # Receive a couple of single values and transform them into an array
+    def myFunction(*args):
+        newArr = args  # args is an array of arugments
+
+    # **kwargs
+    # Receive a couple of keys and values and transform them into a dictionary
+    def myFunction(**kwargs):
+        newDict = kwargs  # kwargs is a dictionary of keys and values
+    # calling example
+    myFunction(var1=value1, var2=value2)
+```
+### javascript ES6
+```javascript
+    // Receive a couple of single values and transform them into an array
+    function myFunction(...args) {
+        let argsArr = args;  // args is an array of arguments
+    }
 ```
 ### java
 
