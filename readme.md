@@ -1084,11 +1084,177 @@
 
 
 ## Hash Tables, Dictionaries, Objects
-
 ### python 2 & 3
+```python
+    # Create dictionary
+    newDict = {}
+    
+    # Create dictionary and assign key value pairs
+    # method 1
+    newDict = {
+        "key1": "value1",
+        "key2": 123,
+        "key3": True,
+        "key4": myFunction
+    }
+    # method 2
+    newDict = dict(key1="value1", key2="value2")
+    
+    # Add or reassign key value pair
+    newDict["Key"] = "Value"  # method 1
+    newDict.update({"key": "value"})
+    
+    # Set multiple keys with a similar value
+    newKeys = ("key1", "key2", "key3")
+    newValue = value
+    newDict = dict.fromkeys(newKeys, newValue)
+    
+    # Return value of the item with the specified key
+    # If the key does not exist, insert the key, with the specified value
+    newVariable = newDict.setdefault("key", "newValue")
+    
+    # Get value
+    newDict["key"]  # method 1
+    newDict.get("key")  # method 2
+    
+    # Loop through Dictionary and get each key
+    # method 1
+    for key in newDict:
+        print(key)
+    # method 2
+    for key in newDict.keys():
+        print(key)
+        
+    # Loop through Dictionary and get each value
+    # method 1
+    for key in newDict:
+        print(newDict[key])
+    # method 2
+    for value in newDict.values():
+        print(value)
+        
+    # Loop through both keys and values
+    for key, value in newDict.items():
+        print(key, value)
+        
+    # Check if key exists
+    if "key" in newDict:
+        return True
+        
+    # Get dictionary length
+    len(newDict)
+    
+    # Copy dictionary
+    # cannot copy just from dict2 = dict1 as it is just referencing to dict1
+    # method 1
+    newDict2 = newDict.copy()
+    # method 2
+    newDict2 = dict(newDict)
+    
+    # Remove items
+    newDict.pop("key")  # method 1
+    del newDict["key1"]  # method 2
+    
+    # Remove last inserted item
+    newDict.popitem()
+    
+    # Delete entire dictionary
+    del newDict  # method 1
+    newDict.clear()  # method 2
+```
+### javascript ES5
+```javascript
+    // Objects
+    // Create object
+    let newObj = new Object();  // method 1
+    let newObj = {};  // method 2
+    
+    // Create object and assign values
+    // keys can only be strings without quotes
+    let newObj = {
+        key1: "stringValue",
+        key2: 123,
+        key3: true,
+        key4: ["array", "array2"],
+        key5: {anotherKey: anotherValue},
+        key6: function(arg){return do_something_with_arg}
+    };
+    
+    // Assign and Reassign values
+    newObj["key1"] = "newString";  // method 1
+    newObj.key1 = "newString2";  // method 2
+    
+    // Get value
+    newObj["key1"];  // method 1
+    newObj.key1;  // method 2
 
-### javascript
-
+```
+### javascript ES6
+```javascript
+    // Maps or Hash tables
+    // Create new Map or hash table
+    const newDict = new Map();
+    
+    // Add key value pair data
+    // keys does not need to be strings, can be numbers, booleans, etc.
+    newDict.set(key1, value1);
+    newDict.set(key2, value2);
+    
+    // Get all keys
+    newDict.keys();
+    
+    // Get all values
+    newDict.values();
+    
+    // Iterate over Maps to get each key
+    for (let key of newDict.keys()) {
+        console.log(key);
+    }
+    
+    // Iterate over Maps to get each value
+    for (let value of newDict.values()) {
+        console.log(value);
+    }
+    
+    // Get value
+    newDict.get(key);
+    
+    // Get hash table size
+    newDict.size;
+    
+    // Check if key value pair exist with key input
+    newDict.has(key);
+    
+    // Loop through all key value pairs
+    // method 1, must be (value, key)
+    newDict.forEach((value, key) => console.log(`Key: ${key}, Value: ${value}`));
+    // method 2, must be (key, value)
+    for (let [key, value] of newDict.entries()) {console.log(`Key: ${key}, Value: ${value}`);}
+    
+    // Delete key value pair
+    newDict.delete(key);
+    // Delete all key value pairs
+    newDict.clear()
+    
+    
+    // WeakMap: similar to Map, but all keys must be objects
+    // Create new weak map
+    const newDict = new WeakMap();
+    
+    // Add key value pair data
+    // key MUST be and Object
+    newDict.set(obj1, value1);
+    newDict.set(obj2, value2);
+    
+    // Get value
+    newDict.get(obj);
+    
+    // Delete key value pair
+    newDict.delete(obj);
+    
+    // Check if key value pair exist with key input
+    newDict.has(obj);
+```
 ### java
 
 ### c++
