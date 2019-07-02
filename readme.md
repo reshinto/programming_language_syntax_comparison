@@ -1180,14 +1180,45 @@
         key6: function(arg){return do_something_with_arg}
     };
     
+    // Creates a new object, using an existing object as the prototype of the newly created object
+    let newObj2 = Object.create(newObj);  // method 1
+    let newObj2 = Object.assign({}, newObj);  // method 2
+    
     // Assign and Reassign values
     newObj["key1"] = "newString";  // method 1
     newObj.key1 = "newString2";  // method 2
+    
+    // Copy the values of all enumerable own properties from one or more source objects to a target object
+    // return the target object
+    const target = { a: 1, b: 2 };
+    const source = { b: 4, c: 5 };
+    const newObj = Object.assign(target, source);  // newObj, target = { a: 1, b: 4, c: 5 }
     
     // Get value
     newObj["key1"];  // method 1
     newObj.key1;  // method 2
 
+    // Get an array of keys
+    Object.keys(newObj);
+    
+    // Get an array of values
+    Object.values(newObj);
+    
+    // Loop through all key value pairs
+    // must be (key, value)
+    for (let [key, value] of newObj.entries()) {console.log(`Key: ${key}, Value: ${value}`);}
+    
+    // Defines a new property directly on an object, or modifies an existing property on an object, and returns the object
+    // Object.defineProperty(obj, propertyName, descriptor)
+    Object.defineProperty(newObj, property1, {value: "123", writable: true});  // newObj.property1 = 123
+    
+    // Seals an object
+    // prevent addition of properties, however defined properties still can be changed
+    Object.seal(newObj);
+    
+    // Freeze an object
+    // makes the object immutable, meaning no change to defined property allowed, unless they are objects.
+    Object.freeze(newObj);
 ```
 ### javascript ES6
 ```javascript
