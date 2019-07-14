@@ -429,6 +429,13 @@
     list_name1 = [1, 2, 3];
     list_name2 = [4, 5, 6];
     new_list = list_name1.concat(list_name2);
+    
+    // Get index of element, return -1 if not present
+    list_name = ["element1", "element2", "element1"]
+    list_name.indexOf("element1")  // returns index of 0
+    list_name.indexOf("element1", 1);  // returns index of 2
+    list_name.indexOf("element1", 2);  // also returns index of 2
+    list_name.indexOf("element1", 0);  // returns index of 0
 ```
 ### java
 ```java
