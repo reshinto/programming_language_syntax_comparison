@@ -424,6 +424,11 @@
     list_name.length;
     // Remove all elements
     list_name = [];
+    
+    // Merge 2 or more arrays together
+    list_name1 = [1, 2, 3];
+    list_name2 = [4, 5, 6];
+    new_list = list_name1.concat(list_name2);
 ```
 ### java
 ```java
