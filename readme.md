@@ -381,6 +381,9 @@
     list_name = []
     # Method 3: remove all elements, only in python 3
     list_name.clear()
+    
+    # Get index of element, return ValueError if element does not exist
+    list_name.index(element)
 ```
 ### javascript
 ```javascript
