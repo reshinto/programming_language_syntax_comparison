@@ -418,10 +418,12 @@
     // Add & Remove elements to & from list at index (left to right)
     list_name.splice(index, number_of_element, new_element1, new_element2...);
     
-    // Returns the selected elements in an array, as a new array object
+    // Return the selected elements in an array, as a new array object
     list.name.slice();
-    // Selects the elements starting at the given 1st argument, and ends at, but does not include, the given 2nd argument
+    // Return the elements starting at the given 1st argument,
+    // and ends at, but does not include, the given 2nd argument
     list_name.slice(1, 3);
+    list_name.slice(1);  // if 1 argument is given, return all elements from array from the 1st argument index
     
     // Find list size
     list_name.length;
