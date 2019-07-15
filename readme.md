@@ -384,6 +384,34 @@
     
     # Get index of element, return ValueError if element does not exist
     list_name.index(element)
+
+    Slice notation
+    # items start through stop-1
+    list_name[start:stop]
+    # items start through the rest of the array
+    list_name[start:]
+    # items from the beginning through stop-1
+    list_name[:stop]
+    # a copy of the whole array
+    list_name[:]
+    # start through not past stop, by step
+    list_name[start:stop:step]
+    list_name = [1, 2, 3, 4, 5]
+    list_name[::2]  # [1, 3, 5]
+    # last item in the array
+    list_name[-1]
+    # last two items in the array
+    list_name[-2:]
+    # everything except the last two items
+    list_name[:-2]
+    # all items in the array, reversed
+    list_name[::-1]
+    # the first two items, reversed
+    list_name[1::-1]
+    # the last two items, reversed
+    list_name[:-3:-1]
+    # everything except the last two items, reversed
+    list_name[-3::-1] 
 ```
 ### javascript
 ```javascript
