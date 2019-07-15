@@ -412,6 +412,9 @@
     list_name[:-3:-1]
     # everything except the last two items, reversed
     list_name[-3::-1] 
+    
+    # Merge 2 or more arrays together
+    new_list = list_name + list_name2
 ```
 ### javascript
 ```javascript
