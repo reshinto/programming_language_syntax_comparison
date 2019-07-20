@@ -1483,8 +1483,9 @@
 ```
 ### javascript
 ```javascript
-    # Get data type: "number", "string", "boolean", "object", "undefined"
+    # Get data type: "number", "string", "boolean", "object", "undefined", "function"
     # null and arrays are classified as object
+    # classes and methods are classfied as function
     let num = 123;
     typeof num;  // "number"
     
