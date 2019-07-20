@@ -1470,6 +1470,32 @@
 ### c++
 
 
+## Find Data Type
+### python 2 & 3
+```python
+    # Get data type
+    num = 123
+    type(num)  # int
+    
+    # Get boolean value
+    isinstance(num, int)  # True
+    isinstance(num, str)  # False
+```
+### javascript
+```javascript
+    # Get data type: "number", "string", "boolean", "object", "undefined"
+    # null and arrays are classified as object
+    let num = 123;
+    typeof num;  // "number"
+    
+    let array = [1, 2, 3];
+    typeof array;  // "object"
+```
+### java
+
+### c++
+
+
 ## String Concatenation
 ### python 2
 ```python
@@ -1501,7 +1527,7 @@
 ```javascript
     let string1 = "string 1 value";
     let string2 = "string 2 value";
-    let stringName = `${string1} ${string2} 123`  // "string 1 value string 2 value 123"
+    let stringName = `${string1} ${string2} 123`;  // "string 1 value string 2 value 123"
 ```
 ### java
 
