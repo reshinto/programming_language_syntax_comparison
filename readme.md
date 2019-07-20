@@ -1471,11 +1471,38 @@
 
 
 ## String Concatenation
-
-### python 2 & 3
-
-### javascript
-
+### python 2
+```python
+    string_name = "string1" + "string2"  # "string1string2"
+    
+    # String formatting
+    # % string operator: old style, soon to be deprecated
+    string_name = "%s %s" % ("string1", "string2")  # "string1 string2"
+    
+    # {} operator: python 2.6 and above
+    # method 1
+    string_name = "{} {}".format("string1", "string2")  # "string1 string2"
+    # method 2
+    string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
+```
+### python 3
+```python
+    # f string: python 3.6 and above
+    string1 = "string1"
+    string2 = "string2"
+    string_name = f"{string1} {string2}"  # "string1 string2"
+```
+### javascript ES5
+```javascript
+    // javascript allows data type mashups, numbers will be converting to strings when concatenated with a string.
+    let stringName = "string1" + "string2" + 123;  // "string1string2123"
+```
+### javascript ES6
+```javascript
+    let string1 = "string 1 value";
+    let string2 = "string 2 value";
+    let stringName = `${string1} ${string2} 123`  // "string 1 value string 2 value 123"
+```
 ### java
 
 ### c++
