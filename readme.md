@@ -266,7 +266,7 @@
 * division: 3/2  // output 1.5
 * modulus: %
 * exponent: **
-* floor division: 3//2  // output 1
+* floor division: Math.floor(3/2)  // output 1
 ### java
 * addition: +
 * subtraction: -
