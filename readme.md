@@ -176,6 +176,8 @@
     * let variable_name;  // variable_name = undefined
 * null is reserved for variables whose values are explicitly nothing — instead of just “not yet defined.”
     * let variable_name2 = null;
+* NaN is a special numeric value meaning “Not a Number”
+    * let variable_name3 = NaN;
 ### java
 
 ### c++
@@ -245,9 +247,15 @@
 ### python 2 & 3
 * boolean_name = True
 * boolean_name = False
+* not True  # False
+* not False  # True
 ### javascript ES5
 * var boolean_name; boolean_name = true;
 * var boolean_name = false;
+* !true  // false
+* !false  // true
+* truthy: "xxx", 1, -1, 2.5, true
+* falsey: false, 0, "", null, undefined, NaN
 ### javascript ES6
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
