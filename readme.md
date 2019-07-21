@@ -347,6 +347,88 @@
 * ＜
 * ＞=
 * ＜=
+## Logical Operators
+### python 2 & 3
+* and
+* or
+* not
+### javascript
+* &&  // and
+* ||  // or
+* !  // not
+### java
+### c++
+
+
+## Bitwise Operators
+### python 2 & 3
+```python
+    # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
+    a = 60  # 60 = ...0011 1100
+    b = 13  # 13 = ...0000 1101
+    c = 9  // 9 = ...0000 1001
+    # & is binary AND, return 1 if both a and b are 1
+    a & b  # 12 = ...0000 1100
+    
+    # | is binary OR, return 1 if either a and or b HAVE a 1
+    a | b  # 61 = ...0011 1101
+    
+    # ^ is binary XOR, return 1 if both a and b are not 1 or 0
+    a ^ b  # 49 = ...0011 0001
+    
+    # ~ is binary ones complement, invert everything, 1 change to 0 and vice versa
+    ~a  # -61 = ...1100 0011
+    
+    # << is binary left shift, shift everything to the left by n digit(s)
+    a << 2  # 240 = ...1111 0000
+    
+    # >> is binary right shift, shift everything to the right by n digit(s)
+    a >> 2  # 15 = ...0000 1111
+    c >> 2  # 3 = ...0000 0010, count the 1s
+    c = -9  # -9 = ...1111 0111
+    c >> 2  # -3 = ...1111 1101, count the 0s
+    
+    # Zero fill right shift, shift everything to the right by n digits(s), leftmost will add n 0s
+    def zero_fill_right_shift(val, n):
+        return (val >> n) if val >= 0 else ((val + 0x100000000) >> n)
+    zero_fill_right_shift(9, 2)  # 2 = ...0000 0010, count the 1s
+    c = -9  # -9 = ...1111 0111
+    zero_fill_right_shift(-9, 2)  # 1073741821 = 0011...1111 1101, count the 0s
+```
+### javascript
+    // Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
+    let a = 60  // 60 = ...0011 1100
+    let b = 13  // 13 = ...0000 1101
+    let c = 9  // 9 = ...0000 1001
+    // & is binary AND, return 1 if both a and b are 1, count the 1s
+    a & b  // 12 = ...0000 1100
+    
+    // | is binary OR, return 1 if either a and or b HAVE a 1
+    a | b  // 61 = ...0011 1101
+    
+    // ^ is binary XOR, return 1 if both a and b are not 1 or 0
+    a ^ b  // 49 = ...0011 0001
+    
+    // ~ is binary ones complement, invert everything, 1 change to 0 and vice versa, count the 0s
+    ~a  // -61 = ...1100 0011
+    
+    // << is binary left shift, shift everything to the left by n digit(s)
+    a << 2  // 240 = ...1111 0000
+    
+    // >> is Sign-propagating right shift, a binary right shift, shift everything to the right by n digit(s)
+    a >> 2  // 15 = ...0000 1111
+    c >> 2  // 3 = ...0000 0010, count the 1s
+    c = -9  // -9 = ...1111 0111
+    c >> 2  // -3 = ...1111 1101, count the 0s
+    
+    // >>> is Zero fill right shift, shift everything to the right by n digits(s), leftmost will add n 0s
+    c >>> 2  // 2 = ...0000 0010, count the 1s
+    c = -9  // -9 = ...1111 0111
+    c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
+### java
+### c++
+
+
 ## Increment
 ### python 2 & 3
 * x = x + 1  # increment
