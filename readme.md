@@ -1438,11 +1438,127 @@
 
 
 ## Class
+### python 2
+``` python
+    class MathClass:
+        def __init__(self, arg1, arg2):
+            self.arg1 = arg1
+            self.arg2 = arg2
+            self.total = self.outterAdd(arg1, arg2)
+            
+        def innerAdd(self, arg3):
+            return self.arg1 + self.arg2 + arg3
+            
+        # Static method knows nothing about the class and just deals with the parameters
+        def outterAdd(number1, number2):
+            return number1 + number2
+        outterAdd = staticmethod(outterAdd)
+        
+        
+    test = MathClass(2, 4)
+    print (test.total)  # 6
+    print (test.innerAdd(2))  # 8
+    print (test.outterAdd(3, 7))  # 10
+    print (MathClass.outterAdd(4, 5)  # 9
+```
+### python 3
+```python
+    class MathClass:
+        def __init__(self, arg1, arg2):
+            self.arg1 = arg1
+            self.arg2 = arg2
+            self.total = self.outterAdd(arg1, arg2)
+            
+        def innerAdd(self, arg3):
+            return self.arg1 + self.arg2 + arg3
+            
+        # Static method knows nothing about the class and just deals with the parameters
+        @staticmethod
+        def outterAdd(number1, number2):
+            return number1 + number2
+        
+        
+    test = MathClass(2, 4)
+    print(test.total)  # 6
+    print(test.innerAdd(2))  # 8
+    print(test.outterAdd(3, 7))  # 10
+    print(MathClass.outterAdd(4, 5))  # 9
+    
+    
+    # Using classmethod: method 1
+    class Person:
+        name = "Default name"
+        
+        @classmethod
+        def change_name(clas, new_name):
+            cls.name = new_name
+            
+            
+    person1 = Person()
+    print(person1.name)  # Default name
+    person1.change_name("New name")
+    print(person1.name)  # New name
+    
+    
+    # Using classmethod: method 2
+    class Person2:
+        def __init__(self, name):
+            self.name = name
+        
+        @classmethod
+        def use_default_name(cls):
+            return cls("Default name")
+            
+         
+    person2 = Person2("My name")
+    print(person2.name)  # My name
+    person3 = Person2.use_default_name()
+    print(person3.name)  # Default name
+```
+### javascript ES5
 
-### python 2 & 3
-
-### javascript
-
+### javascript ES6
+```javascript
+    // Case 1: normal javascript way
+    class MathClass {
+      constructor(arg1, arg2) {
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+        this.total = this.constructor.outterAdd(arg1, arg2);
+      }
+      
+      innerAdd(arg3) {
+        return this.arg1 + this.arg2 + arg3;
+      }
+      
+      // Static method knows nothing about the class and just deals with the parameters
+      static outterAdd(number1, number2) {
+        return number1 + number2;
+      }
+    }
+    const test = new MathClass(2, 4);
+    console.log(test.total);  // 6
+    console.log(test.innerAdd(2));  // 8
+    console.log(test.constructor.outterAdd(3, 7));  // 10
+    console.log(MathClass.outterAdd(4, 5));  // 9
+    
+    // Case 2: event handlers in React
+    class MathClass {
+      constructor(arg1, arg2) {
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+        this.innerAdd = this.innerAdd.bind(this);  // this is required to prevent TypeError
+      }
+      
+      innerAdd(arg3) {
+        return this.arg1 + this.arg2 + arg3;
+      }
+      const test = new MathClass(2, 4);
+      console.log(test.innerAdd(2));  // 6
+      // event handlers in React does this (not React fault, caused by "this" binding in javascript)
+      const showResults = test.innerAdd;
+      console.log(showResults(2));  // return a TypeError due to wrong "this" reference, bind is required
+```
 ### java
 
 ### c++
