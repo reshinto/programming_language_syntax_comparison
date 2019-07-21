@@ -297,11 +297,12 @@
 * ＞=  # condition is True if right operand is less than or equal to left operand
 * ＜=  # condition is True is left operand is less than or equal to right operand
 ### javascript
-* ==  // string or int will be automatically converted before comparison
+
+* ==  // string or int will be automatically converted before comparison, only checks the value
     * var x = 5;
         * x == 5;  // is true
         * x == "5"  // is also true
-* ===  // string or int will NOT be converted before comparison
+* ===  // string or int will NOT be converted before comparison, checks both the value and type
     * var x = 5;
         * x === 5;  // is true
         * x === "5"  // is false
