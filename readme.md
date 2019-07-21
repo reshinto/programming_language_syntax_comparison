@@ -168,6 +168,19 @@
 #### long double: 12 bytes
 * long double double_name; double_name = 1.123;  // have 19 decimal digits
 * similar to the rest of int variable declaration
+## Variable declaration: None values
+### python 2 & 3
+* variable_name = None
+### javascript
+* undefined is reserved for variables whose values have not yet been set.
+    * let variable_name;  // variable_name = undefined
+* null is reserved for variables whose values are explicitly nothing — instead of just “not yet defined.”
+    * let variable_name2 = null;
+### java
+
+### c++
+
+
 ## Strings
 ### python 2 & 3
 ```python
