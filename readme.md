@@ -1637,7 +1637,7 @@
 ```
 ### javascript ES5
 ```javascript
-    // javascript allows data type mashups, numbers will be converting to strings when concatenated with a string.
+    // javascript allows data type mashups, numbers will be converted to strings when concatenated with a string.
     let stringName = "string1" + "string2" + 123;  // "string1string2123"
 ```
 ### javascript ES6
