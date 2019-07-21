@@ -256,6 +256,14 @@
 * !false  // true
 * truthy: "xxx", 1, -1, 2.5, true
 * falsey: false, 0, "", null, undefined, NaN
+* truthy and falsey examples
+    * truthy1 && truthy2  // truthy2
+    * falsey && truthy  // falsey
+    * truthy && falsey  // falsey
+    * falsey1 && falsey2  // falsey1
+    * truthy1 || truthy2  // truthy1
+    * truthy || falsey  // truthy
+    * falsey1 || falsey2  // falsey2
 ### javascript ES6
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
