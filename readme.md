@@ -1,6 +1,6 @@
 # PROGRAMMING LANGUAGE SYNTAX
 ## Interpreted Language
-* python, javascript
+* python, javascript, ruby
 ## Compiled Language
 * java, c++
 ## Hello World
@@ -15,6 +15,11 @@
 ### javascript
 ```javascript
     console.log("Hello World");
+```
+### ruby
+```ruby
+    print "Hello World"  # takes whatever you give it and prints it to the screen
+    puts "Hello World  # adds a new (blank) line after the thing you want it to print
 ```
 ### java
 ```java
@@ -36,45 +41,41 @@
 ```
 ## Comments
 ### python 2 & 3
-* single line
 ```python
     # Single line comment
-```
-* multiline
-```python
+    
     """
     multi-line comments
     """
 ```
 ### javascript
-* single line
 ```javascript
     // Single line comment
-```
-* multiline
-```javascript
+
     /*
     multi-line comments
     */
 ```
+### ruby
+```ruby
+    # Single line comment
+    
+    =begin
+    multi-line comments
+    =end
+```
 ### java
-* single line
 ```java
     // Single line comment
-```
-* multiline
-```java
+
     /*
     multi-line comments
     */
 ```
 ### c++
-* single line
 ```c++
     // Single line comment
-```
-* multiline
-```c++
+
     /*
     multi-line comments
     */
@@ -94,6 +95,8 @@
 * let integer_name; integer_name = 123;  // accessible only within the block {}
 * let integer_name = 123;
 * const integer_name = 123;  // variable value cannot be reassigned
+### ruby
+* integer_name = 123
 ### java
 * public/private/protected static final byte/short/int/long integer_name = 123;
     * public: visible to all classes
@@ -151,6 +154,7 @@
 * var float_name = 1.123;
 * let float_name = 1.123;
 * const float_name = 1.123;
+### ruby
 ### java:
 #### float: 32 bits, 4 bytes
 * float float_name = 1.123f;  // have 7 decimal digits
@@ -178,6 +182,7 @@
     * let variable_name2 = null;
 * NaN is a special numeric value meaning “Not a Number”
     * let variable_name3 = NaN;
+### ruby
 ### java
 
 ### c++
@@ -191,6 +196,15 @@
     # back slash not required, but will produce a new line if not given
     string_name = """multi-line \
     string\
+    
+    len(string_name)  # 6
+    
+    string_name[::-1]  # "gnirts"
+    
+    string_name.upper()  # "GNIRTS"
+    string_name.lower()  # "gnirts"
+    
+    string_name.title()  # "Gnirts"
     """
 ```
 ### javascript ES5
@@ -199,15 +213,37 @@
     var string_name = 'string';
     // back slash required
     var string_name = "multi-line \
-    string"
+    string";
+    
+    string_name.length;  // 6
+    
+    string_name.split("").reverse().join("");  // "gnirts"
+    
+    string_name.toUpperCase();  // "GNIRTS"
+    string_name.toLowerCase();  // "gnirts"
+    
+    string_name.charAt(0).toUpperCase() + string_name.slice(1);  // "Gnirts"
 ```
 ### javascript ES6  // Almost all of ES5 are included in ES6
 ```javascript
     // back slash not required, but will produce a new line if not given
     var string_name = `multi-line \
-    string`
+    string`;
     let string_name = "string";
     const string_name = "string";
+```
+### ruby
+```ruby
+    string_name = "string"
+    
+    string_name.length  # 6
+    
+    string_name.reverse  # "gnirts"
+    
+    string_name.upcase  # "GNIRTS"
+    string_name.downcase  # "gnirts"
+    
+    string_name.capitalize  # "Gnirts"
 ```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -268,6 +304,9 @@
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
 * const boolean_name = true;
+### ruby
+* boolean_name = true
+* boolean_name = false
 ### java
 * boolean boolean_name = true;
 * boolean boolean_name = false;
@@ -296,6 +335,13 @@
 * modulus: %
 * exponent: **
 * floor division: Math.floor(3/2)  // output 1
+### ruby
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: 3.0/2  # output 1.5, 3/2 output 1
+* modulus: %
+* exponent: **
 ### java
 * addition: +
 * subtraction: -
@@ -341,6 +387,7 @@
 * ＜
 * ＞=
 * ＜=
+### ruby
 ### java
 * ==
 * !=
@@ -364,6 +411,31 @@
 * &&  // and
 * ||  // or
 * !  // not
+### ruby
+### java
+### c++
+
+
+## Getting Input
+### python 2
+```python
+    raw_input("What's your name?")
+    
+    # input must be the same data type as xxx else return an error
+    input(xxx)
+```
+### python 3
+```python
+    input("What's your name?")
+```
+### javascript
+### ruby
+```ruby
+    # print question
+    print "What's your name?"
+    # get input
+    name = gets.chomp
+```
 ### java
 ### c++
 
@@ -433,6 +505,7 @@
     c >>> 2  // 2 = ...0000 0010, count the 1s
     c = -9  // -9 = ...1111 0111
     c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
+### ruby
 ### java
 ### c++
 
@@ -446,6 +519,7 @@
 * x += 1;  // add 1 now
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+### ruby
 ### java
 * x = x + 1;
 * x += 1;
@@ -585,6 +659,7 @@
     list_name.indexOf("element1", 2);  // also returns index of 2
     list_name.indexOf("element1", 0);  // returns index of 0
 ```
+### ruby
 ### java
 ```java
     // Arrays: can only have 1 data type: string, int, etc.
@@ -745,6 +820,7 @@
             do_something_else;
     }
 ```
+### ruby
 ### java
 ```java
     // If else statement
@@ -945,6 +1021,7 @@
         console.log(object[index]);  // outputs value, normally calling this way will not output value from objects
     }
 ```
+### ruby
 ### java
 ```java
     // While loop
@@ -1043,6 +1120,7 @@
     v = getValue();  // plain function
     t = new Thing();  // instantiation
 ```
+### ruby
 ### java
 ```java
     v = getValue();  // plain function
@@ -1130,6 +1208,7 @@
         do_something_with_a;
     }
 ```
+### ruby
 ### java
 
 ### c++
@@ -1238,6 +1317,7 @@
     // sort in descending order
     array.sort((a, b) => b - a);  // returns [100000, 30, 21, 4, "1"]
 ```
+### ruby
 ### java
 
 ### c++
@@ -1446,6 +1526,7 @@
     // Check if key value pair exist with key input
     newDict.has(obj);
 ```
+### ruby
 ### java
 
 ### c++
@@ -1482,6 +1563,7 @@
     // assigning different variable names
     const {xKey: xNewKey, yKey: yNewKey} = obj;
 ```
+### ruby
 ### java
 
 ### c++
@@ -1517,6 +1599,7 @@
     let totalArr = arr1.concat(arr2);  // concat method
     let totalArr = [...arr1, ...arr2];
 ```
+### ruby
 ### java
 
 ### c++
@@ -1544,6 +1627,7 @@
         let argsArr = args;  // args is an array of arguments
     }
 ```
+### ruby
 ### java
 
 ### c++
@@ -1671,6 +1755,7 @@
       const showResults = test.innerAdd;
       console.log(showResults(2));  // return a TypeError due to wrong "this" reference, bind is required
 ```
+### ruby
 ### java
 
 ### c++
@@ -1682,6 +1767,8 @@
 
 ### javascript
 
+### ruby
+
 ### java
 
 ### c++
@@ -1692,6 +1779,8 @@
 ### python 2 & 3
 
 ### javascript
+
+### ruby
 
 ### java
 
@@ -1720,6 +1809,7 @@
     let array = [1, 2, 3];
     typeof array;  // "object"
 ```
+### ruby
 ### java
 
 ### c++
@@ -1758,6 +1848,12 @@
     let string2 = "string 2 value";
     let stringName = `${string1} ${string2} 123`;  // "string 1 value string 2 value 123"
 ```
+### ruby
+```ruby
+    string1 = "string1"
+    string2 = "string2"
+    string_name = "#{string1} #{string2}"  # "string1 string2"
+```
 ### java
 
 ### c++
@@ -1776,5 +1872,6 @@
     let objName = {"title": "Black Panther"};
     objName = JSON.parse(objName);
 ```
+### ruby
 ### java
 ### c++
