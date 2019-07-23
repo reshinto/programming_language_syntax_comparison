@@ -3,6 +3,8 @@
 * python, javascript, ruby
 ## Compiled Language
 * java, c++
+
+
 ## Hello World
 ### python 2
 ```python
@@ -39,6 +41,8 @@
         return 0;
     }
 ```
+
+
 ## Comments
 ### python 2 & 3
 ```python
@@ -80,6 +84,8 @@
     multi-line comments
     */
 ```
+
+
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 ### python 2 
 #### int: -2147483648 ~ 2147483647
@@ -141,6 +147,8 @@
 * long long long_name; long_name = 123;
 * long long int long_name; long_name = 123;
 * similar to the rest of int variable declaration
+
+
 ## Variable declaration: float, double
 ### python 2 & 3
 * float_name = 1.123
@@ -172,6 +180,8 @@
 #### long double: 12 bytes
 * long double double_name; double_name = 1.123;  // have 19 decimal digits
 * similar to the rest of int variable declaration
+
+
 ## Variable declaration: None values
 ### python 2 & 3
 * variable_name = None
@@ -184,7 +194,6 @@
     * let variable_name3 = NaN;
 ### ruby
 ### java
-
 ### c++
 
 
@@ -279,6 +288,8 @@
     std::string string_name ("string");
     std::string string_name {"string"};
 ```
+
+
 ## Boolean
 ### python 2 & 3
 * boolean_name = True
@@ -315,6 +326,8 @@
 * bool boolean_name = false;  // produces a 0 output
 * bool boolean_name (true);
 * bool boolean_name {false};
+
+
 ## Arithmetic Operators
 ### python 2
 * addition: +
@@ -360,6 +373,8 @@
     * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  // output 1
+
+
 ## Comparison Operators
 ### python 2 & 3
 * ==  # condition is True if both operand have equal contents
@@ -388,6 +403,12 @@
 * ＞=
 * ＜=
 ### ruby
+* ==
+* !=
+* <
+* <=
+* >
+* >=
 ### java
 * ==
 * !=
@@ -402,6 +423,8 @@
 * ＜
 * ＞=
 * ＜=
+
+
 ## Logical Operators
 ### python 2 & 3
 * and
@@ -412,6 +435,9 @@
 * ||  // or
 * !  // not
 ### ruby
+* &&  # and
+* ||  # or
+* !  # not
 ### java
 ### c++
 
@@ -530,6 +556,8 @@
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+
+
 ## Arrays & Lists
 ### python 2 & 3
 ```python
@@ -772,6 +800,8 @@
     // Remove all elements
     int_vector.clear();
 ```
+
+
 ## Conditional Statement
 ### python 2 & 3
 ```python
@@ -821,6 +851,26 @@
     }
 ```
 ### ruby
+```ruby
+    # If else statement
+    if condition_a
+        do_A
+    elsif condition_b
+        do_B
+    else
+        do_something_else
+    end
+    
+    # Check if something is false
+    unless condition_a
+        do_A
+    else
+        do_something_else
+    end
+    
+    condition_a = boolValue
+    do_A unless condition_a
+```
 ### java
 ```java
     // If else statement
