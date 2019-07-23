@@ -19,7 +19,7 @@
 ### ruby
 ```ruby
     print "Hello World"  # takes whatever you give it and prints it to the screen
-    puts "Hello World  # adds a new (blank) line after the thing you want it to print
+    puts "Hello World"  # adds a new (blank) line after the thing you want it to print
 ```
 ### java
 ```java
