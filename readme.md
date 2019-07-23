@@ -1327,7 +1327,7 @@
     // Objects
     // Create object
     let newObj = new Object();  // method 1
-    let newObj = {};  // method 2
+    let newObj = {};  // method 2, literal notation
     
     // Create object and assign values
     // keys can only be strings without quotes
@@ -1346,7 +1346,7 @@
     
     // Assign and Reassign values
     newObj["key1"] = "newString";  // method 1
-    newObj.key1 = "newString2";  // method 2
+    newObj.key1 = "newString2";  // method 2, dot notation
     
     // Copy the values of all enumerable own properties from one or more source objects to a target object
     // return the target object
@@ -1762,3 +1762,19 @@
 
 ### c++
 
+
+## JSON
+### python 2 & 3
+### javascript
+```javascript
+    // JSON (JavaScript Object Notation): a lightweight, text-based data format that's based on JavaScript.
+    // convert js to JSON
+    let objName = {title: 'Black Panther'};
+    objName = JSON.stringify(objName);
+    
+    // convert JSON to js
+    let objName = {"title": "Black Panther"};
+    objName = JSON.parse(objName);
+```
+### java
+### c++
