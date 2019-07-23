@@ -205,6 +205,7 @@
     # back slash not required, but will produce a new line if not given
     string_name = """multi-line \
     string\
+    """
     
     len(string_name)  # 6
     
