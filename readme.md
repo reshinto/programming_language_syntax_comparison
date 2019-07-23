@@ -208,17 +208,26 @@
     
     len(string_name)  # 6
     
-    string_name[::-1]  # "gnirts"
+    string_name = string_name[::-1]  # "gnirts"
     
-    string_name.upper()  # "GNIRTS"
-    string_name.lower()  # "gnirts"
+    string_name = string_name.upper()  # "GNIRTS"
+    string_name = string_name.lower()  # "gnirts"
     
-    string_name.title()  # "Gnirts"
+    string_name = string_name.title()  # "Gnirts"
     
     # Replace string in string, string_name.replace(old, new, max)
-    string_name.replace("G", "xxx")  # "xxxnirts"
-    string_name.replace("x", "g", 1)  # "gxxnirts"
+    string_name = string_name.replace("G", "xxx")  # "xxxnirts"
+    string_name = string_name.replace("x", "g", 1)  # "gxxnirts"
     
+    # Split strings, string_name,split(separator, max)
+    string_name = string_name.split()  # ["gxxnirts"]  only works for string without spaces
+    string_name = "test string"
+    string_name1 = string_name.split()  # ["test", "string"]
+    string_name2 = string_name.split("s")  # ["te", "t ", "tring"]
+    string_name3 = string_name.split("s", 1)  # ["te", "t string"]
+    
+    # Split string into an array of letters
+    string_name4 = list(string_name)  # ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
     """
 ```
 ### javascript ES5
@@ -233,13 +242,19 @@
     
     string_name.split("").reverse().join("");  // "gnirts"
     
-    string_name.toUpperCase();  // "GNIRTS"
-    string_name.toLowerCase();  // "gnirts"
+    string_name = string_name.toUpperCase();  // "GNIRTS"
+    string_name = string_name.toLowerCase();  // "gnirts"
     
-    string_name.charAt(0).toUpperCase() + string_name.slice(1);  // "Gnirts"
+    string_name = string_name.charAt(0).toUpperCase() + string_name.slice(1);  // "Gnirts"
     
     // replace string with string, string_name.replace(old, new)
-    string_name.replace("G", "xxx");  // "xxxnirts"
+    string_name = string_name.replace("G", "xxx");  // "xxxnirts"
+    
+    // Split string into arrays
+    string_name = "test string"
+    string_name1 = string_name.split()  // ["test string"]
+    string_name2 = string_name.split("")  // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
+    string_name3 = string_name.split("s")  // ["te", "t ", "tring"]
 ```
 ### javascript ES6  // Almost all of ES5 are included in ES6
 ```javascript
@@ -255,15 +270,20 @@
     
     string_name.length  # 6
     
-    string_name.reverse  # "gnirts"
+    string_name = string_name.reverse  # "gnirts"
     
-    string_name.upcase  # "GNIRTS"
-    string_name.downcase  # "gnirts"
+    string_name = string_name.upcase  # "GNIRTS"
+    string_name = string_name.downcase  # "gnirts"
     
-    string_name.capitalize  # "Gnirts"
+    string_name = string_name.capitalize  # "Gnirts"
     
     # replace string in string, string_name.gsub!(/old/, new)
-    string_name.gsub!(/G/, "xxx")  # "xxxnirts"
+    string_name = string_name.gsub!(/G/, "xxx")  # "xxxnirts"
+    
+    # Split strings into an array
+    string_name = string_name.split("i")  # ["xxxn", "rts"]
+    string_name = "string"
+    string_name = string_name.split("")  # ["s", "t", "r", "i", "n", "g"]
 ```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -483,7 +503,7 @@
     # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
     a = 60  # 60 = ...0011 1100
     b = 13  # 13 = ...0000 1101
-    c = 9  // 9 = ...0000 1001
+    c = 9  # 9 = ...0000 1001
     # & is binary AND, return 1 if both a and b are 1
     a & b  # 12 = ...0000 1100
     
@@ -557,6 +577,8 @@
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
 ### ruby
+* x = x + 1  # increment
+* x += 1
 ### java
 * x = x + 1;
 * x += 1;
@@ -699,6 +721,14 @@
     list_name.indexOf("element1", 0);  // returns index of 0
 ```
 ### ruby
+```ruby
+    # Empty list
+    list_name = []
+    # List with elements
+    list_name = [1, "one", True]
+    # Nested lists
+    list_name = [1, ["two", 3]]
+```
 ### java
 ```java
     // Arrays: can only have 1 data type: string, int, etc.
@@ -1090,6 +1120,61 @@
     }
 ```
 ### ruby
+```ruby
+    # While loop
+    # declare_initial_conditional_value
+    i = 0
+    # Set condition
+    while i<5 do  # Start from 0 to 4, do keyword is not mandatory
+        do_this
+        # Include condition_increment_or_decrement
+        i += 1
+    end
+    
+    # Until loop, backward while loop
+    i = 0
+    until i == 4  # Start from 0 to 4
+        i += 1
+    end
+    
+    # For loop, with ... (3 dots)
+    for i in numStart...numEnd  # for i in the range numStart up to but don't include numEnd
+        do_this
+    end
+    
+    # For loop, with .. (2 dots)
+    for i in numStart..numEnd  ## for i in the range numStart up to and include numEnd
+        dot_this
+    end
+    
+    # Loop method, an infinite loop, requireds break to stop loop
+    i = 4
+    loop do
+        i -= 1
+        break if i ==0  # Breaks out of the current closest enclosing loop
+    end
+    
+    # Next keyword: used to skip over certain steps in loop
+    for i in 0...5
+        next if i % 2 == 0   # do not do anything if i is an even number
+        do_this
+    end
+    
+    # Each Iterator
+    array = [1, 2, 3, 4, 5]
+    array.each { |value]  # Method 1: using {}
+        element += 10
+    }
+    puts array  # [11, 12, 13, 14, 15]
+    
+    array.each do |value]  # Method 2: using do keyword
+        element -= 10
+    end
+    puts array  # [1, 2, 3, 4, 5]
+    
+    # Times Iterator
+    n.times { do_this }  # do_this will repeat n times
+```
 ### java
 ```java
     // While loop
@@ -1386,6 +1471,7 @@
     array.sort((a, b) => b - a);  // returns [100000, 30, 21, 4, "1"]
 ```
 ### ruby
+
 ### java
 
 ### c++
