@@ -214,6 +214,11 @@
     string_name.lower()  # "gnirts"
     
     string_name.title()  # "Gnirts"
+    
+    # Replace string in string, string_name.replace(old, new, max)
+    string_name.replace("G", "xxx")  # "xxxnirts"
+    string_name.replace("x", "g", 1)  # "gxxnirts"
+    
     """
 ```
 ### javascript ES5
@@ -232,6 +237,9 @@
     string_name.toLowerCase();  // "gnirts"
     
     string_name.charAt(0).toUpperCase() + string_name.slice(1);  // "Gnirts"
+    
+    // replace string with string, string_name.replace(old, new)
+    string_name.replace("G", "xxx");  // "xxxnirts"
 ```
 ### javascript ES6  // Almost all of ES5 are included in ES6
 ```javascript
@@ -253,6 +261,9 @@
     string_name.downcase  # "gnirts"
     
     string_name.capitalize  # "Gnirts"
+    
+    # replace string in string, string_name.gsub!(/old/, new)
+    string_name.gsub!(/G/, "xxx")  # "xxxnirts"
 ```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -303,14 +314,6 @@
 * !false  // true
 * truthy: "xxx", 1, -1, 2.5, true
 * falsey: false, 0, "", null, undefined, NaN
-* truthy and falsey examples
-    * truthy1 && truthy2  // truthy2
-    * falsey && truthy  // falsey
-    * truthy && falsey  // falsey
-    * falsey1 && falsey2  // falsey1
-    * truthy1 || truthy2  // truthy1
-    * truthy || falsey  // truthy
-    * falsey1 || falsey2  // falsey2
 ### javascript ES6
 * let boolean_name; boolean_name = true;
 * let boolean_name = false;
@@ -434,6 +437,14 @@
 * &&  // and
 * ||  // or
 * !  // not
+* truthy and falsey examples
+    * truthy1 && truthy2  // truthy2
+    * falsey && truthy  // falsey
+    * truthy && falsey  // falsey
+    * falsey1 && falsey2  // falsey1
+    * truthy1 || truthy2  // truthy1
+    * truthy || falsey  // truthy
+    * falsey1 || falsey2  // falsey2
 ### ruby
 * &&  # and
 * ||  # or
@@ -861,6 +872,11 @@
         do_something_else
     end
     
+    # Unless statement
+    condition_variable = boolValue
+    do_A unless condition_variable
+    
+    # Unless else statement
     # Check if something is false
     unless condition_a
         do_A
@@ -868,8 +884,10 @@
         do_something_else
     end
     
-    condition_a = boolValue
-    do_A unless condition_a
+    # check if a string exist in a string
+    if word.include? alphabet
+        do_something
+    end
 ```
 ### java
 ```java
