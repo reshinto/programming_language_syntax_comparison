@@ -434,6 +434,24 @@
 * ＜
 * ＞=
 * ＜=
+* ＜=＞  # Combined Comparison Operator
+    ```ruby
+    num1 = 2
+    num2 = 5
+    puts num1 <=> num2  # -1
+    puts num2 <=> num1  # 1
+    num1 = 3
+    num2 = 3
+    puts num1 <=> num2 # 0
+    
+    string1 = "b"  # looks at only the 1st letter, "bz" will not change the outcome, unless both strings start with the same 1st letter
+    string2 = "e"
+    puts string1 <=> string2  # -1
+    puts string2 <=> string1  # 1
+    string1 = "c"
+    string2 = "c"
+    puts string1 <=> string2  # 0
+    ```
 ### java
 * ==
 * !=
@@ -748,14 +766,26 @@
     # Nested lists
     list_name = [1, ["two", 3]]
     
+    # Add 0 to 10 to an array
+    (0..10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    # Add 0 to 10 excluding 10 to an array
+    (0...10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
     # Access an elment
     list_name[index]
     
     # Sort an array in ascending
     list_name = [3, 4, 1, 2]
-    list_name = list_name.sort  # [1, 2, 3, 4]
-    # Reverse sort an array
-    list_name = list_name.reverse  # [4, 3, 2, 1]
+    # method 1
+    list_name1 = list_name.sort  # [1, 2, 3, 4]
+    # method 2
+    list_name.sort!  # [1, 2, 3, 4]
+    # Reverse sort an array, only works on already sorted array
+    # arrays that are not sorted will be reversed without sorting
+    # method 1
+    list_name1 = list_name.reverse  # [4, 3, 2, 1]
+    # method 2
+    list_name.reverse!
 ```
 ### java
 ```java
@@ -1310,6 +1340,10 @@
     t = new Thing();  // instantiation
 ```
 ### ruby
+```ruby
+    t = thing  # instantiation
+    t = thing(argument)  # instantiation with arguments
+```
 ### java
 ```java
     v = getValue();  // plain function
@@ -1323,11 +1357,11 @@
 ## Functions
 ### python 2 & 3
 ```python
-    # Normal function
+    # Normal function, use return to return values
     def myFunction():
         do_something
     
-    # Normal function with arguments
+    # Normal function with parameters
     def myFunction(a):
         do_something_with_a
         
@@ -1342,11 +1376,11 @@
 ```
 ### javascript ES5
 ```javascript
-    // Normal function
+    // Normal function, use return to return values
     function myFunction() {
         do_something;
     }
-    // Normal function with arguments
+    // Normal function with parameters
     function myFunction(a) {
         do_something_with_a;
     }
@@ -1355,7 +1389,7 @@
     let myFunction = function() {
         do_something;
     }
-    // Function expression with arguments
+    // Function expression with parameters
     let myFunction = function(a) {
         do_something_with_a;
     }
@@ -1398,6 +1432,55 @@
     }
 ```
 ### ruby
+```ruby
+    # Normal function, use return to return values
+    def myFunction
+        do_something
+    end
+    
+    # Normal function with parameters
+    def myFunction(parameter)
+        do_something
+    end
+    
+    # Default parameters
+    def myFunction(a=value)
+        do_something_with_a
+    end
+    
+    # Blocks: nameless methods, similar to anonymous functions in JavaScript or lambdas in Python
+    # can replace "do" and "end" with {}
+    # 1st type
+    # original way
+    arrayName.each do |num|
+        do_something_with_num
+    end
+    # blocks way
+    arrayName.each { |num| do_something_with_num }
+    
+    # 2nd type: Yield
+    def myFunction
+        yield  # can have multpile yield
+        yield
+    end
+    myFunction { print "test" }  # "testtest"
+    
+    def myFunction
+        yield 1  # can pass any number of arguments to yield
+        yield 2
+    end
+    myFunction { |num| print num * 10 }  # 1020
+    
+    # Explicit Blocks
+    def myFunction(&blockName)  # & is used to define the block's name
+        blockName.call
+    end
+    myFunction { print "test" }  # "test"
+    
+    # Lambda
+    myFunction = -> { puts "test" }
+    myFunction.call  # "test", call is required to call the lambda function
+```
 ### java
 
 ### c++
@@ -1854,6 +1937,13 @@
     }
 ```
 ### ruby
+```ruby
+    # *parameter
+    # Receive a couple of single values and transform them into an array
+    def myFunction(*parameter):
+        newArr = args  # args is an array of arugments
+    end
+```
 ### java
 
 ### c++
