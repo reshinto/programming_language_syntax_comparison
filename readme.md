@@ -1,4 +1,4 @@
-# PROGRAMMING LANGUAGE SYNTAX
+# PROGRAMMING LANGUAGE SYNTAX COMPARISON
 ## Interpreted Language
 * python, javascript, ruby
 ## Compiled Language
