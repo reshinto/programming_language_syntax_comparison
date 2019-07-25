@@ -286,6 +286,22 @@
     string_name = string_name.split("i")  # ["xxxn", "rts"]
     string_name = "string"
     string_name = string_name.split("")  # ["s", "t", "r", "i", "n", "g"]
+    
+    
+    # SYMBOLS: strings that are immutable, must use letters or underscores (_)
+    # used mainly for memory conservation or speed string comparison
+    # use a symbol if need a string to be immutable and not need to access string methods
+    # commonly used in hashed for keys
+    variable_name = :symbolStringWithoutQuotes
+    puts variable_name  # symbolStringWithoutQuotes
+    
+    # Convert Symbol to string
+    puts :abc.to_s  # "abc"
+    # Convert string to Symbol
+    # method 1
+    puts "abc".to_sym  # :abc
+    # method 2
+    puts "abc".intern  # :abc
 ```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -765,6 +781,9 @@
     list_name = [1, "one", True]
     # Nested lists
     list_name = [1, ["two", 3]]
+    
+    // Add element to list (left to right)
+    list_name.push(element);
     
     # Add 0 to 10 to an array
     (0..10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -1513,6 +1532,11 @@
     def compute(n, m):
         return n * m
     reduce(compute, arr)  # return 6
+    
+    # Zip: combines 2 arrays or tuples into an array of tuples
+    arr1 = [1, 2, 3]
+    arr2 = ["1", "2", "3"]
+    zpp(arr1, arr2)  # [(1, '1'), (2, '2'), (3, '3')]
 ```
 ### python 3
 ```python
@@ -1522,6 +1546,10 @@
         return n * m
     from functools import reduce  # requires import in python 3
     reduce(compute, arr)  # return 6
+    
+    # Zip: must call a list() or tuple() on the zip method
+    list(zip(s, t))  # [(1, '1'), (2, '2'), (3, '3')]
+    tuple(zip(s, t)) # ((1, '1'), (2, '2'), (3, '3'))
 ```
 ### javascript
 ```javascript
@@ -1588,9 +1616,24 @@
     
     // sort in descending order
     array.sort((a, b) => b - a);  // returns [100000, 30, 21, 4, "1"]
+    
+    // Zip is not available is Javascript, use Maps instead
+    const arr1 = [1, 2, 3];
+    const arr2 = ["1", "2", "3"];
+    function zip(arrays) {
+        return arrays[0].map(function(_,i){
+            return arrays.map(function(array){return array[i]})
+        });
+    }
+    zip([arr1, arr2]);  // [[1, '1'], [2, '2'], [3, '3']]
 ```
 ### ruby
-
+```ruby
+    # Zip: combine 2 arrays
+    arr1 = [1, 2, 3]
+    arr2 = ["1", "2", "3"]
+    puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
+```
 ### java
 
 ### c++
@@ -1801,7 +1844,7 @@
 ```
 ### ruby
 ```ruby
-    # Hash literal notation
+    # Hash literal notation, OLD SYNTAX
     hash_name = {
         key1 => value1,
         "name" => "myName",
@@ -1811,20 +1854,33 @@
         false => "weird"
     }
     
+    # NEW SYNTAX
+    # keys are symbols in this case
+    hash_name = {
+        key1: value1,
+        name: "myName",
+        age: 123,
+        hungry: true,
+    }
+    
     # Hash constructor notation
     # Create a new empty hash
     hash_name = Hash.new
     
+    
     # Adding to a Hash
     hash_name["newKey"] = "new value"
     
+    
     # Accessing hash value
     hash_name["hungry"]  # true
+    
     
     # Iterating over Hashes
     hash_name.each do [keyName, valueName|
         do_something_with_keyName_and_valueName
     end
+    
     
     # sort_by: Maps Hash into an array and then sort them via values in ascending order
     colors = {
@@ -1837,6 +1893,7 @@
     end
     puts colors  # [["green", 1], ["red", 2], ["blue", 3]]
     
+    
     # nil does not display anything
     myHash = Hash.new()
     puts myHash  # {}
@@ -1845,6 +1902,34 @@
     myHash = Hash.new("no such key")
     puts myHash  # {}
     puts myHash["nonexistent key"]  # "no such key"
+    
+    
+    # Symbols used in Hashes
+    myHash = {
+        :cat => "meow",
+        :number => 123
+    }
+    
+    
+    # Select method: Grab specific value(s) from a hash with key or value
+    grades = {
+        alice: 100,
+        bob: 92,
+        chris: 95,
+        dave: 97
+    }
+    newHash = grades.select { |nameKey, gradeValue| gradeValue < 97 }  # Grab values with value
+    puts newHash  # { :bob => 92, :chris => 95 }
+    
+    newHash = grades.select { |nameKey, gradeValue| nameKey == :alice }  # Grab values with key
+    puts newHash  # { :alice => 100 }
+    
+    
+    # Loop all keys
+    grades.each_key { |key| print key, " " }  # alice bob chris dave
+    
+    # Loop all values
+    grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
 
@@ -2038,7 +2123,8 @@
     print(person3.name)  # Default name
 ```
 ### javascript ES5
-
+```javascript
+```
 ### javascript ES6
 ```javascript
     // Case 1: normal javascript way
@@ -2136,6 +2222,27 @@
     typeof array;  // "object"
 ```
 ### ruby
+```ruby
+    # Get data type, function won't provide a specify class type
+    puts "test".class  # String
+    puts :stringSym.class  # Symbol
+    puts 123.class  # Fixnum
+    puts 1.23.class  # Float
+    puts true.class  # TrueClass
+    puts false.class  # FalseClass
+    puts nil.class  # NilClass
+    hashName = Hash.new()
+    puts hashName.class  # Hash
+    class Myclass
+        def myFunc
+            do_something
+        end
+    end
+    puts Myclass.class  # Class
+    
+    # Get id of object
+    puts "string".object_id  # 2343215, some random number where object is stored in memory
+```
 ### java
 
 ### c++
