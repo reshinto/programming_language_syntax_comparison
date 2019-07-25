@@ -193,7 +193,7 @@
 * NaN is a special numeric value meaning “Not a Number”
     * let variable_name3 = NaN;
 ### ruby
-* variable_name = nil
+* variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ### java
 ### c++
 
@@ -1811,6 +1811,7 @@
         false => "weird"
     }
     
+    # Hash constructor notation
     # Create a new empty hash
     hash_name = Hash.new
     
@@ -1835,6 +1836,15 @@
         count
     end
     puts colors  # [["green", 1], ["red", 2], ["blue", 3]]
+    
+    # nil does not display anything
+    myHash = Hash.new()
+    puts myHash  # {}
+    puts myHash["nonexistent key"] # display nothing
+    # Replace nil and Set default value when key does not exist
+    myHash = Hash.new("no such key")
+    puts myHash  # {}
+    puts myHash["nonexistent key"]  # "no such key"
 ```
 ### java
 
