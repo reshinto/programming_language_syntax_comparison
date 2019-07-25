@@ -294,14 +294,7 @@
     # commonly used in hashed for keys
     variable_name = :symbolStringWithoutQuotes
     puts variable_name  # symbolStringWithoutQuotes
-    
-    # Convert Symbol to string
-    puts :abc.to_s  # "abc"
-    # Convert string to Symbol
-    # method 1
-    puts "abc".to_sym  # :abc
-    # method 2
-    puts "abc".intern  # :abc
+
 ```
 ### java
 #### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -931,8 +924,10 @@
     else:
         do_something_else
 
+
     # Ternary operator
     do_A if condition_a else do_B
+
 
     # Switch Statement is not available in python, but can create similar function
     def switch(choice):
@@ -953,8 +948,10 @@
         do_something_else;
     }
 
+
     // Ternary operator
     condition_a ? do_A : do_B;
+
 
     // Switch statement
     switch(choice) {
@@ -979,6 +976,7 @@
         do_something_else
     end
     
+    
     # Unless statement
     condition_variable = boolValue
     do_A unless condition_variable
@@ -991,9 +989,32 @@
         do_something_else
     end
     
+    
     # check if a string exist in a string
     if word.include? alphabet
         do_something
+    end
+    
+    
+    # check if value is nil, if not nil return false
+    object.nil?  # if object != nil returns false, else returns true
+    
+    # check if array, hash, set, string is empty, return true if empty else false
+    object.empty?  # if object == [] or {} or "" or Set.new, return true
+    
+    
+    # Ternary operator
+    condition_a ? do_A : do_B;
+    
+    
+    # Case expression (similar to switch statement)
+    case choice
+    when choice_A:
+        do_A;
+    when choice_B:
+        do_B;
+    else
+        do_something_else
     end
 ```
 ### java
@@ -1007,6 +1028,7 @@
         do_something_else;
     }
 
+
     // {} not required if statement is a single line
     if (condition_a)
         do_A;  // Single line statement
@@ -1015,8 +1037,10 @@
     else
         do_something_else;  // Single line statement
 
+
     // Ternary operator
     condition_a ? do_A : do_B;
+
 
     // Switch statement
     switch(choice) {
@@ -1042,6 +1066,7 @@
         do_something_else;
     }
 
+
     // {} not required if statement is a single line
     if (condition_a)
         do_A;  // Single line statement
@@ -1050,8 +1075,10 @@
     else
         do_something_else;  // Single line statement
 
+
     // Ternary operator
     condition_a ? do_A : do_B;
+
 
     // Switch statement
     switch(choice) {
@@ -1876,6 +1903,10 @@
     hash_name["hungry"]  # true
     
     
+    # Delete a key value pair
+    hash_name.delete(key)
+    
+    
     # Iterating over Hashes
     hash_name.each do [keyName, valueName|
         do_something_with_keyName_and_valueName
@@ -2187,13 +2218,43 @@
 
 
 ## Type Conversions
-
 ### python 2 & 3
-
+```python
+    # Convert to Integer, floats will round down
+    int(type_to_convert)
+    
+    # Convert to floats
+    float(type_to_convert)
+    
+    # Convert to strings
+    str(type_to_convert)
+    
+    # Convert to arrays
+    list(type_to_convert)  # cannot be a number
+    
+    # Convert to tuples
+    tuple(type_to_convert)  # cannot be a number
+    
+    # Convert to sets
+    set(type_to_convert)  # cannot be a number
+```
 ### javascript
 
 ### ruby
-
+```ruby
+    # String to symbol
+    # method 1
+    "string".to_sym  # :string
+    # method 2
+    "string".intern  # :string
+    
+    # Object to string
+    :string.to_s  # "string"
+    123.to_s  # "123"
+    
+    # String to integer
+    "123".to_i  # 123
+```
 ### java
 
 ### c++
