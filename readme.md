@@ -193,6 +193,7 @@
 * NaN is a special numeric value meaning “Not a Number”
     * let variable_name3 = NaN;
 ### ruby
+* variable_name = nil
 ### java
 ### c++
 
@@ -663,6 +664,16 @@
     
     # Merge 2 or more arrays together
     new_list = list_name + list_name2
+    
+    # Sort an array in ascending order
+    list_name = [2, 3, 1, 4]
+    # method 1
+    list_name2 = sorted(list_name)  # [1, 2, 3, 4]
+    # method 2
+    list_name.sort()  # [1, 2, 3, 4]
+    
+    # Reverse sort an array
+    list_name.reverse()  # [4, 3, 2, 1]
 ```
 ### javascript
 ```javascript
@@ -720,6 +731,13 @@
     list_name.indexOf("element1", 1);  // returns index of 2
     list_name.indexOf("element1", 2);  // also returns index of 2
     list_name.indexOf("element1", 0);  // returns index of 0
+    
+    # Sort array in ascending order
+    list_name = [2, 3, 1, 4];
+    list_name.sort();  // [1, 2, 3, 4]
+    
+    # Sort array in descending order
+    list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1]
 ```
 ### ruby
 ```ruby
@@ -729,6 +747,15 @@
     list_name = [1, "one", True]
     # Nested lists
     list_name = [1, ["two", 3]]
+    
+    # Access an elment
+    list_name[index]
+    
+    # Sort an array in ascending
+    list_name = [3, 4, 1, 2]
+    list_name = list_name.sort  # [1, 2, 3, 4]
+    # Reverse sort an array
+    list_name = list_name.reverse  # [4, 3, 2, 1]
 ```
 ### java
 ```java
@@ -1172,6 +1199,14 @@
         element -= 10
     end
     puts array  # [1, 2, 3, 4, 5]
+    
+    # Iterating over Multidimensional Arrays with Each Iterator
+    multiArray = [[1, 2], [3, 4], [5, 6]]
+    multiArray.each { 
+        |sub_array| sub_array.each { 
+            [element| do_something
+        }
+    }
     
     # Times Iterator
     n.times { do_this }  # do_this will repeat n times
@@ -1682,6 +1717,42 @@
     newDict.has(obj);
 ```
 ### ruby
+```ruby
+    # Hash literal notation
+    hash_name = {
+        key1 => value1,
+        "name" => "myName",
+        "age" => 123,
+        "hungry?" => true,
+        111 => "one one one",
+        false => "weird"
+    }
+    
+    # Create a new empty hash
+    hash_name = Hash.new
+    
+    # Adding to a Hash
+    hash_name["newKey"] = "new value"
+    
+    # Accessing hash value
+    hash_name["hungry"]  # true
+    
+    # Iterating over Hashes
+    hash_name.each do [keyName, valueName|
+        do_something_with_keyName_and_valueName
+    end
+    
+    # sort_by: Maps Hash into an array and then sort them via values in ascending order
+    colors = {
+        "blue" => 3,
+        "green" => 1,
+        "red" => 2
+    }
+    colors = colors.sort_by do |color, count|
+        count
+    end
+    puts colors  # [["green", 1], ["red", 2], ["blue", 3]]
+```
 ### java
 
 ### c++
@@ -2008,6 +2079,9 @@
     string1 = "string1"
     string2 = "string2"
     string_name = "#{string1} #{string2}"  # "string1 string2"
+    
+    # to_s: numbers need to be converted to a string to be concatenated
+    puts "one" + 1.to_s  # "one1"
 ```
 ### java
 
