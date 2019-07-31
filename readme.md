@@ -713,11 +713,13 @@
     // Nested lists
     var list_name = [1, ["two", 3]];
     
+    
     // Modify an element
     list_name[index] = element;
     
     // Access an element
     list_name[index];
+    
     
     // Remove element from list (right to left)
     list_name.pop();
@@ -725,6 +727,7 @@
     list_name.shift();
     // Remove number of elements (left to right) from index and insert new elements (left to right)
     list_name.splice(index, number_of_element);
+    
     
     // Add element to list (left to right)
     list_name.push(element);
@@ -735,6 +738,7 @@
     // Add & Remove elements to & from list at index (left to right)
     list_name.splice(index, number_of_element, new_element1, new_element2...);
     
+    
     // Return the selected elements in an array, as a new array object
     list.name.slice();
     // Return the elements starting at the given 1st argument,
@@ -742,15 +746,18 @@
     list_name.slice(1, 3);
     list_name.slice(1);  // if 1 argument is given, return all elements from array from the 1st argument index
     
+    
     // Find list size
     list_name.length;
     // Remove all elements
     list_name = [];
     
+    
     // Merge 2 or more arrays together
     list_name1 = [1, 2, 3];
     list_name2 = [4, 5, 6];
     new_list = list_name1.concat(list_name2);
+    
     
     // Get index of element, return -1 if not present
     list_name = ["element1", "element2", "element1"]
@@ -759,12 +766,22 @@
     list_name.indexOf("element1", 2);  // also returns index of 2
     list_name.indexOf("element1", 0);  // returns index of 0
     
-    # Sort array in ascending order
+    
+    // Sort array in ascending order
     list_name = [2, 3, 1, 4];
     list_name.sort();  // [1, 2, 3, 4]
     
-    # Sort array in descending order
+    // Sort array in descending order
     list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1]
+    
+    
+    // Determine whether an array contains a specified element
+    list_name = ["a", "b", "c", "a"]
+    console.log(list_name.includes("b"))  // true
+    
+    // Determine whether an array contains a specified element from starting index
+    console.log(list_name.includes("b", 2)  // false
+    console.log(list_name.includes("a", 2)  // true
 ```
 ### ruby
 ```ruby
