@@ -1806,7 +1806,7 @@
     
     // Loop through all key value pairs
     // must be (key, value)
-    for (let [key, value] of newObj.entries()) {console.log(`Key: ${key}, Value: ${value}`);}
+    for (let [key, value] of Object.entries(newObj)) {console.log(`Key: ${key}, Value: ${value}`);}
     
     // Defines a new property directly on an object, or modifies an existing property on an object, and returns the object
     // Object.defineProperty(obj, propertyName, descriptor)
