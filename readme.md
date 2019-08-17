@@ -128,6 +128,7 @@
         * e.g. char: -128 ~ 127
         * e.g. unsigned char: 0 ~ 255  // 128 + 127 = 255
 #### char: 1 byte, -128 ~ 127, use C code to print "#include＜stdio.h＞ printf("%d", char_name);"
+* 1 char has 8 bits
 * char char_name; char_name = 123;
 * similar to the rest of int variable declaration
 #### short/short int: 16 bits, 2 bytes, -32768 ~ 32767
