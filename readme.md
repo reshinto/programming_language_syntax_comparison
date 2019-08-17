@@ -3,8 +3,6 @@
 * python, javascript, ruby
 ## Compiled Language
 * java, c++
-
-
 ## Hello World
 ### python 2
 ```python
@@ -41,8 +39,6 @@
         return 0;
     }
 ```
-
-
 ## Comments
 ### python 2 & 3
 ```python
@@ -84,8 +80,6 @@
     multi-line comments
     */
 ```
-
-
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 ### python 2 
 #### int: -2147483648 ~ 2147483647
@@ -148,8 +142,6 @@
 * long long long_name; long_name = 123;
 * long long int long_name; long_name = 123;
 * similar to the rest of int variable declaration
-
-
 ## Variable declaration: float, double
 ### python 2 & 3
 * float_name = 1.123
@@ -181,8 +173,6 @@
 #### long double: 12 bytes
 * long double double_name; double_name = 1.123;  // have 19 decimal digits
 * similar to the rest of int variable declaration
-
-
 ## Variable declaration: None values
 ### python 2 & 3
 * variable_name = None
@@ -197,7 +187,6 @@
 * variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ### java
 ### c++
-
 
 ## Strings
 ### python 2 & 3
@@ -331,8 +320,6 @@
     std::string string_name ("string");
     std::string string_name {"string"};
 ```
-
-
 ## Boolean
 ### python 2 & 3
 * boolean_name = True
@@ -361,8 +348,6 @@
 * bool boolean_name = false;  // produces a 0 output
 * bool boolean_name (true);
 * bool boolean_name {false};
-
-
 ## Arithmetic Operators
 ### python 2
 * addition: +
@@ -408,8 +393,6 @@
     * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  // output 1
-
-
 ## Comparison Operators
 ### python 2 & 3
 * ==  # condition is True if both operand have equal contents
@@ -476,8 +459,6 @@
 * ＜
 * ＞=
 * ＜=
-
-
 ## Logical Operators
 ### python 2 & 3
 * and
@@ -502,7 +483,6 @@
 ### java
 ### c++
 
-
 ## Getting Input
 ### python 2
 ```python
@@ -525,7 +505,6 @@
 ```
 ### java
 ### c++
-
 
 ## Bitwise Operators
 ### python 2 & 3
@@ -596,7 +575,6 @@
 ### java
 ### c++
 
-
 ## Increment
 ### python 2 & 3
 * x = x + 1  # increment
@@ -619,8 +597,6 @@
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
-
-
 ## Arrays & Lists
 ### python 2 & 3
 ```python
@@ -929,8 +905,6 @@
     // Remove all elements
     int_vector.clear();
 ```
-
-
 ## Conditional Statement
 ### python 2 & 3
 ```python
@@ -1546,9 +1520,7 @@
     myFunction.call  # "test", call is required to call the lambda function
 ```
 ### java
-
 ### c++
-
 
 ## Higher order functions
 ### python 2
@@ -1680,9 +1652,7 @@
     puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 ### java
-
 ### c++
-
 
 ## Hash Tables, Dictionaries, Objects
 ### python 2 & 3
@@ -1981,9 +1951,7 @@
     grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
-
 ### c++
-
 
 ## Destructuring
 ### python 2 & 3
@@ -2018,9 +1986,7 @@
 ```
 ### ruby
 ### java
-
 ### c++
-
 
 ## Spread Operator
 ### python 2 & 3
@@ -2054,9 +2020,7 @@
 ```
 ### ruby
 ### java
-
 ### c++
-
 
 ## Rest parameters
 ### python 2 & 3
@@ -2089,9 +2053,7 @@
     end
 ```
 ### java
-
 ### c++
-
 
 ## Class
 ### python 2
@@ -2218,22 +2180,14 @@
 ```
 ### ruby
 ### java
-
 ### c++
-
 
 ## Importing Libraries
-
 ### python 2 & 3
-
 ### javascript
-
 ### ruby
-
 ### java
-
 ### c++
-
 
 ## Type Conversions
 ### python 2 & 3
@@ -2257,7 +2211,6 @@
     set(type_to_convert)  # cannot be a number
 ```
 ### javascript
-
 ### ruby
 ```ruby
     # String to symbol
@@ -2274,9 +2227,7 @@
     "123".to_i  # 123
 ```
 ### java
-
 ### c++
-
 
 ## Find Data Type
 ### python 2 & 3
@@ -2323,9 +2274,7 @@
     puts "string".object_id  # 2343215, some random number where object is stored in memory
 ```
 ### java
-
 ### c++
-
 
 ## String Concatenation
 ### python 2
@@ -2370,9 +2319,7 @@
     puts "one" + 1.to_s  # "one1"
 ```
 ### java
-
 ### c++
-
 
 ## JSON
 ### python 2 & 3
@@ -2386,6 +2333,23 @@
     // convert JSON to js
     let objName = {"title": "Black Panther"};
     objName = JSON.parse(objName);
+```
+### ruby
+### java
+### c++
+
+## Program Entry Point
+### python 2 & 3
+```python
+    if __name__ === "__main__":
+        # do something
+```
+### javascript
+```javascript
+    // only works in node js
+    if (require.main === module) {
+      // do something
+    }
 ```
 ### ruby
 ### java
