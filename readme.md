@@ -2363,3 +2363,31 @@ if (require.main === module) {
 ### ruby
 ### java
 ### c++
+
+## Swapping values
+### python 2 & 3
+```python
+a, b = 1, 2
+# method 1
+temp = a
+a = b
+b = temp
+
+# method 2
+a, b = b, a
+```
+### javascript ES5
+```javascript
+let a = 1;
+let b = 2;
+const temp = a;
+a = b;
+b = temp;
+```
+### javascript ES6
+```javascript
+[a, b] = [b, a];
+```
+### ruby
+### java
+### c++
