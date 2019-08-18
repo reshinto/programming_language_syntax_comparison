@@ -200,6 +200,10 @@ string\
 
 len(string_name)  # 6
 
+# Character unicode point
+# only accepts 1 character
+ord("b")  # 98
+
 string_name = string_name[::-1]  # "gnirts"
 
 string_name = string_name.upper()  # "GNIRTS"
@@ -231,6 +235,10 @@ var string_name = "multi-line \
 string";
     
 string_name.length;  // 6
+
+// Character unicode point
+string.charCodeAt(stringIndex)
+"abc".charCodeAt(1)  // 98
     
 string_name.split("").reverse().join("");  // "gnirts"
     
