@@ -2208,7 +2208,60 @@ class MathClass {
 
 ## Importing Libraries
 ### python 2 & 3
-### javascript
+```python
+# import module from libraries
+import module_name  # must call module_name to use
+
+# Using alias
+import module_name as mn  # must call mn to use
+
+# import class or function from a module
+from module_name import function_name
+
+
+# Absoute imports within the same project (file extensions not required)
+from folder1 import module1  # example 1
+from folder1.module2 import function1  # example 2
+from folder2 import class1  # example 3
+from folder2.subfolder1.module5 import function2  # example 4
+
+
+# Relative imports (dot feature is similar to terminal)
+from .module1 import class1  # example 1
+from ..folder2 import function1 # example 2
+from . import class2 # example 3
+```
+### javascript ES5
+```javascript
+// Before a module can be imported, it has to be exported first
+module.exports = objectName;  // can be an object of functions
+// alternative exports, import rules also change
+exports.moduleName = objectName;
+
+// importing a module
+// moduleName can be path too
+var mn = require("moduleName");  // must call mn to use
+var {function1, function2} = require("moduleName");  // importing multiple functions from a module
+// import for alternative export
+var mn = require("moduleName").moduleName;
+```
+### javascript ES6
+```javascript
+// Before a module can be imported, it has to be exported first
+export default objectName;  // exporting a single or nested functions or class
+
+// {} must be used when importing
+export functionName;  // export only 1 class or function (can be used for importing multiple functions or classes
+
+// import class or function from module
+import "moduleName";  // import module
+import name from "moduleName";  // name can be anything if only have 1 export
+import * as name from "moduleName";  // import multiple exports as name
+import {function1} from "moduleName";  // import a function from a module of multiple exports
+import {function1 as f1} from "moduleName";  // import a function with alias
+import {function1, function2} from "moduleName";  // import multiple functions
+import name, {function1} from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
+```
 ### ruby
 ### java
 ### c++
