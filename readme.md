@@ -2144,6 +2144,21 @@ print(person3.name)  # Default name
 ```
 ### javascript ES5
 ```javascript
+// Constructor
+var MathClass = function(arg1, arg2) {
+  this.arg1 = arg1;
+  this.arg2 = arg2;
+}
+
+// Instantiation
+var test = new MathClass(2, 4);
+
+// Add method
+MathClass.prototype.innerAdd = function(arg3) {
+  return this.arg1 + this.arg2 + arg3;
+}
+
+test.innerAdd(2);  // 8
 ```
 ### javascript ES6
 ```javascript
