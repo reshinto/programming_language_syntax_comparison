@@ -2234,9 +2234,10 @@ from . import class2 # example 3
 ### javascript ES5
 ```javascript
 // Before a module can be imported, it has to be exported first
+var objectName.functionName = function();
 module.exports = objectName;  // can be an object of functions
 // alternative exports, import rules also change
-exports.moduleName = objectName;
+exports.moduleName = objectName;  // preset a name to the module
 
 // importing a module
 // moduleName can be path too
