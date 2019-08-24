@@ -2401,6 +2401,16 @@ puts "one" + 1.to_s  # "one1"
 
 ## JSON
 ### python 2 & 3
+```python
+import json  # must import to use
+
+# python objects that can be converted: dict, list, tuple, string, int, float, True, False, None
+# Convert JSON to python
+json.loads(json_object)
+
+# Convert python to JSON
+json.dumps(python_object)
+```
 ### javascript
 ```javascript
 // JSON (JavaScript Object Notation): a lightweight, text-based data format that's based on JavaScript.
