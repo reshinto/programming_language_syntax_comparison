@@ -767,7 +767,7 @@ console.log(list_name.includes("b"))  // true
     
 // Determine whether an array contains a specified element from starting index
 console.log(list_name.includes("b", 2)  // false
-    console.log(list_name.includes("a", 2)  // true
+console.log(list_name.includes("a", 2)  // true
 ```
 ### ruby
 ```ruby
