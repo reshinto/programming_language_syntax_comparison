@@ -224,7 +224,6 @@ string_name3 = string_name.split("s", 1)  # ["te", "t string"]
 
 # Split string into an array of letters
 string_name4 = list(string_name)  # ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
-    """
 ```
 ### javascript ES5
 ```javascript
