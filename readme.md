@@ -38,6 +38,7 @@
 - [Swapping values](#swapping-values)
 - [Error Handling](#error-handling)
 - [Custom Error](#custom-error)
+- [Asynchronous](#asynchronous)
 
 ## Interpreted Language
 * python, javascript, ruby
@@ -2669,6 +2670,28 @@ throw "custom message"; // throw a text
 
 throw 123; // throw a number
 ```
+### ruby
+### java
+### c++
+## Asynchronous
+### python
+### javascript ES5
+```javascript
+// callback example
+function sendMessage(message, callback) {
+  return callback(message);
+}
+sendMessage("Message for console", console.log); // "Message for console"
+
+// callback with anonymous functions
+function greet(name, formatName) {
+  return `Hello ${formatName(name)}`;
+}
+console.log(greet("tim", function(name){
+  return name.toUpperCase();
+}); // "TIM"
+```
+### javascript ES6
 ### ruby
 ### java
 ### c++
