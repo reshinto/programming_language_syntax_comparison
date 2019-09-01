@@ -459,12 +459,13 @@ char stringName[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
 
 //C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 #include＜string＞
-std::string stringName; stringName = "string";
+std::string stringName;
+stringName = "string";
+
 // back slash not required, but can use if want to
 std::string stringName = "multi-line"
                           "string";
 std::string stringName ("string");
-std::string stringName {"string"};
 ```
 ## Boolean
 ### python 2 & 3
