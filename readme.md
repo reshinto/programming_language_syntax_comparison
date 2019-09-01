@@ -2002,14 +2002,14 @@ const {xKey: xNewKey, yKey: yNewKey} = obj;
 # *args (splat)
 # Takes an array and transform (unpacks) it into single values
 # Must utitlize all of the element of the array to work
-myFunction(a, b, c)  // normal method
-myFunction(*Tuple)  // (a, b, c)
-myFunction(*List)  // [a, b, c]
-myFunction(*String)  // "abc"
-myFunction(*Dict)  // {"a": value1, "b": value2}  only utilize the keys
+myFunction(a, b, c)  # normal method
+myFunction(*Tuple)  # (a, b, c)
+myFunction(*List)  # [a, b, c]
+myFunction(*String)  # "abc"
+myFunction(*Dict)  # {"a": value1, "b": value2}  only utilize the keys
 
 # **kwargs
-myFunction(**Dict) // {"a": value1, "b": value2}  utilize both keys and values
+myFunction(**Dict) # {"a": value1, "b": value2}  utilize both keys and values
 ```
 ### javascript ES6
 ```javascript
