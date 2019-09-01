@@ -36,6 +36,7 @@
 - [JSON](#json)
 - [Program Entry Point](#program-entry-point)
 - [Swapping values](#swapping-values)
+- [Error Handling](#error-handling)
 
 ## Interpreted Language
 * python, javascript, ruby
@@ -2604,6 +2605,37 @@ b = temp;
 ```javascript
 [a, b] = [b, a];
 ```
+### ruby
+### java
+### c++
+## Error Handling
+### python 2 & 3
+* try: lets you test a block of code for errors
+* except: except block lets you handle the error
+  * define exception type
+    > except NameError:
+  * save error to variable e
+    > except ValueError as e:
+  * list of important error types
+    * AssertionError, AttributeError, EOFError, FloatingPointError, GeneratorExit, ImportError, IndexError, KeyError
+    * KeyboardInterrupt, MemoryError, NameError, NotImplementedError, OSError, OverflowError, ReferenceError, RuntimeError
+    * StopIteration, SyntaxError, IndentationError, TabError, SystemError, TypeError, UnboundLocalError, UnicodeError
+    * UnicodeEncodeError, UnicodeDecodeError, UnicodeTranslateError, ValueError, ZeroDivisionError
+* else: code to be executed if no errors were raised
+* finally: if specified, will be executed regardless if the try block raises an error or not
+  * useful to close objects and clean up resources
+```python
+# similar to if else
+try:  # must start with try
+    do_something
+except:  # must have to handle errors
+    do_something_if_error_occurs
+else:  # not required
+    do_something_if_no_error
+finally:  # not required
+    do_something_when_try_&_except_or_else_is_completed
+```
+### javascript
 ### ruby
 ### java
 ### c++
