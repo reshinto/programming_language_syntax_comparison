@@ -82,112 +82,191 @@ multi-line comments
 ```
 ## Variable declaration: integer ...-2, -1, 0, 1, 2...
 ### python 2 
-#### int: -2147483648 ~ 2147483647
-* integer_name = 123
-#### long: -9223372036854775808L ~ 9223372036854775807L
-* long_name = 123L  # int beyond int size will automatically be converted to long
-### python 3: int and long are combined into int
-* integer_name = 123
+```python
+# int: -2147483648 ~ 2147483647
+integer_name = 123
+# long: -9223372036854775808L ~ 9223372036854775807L
+long_name = 123L  # int beyond int size will automatically be converted to long
+```
+### python 3
+```python
+# python 3: int and long are combined into int
+integer_name = 123
+```
 ### javascript ES5
-* var integer_name; integer_name = 123;  // accessible within the function
-* var integer_name = 123;
+```javascript
+// method 1
+var integer_name;
+integer_name = 123;  // accessible within the function
+
+// method 2
+var integer_name = 123;
+```
 ### javascript ES6
-* let integer_name; integer_name = 123;  // accessible only within the block {}
-* let integer_name = 123;
-* const integer_name = 123;  // variable value cannot be reassigned
+```javascript
+// method 1
+let integer_name;
+integer_name = 123;  // accessible only within the block {}
+
+// method 2
+let integer_name = 123;
+
+// method 3
+const integer_name = 123;  // variable value cannot be reassigned
+```
 ### ruby
-* integer_name = 123
+```ruby
+integer_name = 123
+```
 ### java
-* public/private/protected static final byte/short/int/long integer_name = 123;
-    * public: visible to all classes
-    * protected: visible to class they belong and any subclasses
-    * private (most restricted): visible only to class they belong
-    * static: can be accessed without creating a class instance
-    * final: constant value, value cannot be changed
-#### byte: -128 ~ 127, 8 bits
-* byte byte_name = 123;
-#### short: -32768 ~ 32767, 16 bits
-* short short_name = 123;
-#### int: -2147483648 ~ 2147483647, -2_147_483_648 ~ 2_147_483_647, 32 bits
-* int integer_name; integer_name = 123;
-* int integer_name = 123;  // default is visible within the same package
-#### long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
-* long long_name = 123l;
-* long long_name = 123L;
+```java
+// public/private/protected static final byte/short/int/long integer_name = 123;
+/* 
+public: visible to all classes
+protected: visible to class they belong and any subclasses
+private (most restricted): visible only to class they belong
+static: can be accessed without creating a class instance
+final: constant value, value cannot be changed
+*/
+
+// byte: -128 ~ 127, 8 bits
+byte byte_name = 123;
+
+// short: -32768 ~ 32767, 16 bits
+short short_name = 123;
+
+// int: -2147483648 ~ 2147483647, -2_147_483_648 ~ 2_147_483_647, 32 bits
+int integer_name; integer_name = 123;
+int integer_name = 123;  // default is visible within the same package
+
+// long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
+long long_name = 123l;
+long long_name = 123L;
+```
 ### c++
-* const unsigned char/short/int/long/long long integer_name = 123;
-    * const: constant value, value cannot be changed
-    * integer are signed by default: can assign both positive & negative values
-    * unsigned integer (use when dealing with bit values): 0 ~ ...
-        * e.g. char: -128 ~ 127
-        * e.g. unsigned char: 0 ~ 255  // 128 + 127 = 255
-#### char: 1 byte, -128 ~ 127, use C code to print "#include＜stdio.h＞ printf("%d", char_name);"
-* 1 char has 8 bits
-* char char_name; char_name = 123;
-* similar to the rest of int variable declaration
-#### short/short int: 16 bits, 2 bytes, -32768 ~ 32767
-* short short_name; short_name = 123;
-* short int short_name; short_name = 123;
-* similar to the rest of int variable declaration
-#### int: 16 bits, 4 bytes, -2147483648 ~ 2147483647
-* int integer_name; integer_name = 123;  // uninitialized
-* int integer_name = 123;  // C-like initialization
-* int integer_name (123);  // Constructor initialization
-* int age {123};  // C++11 list initialization syntax
-#### long/long int: 32 bits, 4 bytes, -2147483648 ~ 2147483647 bytes
-* long long_name; long_name = 123;
-* long int long_name; long_name = 123;
-* similar to the rest of int variable declaration
-#### long long/long long int: 64 bits, 8 bytes, -9223372036854775808 ~ 9223372036854775807
-* long long long_name; long_name = 123;
-* long long int long_name; long_name = 123;
-* similar to the rest of int variable declaration
+```c++
+// const unsigned char/short/int/long/long long integer_name = 123;
+/* 
+const: constant value, value cannot be changed
+integer are signed by default: can assign both positive & negative values
+unsigned integer (use when dealing with bit values): 0 ~ ...
+  e.g. char: -128 ~ 127
+  e.g. unsigned char: 0 ~ 255  // 128 + 127 = 255
+*/
+
+// char: 1 byte, -128 ~ 127, use C code to print "#include＜stdio.h＞ printf("%d", char_name);"
+// 1 char has 8 bits
+char char_name;
+char_name = 123;
+
+// similar to the rest of int variable declaration
+
+// short/short int: 16 bits, 2 bytes, -32768 ~ 32767
+short short_name;
+short_name = 123;
+
+short int short_name; short_name = 123;
+
+// similar to the rest of int variable declaration
+
+// int: 16 bits, 4 bytes, -2147483648 ~ 2147483647
+int integer_name;
+integer_name = 123;  // uninitialized
+
+int integer_name = 123;  // C-like initialization
+
+int integer_name (123);  // Constructor initialization
+
+int age {123};  // C++11 list initialization syntax
+
+// long/long int: 32 bits, 4 bytes, -2147483648 ~ 2147483647 bytes
+long long_name;
+long_name = 123;
+
+long int long_name;
+long_name = 123;
+
+// similar to the rest of int variable declaration
+
+// long long/long long int: 64 bits, 8 bytes, -9223372036854775808 ~ 9223372036854775807
+long long long_name;
+long_name = 123;
+
+long long int long_name; long_name = 123;
+
+// similar to the rest of int variable declaration
+```
 ## Variable declaration: float, double
 ### python 2 & 3
-* float_name = 1.123
-* float_name = 0.1123e1  # equals to 1.123
-* float_name = 0.1123E1  # equals to 1.123
-* float_name = 1123e-3  # equals to 1.123
-* float_name = 1123E-3  # equals to 1.123
+```python
+float_name = 1.123
+float_name = 0.1123e1  # equals to 1.123
+float_name = 0.1123E1  # equals to 1.123
+float_name = 1123e-3  # equals to 1.123
+float_name = 1123E-3  # equals to 1.123
+```
 ### javascript ES5
-* var float_name = 1.123;
+```javascript
+var float_name = 1.123;
+```
 ### javascript ES6
-* var float_name = 1.123;
-* let float_name = 1.123;
-* const float_name = 1.123;
+```javascript
+let float_name = 1.123;
+const float_name = 1.123;
+```
 ### ruby
 ### java:
-#### float: 32 bits, 4 bytes
-* float float_name = 1.123f;  // have 7 decimal digits
-* float float_name = (float) 1.123;
-#### double: 64 bits, 8 bytes
-* double double_name = 1.123d;  // have 16 decimal digits
-* double double_name = 1.123;
+```java
+// float: 32 bits, 4 bytes
+float float_name = 1.123f;  // have 7 decimal digits
+float float_name = (float) 1.123;
+
+// double: 64 bits, 8 bytes
+double double_name = 1.123d;  // have 16 decimal digits
+double double_name = 1.123;
+```
 ### c++
-#### float: 4 bytes
-* float float_name; float_name = 1.123;  // have 7 decimal digits
-* similar to the rest of int variable declaration
-#### double: 8 bytes
-* double double_name; double_name = 1.123;  // have 15 decimal digits
-* similar to the rest of int variable declaration
-#### long double: 12 bytes
-* long double double_name; double_name = 1.123;  // have 19 decimal digits
-* similar to the rest of int variable declaration
+```c++
+// float: 4 bytes
+float float_name;
+float_name = 1.123;  // have 7 decimal digits
+
+// similar to the rest of int variable declaration
+
+// double: 8 bytes
+double double_name;
+double_name = 1.123;  // have 15 decimal digits
+
+// similar to the rest of int variable declaration
+
+// long double: 12 bytes
+long double double_name;
+double_name = 1.123;  // have 19 decimal digits
+
+// similar to the rest of int variable declaration
+```
 ## Variable declaration: None values
 ### python 2 & 3
-* variable_name = None
+```pythong
+variable_name = None
+```
 ### javascript
-* undefined is reserved for variables whose values have not yet been set.
-    * let variable_name;  // variable_name = undefined
-* null is reserved for variables whose values are explicitly nothing — instead of just “not yet defined.”
-    * let variable_name2 = null;
-* NaN is a special numeric value meaning “Not a Number”
-    * let variable_name3 = NaN;
+```javascript
+// undefined is reserved for variables whose values have not yet been set.
+let variable_name; // undefined
+
+//null is reserved for variables whose values are explicitly nothing — instead of just “not yet defined.”
+let variable_name2 = null;
+
+// NaN is a special numeric value meaning “Not a Number”
+let variable_name3 = NaN;
+```
 ### ruby
-* variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
+```ruby
+variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
+```
 ### java
 ### c++
-
 ## Strings
 ### python 2 & 3
 ```python
@@ -294,32 +373,38 @@ puts variable_name  # symbolStringWithoutQuotes
 
 ```
 ### java
-#### character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
-* char char_name = 'a';
-* char char_name = '\u0061';  // unicode character for the letter a
-#### strings: must use double quotes ""
 ```java
+// character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
+char char_name = 'a';
+char char_name = '\u0061';  // unicode character for the letter a
+
+// strings: must use double quotes ""
 String string_name = "string";
 String string_name = "multi-line " +
                      "string";
 ```
 ### c++
-#### character: only have 1 character, must use single quotes ''
-* char char_name; char_name = 'a';
-* char char_name = 'a';
-* char char_name ('a');
-* char char_name {'a'};
-#### strings
-##### C-style strings: an ARRAY of characters, must use double quotes ""
-* THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
-* char * string_name = "string";
-* const char * string_name = "string";  // const is normally used
-* char string_name[] = "string";  // creates array of 7 chars, last char is null "\0"
-* char string_name[7] = "string";  // need give 7 slots for chars and null char
-* char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
-* char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
-##### C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 ```c++
+// character: only have 1 character, must use single quotes ''
+char char_name;
+char_name = 'a';
+
+char char_name = 'a';
+char char_name ('a');
+char char_name {'a'};
+
+// strings
+// C-style strings: an ARRAY of characters, must use double quotes ""
+// THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
+char * string_name = "string";
+const char * string_name = "string";  // const is normally used
+char string_name[] = "string";  // creates array of 7 chars, last char is null "\0"
+char string_name[7] = "string";  // need give 7 slots for chars and null char
+char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
+char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
+
+//C++ strings: must add at the top "#include＜string＞", must use double quotes ""
+#include＜string＞
 std::string string_name; string_name = "string";
 // back slash not required, but can use if want to
 std::string string_name = "multi-line"
@@ -488,7 +573,6 @@ puts string1 <=> string2  # 0
 * !  # not
 ### java
 ### c++
-
 ## Getting Input
 ### python 2
 ```python
@@ -511,7 +595,6 @@ name = gets.chomp
 ```
 ### java
 ### c++
-
 ## Bitwise Operators
 ### python 2 & 3
 ```python
@@ -582,7 +665,6 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ### ruby
 ### java
 ### c++
-
 ## Increment
 ### python 2 & 3
 * x = x + 1  # increment
