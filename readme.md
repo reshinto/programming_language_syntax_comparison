@@ -37,6 +37,7 @@
 - [Program Entry Point](#program-entry-point)
 - [Swapping values](#swapping-values)
 - [Error Handling](#error-handling)
+- [Custom Error](#custom-error)
 
 ## Interpreted Language
 * python, javascript, ruby
@@ -2647,8 +2648,26 @@ try {
 } catch(error) {
   doSomethingIfErrorOccurs;
 } finally {
-  doSomethingWhenTry&CatchIsCompleted;
+  doSomethingWhenTryAndCatchIsCompleted;
 }
+```
+### ruby
+### java
+### c++
+## Custom Error
+### python 2 & 3
+```python
+# raise generic exception
+raise Exception("custom message")
+
+# raise specific exception
+raise ValueError("custom message")
+```
+### javascript
+```javascript
+throw "custom message"; // throw a text
+
+throw 123; // throw a number
 ```
 ### ruby
 ### java
