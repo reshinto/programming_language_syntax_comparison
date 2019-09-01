@@ -2612,7 +2612,9 @@ b = temp;
 ### python 2 & 3
 * try: lets you test a block of code for errors
 * except: except block lets you handle the error
-  * define exception type
+  * covers all error types
+    > except:
+  * define exception type (can write multiple except statements)
     > except NameError:
   * save error to variable e
     > except ValueError as e:
@@ -2636,6 +2638,18 @@ finally:  # not required
     do_something_when_try_&_except_or_else_is_completed
 ```
 ### javascript
+* try: lets you test a block of code for errors
+* catch: lets you handle the error
+* finally: lets you execute code, after try and catch, regardless of the result
+```javascript
+try {
+  doSomething;
+} catch(error) {
+  doSomethingIfErrorOccurs;
+} finally {
+  doSomethingWhenTry&CatchIsCompleted;
+}
+```
 ### ruby
 ### java
 ### c++
