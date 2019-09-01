@@ -306,41 +306,44 @@ string_name4 = list(string_name)  # ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i'
 ```
 ### javascript ES5
 ```javascript
-var string_name = "string";
-var string_name = 'string';
+var stringName = "string";
+var stringName = 'string';
 // back slash required
-var string_name = "multi-line \
+var stringName = "multi-line \
 string";
     
-string_name.length;  // 6
+stringName.length;  // 6
 
 // Character unicode point
 string.charCodeAt(stringIndex)
 "abc".charCodeAt(1)  // 98
     
-string_name.split("").reverse().join("");  // "gnirts"
+stringName.split("").reverse().join("");  // "gnirts"
     
-string_name = string_name.toUpperCase();  // "GNIRTS"
-string_name = string_name.toLowerCase();  // "gnirts"
+stringName = stringName.toUpperCase();  // "GNIRTS"
+stringName = stringName.toLowerCase();  // "gnirts"
     
-string_name = string_name.charAt(0).toUpperCase() + string_name.slice(1);  // "Gnirts"
+stringName = stringName.charAt(0).toUpperCase() + stringName.slice(1);  // "Gnirts"
     
-// replace string with string, string_name.replace(old, new)
-string_name = string_name.replace("G", "xxx");  // "xxxnirts"
+// replace string with string, stringName.replace(old, new)
+stringName = stringName.replace("G", "xxx");  // "xxxnirts"
+
+// extract characters from a string, from start position to but not including end position
+newStringName = stringName.substring(1, 4); // "xxn"
     
 // Split string into arrays
-string_name = "test string"
-string_name1 = string_name.split()  // ["test string"]
-string_name2 = string_name.split("")  // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
-string_name3 = string_name.split("s")  // ["te", "t ", "tring"]
+stringName = "test string"
+stringName1 = stringName.split()  // ["test string"]
+stringName2 = stringName.split("")  // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
+stringName3 = stringName.split("s")  // ["te", "t ", "tring"]
 ```
 ### javascript ES6  // Almost all of ES5 are included in ES6
 ```javascript
 // back slash not required, but will produce a new line if not given
-var string_name = `multi-line \
+var stringName = `multi-line \
 string`;
-let string_name = "string";
-const string_name = "string";
+let stringName = "string";
+const stringName = "string";
 ```
 ### ruby
 ```ruby
@@ -375,42 +378,42 @@ puts variable_name  # symbolStringWithoutQuotes
 ### java
 ```java
 // character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
-char char_name = 'a';
-char char_name = '\u0061';  // unicode character for the letter a
+char charName = 'a';
+char charName = '\u0061';  // unicode character for the letter a
 
 // strings: must use double quotes ""
-String string_name = "string";
-String string_name = "multi-line " +
+String stringName = "string";
+String stringName = "multi-line " +
                      "string";
 ```
 ### c++
 ```c++
 // character: only have 1 character, must use single quotes ''
-char char_name;
-char_name = 'a';
+char charName;
+charName = 'a';
 
-char char_name = 'a';
-char char_name ('a');
-char char_name {'a'};
+char charName = 'a';
+char charName ('a');
+char charName {'a'};
 
 // strings
 // C-style strings: an ARRAY of characters, must use double quotes ""
 // THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
-char * string_name = "string";
-const char * string_name = "string";  // const is normally used
-char string_name[] = "string";  // creates array of 7 chars, last char is null "\0"
-char string_name[7] = "string";  // need give 7 slots for chars and null char
-char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
-char string_name[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
+char * stringName = "string";
+const char * stringName = "string";  // const is normally used
+char stringName[] = "string";  // creates array of 7 chars, last char is null "\0"
+char stringName[7] = "string";  // need give 7 slots for chars and null char
+char stringName[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
+char stringName[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
 
 //C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 #include＜string＞
-std::string string_name; string_name = "string";
+std::string stringName; stringName = "string";
 // back slash not required, but can use if want to
-std::string string_name = "multi-line"
+std::string stringName = "multi-line"
                           "string";
-std::string string_name ("string");
-std::string string_name {"string"};
+std::string stringName ("string");
+std::string stringName {"string"};
 ```
 ## Boolean
 ### python 2 & 3
