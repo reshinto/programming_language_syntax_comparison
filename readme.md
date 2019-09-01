@@ -1,4 +1,28 @@
 # PROGRAMMING LANGUAGE SYNTAX COMPARISON
+## Table of Contents
+- [Interpreted Language](#interpreted-language)
+- [Compiled Language](#compiled-language)
+- [Hello World](#hello-world)
+- [Comments](#comments)
+- [Variable declaration int](#variable-declaration-int)
+- [Variable declaration float](#variable-declaration-float)
+- [Variable declaration None](#variable-declaration-none)
+- [Strings](#strings)
+- [Boolean](#boolean)
+- [Arithmetic Operators](#arithmetic-operators)
+- [Comparison Operators](#comparison-operators)
+- [Logical Operators](#logical-operators)
+- [Getting Input](#getting-input)
+- [Bitwise Operators](#bitwise-operators)
+- [Increment](#increment)
+- [Arrays and Lists](#arrays-and-lists)
+- [Conditional Statement](#conditional-statement)
+- [Loops](#loops)
+- [Instantiation](#instantiation)
+- [Functions](#functions)
+- [Higher order functions](#higher-order-functions)
+- [Hash Tables](#hash-tables)
+
 ## Interpreted Language
 * python, javascript, ruby
 ## Compiled Language
@@ -80,7 +104,8 @@ multi-line comments
 multi-line comments
 */
 ```
-## Variable declaration: integer ...-2, -1, 0, 1, 2...
+## Variable declaration int
+* integer ...-2, -1, 0, 1, 2...
 ### python 2 
 ```python
 # int: -2147483648 ~ 2147483647
@@ -196,7 +221,8 @@ long long int long_name; long_name = 123;
 
 // similar to the rest of int variable declaration
 ```
-## Variable declaration: float, double
+## Variable declaration float
+* float, double
 ### python 2 & 3
 ```python
 float_name = 1.123
@@ -245,7 +271,7 @@ double_name = 1.123;  // have 19 decimal digits
 
 // similar to the rest of int variable declaration
 ```
-## Variable declaration: None values
+## Variable declaration None
 ### python 2 & 3
 ```pythong
 variable_name = None
@@ -703,7 +729,7 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
-## Arrays & Lists
+## Arrays and Lists
 ### python 2 & 3
 ```python
 # Empty list
@@ -1759,8 +1785,8 @@ puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 ### java
 ### c++
-
-## Hash Tables, Dictionaries, Objects
+## Hash Tables 
+* Hash Tables, Dictionaries, Objects
 ### python 2 & 3
 ```python
 # Create dictionary
