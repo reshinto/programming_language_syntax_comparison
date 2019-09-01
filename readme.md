@@ -283,18 +283,24 @@ len(string_name)  # 6
 # only accepts 1 character
 ord("b")  # 98
 
+# reverse string
 string_name = string_name[::-1]  # "gnirts"
 
 string_name = string_name.upper()  # "GNIRTS"
 string_name = string_name.lower()  # "gnirts"
 
+# capitalize string
 string_name = string_name.title()  # "Gnirts"
 
 # Replace string in string, string_name.replace(old, new, max)
 string_name = string_name.replace("G", "xxx")  # "xxxnirts"
 string_name = string_name.replace("x", "g", 1)  # "gxxnirts"
 
-# Split strings, string_name,split(separator, max)
+# string slicing
+# extract characters from a string, from start position to but not including end position
+new_string_name = string_name[1:4]  # "xxn"
+
+# Split strings, string_name.split(separator, max)
 string_name = string_name.split()  # ["gxxnirts"]  only works for string without spaces
 string_name = "test string"
 string_name1 = string_name.split()  # ["test", "string"]
@@ -311,20 +317,22 @@ var stringName = 'string';
 // back slash required
 var stringName = "multi-line \
 string";
-    
+
 stringName.length;  // 6
 
 // Character unicode point
 string.charCodeAt(stringIndex)
 "abc".charCodeAt(1)  // 98
-    
+
+// reverse string
 stringName.split("").reverse().join("");  // "gnirts"
-    
+
 stringName = stringName.toUpperCase();  // "GNIRTS"
 stringName = stringName.toLowerCase();  // "gnirts"
-    
+
+// capitalize string
 stringName = stringName.charAt(0).toUpperCase() + stringName.slice(1);  // "Gnirts"
-    
+
 // replace string with string, stringName.replace(old, new)
 stringName = stringName.replace("G", "xxx");  // "xxxnirts"
 
