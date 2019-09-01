@@ -1851,7 +1851,7 @@ let newObj2 = Object.create(newObj);  // method 1
 let newObj2 = Object.assign({}, newObj);  // method 2
 
 // Assign and Reassign values
-newObj["key1"] = "newString";  // method 1
+newObj["key1"] = "newString";  // method 1, bracket notation
 newObj.key1 = "newString2";  // method 2, dot notation
 
 // Copy the values of all enumerable own properties from one or more source objects to a target object
