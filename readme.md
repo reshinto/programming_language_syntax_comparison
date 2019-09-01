@@ -586,6 +586,11 @@ input(xxx)
 input("What's your name?")
 ```
 ### javascript
+```javascript
+// install readline-sync package locally via npm i readline-sync
+var readlineSync = require('readline-sync');
+var getInput = readlineSync.question("What's your name?");
+```
 ### ruby
 ```ruby
 # print question
