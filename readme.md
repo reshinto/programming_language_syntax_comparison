@@ -22,6 +22,17 @@
 - [Functions](#functions)
 - [Higher order functions](#higher-order-functions)
 - [Hash Tables](#hash-tables)
+- [Destructuring](#destructuring)
+- [Spread Operator](#spread-operator)
+- [Rest parameters](#rest-parameters)
+- [Class](#class)
+- [Importing Libraries](#importing-libraries)
+- [Type Conversions](#type-conversions)
+- [Find Data Type](#find-data-type)
+- [String Concatenation](#string-concatenation)
+- [JSON](#json)
+- [Program Entry Point](#program-entry-point)
+- [Swapping values](#swapping-values)
 
 ## Interpreted Language
 * python, javascript, ruby
