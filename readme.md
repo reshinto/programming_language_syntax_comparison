@@ -2736,20 +2736,11 @@ throw 123; // throw a number
 ### java
 ### c++
 ## Asynchronous
+* Handling asynchronous code (making it synchronous)
 ### python
 ### javascript ES5
 ```javascript
-// setTimeout
 var posts = [{title: "Post 1", body: "body of post 1"}, {title: "Post 2", body: "body of post 2"}];
-function getPosts() {
-  setTimeout(() => {
-    var output = "";
-    posts.forEach((post, index) => {
-      output += post.title;
-    });
-    console.log(output);
-  }, 1000);
-}
 
 // callback is required if need getPost to display data after createPost is called
 // reason is because createPost takes longer time to complete compared to getPost
@@ -2759,11 +2750,35 @@ function createPost(post, callback) {
     callback();
   }, 2000);
 }
+
+// method 1
+// callback function
+function getPosts() {
+  setTimeout(() => {
+    var output = "";
+    posts.forEach((post, index) => {
+      output += post.title;
+    });
+    console.log(output);
+  }, 1000);
+}
 createPost({title: "Post 3", body: "body of post 3"}, getPosts);
+
+// method 2:
+// Using anonymous callback function can lead to callback hell if over used
+createPost({title: "Post 3", body: "body of post 3"}, function() {
+  setTimeout(() => {
+    var output = "";
+    posts.forEach((post, index) => {
+      output += post.title;
+    });
+    console.log(output);
+  }, 1000);
+});
 ```
 ### javascript ES6
 ```javascript
-// Promise
+// Change createPost to return a Promise
 function createPost(post) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -2777,13 +2792,13 @@ function createPost(post) {
   });
 }
 
-// method 1
+// method 3
 // use .then() instead of callback
 createPost({title: "Post 3", body: "body of post 3"})
 .then(getPosts)
 .catch(error => console.log(error));
 
-// method 2
+// method 4
 // use Promise.all
 Promise.all([
   createPost({title: "Post 3", body: "body of post 3"}),
@@ -2795,6 +2810,7 @@ Promise.all([
 ```
 ### javascript ES8
 ```javascript
+// method 5
 // use async / await when calling functions
 async function init() {
   await createPost({title: "Post 3", body: "body of post 3"});
