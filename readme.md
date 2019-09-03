@@ -2739,21 +2739,69 @@ throw 123; // throw a number
 ### python
 ### javascript ES5
 ```javascript
-// callback example
-function sendMessage(message, callback) {
-  return callback(message);
+// setTimeout
+var posts = [{title: "Post 1", body: "body of post 1"}, {title: "Post 2", body: "body of post 2"}];
+function getPosts() {
+  setTimeout(() => {
+    var output = "";
+    posts.forEach((post, index) => {
+      output += post.title;
+    });
+    console.log(output);
+  }, 1000);
 }
-sendMessage("Message for console", console.log); // "Message for console"
 
-// callback with anonymous functions
-function greet(name, formatName) {
-  return `Hello ${formatName(name)}`;
+// callback is required if need getPost to display data after createPost is called
+// reason is because createPost takes longer time to complete compared to getPost
+function createPost(post, callback) {
+  setTimeout(() => {
+    posts.push(post);
+    callback();
+  }, 2000);
 }
-console.log(greet("tim", function(name){
-  return name.toUpperCase();
-}); // "TIM"
+createPost({title: "Post 3", body: "body of post 3"}, getPosts);
 ```
 ### javascript ES6
+```javascript
+// Promise
+function createPost(post) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (post) {
+        posts.push(post)
+        resolve();
+      } else {
+        reject("error")
+      }
+    }, 2000);
+  });
+}
+
+// method 1
+// use .then() instead of callback
+createPost({title: "Post 3", body: "body of post 3"})
+.then(getPosts)
+.catch(error => console.log(error));
+
+// method 2
+// use Promise.all
+Promise.all([
+  createPost({title: "Post 3", body: "body of post 3"}),
+]) // can chain multiple promises
+.then(values => {
+  getPosts();
+  console.log(values) // output array of results e.g [promise1_output, promise2_output, ...]
+});
+```
+### javascript ES8
+```javascript
+// use async / await when calling functions
+async function init() {
+  await createPost({title: "Post 3", body: "body of post 3"});
+  getPosts();
+}
+init();
+```
 ### ruby
 ### java
 ### c++
