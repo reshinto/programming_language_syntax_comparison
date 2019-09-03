@@ -929,8 +929,11 @@ list_name = [1, "one", True]
 # Nested lists
 list_name = [1, ["two", 3]]
     
-// Add element to list (left to right)
+# Add element to list (left to right)
+# method 1
 list_name.push(element);
+# method 2
+list_name << element;
     
 # Add 0 to 10 to an array
 (0..10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -2573,6 +2576,8 @@ let stringName = `${string1} ${string2} 123`;  // "string 1 value string 2 value
 string1 = "string1"
 string2 = "string2"
 string_name = "#{string1} #{string2}"  # "string1 string2"
+
+string_name << "string 3"  # "string1 string2string3"
 
 # to_s: numbers need to be converted to a string to be concatenated
 puts "one" + 1.to_s  # "one1"
