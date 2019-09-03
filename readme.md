@@ -1428,21 +1428,25 @@ end
 
 # Each Iterator
 array = [1, 2, 3, 4, 5]
-array.each { |value]  # Method 1: using {}
-    element += 10
+array2 = []
+array.each { |value|  # Method 1: using {}
+    value += 10
+    array2.push(value)
 }
-puts array  # [11, 12, 13, 14, 15]
+puts array2  # [11, 12, 13, 14, 15]
 
-array.each do |value]  # Method 2: using do keyword
-    element -= 10
+array3 = []
+array2.each do |value|  # Method 2: using do keyword
+    value -= 10
+    array3.push(value)
 end
-puts array  # [1, 2, 3, 4, 5]
+puts array3  # [1, 2, 3, 4, 5]
 
 # Iterating over Multidimensional Arrays with Each Iterator
 multiArray = [[1, 2], [3, 4], [5, 6]]
 multiArray.each { 
     |sub_array| sub_array.each { 
-        [element| do_something
+        |value| do_something
     }
 }
 
@@ -1695,7 +1699,6 @@ myFunction.call  # "test", call is required to call the lambda function
 ```
 ### java
 ### c++
-
 ## Higher order functions
 ### python 2
 ```python
