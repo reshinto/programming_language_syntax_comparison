@@ -487,6 +487,8 @@ std::string stringName ("string");
 ### ruby
 * boolean_name = true
 * boolean_name = false
+* truthy: true, 0, 1, -1, "", 
+* falsey: false, nil
 ### java
 * boolean boolean_name = true;
 * boolean boolean_name = false;
