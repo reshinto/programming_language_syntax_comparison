@@ -2795,14 +2795,14 @@ function createPost(post) {
 // method 3
 // use .then() instead of callback
 createPost({title: "Post 3", body: "body of post 3"})
-.then(getPosts)
+.then(getPosts) // can chain multiple promises by adding .then(do_something)
 .catch(error => console.log(error));
 
 // method 4
 // use Promise.all
-Promise.all([
+Promise.all([ // can chain multiple promises
   createPost({title: "Post 3", body: "body of post 3"}),
-]) // can chain multiple promises
+])
 .then(values => {
   getPosts();
   console.log(values) // output array of results e.g [promise1_output, promise2_output, ...]
