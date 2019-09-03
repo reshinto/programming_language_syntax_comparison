@@ -1146,7 +1146,17 @@ object.empty?  # if object == [] or {} or "" or Set.new, return true
 
 
 # Ternary operator
-condition_a ? do_A : do_B;
+condition_a ? (do_A) : (do_B);
+# example 1
+puts true ? "yes" : "no"
+# example 2
+true ? (puts "yes") : (puts "no")
+
+# Simpler if
+do_A if condition_a
+
+# One line Unless
+do_A unless condition_a  # do_A if condition_a is false
 
 
 # Case expression (similar to switch statement)
@@ -1158,6 +1168,14 @@ when choice_B:
 else
     do_something_else
 end
+
+
+# Conditional Assignment: assign only if variable is nil
+favorite_book = nil
+favorite_book ||= "book 1"
+puts favorite_book # "book 1"
+favorite_book ||= "book 2"
+puts favorite_book # "book 1"
 ```
 ### java
 ```java
