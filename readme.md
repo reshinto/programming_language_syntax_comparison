@@ -1573,8 +1573,8 @@ t = new Thing();  // instantiation
 ```
 ### ruby
 ```ruby
-t = thing  # instantiation
-t = thing(argument)  # instantiation with arguments
+t = thing.new  # instantiation
+t = thing.new(argument)  # instantiation with arguments
 ```
 ### java
 ```java
@@ -2371,22 +2371,37 @@ console.log(MathClass.outterAdd(4, 5));  // 9
 
 // Case 2: event handlers in React
 class MathClass {
-  constructor(arg1, arg2) {
-    this.arg1 = arg1;
-    this.arg2 = arg2;
+  constructor() {
+    this.arg1 = 2;
+    this.arg2 = 4;
     this.innerAdd = this.innerAdd.bind(this);  // this is required to prevent TypeError
   }
   
   innerAdd(arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
-  const test = new MathClass(2, 4);
-  console.log(test.innerAdd(2));  // 6
-  // event handlers in React does this (not React fault, caused by "this" binding in javascript)
-  const showResults = test.innerAdd;
-  console.log(showResults(2));  // return a TypeError due to wrong "this" reference, bind is required
+}
+const test = new MathClass();
+console.log(test.innerAdd(2));  // 8
 ```
 ### ruby
+```ruby
+class MathClass
+  # constructor
+  def initialize(arg1, arg2)
+    @arg1 = arg1
+    @arg2 = arg2
+  end
+  
+  def innerAdd(arg3)
+    return @arg1 + @arg2 + arg3
+  end
+end
+
+# Instantiation
+test = MathClass.new(2, 4)
+puts test.innerAdd(2)
+```
 ### java
 ### c++
 ## Importing Libraries
