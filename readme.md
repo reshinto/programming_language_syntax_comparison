@@ -1562,6 +1562,7 @@ t = new Thing();  // instantiation
 ```
 ## Functions
 ### python 2 & 3
+* Function returns None by default if return statement is not declared
 ```python
 # Normal function, use return to return values
 def myFunction():
@@ -1581,6 +1582,7 @@ myFunction = lambda a : do_something_with_a
 myFunction = lambda a, b : do_something_with_a_and_b
 ```
 ### javascript ES5
+* Function returns undefined by default if return statement is not declared
 ```javascript
 // Normal function, use return to return values
 function myFunction() {
@@ -1638,6 +1640,8 @@ function myFunction(a=value) {
 }
 ```
 ### ruby
+* Function returns result regardless of whether return statement is declared or not
+  * Reason: ruby applies Implicit Return feature
 ```ruby
 # Normal function, use return to return values
 def myFunction
