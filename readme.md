@@ -2393,7 +2393,11 @@ var mn = require("moduleName").moduleName;
 export default objectName;  // exporting a single or nested functions or class
 
 // {} must be used when importing
-export functionName;  // export only 1 class or function (can be used for importing multiple functions or classes
+// method 1
+export {functionName};  // export only 1 class or function (can be used for importing multiple functions or classes
+// method 2, can be function, class, objects, etc.
+export const functionName = () => {do_something}
+
 
 // import class or function from module
 import "moduleName";  // import module
