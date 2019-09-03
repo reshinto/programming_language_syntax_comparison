@@ -2524,6 +2524,7 @@ puts 1.23.class  # Float
 puts true.class  # TrueClass
 puts false.class  # FalseClass
 puts nil.class  # NilClass
+puts [1, 2].class # Array
 hashName = Hash.new()
 puts hashName.class  # Hash
 class Myclass
@@ -2535,6 +2536,9 @@ puts Myclass.class  # Class
 
 # Get id of object
 puts "string".object_id  # 2343215, some random number where object is stored in memory
+
+# check if object is the correct type, obj.is_a? data_type
+[1, 2].is_a? Array  # true
 ```
 ### java
 ### c++
