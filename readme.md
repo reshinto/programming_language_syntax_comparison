@@ -1452,6 +1452,15 @@ multiArray.each {
 
 # Times Iterator
 n.times { do_this }  # do_this will repeat n times
+
+# Upto Iterator
+# method 1: number
+0.upto(5) { |num| print num, " " }  # 0 1 2 3 4 5
+# method 2: alphabet
+"A".upto("D") { |letter| prints letter, " " }  # A B C D
+
+# Downto Iterator, "string" don't work
+100.downto(95) { |num| print num, " " }  # 100 99 98 97 96 95
 ```
 ### java
 ```java
