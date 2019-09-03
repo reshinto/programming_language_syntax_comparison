@@ -489,6 +489,14 @@ std::string stringName ("string");
 * boolean_name = false
 * truthy: true, 0, 1, -1, "", 
 * falsey: false, nil
+* Check if method exist
+  * obj.respond_to?(:method)
+    * example 1
+      > [1, 2, 3].respond_to?(:push)  # true
+    * example 2
+      > 123.respond_to?(:next)  # true
+    * example 3: false because array can't be turned into a symbol
+      > [1, 2, 3].respond_to?(:to_sym) # false
 ### java
 * boolean boolean_name = true;
 * boolean boolean_name = false;
@@ -2138,7 +2146,6 @@ grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
 ### c++
-
 ## Destructuring
 ### python 2 & 3
 ```python
@@ -2173,7 +2180,6 @@ const {xKey: xNewKey, yKey: yNewKey} = obj;
 ### ruby
 ### java
 ### c++
-
 ## Spread Operator
 ### python 2 & 3
 ```python
@@ -2207,7 +2213,6 @@ let totalArr = [...arr1, ...arr2];
 ### ruby
 ### java
 ### c++
-
 ## Rest parameters
 ### python 2 & 3
 ```python
@@ -2240,7 +2245,6 @@ end
 ```
 ### java
 ### c++
-
 ## Class
 ### python 2
 ``` python
@@ -2382,7 +2386,6 @@ class MathClass {
 ### ruby
 ### java
 ### c++
-
 ## Importing Libraries
 ### python 2 & 3
 ```python
@@ -2447,7 +2450,6 @@ import name, {function1} from "/modules/path/moduleName"; // function1 can be us
 ### ruby
 ### java
 ### c++
-
 ## Type Conversions
 ### python 2 & 3
 ```python
@@ -2487,7 +2489,6 @@ set(type_to_convert)  # cannot be a number
 ```
 ### java
 ### c++
-
 ## Find Data Type
 ### python 2 & 3
 ```python
@@ -2534,7 +2535,6 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 ```
 ### java
 ### c++
-
 ## String Concatenation
 ### python 2
 ```python
@@ -2579,7 +2579,6 @@ puts "one" + 1.to_s  # "one1"
 ```
 ### java
 ### c++
-
 ## JSON
 ### python 2 & 3
 ```python
@@ -2606,7 +2605,6 @@ objName = JSON.parse(objName);
 ### ruby
 ### java
 ### c++
-
 ## Program Entry Point
 ### python 2 & 3
 ```python
@@ -2623,7 +2621,6 @@ if (require.main === module) {
 ### ruby
 ### java
 ### c++
-
 ## Swapping values
 ### python 2 & 3
 ```python
