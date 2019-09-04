@@ -1392,8 +1392,8 @@ for (let index in list_name) {
 }
 // For in loop normally used to get values from objects (hash table, dictionaries) than to arrays
 // object = {key1:value1, key2:value2,...}
-for (let index in object) {
-    console.log(object[index]);  // outputs value, normally calling this way will not output value from objects
+for (let key in object) {
+    console.log(object[key]);  // outputs value, normally calling this way will not output value from objects
 }
 ```
 ### ruby
