@@ -767,26 +767,34 @@ list_name = [1, "one", True]
 # Nested lists
 list_name = [1, ["two", 3]]
 
+
+# Find list size
+len(list_name)
+
+
+# Get index of element, return ValueError if element does not exist
+list_name.index(element)
+
+
 # Add element to list (left to right)
 list_name.append(element)
-
-# Modify an element
-list_name[index] = element
-
-# Access an element
-list_name[index]
-
-# Remove element from list (right to left)
-list_name.pop()
 
 # Add element to list at index
 list_name.insert(index, element)
 
+
+# Access an element
+list_name[index]
+
+# Modify an element
+list_name[index] = element
+
+
+# Remove element from list (right to left)
+list_name.pop()
+
 # Remove element from list at index
 list_name.pop(index)
-
-# Find list size
-len(list_name)
 
 # Method 1: remove all elements
 del list_name[:]
@@ -795,39 +803,54 @@ list_name = []
 # Method 3: remove all elements, only in python 3
 list_name.clear()
 
-# Get index of element, return ValueError if element does not exist
-list_name.index(element)
 
 Slice notation
 # items start through stop-1
 list_name[start:stop]
+
 # items start through the rest of the array
 list_name[start:]
+
 # items from the beginning through stop-1
 list_name[:stop]
+
 # a copy of the whole array
 list_name[:]
+
 # start through not past stop, by step
 list_name[start:stop:step]
 list_name = [1, 2, 3, 4, 5]
 list_name[::2]  # [1, 3, 5]
+
 # last item in the array
 list_name[-1]
+
 # last two items in the array
 list_name[-2:]
+
 # everything except the last two items
 list_name[:-2]
+
 # all items in the array, reversed
 list_name[::-1]
+
 # the first two items, reversed
 list_name[1::-1]
+
 # the last two items, reversed
 list_name[:-3:-1]
+
 # everything except the last two items, reversed
 list_name[-3::-1] 
 
+
+# Reverse an array
+list_name.reverse()
+
+
 # Merge 2 or more arrays together
 new_list = list_name + list_name2
+
 
 # Sort an array in ascending order
 list_name = [2, 3, 1, 4]
@@ -836,14 +859,21 @@ list_name2 = sorted(list_name)  # [1, 2, 3, 4]
 # method 2
 list_name.sort()  # [1, 2, 3, 4]
 
+# sort an array of dictionaries in ascending order
+dict_name = [{"key_name": value1}, {"key_name": value2}]
+# sort by value
+dict_name2 = sorted(dict_name, key=lambda k: k["key_name"])
+
+
 # Sort an array in descending order
 # method 1
 list_name2 = sorted(list_name2, reverse=True)  # [4, 3, 2, 1]
 # method 2
 list_name.sort(reverse=True)  # [4, 3, 2, 1]
 
-# Reverse sort an array
-list_name.reverse()  # [4, 3, 2, 1]
+# sort an array of dictionaries in descending order
+# sort by value
+dict_name2 = sorted(dict_name, key=lambda k: k["key_name"], reverse=True)
 ```
 ### javascript
 ```javascript
