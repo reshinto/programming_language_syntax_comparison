@@ -836,6 +836,12 @@ list_name2 = sorted(list_name)  # [1, 2, 3, 4]
 # method 2
 list_name.sort()  # [1, 2, 3, 4]
 
+# Sort an array in descending order
+# method 1
+list_name2 = sorted(list_name2, reverse=True)  # [4, 3, 2, 1]
+# method 2
+list_name.sort(reverse=True)  # [4, 3, 2, 1]
+
 # Reverse sort an array
 list_name.reverse()  # [4, 3, 2, 1]
 ```
