@@ -1390,6 +1390,12 @@ while (i<5) {  // Start from 0 to 4
     continue;  // Goes to the top of the closest enclosing loop
 }
 
+// Do While loop
+var i = 0;
+do {
+  do_this;
+  i++;
+} while (i<5);
 
 // For loop
 for (var i=0; i<5; i++) {  // Start from 0 to 4
