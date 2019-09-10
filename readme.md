@@ -1165,7 +1165,7 @@ switch(choice) {
 // comparing between 2 objects (array, object, etc.) is NOT allowed
 var x = [1, 2, 3]
 var y = [1, 2, 3]
-x === y ? true : false;  # returns false
+x === y ? true : false;  // returns false
 // solution: use JSON.stringify()
 JSON.stringify(x) === JSON.stringify(y) ? true : false  // return true
 ```
