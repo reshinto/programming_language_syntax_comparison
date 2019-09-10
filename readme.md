@@ -1127,6 +1127,12 @@ def switch(choice):
         2: do_B,
     }
     case.get(choice, do_something_else)
+    
+ 
+# comparing between 2 objects (array, dictionaries, etc.) is allowed
+x = [1, 2, 3]
+y = [1, 2, 3]
+x == y  # returns True
 ```
 ### javascript
 ```javascript
@@ -1155,6 +1161,13 @@ switch(choice) {
     default:
         do_something_else;
 }
+
+// comparing between 2 objects (array, object, etc.) is NOT allowed
+var x = [1, 2, 3]
+var y = [1, 2, 3]
+x === y ? true : false;  # returns false
+// solution: use JSON.stringify()
+JSON.stringify(x) === JSON.stringify(y) ? true : false  // return true
 ```
 ### ruby
 ```ruby
