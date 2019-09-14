@@ -541,6 +541,7 @@ std::string stringName ("string");
 * division: 3.0/2  # output 1.5, 3/2 output 1
 * modulus: %
 * exponent: **
+* floor division: 3/2.floor
 ### java
 * addition: +
 * subtraction: -
@@ -1005,10 +1006,22 @@ list_name1 = list_name.sort  # [1, 2, 3, 4]
 list_name.sort!  # [1, 2, 3, 4]
 # Reverse sort an array, only works on already sorted array
 # arrays that are not sorted will be reversed without sorting
-# method 1
+# method 1 (modify list_name temporarily)
 list_name1 = list_name.reverse  # [4, 3, 2, 1]
-# method 2
+# method 2 (directly modify list_name)
 list_name.reverse!
+
+# Modifies every value in an array
+# (modify list_name temporarily)
+# method 1
+list_name2 = list_name.collect {|num| num * 2}  # [8, 6, 4, 2]
+# method 2
+list_name2 = list_name.map {|num| num * 2}  # [8, 6, 4, 2]
+# (directly modify list_name)
+# method 1
+list_name.collect! {|num| num * 2}  # [8, 6, 4, 2]
+# method 2
+list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ```
 ### java
 ```java
@@ -1751,6 +1764,7 @@ def myFunction
     do_something
 end
 
+
 # Normal function with parameters
 def myFunction(parameter)
     do_something
@@ -1760,6 +1774,7 @@ end
 def myFunction(a=value)
     do_something_with_a
 end
+
 
 # Blocks: nameless methods, similar to anonymous functions in JavaScript or lambdas in Python
 # can replace "do" and "end" with {}
@@ -1771,6 +1786,7 @@ end
 # blocks way
 arrayName.each { |num| do_something_with_num }
 
+
 # 2nd type: Yield
 def myFunction
     yield  # can have multpile yield
@@ -1779,10 +1795,11 @@ end
 myFunction { print "test" }  # "testtest"
 
 def myFunction
-    yield 1  # can pass any number of arguments to yield
-    yield 2
+    yield(1)  # can pass any number of arguments to yield
+    yield 2  # () is not a must
 end
 myFunction { |num| print num * 10 }  # 1020
+
 
 # Explicit Blocks
 def myFunction(&blockName)  # & is used to define the block's name
@@ -1790,9 +1807,27 @@ def myFunction(&blockName)  # & is used to define the block's name
 end
 myFunction { print "test" }  # "test"
 
+
 # Lambda
+# lambda checks the number of arguments passed to it
+# when a lambda returns, it passes control back to the calling method
+# method 1
 myFunction = -> { puts "test" }
 myFunction.call  # "test", call is required to call the lambda function
+
+# method 2
+myFunction = lambda { puts "test" }
+myFunction.call
+
+
+# Procs: a saved block
+# it is a full-fledged objects, so they have all the powers and abilities of objects (blocks do not)
+# Unlike blocks, procs can be called over and over without rewriting them
+# procs does not checks the number of arguments passed to it
+# when a proc returns, it does so immediately, without going back to the calling method
+blockName = Proc.new do |n|
+    do_something_with_n
+end
 ```
 ### java
 ### c++
@@ -2589,6 +2624,14 @@ set(type_to_convert)  # cannot be a number
 
 # String to integer
 "123".to_i  # 123
+
+# array of strings to array of integers
+strings = ["1", "2", "3"]
+nums = strings.map(&:to_i)  # [1, 2, 3]
+
+# array of integers to array of strings
+nums = [1, 2, 3]
+strings = nums.map(&:to_s)
 ```
 ### java
 ### c++
