@@ -2918,6 +2918,60 @@ init();
 ## Language Specific
 ### python
 ### javascript
+* Explicit Binding
+  * choose what we want the context of "this" to be by using call, apply or bind
+  * by refering to the call, apply, or bind methods, you can determine the value of "this"
+  * can only be used on FUNCTIONS
+```javascript
+/*
+NAME OF METHOD  | PARAMETERS                | INVOKE IMMEDIATELY?
+    CALL        |   thisArg,a,b,c,...       |       Yes
+    APPLY       |   thisArg,[a,b,c,...]     |       Yes
+    BIND        |   thisArg,a,b,c,...       |       No
+
+CALL args can be set to anything and can have infinite arguments, function is immediately invoked
+APPLY only takes 2 args, the 2nd arg is an array of infinite arguments, function is immediately invoked
+BIND can have infinite arguments, and is a method that returns a function definition
+*/
+var foo = {
+  firstName: "Foo",
+  say: function() {
+    return "Hi " + this.firstName;
+  },
+  add: function(a, b, c) {
+    return this.firstName + " just calculated " + (a + b + c);
+  }
+}
+var bar = {
+  firstName: "Bar"
+}
+// Call: allow this to be referenced to bar instead of foo, all arguments must not be undefined
+foo.say() // returns "Hi Foo"
+foo.say.call(bar) // returns "Hi Bar"
+foo.add.call(bar, 1, 2, 3); // returns "Bar just calculated 6"
+
+// Apply: simlar to Call for the 1st argument, 2nd argument has to be an array of values, all arguments must not be undefined
+foo.say.apply(bar) // returns "Hi Bar"
+foo.add.apply(bar, [1, 2, 3]); // returns "Bar just calculated 6"
+
+// Bind: returns the function, then requires it to be called
+// all agruments need not be defined upfront, but must provide remaining arguments when calling
+var say = foo.say.bind(bar);
+say(); // returns "Hi Bar"
+var add = foo.add.bind(bar, 1, 2);
+add(3); // returns "Bar just calculated 6"
+
+// Bind is commonly used when dealing with asynchronous code
+var foo = {
+  firstName: "Foo",
+  say: function() {
+    setTimeout(function() {
+      console.log("Hi " + this.firstName;
+    }.bind(this), 1000);
+  }
+}
+foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
+```
 ### ruby
 ### java
 ### c++
