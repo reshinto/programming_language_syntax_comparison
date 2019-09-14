@@ -39,6 +39,7 @@
 - [Error Handling](#error-handling)
 - [Custom Error](#custom-error)
 - [Asynchronous](#asynchronous)
+- [Language Specific](#language-specific)
 
 ## Interpreted Language
 * python, javascript, ruby
@@ -2873,6 +2874,12 @@ async function init() {
 }
 init();
 ```
+### ruby
+### java
+### c++
+## Language Specific <a href="Table of Contents">[back to top]</a>
+### python
+### javascript
 ### ruby
 ### java
 ### c++
