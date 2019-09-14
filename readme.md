@@ -512,6 +512,7 @@ std::string stringName ("string");
 * bool boolean_name = false;  // produces a 0 output
 * bool boolean_name (true);
 * bool boolean_name {false};
+
 [back to top](#table-of-contents)
 ## Arithmetic Operators
 ### python 2
@@ -558,6 +559,7 @@ std::string stringName ("string");
     * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  // output 1
+
 [back to top](#table-of-contents)
 ## Comparison Operators
 ### python 2 & 3
@@ -624,6 +626,7 @@ puts string1 <=> string2  # 0
 * ＜
 * ＞=
 * ＜=
+
 [back to top](#table-of-contents)
 ## Logical Operators
 ### python 2 & 3
@@ -770,6 +773,7 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+
 [back to top](#table-of-contents)
 ## Arrays and Lists
 ### python 2 & 3
