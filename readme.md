@@ -81,6 +81,7 @@ int main()
     return 0;
 }
 ```
+[back to top](#table-of-contents)
 ## Comments
 ### python 2 & 3
 ```python
@@ -122,6 +123,7 @@ multi-line comments
 multi-line comments
 */
 ```
+[back to top](#table-of-contents)
 ## Variable declaration int
 * integer ...-2, -1, 0, 1, 2...
 ### python 2 
@@ -239,6 +241,7 @@ long long int long_name; long_name = 123;
 
 // similar to the rest of int variable declaration
 ```
+[back to top](#table-of-contents)
 ## Variable declaration float
 * float, double
 ### python 2 & 3
@@ -289,6 +292,7 @@ double_name = 1.123;  // have 19 decimal digits
 
 // similar to the rest of int variable declaration
 ```
+[back to top](#table-of-contents)
 ## Variable declaration None
 ### python 2 & 3
 ```pythong
@@ -311,6 +315,7 @@ variable_name = nil  # nil is returned when no values are assigned, but nothing 
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Strings
 ### python 2 & 3
 ```python
@@ -468,6 +473,7 @@ std::string stringName = "multi-line"
                           "string";
 std::string stringName ("string");
 ```
+[back to top](#table-of-contents)
 ## Boolean
 ### python 2 & 3
 * boolean_name = True
@@ -506,6 +512,7 @@ std::string stringName ("string");
 * bool boolean_name = false;  // produces a 0 output
 * bool boolean_name (true);
 * bool boolean_name {false};
+[back to top](#table-of-contents)
 ## Arithmetic Operators
 ### python 2
 * addition: +
@@ -551,6 +558,7 @@ std::string stringName ("string");
     * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  // output 1
+[back to top](#table-of-contents)
 ## Comparison Operators
 ### python 2 & 3
 * ==  # condition is True if both operand have equal contents
@@ -616,6 +624,7 @@ puts string1 <=> string2  # 0
 * ＜
 * ＞=
 * ＜=
+[back to top](#table-of-contents)
 ## Logical Operators
 ### python 2 & 3
 * and
@@ -639,6 +648,7 @@ puts string1 <=> string2  # 0
 * !  # not
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Getting Input
 ### python 2
 ```python
@@ -666,6 +676,7 @@ name = gets.chomp
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Bitwise Operators
 ### python 2 & 3
 ```python
@@ -736,6 +747,7 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Increment
 ### python 2 & 3
 * x = x + 1  # increment
@@ -758,6 +770,7 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+[back to top](#table-of-contents)
 ## Arrays and Lists
 ### python 2 & 3
 ```python
@@ -1105,6 +1118,7 @@ int_vector.resize(length_of_desired_array);
 // Remove all elements
 int_vector.clear();
 ```
+[back to top](#table-of-contents)
 ## Conditional Statement
 ### python 2 & 3
 ```python
@@ -1315,6 +1329,7 @@ switch(choice) {
         do_something_else;
 }
 ```
+[back to top](#table-of-contents)
 ## Loops
 ### python 2
 ```python
@@ -1617,6 +1632,7 @@ for (auto value : array_name) {
 for (;;)
     cout << "This will print forever" << endl;
 ```
+[back to top](#table-of-contents)
 ## Instantiation
 ### python 2 & 3
 ```python
@@ -1642,6 +1658,7 @@ t = new Thing();  // instantiation
 v = getValue();  // plain function
 t = new Thing();  // instantiation
 ```
+[back to top](#table-of-contents)
 ## Functions
 ### python 2 & 3
 * Function returns None by default if return statement is not declared
@@ -1775,6 +1792,7 @@ myFunction.call  # "test", call is required to call the lambda function
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Higher order functions
 ### python 2
 ```python
@@ -1906,6 +1924,7 @@ puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Hash Tables 
 * Hash Tables, Dictionaries, Objects
 ### python 2 & 3
@@ -2205,6 +2224,7 @@ grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Destructuring
 ### python 2 & 3
 ```python
@@ -2239,6 +2259,7 @@ const {xKey: xNewKey, yKey: yNewKey} = obj;
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Spread Operator
 ### python 2 & 3
 ```python
@@ -2272,6 +2293,7 @@ let totalArr = [...arr1, ...arr2];
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Rest parameters
 ### python 2 & 3
 ```python
@@ -2304,6 +2326,7 @@ end
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Class
 ### python 2
 ``` python
@@ -2460,6 +2483,7 @@ puts test.innerAdd(2)
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Importing Libraries
 ### python 2 & 3
 ```python
@@ -2524,6 +2548,7 @@ import name, {function1} from "/modules/path/moduleName"; // function1 can be us
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Type Conversions
 ### python 2 & 3
 ```python
@@ -2563,6 +2588,7 @@ set(type_to_convert)  # cannot be a number
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Find Data Type
 ### python 2 & 3
 ```python
@@ -2613,6 +2639,7 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## String Concatenation
 ### python 2
 ```python
@@ -2659,6 +2686,7 @@ puts "one" + 1.to_s  # "one1"
 ```
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## JSON
 ### python 2 & 3
 ```python
@@ -2685,6 +2713,7 @@ objName = JSON.parse(objName);
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Program Entry Point
 ### python 2 & 3
 ```python
@@ -2701,6 +2730,7 @@ if (require.main === module) {
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Swapping values
 ### python 2 & 3
 ```python
@@ -2728,6 +2758,7 @@ b = temp;
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Error Handling
 ### python 2 & 3
 * try: lets you test a block of code for errors
@@ -2773,6 +2804,7 @@ try {
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Custom Error
 ### python 2 & 3
 ```python
@@ -2791,6 +2823,7 @@ throw 123; // throw a number
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
 ## Asynchronous
 * Handling asynchronous code (making it synchronous)
 ### python
@@ -2884,3 +2917,4 @@ init();
 ### ruby
 ### java
 ### c++
+[back to top](#table-of-contents)
