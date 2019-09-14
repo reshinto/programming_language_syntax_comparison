@@ -2877,7 +2877,8 @@ init();
 ### ruby
 ### java
 ### c++
-## Language Specific <a href="Table of Contents">[back to top]</a>
+[back to top](#table-of-contents)
+## Language Specific
 ### python
 ### javascript
 ### ruby
