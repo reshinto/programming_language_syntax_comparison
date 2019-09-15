@@ -858,6 +858,10 @@ list_name.append(element)
 # Add element to list at index
 list_name.insert(index, element)
 
+# Extends list by appending elements from the iterable
+list_name = [1, 2]
+list_name.extend([3, 4])  # [1, 2, 3, 4]
+
 
 # Access an element
 list_name[index]
