@@ -404,6 +404,15 @@ const stringName = "string";
 ```
 ### ruby
 ```ruby
+string_name = <<EOM
+this is a
+  multi line string
+EOM
+string_name = <<eom
+this is a
+  multi line string
+eom
+string_name = 'string'
 string_name = "string"
     
 string_name.length  # 6
@@ -411,7 +420,10 @@ string_name.length  # 6
 string_name = string_name.reverse  # "gnirts"
     
 string_name = string_name.upcase  # "GNIRTS"
+string_name = string_name.swapcase  # "gnirts"
+string_name = string_name.swapcase  # "GNIRTS"
 string_name = string_name.downcase  # "gnirts"
+
     
 string_name = string_name.capitalize  # "Gnirts"
     
@@ -422,15 +434,53 @@ string_name = string_name.gsub!(/G/, "xxx")  # "xxxnirts"
 string_name = string_name.split("i")  # ["xxxn", "rts"]
 string_name = "string"
 string_name = string_name.split("")  # ["s", "t", "r", "i", "n", "g"]
-    
-    
+
+# check if a string exists within a string
+nameExist = "full name"
+nameExist.include?("name")  # returns true
+
+# search and count the total number of declared alphabets that exist in the string
+nameExist.count("l")  # returns 2
+nameExist.count("ln")  # (l + l + n) therefore returns 3
+
+# search and count the total number of the opposite of the declared alphabets that exist in the string
+nameExist.count("^l")  # returns everything except "l", therefore returns 7
+
+# check if a string that starts with the declared string exists
+nameExist.start_with?("ful")  # returns true
+nameExist.start_with?("nam")  # returns false
+
+# find the index of a searched string, returns the index of the first searched letter
+nameExist.index("ll")  # returns 2
+
+# remove empty spaces from string
+removeStr = "   string   "
+removeStr.lstrip  # "string   "
+removeStr.rstrip  # "   string"
+removeStr.strip  # "string"
+
+# format string
+moveString = "string"
+moveString.rjust(10, ".")  # "....string"
+moveString.ljust(10, ".")  # "string...."
+moveString.center(10, ".")  # "..string.."
+
+# Slice end of string
+newStr = "string"
+newStr.chop  # "strin"
+# state the last letters to remove from string
+newStr.chomp("ng")  # "stri"
+
+# remove all listed letters from string
+removeStr = "sstring"
+removeStr.delete("si")  # "trng"
+
 # SYMBOLS: strings that are immutable, must use letters or underscores (_)
 # used mainly for memory conservation or speed string comparison
 # use a symbol if need a string to be immutable and not need to access string methods
 # commonly used in hashed for keys
 variable_name = :symbolStringWithoutQuotes
 puts variable_name  # symbolStringWithoutQuotes
-
 ```
 ### java
 ```java
@@ -596,7 +646,14 @@ std::string stringName ("string");
 * ＞=
 * ＜=
 * ＜=＞  # Combined Comparison Operator
+* object1.equal?object2
 ```ruby
+string1 = "string"
+string2 = "string"
+string1 == string2  # returns true
+string1.equal?string2  # returns false
+string1.equal?string1  # returns true
+
 num1 = 2
 num2 = 5
 puts num1 <=> num2  # -1
@@ -978,17 +1035,53 @@ console.log(list_name.includes("a", 2)  // true
 ### ruby
 ```ruby
 # Empty list
-list_name = []
+list_name = []  # method 1
+list_name = Array.new  # method 2
 # List with elements
 list_name = [1, "one", True]
+list_name = Array.new(3)  # creates 3 slots of nil in array [nil, nil, nil]
+list_name = Array.new(3, "new")  # creates 3 slots of object in array ["new", "new", "new"]
 # Nested lists
 list_name = [1, ["two", 3]]
+
+# join elements in array at index into a string (to join all elements, all indexes must be listed)
+list_name.values_at(0, 1).join(", ")  # "1, two, 3"
+
+# join all elements in array into a string
+list_name.join(", ")  # "1, two, 3"
     
 # Add element to list (left to right)
 # method 1
 list_name.push(element);
 # method 2
 list_name << element;
+
+# Add element to list (right to left)
+list_name.unshift("new")  # ["new", 1, ["two", 3]]
+
+# delete element from list (right to left)
+list_name.pop()  # ["new", 1]
+
+# delete element from list (left to right)
+list_name.shift()  # [1]
+
+# concat 2 arrays
+# method 1
+[1] + [2]  # [1, 2]
+# method 2
+[1].concat([2])  # [1, 2]
+
+# find length of array
+[1, 2].size  # 2
+
+# check if element exist in array
+[1, 2].include?(1)  # true
+
+# count how many similar elements are in the array
+[1, 2, 1].count(1)  # 2
+
+# check if array is empty
+[1, 2].empty?  # false
     
 # Add 0 to 10 to an array
 (0..10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -2206,6 +2299,30 @@ hash_name["hungry"]  # true
 hash_name.delete(key)
 
 
+# Update hash (duplicates will be removed)
+hash_name.update(hash_name2)
+
+
+# Merge hash (duplicates will not be removed)
+hash_name.merge(hash_name2)
+
+
+# Check if key exist
+hash_name.has_key?("keyName")
+
+
+# Check if value exit
+hash_name.has_value?("valueName")
+
+
+# Check if hash is empty
+hash_name.empty?
+
+
+# Get hash size
+hash_name.size
+
+
 # Iterating over Hashes
 hash_name.each do [keyName, valueName|
     do_something_with_keyName_and_valueName
@@ -2503,22 +2620,129 @@ const test = new MathClass();
 console.log(test.innerAdd(2));  // 8
 ```
 ### ruby
+* class variables (@@variableName) are like instance variables but belongs to the class
+* global variables ($variableName) must be declared with a $ symbol, if declared within the class
 ```ruby
 class MathClass
-  # constructor
-  def initialize(arg1, arg2)
-    @arg1 = arg1
+  $globalVariable = "global variable"
+  @@count = 0
+  
+  def initialize(arg1, arg2)  # constructor
+    @arg1 = arg1  # @ signify that it's an instance variable
     @arg2 = arg2
   end
   
   def innerAdd(arg3)
+    @@count += 1
     return @arg1 + @arg2 + arg3
   end
 end
 
 # Instantiation
 test = MathClass.new(2, 4)
-puts test.innerAdd(2)
+puts test.innerAdd(2)  # 8
+
+
+# Setters & Getters
+# method 1
+class Student
+  def initialize
+    puts "New student"
+  end
+  
+  def set_name(new_name)
+    @name = new_name
+  end
+  
+  def get_name
+    @name
+  end
+end
+
+test = Student.new
+test.set_name("Foo")
+puts test.get_name  # "Foo"
+
+# method 2
+class Student2
+  attr_reader :name
+  attr_writer :name
+end
+
+test2 = Student2.new
+test2.name = "Foo2"
+puts test2.name  # "Foo2"
+
+# method 3
+class Student3
+  attr_accessor :name
+end
+
+test3 = Student3.new
+test3.name = "Foo3"
+puts test3.name  # "Foo3"
+
+
+# Module: similar to classes, but cannot be instantiated
+module MathClass
+  def innerAdd(arg1, arg2)
+    return arg1 + arg2
+  end
+end
+
+# method 1
+class CalculatorClass1
+  include MathClass  # use this to enable method override
+  
+  def innerAdd(arg1, arg2)
+    return arg1 + arg1
+  end
+end
+
+calculate1 = CalculatorClass1.new
+calculate1.innerAdd(1, 3)  # 2
+
+# method 2
+class CalculatorClass2
+  prepend MathClass  # use this to disable method override
+  
+  def innerAdd(arg1, arg2)
+    return arg1 + arg1
+  end
+end
+
+calculate2 = CalculatorClass2.new
+calculate2.innerAdd(1, 3)  # 4
+
+
+# Inheritance
+class CalculatorClass < MathClass
+end
+
+calculate = CalculatorClass.new(2, 4)
+puts calculate.innerAdd(2)  # 8
+
+# override parent method
+class CalculatorClass < MathClass
+  def innerAdd(arg3)
+    return (@arg1 + @arg2 + arg3) / 3
+  end
+end
+
+calculate = CalculatorClass.new(2, 4)
+puts calculate.innerAdd(2)  # 2
+
+# use super to access parent's attributes or methods of an overridden class method
+class CalculatorClass < MathClass
+  def innerAdd(arg3)
+    print super
+    print " "
+    return (@arg1 + @arg2 + arg3) / 3
+  end
+end
+
+calculate = CalculatorClass.new(2, 4)
+puts calculate.innerAdd(2)  # 8 2
 ```
 ### java
 ### c++
@@ -2585,6 +2809,13 @@ import {function1, function2} from "moduleName";  // import multiple functions
 import name, {function1} from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
 ```
 ### ruby
+```ruby
+# import another ruby file
+load "./anotherFile.rb"  # ./ not mandatory
+
+# import module files
+require_relative "moduleFileName"  # extension not required
+```
 ### java
 ### c++
 [back to top](#table-of-contents)
@@ -2730,6 +2961,9 @@ string_name << "string 3"  # "string1 string2string3"
 
 # to_s: numbers need to be converted to a string to be concatenated
 puts "one" + 1.to_s  # "one1"
+
+# %s for strings, %d for integers, %f for floats, %.3f for float with 3 decimals
+printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
 ### java
 ### c++
@@ -2849,6 +3083,21 @@ try {
 }
 ```
 ### ruby
+* begin: something which might raise an exception
+* rescue: code that deals with some exception
+* else: code that runs only if no exception was raised
+* ensure: ensure that this code always runs, no matter what
+```ruby
+begin
+  doSomething
+rescue SomeExceptionClass => storeErrorToThisVariable
+  doSomethingIfErrorOccurs
+else
+  doSomethingIfNoError
+ensure
+  doSomethingWhenEverythingIsCompleted
+end
+```
 ### java
 ### c++
 [back to top](#table-of-contents)
@@ -2868,6 +3117,12 @@ throw "custom message"; // throw a text
 throw 123; // throw a number
 ```
 ### ruby
+```ruby
+# method 1
+raise errorType, "custom error message"
+# method 2
+raise errorType.new("custom error message")
+```
 ### java
 ### c++
 [back to top](#table-of-contents)
@@ -3016,6 +3271,10 @@ var foo = {
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
 ### ruby
+```ruby
+# get current date and time
+Time.now
+```
 ### java
 ### c++
 [back to top](#table-of-contents)
