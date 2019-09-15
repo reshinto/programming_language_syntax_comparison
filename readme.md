@@ -62,6 +62,7 @@ console.log("Hello World");
 ```ruby
 print "Hello World"  # takes whatever you give it and prints it to the screen
 puts "Hello World"  # adds a new (blank) line after the thing you want it to print
+p "Hello World"  # same as puts
 ```
 ### java
 ```java
