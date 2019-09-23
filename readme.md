@@ -2042,7 +2042,7 @@ array.sort((a, b) => a - b);  // returns ["1", 4, 21, 30, 100000]
 // sort in descending order
 array.sort((a, b) => b - a);  // returns [100000, 30, 21, 4, "1"]
 
-// Zip is not available is Javascript, use Maps instead
+// Zip is not available in Javascript, use Maps instead
 const arr1 = [1, 2, 3];
 const arr2 = ["1", "2", "3"];
 function zip(arrays) {
