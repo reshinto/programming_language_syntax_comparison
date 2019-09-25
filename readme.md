@@ -962,10 +962,14 @@ dict_name2 = sorted(dict_name, key=lambda k: k["key_name"], reverse=True)
 var list_name = [];
 // Method 2: empty list
 var list_name = new Array();
+// create list of empty elements
+var list_name = new Array(3); // [empty, empty, empty]
 // List with elements
 var list_name = [1, "one", true];
+var list_name = new Array(3).fill("-") // ["-", "-", "-"]
 // Nested lists
 var list_name = [1, ["two", 3]];
+var list_name = new Array(3).fill(new Array(2).fill("-")) // [["-", "-"], ["-", "-"], ["-", "-"]]
     
     
 // Modify an element
