@@ -2866,6 +2866,27 @@ tuple(type_to_convert)  # cannot be a number
 set(type_to_convert)  # cannot be a number
 ```
 ### javascript
+```javascript
+// number to string
+let num = 123;
+let str = String(num); // "123"
+
+// string to integer (remove all non numbers automatically)
+str = "12 kg";
+num = parseInt(str); // 12
+
+// string to float (remove all non number automatically)
+str = "12.5 kg";
+num = parseFloat(str) // 12.5
+
+//string to integer or float (return NaN if non number in string)
+str = "12"
+num = Number(str) // 12
+str = 12.5";
+num = Number(str) // 12.5
+str = "12.5 kg";
+num = Number(str); // NaN
+```
 ### ruby
 ```ruby
 # String to symbol
