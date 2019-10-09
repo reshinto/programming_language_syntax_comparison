@@ -1031,6 +1031,9 @@ list_name.sort();  // [1, 2, 3, 4]
     
 // Sort array in descending order
 list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1]
+// use .reverse() if elements are strings
+list_nameStr = ["a", "b", "c"];
+list_nameStr.reverse(); // ["c", "b", "a"]
     
     
 // Determine whether an array contains a specified element
