@@ -1040,6 +1040,19 @@ console.log(list_name.includes("b"))  // true
 // Determine whether an array contains a specified element from starting index
 console.log(list_name.includes("b", 2)  // false
 console.log(list_name.includes("a", 2)  // true
+
+// Flatten nested arrays
+list_name = [1, 2, [3, 4]];
+list_name.flat() // [1, 2, 3, 4]
+
+// Check if all elements in array pass the conditional check
+function helper(currentValue) {
+ return currentValue < 3;
+}
+list_name = [1, 2, 3, 4];
+list_name.every(helper); // false
+list_name = [1, 2];
+list_name.every(helper); // true
 ```
 ### ruby
 ```ruby
