@@ -359,6 +359,15 @@ string_name3 = string_name.split("s", 1)  # ["te", "t string"]
 
 # Split string into an array of letters
 string_name4 = list(string_name)  # ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
+
+# Remove empty spaces
+string_name = "    string    "
+# remove all left spaces
+string_name1 = string_name.lstrip()  # "string    "
+# remove all right spaces
+string_name2 = string_name.rstrip()  # "    string"
+# remove all spaces
+string_name3 = string_name.strip()  # "string"
 ```
 ### javascript ES5
 ```javascript
