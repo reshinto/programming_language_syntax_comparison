@@ -3270,6 +3270,22 @@ init();
 [back to top](#table-of-contents)
 ## Language Specific
 ### python
+```python
+# List comprehension
+# original method
+arr = []
+for i in range(5):
+ arr.append(i)
+print(arr)  # [0, 1, 2, 3, 4]
+
+# List comprehension method
+arr = [i for i in range(5)]
+print(arr)  # [0, 1, 2, 3, 4]
+
+# List comprehension with conditional statement
+arr = [i for i in range(5) if i < 3]
+print(arr)  # [0, 1, 2]
+```
 ### javascript
 * Explicit Binding
   * choose what we want the context of "this" to be by using call, apply or bind
