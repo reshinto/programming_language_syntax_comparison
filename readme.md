@@ -368,6 +368,10 @@ string_name1 = string_name.lstrip()  # "string    "
 string_name2 = string_name.rstrip()  # "    string"
 # remove all spaces
 string_name3 = string_name.strip()  # "string"
+
+# Join an array of string elements
+arr = ["a", "b"]
+"_".join(arr)  # "a_b"
 ```
 ### javascript ES5
 ```javascript
