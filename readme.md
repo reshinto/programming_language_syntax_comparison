@@ -925,6 +925,9 @@ list_name.pop()
 # Remove element from list at index
 list_name.pop(index)
 
+# Remove any element from list at element
+list_name.remove(element)
+
 # Method 1: remove all elements
 del list_name[:]
 # Method 2: remove all elements
