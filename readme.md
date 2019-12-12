@@ -378,6 +378,30 @@ string_name2 = string_name.rstrip()  # "    string"
 # remove all spaces
 string_name3 = string_name.strip()  # "string"
 
+# Check if string has alphabet and integer characters
+string_name3.isalnum()  # False
+string_name = "123"
+string_name.isalnum()  # True
+string_name = "s 123"
+string_name.isalnum()  # False
+string_name = "s123"
+string_name.isalnum()  # True
+
+# Check if string has all alphabet characters
+string_name3.isalpha()  # True
+string_name = "A e"
+string_name.isalpha()  # False
+string_name = "a2"
+string_name.isalpha()  # False
+
+# Checkif string has all digit characters
+string_name = "123"
+string_name.isdigit()  # True
+string_name = "12 3"
+string_name.isdigit()  # False
+string_name = "12d"
+string_name.isdigit()  # False
+
 # Join an array of string elements
 arr = ["a", "b"]
 "_".join(arr)  # "a_b"
