@@ -2654,6 +2654,8 @@ print(person2.name)  # My name
 person3 = Person2.use_default_name()
 print(person3.name)  # Default name
 ```
+* python magic method guide
+  * https://rszalski.github.io/magicmethods/
 ### javascript ES5
 ```javascript
 // Constructor
