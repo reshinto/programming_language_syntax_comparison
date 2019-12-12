@@ -1865,6 +1865,14 @@ def myFunction(a=value):
 # can take any number of arguments, but can only have 1 expression
 myFunction = lambda a : do_something_with_a
 myFunction = lambda a, b : do_something_with_a_and_b
+
+# Function annotation (python 3)
+def get_sum(num1: int, num2: int):
+    return num1 + num2
+    
+# Function annotation with default parameters (python 3)
+def get_sum(num1: int=1, num2: int=2):
+    return num1 + num2
 ```
 ### javascript ES5
 * Function returns undefined by default if return statement is not declared
