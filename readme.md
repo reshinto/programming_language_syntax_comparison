@@ -297,8 +297,12 @@ double_name = 1.123;  // have 19 decimal digits
 [back to top](#table-of-contents)
 ## Variable declaration None
 ### python 2 & 3
-```pythong
+```python
 variable_name = None
+
+# nan in python
+import math
+math.inf - math.inf  # nan
 ```
 ### javascript
 ```javascript
@@ -3304,6 +3308,13 @@ print("atanh(0) ", math.atanh(0))  # atanh(0)  0.0
 print("hypot(0) ", math.hypot(10, 10))  # sqrt(x*x + y*y)  # hypot(0)  14.142135623730951
 print("radians(0) ", math.radians(0))  # radians(0)  0.0
 print("degrees(pi) ", math.degrees(math.pi))  # degrees(pi)  180.0
+
+# infinity value
+math.inf
+
+import random
+# random integer
+random.randint(1, 3)  # any number from 1 to 3
 ```
 ### javascript
 ### ruby
