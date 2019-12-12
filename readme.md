@@ -3380,6 +3380,41 @@ print(arr)  # [0, 1, 2, 3, 4]
 # List comprehension with conditional statement
 arr = [i for i in range(5) if i < 3]
 print(arr)  # [0, 1, 2]
+
+# Tuples (similar to list, but are immutable)
+tuple1 = (1, 2, "3")
+
+# Sets (only have unique values)
+# create set
+set1 = set([1, 2])  # method 1
+set2 = {1, 2}  # method 2
+
+# join 2 sets together
+set3 = set1 | set2  # {1, 2}
+
+# add element to set
+set1.add(3)  # {1, 2, 3}
+
+# add set2 to set1
+set1 |= set2  # {1, 2, 3}
+
+# remove element from set from element
+set1.discard(2)  # {1, 3}
+
+# Get intersection of 2 sets
+set1.intersection(set2)  # {1}
+
+# Get unique value from the 2 sets
+set1.symmetric_difference(set2)  # {2, 3}
+
+# Get values from set1 that set2 does not have
+set1.difference(set2)  # {3}
+
+# delete all values from set
+set1.clear()  # set()
+
+# Create a set that cannot be modified
+set_fixed = frozenset([1, 2, 3])
 ```
 ### javascript
 * Explicit Binding
