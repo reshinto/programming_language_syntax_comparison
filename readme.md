@@ -2165,8 +2165,17 @@ newDict = dict.fromkeys(newKeys, newValue)
 newVariable = newDict.setdefault("key", "newValue")
 
 # Get value
-newDict["key"]  # method 1
-newDict.get("key")  # method 2
+newDict["key"]  # method 1 # return KeyError if key does not exist
+newDict.get("key")  # method 2 # return None if key does not exist
+
+# Get list of keys
+list(newDict.keys())
+
+# Get list of values
+list(newDict.values())
+
+# Get list of key value tuples
+list(newDict.items())
 
 # Loop through Dictionary and get each key
 # method 1
