@@ -351,6 +351,10 @@ string_name = string_name.title()  # "Gnirts"
 string_name = string_name.replace("G", "xxx")  # "xxxnirts"
 string_name = string_name.replace("x", "g", 1)  # "gxxnirts"
 
+# Find character or string in string and return the index of the 1st character, return -1 if not found
+string_name.find("x")  # 1
+string_name.find("v")  # -1
+
 # string slicing
 # extract characters from a string, from start position to but not including end position
 new_string_name = string_name[1:4]  # "xxn"
