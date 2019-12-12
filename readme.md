@@ -53,7 +53,9 @@ print "Hello World"
 ```
 ### python 3
 ```python
-print("Hello World")
+print("Hello World")  # "Hello World\n"
+print("Hello", "World", sep="/")  # "Hello/World"
+print("Hello World", end="")  # "Hello World"
 ```
 ### javascript
 ```javascript
