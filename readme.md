@@ -664,7 +664,21 @@ std::string stringName ("string");
 ## Comparison Operators
 ### python 2 & 3
 * ==  # condition is True if both operand have equal contents
+```python
+list1 = []
+list2 = []
+list1 == list2  # True
+```
 * is  # condition is True if both operand points to the same identical object
+```python
+list1 = []
+list2 = []
+list1 is list2  # False
+
+list1 = None
+list2 = None
+list1 is list2  # True
+```
 * !=  # condition is True if both operand do not have equal contents
 * is not  # condition is True if both operand do not points to the same identical object
 * ＜＞ # py2 only, condition is True if both operands do not equal contents
