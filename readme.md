@@ -85,6 +85,60 @@ int main()
     return 0;
 }
 ```
+### assembly
+```assembly
+; x86 32 bit Mac OSX
+; to run file, compile and run with the following command
+; nasm -f macho hello_world32.asm && ld -macosx_version_min 10.7.0 -o hello_world32 hello_world32.o && ./hello_world32
+
+global start
+
+section .text
+start:
+    push    dword msg.len
+    push    dword msg
+    push    dword 1
+    mov     eax, 4
+    sub     esp, 4
+    int     0x80
+    add     esp, 16
+
+    push    dword 0
+    mov     eax, 1
+    sub     esp, 12
+    int     0x80
+
+section .data
+
+msg:    db      "Hello, world!", 10
+.len:   equ     $ - msg
+```
+```assembly
+; x86_64 64 bit Mac OSX
+; to run file, compile and run with the following command
+; nasm -f macho64 hello_world64.asm && ld -macosx_version_min 10.7.0 -lSystem -o hello_world64 hello_world64.o && ./hello_world64
+
+global start
+
+section .text
+
+start:
+    mov     rax, 0x2000004 ; write
+    mov     rdi, 1 ; stdout
+    mov     rsi, msg
+    mov     rdx, msg.len
+    syscall
+
+    mov     rax, 0x2000001 ; exit
+    mov     rdi, 0
+    syscall
+
+
+section .data
+
+msg:    db      "Hello, world!", 10
+.len:   equ     $ - msg
+```
 [back to top](#table-of-contents)
 ## Comments
 ### python 2 & 3
@@ -126,6 +180,10 @@ multi-line comments
 /*
 multi-line comments
 */
+```
+### assembly
+```assembly
+; Single line comment
 ```
 [back to top](#table-of-contents)
 ## Variable declaration int
