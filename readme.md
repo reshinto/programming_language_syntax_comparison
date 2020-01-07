@@ -46,7 +46,7 @@
 * python, javascript, ruby
 ## Compiled Language
 * java: compiled to bytecode then interpreted by Java virtual machine into machine code
-* c#: compiled to an Intermediate Language, which is then compiled just-in-time as it's needed into the native assembly language of the host machine
+* c#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
 * c++: compiled into machine code
 ## Hello World
 ### python 2
