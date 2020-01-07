@@ -277,19 +277,19 @@ var variableName = 123;
 variableName = "123";  // error CS0029: Cannot implicitly convert type `string' to `int'
 
 // int: -2,147,483,648 ~ 2,147,483,647
-int integerName = 123;
-int integerName = int.MaxValue;  // 2147483647
+int integerName1 = 123;
+int integerName2 = int.MaxValue;  // 2147483647
 
 // Add const before variable declaration to make it a constant
-const int integerName = 123;
+const int integerName3 = 123;
 
 // long: -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
-long longName = 123;
-long longName = long.MaxValue;  // 9223372036854775807
+long longName1 = 123;
+long longName2 = long.MaxValue;  // 9223372036854775807
 
 // decimal: max value 79,228,162,514,264,337,593,543,950,335
-decimal decimalName = 123;
-decimal decimalName = decimal.MaxValue;  // 79228162514264337593543950335
+decimal decimalName1 = 123;
+decimal decimalName2 = decimal.MaxValue;  // 79228162514264337593543950335
 
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
@@ -380,14 +380,14 @@ double double_name = 1.123;
 ### c#
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
-float floatName = 1.123f;
-float floatName = 1.123;  // able to print, however will cause errors, better to put f after the float or declare as a double
-float floatName = float.MaxValue;  // 3.402823E+38
+float floatName1 = 1.123f;
+float floatName2 = 1.123;  // able to print, however will cause errors, better to put f after the float or declare as a double
+float floatName3 = float.MaxValue;  // 3.402823E+38
 
 // double: 64 bit max value with 15 decimals of precision 1.79769313486232E+308
-double doubleName = 1.123d;
-double doubleName = 1.123;
-double doubleName = double.MaxValue;  // 1.79769313486232E+308
+double doubleName1 = 1.123d;
+double doubleName2 = 1.123;
+double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 ```
 ### c++
 ```c++
@@ -3348,9 +3348,11 @@ string string1 = "string 1 value";
 string string2 = "string 2 value";
 
 // method 1
-string stringName = string1 + string2;
+string stringName1 = string1 + string2;  // "string 1 value string 2 value"
 // method 2
-string stringName = String.Format("{0} {1}", string1, string2);
+string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 value string 2 value"
+// method 3
+string stringName3 = $@"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 ### c++
 [back to top](#table-of-contents)
