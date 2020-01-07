@@ -3352,7 +3352,7 @@ string stringName1 = string1 + string2;  // "string 1 value string 2 value"
 // method 2
 string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 value string 2 value"
 // method 3
-string stringName3 = $@"{string1} {string2}";  // "string 1 value string 2 value"
+string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 ### c++
 [back to top](#table-of-contents)
