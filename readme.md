@@ -72,9 +72,17 @@ p "Hello World"  # same as puts
 ### java
 ```java
 public class HelloWorld {
-    public static void main(String args[]) {
-        System.out.println("Hello World");
-    }
+  public static void main(String args[]) {
+    System.out.println("Hello World");
+  }
+}
+```
+### c#
+```c#
+public class Hello {
+  public static void Main() {
+    System.Console.WriteLine("Hello World");
+  }
 }
 ```
 ### c++
