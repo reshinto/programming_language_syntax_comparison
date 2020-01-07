@@ -1,7 +1,7 @@
 # PROGRAMMING LANGUAGE SYNTAX COMPARISON
 > A syntax summary, which also compares the differences between each programming language.
 * List of languages
-  * Python, Javascript, Ruby, Java, C++
+  * Python, Javascript, Ruby, Java, C#, C/C++
 ## Table of Contents
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
