@@ -3344,7 +3344,13 @@ printf "%s %s", "string1", "string2"  # "string1 string2"
 ### java
 ### c#
 ```c#
-string stringName = "string1" + "string2";
+string string1 = "string 1 value";
+string string2 = "string 2 value";
+
+// method 1
+string stringName = string1 + string2;
+// method 2
+string stringName = String.Format("{0} {1}", string1, string2);
 ```
 ### c++
 [back to top](#table-of-contents)
