@@ -81,7 +81,8 @@ public class HelloWorld {
 ```c#
 public class HelloWorld {
   public static void Main() {
-    System.Console.WriteLine("Hello World");
+    System.Console.WriteLine("Hello World");  // adds new line after printing
+    System.Console.Write("Hello World");  // no new line is added after printing
   }
 }
 ```
@@ -183,6 +184,14 @@ multi-line comments
 multi-line comments
 */
 ```
+### c#
+```c#
+// Single line comment
+
+/*
+multi-line comments
+*/
+```
 ### c++
 ```c++
 // Single line comment
@@ -259,6 +268,30 @@ int integer_name = 123;  // default is visible within the same package
 // long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
 long long_name = 123l;
 long long_name = 123L;
+```
+### c#
+```c#
+// var can be used to handle declarations when the data type is unknown
+// once a variable is declared with var, the variable cannot be reassigned to a different data type
+var variableName = 123;
+variableName = "123";  // error CS0029: Cannot implicitly convert type `string' to `int'
+
+// int: -2,147,483,648 ~ 2,147,483,647
+int integerName = 123;
+int integerName = int.MaxValue;  // 2147483647
+
+// Add const before variable declaration to make it a constant
+const int integerName = 123;
+
+// long: -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
+long longName = 123;
+long longName = long.MaxValue;  // 9223372036854775807
+
+// decimal: max value 79,228,162,514,264,337,593,543,950,335
+decimal decimalName = 123;
+decimal decimalName = decimal.MaxValue;  // 79228162514264337593543950335
+
+// use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
 ### c++
 ```c++
@@ -343,6 +376,18 @@ float float_name = (float) 1.123;
 // double: 64 bits, 8 bytes
 double double_name = 1.123d;  // have 16 decimal digits
 double double_name = 1.123;
+```
+### c#
+```c#
+// float: 32 bit max value with 7 decimals of precision 3.402823E+38
+float floatName = 1.123f;
+float floatName = 1.123;  // able to print, however will cause errors, better to put f after the float or declare as a double
+float floatName = float.MaxValue;  // 3.402823E+38
+
+// double: 64 bit max value with 15 decimals of precision 1.79769313486232E+308
+double doubleName = 1.123d;
+double doubleName = 1.123;
+double doubleName = double.MaxValue;  // 1.79769313486232E+308
 ```
 ### c++
 ```c++
@@ -610,6 +655,14 @@ String stringName = "string";
 String stringName = "multi-line " +
                      "string";
 ```
+### c#
+```c#
+// character: 16 bits
+char charName = 'a';
+
+// strings
+string stringName = "string";
+```
 ### c++
 ```c++
 // character: only have 1 character, must use single quotes ''
@@ -674,6 +727,9 @@ std::string stringName ("string");
 ### java
 * boolean boolean_name = true;
 * boolean boolean_name = false;
+### c#
+* bool booleanName = true;
+* bool booleanName = false;
 ### c++: 8 bits
 * bool boolean_name; boolean_name = true;  // produces a 1 output
 * bool boolean_name = false;  // produces a 0 output
@@ -717,6 +773,14 @@ std::string stringName ("string");
 * modulus: %
 * exponent: Math.pow(3, 2);  // output 9
 * floor division: int integer_name = 3/2;  // output 1
+### c#
+* addition: +
+* subtraction: -
+* multiplication: *
+* division: 3.0/2;  // output 1.5, 3/2 output 1
+* modulus: %
+* exponent: Math.Pow(3, 2);  // output 9
+* floor division: 3/2;  // output 1
 ### c++
 * addition: +
 * subtraction: -
@@ -808,6 +872,13 @@ puts string1 <=> string2  # 0
 * ＜
 * ＞=
 * ＜=
+### c#
+* ==
+* !=
+* ＞
+* ＜
+* ＞=
+* ＜=
 ### c++
 * ==
 * !=
@@ -839,6 +910,11 @@ puts string1 <=> string2  # 0
 * ||  # or
 * !  # not
 ### java
+### c#
+* &&  // and
+* ||  // or
+* ^  // exclusive or
+* !  // not
 ### c++
 [back to top](#table-of-contents)
 ## Getting Input
@@ -867,6 +943,13 @@ print "What's your name?"
 name = gets.chomp
 ```
 ### java
+### c#
+```c#
+// print question
+System.Console.WriteLine("What's your name?");
+// get input
+string name = System.Console.ReadLine();
+```
 ### c++
 [back to top](#table-of-contents)
 ## Bitwise Operators
@@ -953,6 +1036,11 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 * x = x + 1  # increment
 * x += 1
 ### java
+* x = x + 1;
+* x += 1;
+* ++x;  // preincrement, add 1 now
+* x++;  // postincrement, display without addition now then add 1 later when called again
+### c#
 * x = x + 1;
 * x += 1;
 * ++x;  // preincrement, add 1 now
@@ -1560,6 +1648,38 @@ switch(choice) {
         break;  // not required, but good to have in Java
 }
 ```
+### c#
+```c#
+// If else statement
+if (condition_a) {
+    do_A;
+} else if (condition_b) {
+    do_B;
+} else {
+    do_something_else;
+}
+
+
+// Ternary operator
+condition_a ? do_A : do_B;
+
+
+// Switch statement
+switch(choice) {
+  case choiceA:
+    doA;
+    break;
+  case choiceB:
+    doB;
+    goto doSomethingSpecial;  // go to a special case that is written outside the switch statement and run it (not advised to use it
+  default:
+    do_something_else;
+    break;
+}
+
+doSomethingSpecial:
+  doingSomething;
+```
 ### c++
 ```c++
 // If else statement
@@ -1847,6 +1967,53 @@ for (int i=0; i<5; i++) {  // Start from 0 to 4
 // Reverse loop
 for (int i=4; i>=0; i--) {  // Start from 4 to 0
     do_this;
+}
+```
+### c#
+```c#
+// While loop
+// declare_initial_conditional_value
+int i = 0;
+// Set condition
+while (i<5) {  // Start from 0 to 4
+  do_this;
+  // Include condition_increment_or_decrement;
+  i++;
+  // Can use break or continue to add additional functionality, or not use any
+  break;  // Breaks out of the current closest enclosing loop
+  continue;  // Goes to the top of the closest enclosing loop
+}
+
+
+// Do while loop: execute first before setting conditions
+// declare_initial_conditional_value
+int i = 0;
+do {  // Start from 0 to 4
+  do_this;
+  // Include condition_increment_or_decrement;
+  i++;
+// Set condition
+} while (i<5);
+
+
+// For loop
+for (int i=0; i<5; i++) {  // Start from 0 to 4
+  do_this;
+  // Can use break or continue to add additional functionality, or not use any
+  break;  // Breaks out of the current closest enclosing loop
+  continue;  // Goes to the top of the closest enclosing loop
+}
+// Reverse loop
+for (int i=4; i>=0; i--) {  // Start from 4 to 0
+  do_this;
+}
+
+
+// For each loop: cycles through every item in an array or collection
+string stringName = "a random string of characters";
+
+foreach(char c in stringName) {
+  do_this;
 }
 ```
 ### c++
@@ -3063,6 +3230,12 @@ nums = [1, 2, 3]
 strings = nums.map(&:to_s)
 ```
 ### java
+### c#
+```c#
+// convert float to integer (applies to numbers only)
+float pi = 3.14f;
+int intPi = (int) pi;
+```
 ### c++
 [back to top](#table-of-contents)
 ## Find Data Type
@@ -3114,6 +3287,11 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 [1, 2].is_a? Array  # true
 ```
 ### java
+### c#
+```c#
+int num = 123;
+System.Console.WriteLine(num.GetTypeCode());  // Int32
+```
 ### c++
 [back to top](#table-of-contents)
 ## String Concatenation
@@ -3164,6 +3342,10 @@ puts "one" + 1.to_s  # "one1"
 printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
 ### java
+### c#
+```c#
+string stringName = "string1" + "string2";
+```
 ### c++
 [back to top](#table-of-contents)
 ## JSON
@@ -3453,6 +3635,23 @@ random.randint(1, 3)  # any number from 1 to 3
 ### javascript
 ### ruby
 ### java
+### c#
+```c#
+double number1 = 10.5;
+double number2 = 15;
+
+System.Console.WriteLine("Math.Abs(number1) " + (Math.Abs(number1)));  // Math.Abs(number1) 10.5
+System.Console.WriteLine("Math.Ceiling(number1) " + (Math.Ceiling(number1)));  // Math.Ceiling(number1) 11
+System.Console.WriteLine("Math.Floor(number1) " + (Math.Floor(number1)));  // Math.Floor(number1) 10
+System.Console.WriteLine("Math.Max(number1, number2) " + (Math.Max(number1, number2)));  // Math.Max(number1, number2) 15
+System.Console.WriteLine("Math.Min(number1, number2) " + (Math.Min(number1, number2)));  // Math.Min(number1, number2) 10.5
+System.Console.WriteLine("Math.Pow(number1, 2) " + (Math.Pow(number1, 2)));  // Math.Pow(number1, 2) 110.25
+System.Console.WriteLine("Math.Round(number1) " + (Math.Round(number1)));  // Math.Round(number1) 10
+System.Console.WriteLine("Math.Sqrt(number1) " + (Math.Sqrt(number1)));  // Math.Sqrt(number1) 3.24037034920393
+
+Random rand = new Random();
+System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
+```
 ### c++
 [back to top](#table-of-contents)
 ## Language Specific
