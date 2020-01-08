@@ -276,19 +276,25 @@ long long_name = 123L;
 var variableName = 123;
 variableName = "123";  // error CS0029: Cannot implicitly convert type `string' to `int'
 
+// byte: -128 ~ 127, 8 bits
+byte byteName = 123;
+
+// short: -32768 ~ 32767, 16 bits
+short shortName = 123;  // type Int16
+
 // int: -2,147,483,648 ~ 2,147,483,647
-int integerName1 = 123;
+int integerName1 = 123;  // type Int32
 int integerName2 = int.MaxValue;  // 2147483647
 
 // Add const before variable declaration to make it a constant
 const int integerName3 = 123;
 
 // long: -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
-long longName1 = 123;
+long longName1 = 123;  // type Int64
 long longName2 = long.MaxValue;  // 9223372036854775807
 
 // decimal: max value 79,228,162,514,264,337,593,543,950,335
-decimal decimalName1 = 123;
+decimal decimalName1 = 123;  // type Decimal
 decimal decimalName2 = decimal.MaxValue;  // 79228162514264337593543950335
 
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
@@ -380,12 +386,12 @@ double double_name = 1.123;
 ### c#
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
-float floatName1 = 1.123f;
+float floatName1 = 1.123f;  // type Single
 float floatName2 = 1.123;  // able to print, however will cause errors, better to put f after the float or declare as a double
 float floatName3 = float.MaxValue;  // 3.402823E+38
 
 // double: 64 bit max value with 15 decimals of precision 1.79769313486232E+308
-double doubleName1 = 1.123d;
+double doubleName1 = 1.123d;  // type Double
 double doubleName2 = 1.123;
 double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 ```
@@ -435,6 +441,14 @@ let variable_name3 = NaN;
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ```
 ### java
+### c#
+```c#
+string stringName = null;
+string stringName2 = String.Empty;
+
+// value type requires ? during declaration
+int? integerName = null;
+```
 ### c++
 [back to top](#table-of-contents)
 ## Strings
@@ -664,11 +678,11 @@ String stringName = "multi-line " +
 ### c#
 ```c#
 // character: 16 bits
-char charName = 'a';
+char charName = 'a';  // type Char
 char charName = '\u0061';  // unicode character for the letter a
 
 // strings
-string stringName = "string";
+string stringName = "string";  // type String
 
 // multiline strings
 // method 1
@@ -815,6 +829,7 @@ std::string stringName ("string");
 * boolean boolean_name = true;
 * boolean boolean_name = false;
 ### c#
+* // type Boolean
 * bool booleanName = true;  // displayed as True when printed
 * bool booleanName = false;  // displayed as False when printed
 ### c++: 8 bits
