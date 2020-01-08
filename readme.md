@@ -1493,6 +1493,36 @@ string_arrayList.size();
 // Remove all elements
 string_arrayList.clear();
 ```
+### c#
+```c#
+// Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
+// Empty string array of desired array size
+string[] stringArray1 = new string[lengthOfDesiredArray];
+// New string array with elements inside
+string [] stringArray2 = new string [] {string1, string2, ...};  // Method 1, size is determined by number of elements declared
+string [] stringArray2 = new string [2] {string1, string2};  // Method 2, size is determined by the array size declared
+string[] stringArray3 = {string1, string2, ...};  // Method 3, size is determined by number of elements declared
+
+
+// Add string array element, limited to array size
+// Modify string array element value
+stringArray[index] = element;
+
+
+// Access an element
+stringArray[index];
+
+
+// Find array size
+stringArray.Length;
+
+
+string[] strArr = {"a", "b", "c"};
+
+// Join elements into a string
+String.Join("", strArr);  // "abc"
+String.Join(",", strArr);  // "a,b,c"
+```
 ### c++
 ```c++
 // Arrays
