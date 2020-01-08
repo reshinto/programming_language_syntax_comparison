@@ -3364,9 +3364,30 @@ strings = nums.map(&:to_s)
 ### java
 ### c#
 ```c#
-// convert float to integer (applies to numbers only)
+// implicit type conversion (small value to big only)
+byte b = 1;
+int i = b;
+float f = i;
+
+// casking
+// explicit type conversion (can convert big value to small, however, data loss will occur)
 float pi = 3.14f;
 int intPi = (int) pi;
+
+// convert non-compatible types
+// string to integer
+string s = "1";
+// method 1
+int i = Convert.ToInt32(s);
+// method 2
+int j = int.Parse(s);
+
+/* other methods
+ToByte()
+ToInt16()  // short
+ToInt32()  // integer
+ToInt64()  // long
+*/
 ```
 ### c++
 [back to top](#table-of-contents)
