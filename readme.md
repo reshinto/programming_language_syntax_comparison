@@ -295,7 +295,8 @@ long longName2 = long.MaxValue;  // 9223372036854775807
 
 // decimal: max value 79,228,162,514,264,337,593,543,950,335
 decimal decimalName1 = 123;  // type Decimal
-decimal decimalName2 = decimal.MaxValue;  // 79228162514264337593543950335
+decimal decimalName2 = 123m;
+decimal decimalName3 = decimal.MaxValue;  // 79228162514264337593543950335
 
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
@@ -387,12 +388,11 @@ double double_name = 1.123;
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
 float floatName1 = 1.123f;  // type Single
-float floatName2 = 1.123;  // able to print, however will cause errors, better to put f after the float or declare as a double
-float floatName3 = float.MaxValue;  // 3.402823E+38
+float floatName2 = float.MaxValue;  // 3.402823E+38
 
 // double: 64 bit max value with 15 decimals of precision 1.79769313486232E+308
 double doubleName1 = 1.123d;  // type Double
-double doubleName2 = 1.123;
+double doubleName2 = 1.123;  // all floats are double by default
 double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 ```
 ### c++
