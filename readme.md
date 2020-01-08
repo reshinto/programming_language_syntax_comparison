@@ -3908,5 +3908,18 @@ foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 Time.now
 ```
 ### java
+### c#
+* Overflowing
+  * c# does not check for overflow
+    * this means that value of a variable can be modified during runtime and when the value goes beyond the boundary of it's data type, overflow will occur
+    * e.g.: byte num = 255; num++;
+```c#
+// If overflow is not desired, use checked keyword to enable overflow checking
+// In the following example, increment will not occur and an exception will be thrown, which will cause an error
+checked {
+  byte number = 255;
+  number++;
+}
+```
 ### c++
 [back to top](#table-of-contents)
