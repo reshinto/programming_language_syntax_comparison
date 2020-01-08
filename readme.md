@@ -512,7 +512,7 @@ string_name.isalpha()  # False
 string_name = "a2"
 string_name.isalpha()  # False
 
-# Checkif string has all digit characters
+# Check if string has all digit characters
 string_name = "123"
 string_name.isdigit()  # True
 string_name = "12 3"
@@ -736,6 +736,19 @@ stringName2.Trim();  // "test"
 stringName2.TrimStart();  // "test  "
 // remove white spaces from right
 stringName2.TrimEnd();  // "  test"
+
+
+// replace string with another string, stringName.Replace(old, new);
+stringName.Replace("test", "newTest");  // "  newTest  "
+
+
+// string slicing from start index
+// count is the number of characters to delete from the start index
+int startIndex = 3;
+int count = 3;
+stringName.Remove(startIndex, count);  // "str"
+stringName.Remove(startIndex);  // "str"
+stringName.Remove(startIndex, 2);  // "strg"
 ```
 ### c++
 ```c++
