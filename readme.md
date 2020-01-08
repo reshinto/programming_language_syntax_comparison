@@ -3949,7 +3949,7 @@ Time.now
 * Overflowing
   * c# does not check for overflow
     * this means that value of a variable can be modified during runtime and when the value goes beyond the boundary of it's data type, overflow will occur
-    * e.g.: byte num = 255; num++;
+    * e.g.: byte num = 255; num++;  // num value will be the surplus value (in this case 0)
 ```c#
 // If overflow is not desired, use checked keyword to enable overflow checking
 // In the following example, increment will not occur and an exception will be thrown, which will cause an error
