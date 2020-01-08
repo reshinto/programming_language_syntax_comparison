@@ -1123,6 +1123,14 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ```
 ### ruby
 ### java
+### c#
+```c#
+// & is binary AND, return 1 if both a and b are 1, count the 1s
+a & b  // 12 = ...0000 1100
+    
+// | is binary OR, return 1 if either a and or b HAVE a 1
+a | b  // 61 = ...0011 1101
+```
 ### c++
 [back to top](#table-of-contents)
 ## Increment
