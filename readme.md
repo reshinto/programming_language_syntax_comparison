@@ -447,6 +447,9 @@ string_name = """multi-line \
 string\
 """
 
+# raw strings (ignore escape characters)
+string_name = r"\n raw string"  # "\n raw string"
+
 len(string_name)  # 6
 
 # Character unicode point
@@ -563,6 +566,9 @@ var stringName = `multi-line \
 string`;
 let stringName = "string";
 const stringName = "string";
+
+// raw strings (ignore escape characters)
+String.raw`\n raw string`;  // "\n raw string"
 ```
 ### ruby
 ```ruby
@@ -659,9 +665,77 @@ String stringName = "multi-line " +
 ```c#
 // character: 16 bits
 char charName = 'a';
+char charName = '\u0061';  // unicode character for the letter a
 
 // strings
 string stringName = "string";
+
+// multiline strings
+// method 1
+string multilineString1 = "multi-line"
++ "string";
+// method 2
+string multilineString2 = "multi-line
+string";
+
+
+// raw strings (ignore escape characters
+string rawString = @"\n raw string";  // "\n raw string"
+
+
+// check if string is empty
+String.IsNullOrEmpty(stringName);  // False
+String.IsNullOrEmpty("");  // True
+
+// check for white space or empty
+String.IsNullOrWhiteSpace(stringName); // False
+String.IsNullOrWhiteSpace("  "); // True
+String.IsNullOrWhiteSpace(""); // True
+String.IsNullOrWhiteSpace(" test "); // False
+
+
+// get length of a string
+stringName.Length;  // 6
+
+
+// get index of the 1st character or word in a string
+stringName.IndexOf("s");  // 0
+stringName.IndexOf("unknown");  // -1
+
+
+// get substring from a string (includes the character at the endIndex)
+int startIndex = 0;
+int endIndex = 2;
+stringName.Substring(startIndex, endIndex);  // "str"
+
+
+// comparing strings
+string s1 = "test";
+string s2 = "test";
+string s3 = "test1".Substring(0, 4);
+object s4 = s3;
+Console.WriteLine("{0} {1} {2}", object.ReferenceEquals(s1, s2), s1 == s2, s1.Equals(s2));  // True True True
+Console.WriteLine("{0} {1} {2}", object.ReferenceEquals(s1, s3), s1 == s3, s1.Equals(s3));  // False True True
+Console.WriteLine("{0} {1} {2}", object.ReferenceEquals(s1, s4), s1 == s4, s1.Equals(s4));  // False False True
+
+
+string sampleString = "some random words";
+
+// check if a string starts with a character or words
+sampleString.StartsWith("some");  // True
+
+// check if a string ends with a character or words
+sampleString.EndsWith("words");  // True
+
+
+string stringName2 = "  test  ";
+
+// remove white spaces from both left and right
+stringName2.Trim();  // "test"
+// remove white spaces from left
+stringName2.TrimStart();  // "test  "
+// remove white spaces from right
+stringName2.TrimEnd();  // "  test"
 ```
 ### c++
 ```c++
@@ -728,8 +802,8 @@ std::string stringName ("string");
 * boolean boolean_name = true;
 * boolean boolean_name = false;
 ### c#
-* bool booleanName = true;
-* bool booleanName = false;
+* bool booleanName = true;  // displayed as True when printed
+* bool booleanName = false;  // displayed as False when printed
 ### c++: 8 bits
 * bool boolean_name; boolean_name = true;  // produces a 1 output
 * bool boolean_name = false;  // produces a 0 output
