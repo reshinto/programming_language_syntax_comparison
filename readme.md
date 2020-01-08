@@ -3640,6 +3640,14 @@ ensure
 end
 ```
 ### java
+### c#
+```c#
+try {
+  doSomething;
+} catch(Exception) {
+  doSomethingIfErrorOccurs;
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Custom Error
