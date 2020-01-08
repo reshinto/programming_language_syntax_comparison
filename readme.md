@@ -277,14 +277,17 @@ var variableName = 123;
 variableName = "123";  // error CS0029: Cannot implicitly convert type `string' to `int'
 
 // byte: -128 ~ 127, 8 bits
-byte byteName = 123;
+byte byteName = 123;  // type Byte
+System.Byte byteName2 = 123;
 
 // short: -32768 ~ 32767, 16 bits
 short shortName = 123;  // type Int16
+System.Int16 shortName2 = 123;
 
 // int: -2,147,483,648 ~ 2,147,483,647
 int integerName1 = 123;  // type Int32
 int integerName2 = int.MaxValue;  // 2147483647
+System.Int32 integerName3 = 123;
 
 // Add const before variable declaration to make it a constant
 const int integerName3 = 123;
@@ -292,11 +295,13 @@ const int integerName3 = 123;
 // long: -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
 long longName1 = 123;  // type Int64
 long longName2 = long.MaxValue;  // 9223372036854775807
+System.Int64 longName3 = 123;
 
 // decimal: max value 79,228,162,514,264,337,593,543,950,335
 decimal decimalName1 = 123;  // type Decimal
 decimal decimalName2 = 123m;
 decimal decimalName3 = decimal.MaxValue;  // 79228162514264337593543950335
+System.Decimal decimalName4 = 123;
 
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
@@ -389,11 +394,13 @@ double double_name = 1.123;
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
 float floatName1 = 1.123f;  // type Single
 float floatName2 = float.MaxValue;  // 3.402823E+38
+System.Single floatName3 = 1.123f;
 
 // double: 64 bit max value with 15 decimals of precision 1.79769313486232E+308
 double doubleName1 = 1.123d;  // type Double
 double doubleName2 = 1.123;  // all floats are double by default
 double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
+System.Double doubleName4 = 1.123;
 ```
 ### c++
 ```c++
@@ -678,11 +685,13 @@ String stringName = "multi-line " +
 ### c#
 ```c#
 // character: 16 bits
-char charName = 'a';  // type Char
-char charName = '\u0061';  // unicode character for the letter a
+char charName1 = 'a';  // type Char
+char charName2 = '\u0061';  // unicode character for the letter a
+System.Char charName3 = 'a';
 
 // strings
 string stringName = "string";  // type String
+System.String stringName2 = "string;
 
 // multiline strings
 // method 1
@@ -742,14 +751,14 @@ sampleString.StartsWith("some");  // True
 sampleString.EndsWith("words");  // True
 
 
-string stringName2 = "  test  ";
+string stringName3 = "  test  ";
 
 // remove white spaces from both left and right
-stringName2.Trim();  // "test"
+stringName3.Trim();  // "test"
 // remove white spaces from left
-stringName2.TrimStart();  // "test  "
+stringName3.TrimStart();  // "test  "
 // remove white spaces from right
-stringName2.TrimEnd();  // "  test"
+stringName3.TrimEnd();  // "  test"
 
 
 // replace string with another string, stringName.Replace(old, new);
@@ -832,6 +841,7 @@ std::string stringName ("string");
 * // type Boolean
 * bool booleanName = true;  // displayed as True when printed
 * bool booleanName = false;  // displayed as False when printed
+* System.Boolean booleanName = false;
 ### c++: 8 bits
 * bool boolean_name; boolean_name = true;  // produces a 1 output
 * bool boolean_name = false;  // produces a 0 output
