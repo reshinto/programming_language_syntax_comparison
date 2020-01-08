@@ -3380,7 +3380,13 @@ float f = i;
 // casking
 // explicit type conversion (can convert big value to small, however, data loss will occur)
 float pi = 3.14f;
-int intPi = (int) pi;
+int intPi = (int) pi;  // 3
+
+int num = 256;
+byte b = (byte) num; // 0 (surplus value will assigned if converting big data type value to smaller data type value)
+
+int num2 = 255;
+byte b2 = (byte) num2; // 255
 
 // convert non-compatible types
 // string to integer
