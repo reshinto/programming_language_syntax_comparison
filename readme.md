@@ -3241,6 +3241,8 @@ puts calculate.innerAdd(2)  # 8 2
 ```
 ### java
 ### c#
+* Struct vs Class
+  * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
 ```c#
 public class Math {
   public int arg1;
@@ -3275,7 +3277,6 @@ class MainClass {
 
 
 // Stuct (structures)
-// Refer to https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs for detailed explanation
 public struct Math {
   public int arg1;
   public int arg2;
