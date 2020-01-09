@@ -3272,6 +3272,40 @@ class MainClass {
     System.Console.WriteLine(Math.OutterAdd(4, 5));  // 9
   }
 }
+
+
+// Stuct (structures)
+// Refer to https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs for detailed explanation
+public struct Math {
+  public int arg1;
+  public int arg2;
+  public int total;
+  
+  // constructor (must have the same name as class name, must have parameters)
+  public Math(int arg1, int arg2) {
+    // this keyword is not a must, however, variable name must be different from the parameter
+    this.arg1 = arg1;
+    this.arg2 = arg2;
+    this.total = OuterAdd(arg1, arg2);
+  }
+  
+  public int InnerAdd(int arg3) {
+    return this.arg1 + this.arg2 + arg3;
+  }
+  
+  public static int OuterAdd(int number1, int number2) {
+    return number1 + number2;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Math test = new Math(2, 4);
+    System.Console.WriteLine(test.total);  // 6
+    System.Console.WriteLine(test.InnerAdd(2));  // 8
+    System.Console.WriteLine(Math.OutterAdd(4, 5));  // 9
+  }
+}
 ```
 ### c++
 [back to top](#table-of-contents)
