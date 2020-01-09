@@ -2234,15 +2234,16 @@ t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
 ```
 ### java
-```java
-v = getValue();  // plain function
-t = new Thing();  // instantiation
+### c#
+```c#
+// method 1
+ClassName t = new ClassName();  // instantiation
+ClassName t = new ClassName(argument);  // instantiation with arguments
+// method 2
+var t = new ClassName();  // instantiation
+var t = new ClassName(argument);  // instantiation with arguments
 ```
 ### c++
-```c++
-v = getValue();  // plain function
-t = new Thing();  // instantiation
-```
 [back to top](#table-of-contents)
 ## Functions
 ### python 2 & 3
@@ -3239,6 +3240,39 @@ calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
 ```
 ### java
+### c#
+```c#
+public class Math {
+  public int arg1;
+  public int arg2;
+  public int total;
+  
+  // constructor (must have the same name as class name, no return data type)
+  public Math(int arg1, int arg2) {
+    // this keyword is not a must, however, variable name must be different from the parameter
+    this.arg1 = arg1;
+    this.arg2 = arg2;
+    this.total = OuterAdd(arg1, arg2);
+  }
+  
+  public int InnerAdd(int arg3) {
+    return this.arg1 + this.arg2 + arg3;
+  }
+  
+  public static int OuterAdd(int number1, int number2) {
+    return number1 + number2;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Math test = new Math(2, 4);
+    System.Console.WriteLine(test.total);  // 6
+    System.Console.WriteLine(test.InnerAdd(2));  // 8
+    System.Console.WriteLine(Math.OutterAdd(4, 5));  // 9
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Importing Libraries
