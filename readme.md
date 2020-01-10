@@ -4043,5 +4043,33 @@ checked {
   number++;
 }
 ```
+* Enum
+  * Used to manage number type constants for better clarity and maintainability
+  * Can be declared in namespace, in classes
+```c#
+// not reccommended method
+const int RegularAirMail = 1;
+const int RegisteredAirMail = 2;
+const int Express = 3;
+
+// Use enums for better management and for clarity
+// default data type is an integer
+public enum ShippingMethod : byte  // use : byte to change default data type
+{
+  // if value is not assigned, 1st value will start with 0
+  // subsequent value will be incremented by 1 automatically if value is not assigned
+  RegularAirMail = 1,
+  RegisteredAirMail = 2,
+  Express = 3
+}
+
+// get string value (ToString method not required if using System.Console.WriteLine)
+ShippingMethod method = ShippingMethod.Express.ToString();  // Express
+// get number value
+ShippingMethod method = (int) ShippingMethod.Express;  // 3
+
+// retrieve string value with number value
+ShippingMethod methodType = (ShippingMethod) 3;  // Express
+```
 ### c++
 [back to top](#table-of-contents)
