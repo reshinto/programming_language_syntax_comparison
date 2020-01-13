@@ -2242,6 +2242,23 @@ ClassName t = new ClassName(argument);  // instantiation with arguments
 // method 2
 var t = new ClassName();  // instantiation
 var t = new ClassName(argument);  // instantiation with arguments
+
+
+public class Person {
+  public int Age;
+}
+
+public class Program {
+  public static void Main() {
+    Person person = new Person() {Age=20};  // instantiation & assigning value
+    increment(person);
+    System.Console.WriteLine(person.Age);
+  }
+
+  public static void increment(Person person) {
+    person.Age += 10;
+  }
+}
 ```
 ### c++
 [back to top](#table-of-contents)
