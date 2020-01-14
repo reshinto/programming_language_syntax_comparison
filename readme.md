@@ -1563,10 +1563,8 @@ rectArray2[index1, index2];
 jaggedArray[0][0];
 
 
-string[] strArr = {"a", "b", "c"};
-
-
 // Find array size
+string[] strArr = {"a", "b", "c"};
 strArr.Length;  // 3
 
 
@@ -1632,6 +1630,10 @@ intList4.Count;  // 8
 
 // Remove an element at element in list
 intList4.Remove(2);  // [1, 3, 4, 5, 6, 7, 8]
+
+
+// Remove an element at index of list
+intList4.RemoveAt(0);  // [3, 4, 5, 6, 7, 8]
 
 
 // Remove all elements from the list
