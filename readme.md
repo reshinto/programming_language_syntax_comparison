@@ -1530,12 +1530,27 @@ string_arrayList.clear();
 ```c#
 // Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
 // Empty string array of desired array size
-string[] stringArray1 = new string[lengthOfDesiredArray];
+string[] stringArray = new string[lengthOfDesiredArray];
 // New string array with elements inside
 string [] stringArray2 = new string [] {string1, string2, ...};  // Method 1, size is determined by number of elements declared
 string [] stringArray2 = new string [2] {string1, string2};  // Method 2, size is determined by the array size declared
 string[] stringArray3 = {string1, string2, ...};  // Method 3, size is determined by number of elements declared
+string[] stringArray5 = new[] {string1, string2, ...};  // Method 4
+var stringArray6 = new[] {string1, string2, ...};  // Method 5, use var to auto determine data type
 
+// Multi-dimensional Rectangular Arrays
+int[] rectArray = new int[3, 5];
+int[] rectArray2 = new int[3, 5] {
+  {1, 2, 3, 4, 5},
+  {6, 7, 8, 9, 10},
+  {11, 12, 13, 14, 15}
+};
+
+// Multi-dimensional Jagged Arrays
+int[] jaggedArray = new int[3][];  // create an array of 3 empty arrays
+jaggedArray[0] = new int[4];  // create an array of size 4
+jaggedArray[1] = new int[5];  // create an array of size 5
+jaggedArray[2] = new int[3];  // create an array of size 3
 
 // Add string array element, limited to array size
 // Modify string array element value
@@ -1544,17 +1559,83 @@ stringArray[index] = element;
 
 // Access an element
 stringArray[index];
-
-
-// Find array size
-stringArray.Length;
+rectArray2[index1, index2];
+jaggedArray[0][0];
 
 
 string[] strArr = {"a", "b", "c"};
 
-// Join elements into a string
-String.Join("", strArr);  // "abc"
-String.Join(",", strArr);  // "a,b,c"
+
+// Find array size
+strArr.Length;  // 3
+
+
+// Find index of an element in an array
+string element = "a";
+int index = System.Array.IndexOf(strArr, element);  // 0
+
+
+// Clear the element in the array (0 for int, false for bool, null for other objects), exclude the endIndex value
+int startIndex = 0;
+int endIndex = 1;
+System.Array.Clear(strArr, startIndex, endIndex);
+
+
+// Copy the elements into a new array
+int firstFewElem = 3;
+string[] copiedStrArr = new string[3];
+System.Array.Copy(strArr, copiedStrArr, firstFewElem);
+
+
+// Sort (ascending order)
+System.Array.Sort(strArr);
+
+
+// Reverse (only works on sorted arrays)
+System.Array.Reverse(strArr);  // ["c", "b", "a"]
+System.Array.Reverse(strArr);  // ["a", "b", "c"]
+
+
+// Join elements of an array into a string
+System.String.Join("", strArr);  // "abc"
+System.String.Join(",", strArr);  // "a,b,c"
+
+
+// List (dynamic array)
+// Empty int array of desired array size
+int[] intList = new System.Collections.Generic.List<int>();  // empty list
+int[] intList2 = new System.Collections.Generic.List<int>() {1, 2, 3, 4};  // list with values
+// import to write less code when declaring
+using System.Collections.Generic;
+int[] intList3 = new List<int>();  // empty list
+int[] intList4 = new List<int>() {1, 2, 3, 4};  // list with values
+
+
+// Add 1 new element to the list (left to right)
+intList4.Add(5);  // [1, 2, 3, 4, 5]
+
+// Add a range of elements to the list with an array
+intList4.AddRange(new int[3] {6, 7, 8});  // [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+// Find index of an element in a list (return -1 if element is not found)
+intList4.IndexOf(2);  // 1
+
+// Find last index of elements with similar values in a list
+int[] intList5 = new List<int>() {1, 2, 1, 3};
+intList5.LastIndexOf(1);  // 2
+
+
+// Get length of list
+intList4.Count;  // 8
+
+
+// Remove an element at element in list
+intList4.Remove(2);  // [1, 3, 4, 5, 6, 7, 8]
+
+
+// Remove all elements from the list
+intList4.Clear();  // [];
 ```
 ### c++
 ```c++
@@ -2159,7 +2240,8 @@ for (int i=4; i>=0; i--) {  // Start from 4 to 0
 }
 
 
-// For each loop: cycles through every item in an array or collection
+// For each loop: cycles through every item in an array or collection (List)
+// Modifications of an array or collection is not allowed, need to use normal loops
 string stringName = "a random string of characters";
 
 foreach(char c in stringName) {
