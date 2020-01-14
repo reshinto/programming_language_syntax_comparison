@@ -40,6 +40,7 @@
 - [Custom Error](#custom-error)
 - [Asynchronous](#asynchronous)
 - [Math](#math)
+- [Date and Time](#date-and-time)
 - [Language Specific](#language-specific)
 
 ## Interpreted Language
@@ -4017,6 +4018,46 @@ System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 ```
 ### c++
 [back to top](#table-of-contents)
+## Date and Time]
+### python
+### javascript
+### ruby
+```ruby
+# get current date and time
+Time.now
+```
+### java
+### c#
+```c#
+// Set date (time set to default at 12:00:00 AM)
+System.DateTime newDate = new System.DateTime(2015, 1, 1);
+
+
+// Get current date (time set to default at 12:00:00 AM)
+System.DateTime todayDate = System.DateTime.today;  // 1/14/2020 12:00:00 AM
+
+
+// Get current date and time
+System.DateTime now = System.DateTime.Now;  // 1/14/2020 10:19:54 AM
+
+
+// Add or reduce days
+now.AddDays(1);  // add 1 day
+now.AddDays(-10;  // reduce 1 day
+
+
+// Display formats
+System.Console.WriteLine(now);  // 1/14/2020 10:23:09 AM
+System.Console.WriteLine(now.ToLongDateString());  // Tuesday, January 14, 2020
+System.Console.WriteLine(now.ToShortDateString());  // 1/14/2020
+System.Console.WriteLine(now.ToLongTimeString());  // 10:23:09 AM
+System.Console.WriteLine(now.ToShortTimeString());  // 10:23 AM
+System.Console.WriteLine(now.ToString());  // 1/14/2020 10:23:09 AM
+System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
+System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
+```
+### c++
+[back to top](#date-and-time)
 ## Language Specific
 ### python
 ```python
@@ -4126,10 +4167,6 @@ var foo = {
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
 ### ruby
-```ruby
-# get current date and time
-Time.now
-```
 ### java
 ### c#
 * Overflowing
