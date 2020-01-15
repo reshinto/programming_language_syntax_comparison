@@ -704,15 +704,21 @@ System.Char charName3 = 'a';
 
 // strings
 string stringName = "string";  // type String
-System.String stringName2 = "string;
+System.String stringName2 = "string";
 
 // multiline strings
 // method 1
-string multilineString1 = "multi-line"
+string multilineString1 = "multi-line\n"
 + "string";
 // method 2
-string multilineString2 = "multi-line
+string multilineString2 = @"multi-line
 string";
+// method 3
+string multilineString3 = System.String.Join(
+  System.Environment.NewLine,
+  "multi-line",
+  "string"
+);
 
 
 // raw strings (ignore escape characters
@@ -817,7 +823,7 @@ System.Text.StringBuilder builder = new System.Text.StringBuilder();  // ''
 using System.Text;  // import the prefix
 var builder2 = new StringBuilder();  // ''
 // method 3
-var builder3 = new StringBuilder("starting string);  // "starting string"
+var builder3 = new StringBuilder("starting string");  // "starting string"
 
 
 // check if string builder is empty
