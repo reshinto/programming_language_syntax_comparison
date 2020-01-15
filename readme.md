@@ -727,10 +727,30 @@ stringName.IndexOf("s");  // 0
 stringName.IndexOf("unknown");  // -1
 
 
-// get substring from a string (includes the character at the endIndex)
+// convert string to uppercase
+stringName.ToUpper();  // "STRING"
+
+
+// convert string to lowercase
+stringName.ToLower();  // "string"
+
+
+// split string to an array of characters
+stringName.ToCharArray();  // ['s', 't', 'r', 'i', 'n', 'g']
+
+
+// split string into an array of strings (must have separator)
+stringName.Split('r');  // ["st", "ing"]
+
+
+// get substring from a string (if length is not declared, the entire string from startIndex onwards will be returned)
 int startIndex = 0;
-int endIndex = 2;
-stringName.Substring(startIndex, endIndex);  // "str"
+int length = 2;
+stringName.Substring(startIndex, length);  // "str"
+
+
+// replace string with another string, stringName.Replace(old, new);
+stringName.Replace("test", "newTest");  // "  newTest  "
 
 
 // comparing strings
@@ -743,27 +763,21 @@ Console.WriteLine("{0} {1} {2}", object.ReferenceEquals(s1, s3), s1 == s3, s1.Eq
 Console.WriteLine("{0} {1} {2}", object.ReferenceEquals(s1, s4), s1 == s4, s1.Equals(s4));  // False False True
 
 
-string sampleString = "some random words";
-
 // check if a string starts with a character or words
+string sampleString = "some random words";
 sampleString.StartsWith("some");  // True
 
 // check if a string ends with a character or words
 sampleString.EndsWith("words");  // True
 
 
-string stringName3 = "  test  ";
-
 // remove white spaces from both left and right
+string stringName3 = "  test  ";
 stringName3.Trim();  // "test"
 // remove white spaces from left
 stringName3.TrimStart();  // "test  "
 // remove white spaces from right
 stringName3.TrimEnd();  // "  test"
-
-
-// replace string with another string, stringName.Replace(old, new);
-stringName.Replace("test", "newTest");  // "  newTest  "
 
 
 // string slicing from start index
@@ -3558,6 +3572,7 @@ byte b = 1;
 int i = b;
 float f = i;
 
+
 // casking
 // explicit type conversion (can convert big value to small, however, data loss will occur)
 float pi = 3.14f;
@@ -3569,19 +3584,39 @@ byte b = (byte) num; // 0 (surplus value will assigned if converting big data ty
 int num2 = 255;
 byte b2 = (byte) num2; // 255
 
+
 // convert non-compatible types
 // string to integer
 string s = "1";
 // method 1
-int i = Convert.ToInt32(s);
+int i = Systen.Convert.ToInt32(s);  // returns 0 if string is null
 // method 2
-int j = int.Parse(s);
+int j = int.Parse(s);  // returns an exception if string is null
 
 /* other methods
 ToByte()
 ToInt16()  // short
 ToInt32()  // integer
 ToInt64()  // long
+*/
+
+
+// convert number to strings
+// convert to normal string
+int i = 1234;
+string str = i.ToString();  // "1234"
+// convert to currency with decimal places
+string floatCurrency = i.ToString("C");  // "$1,234.00"
+// convert to currency without decimal places
+string currency = i.ToString("C0");  // "$1,234"
+
+/* Format strings
+format specific | description | example
+c or C          | currency    | 123456 (C) -> $123,456
+d or D          | decimal     | 1234 (D6) -> 001234
+e or E          | exponential | 1052.0329112756 (E) -> 1.052033E+003
+f or F          | fixed point | 1234.567 (F1) -> 1234.5
+x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
 ### c++
