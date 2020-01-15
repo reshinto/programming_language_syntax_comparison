@@ -684,6 +684,18 @@ String stringName = "multi-line " +
                      "string";
 ```
 ### c#
+* Strings (immutable)
+    * each operation that appears to be modifying a string is actually creating a new string
+    * modifying a string repeatedly can cause a significant performance penalty
+    * when to use string
+        * when number of changes that your app will make to a string is small
+            * string builder might offer negligible or no performance improvement
+        * when performing a fixed number of concatenation operations is required
+            * compiler might combine the concatenation operations into a single operation
+        * when performing extensive search operations while building a string is required
+            * string builder lacks search methods (IndexOf, StartsWith)
+            * thus will need to convert string builder to a string for these operations
+            * this can negate the performance benefit from using string builder
 ```c#
 // character: 16 bits
 char charName1 = 'a';  // type Char
@@ -787,6 +799,78 @@ int count = 3;
 stringName.Remove(startIndex, count);  // "str"
 stringName.Remove(startIndex);  // "str"
 stringName.Remove(startIndex, 2);  // "strg"
+```
+* String builder (muttable)
+    * maintains a buffer to accommodate expansions to the string
+    * new data is appended to the buffer if room is available
+        * otherwise, a larger buffer is allocated
+        * data from the original buffer is copied to the new buffer
+        * then the new data is appended to the new buffer
+    * when to use string builder
+        * when expecting an unknown number of changes to a string at design time (when using a loop to concatenate a random number of strings that contain user input)
+        * when expecting to make a significant number of changes to a string
+```c#
+// Declaration
+// method 1
+System.Text.StringBuilder builder = new System.Text.StringBuilder();  // ''
+// method 2
+using System.Text;  // import the prefix
+var builder2 = new StringBuilder();  // ''
+// method 3
+var builder3 = new StringBuilder("starting string);  // "starting string"
+
+
+// check if string builder is empty
+// method 1
+if (builder == 0) System.Console.WriteLine("true");  // "true"
+// method 2
+if (System.String.IsNullOrEmpty(builder.ToString())) 
+  System.Console.WriteLine("true");  // "true"
+
+
+// append an array of similar characters
+builder.Append('-', 3);  // "---"
+
+// append a new line in string
+builder.AppendLine();  // new line is counted as 1 character
+
+// append a string
+builder.Append("Header");
+/*
+"---
+Header"
+*/
+
+
+// replace a character with a new character or a string with new string
+builder.Replace('-', '+');
+builder.Replace("er", "ing");
+/*
+"+++
+Heading"
+*/
+
+
+// remove characters from startIndex for totalCharacters
+int startIndex = 0;
+int totalCharacters = 3;
+builder.Remove(startIndex, totalCharacters);
+/*
+"
+Heading"
+*/
+
+
+// insert an array of similar characters at index
+builder.Insert(startIndex, new string('+', 4));
+/*
+"++++
+Heading"
+*/
+
+
+// get character of string builder at index
+builder[0];  // '+'
 ```
 ### c++
 ```c++
