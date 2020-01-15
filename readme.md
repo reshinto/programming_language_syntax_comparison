@@ -2613,6 +2613,12 @@ blockName = Proc.new do |n|
 end
 ```
 ### java
+### c#
+```c#
+public static void Main() {
+  do_something
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Higher order functions
