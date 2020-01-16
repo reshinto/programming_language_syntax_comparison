@@ -1706,12 +1706,12 @@ System.String.Join(",", strArr);  // "a,b,c"
 
 // List (dynamic array)
 // Empty int array of desired array size
-int[] intList = new System.Collections.Generic.List<int>();  // empty list
-int[] intList2 = new System.Collections.Generic.List<int>() {1, 2, 3, 4};  // list with values
+System.Collections.Generic.List<int> intList = new System.Collections.Generic.List<int>();  // empty list
+System.Collections.Generic.List<int> intList2 = new System.Collections.Generic.List<int>() {1, 2, 3, 4};  // list with values
 // import to write less code when declaring
 using System.Collections.Generic;
-int[] intList3 = new List<int>();  // empty list
-int[] intList4 = new List<int>() {1, 2, 3, 4};  // list with values
+List<int> intList3 = new List<int>();  // empty list
+List<int> intList4 = new List<int>() {1, 2, 3, 4};  // list with values
 
 
 // Add 1 new element to the list (left to right)
