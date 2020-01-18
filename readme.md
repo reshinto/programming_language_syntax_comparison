@@ -41,6 +41,7 @@
 - [Asynchronous](#asynchronous)
 - [Math](#math)
 - [Date and Time](#date-and-time)
+- [File System](#file-system)
 - [Language Specific](#language-specific)
 
 ## Interpreted Language
@@ -4189,6 +4190,80 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 ### c++
 [back to top](#date-and-time)
+## File System
+### python
+### javascript
+### ruby
+### java
+### c#
+```c#
+// Copy file
+bool overwrite = true;  // overwrite file if exist, else return an File already exists exception
+string toBeCopiedFile = @"/my/file/path/fileFolder/filename.txt";
+string toPasteFile = @"/my/file/path/fileFolder/filenameCopied";
+// method 1
+System.IO.File.Copy(toBeCopiedFile, toPasteFile, overwrite);
+// method 2
+System.IO.FileInfo file = new System.IO.FileInfo(toBeCopiedFile);
+file.CopyTo(toPasteFile, overwrite);
+
+
+// Check if file exists
+// method 1
+System.IO.File.Exists(toPasteFile);  // true
+// method 2
+file.Exists;  // true
+
+
+// Get text from file
+string content = System.IO.File.ReadAllText(toPasteFile);
+
+
+// Delete file
+System.IO.File.Delete(toPasteFile);  // method 1
+file.Delete();  // method 2 (deletes toBeCopiedFile)
+
+
+// Create new folder
+string folder = @"/my/file/path/folderName";
+System.IO.Directory.CreateDirectory(folder);  // does not overwrite if folder already exists
+
+
+// Get file in folder
+// method 1
+string searchPattern = "*.*";  // eg. get only .jpg files -> "*.jpg"
+string[] filesArray = System.IO.Directory.GetFiles(folder, searchPattern, SearchOption.AllDirectories);
+// method 2
+System.IO.DirectoryInfo dirInfo = new System.IO.DirectoryInfo(folder);
+System.IO.FileInfo[] filesArray2 = dirInfo.GetFiles("*", SearchOption.AllDirectories);
+
+
+// Get folders in folder
+string[] foldersArray = System.IO.Directory.GetDirectories(folder, searchPattern, SearchOption.AllDirectories);
+System.IO.DirectoryInfo[] foldersArray = dirInfo.GetDirectories();
+
+
+// Check if folder exists
+System.IO.Directory.Exists(folder);  // true
+
+
+// Get filename of a file from path
+Path.GetFileName(toBeCopiedFile);  // "filename.txt"
+
+
+// Get file extension of a file from path
+Path.GetExtension(toBeCopiedFile);  // ".txt"
+
+
+// Get filename without file extension of a file from path
+Path.GetFileNameWithoutExtension(toBeCopiedFile);  // "filename"
+
+
+// Get directory name of a file from path
+Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
+```
+### c++
+[back to top](#file-system)
 ## Language Specific
 ### python
 ```python
