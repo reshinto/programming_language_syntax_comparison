@@ -4189,7 +4189,7 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
 System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 ### c++
-[back to top](#date-and-time)
+[back to top](#table-of-contents)
 ## File System
 ### python
 ### javascript
@@ -4263,7 +4263,7 @@ Path.GetFileNameWithoutExtension(toBeCopiedFile);  // "filename"
 Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 ```
 ### c++
-[back to top](#file-system)
+[back to top](#table-of-contents)
 ## Language Specific
 ### python
 ```python
