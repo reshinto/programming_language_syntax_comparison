@@ -2616,8 +2616,15 @@ end
 ### java
 ### c#
 ```c#
+// Normal functions
 public static void Main() {
   do_something
+}
+
+
+// Normal function with parameters
+public static void Main(dataType a){
+  do_something_with_a
 }
 ```
 ### c++
@@ -3187,6 +3194,55 @@ def myFunction(*parameter):
 end
 ```
 ### java
+### c#
+```c#
+// hard coded method
+public class Calculator1 {
+  public in Add(int n1, int n2){
+    return n1 + n2;
+  }
+  public in Add(int n1, int n2, int n3){
+    return n1 + n2 + n3;
+  }
+}
+
+
+// dynamic method
+public class Calculator2 {
+  public in Add(int[] numbers){
+    int result = 0;
+    foreach (int num in numbers)
+      result += num
+    return result;
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Calculator cal = new Calculator2();
+    int result = cal.Add(new int[]{1, 2});  // need to initialize a new array
+  }
+}
+
+
+// Using Params Modifier
+public class Calculator3 {
+  public in Add(params int[] numbers){  // add params keyword
+    int result = 0;
+    foreach (int num in numbers)
+      result += num
+    return result;
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Calculator cal = new Calculator3();
+    int result = cal.Add(new int[]{1, 2});  // method 1: initialize a new array
+    int result2 = cal.Add(1, 2);  // method 2: only possible if used params keyword
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Class
@@ -3457,6 +3513,7 @@ puts calculate.innerAdd(2)  # 8 2
 * Struct vs Class
   * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
 ```c#
+// Class
 public class Math {
   public int arg1;
   public int arg2;
@@ -4375,6 +4432,29 @@ foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ### ruby
 ### java
 ### c#
+* Overloading
+  * having multiple similar methods with different signatures
+  * allows multiple different input data types for the same feature
+```c#
+public class Point {
+  public int X;
+  public int Y;
+  
+  public Point(int x, int y) {  // constructor
+    this.X = x;
+    this.Y = y;
+  }
+  
+  public void Move (int x, int y) {
+    this.X = x;
+    this.Y = y;
+  }
+  
+  public void Move(Point newLocation) {  // overloading the 1st Move method
+    Move(newLocation.X, newLocation.Y);
+  }
+}
+```
 * Overflowing
   * c# does not check for overflow
     * this means that value of a variable can be modified during runtime and when the value goes beyond the boundary of it's data type, overflow will occur
@@ -4414,6 +4494,78 @@ ShippingMethod method = (int) ShippingMethod.Express;  // 3
 
 // retrieve string value with number value
 ShippingMethod methodType = (ShippingMethod) 3;  // Express
+```
+* Ref Modifier
+  * Modifies value type
+```c#
+// typical value type cannot be modified case
+public class Calculator {
+  public int Add(int num){
+    num += 2;
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Calculator cal = new Calculator3();
+    int num = 1;
+    cal.Add(num);
+    System.Console.WriteLine(num);  // 1
+  }
+}
+
+
+// using Ref Modifier
+public class Calculator {
+  public int Add(ref int num){  // add ref keyword
+    num += 2;
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Calculator cal = new Calculator3();
+    int num = 1;
+    cal.Add(ref num);  // add ref keyword
+    System.Console.WriteLine(num);  // 3
+  }
+}
+```
+* Out Modifier
+  * returns value in a return void method
+```c#
+// not using the "out" keyword will result in an error
+public class Person {
+  public void GetName(string name){
+    name = "myName";
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Person person = new Person();
+    string name;  // unassigned local variable error
+    person.GetName(name);
+    System.Console.WriteLine(name);
+  }
+}
+
+
+// using the "out" keyword
+public class Person {
+  public void GetName(out string name){
+    name = "myName";
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Person person = new Person();
+    string name;
+    person.GetName(out name);
+    System.Console.WriteLine(name);  // "myName"
+  }
+}
 ```
 ### c++
 [back to top](#table-of-contents)
