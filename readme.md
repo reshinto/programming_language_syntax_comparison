@@ -4611,5 +4611,23 @@ class MainClass {
   }
 }
 ```
+* Readonly modifier
+  * Prevents accidental overwriting of the value
+```c#
+// without readonly modifier
+public System.Collections.Generic.List<int> orders = new System.Collections.Generic.List<int>();
+
+public void MakeOrder() {
+  orders = new System.Collections.Generic.List<int>();  // a new list will be reassigned
+}
+
+
+// using readonly modifier
+public readonly System.Collections.Generic.List<int> orders = new System.Collections.Generic.List<int>();
+
+public void MakeOrder() {
+  orders = new System.Collections.Generic.List<int>();  // this will produce an error that the variable cannot be assigned
+}
+```
 ### c++
 [back to top](#table-of-contents)
