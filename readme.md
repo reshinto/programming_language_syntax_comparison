@@ -4329,6 +4329,9 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 ### ruby
 ### java
 ### c#
+* Properties is a kind of class member that is used for providing access to fields of a class
+* best practive to declare fields as private & create public properties to provide access to them
+* a property encapsulates a get and a set method
 ```c#
 // method 1
 public class Person {
@@ -4371,7 +4374,7 @@ class MainClass {
 }
 
 
-// method 3: using auto-implemented properties (does not work if logic is involved in get method, use method 2 instead)
+// method 3: using auto-implemented properties (does not work if logic is involved in get or set method, use method 2 instead)
 public class Person {
   public string name { get; set; }
 }
