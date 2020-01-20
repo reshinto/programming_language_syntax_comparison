@@ -4536,6 +4536,10 @@ ShippingMethod methodType = (ShippingMethod) 3;  // Express
 ```
 * Ref Modifier
   * Modifies value type
+  * when pasing a value type to a method, a copy of the variable is sent to the method
+    * changes applied to that variable in the method will not be visible upon return from the method
+  * the value type can be modified using the ref modifier
+    * when the ref modifier is used, a reference to the original variable will be sent to the target method
 ```c#
 // typical value type cannot be modified case
 public class Calculator {
@@ -4571,7 +4575,8 @@ class MainClass {
 }
 ```
 * Out Modifier
-  * returns value in a return void method
+  * use to return multiple values from a method
+  * any parameter declared with the out modifier is expected to receive a value at the end of the method
 ```c#
 // not using the "out" keyword will result in an error
 public class Person {
