@@ -4321,6 +4321,21 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 ```
 ### c++
 [back to top](#table-of-contents)
+## Access modifier
+* use to hide the implementation details of a class
+### python
+### javascript
+### ruby
+### java
+### c#
+* 5 types
+  * public: accessible everywhere
+  * private: accessible only from inside the class
+  * protected
+  * internal
+  * protected internal
+### c++
+[back to top](#table-of-contents)
 ## Language Specific
 ### python
 ```python
