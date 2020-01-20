@@ -3094,6 +3094,32 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
+### c#
+```c#
+// method 1 (can be used within a method)
+System.Collections.Generic.Dictionary<string, string> _dictionary = new System.Collections.Generic.Dictionary<string, string>();  // declaration
+_dictionary["name"] = "xyz" // assigning key value pairs
+System.Console.WriteLine(_dictionary["name"]);  // getting value with key
+
+
+// method 2: indexes (need to create a class)
+public class Person {
+  private readonly System.Collections.Generic.Dictionary<string, string> _dictionary = new System.Collections.Generic.Dictionary<string, string>();
+ 
+  public string this[string key] {  // this keyword is required
+    get { return _dictionary[key]; }
+    set { _dictionary[key] = value; }  // value is a keyword
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Person p = new Person();
+    p["name"] = "xyz";
+    System.Console.WriteLine(p["name"]);  // "xyz"
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Destructuring
