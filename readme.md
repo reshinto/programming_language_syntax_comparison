@@ -4436,6 +4436,45 @@ foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
   * having multiple similar methods with different signatures
   * allows multiple different input data types for the same feature
 ```c#
+// Overloading constructors
+// overloaded constructors are separate 
+public class Print {
+  public Print() {
+    System.Console.Write("test");
+  }
+  
+  public Print(string x) {
+    System.Console.Write(x);
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Print print = new Print();  // "first"
+    Print print2 = new Print("second");  // "second"
+  }
+}
+
+
+// overloaded constructors are linked
+public class Print {
+  public Print() {
+    System.Console.Write("first");
+  }
+  
+  public Print(string x) : this() {  // add ": this()" to link with default constructor
+    System.Console.Write(x);
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args) {
+    Print print = new Print("second");  // "firstsecond"
+  }
+}
+
+
+// Overloading methods
 public class Point {
   public int X;
   public int Y;
