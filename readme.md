@@ -3350,6 +3350,34 @@ person2 = Person2("My name")
 print(person2.name)  # My name
 person3 = Person2.use_default_name()
 print(person3.name)  # Default name
+
+
+# Inheritance
+class Employee:  # parent
+    raise_amt = 1.04
+    
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amt)
+
+
+class Developer(Employee):  # child
+    raise_amt = 1.1
+    
+    def __init__(self, first, last, pay, prog_lang):
+        super().__init__(first, last, pay)  # method 1: implement parent class init method
+        Employee.__init__(self, first, last, pay)  # method 2: implement parent class init method
+        self.prog_lang = prog_lang
+
+
+dev = Developer("abc", "xyz", 5000, "Python")
+print(dev.pay)  # 5000
+dev.apply_raise()
+print(dev.pay)  # 5500
 ```
 * python magic method guide
   * https://rszalski.github.io/magicmethods/
@@ -3410,6 +3438,38 @@ class MathClass {
 }
 const test = new MathClass();
 console.log(test.innerAdd(2));  // 8
+
+
+// Inheritance
+class Employee {  // parent
+  raiseAmt = 1.04;
+    
+  constructor(first, last, pay) {
+    this.first = first;
+    this.last = last;     
+    this.pay = pay;
+  }
+        
+  applyRaise() {
+    this.pay = parseInt(this.pay * this.raise_amt);
+  }
+}
+
+
+class Developer extends Employee {  // child
+  raiseAmt = 1.1;
+    
+  constructor(first, last, pay, progLang) {
+    super(first, last, pay)  // implement parent class init method
+    this.progLang = progLang;
+  }
+}
+
+
+const dev = new Developer("abc", "xyz", 5000, "Javascript")
+console.log(dev.pay)  // 5000
+dev.applyRaise()
+console.log(dev.pay)  // 5500
 ```
 ### ruby
 * class variables (@@variableName) are like instance variables but belongs to the class
@@ -3603,6 +3663,45 @@ class MainClass {
     System.Console.WriteLine(test.total);  // 6
     System.Console.WriteLine(test.InnerAdd(2));  // 8
     System.Console.WriteLine(Math.OutterAdd(4, 5));  // 9
+  }
+}
+```
+* Inheritance
+```c#
+// Inheritance
+public class Employee {  // parent
+  protected float raiseAmt = 1.04f;  // use protected to allow modification from other classes
+  protected string first;
+  protected string last;
+  public int pay;  // only public allows display of value externally
+    
+  public Employee(string first, string last, int pay) {
+    this.first = first;
+    this.last = last;     
+    this.pay = pay;
+  }
+        
+  public void applyRaise() {
+    this.pay = System.Convert.ToInt32(this.pay * this.raiseAmt);
+  }
+}
+
+
+public class Developer : Employee {  // child
+  private string progLang;
+    
+  public Developer(string first, string last, int pay, string progLang) : base(first, last, pay) { // base initiates the parent's constructor
+    raiseAmt = 1.1f;  // this will modifiy the base variable value in the parent class
+    this.progLang = progLang;
+  }
+}
+
+class MainClass {
+  public static void Main(string[] args){
+    Developer d = new Developer("abc", "xyz", 5000, "c#");
+    Console.WriteLine(d.pay);  // 5000
+    d.applyRaise();
+    Console.WriteLine(d.pay);  // 5500
   }
 }
 ```
