@@ -2619,14 +2619,20 @@ end
 ### c#
 ```c#
 // Normal functions
-public static void Main() {
+public static void MyFunction() {
   do_something
 }
 
 
 // Normal function with parameters
-public static void Main(dataType a){
+public static void MyFunction(dataType a){
   do_something_with_a
+}
+
+
+// Normal function with default parameters
+public static void MyFunction(dataType a=value) {
+  do_something_with_a;
 }
 ```
 ### c++
@@ -3668,7 +3674,6 @@ class MainClass {
 ```
 * Inheritance
 ```c#
-// Inheritance
 public class Employee {  // parent
   protected float raiseAmt = 1.04f;  // use protected to allow modification from other classes
   protected string first;
@@ -3686,7 +3691,6 @@ public class Employee {  // parent
   }
 }
 
-
 public class Developer : Employee {  // child
   private string progLang;
     
@@ -3702,6 +3706,47 @@ class MainClass {
     Console.WriteLine(d.pay);  // 5000
     d.applyRaise();
     Console.WriteLine(d.pay);  // 5500
+  }
+}
+```
+* Composition
+```c#
+public class Employee {  // parent
+  protected float raiseAmt;
+  protected string first;
+  protected string last;
+  public int pay;
+
+  public Employee(string first, string last, int pay, float raiseAmt = 1.04f) {
+    this.first = first;
+    this.last = last;
+    this.pay = pay;
+    this.raiseAmt = raiseAmt;
+  }
+
+  public void applyRaise() {
+    this.pay = System.Convert.ToInt32(this.pay * this.raiseAmt);
+  }
+}
+
+public class Developer {  // child
+  private string progLang;
+  public readonly Employee _employee;
+
+  public Developer(Employee employee, string progLang) {
+    _employee = employee;
+    this.progLang = progLang;
+  }
+}
+
+class MainClass
+{
+  public static void Main(string[] args)
+  {
+    Developer d = new Developer(new Employee("abc", "xyz", 5000, 1.1f), "c#");
+    Console.WriteLine(d._employee.pay);  // 5000
+    d._employee.applyRaise();
+    Console.WriteLine(d._employee.pay);  // 5500
   }
 }
 ```
@@ -4486,7 +4531,7 @@ public class Person {
   
   public string name {
     get { return _name; }
-    set { _name = value; }
+    set { _name = value; }  // value is a keyword
   }
 }
 
