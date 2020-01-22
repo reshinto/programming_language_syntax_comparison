@@ -4583,12 +4583,122 @@ class MainClass {
 ### ruby
 ### java
 ### c#
-* 5 types
-  * public: accessible everywhere
-  * private: accessible only from inside the class
-  * protected
-  * internal
-  * protected internal
+* 6 types
+  * public: accessible from everywhere in project, no accessibility restrictions
+```c#
+class NumberClass
+{
+    public int number = 10;
+}
+ 
+class MainClass
+{
+    static void Main(string[] args)
+    {
+        NumberClass num = new NumberClass();
+        System.Console.WriteLine(num.number);  // This is OK. The number variable has the public access modifier.
+    }
+}
+```
+  * private: accessible only from inside a class or a structure, can't access them outside the class they are created
+```c#
+class NumberClass
+{
+    private int number = 10;
+}
+ 
+class MainClass
+{
+    static void Main(string[] args)
+    {
+        NumberClass num = new NumberClass();
+        System.Console.WriteLine(num.number);  // Error. We can't access the number variable because 
+        // it has the private access modifier and its only accessible in the NumberClass class
+    }
+}
+```
+  * protected: object is accessible inside the class and in all classes that derive from that class
+```c#
+class NumberClass
+{
+    protected int number = 10;  // we can access this variable inside this class
+}
+ 
+class DerivedClass: NumberClass  // this is inheritance. DerivedClass derives from the NumberClass class
+{
+    void Print()
+    {
+        System.Console.WriteLine(number);  // we can access it in this class as well because it derives from the NumberClass class
+    }
+}
+ 
+class MainClass
+{
+    void Print()
+    {
+        NumberClass num = new NumberClass();
+        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level. 
+        // The Program class doesn't derive from the NumberClass
+    }
+}
+```
+  * internal: object is accessible only inside its own assembly (project) but not in other assemblies (projects)
+```c#
+//First Project (ASSEMBLY)
+public class NumberClassInFirstProject
+{
+    internal int number = 10;  // we can access this variable inside this class
+}
+ 
+class Program1
+{
+    public static void Main()
+    {
+        NumberClassInFirstProject num = new NumberClassInFirstProject();
+        System.Console.WriteLine(num.number);  // This is OK. Anywhere in this project (assembly) 
+        // we can access the number variable.
+    }
+}
+
+
+//Second project (ASSEMBLY)
+class Program2
+{
+    public static void Main()
+    {
+        NumberClassInFirstProject num = new NumberClassInFirstProject();
+        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level. 
+        // The Program class in second project can't access the internal members from another project
+    }
+}
+```
+  * protected internal: a combination of protected and internal, can access the protected internal member only in the same assembly (project) or in a derived class in other assemblies (projects)
+```c#
+//First Project (ASSEMBLY)
+public class NumberClassInFirstProject
+{
+    protected internal int number = 10;  // we can access this variable inside this class
+}
+ 
+class Program1
+{
+    public static void Main()
+    {
+        NumberClassInFirstProject num = new NumberClassInFirstProject();
+        System.Console.WriteLine(num.number);  // This is OK. Anywhere in this project (assembly) we can access the number variable.
+    }
+}
+ 
+//Second project (ASSEMBLY)
+class Program2: NumberClassInFirstProject  // Inheritance
+{
+    public static void Main()
+    {
+        System.Console.WriteLine(number);  // This is OK as well. The class Program derives from the NumberClassInFirstProject class.
+    }
+}
+```
+  * private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
 ### c++
 [back to top](#table-of-contents)
 ## Language Specific
