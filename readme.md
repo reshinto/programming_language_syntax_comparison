@@ -1635,8 +1635,8 @@ string_arrayList.size();
 string_arrayList.clear();
 ```
 ### c#
+* Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
 ```c#
-// Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
 // Empty string array of desired array size
 string[] stringArray = new string[lengthOfDesiredArray];
 // New string array with elements inside
@@ -1705,9 +1705,9 @@ System.Array.Reverse(strArr);  // ["a", "b", "c"]
 // Join elements of an array into a string
 System.String.Join("", strArr);  // "abc"
 System.String.Join(",", strArr);  // "a,b,c"
-
-
-// List (dynamic array)
+```
+* List (dynamic array)
+```c#
 // Empty int array of desired array size
 System.Collections.Generic.List<int> intList = new System.Collections.Generic.List<int>();  // empty list
 System.Collections.Generic.List<int> intList2 = new System.Collections.Generic.List<int>() {1, 2, 3, 4};  // list with values
@@ -1746,6 +1746,18 @@ intList4.RemoveAt(0);  // [3, 4, 5, 6, 7, 8]
 
 // Remove all elements from the list
 intList4.Clear();  // [];
+```
+* ArrayList (dynamic list of multiple data types, does not offer the best performance)
+```c#
+// Empty array list
+System.Collections.ArrayList list = new System.Collections.ArrayList();  // empty list
+
+
+// Add 1 new element to the list (left to right)
+list.Add(1);  // [1]
+list.Add("abc")  // [1, "abc"]
+
+// methods are similar to List
 ```
 ### c++
 ```c++
