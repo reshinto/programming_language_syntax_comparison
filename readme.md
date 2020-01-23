@@ -4137,6 +4137,14 @@ if (require.main === module) {
 ```
 ### ruby
 ### java
+### c#
+```c#
+class MainClass {
+  public static void Main(string[] args) {
+    // do something
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Swapping values
