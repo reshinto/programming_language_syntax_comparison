@@ -3618,14 +3618,14 @@ puts calculate.innerAdd(2)  # 8 2
 ### c#
 * Struct vs Class
   * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
+* Stuct (structures)
 ```c#
-// Class
-public class Math {
+public struct Math {
   public int arg1;
   public int arg2;
   public int total;
   
-  // constructor (must have the same name as class name, no return data type)
+  // constructor (must have the same name as class name, must have parameters)
   public Math(int arg1, int arg2) {
     // this keyword is not a must, however, variable name must be different from the parameter
     this.arg1 = arg1;
@@ -3650,15 +3650,15 @@ class MainClass {
     System.Console.WriteLine(Math.OutterAdd(4, 5));  // 9
   }
 }
-
-
-// Stuct (structures)
-public struct Math {
+```
+* Class
+```c#
+public class Math {
   public int arg1;
   public int arg2;
   public int total;
   
-  // constructor (must have the same name as class name, must have parameters)
+  // constructor (must have the same name as class name, no return data type)
   public Math(int arg1, int arg2) {
     // this keyword is not a must, however, variable name must be different from the parameter
     this.arg1 = arg1;
@@ -3714,10 +3714,28 @@ public class Developer : Employee {  // child
 
 class MainClass {
   public static void Main(string[] args){
-    Developer d = new Developer("abc", "xyz", 5000, "c#");
-    Console.WriteLine(d.pay);  // 5000
-    d.applyRaise();
-    Console.WriteLine(d.pay);  // 5500
+    Developer developer = new Developer("abc", "xyz", 5000, "c#");
+    System.Console.WriteLine(developer.pay);  // 5000
+    developer.applyRaise();
+    System.Console.WriteLine(developer.pay);  // 5500
+    
+    
+    // Upcasting: reduce the methods avaliable to only the parent class
+    Empoyee employee = developer;
+    
+    // Downcasting: add methods avaliable to the child class
+    Developer developer2 = (Developer) employee;  // return an exception if cannot be converted
+    
+    // use "as" keyword if not sure about the runtime type of the object
+    Developer developer3 = employee as Developer;  // return a null if cannot be converted
+    if (developer3 != null) {
+      do_something;
+    }
+    
+    // use "is" keyword to check
+    if (employee is Developer) {
+      Developer developer4 = (Developer) e;
+    }
   }
 }
 ```
