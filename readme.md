@@ -3780,6 +3780,37 @@ class MainClass
   }
 }
 ```
+* Polymorphism
+```c#
+public class Subject {
+  public string subjName;
+  
+  public virtual void Study() {
+    System.Console.WriteLine("Study all subjects");
+  }
+}
+
+public class Math : Subject {
+  public string mathName;
+  
+  public override void Study() {
+    System.Console.WriteLine("Study Maths");
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Subject s = new Subject();
+    s.Study();  // "Study all subjects"
+    s.subjName;  // accessible
+    
+    // polymorphism
+    Subject sm = new Math();  // create a Subject object but override the Study method with the Math object
+    sm.Study();  // "Study Maths"
+    sm.subjName;  // only subjName is accessible, mathName is not
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Importing Libraries
@@ -5045,6 +5076,25 @@ public readonly System.Collections.Generic.List<int> orders = new System.Collect
 
 public void MakeOrder() {
   orders = new System.Collections.Generic.List<int>();  // this will produce an error that the variable cannot be assigned
+}
+```
+* Virtual modifer
+  * Used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived (child) class
+  * cannot be used with the static, abstract, private, or override modifiers
+```c#
+public class ParentClassName { 
+  public virtual void FunctionName() {  // this will allow the child class to override this method
+    do_something;
+  }
+}
+```
+* Override modifer
+  * required to extend or modify the abstract or virtual implementation of an inherited method, property, indexer, or event
+```c#
+public class ChildClassName : ParentClassName {
+  public override void FunctionName() {  // this will override the inherited method
+    do_something;
+  }
 }
 ```
 ### c++
