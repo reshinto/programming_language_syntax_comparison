@@ -3827,9 +3827,10 @@ class MainClass {
   * it is similar to a class but with abstract methods
   * use of "interface" keyword is required
   * does not have implementations (similar to abstract methods)
-  * does not have access modifiers (eg: public, private, etc)
-  * interface is for building loosely-coupled apps
+  * does not have access modifiers (eg: public, private, etc) in methods
+  * interface is for building loosely-coupled extensible and testable apps
     * enable easy modifications with less or 0 impact on other components
+  * has polymorphism behavior
 ```c#
 public interface IFeatureName {  // in .net all interfaces start with "I" convention
   int Method1 { get; set; }
@@ -3855,6 +3856,26 @@ class MainClass {
     if (p is IFeatureName) {  // check if IFeatureName exists
       p.Method2();
     }
+  }
+}
+
+
+// Multiple Interfaces
+public interface IFeatureName1 {
+  void MethodName1();
+}
+
+public interface IFeatureName2 {
+  void MethodName2();
+}
+
+public class ProductName : IFeatureName1, IFeatureName2 {
+  public void MethodName1() {
+    do_something;
+  }
+  
+  public void MethodName2() {
+    do_something;
   }
 }
 ```
