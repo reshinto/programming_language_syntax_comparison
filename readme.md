@@ -5078,7 +5078,20 @@ public void MakeOrder() {
   orders = new System.Collections.Generic.List<int>();  // this will produce an error that the variable cannot be assigned
 }
 ```
-* Virtual modifer
+* Abstract modifier (polymorphism)
+  * what?
+    * indicates that a class or a member (method) is missing implementation
+    * if a method is declared as abstract, the containing class needs to be declared as abstract too
+    * the abstract methods must be implemented in the child class
+    * abstract classes cannot be instantiated
+  * why?
+    * use abstract when you want to provide some common behavior, while forcing other developers to follow your design
+```c#
+public abstract class ParentClassName {  // if a method has an abstract keyword, the class must also have the abstract keyword
+  public abstract void FunctionName();  // this will allow the child class to override this method
+}
+```
+* Virtual modifier (polymorphism)
   * Used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived (child) class
   * cannot be used with the static, abstract, private, or override modifiers
 ```c#
@@ -5088,11 +5101,31 @@ public class ParentClassName {
   }
 }
 ```
-* Override modifer
+* Override modifier (polymorphism)
   * required to extend or modify the abstract or virtual implementation of an inherited method, property, indexer, or event
 ```c#
 public class ChildClassName : ParentClassName {
   public override void FunctionName() {  // this will override the inherited method
+    do_something;
+  }
+}
+```
+* Sealed modifier
+  * prevents other classes from inheriting from it
+  * it is the opposite of abstract classes
+  * Use sealed modifier because selaed classes are slightly faster due to some run-time optimizations
+```c#
+// method 1: applying sealed modifier to the child class will prevent us from being able to create a class that derives from the child class
+public sealed class ChildClassName : ParentClassName {  // new class will not be able to inherit from ChildClassName
+  public override void FunctionName() {
+    do_something;
+  }
+}
+
+
+// method 2: applying sealed modifier to the overriding methods
+public class ChildClassName : ParentClassName {
+  public sealed override void FunctionName() {  // new class will be able to inherit from ChildClassName but will be unable to override the FunctionName that is sealed
     do_something;
   }
 }
