@@ -3823,6 +3823,41 @@ class MainClass {
   }
 }
 ```
+* Interfaces
+  * it is similar to a class but with abstract methods
+  * use of "interface" keyword is required
+  * does not have implementations (similar to abstract methods)
+  * does not have access modifiers (eg: public, private, etc)
+  * interface is for building loosely-coupled apps
+    * enable easy modifications with less or 0 impact on other components
+```c#
+public interface IFeatureName {  // in .net all interfaces start with "I" convention
+  int Method1 { get; set; }
+  void Method2();
+  void Method3(int arg);
+}
+
+public class ProductName : IFeatureName {  // similar to inheritance
+  public int Method1 { get; set; }
+  
+  public void Method2() {
+    do_something;
+  }
+  
+  public void Method3(int arg) {
+    do_something
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    ProductName p = new ProductName();
+    if (p is IFeatureName) {  // check if IFeatureName exists
+      p.Method2();
+    }
+  }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Importing Libraries
