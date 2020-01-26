@@ -2646,6 +2646,18 @@ public static void MyFunction(dataType a){
 public static void MyFunction(dataType a=value) {
   do_something_with_a;
 }
+
+
+// Lambda  expression
+public static void MyFunction() => do_something;
+
+
+// Lambda expression with parameters
+public static void MyFunction(dataType a)=> do_something_with_a;
+
+
+// Lambda expression with default parameters
+public static void MyFunction(dataType a=someValue)=> do_something_with_a;
 ```
 ### c++
 [back to top](#table-of-contents)
