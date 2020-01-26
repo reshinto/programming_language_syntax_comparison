@@ -3837,7 +3837,7 @@ public interface IFeatureName {  // in .net all interfaces start with "I" conven
   void Method3(int arg);
 }
 
-public class ProductName : IFeatureName {  // similar to inheritance
+public class ProductName : IFeatureName {  // similar to inheritance, but different because methods have to be declared
   public int Method1 { get; set; }
   
   public void Method2() {
