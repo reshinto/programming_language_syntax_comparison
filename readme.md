@@ -5110,7 +5110,7 @@ public class ChildClassName : ParentClassName {
   }
 }
 ```
-* Sealed modifier
+* Sealed modifier (polymorphism)
   * prevents other classes from inheriting from it
   * it is the opposite of abstract classes
   * Use sealed modifier because selaed classes are slightly faster due to some run-time optimizations
