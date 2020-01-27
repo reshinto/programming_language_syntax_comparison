@@ -148,7 +148,6 @@ start:
     mov     rdi, 0
     syscall
 
-
 section .data
 
 msg:    db      "Hello, world!", 10
@@ -4453,6 +4452,46 @@ init();
 ```
 ### ruby
 ### java
+### c#
+```c#
+class MainClass {
+    public static void Main(string[] args) {
+        System.Console.WriteLine("Starting");
+        Worker worker = new Worker();
+        worker.DoWork();  // since this is any async function, add this to stack then move on
+        while (!worker.IsComplete) {
+            System.Threading.Thread.Sleep(100);
+            System.Console.Write(".");
+        }
+        System.Console.WriteLine("Done");
+    }
+
+    public static System.Threading.Tasks.Task DelayOperation() {
+        return System.Threading.Tasks.Task.Factory.StartNew(() => {
+            System.Threading.Thread.Sleep(2000);
+        });
+    }
+}
+
+public class Worker { 
+    public bool IsComplete { get; private set; }
+
+    public async void DoWork() {  // add async to make function an async 
+        this.IsComplete = false;
+        System.Console.WriteLine("Doing work");
+        await LongOperation();  // wait for the function to finish before proceeding
+        IsComplete = true;
+        System.Console.WriteLine("Work completed");
+    }
+
+    private System.Threading.Tasks.Task LongOperation() {
+        return System.Threading.Tasks.Task.Factory.StartNew(() => {
+            System.Console.WriteLine("Working!");
+            System.Threading.Thread.Sleep(2000);
+        });
+    }
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Math
