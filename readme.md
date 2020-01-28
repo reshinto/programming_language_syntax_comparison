@@ -4333,11 +4333,28 @@ end
 ```
 ### java
 ### c#
+* try: lets you test a block of code for errors
+* catch: lets you handle the error
+  * use "Exception" keyword to catch all exception types
+  * use specific exception types to catch that specific exception
+  * catch block can be chained (specific exception with highest priority should come first)
+* finally: lets you execute code, after try and catch, regardless of the result
+  * very important for closing a file when an opened file in the try block triggered an exception
 ```c#
 try {
   doSomething;
-} catch(Exception) {
+} catch(Exception ex) {  // ex is an arg (not mandatory), ex can be used to print general or more detailed error
   doSomethingIfErrorOccurs;
+} finally {
+  doSomethingWhenTryAndCatchIsCompleted;
+}
+```
+* Create custom exception
+```c#
+public class NewExceptionName : System.Exception {
+  public NewExceptionName(string message, System.Exception innerException)
+    : base(message, innerException)
+    {}
 }
 ```
 ### c++
@@ -4365,6 +4382,15 @@ raise errorType, "custom error message"
 raise errorType.new("custom error message")
 ```
 ### java
+### c#
+```c#
+// raise generic exception
+throw new System.Exception("custom message");
+
+
+// raise specific exception
+throw new SpecificExceptionName("custom message");
+```
 ### c++
 [back to top](#table-of-contents)
 ## Asynchronous
