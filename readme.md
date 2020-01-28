@@ -47,10 +47,15 @@
 - [Language Specific](#language-specific)
 
 ## Interpreted Language
+### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
+#### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
 * python, javascript, ruby
 ## Compiled Language
+### Statically-typed Language: resolution of types, members, properties, methods are done at compile-time
+#### trying to access a method that is not defined in an object when compiling the app will get an immediate error feedback
 * java: compiled to bytecode then interpreted by Java virtual machine into machine code
 * c#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
+  * from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
 * c++: compiled into machine code
 ## Hello World
 ### python 2
@@ -4027,7 +4032,7 @@ int i = b;
 float f = i;
 
 
-// casking
+// casting
 // explicit type conversion (can convert big value to small, however, data loss will occur)
 float pi = 3.14f;
 int intPi = (int) pi;  // 3
@@ -5262,6 +5267,17 @@ public class ChildClassName : ParentClassName {
     do_something;
   }
 }
+```
+* Dynamic type
+  * does not work on Apple products (Mac, IOS)
+  * converting dynamic to static type does not require casting
+```c#
+// static type
+string a = "test";  // cannot reassign to a different data type
+
+// dynamic type
+dynamic b = "test";  // allows variable to be reassigned to a different data type
+b = 123;
 ```
 ### c++
 [back to top](#table-of-contents)
