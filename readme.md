@@ -461,8 +461,11 @@ variable_name = nil  # nil is returned when no values are assigned, but nothing 
 string stringName = null;
 string stringName2 = String.Empty;
 
-// value type requires ? during declaration
-int? integerName = null;
+// method 1: use the nullable method
+Nullable<int> integerName1 = null;
+
+// method 2: value type requires ? during declaration
+int? integerName2 = null;
 ```
 ### c++
 [back to top](#table-of-contents)
@@ -2060,6 +2063,10 @@ else
 
 // Ternary operator
 condition_a ? do_A : do_B;
+
+
+// Null coalescing operator
+return_this_variable_value_if_not_null ?? else_return_this_value
 
 
 // Switch statement
