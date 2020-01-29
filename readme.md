@@ -2666,6 +2666,15 @@ public static void MyFunction() => do_something;
 // Lambda expression with parameters
 public static void MyFunction(dataType a) => do_something_with_a;
 
+// () not required if single input, use {} if have multi-lines
+var MyFunction = (dataType a) => do_something_with_a;
+var MyFunction = dataType a => do_something_with_a;
+var MyFunction = (dataType a) => { do_something_with_a; };
+var MyFunction = dataType a => { do_something_with_a; };
+
+// dataType not required if data type is obvious
+var MyFunction = a => do_something_with_a;
+var MyFunction = a => { do_something_with_a; };
 
 // Lambda expression with default parameters
 public static void MyFunction(dataType a=someValue) => do_something_with_a;
@@ -5308,6 +5317,15 @@ class MainClass {
     
     DelegateName delegateName4 = GetMyDelegate();  // method 4
     RunDelegate(delegateName4);
+    
+    DelegateName delegateName5 = delegate() { doSomething; }  // method 5: using anonymous methods
+    delegateName5();
+    
+    DelegateName delegateName6 = delegate() { return doSomething; }  // method 6: return value with anonymous methods
+    dataType variableName = delegateName6();
+    
+    DelegateName delegateName7 = () => { return doSomething; }  // method 7: return value with lambda expression
+    dataType variableName = delegateName7();
   }
   
   public static void DoSomethingMethod() {
@@ -5341,6 +5359,15 @@ class MainClass {
     
     DelegateName delegateName4 = GetMyDelegate();  // method 4
     RunDelegate(delegateName4);
+    
+    DelegateName delegateName5 = delegate(dataType argName) { doSomethingWith_argName; }  // method 5: using anonymous methods
+    delegateName5(argName_contents);
+    
+    DelegateName delegateName6 = delegate(dataType argName) { return doSomethingWith_argName; }  // method 6: return value with anonymous methods
+    dataType variableName = delegateName6(argName_contents);
+    
+    DelegateName delegateName7 = (dataType argName) => { return doSomethingWith_argName; }  // method 7: return value with lambda expression
+    dataType variableName = delegateName7(argName_contents);
   }
   
   public static void DoSomethingMethod(dataType argName) {  // dataType must be the same as the delegate
@@ -5377,15 +5404,34 @@ class MainClass
     }
 
     public static void Double(int num) {
-        Console.Write(num * 2);
+        System.Console.Write(num * 2);
     }
     
     public static void Triple(int num) {
-        Console.Write(num * 3);
+        System.Console.Write(num * 3);
     }
 
     public static void ExecuteOperation(int num, Operation operation) {
         operation(num);
+    }
+}
+```
+* Generic Delegates
+  * Action: does not return a value
+  * Func: returns a value
+```c#
+class MainClass
+{
+    public static void Main(string[] args)
+    {
+        // Declares delegate and operation in 1 line, does not return a value
+        System.Action<int> op = num => { System.Console.WriteLine(num * 2); };  // similar to the Double example above
+        op(3);  // 4
+        
+        // Declares delegate and operation in 1 line, returns a value
+        // set input dataTypes first then output dataType
+        System.Func<int, int> op2 = num => { return num * 3; };
+        System.Console.WriteLine(op2(2));  // 6
     }
 }
 ```
