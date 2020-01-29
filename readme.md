@@ -4160,6 +4160,7 @@ public class MainClass {
     int num = 123;
     System.Console.WriteLine(num.GetType());  // System.Int32
     System.Console.WriteLine(num.GetTypeCode());  // Int32
+    System.Console.WriteLine(num.GetType() == typeof(int));  // true (System.Int32 == System.Int32)
   }
 
   public static void PrintTypes(Animal a) {
