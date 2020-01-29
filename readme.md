@@ -3152,7 +3152,7 @@ _dictionary["name"] = "xyz" // assigning key value pairs
 System.Console.WriteLine(_dictionary["name"]);  // getting value with key
 
 
-// method 2: indexes (need to create a class)
+// method 2: indexer (need to create a class)
 public class Person {
   private readonly System.Collections.Generic.Dictionary<string, string> _dictionary = new System.Collections.Generic.Dictionary<string, string>();
  
@@ -5294,6 +5294,214 @@ string a = "test";  // cannot reassign to a different data type
 // dynamic type
 dynamic b = "test";  // allows variable to be reassigned to a different data type
 b = 123;
+```
+* Generics
+  * allows the crating of types that use other types
+  * make classes reusable and with type-safety
+```c#
+public class Stack<T> {  // let data type be T
+  public T testValue { get; set; }
+  private System.Collections.Generic.List<T> stack = new System.Collections.Generic.List<T>();  // use data type
+
+  public T Peek() {  // set return data type as T
+    try {
+      return stack[stack.Count - 1];
+    } catch (System.ArgumentOutOfRangeException) {
+      return default(T);  // return default value of data type T
+    }
+  }
+
+  public void Push(T data) {  // set arg data type as T
+    stack.Add(data);
+  }
+
+  public T Pop() {
+    int lastIndex = stack.Count - 1;
+    T val = stack[lastIndex];  // set data type as T
+    stack.RemoveAt(lastIndex);
+    return val;
+  }
+}
+
+public class Printer {
+  public void Print<T>(Stack<T> stack) {
+    System.Console.WriteLine(stack.testValue);
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Stack<string> s = new Stack<string>() {testValue="abc"};  // method 1
+    // Stack<string> s = new Stack<string> {testValue="abc"};  // method 2
+    // Stack<string> s = new Stack<string>();  // method 3
+    Printer p = new Printer();
+    p.Print(s);  // "abc", method 3 will cause this to result with ""
+  }
+}
+```
+* Generic contraints
+  * Contraints are validations that we can put on generic type parameter
+  * at the instantiation time of generic class, if client provides invalid type parameter then compiler will give an error
+  * 6 types of contraints
+    1. where T : InterfaceName
+```c#
+// method 1: defining generics in methods with contraints
+public class Maths {
+  public int Max(int a, int b) {  // normal method
+    return a > b ? a : b;
+  }
+  
+  public T Max<T>(T a, T b) where T : System.IComparable {
+    // return a > b ? a : b;  // this will produce an error
+    return a.CompareTo(b) > 0 ? a : b;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Maths m = new Maths();
+    int max1 = m.Max(2, 8);  // 8
+    float max2 = m.Max(3.3f, 6.5f);  // 6.5
+  }
+}
+
+
+// method 2: defining generics at class with contraints
+public class Maths<T> where T : System.IComparable {
+  public int Max(int a, int b) {  // normal method
+    return a > b ? a : b;
+  }
+  
+  public T Max(T a, T b) {
+    return a.CompareTo(b) > 0 ? a : b;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Maths<int> m = new Maths<int>();
+    int max1 = m.Max(2, 8);  // 8
+    Maths<float> m = new Maths<float>();
+    float max2 = m.Max(3.3f, 6.5f);  // 6.5
+  }
+}
+```
+    2. where T : <parent class>
+```c#
+public class Product {
+  public string Title { get; set; }
+  public float Price { get; set; }
+}
+
+public class Calculator<T> where T : Product {
+  public float Cost(T product) {
+    return product.Price;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Product p = new Product { Price = 2.3f };
+    Calculator<Product> c = new Calculator<Product>();
+    System.Console.WriteLine(c.Cost(p));  // 2.3
+  }
+}
+```
+    3. where T : struct
+```c#
+public class Nullable<T> where T : struct {
+    private object _value;
+
+    public bool HasValue { 
+        get { return _value != null; }
+    }
+
+    public Nullable() { }
+
+    public Nullable(T value) {
+        _value = value;
+    }
+
+    public T GetValueOrDefault() {
+        if (HasValue)
+            return (T)_value;
+        return default(T);
+    }
+}
+
+class MainClass {
+    public static void Main() {
+        Nullable<int> num = new Nullable<int>(5);
+        System.Console.WriteLine(num.HasValue);  // true
+        System.Console.WriteLine(num.GetValueOrDefault());  // 5
+        
+        Nullable<int> num2 = new Nullable<int>();
+        System.Console.WriteLine(num2.HasValue);  // false
+        System.Console.WriteLine(num2.GetValueOrDefault());  // 0
+        
+        Nullable<string> str = new Nullable<string>();  // error as string is not a value type
+    }
+}
+```
+    4. where T : class
+```c#
+public class NodeList<T> where T : class
+{}
+
+class MainClass {
+    public static void Main(string[] args) {
+        NodeList<int> nodesOfInt = new NodeList<int>();  // error as int is a value type
+        NodeList<string> nodesOfString = new NodeList<string>();  // string is a reference type
+        NodeList<Employee> nodesOfEmployee = new NodeList<Employee>();  // Employee is a reference type
+        NodeList<EventHandler> nodesOfAction = new NodeList<EventHandler>();  //EventHandler is a delegate and a reference type
+    }
+}
+```
+    5. where T : new()
+      * new() represents default constructor
+      * no parameters allowed
+```c#
+public class NodeList<T> where T : new()
+{}
+
+public class ClassName1 {
+    public ClassName1()
+    {}
+}
+
+public class ClassName2 {
+    public ClassName2(dataType argName)
+    {}
+}
+
+class MainClass {
+    public static void Main(string[] args){
+        NodeList<ClassName1> c1 = new NodeList<ClassName1>();  // no error
+        NodeList<ClassName2> c2 = new NodeList<ClassName2>();  // error as parameters are not allowed
+    }
+}
+```
+    6. where T : U
+      * 2 argument types (T and U)
+      * U can be an interface, abstract class, or simple class
+      * T must inherit or implements the U class
+```c#
+public class NodeList<T, U> where T : U {
+    public void DoWork(T subClass, U baseClass)
+    {}
+}
+ 
+public interface IEmployee
+{}
+ 
+public class Employee : IEmployee
+{}
+ 
+class MainClass{
+    public static void Main() {
+        NodeList<Employee, IEmployee> employeeNodes = new NodeList<Employee, IEmployee>();
+    }
+}
 ```
 * Delegates
   * it is an object that knows how to call a method (or a group of methods)
