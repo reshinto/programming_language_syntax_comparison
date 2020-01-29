@@ -5666,5 +5666,52 @@ class MainClass
     }
 }
 ```
+* Reflection
+```c#
+public class Sample { 
+    public string Name { get; set; }
+    public int Age;
+
+    public void MyMethod() { }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+        System.Console.WriteLine(assembly.FullName);  // Override, Version=1.0.7333.32664, Culture=neutral, PublicKeyToken=null
+        var types = assembly.GetTypes();
+        foreach (var type in types) { 
+            System.Console.WriteLine("class: " + type.Name + " BaseType: " + type.BaseType);  // class: Program BaseType: System.Object
+            var props = type.GetProperties();
+            foreach (var prop in props)
+                System.Console.WriteLine("Property name: " + prop.Name + " Property type: " + prop.PropertyType);  // Property name: Name Property type: System.String
+            var fields = type.GetFields();
+            foreach (var field in fields)
+                System.Console.WriteLine("Field: " + field.Name);  // Field: Age
+            var methods = type.GetMethods();
+            foreach (var method in methods)
+                System.Console.WriteLine("Method: " + method.Name);
+                /*
+                // class: Program
+                Method: Equals
+                Method: GetHashCode
+                Method: GetType
+                Method: ToString
+
+                // class: Sample
+                Method: get_Name
+                Method: set_Name
+                Method: MyMethod
+                Method: Equals
+                Method: GetHashCode
+                Method: GetType
+                Method: ToString
+                */
+        }
+    }
+}
+```
 ### c++
 [back to top](#table-of-contents)
