@@ -5386,7 +5386,7 @@ class MainClass {
   }
 }
 ```
-2. where T : <parent class>
+2. where T : parentClass
 ```c#
 public class Product {
   public string Title { get; set; }
