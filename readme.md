@@ -4146,9 +4146,31 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 ```
 ### java
 ### c#
+* typeof: takes a type name (which you specify at compile time)
+* GetType: gets the runtime type of an instance
+* is: returns true if an instance is in the inheritance tree
 ```c#
-int num = 123;
-System.Console.WriteLine(num.GetTypeCode());  // Int32
+public class Animal { }
+public class Dog : Animal { }
+
+public class MainClass {
+  public static void Main() {
+    Dog spot = new Dog();
+    PrintTypes(spot);
+    int num = 123;
+    System.Console.WriteLine(num.GetType());  // System.Int32
+    System.Console.WriteLine(num.GetTypeCode());  // Int32
+  }
+
+  public static void PrintTypes(Animal a) {
+    System.Console.WriteLine(a.GetType() + " " + typeof(Animal));  // Dog Animal
+    System.System.Console.WriteLine(a.GetType() == typeof(Animal));  // false
+    System.Console.WriteLine(a is Animal);  // true  (Dog is Animal)
+    System.Console.WriteLine(a.GetType() + " " + typeof(Dog));  // Dog Dog
+    System.Console.WriteLine(a.GetType() == typeof(Dog));  // true
+    System.Console.WriteLine(a is Dog);  // true (Dog is Dog)
+  }
+}
 ```
 ### c++
 [back to top](#table-of-contents)
