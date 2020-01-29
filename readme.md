@@ -5666,6 +5666,182 @@ class MainClass
     }
 }
 ```
+* Events
+  * it is a way for 1 object to subscribe to events that are happening within another object and then do some sort of logic around that
+```c#
+// naive way of writing events
+public class Person {
+    private string _name;
+    private ClockTower _tower;
+
+    public Person(string name, ClockTower tower) {
+        _name = name;
+        _tower = tower;
+
+        // chain events
+        _tower.Chime += () => System.Console.WriteLine($"{_name} heard the chime.");
+    }
+}
+
+public delegate void ChimeEventHandler();
+
+public class ClockTower {
+    public event ChimeEventHandler Chime;  // more events can be created to handle the different chime timings but it is hard coding
+
+    public void ChimeFivePM() {
+        Chime();
+    }
+
+    public void ChimeSixAM() {
+        Chime();
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        // 1 tower
+        ClockTower tower = new ClockTower();
+        // 1 tower watched by multiple People
+        Person person1 = new Person("John", tower);
+        Person person2 = new Person("Sally", tower);
+        tower.ChimeFivePM();  // can't tell the difference between the 2 events
+        /*
+        John heard the chime.
+        Sally heard the chime.
+        */
+        tower.ChimeSixAM();  // can't tell the difference between the 2 events
+        /*
+        John heard the chime.
+        Sally heard the chime.
+        */
+    }
+}
+
+
+// Using Event args
+public class Person {  // subscriber
+    private string _name;
+    private ClockTower _tower;
+
+    public Person(string name, ClockTower tower) {
+        _name = name;
+        _tower = tower;
+
+        // chain events with +=
+        // use event args in switch case to manage multiple cases
+        _tower.Chime += (object sender, ClockTowerEventArgs args) =>
+        {
+            System.Console.WriteLine($"{_name} heard the chime from {((ClockTower)sender).name}.");
+            switch(args.Time) {
+                case 6: System.Console.WriteLine($"{_name} is waking up!");
+                    break;
+                case 17: System.Console.WriteLine($"{_name} is going home!");
+                    break;
+                default: break;
+            }
+        };
+    }
+}
+
+public class ClockTowerEventArgs : System.EventArgs {  // create event class to distinsh between multiple cases
+    public int Time { get; set; }
+}
+
+public delegate void ChimeEventHandler(object sender, ClockTowerEventArgs args);  // add event args to enable handling of multiple cases for 1 event type
+
+public class ClockTower {  // publisher
+    public string name = "tower A";
+    public event ChimeEventHandler Chime;  // 1 event type to handle multiple cases
+
+    public void ChimeFivePM() {
+        Chime(this, new ClockTowerEventArgs { Time = 17 });  // use event class to create unique case
+    }
+
+    public void ChimeSixAM() {
+        Chime(this, new ClockTowerEventArgs { Time = 6 });  // use event class to create unique case
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        // 1 tower
+        ClockTower tower = new ClockTower();
+        // 1 tower watched by multiple People
+        Person person1 = new Person("John", tower);
+        Person person2 = new Person("Sally", tower);
+        tower.ChimeSixAM();
+        /*
+        John heard the chime from tower A.
+        John is waking up!
+        Sally heard the chime from tower A.
+        Sally is waking up!
+        */
+        tower.ChimeFivePM();
+        /*
+        John heard the chime from tower A.
+        John is going home!
+        Sally heard the chime from tower A.
+        Sally is going home!
+        */
+    }
+}
+
+
+// Using System.EventHandler (auto generate delegates)
+public class Person {  // subscriber
+    private string _name;
+    private ClockTower _tower;
+
+    public Person(string name, ClockTower tower) {
+        _name = name;
+        _tower = tower;
+
+        // chain events with +=
+        // use event args in switch case to manage multiple cases
+        _tower.Chime += (object sender, ClockTowerEventArgs args) =>
+        {
+            System.Console.WriteLine($"{_name} heard the chime from {((ClockTower)sender).name}.");
+            switch(args.Time) {
+                case 6: System.Console.WriteLine($"{_name} is waking up!");
+                    break;
+                case 17: System.Console.WriteLine($"{_name} is going home!");
+                    break;
+                default: break;
+            }
+        };
+    }
+}
+
+public class ClockTowerEventArgs : System.EventArgs {  // create event class to distinsh between multiple cases
+    public int Time { get; set; }
+}
+
+// public delegate void ChimeEventHandler(object sender, ClockTowerEventArgs args);  // not required
+
+public class ClockTower {
+    public string name = "tower A";
+    // public event ChimeEventHandler Chime;  // convert to the following
+    public event System.EventHandler<ClockTowerEventArgs> Chime;  // by using Sysmtem.EventHandler it handles the delegate declaration for us
+
+    public void ChimeFivePM() {
+        Chime(this, new ClockTowerEventArgs { Time = 17 });
+    }
+
+    public void ChimeSixAM() {
+        Chime(this, new ClockTowerEventArgs { Time = 6 });
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        ClockTower tower = new ClockTower();
+        Person person1 = new Person("John", tower);
+        Person person2 = new Person("Sally", tower);
+        tower.ChimeSixAM();
+        tower.ChimeFivePM();
+    }
+}
+```
 * Reflection
 ```c#
 public class Sample { 
