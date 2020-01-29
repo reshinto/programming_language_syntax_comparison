@@ -5343,7 +5343,7 @@ class MainClass {
   * Contraints are validations that we can put on generic type parameter
   * at the instantiation time of generic class, if client provides invalid type parameter then compiler will give an error
   * 6 types of contraints
-    1. where T : InterfaceName
+1. where T : InterfaceName
 ```c#
 // method 1: defining generics in methods with contraints
 public class Maths {
@@ -5386,7 +5386,7 @@ class MainClass {
   }
 }
 ```
-    2. where T : <parent class>
+2. where T : <parent class>
 ```c#
 public class Product {
   public string Title { get; set; }
@@ -5407,7 +5407,7 @@ class MainClass {
   }
 }
 ```
-    3. where T : struct
+3. where T : struct
 ```c#
 public class Nullable<T> where T : struct {
     private object _value;
@@ -5443,7 +5443,7 @@ class MainClass {
     }
 }
 ```
-    4. where T : class
+4. where T : class
 ```c#
 public class NodeList<T> where T : class
 {}
@@ -5457,9 +5457,9 @@ class MainClass {
     }
 }
 ```
-    5. where T : new()
-      * new() represents default constructor
-      * no parameters allowed
+5. where T : new()
+  * new() represents default constructor
+  * no parameters allowed
 ```c#
 public class NodeList<T> where T : new()
 {}
@@ -5481,10 +5481,10 @@ class MainClass {
     }
 }
 ```
-    6. where T : U
-      * 2 argument types (T and U)
-      * U can be an interface, abstract class, or simple class
-      * T must inherit or implements the U class
+6. where T : U
+  * 2 argument types (T and U)
+  * U can be an interface, abstract class, or simple class
+  * T must inherit or implements the U class
 ```c#
 public class NodeList<T, U> where T : U {
     public void DoWork(T subClass, U baseClass)
