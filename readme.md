@@ -5286,5 +5286,108 @@ string a = "test";  // cannot reassign to a different data type
 dynamic b = "test";  // allows variable to be reassigned to a different data type
 b = 123;
 ```
+* Delegates
+  * it is an object that knows how to call a method (or a group of methods)
+  * it is a reference or a pointer to a function
+  * it is for designing extensible and flexible apps (eg frameworks)
+```c#
+// without parameters
+public delegate void DelegateName();  // use of "delegate" keyword is required
+
+class MainClass {
+  public static void Main() {
+    // initialize delegate
+    DelegateName delegateName = new DelegateName(DoSomethingMethod);  // method 1
+    delegateName();  // run delegate
+    
+    DelegateName delegateName2 = DoSomethingMethod;  // method 2
+    delegateName2();
+    
+    DelegateName delegateName3 = DoSomethingMethod;
+    RunDelegate(delegateName3);  // method 3
+    
+    DelegateName delegateName4 = GetMyDelegate();  // method 4
+    RunDelegate(delegateName4);
+  }
+  
+  public static void DoSomethingMethod() {
+    doSomething;
+  }
+  
+  public static void RunDelegate(DelegateName delegateName3) {
+    delegateName3();
+  }
+  
+  public static DelegateName GetMyDelegate() {
+    return new DelegateName(DoSomethingMethod);
+  }
+}
+
+
+// with parameters
+public delegate void DelegateName(dataType argName);  // dataType must be the same as the pointed function
+
+class MainClass {
+  public static void Main() {
+    // initialize delegate
+    DelegateName delegateName = new DelegateName(DoSomethingMethod);  // method 1
+    delegateName(argName_contents);  // must pass in argument
+    
+    DelegateName delegateName2 = DoSomethingMethod;  // method 2
+    delegateName2(argName_contents);  // must pass in argument
+    
+    DelegateName delegateName3 = DoSomethingMethod;
+    RunDelegate(delegateName3);  // method 3
+    
+    DelegateName delegateName4 = GetMyDelegate();  // method 4
+    RunDelegate(delegateName4);
+  }
+  
+  public static void DoSomethingMethod(dataType argName) {  // dataType must be the same as the delegate
+    doSomethingWith_argName;
+  }
+  
+  public static void RunDelegate(DelegateName delegateName3) {
+    delegateName3(argName_contents);  // must pass in argument
+  }
+  
+  public static DelegateName GetMyDelegate() {
+    return new DelegateName(DoSomethingMethod);
+  }
+}
+
+
+// usage example
+public delegate void Operation(int num);
+
+class MainClass
+{
+    public static void Main(string[] args)
+    {
+        // method 1
+        Operation op = Double;
+        ExecuteOperation(2, op);  // result 4, display 4
+        op = Triple;
+        ExecuteOperation(2, op);  // result 6, display 46
+        
+        // method 2: use chaining
+        Operation op2 = Double;
+        op2 += Triple;
+        ExecuteOperation(2, op2);  // 46
+    }
+
+    public static void Double(int num) {
+        Console.Write(num * 2);
+    }
+    
+    public static void Triple(int num) {
+        Console.Write(num * 3);
+    }
+
+    public static void ExecuteOperation(int num, Operation operation) {
+        operation(num);
+    }
+}
+```
 ### c++
 [back to top](#table-of-contents)
