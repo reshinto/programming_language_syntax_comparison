@@ -5842,6 +5842,29 @@ class MainClass {
     }
 }
 ```
+* Extension methods
+  * allow us to add methods to an existing class without changing its source code or creating a new class that inherits from it
+  * if have source code, modify source code instead of creating extension methods
+```c#
+public class Person {  // given to us by others, this source code we can't see or modify directly
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public static class Extensions {  // creates an extension of the Person class by using the static in class declaration
+    public static void SayHello(this Person person, Person person2) {  // this keyword must be added only for the 1st arg
+        System.Console.WriteLine($"{person.Name} says hello to {person2.Name}");
+    }
+}
+
+class MainClass {
+    static void Main(string[] args) {
+        Person p = new Person { Name = "John", Age = 21 };
+        Person p2 = new Person { Name = "Sally", Age = 25 };
+        p.SayHello(p2);  // "John says hello to Sally"
+    }
+}
+```
 * Reflection
 ```c#
 public class Sample { 
