@@ -5865,6 +5865,81 @@ class MainClass {
     }
 }
 ```
+* LINQ: Language Integrated Query
+  * gives the capability to query objects
+  * can qury
+    * objects in memory, eg collections (LINQ to Objects)
+    * Databases (LINQ to Entities)
+    * XML (LINQ to XML)
+    * ADO.NET Data Sets (LINQ to Data Sets)
+  * keywords
+    * where: set conditions
+    * orderby
+      * ascending order
+        > orderby variableName
+      * descending order
+        > orderby variableName descending
+    * select
+      * cannot be used with group keyword
+      * query result will become an array of values
+      * must end with a ;
+        > select variableName;
+    * group
+      * cannot be used with select keyword
+      * query result will become an array of dictionaries
+      * must end with a ;
+        > group variableName by variableName;
+```c#
+
+// simple example
+using System.Linq;  // this is required for query usage
+
+class MainClass {
+  public static void Main() {
+    string sample = "The quick brown fox jumps over the lazy dog.";
+    
+    var resultArr = from c in sample.ToLower()
+                    where c== 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+                    orderby c
+                    select c;
+                    // group c by c;
+    foreach (var c in resultArr)
+      System.Console.WriteLine(c);  // use for select to get value
+      // System.Console.WriteLine(c.Key);  // use for group to get value
+  }
+}
+
+
+// realistic example
+using System.Linq;
+
+public class Person {
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public int Age { get; set; }
+}
+
+class MainClass {
+  public static void Main() {
+    System.Collections.Generic.List<Person> people = new System.Collections.Generic.List<Person> {
+      new Person{FirstName="John", LastName="Doe", Age=25},
+      new Person{FirstName="John2", LastName="Doe2", Age=26},
+      new Person{FirstName="John3", LastName="Doe3", Age=20},
+    };
+    
+    // method 1: LINQ Query Operators
+    var resultArr = from p in people
+                    where p.Age < 25
+                    select p;
+                    
+    // method 2: LINQ Extension methods
+    // var resultArr = person.Where(p => p.Age < 25).Select(p => p);
+    
+    foreach (var item in resultArr)
+      System.Console.WriteLine(item.FirstName);  // prints out firstnames of those with age less than 25
+  }
+}
+```
 * Reflection
 ```c#
 public class Sample { 
