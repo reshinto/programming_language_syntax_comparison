@@ -4672,6 +4672,11 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ### java
 ### c#
 ```c#
+// Create or Save file
+string filename = @"/my/file/path/fileFolder/filename.txt";
+string textString = "data to save in file";
+System.IO.File.WriteAllText(filename, textString);  // existing file will be overwritten
+
 // Copy file
 bool overwrite = true;  // overwrite file if exist, else return an File already exists exception
 string toBeCopiedFile = @"/my/file/path/fileFolder/filename.txt";
@@ -4736,6 +4741,10 @@ Path.GetFileNameWithoutExtension(toBeCopiedFile);  // "filename"
 
 // Get directory name of a file from path
 Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
+
+
+// Open file (not in app)
+System.Diagnostics.Process.Start(filename);
 ```
 ### c++
 [back to top](#table-of-contents)
