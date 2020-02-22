@@ -4641,7 +4641,7 @@ System.DateTime newDate = new System.DateTime(2015, 1, 1);
 
 
 // Get current date (time set to default at 12:00:00 AM)
-System.DateTime todayDate = System.DateTime.today;  // 1/14/2020 12:00:00 AM
+System.DateTime todayDate = System.DateTime.Today;  // 1/14/2020 12:00:00 AM
 
 
 // Get current date and time
