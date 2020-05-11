@@ -4117,6 +4117,9 @@ typeof num;  // "number"
 
 let array = [1, 2, 3];
 typeof array;  // "object"
+
+let variable1 = 10 / undefined;  // NaN
+Number.isNaN(variable1);  // true
 ```
 ### ruby
 ```ruby
