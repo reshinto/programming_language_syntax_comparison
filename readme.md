@@ -2925,11 +2925,20 @@ let newObj = {
 let myKey = "emotion"
 let newObj2 = {
   [myKey]: "Happy",
-}
+};  // key = "emotion"
 
 // Creates a new object, using an existing object as the prototype of the newly created object
 let newObj2 = Object.create(newObj);  // method 1
-let newObj2 = Object.assign({}, newObj);  // method 2
+let newObj2pt2 = Object.create(null, {
+  key1: value,
+});
+let newObj2pt3 = Object.create(null, {
+  key: {
+    value: "something",
+    writable: true,
+  }
+});
+let newObj2 = Object.assign(oldObj, newObj);  // method 2: merge 2 object together
 
 // Assign and Reassign values
 newObj["key1"] = "newString";  // method 1, bracket notation
