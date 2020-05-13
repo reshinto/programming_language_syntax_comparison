@@ -2921,6 +2921,12 @@ let newObj = {
     key6: function(arg){return do_something_with_arg}
 };
 
+// dynamic key
+let myKey = "emotion"
+let newObj2 = {
+  [myKey]: "Happy",
+}
+
 // Creates a new object, using an existing object as the prototype of the newly created object
 let newObj2 = Object.create(newObj);  // method 1
 let newObj2 = Object.assign({}, newObj);  // method 2
