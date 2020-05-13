@@ -1419,7 +1419,8 @@ var list_name = [];
 // Method 2: empty list
 var list_name = new Array();
 // create list of empty elements
-var list_name = new Array(3); // [empty, empty, empty]
+var list_name = new Array(3); // [undefined, undefined, undefined]
+var list_name = Array.from({ length: 3});  // [undefined, undefined, undefined]
 // List with elements
 var list_name = [1, "one", true];
 var list_name = new Array(3).fill("-") // ["-", "-", "-"]
