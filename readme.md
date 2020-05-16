@@ -2627,6 +2627,26 @@ function getNum(): number {
 function getArr(): object {
   return [1, "string"];
 }
+
+// accept multiple types in the parameter with "|"
+function totalLength(x: string | any[], y: string | any[]): number {  // allow mix of string and array parameters
+  let total: number = x.length + y.length;
+  return total;
+}
+
+// function overloading
+function totalLength(x: string, y: string): number;  // allows either only string parameters
+function totalLength(x: any[], y: any[]): number;  // or only array parameters
+function totalLength(x: string | any[], y: string | any[]): number {  // does not allow mix of string and array parameters
+  var total: number = x.length + y.length;
+  return total;
+}
+
+// using anonymous types
+function totalLength(x: {length: number}, y: {length: number}): number { // in this case, allow any parameter types that is able to calculate length (string, array)
+  var total: number = x.length + y.length;
+  return total;
+}
 ```
 ### ruby
 * Function returns result regardless of whether return statement is declared or not
@@ -3651,6 +3671,56 @@ class Book {
     this.pages.push(page);
   }
 }
+
+// Interface
+interface ClockConstructor {
+  new (hour: number, minute: number): ClockInterface;
+}
+
+interface ClockInterface {
+  tick(): void;
+}
+
+function createClock(
+  ctor: ClockConstructor,
+  hour: number,
+  minute: number,
+): ClockInterface {
+  return new ctor(hour, minute);
+}
+
+class DigitalClock implements ClockInterface {
+  h: number;  // must be declared to use "this.h"
+  m: number;
+
+  constructor(h: number, m: number) {
+    this.h = h;
+    this.m = m;
+  }
+
+  tick(): void {
+    console.log(`beep beep ${this.h}:${this.m}`);
+  }
+}
+
+class AnalogClock implements ClockInterface {
+  h: number;
+  m: number;
+
+  constructor(h: number, m: number) {
+    this.h = h;
+    this.m = m;
+  }
+
+  tick(): void {
+    console.log(`tick tok ${this.h}:${this.m}`);
+  }
+}
+
+const digital = createClock(DigitalClock, 12, 17);
+const analog = createClock(AnalogClock, 7, 32);
+digital.tick();
+analog.tick();
 ```
 ### ruby
 * class variables (@@variableName) are like instance variables but belongs to the class
