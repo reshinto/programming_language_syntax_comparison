@@ -3681,14 +3681,6 @@ interface ClockInterface {
   tick(): void;
 }
 
-function createClock(
-  ctor: ClockConstructor,
-  hour: number,
-  minute: number,
-): ClockInterface {
-  return new ctor(hour, minute);
-}
-
 class DigitalClock implements ClockInterface {
   h: number;  // must be declared to use "this.h"
   m: number;
@@ -3717,8 +3709,8 @@ class AnalogClock implements ClockInterface {
   }
 }
 
-const digital = createClock(DigitalClock, 12, 17);
-const analog = createClock(AnalogClock, 7, 32);
+const digital = new DigitalClock(12, 17);
+const analog = new AnalogClock(7, 32)
 digital.tick();
 analog.tick();
 ```
