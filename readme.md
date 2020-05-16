@@ -5031,6 +5031,17 @@ class MainClass {
 * use to hide the implementation details of a class
 ### python
 ### javascript
+### typescript
+* 3 types
+  * Public: 
+    * By default, members (properties and methods) of TypeScript class are public
+    * Public members are accessible everywhere without restrictions
+  * Private: 
+    * A private member cannot be accessed outside of its containing class
+    * Private members can be accessed only within the class.
+  * Protected: 
+    * A protected member cannot be accessed outside of its containing class
+    * Protected members can be accessed only within the class and by the instance of its sub/child class.
 ### ruby
 ### java
 ### c#
