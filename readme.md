@@ -248,6 +248,15 @@ let integer_name = 123;
 // method 3
 const integer_name = 123;  // variable value cannot be reassigned
 ```
+### typescript
+```typescript
+let integer_name: number = 123;
+
+let decimal: number = 6;
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+```
 ### ruby
 ```ruby
 integer_name = 123
@@ -386,6 +395,10 @@ var float_name = 1.123;
 let float_name = 1.123;
 const float_name = 1.123;
 ```
+### typescript
+```typescript
+let float_name: number = 1.123;
+```
 ### ruby
 ### java:
 ```java
@@ -450,6 +463,12 @@ let variable_name2 = null;
 
 // NaN is a special numeric value meaning “Not a Number”
 let variable_name3 = NaN;
+```
+### typescript
+```typescript
+let variable_name: void = undefined;
+let variable_name2: void = null;
+let variable_name3: number = NaN;
 ```
 ### ruby
 ```ruby
@@ -601,6 +620,10 @@ const stringName = "string";
 
 // raw strings (ignore escape characters)
 String.raw`\n raw string`;  // "\n raw string"
+```
+### typescript
+```typescript
+let stringName: string = "string";
 ```
 ### ruby
 ```ruby
@@ -933,9 +956,15 @@ std::string stringName ("string");
 * truthy: "xxx", 1, -1, 2.5, true
 * falsey: false, 0, "", null, undefined, NaN
 ### javascript ES6
-* let boolean_name; boolean_name = true;
-* let boolean_name = false;
-* const boolean_name = true;
+```javascript
+let boolean_name; boolean_name = true;
+let boolean_name = false;
+const boolean_name = true;
+```
+### typescript
+```typescript
+let isDone: boolean = false;
+```
 ### ruby
 * boolean_name = true
 * boolean_name = false
@@ -1513,6 +1542,16 @@ list_name = [1, 2, 3, 4];
 list_name.every(helper); // false
 list_name = [1, 2];
 list_name.every(helper); // true
+```
+### typescript
+```typescript
+// method 1
+let numArr: number[] = [1, 2, 3];
+let strArr: string[] = ["a", "bc", "def"];
+
+// method 2
+let numArr2: Array<number> = [1, 2, 3];
+let strArr2: Array<string> = ["a", "bc", "def"];
 ```
 ### ruby
 ```ruby
@@ -2565,6 +2604,30 @@ function myFunction(a=value) {
     do_something_with_a;
 }
 ```
+### typescript
+```typescript
+// return void
+function greetByName(name: string): void {
+  console.log('Well hi there,', name);
+}
+
+function makeGreen(name: string): string {
+  const newName = `Green ${name}`;
+  return newName;
+}
+
+function getStr(): string {
+  return "string";
+}
+
+function getNum(): number {
+  return 123;
+}
+
+function getArr(): object {
+  return [1, "string"];
+}
+```
 ### ruby
 * Function returns result regardless of whether return statement is declared or not
   * Reason: ruby applies Implicit Return feature
@@ -3042,6 +3105,14 @@ newDict.delete(obj);
 // Check if key value pair exist with key input
 newDict.has(obj);
 ```
+### typescript
+```typescript
+// object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined
+let objName: object = {
+  key1: 123,
+  key2: "string"
+}
+```
 ### ruby
 ```ruby
 # Hash literal notation, OLD SYNTAX
@@ -3469,9 +3540,12 @@ test.innerAdd(2);  // 8
 ```javascript
 // Case 1: normal javascript way
 class MathClass {
+  #privateVariable  // required if want to declare private variable
+  
   constructor(arg1, arg2) {
     this.arg1 = arg1;
     this.arg2 = arg2;
+    this.#privateVariable = "this is a real private variable";  // cannot be accessed directly
     this.total = this.constructor.outterAdd(arg1, arg2);
   }
   
@@ -3483,12 +3557,25 @@ class MathClass {
   static outterAdd(number1, number2) {
     return number1 + number2;
   }
+  
+  get privateVariable() {
+    return this.#privateVariable;
+  }
+  
+  set privateVariable(newValue) {
+    this.#privateVariable = newValue;
+  }
 }
+
 const test = new MathClass(2, 4);
 console.log(test.total);  // 6
 console.log(test.innerAdd(2));  // 8
 console.log(test.constructor.outterAdd(3, 7));  // 10
 console.log(MathClass.outterAdd(4, 5));  // 9
+
+console.log(test.privateVariable);  // "this is a real private variable"
+test.privateVariable = "changed private variable value";
+console.log(test.privateVariable);  // "changed private variable value"
 
 // Case 2: event handlers in React
 class MathClass {
@@ -3536,6 +3623,34 @@ const dev = new Developer("abc", "xyz", 5000, "Javascript")
 console.log(dev.pay)  // 5000
 dev.applyRaise()
 console.log(dev.pay)  // 5500
+```
+### typescript
+```typescript
+class Person {
+  name: string;
+  age: number;
+  isWorking: boolean;
+}
+
+class Page {
+  private content: string;
+
+  constructor(content: string = '') {
+    this.content = content;
+  }
+
+  public getContent(): string {
+    return this.content;
+  }
+}
+
+class Book {
+  private pages: Page[] = [];
+
+  public add(page: Page): void {
+    this.pages.push(page);
+  }
+}
 ```
 ### ruby
 * class variables (@@variableName) are like instance variables but belongs to the class
@@ -5083,6 +5198,41 @@ var foo = {
 }
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
+### typescript
+```typescript
+// declare variable as "any" type if you do not know its type
+// will receive an error if use methods for the wrong type (no auto checking)
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+
+// Tuples: allow you to express an array with a fixed number of elements whose types are known, but need not be the same (immutable)
+// Declare a tuple type
+let x: [string, number];
+// Initialize it
+x = ["hello", 10]; // OK
+// Initialize it incorrectly
+x = [10, "hello"]; // Error
+
+
+// Enum (taken from c#)
+// By default, enums begin numbering their members starting at 0
+enum Color {
+  Red,
+  Green,
+  Blue,
+}
+let c: Color = Color.Green;  // 1
+let colorName: string = Color[1];  // "Green"
+
+enum Color {
+  Red = 1,
+  Green,
+  Blue,
+}
+let c: Color = Color.Green;  // 2
+let colorName: string = Color[2];  // "Green"
+```
 ### ruby
 ### java
 ### c#
@@ -5163,6 +5313,7 @@ checked {
 * Enum
   * Used to manage number type constants for better clarity and maintainability
   * Can be declared in namespace, in classes
+  * By default, enums begin numbering their members starting at 0
 ```c#
 // not reccommended method
 const int RegularAirMail = 1;
