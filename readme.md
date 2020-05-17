@@ -5306,24 +5306,24 @@ var foo = {
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
 ### typescript
+* Declaring with type as "any": use to declare variable type if you do not know its type
+  * will receive an error if use methods for the wrong type (no auto checking)
 ```typescript
-// declare variable as "any" type if you do not know its type
-// will receive an error if use methods for the wrong type (no auto checking)
 let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false; // okay, definitely a boolean
-
-// Tuples: allow you to express an array with a fixed number of elements whose types are known, but need not be the same (immutable)
+```
+* Tuples: allow you to express an array with a fixed number of elements whose types are known, but need not be the same (immutable)
+```typescript
 // Declare a tuple type
 let x: [string, number];
 // Initialize it
 x = ["hello", 10]; // OK
 // Initialize it incorrectly
 x = [10, "hello"]; // Error
-
-
-// Enum (taken from c#)
-// By default, enums begin numbering their members starting at 0
+```
+* Enum: By default, enums begin numbering their members starting at 0
+```typescript
 enum Color {
   Red,
   Green,
@@ -5339,6 +5339,17 @@ enum Color {
 }
 let c: Color = Color.Green;  // 2
 let colorName: string = Color[2];  // "Green"
+```
+* Generics
+```typescript
+// "T" can be name as anything, used "T" due to convention
+function genericFunc<T>(value: T): T {  // T is the type base on the value type given in the parameter when called
+  return value;
+}
+
+console.log(genericFunc("str type"));  // type are declared base on the input value type
+console.log(genericFunc(123));
+console.log(genericFunc(false));
 ```
 ### ruby
 ### java
@@ -5605,7 +5616,7 @@ dynamic b = "test";  // allows variable to be reassigned to a different data typ
 b = 123;
 ```
 * Generics
-  * allows the crating of types that use other types
+  * allows the creating of types that use other types
   * make classes reusable and with type-safety
 ```c#
 public class Stack<T> {  // let data type be T
