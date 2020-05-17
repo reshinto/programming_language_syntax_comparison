@@ -3672,6 +3672,7 @@ class Book {
   }
 }
 
+
 // Interface
 interface ClockConstructor {
   new (hour: number, minute: number): ClockInterface;
@@ -3713,6 +3714,39 @@ const digital = new DigitalClock(12, 17);
 const analog = new AnalogClock(7, 32)
 digital.tick();
 analog.tick();
+
+
+// abstract
+abstract class Department {
+  constructor(public name: string) {}
+
+  printName(): void {
+    console.log(`Department name: ${this.name}`);
+  }
+
+  abstract printMeeting(): void; // must be implemented in derived classes
+}
+
+class AccountingDepartment extends Department {  // must use all and only methods declared in the abstract class
+  constructor() {
+    super("Accounting and Auditing"); // constructors in derived classes must call super()
+  }
+
+  printMeeting(): void {  // methods can be customized and modified
+    console.log("The Accounting Department meets each Monday at 10am.");
+  }
+
+  generateReports(): void {  // does not exist in the abstract class, will produce an error if run
+    console.log("Generating accounting reports...");
+  }
+}
+
+let department: Department; // ok to create a reference to an abstract type
+//department = new Department(); // error: cannot create an instance of an abstract class
+department = new AccountingDepartment(); // ok to create and assign a non-abstract subclass
+department.printName();
+department.printMeeting();
+//department.generateReports(); // error: method doesn't exist on declared abstract type
 ```
 ### ruby
 * class variables (@@variableName) are like instance variables but belongs to the class
