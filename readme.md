@@ -250,7 +250,10 @@ const integer_name = 123;  // variable value cannot be reassigned
 ```
 ### typescript
 ```typescript
-let integer_name: number = 123;
+let integer_name: number = 123;  // method 1
+let integer_name2 = 123;  // method 2, not required to declare type if assigning to value
+let integer_name3: number;  // must declare the value type
+integer_name3 = 123;
 
 let decimal: number = 6;
 let hex: number = 0xf00d;
@@ -466,7 +469,10 @@ let variable_name3 = NaN;
 ```
 ### typescript
 ```typescript
-let variable_name: void = undefined;
+let variable_name: void = undefined;  // method 1
+let variable_name2 = undefined;  // method 2
+let variable_name: undefined;  // method 3
+
 let variable_name2: void = null;
 let variable_name3: number = NaN;
 ```
@@ -624,6 +630,11 @@ String.raw`\n raw string`;  // "\n raw string"
 ### typescript
 ```typescript
 let stringName: string = "string";
+
+// declare string and/or other types
+let strOrNum: (string | number);
+strOrNum = "abc";
+strOrNum = 123;  // can be reassigned to a declared type
 ```
 ### ruby
 ```ruby
@@ -1552,6 +1563,9 @@ let strArr: string[] = ["a", "bc", "def"];
 // method 2
 let numArr2: Array<number> = [1, 2, 3];
 let strArr2: Array<string> = ["a", "bc", "def"];
+
+// declare more than 1 type with union
+let strOrNumArr: (string | number)[];  // allows mixture or number and/or string values in 1 array
 ```
 ### ruby
 ```ruby
