@@ -5319,6 +5319,30 @@ var foo = {
 }
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
+* Proxy
+  * checks for the number of times the field in the object has been accessed
+  * each time the field has been accessed, the defined logic will occur
+```javascript
+const target = {};
+const handler = {
+  get: function (targetObj, field) {
+    if (field === "nextId") {  // field name must be the same when called
+      if (targetObj[field] === undefined) {
+        targetObj[field] = 1;
+        return targetObj[field];
+      }
+      targetObj[field]++;
+      return targetObj[field];
+    }
+    return undefined;
+  },
+};
+
+const proxy = new Proxy(target, handler);
+console.log(proxy.nextId);  // 1  (field name must be the same as when doing the conditional check)
+console.log(proxy.nextId);  // 2
+console.log(proxy.nextId);  // 3
+```
 ### typescript
 * Declaring with type as "any": use to declare variable type if you do not know its type
   * will receive an error if use methods for the wrong type (no auto checking)
