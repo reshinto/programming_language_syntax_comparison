@@ -4848,6 +4848,19 @@ import random
 random.randint(1, 3)  # any number from 1 to 3
 ```
 ### javascript
+```javascript
+// random integer from 0 to 9
+Math.floor(Math.random() * 10);
+
+// random integer from 0 to 10
+Math.floor(Math.random() * 11);
+
+// random integer from 0 to 10
+Math.floor(Math.random() * 11);
+
+// random integer from 1 to 10
+Math.floor(Math.random() * 10) + 1;
+```
 ### ruby
 ### java
 ### c#
@@ -4868,6 +4881,12 @@ Random rand = new Random();
 System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 ```
 ### c++
+```c++
+// Seed the random number generator with the time method, then convert value to integer
+srand((int)time(0));
+// Get the random number from the seed & save it to a variable
+int randomNumber = rand() % 100;  // number range from 0 to 99
+```
 [back to top](#table-of-contents)
 ## Date and Time]
 ### python
