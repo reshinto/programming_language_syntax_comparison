@@ -6342,4 +6342,35 @@ class Program
 }
 ```
 ### c++
+* Enum
+```c++
+enum Color { red, green, blue };
+
+// enum limitations
+// 2 enumerations cannot share the same names (use enum class instead)
+enum Color2 { red, green, blue };  // throws a compilation error
+
+// no variable can have a name which is already in some enumeration
+int red = 0;  // throws a compilation error
+
+// enums are not type safe
+enum Gender { male, female };
+Gender gender = male; 
+Color color = red;
+if (gender == color)  // gender != color but will return true as both value are 0
+{
+   cout << "Equal";
+}
+```
+* Enum class / scoped enumerations
+  * makes enumeration both strongly typed & strongly scoped
+  * does not allow implicit conversion to int
+  * does not compare enumerators from a different enumerations
+```c++
+// Declaration
+enum class Color{ Red, Green, Blue};
+
+// Initialisation
+Color col = Color::Red;
+```
 [back to top](#table-of-contents)
