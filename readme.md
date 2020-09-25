@@ -2778,6 +2778,38 @@ var MyFunction = a => { do_something_with_a; };
 public static void MyFunction(dataType a=someValue) => do_something_with_a;
 ```
 ### c++
+* Function Signature: return type | name of function | (parameters)
+* Signature / prototype
+  * Normally add these in a .hpp or .h file then #include it into the .cpp file
+```c++
+public void functionName();
+
+public void functionName2(int arg1, int arg2);
+```
+* Function definition
+```c++
+void functionName()
+{
+   // do something
+}
+```
+* Function prototype
+```c++
+// prototype
+int sumTwoNumbers(int a, int b);
+
+int main()
+{
+   int result = sumTwoNumbers(2, 2);
+   return 0;
+}
+
+// function definition
+int sumTwoNumbers(int a, int b)
+{
+   return a + b;
+}
+```
 [back to top](#table-of-contents)
 ## Higher order functions
 ### python 2
