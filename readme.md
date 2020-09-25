@@ -4173,6 +4173,39 @@ public class ProductName : IFeatureName1, IFeatureName2 {
 }
 ```
 ### c++
+```c++
+// Math.h
+class Math
+{
+   private:
+     int num1 = 2;
+     int num2;
+  
+   public:
+     Math();  // constructor
+     int sumOfValues();  // class method prototype
+};
+
+// Math.cpp
+#include <iostream>
+#include "Math.h"
+
+Math::Math()  // class constructor definition
+{
+   num2 = 5;
+}
+
+int Math::sumOfValues()  // class method definition
+{
+   return num1 + num2;
+}
+
+int main()
+{
+   Math math;
+   std::cout << math.sumOfValues();
+}
+```
 [back to top](#table-of-contents)
 ## Importing Libraries
 ### python 2 & 3
