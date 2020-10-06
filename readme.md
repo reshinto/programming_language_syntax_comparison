@@ -6407,6 +6407,23 @@ class Program
 }
 ```
 ### c++
+* References
+```c++
+// using without references
+int num = 10;
+int newNum = num;
+
+num++;  // num = 11, newNum = 10
+newNum++;  // num = 11, newNum = 11
+
+
+// using references
+int num = 10;
+int& referenceNum = num;  // add & when referencing
+
+num++;  // num = 11, referenceNum = 11
+referenceNum++;  // num = 12, referenceNum = 12
+```
 * Enum
 ```c++
 enum Color { red, green, blue };
