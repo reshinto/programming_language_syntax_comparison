@@ -44,6 +44,8 @@
 - [Access modifier](#access-modifier)
 - [Properties](#properties)
 - [File System](#file-system)
+- [Iterators](#iterators)
+- [Generators](#generators)
 - [Language Specific](#language-specific)
 
 ## Interpreted Language
@@ -5293,6 +5295,95 @@ class Program2: NumberClassInFirstProject  // Inheritance
 }
 ```
   * private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
+### c++
+[back to top](#table-of-contents)
+## Iterators
+### python
+### javascript
+```javascript
+let i = [1, 2];
+
+let iterator = i[Symbol.iterator]();
+
+iterator.next();  // { value: 1, done: false }
+iterator.next();  // { value: 2, done: false }
+iterator.next();  // { value: undefined, done: true }
+```
+### ruby
+### java
+### c#
+### c++
+[back to top](#table-of-contents)
+## Generators
+### python
+### javascript
+```javascript
+function* generatorExample1() {
+  yield 1;
+  yield 2;
+}
+
+function *generatorExample2() {
+  yield 1;
+  yield 2;
+}
+
+let iterator1 = generatorExample1();
+let iterator2 = generatorExample2();
+
+iterator1.next();  // { value: 1, done: false }
+iterator1.next();  // { value: 2, done: false }
+iterator1.next();  // { value: undefined, done: true }
+
+iterator2.next();  // { value: 1, done: false }
+iterator2.next();  // { value: 2, done: false }
+iterator2.next();  // { value: undefined, done: true }
+
+
+// does not cause stackoverflow for infinite loops
+function* infiniteMaker() {
+  let i = 0;
+  while (true) {
+    yield i;
+    i++;
+  }
+}
+
+let iterator3 = infiteMaker();
+iterator3.next();  // { value: 0, done: false }
+iterator3.next();  // { value: 1, done: false }
+
+
+// nested generators
+function* nestedGenerator() {
+  yield* generatorExample1();  // add * after yield to add another generator
+  yield 3;
+}
+
+let iterator4 = nestedGenerator();
+iterator4.next();  // { value: 1, done: false }
+iterator4.next();  // { value: 2, done: false }
+iterator4.next();  // { value: 3, done: false }
+iterator4.next();  // { value: undefined, done: true }
+
+
+// using return keyword will stop the generator
+function* generatorWithReturn() {
+  yield 1;
+  return "hello";  // done will become true here
+  yield 2;
+}
+
+let iterator5 = generatorWithReturn();
+iterator5.next();  // { value: 1, done: false }
+iterator5.next();  // { value: "hello", done: true }
+iterator5.next();  // { value: undefined, done: true }
+
+
+```
+### ruby
+### java
+### c#
 ### c++
 [back to top](#table-of-contents)
 ## Language Specific
