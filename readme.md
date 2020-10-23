@@ -728,6 +728,9 @@ char charName = '\u0061';  // unicode character for the letter a
 String stringName = "string";
 String stringName = "multi-line " +
                      "string";
+                     
+// get character of string with index
+char indexChar = stringName.charAt(0);  // 's'
 ```
 ### c#
 * Strings (immutable)
@@ -4534,6 +4537,38 @@ puts "one" + 1.to_s  # "one1"
 printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
 ### java
+```java
+String string1 = "string";
+int num1 = 1;
+
+// method 1
+String stringName1 = string1 + num1;  // "string1"
+
+// method 2
+StringBuilder sb1 = new StringBuilder(string1);
+sb1.append(num1);
+sb1.toString();  // "string1"
+// or
+StringBuilder sb2 = new StringBuilder();
+sb2.append(string1).append(num1);
+sb2.toString();  // "string1"
+
+// method 3
+StringBuffer sBuffer1 = new StringBuffer(string1);
+sBuffer1.append(num1);
+sBuffer1.toString();  // "string1"
+// or
+StringBuffer sBuffer2 = new StringBuffer();
+sBuffer2.append(string1).append(num1);
+sBuffer2.toString();  // "string1"
+
+// method 4 (concat value must be string type)
+String newString1 = string1.concat(Integer.toString(num1));  // "string1"
+
+// method 5 (%s = string, %d = "byte, short, int, long, bigint", %c = char)
+String newString2 = String.format("%s%d", string1, num1);  // "string1"
+```
+- [String format reference](https://www.javatpoint.com/java-string-format)
 ### c#
 ```c#
 string string1 = "string 1 value";
