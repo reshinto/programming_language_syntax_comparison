@@ -51,14 +51,60 @@
 ## Interpreted Language
 ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
 #### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
-* python, javascript, ruby
+* Python
+* Javascript
+  - Features
+    - based on ECMAScript standard
+    - not compiled, interpreted at runtime
+    - no native function calls in browser
+    - runtime differ between environments
+    - restricted to browser sandbox
+    - managed memory access
+    - prototype-based inheritance
+* Ruby
 ## Compiled Language
 ### Statically-typed Language: resolution of types, members, properties, methods are done at compile-time
 #### trying to access a method that is not defined in an object when compiling the app will get an immediate error feedback
-* java: compiled to bytecode then interpreted by Java virtual machine into machine code
-* c#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
+* Java: compiled to bytecode then interpreted by Java virtual machine into machine code
+  - Features
+    - not compatible with other languages
+    - calls to native functions go through Java Native Interface (JNI)
+    - write once, run anywhere
+    - runs in a protected Java Virtual Machine (JVM)
+    - managed memory access
+    - limited to single inheritance
+    - class-based inheritance
+  - Types
+    - Java Platform, Standard Edition (SE)
+      - Core language and Java Runtime Environment (JRE)
+    - Java Platform, Enterprise Edition (EE)
+      - Recommendation for industrial-strength web applications
+    - Java Platform, Micro Edition (ME)
+      - Microcontrollers, sensors, mobile devices, telephone sim cards
+      - A subset of Java SE
+    - Java FX
+      - Desktop appication framework (windows, mac, linux)
+  - Automatic memory management
+    - memory for objects are allocated automatically
+    - local variables & function calls are stored in stack
+    - objects & member variables are stored in heap
+    - objects are retained in memory until dereferenced
+    - object is eligible for collection when all references expire
+  - Java Garbage Collector
+    - allocates & deallocates memory
+    - can destroy dereferenced objects, but not required
+    - garbage collection is managed by the Virtual Machine
+    - cannot force garbage collection as it is an automatic process
+* C#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
   * from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
-* c++: compiled into machine code
+* C++: compiled into native machine language
+  - Features
+    - compatible with C language
+    - allows calls to native system libraries
+    - requires porting to other platforms
+    - exposes low-level system functions
+    - explicit memory management
+    - allows multiple inheritance
 ## Hello World
 ### python 2
 ```python
