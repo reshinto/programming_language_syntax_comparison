@@ -84,7 +84,8 @@ p "Hello World"  # same as puts
 ```java
 public class HelloWorld {
   public static void main(String args[]) {
-    System.out.println("Hello World");
+    System.out.println("Hello World");  // adds new line after printing
+    System.out.print("Hello World");  // no new line is added after
   }
 }
 ```
@@ -1215,6 +1216,19 @@ print "What's your name?"
 name = gets.chomp
 ```
 ### java
+- must import scanner library 
+```java
+import java.util.Scanner;
+```
+```java
+// print question
+System.out.println("What's your name?");
+
+// get raw input
+Scanner input = new Scanner(System.in);
+input.next();  // convert raw value to string type
+input.nextInt();  // convert raw value to int type
+```
 ### c#
 ```c#
 // print question
