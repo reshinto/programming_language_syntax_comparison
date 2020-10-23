@@ -2541,6 +2541,10 @@ t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
 ```
 ### java
+```java
+ClassName t = new ClassName();  // instantiation
+ClassName t = new ClassName(argument);  // instantiation with arguments
+```
 ### c#
 ```c#
 // method 1
@@ -3982,6 +3986,41 @@ calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
 ```
 ### java
+- class
+```java
+public class Math {
+  public int arg1;
+  public int arg2;
+  public int total;
+  
+  // constructor (must have the same name as class name, no return data type)
+  public Math(int arg1, int arg2) {
+    // this keyword is not a must, however, variable name must be different from the parameter
+    this.arg1 = arg1;
+    this.arg2 = arg2;
+    this.total = OuterAdd(arg1, arg2);
+  }
+  
+  public int InnerAdd(int arg3) {
+    return this.arg1 + this.arg2 + arg3;
+  }
+  
+  public static int OuterAdd(int number1, int number2) {
+    return number1 + number2;
+  }
+}
+
+class MainClass {
+  public static void main(String[] args) {
+    Math test = new Math(2, 4);  // instantiation
+    // non-static variables or methods requires instantiation
+    System.out.println(test.total);  // 6
+    System.out.println(test.InnerAdd(2));  // 8
+    // static variables or methods does not requires instantiation
+    System.out.println(Math.OutterAdd(4, 5));  // 9
+  }
+}
+```
 ### c#
 * Struct vs Class
   * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
