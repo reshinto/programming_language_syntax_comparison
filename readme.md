@@ -2775,6 +2775,24 @@ blockName = Proc.new do |n|
 end
 ```
 ### java
+```java
+// Normal functions
+public static void myFunction() {
+  do_something;
+}
+
+
+// Normal function with parameters
+public static void myFunction(dataType a){
+  do_something_with_a
+}
+
+
+// Normal function with return value (change void to data type to return)
+public static int sum(int a){
+  return a + 1;
+}
+```
 ### c#
 ```c#
 // Normal functions
@@ -2792,6 +2810,12 @@ public static void MyFunction(dataType a){
 // Normal function with default parameters
 public static void MyFunction(dataType a=value) {
   do_something_with_a;
+}
+
+
+// Normal function with return value (change void to data type to return)
+public static int Sum(int a){
+  return a + 1;
 }
 
 
