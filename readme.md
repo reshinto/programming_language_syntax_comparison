@@ -725,13 +725,20 @@ puts variable_name  # symbolStringWithoutQuotes
 char charName = 'a';
 char charName = '\u0061';  // unicode character for the letter a
 
+
 // strings: must use double quotes ""
 String stringName = "string";
 String stringName = "multi-line " +
                      "string";
-                     
+
+
 // get character of string with index
 char indexChar = stringName.charAt(0);  // 's'
+
+
+// modify string cases
+String stringName2 = stringName.toUpperCase();  // "STRING"
+String stringName3 = stringName2.toLowerCase();  // "string"
 ```
 ### c#
 * Strings (immutable)
