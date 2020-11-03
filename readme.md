@@ -3467,6 +3467,18 @@ const {xKey, yKey} = obj;  // variable names must be the same as object key name
 
 // assigning different variable names
 const {xKey: xNewKey, yKey: yNewKey} = obj;
+
+// Set default values if extracted variables does not exist
+const { xKey, yKey, zKey="test" } = obj;
+
+// Use optional chaining for async code where data type will change
+let data = null;  // value before fetch
+const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
+console.log(a);  // ""
+
+data = [{ a: "hello", b: "world" }];  // value after fetch
+const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
+console.log(a);  // "hello"
 ```
 ### ruby
 ### java
@@ -3501,23 +3513,6 @@ let arr1 = [a, b, c];
 let arr2 = [d, e, f];
 let totalArr = arr1.concat(arr2);  // concat method
 let totalArr = [...arr1, ...arr2];
-
-// Extract variables from objects
-const obj1 = { a: "hello", b: "world" };
-const { a, b } = obj1;
-
-// Set default values if extracted variables does not exist
-const { a, b, c="test" } = obj1;
-
-
-// Use optional chaining for async code where data type will change
-let data = null;  // value before fetch
-const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
-console.log(a);  // ""
-
-data = [{ a: "hello", b: "world" }];  // value after fetch
-const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
-console.log(a);  // "hello"
 ```
 ### ruby
 ### java
