@@ -3725,6 +3725,34 @@ MathClass.prototype.innerAdd = function(arg3) {
 }
 
 test.innerAdd(2);  // 8
+
+
+// inheritance
+function Employee(first, last, pay) {
+  this.raiseAmt = 1.04;
+  this.first = first;
+  this.last = last;
+  this.pay = pay;
+}
+
+Employee.prototype.applyRaise = function() {
+  this.pay = parseInt(this.pay * this.raiseAmt);
+}
+
+function Developer(first, last, pay, progLang) {
+  Employee.call(this, first, last, pay);
+  this.raiseAmt = 1.1;
+  this.progLang = progLang;
+}
+
+Developer.prototype = Object.create(Employee.prototype);
+
+Developer.prototype.constructor = Developer;
+
+const dev = new Developer("abc", "xyz", 5000, "Javascript")
+console.log(dev.pay)  // 5000
+dev.applyRaise()
+console.log(dev.pay)  // 5500
 ```
 ### javascript ES6
 ```javascript
@@ -3794,7 +3822,7 @@ class Employee {  // parent
   }
         
   applyRaise() {
-    this.pay = parseInt(this.pay * this.raise_amt);
+    this.pay = parseInt(this.pay * this.raiseAmt);
   }
 }
 
