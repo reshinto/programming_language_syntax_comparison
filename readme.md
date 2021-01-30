@@ -4607,6 +4607,16 @@ set(type_to_convert)  # cannot be a number
 let num = 123;
 let str = String(num); // "123"
 
+// number to bigInt
+let bigNum = BigInt(num);  // "123n"
+
+// bigInt to number
+let bigInt = 1234n;
+// method 1
+num = parseInt(bigInt);  // 1234
+// method 2
+num = Number(bigInt);  // 1234
+
 // string to integer (remove all non numbers automatically)
 str = "12 kg";
 num = parseInt(str); // 12
