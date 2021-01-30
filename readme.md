@@ -7,6 +7,7 @@
 - [Compiled Language](#compiled-language)
 - [Hello World](#hello-world)
 - [Comments](#comments)
+- [Data types](#data-types)
 - [Variable declaration int](#variable-declaration-int)
 - [Variable declaration float](#variable-declaration-float)
 - [Variable declaration None](#variable-declaration-none)
@@ -261,6 +262,119 @@ multi-line comments
 ```assembly
 ; Single line comment
 ```
+[back to top](#table-of-contents)
+## Data types
+### javascript
+#### 8 basic data types
+- number
+  - for numbers of any kind: integer or floating-point, integers are limited by ±(2^53-1) === ±9007199254740991
+  - contain
+    - regular numbers 
+      ```javascript
+      let n = 123;
+      ```
+    - floats 
+      ```javascript
+      let n = 1.23;
+      ```
+    - special numeric values
+      - Infinity
+        ```javascript 
+        let n = 1 / 0;
+        let n2 = Infinity;
+        ```
+      - -Infinity
+      - NaN
+        ```javascript 
+        let n = "not a number" / 2;  // NaN
+        ```
+- bigint
+  - integer numbers of arbitrary length, larger or smaller than ±(2^53-1) === ±9007199254740991
+    ```javascript
+    let bigInt = 1234567890123456789012345678901234567890n;  // ends with n
+    ```
+- string
+  - may have zero or more characters, there’s no separate single-character type
+- boolean
+  - true / false.
+- null
+  - unknown values – a standalone type that has a single value null
+- undefined
+  - unassigned values – a standalone type that has a single value undefined
+- object
+  - for more complex data structures
+- symbol
+  - for unique identifiers
+  ```javascript
+  // id is a new symbol
+  let id = Symbol();
+  
+  // can give symbol a description (also called a symbol name), mostly useful for debugging purposes
+  let _id = Symbol("id2");
+  
+  // symbol in an object literal
+  let obj = {
+    [_id]: 123 // not "id": 123
+  };
+  
+  // guaranteed to be unique
+  let id1 = Symbol("id");
+  let id2 = Symbol("id");
+  console.log(id1 == id2);  // false
+  
+  // convert symbol to string
+  id1.toString();  // "Symbol(id)"
+  
+  // get symbol description
+  id1.description;  // "id"
+  ```
+  - Symbols allow us to create “hidden” properties of an object, that no other part of code can accidentally access or overwrite
+  ```javascript
+  let user = { // belongs to another code
+    name: "John"
+  };
+
+  let id = Symbol("id");
+  user[id] = 1;
+  console.log(user[id]);  // 1
+  console.log(user);  // { name: 'John', [Symbol(id)]: 1 }
+  ```
+    - benefit of using symbol over string
+      - objects belongs to another code, and that code also works with them, we shouldn’t just add any fields to it
+      - symbol cannot be accessed accidentally, the third-party code probably won’t even see it
+  - Symbols are skipped by for...in loop
+  ```javascript
+  let id = Symbol("id");
+  let user = {
+    name: "John",
+    age: 30,
+    [id]: 123
+  };
+  
+  for (let key in user) console.log(key);  // name age undefined
+  ```
+  - Symbol can be cloned with Object.assign
+  ```javascript
+  let id = Symbol("id");
+  let user = {
+    [id]: 123
+  };
+
+  let clone = Object.assign({}, user);
+  console.log(clone);  // { [Symbol(id)]: 123 }
+  ```
+  - global symbols
+    - use if want same-named symbols to be same entities
+  ```javascript
+  // get symbol by name
+  let id1 = Symbol.for("id");
+  let id2 = Symbol.for("id");
+  
+  console.log(id1 === id2);  // true
+  
+  // get name by symbol, can only use for global symbol
+  console.log(Symbol.keyFor(id1));  // "id"
+  ```
 [back to top](#table-of-contents)
 ## Variable declaration int
 * integer ...-2, -1, 0, 1, 2...
