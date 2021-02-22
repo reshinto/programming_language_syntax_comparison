@@ -170,6 +170,19 @@ int main()
     return 0;
 }
 ```
+### groovy
+- using dynamic type method
+```groovy
+println "Hello World"
+```
+- using static type method
+```groovy
+class HelloWorld {
+  static void main(String[] args) {
+    println("Hello World");
+  }
+}
+```
 ### assembly
 ```assembly
 ; x86 32 bit Mac OSX
