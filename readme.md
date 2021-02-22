@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
+- [Both Interpreted And Compiled Language](#both-interpreted-and-compiled-language)
 - [Hello World](#hello-world)
 - [Comments](#comments)
 - [Data types](#data-types)
@@ -106,6 +107,20 @@
     - exposes low-level system functions
     - explicit memory management
     - allows multiple inheritance
+## Both Interpreted And Compiled Language
+* Groovy
+  - it is a Java-syntax-compatible object-oriented programming language for the Java platform
+  - is both a static and dynamic language with features similar to those of Python
+  - can be used as both a programming language and a scripting language for the Java Platform, is compiled to Java virtual machine (JVM) bytecode
+    - interoperates seamlessly with other Java code and libraries
+  - allows optionally-typed dynamic capabilities
+    - do not need to spell out the type of field
+  - allows advance programming
+    - metaprogramming, functional programming, closures
+  - supports authoring of domain-sepcific languages
+    - jenkins file: to create a built pipeline with jenkins
+    - gradle build script
+  - requires installation of Java Development Kit (JDK) to work
 ## Hello World
 ### python 2
 ```python
