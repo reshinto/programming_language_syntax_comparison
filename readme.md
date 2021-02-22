@@ -121,6 +121,16 @@
     - jenkins file: to create a built pipeline with jenkins
     - gradle build script
   - requires installation of Java Development Kit (JDK) to work
+  - allows duck typing: provides the option to use the ```def``` keyword to determine the type at runtime
+  - can also have a variable assign a concrete type
+    - can tell groovy compiler to enforce static typing if needed
+  - auto generates getter and setter methods at runtime for class members
+  - contains Abstract Syntax Tree (AST) transformations: provides annotations for generating methods at runtime 
+    - such as defining contructors, equals, hashCode, toString methods
+  - automatically imports commonly-used packages
+    - like ```java.util.*``` and ```java.io.*```
+  - makes the default modifier as public, leading to less verbose code
+  - semicolons are optional, only required if want to define more than 1 statement on a single line
 ## Hello World
 ### python 2
 ```python
