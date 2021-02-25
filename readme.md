@@ -1273,13 +1273,13 @@ let isDone: boolean = false;
 [back to top](#table-of-contents)
 ## Comparison Operators
 ### python 2 & 3
-* ==  # condition is True if both operand have equal contents
+* ```==``` condition is True if both operand have equal contents
 ```python
 list1 = []
 list2 = []
 list1 == list2  # True
 ```
-* is  # condition is True if both operand points to the same identical object
+* ```is``` condition is True if both operand points to the same identical object
 ```python
 list1 = []
 list2 = []
@@ -1289,28 +1289,42 @@ list1 = None
 list2 = None
 list1 is list2  # True
 ```
-* !=  # condition is True if both operand do not have equal contents
-* is not  # condition is True if both operand do not points to the same identical object
-* ＜＞ # py2 only, condition is True if both operands do not equal contents
-* ＞  # condition is True if right operand is less than left operand
-* ＜  # condition is True if left operand is less than right operand
-* ＞=  # condition is True if right operand is less than or equal to left operand
-* ＜=  # condition is True is left operand is less than or equal to right operand
+* ```!=``` condition is True if both operand do not have equal contents
+* ```is not``` condition is True if both operand do not points to the same identical object
+* ```<>``` py2 only, condition is True if both operands do not equal contents
+* ```>``` condition is True if right operand is less than left operand
+* ```<``` condition is True if left operand is less than right operand
+* ```>=``` condition is True if right operand is less than or equal to left operand
+* ```<=``` condition is True is left operand is less than or equal to right operand
 ### javascript
-* ==  // string or int will be automatically converted before comparison, only checks the value
-    * var x = 5;
-        * x == 5;  // is true
-        * x == "5"  // is also true
-* ===  // string or int will NOT be converted before comparison, checks both the value and type
-    * var x = 5;
-        * x === 5;  // is true
-        * x === "5"  // is false
-* !=
-* !==
-* ＞
-* ＜
-* ＞=
-* ＜=
+* ```==``` string or int will be automatically converted before comparison, only checks the value
+```javascript
+var x = 5;
+x == 5;  // is true
+x == "5"  // is also true
+```
+* ```===``` string or int will NOT be converted before comparison, checks both the value and type
+```javascript
+var x = 5;
+x === 5;  // is true
+x === "5"  // is false
+```
+* ```!=```
+* ```!==```
+* ```>```
+* ```<```
+* ```>=```
+* ```<=```
+* ```??``` Nullish coalescing operator: returns right-hand side operand when left-hand side operand is null or undefined, and otherwise returns its left-hand side operand
+```javascript
+const foo = null ?? 'default string';
+console.log(foo);
+// expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// expected output: 0
+```
 ### ruby
 * ==
 * !=
