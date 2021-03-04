@@ -3876,21 +3876,55 @@ print(dev.pay)  # 5500
   * https://rszalski.github.io/magicmethods/
 ### javascript ES5
 ```javascript
+// method 1
+var MathClass = {
+  arg1: 2,
+  arg2: 0,
+  
+  get getTotal() {
+    return this.arg1 + this.arg2;
+  },
+  
+  set getTotal(arg2) {
+    this.arg2 = arg2;
+  },
+}
+
+MathClass.getTotal; // 2
+MathClass.getTotal = 4;
+MathClass.getTotal; // 6
+
+// method 2
 // Constructor
-var MathClass = function(arg1, arg2) {
+var MathClass = function(arg1) {
   this.arg1 = arg1;
-  this.arg2 = arg2;
+  this.arg2 = 0;
 }
 
 // Instantiation
-var test = new MathClass(2, 4);
+var test = new MathClass(2);
 
 // Add method
 MathClass.prototype.innerAdd = function(arg3) {
   return this.arg1 + this.arg2 + arg3;
 }
 
-test.innerAdd(2);  // 8
+test.innerAdd(4);  // 6
+
+// Add getter and setter
+Object.defineProperty(MathClass.prototype, "getTotal", {
+  get: function() {
+    return this.arg1 + this.arg2;
+  },
+  set: function(arg2) {
+    this.arg2 = arg2;
+  }
+});
+
+var total = new MathClass(2);
+total.getTotal;  // 2
+total.getTotal = 4;
+total.getTotal;  // 6
 
 
 // inheritance
