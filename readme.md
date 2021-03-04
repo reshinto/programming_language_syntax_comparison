@@ -3885,7 +3885,7 @@ var MathClass = {
     return this.arg1 + this.arg2;
   },
   
-  set getTotal(arg2) {
+  set getTotal(arg2) {  // can only have 1 parameter
     this.arg2 = arg2;
   },
 }
@@ -3916,7 +3916,7 @@ Object.defineProperty(MathClass.prototype, "getTotal", {
   get: function() {
     return this.arg1 + this.arg2;
   },
-  set: function(arg2) {
+  set: function(arg2) {  // can only have 1 parameter
     this.arg2 = arg2;
   }
 });
@@ -3980,7 +3980,7 @@ class MathClass {
     return this.#privateVariable;
   }
   
-  set privateVariable(newValue) {
+  set privateVariable(newValue) {  // can only have 1 parameter
     this.#privateVariable = newValue;
   }
 }
