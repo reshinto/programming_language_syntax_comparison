@@ -5867,13 +5867,13 @@ set1.clear()  # set()
 set_fixed = frozenset([1, 2, 3])
 ```
 ```python
-# convert local variable to global
+# modify global variable from local
 var = "from global"
 
 print(var)  # from global
 
 def convert_local_to_global:
-    global var
+    global var  # without the keyword global, cannot modify global variable var locally unlike javascript
     var = "from local"
 
 print(var)  # from local
