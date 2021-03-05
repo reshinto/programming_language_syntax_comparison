@@ -5866,6 +5866,28 @@ set1.clear()  # set()
 # Create a set that cannot be modified
 set_fixed = frozenset([1, 2, 3])
 ```
+```python
+# convert local variable to global
+var = "from global"
+
+print(var)  # from global
+
+def convert_local_to_global:
+    global var
+    var = "from local"
+
+print(var)  # from local
+```
+```python
+# undefine an existing variable
+var = 123
+
+print(var)  # 123
+
+del var
+
+print(var)  # NameError: name 'var' is not defined
+```
 ### javascript
 * Explicit Binding
   * choose what we want the context of "this" to be by using call, apply or bind
