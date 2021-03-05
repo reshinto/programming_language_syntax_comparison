@@ -4809,6 +4809,21 @@ type(num)  # int
 # Get boolean value
 isinstance(num, int)  # True
 isinstance(num, str)  # False
+
+# check if all characters in string are uppercase
+"abc".isupper()  # False
+"Abc".isupper()  # False
+"ABC".isupper()  # True
+"AB1".isupper()  # True
+
+# check if all characters in string are lowercase
+"abC".islower()  # False
+"abc".islower()  # True
+"ab1".islower()  # True
+
+# check if all characters in string are digits
+"ab1".isdigit()  # False
+"123".isdigit()  # True
 ```
 ### javascript
 ```javascript
