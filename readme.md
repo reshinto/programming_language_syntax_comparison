@@ -5903,6 +5903,10 @@ del var
 
 print(var)  # NameError: name 'var' is not defined
 ```
+```python
+# find the sum of values that are True in an array
+sum([True, False, True])  # 2
+```
 ### javascript
 * Explicit Binding
   * choose what we want the context of "this" to be by using call, apply or bind
