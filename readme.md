@@ -1815,6 +1815,7 @@ let numArr2: Array<number> = [1, 2, 3];
 let strArr2: Array<string> = ["a", "bc", "def"];
 
 // declare more than 1 type
+// with tuples
 let strOrNumArr1: [string, number] = ["a", 1];  // must follow and limited to declared format
 // with union
 let strOrNumArr2: (string | number)[];  // allows unlimited mixture of number and/or string values in 1 array
