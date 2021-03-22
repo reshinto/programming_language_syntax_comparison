@@ -1774,13 +1774,20 @@ list_name.indexOf("element1", 0);  // returns index of 0
     
 // Sort array in ascending order
 list_name = [2, 3, 1, 4];
-list_name.sort();  // [1, 2, 3, 4]
+list_name.sort();  // [1, 2, 3, 4]  work only only positive integers and strings
+
+list_name = [2, -1, 4, 3];
+list_name.sort((a, b) => a - b);  // [ -1, 2, 3, 4 ] work for negative and positive integers
     
 // Sort array in descending order
-list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1]
-// use .reverse() if elements are strings
-list_nameStr = ["a", "b", "c"];
-list_nameStr.reverse(); // ["c", "b", "a"]
+list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1] work for negative and positive integers
+list_nameStr = ["b", "a", "c"];
+// method 1: most optimal
+list_nameStr.sort().reverse(); // ["c", "b", "a"]
+// method 2
+list_nameStr.sort((a, b) => (a > b ? -1 : 1));
+// method 3
+list_nameStr.sort((a, b) => b.localeCompare(a));
     
     
 // Determine whether an array contains a specified element
