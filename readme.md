@@ -5368,6 +5368,10 @@ random.randint(1, 3)  # any number from 1 to 3
 ```
 ### javascript
 ```javascript
+Math.abs(-1);  // 1
+
+Math.pow(-4, 2)  // 16, same as (-4) ** 2
+
 // random integer from 0 to 9
 Math.floor(Math.random() * 10);
 
