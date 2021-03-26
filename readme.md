@@ -3656,6 +3656,17 @@ data = [{ a: "hello", b: "world" }];  // value after fetch
 const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
 console.log(a);  // "hello"
 ```
+### typescript
+```typescript
+type myFunctionProps = {
+  arg1: string,
+  [k: string]: any,  // to enable ...rest
+};
+
+function myFunction({arg1, ...rest}: myFunctionProps) {
+  let argsObj = rest;  // args is an object of arguments
+}
+```
 ### ruby
 ### java
 ### c++
