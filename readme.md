@@ -5932,7 +5932,24 @@ print(var)  # NameError: name 'var' is not defined
 # find the sum of values that are True in an array
 sum([True, False, True])  # 2
 ```
+```python
+# convert character to number
+ord("a")  # 97
+
+# convert number to character
+chr(97)  # a
+```
 ### javascript
+```javascript
+// convert character at index 0 to number
+"a".charCodeAt();  // 97
+
+// convert character at a specific index to number
+"abc".charCodeAt(1);  // 98
+
+// convert number to character
+String.fromCharCode(97);  // "a"
+```
 * Explicit Binding
   * choose what we want the context of "this" to be by using call, apply or bind
   * by refering to the call, apply, or bind methods, you can determine the value of "this"
