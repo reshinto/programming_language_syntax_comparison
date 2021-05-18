@@ -49,22 +49,29 @@
 - [Iterators](#iterators)
 - [Generators](#generators)
 - [Language Specific](#language-specific)
-
 ## Interpreted Language
-### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
-#### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
-* Python
-* Javascript
-  - Features
-    - based on ECMAScript standard
-    - not compiled, interpreted at runtime
-    - no native function calls in browser
-    - runtime differ between environments
-    - restricted to browser sandbox
-    - managed memory access
-    - prototype-based inheritance
-* Ruby
+<details>
+  <summary>Click to expand!</summary>
+  
+  ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
+  #### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
+  * Python
+  * Javascript
+    - Features
+      - based on ECMAScript standard
+      - not compiled, interpreted at runtime
+      - no native function calls in browser
+      - runtime differ between environments
+      - restricted to browser sandbox
+      - managed memory access
+      - prototype-based inheritance
+  * Ruby
+</details>
+
 ## Compiled Language
+<details>
+  <summary>Click to expand!</summary>
+  
 ### Statically-typed Language: resolution of types, members, properties, methods are done at compile-time
 #### trying to access a method that is not defined in an object when compiling the app will get an immediate error feedback
 * Java: compiled to bytecode then interpreted by Java virtual machine into machine code
@@ -107,7 +114,12 @@
     - exposes low-level system functions
     - explicit memory management
     - allows multiple inheritance
+</details>
+
 ## Both Interpreted And Compiled Language
+<details>
+  <summary>Click to expand!</summary>
+  
 * Groovy
   - it is a Java-syntax-compatible object-oriented programming language for the Java platform
   - is both a static and dynamic language with features similar to those of Python
@@ -131,7 +143,12 @@
     - like ```java.util.*``` and ```java.io.*```
   - makes the default modifier as public, leading to less verbose code
   - semicolons are optional, only required if want to define more than 1 statement on a single line
+</details>
+
 ## Hello World
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ```python
 print "Hello World"
@@ -246,8 +263,13 @@ section .data
 msg:    db      "Hello, world!", 10
 .len:   equ     $ - msg
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Comments
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Single line comment
@@ -300,8 +322,13 @@ multi-line comments
 ```assembly
 ; Single line comment
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Data types
+<details>
+  <summary>Click to expand!</summary>
+  
 ### javascript
 #### 8 basic data types
 - number
@@ -413,8 +440,13 @@ multi-line comments
   // get name by symbol, can only use for global symbol
   console.log(Symbol.keyFor(id1));  // "id"
   ```
+</details>
+
 [back to top](#table-of-contents)
 ## Variable declaration int
+<details>
+  <summary>Click to expand!</summary>
+  
 * integer ...-2, -1, 0, 1, 2...
 ### python 2 
 ```python
@@ -579,8 +611,13 @@ long long int long_name; long_name = 123;
 
 // similar to the rest of int variable declaration
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Variable declaration float
+<details>
+  <summary>Click to expand!</summary>
+  
 * float, double
 ### python 2 & 3
 ```python
@@ -647,8 +684,13 @@ double_name = 1.123;  // have 19 decimal digits
 
 // similar to the rest of int variable declaration
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Variable declaration None
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 variable_name = None
@@ -694,8 +736,13 @@ Nullable<int> integerName1 = null;
 int? integerName2 = null;
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Strings
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 string_name = "string"
@@ -1163,8 +1210,13 @@ std::string stringName = "multi-line"
                           "string";
 std::string stringName ("string");
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Boolean
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * boolean_name = True
 * boolean_name = False
@@ -1213,9 +1265,13 @@ let isDone: boolean = false;
 * bool boolean_name = false;  // produces a 0 output
 * bool boolean_name (true);
 * bool boolean_name {false};
+</details>
 
 [back to top](#table-of-contents)
 ## Arithmetic Operators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 * addition: +
 * subtraction: -
@@ -1269,9 +1325,13 @@ let isDone: boolean = false;
     * must add this to the top "#include＜cmath＞"
     * int integer_name = pow(3, 2);  // output 9
 * floor division: 3/2  // output 1
+</details>
 
 [back to top](#table-of-contents)
 ## Comparison Operators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * ```==``` condition is True if both operand have equal contents
 ```python
@@ -1390,9 +1450,13 @@ puts string1 <=> string2  # 0
 * ＜
 * ＞=
 * ＜=
+</details>
 
 [back to top](#table-of-contents)
 ## Logical Operators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * and
 * or
@@ -1420,8 +1484,13 @@ puts string1 <=> string2  # 0
 * ^  // exclusive or
 * !  // not
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Getting Input
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ```python
 raw_input("What's your name?")
@@ -1468,8 +1537,13 @@ System.Console.WriteLine("What's your name?");
 string name = System.Console.ReadLine();
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Bitwise Operators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
@@ -1547,8 +1621,13 @@ a & b  // 12 = ...0000 1100
 a | b  // 61 = ...0011 1101
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Increment
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * x = x + 1  # increment
 * x += 1
@@ -1575,9 +1654,13 @@ a | b  // 61 = ...0011 1101
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+</details>
 
 [back to top](#table-of-contents)
 ## Arrays and Lists
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Empty list
@@ -2148,8 +2231,13 @@ int_vector.resize(length_of_desired_array);
 // Remove all elements
 int_vector.clear();
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Conditional Statement
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # If else statement
@@ -2395,8 +2483,13 @@ switch(choice) {
         do_something_else;
 }
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Loops
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ```python
 # While loop
@@ -2746,8 +2839,13 @@ for (auto value : array_name) {
 for (;;)
     cout << "This will print forever" << endl;
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Instantiation
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 t = Thing()  # everything
@@ -2794,8 +2892,13 @@ public class Program {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Functions
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * Function returns None by default if return statement is not declared
 ```python
@@ -3098,8 +3201,13 @@ int sumTwoNumbers(int a, int b)
    return a + b;
 }
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Higher order functions
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ```python
 # Map: applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results
@@ -3230,8 +3338,13 @@ puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Hash Tables 
+<details>
+  <summary>Click to expand!</summary>
+  
 * Hash Tables, Dictionaries, Objects
 ### python 2 & 3
 ```python
@@ -3612,8 +3725,13 @@ class MainClass {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Destructuring
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Tuples
@@ -3670,8 +3788,13 @@ function myFunction({arg1, ...rest}: myFunctionProps) {
 ### ruby
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Spread Operator
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # *args (splat)
@@ -3704,8 +3827,13 @@ let totalArr = [...arr1, ...arr2];
 ### ruby
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Rest parameters
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # *args
@@ -3786,8 +3914,13 @@ class MainClass {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Class
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ``` python
 class MathClass:
@@ -4614,8 +4747,13 @@ int main()
    std::cout << math.sumOfValues();
 }
 ```
+</details>
+
 [back to top](#table-of-contents)
 ## Importing Libraries
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # import module from libraries
@@ -4686,8 +4824,13 @@ require_relative "moduleFileName"  # extension not required
 ```
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Type Conversions
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Convert to Integer, floats will round down
@@ -4819,8 +4962,13 @@ x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Find Data Type
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # Get data type
@@ -4916,8 +5064,13 @@ public class MainClass {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## String Concatenation
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2
 ```python
 string_name = "string1" + "string2"  # "string1string2"
@@ -5010,8 +5163,13 @@ string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 v
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## JSON
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 import json  # must import to use
@@ -5037,8 +5195,13 @@ objName = JSON.parse(objName);
 ### ruby
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Program Entry Point
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 if __name__ === "__main__":
@@ -5062,8 +5225,13 @@ class MainClass {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Swapping values
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 a, b = 1, 2
@@ -5090,8 +5258,13 @@ b = temp;
 ### ruby
 ### java
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Error Handling
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 * try: lets you test a block of code for errors
 * except: except block lets you handle the error
@@ -5176,8 +5349,13 @@ public class NewExceptionName : System.Exception {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Custom Error
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 2 & 3
 ```python
 # raise generic exception
@@ -5210,8 +5388,13 @@ throw new System.Exception("custom message");
 throw new SpecificExceptionName("custom message");
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Asynchronous
+<details>
+  <summary>Click to expand!</summary>
+  
 * Handling asynchronous code (making it synchronous)
 ### python
 ### javascript ES5
@@ -5337,8 +5520,13 @@ public class Worker {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Math
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python 3
 ```python
 import math
@@ -5421,8 +5609,13 @@ srand((int)time(0));
 // Get the random number from the seed & save it to a variable
 int randomNumber = rand() % 100;  // number range from 0 to 99
 ```
+</details>
+
 [back to top](#table-of-contents)
-## Date and Time]
+## Date and Time
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ### javascript
 ### ruby
@@ -5461,8 +5654,13 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
 System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## File System
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ### javascript
 ### ruby
@@ -5544,8 +5742,13 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 System.Diagnostics.Process.Start(filename);
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Properties
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ### javascript
 ### ruby
@@ -5627,8 +5830,13 @@ class MainClass {
 }
 ```
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Access modifier
+<details>
+  <summary>Click to expand!</summary>
+  
 * use to hide the implementation details of a class
 ### python
 ### javascript
@@ -5763,8 +5971,13 @@ class Program2: NumberClassInFirstProject  // Inheritance
 ```
   * private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Iterators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ### javascript
 ```javascript
@@ -5780,8 +5993,13 @@ iterator.next();  // { value: undefined, done: true }
 ### java
 ### c#
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Generators
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ### javascript
 ```javascript
@@ -5852,8 +6070,13 @@ iterator5.next();  // { value: undefined, done: true }
 ### java
 ### c#
 ### c++
+</details>
+
 [back to top](#table-of-contents)
 ## Language Specific
+<details>
+  <summary>Click to expand!</summary>
+  
 ### python
 ```python
 # List comprehension
@@ -7056,4 +7279,6 @@ enum class Color{ Red, Green, Blue};
 // Initialisation
 Color col = Color::Red;
 ```
+</details>
+
 [back to top](#table-of-contents)
