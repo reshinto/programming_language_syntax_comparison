@@ -330,7 +330,14 @@ multi-line comments
   <summary>Click to expand!</summary>
   
 ### javascript
-#### 8 basic data types
+#### 1 primitive structural root
+- null
+  - unknown values – a standalone type that has a single value null
+#### 2 Structual types
+- object
+  - for more complex data structures
+  - new Object, new Array, new Map, new Set, new WeakMap, new Date, new ...
+#### 6 basic primitive data types
 - number
   - for numbers of any kind: integer or floating-point, integers are limited by ±(2^53-1) === ±9007199254740991
   - contain
@@ -354,20 +361,16 @@ multi-line comments
         let n = "not a number" / 2;  // NaN
         ```
 - bigint
-  - integer numbers of arbitrary length, larger or smaller than ±(2^53-1) === ±9007199254740991
-    ```javascript
-    let bigInt = 1234567890123456789012345678901234567890n;  // ends with n
-    ```
+  - no maximum limit to a BigInt
+  ```javascript
+  let bigInt = 1234567890123456789012345678901234567890n;  // ends with n
+  ```
 - string
   - may have zero or more characters, there’s no separate single-character type
 - boolean
   - true / false.
-- null
-  - unknown values – a standalone type that has a single value null
 - undefined
   - unassigned values – a standalone type that has a single value undefined
-- object
-  - for more complex data structures
 - symbol
   - for unique identifiers
   ```javascript
