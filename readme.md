@@ -3348,17 +3348,29 @@ let newObj2 = {
 };  // key = "emotion"
 
 // Creates a new object, using an existing object as the prototype of the newly created object
-let newObj2 = Object.create(newObj);  // method 1
-let newObj2pt2 = Object.create(null, {
+// method 1
+newObj2 = Object.create(newObj);  // copies the prototype of newObj, key value pairs will become inherited
+let newObj2pt2 = Object.create(null, {  // creates a new object but without default object properties, default object properties can't be used
   key1: value,
 });
-let newObj2pt3 = Object.create(null, {
+let newObj2pt3 = Object.create(null, {  // set object configuration
   key: {
     value: "something",
     writable: true,
+    enumerable: true,
+    configurable: true,
   }
 });
-let newObj2 = Object.assign(oldObj, newObj);  // method 2: merge 2 object together
+let newObj2pt4 = Object.create(Object.prototype, {  // creates a new object with all default object properties
+  key: {
+    value: "something",
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  }
+});
+// method 2: merge 2 object together
+newObj2 = Object.assign(oldObj, newObj);
 
 // Assign and Reassign values
 newObj["key1"] = "newString";  // method 1, bracket notation
@@ -3391,7 +3403,23 @@ for (let [key, value] of Object.entries(newObj)) {console.log(`Key: ${key}, Valu
 
 // Defines a new property directly on an object, or modifies an existing property on an object, and returns the object
 // Object.defineProperty(obj, propertyName, descriptor)
-Object.defineProperty(newObj, property1, {value: "123", writable: true});  // newObj.property1 = 123
+Object.defineProperty(newObj, "property1", {
+  value: "123",
+  writable: true,
+  enumerable: true,
+  configurable: false,
+});  // newObj.property1 = 123
+
+let descriptor = Object.getOwnPropertyDescriptor(newObj, "property1");
+console.log(descriptor);
+/*
+{
+  value: 123,
+  writable: true,  // if false cannot reassign new value
+  enumerable: true,  // if false will skip this property when looping
+  configurable: true,  // if false cannot redefine property
+}
+*/
 
 // Seals an object
 // prevent addition of properties, however defined properties still can be changed
