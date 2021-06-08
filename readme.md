@@ -3370,6 +3370,11 @@ const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
 const newObj = Object.assign(target, source);  // newObj, target = { a: 1, b: 4, c: 5 }
 
+// Copy without mutating the target source
+const target2 = { a: 1, b: 2 };
+const source2 = { b: 4, c: 5 };
+const newObj2 = Object.assign({}, target2, source2);  // newObj2 = { a: 1, b: 4, c: 5 }, target2 = { a: 1, b: 2 }
+
 // Get value
 newObj["key1"];  // method 1
 newObj.key1;  // method 2
@@ -3398,6 +3403,11 @@ Object.freeze(newObj);
 ```
 ### javascript ES6
 ```javascript
+// Merge 2 objects
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+const newObj = {...target, ...source};  // { a: 1, b: 4, c: 5 }
+
 // Maps or Hash tables
 // Create new Map or hash table
 const newDict = new Map();
