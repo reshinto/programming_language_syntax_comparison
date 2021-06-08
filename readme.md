@@ -3415,9 +3415,9 @@ console.log(descriptor);
 /*
 {
   value: 123,
-  writable: true,  // if false cannot reassign new value
+  writable: true,  // if false cannot reassign new primitive values, but can reassign values of an object
   enumerable: true,  // if false will skip this property when looping
-  configurable: true,  // if false cannot redefine property
+  configurable: true,  // if false cannot delete and redefine property (except writable); once set to false, cannot change back to true
 }
 */
 
