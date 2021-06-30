@@ -4730,11 +4730,14 @@ require_relative "moduleFileName"  # extension not required
 // folder name that the current file is in, all other files that are in this folder can be imported without additional code
 package com.example.demoapi.student;
 
-// .* does not work for normal module imports
+// normal type modules import cannot use .*
 import java.time.LocalDate;
 import java.time.Period;
 
-// method 1
+// methods from type modules can use static to enable .*
+import static java.time.LocalDate.*;
+
+// decorator import method 1
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -4750,6 +4753,16 @@ public class Student {
   private Long id;
   @Transient
   private Integer age;
+  
+  // using import java.time.LocalDate;
+  public Integer getAge1() {
+    return Period.between(dob, LocalDate.now()).getYears();
+  }
+  
+  // using import static java.time.LocalDate.*;
+  public Integer getAge() {
+    return Period.between(dob, now()).getYears();
+  }
 }
 ```
 ### c++
