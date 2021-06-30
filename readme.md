@@ -4726,6 +4726,32 @@ load "./anotherFile.rb"  # ./ not mandatory
 require_relative "moduleFileName"  # extension not required
 ```
 ### java
+```java
+// folder name that the current file is in, all other files that are in this folder can be imported without additional code
+package com.example.demoapi.student;
+
+// .* does not work for normal module imports
+import java.time.LocalDate;
+import java.time.Period;
+
+// method 1
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+// method 2
+import javax.persistence.*;  // works only for decorators
+
+@Entity
+@Table
+public class Student {
+  @Id
+  private Long id;
+  @Transient
+  private Integer age;
+}
+```
 ### c++
 [back to top](#table-of-contents)
 ## Type Conversions
