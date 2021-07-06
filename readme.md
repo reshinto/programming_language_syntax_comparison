@@ -91,11 +91,50 @@
     - objects & member variables are stored in heap
     - objects are retained in memory until dereferenced
     - object is eligible for collection when all references expire
+      - when do references expire
+        - variables local to methods or code blocks expire with scope
+        ```java
+        void changeString() {
+          String localVar = "Won't be around for long!";
+          System.out.println("In function: " + localVar);
+        }
+        ```
+        - explicitly dereference variables with null keyword
+        ```java
+        void changeString() {
+          String localVar = "Won't be around for long!";
+          tempVar = null;
+        }
+        ```
+    - when Java Virtual Machine runs out of memory for a newly requested object
+      - the system throws ```OutOfMemoryError```
+      - Tips for managing memory
+        - minimize the number of objects created
+        - find out how much memory is available & is currently in used in the virtual machine
+          - ```Runtime.maxMemory()``` & ```Runtime.totalMemory()```
+        - setting available memory
+          - use command line options to manage amount of available heap memory
+            - set inital heap size ```java -Xms256s HelloWord```
+            - set max heap size ```java -Xmx256m HelloWord```
+            - set heap size for new objects ```java -Xmn256n HelloWord```
   - Java Garbage Collector
+    - runs in its own thread
     - allocates & deallocates memory
     - can destroy dereferenced objects, but not required
     - garbage collection is managed by the Virtual Machine
     - cannot force garbage collection as it is an automatic process
+      - Can run System methods to call garbage collection
+        - Methods ```System.gc()``` & ```Runtime.gc()``` can request garbage collection
+          - but there is no guarantee it will happen
+  - Identifiers and Keywords
+    - Keywords can't be used as class or other identifiers
+    - class, method, field, and other names are identifiers
+    - identifiers must start with alpha character or underscore
+  - Identifier conventions
+   - classes are always Pascal case ```class MyClass {}```
+   - methods and variables are Camel case ```void doSomething(String withThis) {}```
+   - constants are all uppercase ```public static final String FIRSTNAME="Myname";```
+     - ```final``` means once it has been set, it can't be changed
 * C#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
   * from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
 * C++: compiled into native machine language
@@ -152,9 +191,24 @@ puts "Hello World"  # adds a new (blank) line after the thing you want it to pri
 p "Hello World"  # same as puts
 ```
 ### java
+- java classes are typically organized into packages
+  - package is a global unique string that usually starts with your domain name in reverse domain order
+    - ensures globally unique identifiers (e.g.: Main)
+      - if there are more than 1 class named Main in an app
+        - can be distinguished by using the package
+- each source code file will contain 1 public class
+- ```public``` means that the method is available to the entire app
+- ```static``` means that this method can be called directly from the class definition rather than from an instance of the class
+- ```void``` means that the method doesn't return any value
 ```java
+package com.example;  // package declaration
+
+// class declaration
 public class HelloWorld {
-  public static void main(String args[]) {
+  // main method: always have the 3 keywords (public, static, void)
+  // must also receive an array of strings as an argument
+  public static void main(String[] args) {
+    // executable code
     System.out.println("Hello World");  // adds new line after printing
     System.out.print("Hello World");  // no new line is added after
   }
