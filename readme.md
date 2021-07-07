@@ -1361,8 +1361,12 @@ boolean_name = false
       > [1, 2, 3].respond_to?(:to_sym) # false
 ### java
 ```java
-boolean boolean_name = true;
-boolean boolean_name = false;
+boolean booleanName1 = true;
+boolean booleanName2 = false;
+boolean booleanName3 = !booleanName2;  // true
+
+String sBoolean = "true";
+boolean booleanName4 = Boolean.parseBoolean(sBoolean);  // true
 ```
 ### c#
 ```c#
