@@ -1554,6 +1554,13 @@ puts string1 <=> string2  # 0
 * ```<```
 * ```>=```
 * ```<=```
+* ```instanceof``` class membership
+```java
+String s = "Hello";
+if (s instanceof java.lang.String) {
+  System.out.println(true);
+}
+```
 ### c#
 * ```==```
 * ```!=```
