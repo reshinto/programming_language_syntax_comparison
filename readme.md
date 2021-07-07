@@ -1504,14 +1504,14 @@ console.log(baz);
 // expected output: 0
 ```
 ### ruby
-* ==
-* !=
-* ＞
-* ＜
-* ＞=
-* ＜=
-* ＜=＞  # Combined Comparison Operator
-* object1.equal?object2
+* ```==```
+* ```!=```
+* ```>```
+* ```<```
+* ```>=```
+* ```<=```
+* ```<=>```  Combined Comparison Operator
+* ```object1.equal?object2```
 ```ruby
 string1 = "string"
 string2 = "string"
@@ -1536,7 +1536,7 @@ string2 = "c"
 puts string1 <=> string2  # 0
 ```
 ### java
-* ==
+* ```==```
   - reference comparison
   ```java
   String s1 = new String("string value");
@@ -1549,54 +1549,58 @@ puts string1 <=> string2  # 0
   String s2 = new String("string value");
   System.out.println(s1.equals(s2));  // true  
   ```
-* !=
-* ＞
-* ＜
-* ＞=
-* ＜=
+* ```!=```
+* ```>```
+* ```<```
+* ```>=```
+* ```<=```
 ### c#
-* ==
-* !=
-* ＞
-* ＜
-* ＞=
-* ＜=
+* ```==```
+* ```!=```
+* ```>```
+* ```<```
+* ```>=```
+* ```<=```
 ### c++
-* ==
-* !=
-* ＞
-* ＜
-* ＞=
-* ＜=
+* ```==```
+* ```!=```
+* ```>```
+* ```<```
+* ```>=```
+* ```<=```
 
 [back to top](#table-of-contents)
 ## Logical Operators
 ### python 2 & 3
-* and
-* or
-* not
+* ```and```
+* ```or```
+* ```not```
 ### javascript
-* &&  // and
-* ||  // or
-* !  // not
+* ```&&``` and
+* ```||``` or
+* ```!``` not
 * truthy and falsey examples
-    * truthy1 && truthy2  // truthy2
-    * falsey && truthy  // falsey
-    * truthy && falsey  // falsey
-    * falsey1 && falsey2  // falsey1
-    * truthy1 || truthy2  // truthy1
-    * truthy || falsey  // truthy
-    * falsey1 || falsey2  // falsey2
+    * ```truthy1 && truthy2``` truthy2
+    * ```falsey && truthy``` falsey
+    * ```truthy && falsey``` falsey
+    * ```falsey1 && falsey2``` falsey1
+    * ```truthy1 || truthy2``` truthy1
+    * ```truthy || falsey``` truthy
+    * ```falsey1 || falsey2``` falsey2
 ### ruby
-* &&  # and
-* ||  # or
-* !  # not
+* ```&&``` and
+* ```||``` or
+* ```!``` not
 ### java
+* ```&&``` and
+* ```||``` or
+* ```^``` exclusive or
+* ```!``` not
 ### c#
-* &&  // and
-* ||  // or
-* ^  // exclusive or
-* !  // not
+* ```&&``` and
+* ```||``` or
+* ```^``` exclusive or
+* ```!``` not
 ### c++
 [back to top](#table-of-contents)
 ## Getting Input
@@ -1716,6 +1720,33 @@ c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ```
 ### ruby
 ### java
+```java
+// & is binary AND, return 1 if both a and b are 1, count the 1s
+a & b  // 12 = ...0000 1100
+    
+// | is binary OR, return 1 if either a and or b HAVE a 1
+a | b  // 61 = ...0011 1101
+    
+// ^ is binary XOR, return 1 if both a and b are not 1 or 0
+a ^ b  // 49 = ...0011 0001
+    
+// ~ is binary ones complement, invert everything, 1 change to 0 and vice versa, count the 0s
+~a  // -61 = ...1100 0011
+    
+// << is binary left shift, shift everything to the left by n digit(s)
+a << 2  // 240 = ...1111 0000
+    
+// >> is Sign-propagating right shift, a binary right shift, shift everything to the right by n digit(s)
+a >> 2  // 15 = ...0000 1111
+c >> 2  // 3 = ...0000 0010, count the 1s
+c = -9  // -9 = ...1111 0111
+c >> 2  // -3 = ...1111 1101, count the 0s
+    
+// >>> is Zero fill right shift, shift everything to the right by n digits(s), leftmost will add n 0s
+c >>> 2  // 2 = ...0000 0010, count the 1s
+c = -9  // -9 = ...1111 0111
+c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
+```
 ### c#
 ```c#
 // & is binary AND, return 1 if both a and b are 1, count the 1s
@@ -1728,31 +1759,31 @@ a | b  // 61 = ...0011 1101
 [back to top](#table-of-contents)
 ## Increment
 ### python 2 & 3
-* x = x + 1  # increment
-* x += 1
+* ```x = x + 1``` increment
+* ```x += 1```
 ### javascript
-* x = x + 1;  // add 1 now
-* x += 1;  // add 1 now
-* ++x;  // preincrement, add 1 now
-* x++;  // postincrement, display without addition now then add 1 later when called again
+* ```x = x + 1;``` add 1 now
+* ```x += 1;``` add 1 now
+* ```++x;``` preincrement, add 1 now
+* ```x++;``` postincrement, display without addition now then add 1 later when called again
 ### ruby
-* x = x + 1  # increment
-* x += 1
+* ```x = x + 1``` increment
+* ```x += 1```
 ### java
-* x = x + 1;
-* x += 1;
-* ++x;  // preincrement, add 1 now
-* x++;  // postincrement, display without addition now then add 1 later when called again
+* ```x = x + 1;```
+* ```x += 1;```
+* ```++x;``` preincrement, add 1 now
+* ```x++;``` postincrement, display without addition now then add 1 later when called again
 ### c#
-* x = x + 1;
-* x += 1;
-* ++x;  // preincrement, add 1 now
-* x++;  // postincrement, display without addition now then add 1 later when called again
+* ```x = x + 1;```
+* ```x += 1;```
+* ```++x;``` preincrement, add 1 now
+* ```x++;``` postincrement, display without addition now then add 1 later when called again
 ### c++
-* x = x + 1;
-* x += 1;
-* ++x;  // preincrement, add 1 now
-* x++;  // postincrement, display without addition now then add 1 later when called again
+* ```x = x + 1;```
+* ```x += 1;```
+* ```++x;``` preincrement, add 1 now
+* ```x++;``` postincrement, display without addition now then add 1 later when called again
 
 [back to top](#table-of-contents)
 ## Arrays and Lists
