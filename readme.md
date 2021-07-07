@@ -1543,7 +1543,7 @@ puts string1 <=> string2  # 0
   String s2 = new String("string value");
   System.out.println(s1 == s2);  // false
   ```
-  - use equals method to compare value
+  - use equals method to compare string values
   ```java
   String s1 = new String("string value");
   String s2 = new String("string value");
