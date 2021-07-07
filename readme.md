@@ -5670,6 +5670,27 @@ Math.floor(Math.random() * 10) + 1;
 ```
 ### ruby
 ### java
+```java
+import java.util.Random;
+
+double number1 = 10.5;
+double number2 = 15;
+
+System.out.println("Math.abs(number1) " + (Math.abs(number1)));  // Math.abs(number1) 10.5
+System.out.println("Math.ceil(number1) " + (Math.ceil(number1)));  // Math.ceil(number1) 11
+System.out.println("Math.floor(number1) " + (Math.floor(number1)));  // Math.floor(number1) 10
+System.out.println("Math.max(number1, number2) " + (Math.max(number1, number2)));  // Math.max(number1, number2) 15
+System.out.println("Math.min(number1, number2) " + (Math.min(number1, number2)));  // Math.min(number1, number2) 10.5
+System.out.println("Math.pow(number1, 2) " + (Math.pow(number1, 2)));  // Math.pow(number1, 2) 110.25
+System.out.println("Math.round(number1) " + (Math.round(number1)));  // Math.round(number1) 10
+System.out.println("Math.sqrt(number1) " + (Math.sqrt(number1)));  // Math.sqrt(number1) 3.24037034920393
+
+System.out.println("Math.random() * 10 + 1 = " + (int)(Math.random() * 10 + 1));  // Math.random() + 10 + 1 = 0 - 10
+
+Random rand = new Random();
+System.out.println("Random Number Between 0 and 10 " + (rand.nextInt(11)));
+System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));
+```
 ### c#
 ```c#
 double number1 = 10.5;
