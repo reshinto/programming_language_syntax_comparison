@@ -469,6 +469,65 @@ multi-line comments
   // get name by symbol, can only use for global symbol
   console.log(Symbol.keyFor(id1));  // "id"
   ```
+### java 8
+#### 2 major data types
+1. Primitive data types
+    - stored in fastest available memory
+    - names are all camel case
+    - Java class library includes helper classes for each primitive
+      - helper classes support conversion and formatting tools
+      - ```import java.lang.Byte;```  import not required from java.lang libraries
+    - all primitive numeric variables default to 0
+    ```java
+    public class Main {
+      private static int myInt;  // must be declared as static of a class to have default value
+    
+      public static void main(String args[]) {
+      System.out.println(myInt);  // 0
+    }
+}
+    ``` 
+    - data types
+      - numbers
+        - byte
+          - 8 bits
+          - -128 to 127
+          - default value ```0```
+          - helper class ```Byte```
+        - short
+          - 16 bits
+          - -32,768 to 32,767
+          - default value ```0```
+          - helper class ```Short```
+        - int
+          - 32 bits
+          - -2,147,483,648 to 2,147,483,647
+          - default value ```0```
+          - helper class ```Integer```
+        - long
+          - 64 bits
+          - -9.22337E+18 to 9.22337E+18
+          - default value ```0L```
+          - helper class ```Long```
+        - float
+          - 32 bits
+          - default value ```0.0f``` or ```0.0F``` or ```.0f``` or ```.0F```
+          - helper class ```Float```
+        - double
+          - 64 bits
+          - default value ```0.0d``` or ```0.0D``` or ```.0d``` or ```.0D```
+          - helper class ```Double```
+          ```java          
+          double doubleValue = 156.5d;
+          Double doubleObj = new Double(doubleValue);  // declare instance of the double class
+          int intValue = doubleObj.intValue();  // 156, use helper object to convert to desired numeric data type
+          ```
+      - characters
+        - '\u0000' (or 0) to '\uffff' (or 65,535 inclusive)
+        - default value ```'\u0000'```
+      - booleans
+        - default value ```false```
+2. Objects
 [back to top](#table-of-contents)
 ## Variable declaration int
 * integer ...-2, -1, 0, 1, 2...
@@ -543,8 +602,8 @@ int integer_name; integer_name = 123;
 int integer_name = 123;  // default is visible within the same package
 
 // long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
-long long_name = 123l;
-long long_name = 123L;
+long long_name = 123l;  // 123
+long long_name = 123L;  // 123
 ```
 ### c#
 ```c#
@@ -663,12 +722,36 @@ let float_name: number = 1.123;
 ### java:
 ```java
 // float: 32 bits, 4 bytes
-float float_name = 1.123f;  // have 7 decimal digits
+float float_name = 1.123f;  // 1.123, have 7 decimal digits
 float float_name = (float) 1.123;
 
 // double: 64 bits, 8 bytes
-double double_name = 1.123d;  // have 16 decimal digits
+double double_name = 1.123d;  // 1.123, have 16 decimal digits
 double double_name = 1.123;
+
+// using BigDecimal math class
+import java.math.BigDecimal;
+
+public class Main {
+
+  public static void main(String[] args) {
+    double value = .012;
+    double pSum = value + value + value;
+    System.out.println(pSum);  // 0.036000000000000004
+    
+    String strValue = Double.toString(value);
+    System.out.println(strValue);  // 0.012
+
+    BigDecimal bigValue1 = new BigDecimal(value);
+    BigDecimal bSum1 = bigValue1.add(bigValue1).add(bigValue1);
+    System.out.println(bSum1.toString());  // 0.0360000000000000007494005416219806647859513759613037109375
+      
+    BigDecimal bigValue2 = new BigDecimal(strValue);
+    BigDecimal bSum2 = bigValue2.add(bigValue2).add(bigValue2);
+    System.out.println(bSum2.toString());  // 0.036
+  }
+}
+
 ```
 ### c#
 ```c#
@@ -993,6 +1076,11 @@ char indexChar = stringName.charAt(0);  // 's'
 // modify string cases
 String stringName2 = stringName.toUpperCase();  // "STRING"
 String stringName3 = stringName2.toLowerCase();  // "string"
+
+
+// toString method: convert primitive numeric values to string
+double doubleValue = .5d;
+String stringName4 = Double.toString(doubleValue);  // "0.5"
 ```
 ### c#
 * Strings (immutable)
