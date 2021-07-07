@@ -5685,11 +5685,11 @@ System.out.println("Math.pow(number1, 2) " + (Math.pow(number1, 2)));  // Math.p
 System.out.println("Math.round(number1) " + (Math.round(number1)));  // Math.round(number1) 10
 System.out.println("Math.sqrt(number1) " + (Math.sqrt(number1)));  // Math.sqrt(number1) 3.24037034920393
 
-System.out.println("Math.random() * 10 + 1 = " + (int)(Math.random() * 10 + 1));  // Math.random() + 10 + 1 = 0 - 10
+System.out.println("Random Number Between 0 and 10 = " + (int)(Math.random() * 11 + 1 + 0));  // Math.random() * (max - min + 1) + min2 = change min2 to 1 to become between 1 and 10
 
 Random rand = new Random();
 System.out.println("Random Number Between 0 and 10 " + (rand.nextInt(11)));
-System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));
+System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));  // rand.nextInt((max - min) + 1) + min;
 ```
 ### c#
 ```c#
