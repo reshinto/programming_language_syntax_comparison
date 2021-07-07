@@ -302,6 +302,7 @@ section .data
 msg:    db      "Hello, world!", 10
 .len:   equ     $ - msg
 ```
+
 [back to top](#table-of-contents)
 ## Comments
 ### python 2 & 3
@@ -356,6 +357,7 @@ multi-line comments
 ```assembly
 ; Single line comment
 ```
+
 [back to top](#table-of-contents)
 ## Data types
 ### javascript
@@ -531,6 +533,7 @@ multi-line comments
       - booleans
         - default value ```false```
 2. Objects
+
 [back to top](#table-of-contents)
 ## Variable declaration int
 * integer ...-2, -1, 0, 1, 2...
@@ -697,6 +700,7 @@ long long int long_name; long_name = 123;
 
 // similar to the rest of int variable declaration
 ```
+
 [back to top](#table-of-contents)
 ## Variable declaration float
 * float, double
@@ -789,6 +793,7 @@ double_name = 1.123;  // have 19 decimal digits
 
 // similar to the rest of int variable declaration
 ```
+
 [back to top](#table-of-contents)
 ## Variable declaration None
 ### python 2 & 3
@@ -1310,18 +1315,23 @@ std::string stringName = "multi-line"
                           "string";
 std::string stringName ("string");
 ```
+
 [back to top](#table-of-contents)
 ## Boolean
 ### python 2 & 3
-* boolean_name = True
-* boolean_name = False
-* not True  # False
-* not False  # True
+```python
+boolean_name = True
+boolean_name = False
+not True  # False
+not False  # True
+```
 ### javascript ES5
-* var boolean_name; boolean_name = true;
-* var boolean_name = false;
-* !true  // false
-* !false  // true
+```javascript
+var boolean_name; boolean_name = true;
+var boolean_name = false;
+!true  // false
+!false  // true
+```
 * truthy: "xxx", 1, -1, 2.5, true
 * falsey: false, 0, "", null, undefined, NaN
 ### javascript ES6
@@ -1335,8 +1345,10 @@ const boolean_name = true;
 let isDone: boolean = false;
 ```
 ### ruby
-* boolean_name = true
-* boolean_name = false
+```ruby
+boolean_name = true
+boolean_name = false
+```
 * truthy: true, 0, 1, -1, "", 
 * falsey: false, nil
 * Check if method exist
@@ -1348,73 +1360,81 @@ let isDone: boolean = false;
     * example 3: false because array can't be turned into a symbol
       > [1, 2, 3].respond_to?(:to_sym) # false
 ### java
-* boolean boolean_name = true;
-* boolean boolean_name = false;
+```java
+boolean boolean_name = true;
+boolean boolean_name = false;
+```
 ### c#
-* // type Boolean
-* bool booleanName = true;  // displayed as True when printed
-* bool booleanName = false;  // displayed as False when printed
-* System.Boolean booleanName = false;
+```c#
+type Boolean
+bool booleanName = true;  // displayed as True when printed
+bool booleanName = false;  // displayed as False when printed
+System.Boolean booleanName = false;
+```
 ### c++: 8 bits
-* bool boolean_name; boolean_name = true;  // produces a 1 output
-* bool boolean_name = false;  // produces a 0 output
-* bool boolean_name (true);
-* bool boolean_name {false};
+```c++
+bool boolean_name; boolean_name = true;  // produces a 1 output
+bool boolean_name = false;  // produces a 0 output
+bool boolean_name (true);
+bool boolean_name {false};
+```
+
 [back to top](#table-of-contents)
 ## Arithmetic Operators
 ### python 2
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: 3.0/2  # output 1.5, 3/2 output 1
-* modulus: %
-* exponent: **
-* floor division: 3//2  # output 1
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```3.0/2  # output 1.5, 3/2 output 1```
+* modulus: ```%```
+* exponent: ```**```
+* floor division: ```3//2  # output 1```
 ### python 3
-* division: 3/2  # output 1.5
-* floor division: 3//2  # output 1
+* division: ```3/2  # output 1.5```
+* floor division: ```3//2  # output 1```
 ### javascript
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: 3/2  // output 1.5
-* modulus: %
-* exponent: **
-* floor division: Math.floor(3/2)  // output 1
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```3/2  // output 1.5```
+* modulus: ```%```
+* exponent: ```**```
+* floor division: ```Math.floor(3/2)  // output 1```
 ### ruby
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: 3.0/2  # output 1.5, 3/2 output 1
-* modulus: %
-* exponent: **
-* floor division: 3/2.floor
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```3.0/2  # output 1.5, 3/2 output 1```
+* modulus: ```%```
+* exponent: ```**```
+* floor division: ```3/2.floor```
 ### java
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: double double_name = 3.0/2;  // output 1.5, 3/2 output 1
-* modulus: %
-* exponent: Math.pow(3, 2);  // output 9
-* floor division: int integer_name = 3/2;  // output 1
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```double double_name = 3.0/2;  // output 1.5, 3/2 output 1```
+* modulus: ```%```
+* exponent: ```Math.pow(3, 2);  // output 9```
+* floor division: ```int integer_name = 3/2;  // output 1```
 ### c#
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: 3.0/2;  // output 1.5, 3/2 output 1
-* modulus: %
-* exponent: Math.Pow(3, 2);  // output 9
-* floor division: 3/2;  // output 1
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```3.0/2;  // output 1.5, 3/2 output 1```
+* modulus: ```%```
+* exponent: ```Math.Pow(3, 2);  // output 9```
+* floor division: ```3/2;  // output 1```
 ### c++
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: double double_name = 3.0/2  // output 1.5, 3/2 output 1
-* modulus: %
+* addition: ```+```
+* subtraction: ```-```
+* multiplication: ```*```
+* division: ```double double_name = 3.0/2  // output 1.5, 3/2 output 1```
+* modulus: ```%```
 * exponent:
-    * must add this to the top "#include＜cmath＞"
-    * int integer_name = pow(3, 2);  // output 9
-* floor division: 3/2  // output 1
+    * must add this to the top ```#include＜cmath＞```
+    * ```int integer_name = pow(3, 2);  // output 9```
+* floor division: ```3/2  // output 1```
+
 [back to top](#table-of-contents)
 ## Comparison Operators
 ### python 2 & 3
@@ -1540,6 +1560,7 @@ puts string1 <=> string2  # 0
 * ＜
 * ＞=
 * ＜=
+
 [back to top](#table-of-contents)
 ## Logical Operators
 ### python 2 & 3
@@ -1724,6 +1745,7 @@ a | b  // 61 = ...0011 1101
 * x += 1;
 * ++x;  // preincrement, add 1 now
 * x++;  // postincrement, display without addition now then add 1 later when called again
+
 [back to top](#table-of-contents)
 ## Arrays and Lists
 ### python 2 & 3
@@ -2296,6 +2318,7 @@ int_vector.resize(length_of_desired_array);
 // Remove all elements
 int_vector.clear();
 ```
+
 [back to top](#table-of-contents)
 ## Conditional Statement
 ### python 2 & 3
@@ -2543,6 +2566,7 @@ switch(choice) {
         do_something_else;
 }
 ```
+
 [back to top](#table-of-contents)
 ## Loops
 ### python 2
@@ -2894,6 +2918,7 @@ for (auto value : array_name) {
 for (;;)
     cout << "This will print forever" << endl;
 ```
+
 [back to top](#table-of-contents)
 ## Instantiation
 ### python 2 & 3
@@ -3246,6 +3271,7 @@ int sumTwoNumbers(int a, int b)
    return a + b;
 }
 ```
+
 [back to top](#table-of-contents)
 ## Higher order functions
 ### python 2
@@ -4800,6 +4826,7 @@ int main()
    std::cout << math.sumOfValues();
 }
 ```
+
 [back to top](#table-of-contents)
 ## Importing Libraries
 ### python 2 & 3
@@ -5667,6 +5694,7 @@ srand((int)time(0));
 // Get the random number from the seed & save it to a variable
 int randomNumber = rand() % 100;  // number range from 0 to 99
 ```
+
 [back to top](#table-of-contents)
 ## Date and Time
 ### python
@@ -7302,4 +7330,5 @@ enum class Color{ Red, Green, Blue};
 // Initialisation
 Color col = Color::Red;
 ```
+
 [back to top](#table-of-contents)
