@@ -197,8 +197,11 @@ p "Hello World"  # same as puts
       - if there are more than 1 class named Main in an app
         - can be distinguished by using the package
 - each source code file will contain 1 public class
-- ```public``` means that the method is available to the entire app
-- ```static``` means that this method can be called directly from the class definition rather than from an instance of the class
+- ```public``` visible to all classes
+- ```protected``` visible to class they belong and any subclasses
+- ```private``` (most restricted): visible only to class they belong
+- ```static``` can be accessed without creating a class instance
+- ```final``` constant value, value cannot be changed
 - ```void``` means that the method doesn't return any value
 ```java
 package com.example;  // package declaration
@@ -483,9 +486,9 @@ multi-line comments
       private static int myInt;  // must be declared as static of a class to have default value
     
       public static void main(String args[]) {
-      System.out.println(myInt);  // 0
+        System.out.println(myInt);  // 0
+      }
     }
-}
     ``` 
     - data types
       - numbers
