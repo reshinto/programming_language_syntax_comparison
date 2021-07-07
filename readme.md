@@ -4989,6 +4989,27 @@ nums = [1, 2, 3]
 strings = nums.map(&:to_s)
 ```
 ### java
+```java
+// implicit type conversion (small value to big only)
+byte b = 1;
+int i = b;
+float f = i;
+
+// casting
+// explicit type conversion (can convert big value to small, however, data loss will occur)
+float pi = 3.14f;
+int intPi = (int) pi;  // 3
+
+int num = 256;
+byte b = (byte) num; // 0 (surplus value will assigned if converting big data type value to smaller data type value)
+
+int num2 = 255;
+byte b2 = (byte) num2; // 255
+
+// convert number to strings (user helper class)
+int i = 1234;
+String str = Integer.toString(i);  // "1234"
+```
 ### c#
 ```c#
 // implicit type conversion (small value to big only)
