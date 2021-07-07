@@ -1067,28 +1067,32 @@ puts variable_name  # symbolStringWithoutQuotes
 ### java
 ```java
 // character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
-char charName = 'a';
-char charName = '\u0061';  // unicode character for the letter a
+char charName1 = 'a';
+char charName2 = '\u0061';  // unicode character for the letter a
+
+// modify character cases
+Character.toUpperCase(charName1);  // 'A'
+Character.toLowerCase(charName1);  // 'a'
 
 
 // strings: must use double quotes ""
-String stringName = "string";
-String stringName = "multi-line " +
+String stringName1 = "string";
+String stringName2 = "multi-line " +
                      "string";
 
 
 // get character of string with index
-char indexChar = stringName.charAt(0);  // 's'
+char indexChar = stringName1.charAt(0);  // 's'
 
 
 // modify string cases
-String stringName2 = stringName.toUpperCase();  // "STRING"
-String stringName3 = stringName2.toLowerCase();  // "string"
+String stringName3 = stringName1.toUpperCase();  // "STRING"
+String stringName4 = stringName3.toLowerCase();  // "string"
 
 
 // toString method: convert primitive numeric values to string
 double doubleValue = .5d;
-String stringName4 = Double.toString(doubleValue);  // "0.5"
+String stringName5 = Double.toString(doubleValue);  // "0.5"
 ```
 ### c#
 * Strings (immutable)
