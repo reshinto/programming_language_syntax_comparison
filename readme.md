@@ -533,6 +533,21 @@ multi-line comments
       - booleans
         - default value ```false```
 2. Objects
+    - an object is an instance of a class
+    - nonprimitive variables are references to objects
+    - objects can have multiple references
+    - Object data types
+      - String
+        - a complex object
+        - is an instance of the string class
+        - is an array of characters
+        - string objects are immutable
+        - reasigning the string value creates a new object
+          - the old object can be cleared from memory thrown garbage collection process
+        - helper class is ```java.lang.String```, thus import not required
+        ```java
+        String string1 = new String("Hello");
+        ```
 
 [back to top](#table-of-contents)
 ## Variable declaration int
@@ -588,7 +603,7 @@ integer_name = 123
 ```
 ### java
 ```java
-// public/private/protected static final byte/short/int/long integer_name = 123;
+// public/private/protected static final byte/short/int/long integerName = 123;
 /* 
 public: visible to all classes
 protected: visible to class they belong and any subclasses
@@ -598,18 +613,19 @@ final: constant value, value cannot be changed
 */
 
 // byte: -128 ~ 127, 8 bits
-byte byte_name = 123;
+byte byteName = 123;
 
 // short: -32768 ~ 32767, 16 bits
-short short_name = 123;
+short shortName = 123;
 
 // int: -2147483648 ~ 2147483647, -2_147_483_648 ~ 2_147_483_647, 32 bits
-int integer_name; integer_name = 123;
-int integer_name = 123;  // default is visible within the same package
+int integerName; integerName = 123;
+int integerName2 = 123;  // default is visible within the same package
 
 // long: -9223372036854775808L ~ 9223372036854775807L, can use _ same as int, 64 bits
-long long_name = 123l;  // 123
-long long_name = 123L;  // 123
+long longName1 = 123l;  // 123
+long longName2 = 123L;  // 123
+long longName3 = 10_000;  // 10000, introduced in java 7, just makes it easier to read
 ```
 ### c#
 ```c#
@@ -1074,9 +1090,27 @@ char charName2 = '\u0061';  // unicode character for the letter a
 Character.toUpperCase(charName1);  // 'A'
 Character.toLowerCase(charName1);  // 'a'
 
+// convert Char Array to a string
+char[] chars = {'H', 'e', 'l', 'l', 'o'};
+String s = new String(chars);  // "Hello"
+
+// convert string to char array
+char[] chars2 = s.toCharArray();
+for (char c : chars2) {  // for each loop
+  System.out.print(c);  // "Hello"
+}
+
+// convert primitive values to string
+int intValue = 42;
+String fromInt = Integer.toString(intValue);  // "42"
+
+boolean boolValue = true;
+String fromBool = Boolean.toString(boolValue);  // "true"
+
 
 // strings: must use double quotes ""
-String stringName1 = "string";
+String stringName = new String("Hello");  // method 1
+String stringName1 = "string";  // method 2
 String stringName2 = "multi-line " +
                      "string";
 
@@ -1090,9 +1124,37 @@ String stringName3 = stringName1.toUpperCase();  // "STRING"
 String stringName4 = stringName3.toLowerCase();  // "string"
 
 
+// get length of string
+stringName4.length();  // 6
+
+// get index of substring
+int index = stringName4.indexOf("ng");  // 4
+
+// get substring with index
+String sub1 = stringName4.substring(4);  // "ng"
+String sub2 = stringName4.substring(4, 6);  // "ng" from starting index to but exclude last index
+
+// trim whitespaces from beginning and ending of string
+String trimStr = "  test  ";
+String newStr = trimStr.trim();  // "test"
+
+
 // toString method: convert primitive numeric values to string
 double doubleValue = .5d;
 String stringName5 = Double.toString(doubleValue);  // "0.5"
+
+// comparing strings
+String str1 = "Hello";  // object 1
+String str2 = "Hello";  // str2 points to str1, thus is still object 1
+str1 == str2;  // true
+
+String part1 = "Hello ";
+String part2 = "World";
+String str3 = part1 + part2;  // object 1
+String str4 = "Hello World";  // object 2
+str3 == str4;  // false
+// need to use .equals()
+str3.equals(str4);  // true
 ```
 ### c#
 * Strings (immutable)
@@ -1645,9 +1707,17 @@ import java.util.Scanner;
 System.out.println("What's your name?");
 
 // get raw input
-Scanner input = new Scanner(System.in);
-input.next();  // convert raw value to string type
-input.nextInt();  // convert raw value to int type
+Scanner scanner = new Scanner(System.in);
+// convert raw value to string type
+// can read the input only till the space
+// It can't read two words separated by a space
+// places the cursor in the same line after reading the input
+String input = scanner.next();
+// reads input including space between the words till the end of line \n
+// Once the input is read, positions the cursor in the next line
+String input1 = scanner.nextLine();
+// convert raw value to int type
+Int input2 = scanner.nextInt();
 ```
 ### c#
 ```c#
@@ -2835,7 +2905,7 @@ n.times { do_this }  # do_this will repeat n times
 int i = 0;
 // Set condition
 while (i<5) {  // Start from 0 to 4
-    do_this;
+    doThis;
     // Include condition_increment_or_decrement;
     i++;
     // Can use break or continue to add additional functionality, or not use any
@@ -2847,7 +2917,7 @@ while (i<5) {  // Start from 0 to 4
 // declare_initial_conditional_value
 int i = 0;
 do {  // Start from 0 to 4
-    do_this;
+    doThis;
     // Include condition_increment_or_decrement;
     i++;
 // Set condition
@@ -2855,14 +2925,20 @@ do {  // Start from 0 to 4
 
 // For loop
 for (int i=0; i<5; i++) {  // Start from 0 to 4
-    do_this;
+    doThis;
     // Can use break or continue to add additional functionality, or not use any
     break;  // Breaks out of the current closest enclosing loop
     continue;  // Goes to the top of the closest enclosing loop
 }
 // Reverse loop
 for (int i=4; i>=0; i--) {  // Start from 4 to 0
-    do_this;
+    doThis;
+}
+
+// for each loop
+char[] chars = {'H', 'e', 'l', 'l', 'o'};  // an array can only have a single data type
+for (char c : chars) {  // for each element in the array
+  doThis;
 }
 ```
 ### c#
@@ -2983,8 +3059,18 @@ t = thing.new(argument)  # instantiation with arguments
 ```
 ### java
 ```java
-ClassName t = new ClassName();  // instantiation
-ClassName t = new ClassName(argument);  // instantiation with arguments
+public class ClassName {
+  public String type;  // instance variable
+  
+  public static void main(String[] args) {
+    ClassName t = new ClassName();  // instantiation
+    t.type = "something";
+    t.display();
+  }
+  
+  // instance method
+  private void display() {}
+}
 ```
 ### c#
 ```c#
@@ -5082,6 +5168,11 @@ byte b2 = (byte) num2; // 255
 // convert number to strings (user helper class)
 int i = 1234;
 String str = Integer.toString(i);  // "1234"
+
+// convert string to double
+String s = "423";
+double d1 = Double.parseDouble(s);
+System.out.println(d1);  // 423.0
 ```
 ### c#
 ```c#
@@ -5293,12 +5384,12 @@ String stringName1 = string1 + num1;  // "string1"
 
 // method 2
 StringBuilder sb1 = new StringBuilder(string1);
-sb1.append(num1);
-sb1.toString();  // "string1"
+sb1.append(num1);  // "string1"
 // or
 StringBuilder sb2 = new StringBuilder();
-sb2.append(string1).append(num1);
-sb2.toString();  // "string1"
+sb2.append(string1).append(num1);  // "string1"
+
+sb2.delete(1, sb2.length());  // "s"
 
 // method 3
 StringBuffer sBuffer1 = new StringBuffer(string1);
@@ -5772,6 +5863,48 @@ int randomNumber = rand() % 100;  // number range from 0 to 99
 Time.now
 ```
 ### java
+- must import
+```java
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.DateFormat;
+import java.util.Locale;
+import java.time.LocalDateTime;  // java 8
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+```
+```java
+Date d = new Date();  // Fri Jul 09 00:46:09 SGT 2021
+
+// January = 0, Feburary = 1, ...
+GregorianCalendar gc = new GregorianCalendar(2009, 1, 28);
+gc.add(GregorianCalendar.DATE, 1);  // add a day
+Date d2 = gc.getTime();  // Sun Mar 01 00:00:00 SGT 2009
+
+// format date
+// method 1, with no specific style and locale
+DateFormat df = DateFormat.getDateInstance();
+System.out.println(df.format(d2));  // Mar 1, 2009
+// method 2, with style and no locale
+DateFormat df2 = DateFormat.getDateInstance(DateFormat.FULL);
+System.out.println(df2.format(d2));  // Sunday, March 1, 2009
+// method 3, with style and locale
+Locale locale = new Locale("en_SG", "SGP");  // set as Singapore
+DateFormat df3 = DateFormat.getDateInstance(DateFormat.FULL, locale);
+System.out.println(df3.format(d2));  // 2009 Mar 1, Sun
+
+LocalDateTime ldt = LocalDateTime.now();  // 2021-07-09T01:03:50.874932
+
+// January = 1, Feburary = 2, ...
+LocalDate ld = LocalDate.of(2009, 1, 28);  // 2009-01-28
+
+DateTimeFormatter dtf = DateTimeFormatter.ISO_DATE;
+System.out.println(dtf.format(ld));  // 2009-01-28
+
+// format with a specific pattern
+DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("M/d/yyyy");
+System.out.println(dtf2.format(ld));  // 1/28/2009
+```
 ### c#
 ```c#
 // Set date (time set to default at 12:00:00 AM)
@@ -6417,6 +6550,45 @@ console.log(genericFunc(false));
 ```
 ### ruby
 ### java
+- Number formatting
+```java
+long longValue = 10_000_000;
+// method 1
+// using "import java.text.NumberFormat;"
+NumberFormat formatter = NumberFormat.getNumberInstance();
+String formatted = formatter.format(lognValue);  // "10,000,000" (us locale)
+// method 2
+// using "import java.util.Locale;"
+Locale locale = new Locale("da", "DK");  // set as Denmark
+NumberFormat formatter = NumberFormat.getNumberInstance(locale);
+String formatted = formatter.format(lognValue);  // "10.000.000" (dk locale)
+```
+- Currency formatting
+```java
+long longValue = 10_000_000.00;
+// method 1
+// using "import java.text.NumberFormat;"
+NumberFormat formatter = NumberFormat.getCurrencyInstance();
+String formatted = formatter.format(lognValue);  // "$10,000,000.00" (us locale)
+// method 2
+// using "import java.util.Locale;"
+Locale locale = new Locale("da", "DK");  // set as Denmark
+NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
+String formatted = formatter.format(lognValue);  // "kr10.000.000,00" (dk locale)
+```
+- Integer formatting
+```java
+long longValue = 10_000_000.89;
+// method 1
+// using "import java.text.NumberFormat;"
+NumberFormat formatter = NumberFormat.getIntegerInstance();
+String formatted = formatter.format(lognValue);  // "10,000,001" (us locale)
+// method 2
+// using "import java.util.Locale;"
+Locale locale = new Locale("da", "DK");  // set as Denmark
+NumberFormat formatter = NumberFormat.getIntegerInstance(locale);
+String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
+```
 ### c#
 * Overloading
   * having multiple similar methods with different signatures
