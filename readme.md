@@ -6413,6 +6413,152 @@ ord("a")  # 97
 # convert number to character
 chr(97)  # a
 ```
+- function annotatins
+- ```int```, ```float```, ```bool```, ```str```, ```bytes```, ```None```
+- python 3.8 & earlier, ```list```, ```set```, ```dict```, ```tuple```
+  - ```list[int]```, ```dict[float, str]```, ```Tuple[int, ...]```
+- python 3.9+
+  - can import types from typing library
+```python
+from typing import List, Set, Dict, Tuple, Optional, Callable, Iterator, Union, Any, cast, Mapping, MutableMapping, Sequence, Match, AnyStr, IO
+
+isValid: bool = True;
+
+def foo(a:”int”, b:”float”=5.0)  -> ”int”:
+    pass
+    
+  
+x: Optional[str] = some_function()  # use Optional[] for values that could be None
+  
+x: Callable[[int, float], float] = f
+
+# A generator function that yields ints is secretly just a function that
+# returns an iterator of ints,
+def g(n: int) -> Iterator[int]:
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+
+# can also split a function annotation over multiple lines
+def send_email(address: Union[str, List[str]],
+               sender: str,
+               cc: Optional[List[str]],
+               bcc: Optional[List[str]],
+               subject='',
+               body: Optional[List[str]] = None
+               ) -> bool:
+                 
+# An argument can be declared positional-only by giving it a name starting with two underscores:
+def quux(__x: int) -> None:
+    pass
+
+quux(3)  # Fine
+quux(__x=3)  # Error
+  
+# To find out what type mypy infers for an expression anywhere in
+# your program, wrap it in reveal_type().  Mypy will print an error
+# message with the type; remove it again before running the code.
+reveal_type(1)  # -> Revealed type is "builtins.int"
+
+# Use Union when something could be one of a few types
+x: List[Union[int, str]] = [3, 5, "test", "fun"]
+
+# Use Any if you don't know the type of something or it's too
+# dynamic to write a type for
+x: Any = mystery_function()
+
+# If you initialize a variable with an empty container or "None"
+# you may have to help mypy a bit by providing a type annotation
+x: List[str] = []
+x: Optional[str] = None
+
+# This makes each positional arg and each keyword arg a "str"
+def call(self, *args: str, **kwargs: str) -> str:
+    request = make_request(*args, **kwargs)
+    return self.do_api_query(request)
+
+# Use a "type: ignore" comment to suppress errors on a given line,
+# when your code confuses mypy or runs into an outright bug in mypy.
+# Good practice is to comment every "ignore" with a bug link
+# (in mypy, typeshed, or your own code) or an explanation of the issue.
+x = confusing_function()  # type: ignore  # https://github.com/python/mypy/issues/1167
+
+# "cast" is a helper function that lets you override the inferred
+# type of an expression. It's only for mypy -- there's no runtime check.
+a = [4]
+b = cast(List[int], a)  # Passes fine
+c = cast(List[str], a)  # Passes fine (no runtime check)
+reveal_type(c)  # -> Revealed type is "builtins.list[builtins.str]"
+print(c)  # -> [4]; the object is not cast
+
+# If you want dynamic attributes on your class, have it override "__setattr__"
+# or "__getattr__" in a stub or in your source code.
+#
+# "__setattr__" allows for dynamic assignment to names
+# "__getattr__" allows for dynamic access to names
+class A:
+    # This will allow assignment to any A.x, if x is the same type as "value"
+    # (use "value: Any" to allow arbitrary types)
+    def __setattr__(self, name: str, value: int) -> None: ...
+
+    # This will allow access to any A.x, if x is compatible with the return type
+    def __getattr__(self, name: str) -> int: ...
+
+a.foo = 42  # Works
+a.bar = 'Ex-parrot'  # Fails type checking
+
+# Use Iterable for generic iterables (anything usable in "for"),
+# and Sequence where a sequence (supporting "len" and "__getitem__") is
+# required
+def f(ints: Iterable[int]) -> List[str]:
+    return [str(x) for x in ints]
+
+f(range(1, 3))
+
+# Mapping describes a dict-like object (with "__getitem__") that we won't
+# mutate, and MutableMapping one (with "__setitem__") that we might
+def f(my_mapping: Mapping[int, str]) -> List[int]:
+    my_mapping[5] = 'maybe'  # if we try this, mypy will throw an error...
+    return list(my_mapping.keys())
+
+f({3: 'yes', 4: 'no'})
+
+def f(my_mapping: MutableMapping[int, str]) -> Set[str]:
+    my_mapping[5] = 'maybe'  # ...but mypy is OK with this.
+    return set(my_mapping.values())
+
+f({3: 'yes', 4: 'no'})
+
+# User-defined classes are valid as types in annotations
+x: MyClass = MyClass()
+
+# "typing.Match" describes regex matches from the re module
+x: Match[str] = re.match(r'[0-9]+', "15")
+
+# Use IO[] for functions that should accept or return any
+# object that comes from an open() call (IO[] does not
+# distinguish between reading, writing or other modes)
+def get_sys_IO(mode: str = 'w') -> IO[str]:
+    if mode == 'w':
+        return sys.stdout
+    elif mode == 'r':
+        return sys.stdin
+    else:
+        return sys.stdout
+```
+- Async await
+```python
+import asyncio
+
+# A coroutine is typed like a normal function
+async def countdown35(tag: str, count: int) -> str:
+    while count > 0:
+        print('T-minus {} ({})'.format(count, tag))
+        await asyncio.sleep(0.1)
+        count -= 1
+    return "Blastoff!"
+```
 ### javascript
 ```javascript
 // convert character at index 0 to number
