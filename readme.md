@@ -845,6 +845,24 @@ let variable_name3: number = NaN;
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ```
 ### java
+```java
+String stringName = null;
+
+// NaN is produced if a floating point operation
+float floatName = Float.NaN;  // NaN
+double doubleName = Double.NaN;  // NaN
+
+Double x = new Double(-2.0/0.0);  // -Infinity
+Double y = new Double(0.0/0.0);  // NaN
+x.isNaN();  // false
+y.isNaN();  // true
+
+System.out.println(2.0 / 0);  // Infinity
+
+// set infinity value
+double inf = Double.POSITIVE_INFINITY;  // Infinity
+double inf = Double.NEGATIVE_INFINITY;  // -Infinty
+```
 ### c#
 ```c#
 string stringName = null;
@@ -5560,6 +5578,25 @@ ensure
 end
 ```
 ### java
+* try: lets you test a block of code for errors
+* catch: lets you handle the error
+  * use "Exception" keyword to catch all exception types
+  * use specific exception types to catch that specific exception
+    * exceptions are from java.lang library, so no imports are required
+  * catch block can be chained (specific exception with highest priority should come first)
+* finally: lets you execute code, after try and catch, regardless of the result
+  * very important for closing a file when an opened file in the try block triggered an exception
+```java
+try {
+  doSomething;
+} catch(SomeSpecificException e) {
+  doSomethingIfErrorOccursRelatedToSomESpecificException;
+} catch(Exception e) {  // e is an arg (mandatory), e can be used to print general or more detailed error
+  doSomethingIfErrorOccursRelatedToAllExceptions;
+} finally {
+  doSomethingWhenTryAndCatchIsCompleted;
+}
+```
 ### c#
 * try: lets you test a block of code for errors
 * catch: lets you handle the error
@@ -5571,8 +5608,10 @@ end
 ```c#
 try {
   doSomething;
-} catch(Exception ex) {  // ex is an arg (not mandatory), ex can be used to print general or more detailed error
-  doSomethingIfErrorOccurs;
+} catch(SomeSpecificException e) {
+  doSomethingIfErrorOccursRelatedToSomESpecificException;
+} catch(Exception e) {  // e is an arg (is not mandatory), e can be used to print general or more detailed error
+  doSomethingIfErrorOccursRelatedToAllExceptions;
 } finally {
   doSomethingWhenTryAndCatchIsCompleted;
 }
@@ -5610,6 +5649,18 @@ raise errorType, "custom error message"
 raise errorType.new("custom error message")
 ```
 ### java
+- must use try catch statements to work
+```java
+try {
+  // raise specific exception
+  throw new SpecificExceptionName("custom message");
+  
+  // raise generic exception
+  throw new Exception("custom message");
+} catch (SpecificExceptionName e) {
+} catch (Exception e) {
+}
+```
 ### c#
 ```c#
 // raise generic exception
