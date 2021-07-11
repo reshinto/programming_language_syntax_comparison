@@ -5649,8 +5649,9 @@ raise errorType, "custom error message"
 raise errorType.new("custom error message")
 ```
 ### java
-- must use try catch statements to work
+- must use either try catch statements or be inside a conditional statement to work
 ```java
+// if using try catch, both throw and catch must handle the same Exception type
 try {
   // raise specific exception
   throw new SpecificExceptionName("custom message");
@@ -5659,6 +5660,12 @@ try {
   throw new Exception("custom message");
 } catch (SpecificExceptionName e) {
 } catch (Exception e) {
+}
+
+
+if (true) {
+  // raise generic exception
+  throw new Exception("custom message");
 }
 ```
 ### c#
