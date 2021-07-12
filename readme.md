@@ -3084,10 +3084,15 @@ public class ClassName {
     ClassName t = new ClassName();  // instantiation
     t.type = "something";
     t.display();
+    
+    doSomething();  // can call static method directly
   }
   
   // instance method
   private void display() {}
+  
+  // static method
+  static void doSomething() {}
 }
 ```
 ### c#
@@ -3340,6 +3345,23 @@ public static void myFunction(dataType a){
 // Normal function with return value (change void to data type to return)
 public static int sum(int a){
   return a + 1;
+}
+```
+- method overloading
+```java
+static double addValues(String s1, String s2) {
+  double d1 = Double.parseDouble(s1);
+  double d2 = Double.parseDouble(s2);
+  double result = d1 + d2;
+  return result;
+}
+
+static double addValues(String s1, String s2, String s3) {
+  double d1 = Double.parseDouble(s1);
+  double d2 = Double.parseDouble(s2);
+  double d3 = Double.parseDouble(s3);
+  double result = d1 + d2 + d3;
+  return result;
 }
 ```
 ### c#
@@ -4098,6 +4120,11 @@ def myFunction(*parameter):
 end
 ```
 ### java
+```java
+static double myFunction(String ... args) {
+  String[] argsArr = args;  // args is an array of arguments
+}
+```
 ### c#
 ```c#
 // hard coded method
