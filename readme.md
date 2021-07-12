@@ -3004,54 +3004,6 @@ for (char c : chars) {  // for each element in the array
   doThis;
 }
 ```
-- using iterators to loop through collections
-```java
-// import java.util.List;
-// import java.util.ArrayList;
-// import java.util.Iterator;  // must import
-
-List<String> list = new ArrayList<>();
-list.add("Japan");
-list.add("China");
-list.add("USA");
-
-// method 1: using Iterator
-Iterator<String> iterator = list.iterator();
-while (iterator.hasNext()) {
-  String value = iterator.next();
-  System.out.println(value);
-}
-// method 2: using forEach loop
-for (String value: list) {
-  System.out.println(value);
-}
-// method 3: using List's forEach method, only available for Java 8 onwards, not included in android java 8
-list.forEach(System.out::println);  // method 1
-list.forEach((s) -> {System.out.println(s});  // method 2
-
-
-// loop hash maps with Iterator
-// import java.util.Map;
-// import java.util.HashMap;
-// import java.util.Set;
-// import java.Iterator;
-Map<String, String> map = new HashMap<>();
-map.put("jp", "Japan");
-map.put("sg", "Singapore");
-map.put("usa", "United States");
-Set<String> keys = map.keySet();
-
-Iterator<String> iterator = keys.iterator();
-while (iterator.hasNext()) {
-  String key = iterator.next();
-  System.out.println(map.get(key));
-}
-
-// loop has maps with forEach
-for (String key : keys) {
-  System.out.println(map.get(key));
-}
-```
 ### c#
 ```c#
 // While loop
@@ -6477,6 +6429,54 @@ iterator.next();  // { value: undefined, done: true }
 ```
 ### ruby
 ### java
+- using iterators to loop through collections
+```java
+// import java.util.List;
+// import java.util.ArrayList;
+// import java.util.Iterator;  // must import
+
+List<String> list = new ArrayList<>();
+list.add("Japan");
+list.add("China");
+list.add("USA");
+
+// method 1: using Iterator
+Iterator<String> iterator = list.iterator();
+while (iterator.hasNext()) {
+  String value = iterator.next();
+  System.out.println(value);
+}
+// method 2: using forEach loop
+for (String value: list) {
+  System.out.println(value);
+}
+// method 3: using List's forEach method, only available for Java 8 onwards, not included in android java 8
+list.forEach(System.out::println);  // method 1
+list.forEach((s) -> {System.out.println(s});  // method 2
+
+
+// loop hash maps with Iterator
+// import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Set;
+// import java.Iterator;
+Map<String, String> map = new HashMap<>();
+map.put("jp", "Japan");
+map.put("sg", "Singapore");
+map.put("usa", "United States");
+Set<String> keys = map.keySet();
+
+Iterator<String> iterator = keys.iterator();
+while (iterator.hasNext()) {
+  String key = iterator.next();
+  System.out.println(map.get(key));
+}
+
+// loop has maps with forEach
+for (String key : keys) {
+  System.out.println(map.get(key));
+}
+```
 ### c#
 ### c++
 [back to top](#table-of-contents)
