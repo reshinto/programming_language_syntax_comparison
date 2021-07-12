@@ -2998,10 +2998,58 @@ for (int i=4; i>=0; i--) {  // Start from 4 to 0
     doThis;
 }
 
-// for each loop
+// for each loop, can also loop collections with iterators
 char[] chars = {'H', 'e', 'l', 'l', 'o'};  // an array can only have a single data type
 for (char c : chars) {  // for each element in the array
   doThis;
+}
+```
+- using iterators to loop through collections
+```java
+// import java.util.List;
+// import java.util.ArrayList;
+// import java.util.Iterator;  // must import
+
+List<String> list = new ArrayList<>();
+list.add("Japan");
+list.add("China");
+list.add("USA");
+
+// method 1: using Iterator
+Iterator<String> iterator = list.iterator();
+while (iterator.hasNext()) {
+  String value = iterator.next();
+  System.out.println(value);
+}
+// method 2: using forEach loop
+for (String value: list) {
+  System.out.println(value);
+}
+// method 3: using List's forEach method, only available for Java 8 onwards, not included in android java 8
+list.forEach(System.out::println);  // method 1
+list.forEach((s) -> {System.out.println(s});  // method 2
+
+
+// loop hash maps with Iterator
+// import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Set;
+// import java.Iterator;
+Map<String, String> map = new HashMap<>();
+map.put("jp", "Japan");
+map.put("sg", "Singapore");
+map.put("usa", "United States");
+Set<String> keys = map.keySet();
+
+Iterator<String> iterator = keys.iterator();
+while (iterator.hasNext()) {
+  String key = iterator.next();
+  System.out.println(map.get(key));
+}
+
+// loop has maps with forEach
+for (String key : keys) {
+  System.out.println(map.get(key));
 }
 ```
 ### c#
@@ -3391,6 +3439,27 @@ public static void myFunction(dataType a){
 public static int sum(int a){
   return a + 1;
 }
+
+
+// lamda
+// store returning function
+interface StringFunction {
+  String run(String str);
+}
+
+StringFunction strFunc = (s) -> s;
+strFunc.run("test");  // "test"
+
+// store non returning function
+// import java.util.ArrayList;
+// import java.util.function.Consumer;  // must import
+ArrayList<Integer> numbers = new ArrayList<Integer>();
+numbers.add(5);
+Consumer<Integer> method = (n) -> { System.out.println(n); };
+numbers.forEach( method );
+
+// using inside forEach loop
+numbers.forEach( (n) -> { System.out.println(n); } );
 ```
 - method overloading
 ```java
@@ -4027,13 +4096,18 @@ Map<String, String> map = new HashMap<>();
 // add key value pair
 map.put("jp", "Japan");
 map.put("sg", "Singapore");
-System.out.println(map);  // { jp=Japan, sg=Singapore }
+map.put("usa", "United States");
+System.out.println(map);  // { jp=Japan, sg=Singapore, usa=United States }
 
 // get value with key
 map.get("jp");  // "Japan"
 
 // remove key value pair with key
-map.remove("sg");  // { jp=Japan }
+map.remove("sg");  // { jp=Japan, usa=United States }
+
+// get a set of keys
+// import java.util.Set;  // must import
+Set<String> keys = map.keySet();  // [ usa, jp ]
 ```
 ### c#
 ```c#
@@ -6886,6 +6960,156 @@ Locale locale = new Locale("da", "DK");  // set as Denmark
 NumberFormat formatter = NumberFormat.getIntegerInstance(locale);
 String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
 ```
+- double colon operator / method reference operator
+  - ```<Class name>::<method name>```
+  - can be used for
+    - a static method
+    ```java
+    import java.util.*;
+  
+    class GFG {
+      // static function to be called
+      static void someFunction(String s)
+      {
+        System.out.println(s);
+      }
+
+      public static void main(String[] args)
+      {
+        List<String> list = new ArrayList<String>();
+        list.add("Geeks");
+        list.add("For");
+        list.add("GEEKS");
+  
+        // call the static method
+        // using double colon operator
+        list.forEach(GFG::someFunction);
+      }
+    }
+    ```
+    - an instance method
+    ```java
+    import java.util.*;
+  
+    class GFG {
+      // instance function to be called
+      void someFunction(String s)
+      {
+        System.out.println(s);
+      }
+  
+      public static void main(String[] args)
+      {
+        List<String> list = new ArrayList<String>();
+        list.add("Geeks");
+        list.add("For");
+        list.add("GEEKS");
+  
+        // call the instance method
+        // using double colon operator
+        list.forEach((new GFG())::someFunction);
+      }
+    }
+    ```
+    - super method
+    ```java
+    import java.util.*;
+    import java.util.function.*;
+  
+    class Test {
+      // super function to be called
+      String print(String str)
+      {
+        return ("Hello " + str + "\n");
+      }
+    }
+  
+    class GFG extends Test {
+      // instance method to override super method
+      @Override
+      String print(String s)
+      {
+        // call the super method
+        // using double colon operator
+        Function<String, String> func = super::print;
+        
+        String newValue = func.apply(s);
+        newValue += "Bye " + s + "\n";
+        System.out.println(newValue);
+        return newValue;
+      }
+  
+      // Driver code
+      public static void main(String[] args)
+      {
+        List<String> list = new ArrayList<String>();
+        list.add("Geeks");
+        list.add("For");
+        list.add("GEEKS");
+        
+        // call the instance method
+        // using double colon operator
+        list.forEach(new GFG()::print);
+      }
+    }
+    ```
+    - Instance method of an arbitrary object of a particular type
+    ```java
+    import java.util.*; 
+  
+    class Test { 
+      String str=null;
+      
+      Test(String s)
+      {
+        this.str=s;
+      }
+      // instance function to be called 
+      void someFunction() 
+      { 
+        System.out.println(this.str); 
+      } 
+    } 
+  
+    class GFG { 
+      public static void main(String[] args) 
+      { 
+        List<Test> list = new ArrayList<Test>(); 
+        list.add(new Test("Geeks")); 
+        list.add(new Test("For")); 
+        list.add(new Test("GEEKS")); 
+  
+        // call the instance method 
+        // using double colon operator 
+        list.forEach(Test::someFunction); 
+      } 
+    }
+    ```
+    - a constructor
+    ```java
+    import java.util.*;
+  
+    class GFG {
+      // Class constructor
+      public GFG(String s)
+      {
+        System.out.println("Hello " + s);
+      }
+  
+      // Driver code
+      public static void main(String[] args)
+      {
+        List<String> list = new ArrayList<String>();
+        list.add("Geeks");
+        list.add("For");
+        list.add("GEEKS");
+  
+        // call the class constructor
+        // using double colon operator
+        list.forEach(GFG::new);
+      }
+    }
+    ```
 ### c#
 * Overloading
   * having multiple similar methods with different signatures
