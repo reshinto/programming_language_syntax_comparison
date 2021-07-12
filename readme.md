@@ -2218,6 +2218,7 @@ list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ### java
 ```java
 // Arrays: can only have 1 data type: string, int, etc.
+// printing this only shows the memory
 // Empty string array of desired array size
 String[] string_array = new String[length_of_desired_array];
 // New string array with elements inside
@@ -2234,30 +2235,74 @@ string_array[index];
 // Find array size
 string_array.length;
 
+// Sort array, can sort numbers, strings, etc.
+// must import
+// import java.util.Arrays;
+String[] sourceArr = {"orange", "apple", "pear"};
+Arrays.sort(sourceArr);  // {"apple", "orange", "pear"}
 
-// Arraylists: can only have 1 data type: string, int, etc.
-import java.util.ArrayList;  // Must import to use
+// Copy array
+int sourceArrStartingIndex = 1;
+int destinationArrStartingIndex = 0;
+int copiedArrLen = 2;
+String[] copiedArr = new String[copiedArrLen];
+System.arraycopy(sourceArr, sourceArrStartingIndex, copiedArr, destinationArrStartingIndex, copiedArrLen);  // {"apple", "pear"}
+
+// multidimensional array
+String[][] states = new String[3][2];
+states[0][0] = "Japan";
+states[0][1] = "Tokyo";
+
+
+// Arraylists: it is a class, extends the AbstractList class and implements List interface
+// can be instantiated
+// used to create a dynamic array that contains objects
+// creates an array of objects where the array can grow dynamically
+// can only have 1 data type: string, int, etc.
+// import java.util.ArrayList;  // Must import to use
 
 // Empty string arrayList
-ArrayList<String> string_arrayList = new ArrayList<String>();
+ArrayList<String> arrayList = new ArrayList<String>();
 
-// Add string element to string arrayList (left to right)
-string_arrayList.add(element);
+// Add element to string arrayList (left to right)
+arrayList.add(element);
 
 // Modify an element at index
-string_arrayList.set(index, element);
+arrayList.set(index, element);
 
 // Access an element
-string_arrayList.get(index);
+arrayList.get(index);
 
 // Remove element from arrayList at index
-string_arrayList.remove(index);
+arrayList.remove(index);
 
 // Find arrayList size
-string_arrayList.size();
+arrayList.size();
 
 // Remove all elements
-string_arrayList.clear();
+arrayList.clear();
+
+
+// List: it is an interface, extends the Collection framework
+// cannot be instantiated
+// used to create a list of elements(objects) which are associated with their index numbers
+// creates a collection of elements that are stored in a sequence and they are identified and accessed using the index
+// print this shows the actual array
+// import java.util.List;  // must import to use
+// import java.util.ArrayList;  // Must import to use
+List<String> list = new ArrayList<>();  // from java 7 onwards redundent <String> is not required, can just use <>
+
+// Add element to string List (left to right)
+list.add(element);
+
+// Remove element from list at index
+list.remove(index);
+
+// Access an element
+list.get(index);
+
+// Find index of an element
+list.indexOf(element);
 ```
 ### c#
 * Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
