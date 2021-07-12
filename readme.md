@@ -4014,6 +4014,27 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 ### java
+```java
+// Map: it is an interface used to store data in key-value pair
+// import java.util.Map;  // must import
+
+// HashMap: it is the implementation class of the Map interface
+// import java.util.HashMap;  // must import
+
+// declaration
+Map<String, String> map = new HashMap<>();
+
+// add key value pair
+map.put("jp", "Japan");
+map.put("sg", "Singapore");
+System.out.println(map);  // { jp=Japan, sg=Singapore }
+
+// get value with key
+map.get("jp");  // "Japan"
+
+// remove key value pair with key
+map.remove("sg");  // { jp=Japan }
+```
 ### c#
 ```c#
 // method 1 (can be used within a method)
