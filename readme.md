@@ -2615,7 +2615,7 @@ condition_a ? do_A : do_B;
 
 
 // Switch statement
-switch(choice) {
+switch(choice) {  // choice value can only be primitive values in java 7, since java 8 strings are also accepted
     case choice_A:
         do_A;
         break;
