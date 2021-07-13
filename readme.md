@@ -4809,6 +4809,34 @@ class MainClass {
   }
 }
 ```
+- Anonymous classes
+```java
+import java.util.Scanner;
+
+public class Calculator {
+  public static void main(String[] args) {
+    ClassName c = new ClassName();
+    c.calculate();
+  }
+  
+  // can be accessed from within the same class, subclasses of same packages,
+  // different classes of same packages, subclasses of different packages
+  protected void calculate() {
+    InputHelper helper = new InputHelper();
+    String s1 = helper.getInput("Please do something");
+  }
+  
+  // only Calculator class can use this
+  class InputHelper {
+    // can only be accessed from the same class
+    private String getInput(String prompt) {
+      System.out.println(prompt);
+      Scanner sc = new Scanner(System.in);
+      return sc.nextLine();
+    }
+  }
+}
+```
 ### c#
 * Struct vs Class
   * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
