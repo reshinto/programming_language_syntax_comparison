@@ -7080,6 +7080,50 @@ console.log(genericFunc(false));
 ```
 ### ruby
 ### java
+- ENUM
+```java
+// usual enums
+public enum Names1 {
+  JOHN, PETER;
+}
+
+// setting a string value for enums
+public enum Names2 {
+  JOHN("John"), PETER("Peter");
+  
+  private String name;
+  
+  Names2(String name) {
+    this.name = name;
+  }
+  
+  @Override
+  public String toString() {
+    return this.name;
+  }
+}
+
+public class Person {
+  private Names1 name1 = Names1.JOHN;  // using enum to set a constant variable
+  private Names2 name2 = Names2.JOHN;
+  
+  public Names1 getName1() {
+    return this.name1;
+  }
+  
+  public Names2 getName2() {
+    return this.name2;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Person p = new Person();
+    System.out.println(p.getName1());  // "JOHN"
+    System.out.println(p.getName2());  // "John"
+  }
+}
+```
 - Number formatting
 ```java
 long longValue = 10_000_000;
