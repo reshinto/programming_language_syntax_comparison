@@ -4775,11 +4775,14 @@ puts calculate.innerAdd(2)  # 8 2
 ```
 ### java
 - class
+  - if not constructor has been defined, a constructor with no args will be auto generated
+  - if a constructor with args has been defined, a constructor with no args will not be auto generated
 ```java
 public class Math {
   public int arg1;
   public int arg2;
   public int total;
+  public static final String NAME = "Math";  // declaring a constant variable
   
   // constructor (must have the same name as class name, no return data type)
   public Math(int arg1, int arg2) {
@@ -4806,6 +4809,133 @@ class MainClass {
     System.out.println(test.InnerAdd(2));  // 8
     // static variables or methods does not requires instantiation
     System.out.println(Math.OutterAdd(4, 5));  // 9
+  }
+}
+```
+- private key
+```java
+public class Person {
+  private int age = 0;  // cannot be accessed other than within the class
+  
+  // age can only be modified with the setter method
+  public void setAge(int age) {
+    this.age = age;
+  }
+  
+  // age can only be retrieve with the getter method
+  public int getAge() {
+    return this.age;
+  }
+}
+```
+- protected key
+```java
+// class with protected method
+package p1;
+  
+// Class A
+public class A {
+  protected void display()
+  {
+    System.out.println("test");
+  }
+}
+
+//////////////////////////////////
+// usable
+package p2;
+  
+// import all classes in package p1
+import p1.*;
+  
+// Class B is a subclass of A
+class B extends A {
+  public static void main(String args[])
+  {
+    B obj = new B();
+    obj.display();
+  }
+}
+
+
+//////////////////////////////////
+// usable: Accessing display function from the same package but different class
+package p1;
+
+public class C {
+  public static void main(String args[])
+  {
+    A obj = new A();
+    obj.display();
+  }
+}
+
+
+//////////////////////////////////
+// usable: Accessing display function from a different package
+package p2;
+  
+// import all classes in package p1
+import p1.*;
+  
+// Class B is a subclass of A
+class B extends A {
+  public static void main(String args[])
+  {
+    B obj = new B();
+    obj.display();
+  }
+}
+
+
+//////////////////////////////////
+// usable: Accessing a protected class by overriding to sub-class within same package
+package p1;
+
+public class C extends A {
+  // overridden function
+  protected void display()
+  {
+    System.out.println("Class C");
+  }
+  public static void main(String args[])
+  {
+    C obj1 = new C();
+    obj1.display();
+  }
+}
+
+
+//////////////////////////////////
+// not usable: Calling protected function without extending the parent class
+package p2;
+  
+// import all classes in package p1
+import p1.*;
+  
+// Class B is a subclass of A
+class B {
+  public static void main(String args[])
+  {
+    B obj = new B();
+    obj.display();
+  }
+}
+
+
+//////////////////////////////////
+// not usable: Accessing a protected class
+package p2;
+  
+// import all classes in package p1
+import p1.*;
+  
+// Class B is a subclass of A
+class B extends A {
+  public static void main(String args[])
+  {
+    B obj = new B();
+    obj.display();
   }
 }
 ```
