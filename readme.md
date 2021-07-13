@@ -5171,21 +5171,22 @@ require_relative "moduleFileName"  # extension not required
 // folder name that the current file is in, all other files that are in this folder can be imported without additional code
 package com.example.demoapi.student;
 
-// normal type modules import cannot use .*
+// importing of custom nested class
+import com.example.demoapi.student.utilities.Helper;
+
 import java.time.LocalDate;
 import java.time.Period;
 
-// methods from type modules can use static to enable .*
+// allows imports of all static members of the class
 import static java.time.LocalDate.*;
 
-// decorator import method 1
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 // method 2
-import javax.persistence.*;  // works only for decorators
+import javax.persistence.*;  // allows imports of all classes
 
 @Entity
 @Table
