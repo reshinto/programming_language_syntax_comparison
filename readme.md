@@ -7081,6 +7081,8 @@ console.log(genericFunc(false));
 ### ruby
 ### java
 - ENUM
+ - Enumerations are lists of possible values that you can use for any particular variable
+ - An enumeration in java is called an enum class.
 ```java
 // usual enums
 public enum Names1 {
