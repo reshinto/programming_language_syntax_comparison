@@ -4967,6 +4967,119 @@ public class Calculator {
   }
 }
 ```
+- inheritance
+```java
+// enum
+public enum Names1 {
+  JOHN, PETER;
+}
+
+// parent / base / superclass
+public class Person {
+  private int age;
+  private Names name;
+
+  public Person(int age, Names name) {
+    this.age = age;
+    this.name = name;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public int getAge() {
+    return this.age;
+  }
+
+  public Names getName() {
+    return this.name;
+  }
+  
+  public void whoAmI() {
+    System.out.println("I am a Person");
+  }
+}
+
+// Inheritance: child / derived / subclass
+public class John extends Person {
+  public John() {
+    super(25, Names.JOHN);
+  }
+  
+  // Polymorphism: overriding the parent's method
+  @Override  // use this even if it is not required for 2 benefits: take adv of compiler check, easier to read
+  public void whoAmI() {
+    System.out.println("I a John");
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Person p = new Person(0, Names.JOHN);
+    p.whoAmI();  // "I am a Person
+    John j = new John();
+    j.setAge(25);
+    System.out.println(j.getAge());
+    System.out.println(j.getName());
+    j.whoAmI();  // "I am John"
+  }
+}
+```
+- interface
+  - it is a contract that defines a set of methods with a particular signatures
+  - any class that implement that interface must implement those methods
+```java
+// enum
+public enum Names1 {
+  JOHN, PETER;
+}
+
+// interface: declaring of implementations are not required
+// declaring of implementations in Android might be required during instantiation
+public interface Human {
+  public void setAge(int age);
+
+  public int getAge();
+
+  public Names getName();
+
+  public void whoAmI();
+}
+
+// class that implements an interface
+// if not all of the methods declared in the interface are implemented, an error will occur
+// additional methods not declared in the interface can be declared
+public class Person implements Human {
+  private int age;
+  private Names name;
+
+  public Person(int age, Names name) {
+    this.age = age;
+    this.name = name;
+  }
+
+  @Override  // not required but better to be explicit
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  @Override
+  public int getAge() {
+    return this.age;
+  }
+
+  @Override
+  public Names getName() {
+    return this.name1;
+  }
+
+  @Override
+  public void whoAmI() {
+    System.out.println("I am a Person");
+  }
+}
+```
 ### c#
 * Struct vs Class
   * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
