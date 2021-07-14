@@ -4970,7 +4970,7 @@ public class Calculator {
 - inheritance
 ```java
 // enum
-public enum Names1 {
+public enum Names {
   JOHN, PETER;
 }
 
@@ -5031,7 +5031,7 @@ public class Main {
   - any class that implement that interface must implement those methods
 ```java
 // enum
-public enum Names1 {
+public enum Names {
   JOHN, PETER;
 }
 
@@ -5077,6 +5077,92 @@ public class Person implements Human {
   @Override
   public void whoAmI() {
     System.out.println("I am a Person");
+  }
+}
+```
+- abstract
+  - the ```abstract``` keyword is added
+  - it can contain a mixture of fully implemented methods & abstract methods
+    - abstract method is similar to a method in an interface
+      - no implementation & only indicates method signature
+      - any subclasses of an abstract method must implement that method
+  - cannot be instantiated directly, only their subclasses can be instantiated
+```java
+// enum
+public enum Names {
+  JOHN, PETER;
+}
+
+// interface
+public interface Human {
+  public void setAge(int age);
+
+  public int getAge();
+
+  public Names getName();
+
+  public void whoAmI();
+}
+
+// abstract parent / base / superclass
+public abstract class Person implements Human {
+  private int age;
+  private Names name;
+
+  public Person(int age, Names name) {
+    this.age = age;
+    this.name = name;
+  }
+
+  @Override
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  @Override
+  public int getAge() {
+    return this.age;
+  }
+
+  @Override
+  public Names getName() {
+    return this.name1;
+  }
+
+  @Override
+  public void whoAmI() {
+    System.out.println("I am a Person");
+  }
+  
+  // this means that every subclass of this class must declare its own origin
+  public abstract String getOrigin();
+}
+
+// child / derived / subclass
+public class John extends Person {
+  public John() {
+    super(25, Names.JOHN);
+  }
+  
+  @Override
+  public void whoAmI() {
+    System.out.println("I a John");
+  }
+  
+  @Override
+  public String getOrigin() {  // this must be declared here, else an error will occur
+    return "Japan";
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    // Person p = new Person(0, Names.JOHN);  // abstract classes cannot be instantiated and will cause an error
+    John j = new John();
+    j.setAge(25);
+    System.out.println(j.getAge());
+    System.out.println(j.getName());
+    j.whoAmI();  // "I am John"
   }
 }
 ```
