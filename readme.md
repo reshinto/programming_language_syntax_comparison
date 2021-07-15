@@ -6074,7 +6074,7 @@ try {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
-- try with resources statement
+- try with resources statement (only for java 8 or later versions)
   - it is a try statement that declares 1 or more ressources
   - a resource is an object that must be closed after the program is finished with it
 ```java
