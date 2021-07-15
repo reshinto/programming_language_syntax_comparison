@@ -6074,6 +6074,56 @@ try {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
+- try with resources statement
+  - it is a try statement that declares 1 or more ressources
+  - a resource is an object that must be closed after the program is finished with it
+```java
+// type 1
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+
+public class Main {
+    // try-with-resources
+    try (BufferedReader bReader = new BufferedReader(new FileReader(sourceFile))) {
+      return bReader.readLine();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+// type 2
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+
+public class Main {
+  public static void main(String[] args) {
+    String sourceFile = "textfile";  // textfile path
+    String targetFile = "newtextfile";  // newtextfile path
+
+    // try-with-resources
+    try (
+      FileReader fReader = new FileReader(sourceFile);  // read file
+      BufferedReader bReader = new BufferedReader(fReader);  // read lines in file
+      FileWriter writer = new FileWriter(targetFile);  // write file
+      ) {
+      while (true) {
+        String line = bReader.readLine();
+        if (line == null) {
+          break;
+        } else {
+          writer.write(line + "\n");
+        }
+      }
+      System.out.println("File copied");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
 ### c#
 * try: lets you test a block of code for errors
 * catch: lets you handle the error
@@ -6476,6 +6526,38 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ### javascript
 ### ruby
 ### java
+```java
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+
+public class Main {
+  public static void main(String[] args) {
+    String sourceFile = "textfile";
+    String targetFile = "newtextfile";
+
+    // try with resources statement, only available for java 8 and later versions
+    try (
+      FileReader fReader = new FileReader(sourceFile);  // read file
+      BufferedReader bReader = new BufferedReader(fReader);  // read lines in file
+      FileWriter writer = new FileWriter(targetFile);  // write file
+      ) {
+      while (true) {
+        String line = bReader.readLine();
+        if (line == null) {
+          break;
+        } else {
+          writer.write(line + "\n");
+        }
+      }
+      System.out.println("File copied");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+```
 ### c#
 ```c#
 // Create or Save file
