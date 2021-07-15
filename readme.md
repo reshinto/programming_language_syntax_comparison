@@ -336,6 +336,15 @@ multi-line comments
 /*
 multi-line comments
 */
+
+/**
+ * javadoc <b>comments</b> for classes, javadocs can be used to auto generate documentation documents for code commented with javadocs
+ */
+ 
+ /**
+ * javadoc <b>comments</b> for methods with parameters - example main method
+ * @param args - an array of string values
+ */
 ```
 ### c#
 ```c#
