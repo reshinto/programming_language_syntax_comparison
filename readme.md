@@ -6074,7 +6074,8 @@ try {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
-- try with resources statement (only for java 8 or later versions)
+- try with resources statement
+  - only for java 8 or later versions, can't be used on android
   - it is a try statement that declares 1 or more ressources
   - a resource is an object that must be closed after the program is finished with it
 ```java
@@ -6533,10 +6534,11 @@ import java.io.FileWriter;
 
 public class Main {
   public static void main(String[] args) {
-    String sourceFile = "textfile";
-    String targetFile = "newtextfile";
+    String sourceFile = "textfile";  // sourceFile path
+    String targetFile = "newtextfile";  // targetFile path
 
     // try with resources statement, only available for java 8 and later versions
+    // can't be used on android
     try (
       FileReader fReader = new FileReader(sourceFile);  // read file
       BufferedReader bReader = new BufferedReader(fReader);  // read lines in file
@@ -6556,7 +6558,32 @@ public class Main {
     }
   }
 }
+```
+```java
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.io.IOException;
 
+public class Main {
+  public static void main(String[] args) {
+    String subDirectory = "";  // parent folder where the file is located
+    String sourceFilename = "textfile";
+    String targetFilename = "newtargetfile3";
+    
+    // only for java 7 or later versions, not available for android
+    Path sourceFile = Paths.get(subDirectory, sourceFilename);
+    Path targetFile = Paths.get(subDirectory, targetFilename);
+
+    try {
+      // copy existing file contents into the new file
+      Files.copy(sourceFile, targetFile, StandardCopyOption.REPLACE_EXISTING);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}
 ```
 ### c#
 ```c#
