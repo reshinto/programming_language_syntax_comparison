@@ -6585,6 +6585,72 @@ public class Main {
   }
 }
 ```
+- using ```commons-io``` library to copy file
+  - for latest versions and for android
+  - download the ```commons-io``` jar file
+  - create a ```lib``` folder inside the root folder of your project and move the ```commons-io``` jar file into it
+  - then add the jar file into the class path
+```java
+import org.apache.commons.io.FileUtils;  // common-io library
+
+import java.io.File;
+import java.io.IOException;
+
+public class Main {
+  public static void main(String[] args) {
+    File sourceFile = new File("path/to/file.txt");
+    File targetFile = new File("path/to/newfile.txt");
+    
+    try {
+      // use commons-io
+      FileUtils.copyFile(sourceFile, targetFile);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
+- reading a text file over the internet
+```java
+import java.net.URL;
+import java.io.InputStream;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+
+public class Main {
+  private static final String FLOWERS_FEED = "https://services.hanselandpetal.com/feeds/flowers.xml";
+
+  // adding the throws block allow code to run safely without having to write another try catch statement in the finally block
+  public static void main(String[] args) throws IOException {
+    InputStream stream = null;
+    BufferedInputStream buf = null;
+    try {
+      URL url = new URL(FLOWERS_FEED);
+      stream = url.openStream();
+      buf = new BufferedInputStream(stream);
+
+      StringBuilder sb = new StringBuilder();
+
+      while (true) {
+        int data = buf.read();  // gets a single character from stream, returns a character integer value if found else returns -1
+
+        if (data == -1) {
+          break;
+        } else {
+          sb.append((char) data);  // translate the integer value into a character
+        }
+      }
+      System.out.println(sb);
+    } catch(IOException e) {
+      e.printStackTrace();
+    } finally {
+      // use finally to explicitly close the stream
+      stream.close();
+      buf.close();
+    }
+  }
+}
+```
 ### c#
 ```c#
 // Create or Save file
