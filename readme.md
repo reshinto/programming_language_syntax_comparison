@@ -6451,7 +6451,114 @@ int randomNumber = rand() % 100;  // number range from 0 to 99
 
 [back to top](#table-of-contents)
 ## Date and Time
-### python
+### python3
+```python
+from datetime import date, datetime, timedelta
+import calendar
+
+# get today's date from the today method from the date class
+today = date.today()
+print("Today's date is ", today)  # Today's date is  2021-07-16
+
+# print out the date's individual components
+print("Date components: ", today.day, today.month,
+      today.year)  # Date components:  16 7 2021
+
+# retrieve today's weekday (0=Monday, 6=Sunday)
+print("Today's weekday # is: ", today.weekday())  # Today's weekday # is:  4
+
+# get today's date from the datetime class
+today = datetime.now()
+print("The current date and time is ", today)  # The current date and time is  2021-07-16 18:33:33.510322
+
+# get the current time
+t = datetime.time(datetime.now())
+print(t)  # 18:34:40.676073
+
+# Times and dates can be formatted using a set of predefined string control codes
+now = datetime.now()
+# Date formatting
+# %y/%Y - year, %a/%A - weekday, %b/%B - month, %d - day of month
+print(now.strftime("%a/%A, %d %D %b/%B, %y/%Y"))  # Fri/Friday, 16 07/16/21 Jul/July, 21/2021
+
+# %c - locale's date and time, %x - locale's date, %X - locale's time
+print(now.strftime("Locale date and time: %c"))  # Locale date and time: Fri Jul 16 18:47:27 2021
+print(now.strftime("Locale date: %x"))  # Locale date: 07/16/21
+print(now.strftime("Locale time: %X"))  # Locale time: 18:48:32
+
+# Time formatting
+# %I/%H - 12/24 hour, %M - minute, %S - second, %p - locale's AM/PM
+print(now.strftime("Current time: %I:%M:%S %p"))  # Current time: 06:58:10 PM
+print(now.strftime("24-hour time: %H:%M"))  # 24-hour time: 18:58
+
+# construct a basic timedelta
+print(timedelta(days=365, hours=5, minutes=1))  # 365 days, 5:01:00
+
+# today's date
+now = datetime.now()
+print("today is: ", str(now))  # today is:  2021-07-16 19:05:19.744915
+
+# today's date 1 year from now
+print("one year from now it will be: ", str(now + timedelta(days=365)))  # one year from now it will be:  2022-07-16 19:06:45.299792
+
+# create a timedelta that uses more than one argument
+print("In 2 days and 3 weeks, it will be ",
+      str(now + timedelta(days=2, weeks=3)))  # In 2 days and 3 weeks, it will be  2021-08-08 19:40:39.554060
+
+# calculate the date 1 week ago, formatted as a string
+t = datetime.now() - timedelta(weeks=1)
+s = t.strftime("%A %B %d, %Y")
+print("One week ago it was: ", s)  # One week ago it was:  Friday July 09, 2021
+
+# How many days until April Fools' Day
+today = date.today()  # 2021-07-16
+afd = date(today.year, 4, 1)  # 2021-04-01
+print((today - afd).days)  # 106
+afd = afd.replace(year=today.year + 1)  # 2022-04-01
+
+# calculate the amount of time until April Fool's day
+time_to_afd = afd - today  # 259
+
+# create a text calendar
+# the day (SUNDAY) states the 1st day of the week in the calendar
+c = calendar.TextCalendar(calendar.SUNDAY)
+st = c.formatmonth(2017, 1, 0, 0)
+print(st)
+'''
+    January 2017
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31
+'''
+
+# create an HTML formatted calendar
+hc = calendar.HTMLCalendar(calendar.SUNDAY)
+st = hc.formatmonth(2017, 1)
+print(st)  # bunch of html tags
+
+# loop over the days of a month
+# 0s mean that the day of the week is in an overlapping month
+for i in c.itermonthdays(2017, 8):
+    print(i)
+
+# Calendar module provides useful utilities for the given locale
+# such as the names of days and months in both full and abbreviated forms
+for month_name in calendar.month_name:
+    print(month_name)
+for day_name in calendar.day_name:
+    print(day_name)
+
+# calculate all the first Fridays of every month
+for m in range(1, 13):
+    cal = calendar.monthcalendar(2018, m)
+    weekone = cal[0]
+    weektwo = cal[1]
+    meetday = weekone[calendar.FRIDAY] if weekone[calendar.FRIDAY] != 0 else weektwo[calendar.FRIDAY]
+    print("%10s %2d" % (calendar.month_name[m], meetday))
+```
 ### javascript
 ### ruby
 ```ruby
