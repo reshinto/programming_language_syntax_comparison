@@ -5474,7 +5474,7 @@ import module_name as mn  # must call mn to use
 
 # import class or function from a module
 from module_name import function_name
-
+from module_name import function_name1, function_name2  # multiple imports
 
 # Absoute imports within the same project (file extensions not required)
 from folder1 import module1  # example 1
