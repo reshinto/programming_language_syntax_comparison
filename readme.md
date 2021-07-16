@@ -182,7 +182,8 @@ print("Hello World", end="")  # "Hello World"
 ```
 ### javascript
 ```javascript
-console.log("Hello World");
+console.log("Hello World");  // "Hello World"
+console.log("Hello", "World");  // "Hello World"
 ```
 ### ruby
 ```ruby
