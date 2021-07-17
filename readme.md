@@ -6778,6 +6778,32 @@ td = datetime.datetime.now() - datetime.datetime.fromtimestamp(
 print(td)  # 0:19:02.185160
 print(td.total_seconds())  # 1142.18516
 ```
+- copy and zip files
+```python
+import os
+from os import path
+import shutil
+from shutil import make_archive
+from zipfile import ZipFile
+
+
+if path.exists("textfile"):
+    src = path.realpath("textfile")  # get path of file in current directory
+    dst = src + ".bak"  # create a backup copy by appending "bak"
+    
+    shutil.copy(src, dst)  # copy over only the the contents of file
+    shutil.copytree(src, dst)  # copy over contents and all other metadata of file
+
+    os.rename("textfile", "newtextfile")
+
+    # zip files
+    root_dir, tail = path.split(src)
+    shutil.make_archive("archive", "zip", root_dir)  # zip all files in the folder
+
+    with ZipFile("testzip.zip", "w") as newzip:  # zip only selected files
+        newzip.write("textfile")
+        newzip.write("textfile.bak")
+```
 ### javascript
 ### ruby
 ### java
