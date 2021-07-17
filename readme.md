@@ -6746,6 +6746,38 @@ if f.mode == "r":
     for x in fl:
         print(x)
 ```
+- path utilities
+```python
+import os
+from os import path
+import datetime
+import time
+
+
+print(os.name)  # get OS name
+
+# check if file exist and file type
+print(path.exists("textfile"))  # True
+print(path.isfile("textfile"))  # True
+print(path.isdir("textfile"))  # False
+
+# get file paths
+print(path.realpath("textfile"))  # /path/to/textfile
+print(path.split(path.realpath("textfile")))  # ('/path/to', 'textfile')
+
+# get modificaton time
+t = time.ctime(path.getmtime("textfile"))  # method 1
+print(t)  # Sun Jul 18 00:16:20 2021
+t2 = datetime.datetime.fromtimestamp(path.getmtime("textfile"))  # method 2
+print(t2)  # 2021-07-18 00:16:20.360159
+
+# calculate how long ago file was modified
+td = datetime.datetime.now() - datetime.datetime.fromtimestamp(
+    path.getmtime("textfile")
+)
+print(td)  # 0:19:02.185160
+print(td.total_seconds())  # 1142.18516
+```
 ### javascript
 ### ruby
 ### java
