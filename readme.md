@@ -47,6 +47,7 @@
 - [File System](#file-system)
 - [Iterators](#iterators)
 - [Generators](#generators)
+- [Fetching Web Data](#fetching-web-data)
 - [Language Specific](#language-specific)
 ## Interpreted Language
 ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
@@ -7274,9 +7275,82 @@ let iterator5 = generatorWithReturn();
 iterator5.next();  // { value: 1, done: false }
 iterator5.next();  // { value: "hello", done: true }
 iterator5.next();  // { value: undefined, done: true }
-
-
 ```
+### ruby
+### java
+### c#
+### c++
+[back to top](#table-of-contents)
+## Fetching Web Data
+### python
+- fetching a webpage
+```python
+import urllib.request
+
+
+response = urllib.request.urlopen("http://www.google.com")
+print(response.getcode())  # get response status code
+
+data = response.read()
+print(data)  # google html tags
+```
+- fetching a json from an api
+```python
+import urllib.request
+import json
+
+
+def print_json(raw_data):
+    get_json_data = json.loads(raw_data)  # load string data into a dictionary
+    if "title" in get_json_data["metadata"]:
+        print(get_json_data["metadata"]["title"])
+
+    count = get_json_data["metadata"]["count"]
+    print(count)
+
+    for feature in get_json_data["features"]:
+        print(feature["properties"]["place"])
+
+
+api_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"
+
+# open the URL and read the data
+response = urllib.request.urlopen(api_url)
+status_code = response.getcode()
+
+print(status_code)
+
+if (status_code == 200):
+    data = response.read()
+    print_json(data)
+else:
+    print("Error")
+```
+- manipulate XML
+```python
+import xml.dom.minidom
+
+
+doc = xml.dom.minidom.parse("samplexml.xml")  # parse the xml file
+print(doc.nodeName)
+print(doc.firstChild.tagName)
+
+skills = doc.getElementsByTagName("skill")
+print(f"%d skills: {skills.length}")
+for skill in skills:
+    print(skill.getAttribute("name"))
+
+# create a new XML tag and add it into the document
+new_skill = doc.createElement("skill")  # create a new skill tag
+new_skill.setAttribute("name", "jQuery")
+doc.firstChild.appendChild(new_skill)  # adds to memory but not persisted
+
+skills = doc.getElementsByTagName("skill")
+print(f"%d skills: {skills.length}")
+for skill in skills:
+    print(skill.getAttribute("name"))
+```
+### Javascript
 ### ruby
 ### java
 ### c#
