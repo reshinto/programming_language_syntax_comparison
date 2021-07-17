@@ -44,7 +44,6 @@
 - [Math](#math)
 - [Date and Time](#date-and-time)
 - [Access modifier](#access-modifier)
-- [Properties](#properties)
 - [File System](#file-system)
 - [Iterators](#iterators)
 - [Generators](#generators)
@@ -5372,6 +5371,82 @@ class MainClass {
   }
 }
 ```
+* Properties
+  * Properties is a kind of class member that is used for providing access to fields of a class
+  * best practive to declare fields as private & create public properties to provide access to them
+  * a property encapsulates a get and a set method
+```c#
+// method 1
+public class Person {
+  private string _name;
+  
+  public void SetName(string name) {
+    this._name = name;
+  }
+  
+  public string GetName() {
+    return _name;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Person p = new Person();
+    p.SetName("xyz");
+    System.WriteLine(p.GetName());  // "xyz"
+  }
+}
+
+
+// method 2: using setter and getter properties
+public class Person {
+  private string _name;
+  
+  public string name {
+    get { return _name; }
+    set { _name = value; }  // value is a keyword
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Person p = new Person();
+    p.name = "xyz";
+    System.WriteLine(p.name);  // "xyz"
+  }
+}
+
+
+// method 3: using auto-implemented properties (does not work if logic is involved in get or set method, use method 2 instead)
+public class Person {
+  public string name { get; set; }
+}
+
+class MainClass {
+  public static void Main() {
+    Person p = new Person();
+    p.name = "xyz";
+    System.WriteLine(p.name);  // "xyz"
+  }
+}
+
+
+// method 4: using auto-implemented properties with private set method
+public class Person {
+  public string name { get; private set; }  // if private keyword is used, need constructor to set
+  
+  public Person(string inputName) {  // constructor
+    name = inputName;
+  }
+}
+
+class MainClass {
+  public static void Main() {
+    Person p = new Person("xyz");
+    System.WriteLine(p.name);  // "xyz"
+  }
+}
+```
 * Interfaces
   * it is similar to a class but with abstract methods
   * use of "interface" keyword is required
@@ -6843,89 +6918,6 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 
 // Open file (not in app)
 System.Diagnostics.Process.Start(filename);
-```
-### c++
-[back to top](#table-of-contents)
-## Properties
-### python
-### javascript
-### ruby
-### java
-### c#
-* Properties is a kind of class member that is used for providing access to fields of a class
-* best practive to declare fields as private & create public properties to provide access to them
-* a property encapsulates a get and a set method
-```c#
-// method 1
-public class Person {
-  private string _name;
-  
-  public void SetName(string name) {
-    this._name = name;
-  }
-  
-  public string GetName() {
-    return _name;
-  }
-}
-
-class MainClass {
-  public static void Main() {
-    Person p = new Person();
-    p.SetName("xyz");
-    System.WriteLine(p.GetName());  // "xyz"
-  }
-}
-
-
-// method 2: using setter and getter properties
-public class Person {
-  private string _name;
-  
-  public string name {
-    get { return _name; }
-    set { _name = value; }  // value is a keyword
-  }
-}
-
-class MainClass {
-  public static void Main() {
-    Person p = new Person();
-    p.name = "xyz";
-    System.WriteLine(p.name);  // "xyz"
-  }
-}
-
-
-// method 3: using auto-implemented properties (does not work if logic is involved in get or set method, use method 2 instead)
-public class Person {
-  public string name { get; set; }
-}
-
-class MainClass {
-  public static void Main() {
-    Person p = new Person();
-    p.name = "xyz";
-    System.WriteLine(p.name);  // "xyz"
-  }
-}
-
-
-// method 4: using auto-implemented properties with private set method
-public class Person {
-  public string name { get; private set; }  // if private keyword is used, need constructor to set
-  
-  public Person(string inputName) {  // constructor
-    name = inputName;
-  }
-}
-
-class MainClass {
-  public static void Main() {
-    Person p = new Person("xyz");
-    System.WriteLine(p.name);  // "xyz"
-  }
-}
 ```
 ### c++
 [back to top](#table-of-contents)
