@@ -6716,6 +6716,36 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 [back to top](#table-of-contents)
 ## File System
 ### python
+- Modifying files
+```python
+# Open a file for writing and create file if it doesn't exist
+# file will be rewritten if contents already exists
+f = open("textfile", "w+")
+for i in range(10):  # write some lines of data to the file
+    f.write(f"this is line {str(i)}\r\n")
+f.close()  # close file when done
+
+
+# Open a file and append text to the end
+f = open("textfile", "a")
+for i in range(10):
+    f.write(f"this is line {str(i)}\r\n")
+f.close()
+
+
+# Open and read file
+f = open("textfile", "r")
+if f.mode == "r":
+    contents = f.read()  # reads the entire content
+    print(contents)
+
+
+f = open("textfile", "r")
+if f.mode == "r":
+    fl = f.readlines()  # reads per line
+    for x in fl:
+        print(x)
+```
 ### javascript
 ### ruby
 ### java
