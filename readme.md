@@ -908,14 +908,22 @@ ord("b")  # 98
 # reverse string
 string_name = string_name[::-1]  # "gnirts"
 
+string_name = "Gnirts"
+string_name = string_name.swapcase()  # "gNIRTS"
 string_name = string_name.upper()  # "GNIRTS"
 string_name = string_name.lower()  # "gnirts"
 
+# casefold: it is more aggressive than lower(), it removes all case distinctions even in unicode
+string_name_casefold = "Hello World ß"
+string_name_casefold.casefold()  # "hello world ss"
+
 # capitalize string
-string_name = string_name.title()  # "Gnirts"
+string_name_caps = "test me"
+string_name_caps.title()  # "Test Me"
+string_name_caps.capitalize()  # "Test me"
 
 # Replace string in string, string_name.replace(old, new, max)
-string_name = string_name.replace("G", "xxx")  # "xxxnirts"
+string_name = string_name.replace("g", "xxx")  # "xxxnirts"
 string_name = string_name.replace("x", "g", 1)  # "gxxnirts"
 
 # Find character or string in string and return the index of the 1st character, return -1 if not found
