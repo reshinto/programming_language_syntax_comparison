@@ -7358,6 +7358,14 @@ for skill in skills:
 [back to top](#table-of-contents)
 ## Language Specific
 ### python
+- Shebang line / hashbang
+  - it is a common pattern for unix based systems
+  - allows a script to be invoked from the command line
+  - written on the first line in the python file
+  - ```#!``` marks the shebang
+```python
+#!/usr/bin/env python3
+```
 ```python
 # List comprehension
 # original method
