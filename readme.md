@@ -7295,6 +7295,52 @@ for (String key : keys) {
 [back to top](#table-of-contents)
 ## Generators
 ### python
+```python
+def generator_example():
+    yield 1
+
+x = generator_example():
+next(x)  # 1
+    
+def infinite_maker():
+    i = 0
+    while True:
+        yield i
+        i += 1
+
+x = infinite_maker()
+next(x)  # 0
+next(x)  # 1
+
+# generator expression
+y = (i for i in range(10))
+print(next(y))  # 0
+print(next(y))  # 1
+
+
+# send, throw, close method
+def generator_ex():
+    num = 0
+    while True:
+        j = yield num
+        if j is not None:
+            num = j
+        num += 1
+
+
+x = generator_ex()
+for i in x:
+    print(i)  # prints out the yield result of num
+    digits = len(str(i))
+    if (i > 100):
+        # method 1
+        x.throw(ValueError("value is above 100"))
+        # method 2
+        x.close()  # raises StopIteration, an exception used to signal the end of a finite iterator
+    # when a yield result is available, return the new value into the generator (eg.: j takes the new value)
+    x.send(10 ** (digits))  # 0 12 102
+
+```
 ### javascript
 ```javascript
 function* generatorExample1() {
