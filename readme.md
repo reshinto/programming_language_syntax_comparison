@@ -2877,6 +2877,12 @@ for value in list_name:  # [value1, value2, value3,...]
 # Looping and getting index and value
 for index, value in enumerate(list_name):
     print(index, value)  # output index, value
+    
+    
+# Loops and getting both key and value of a dict
+x = { "one": 1, "two": 2}
+for k, v in x.items():
+    print(f"k: {k}, v: {v}")
 ```
 ### javascript ES5
 ```javascript
@@ -5883,6 +5889,20 @@ isinstance(num, str)  # False
 # check if all characters in string are digits
 "ab1".isdigit()  # False
 "123".isdigit()  # True
+
+
+# check if 2 objects are exactly the same even if they have the same value
+# primitive values have the exact same objects
+x = 1
+y = 1
+id(x)  # 4357474608
+id(y)  # 4357474608
+
+# reference type objects are different even if they have the same value
+x = [1]
+y = [1]
+id(x)  # 4360090688
+id(y)  # 4359972032
 ```
 ### javascript
 ```javascript
