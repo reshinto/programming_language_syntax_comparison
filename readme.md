@@ -761,6 +761,19 @@ float_name = 0.1123E1  # equals to 1.123
 float_name = 1123e-3  # equals to 1.123
 float_name = 1123E-3  # equals to 1.123
 ```
+- float have inaccurate values
+```python
+print(.1 + .2 + .3)  # 0.6000000000000001
+# use the decimal library to make it accurate
+from decimal import *
+
+# do not do this
+Decimal(.1) + Decimal(.2) + Decimal(.3)  # Decimal('0.6000000000000000055511151231')
+
+# do this: convert float to a string first
+x = Decimal(".1") + Decimal(".2") + Decimal(".3")  # Decimal('0.6')
+f"{x}"  # "0.6
+```
 ### javascript ES5
 ```javascript
 var float_name = 1.123;
@@ -5960,6 +5973,21 @@ string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
 string1 = "string1"
 string2 = "string2"
 string_name = f"{string1} {string2}"  # "string1 string2"
+```
+- string formatting for numbers
+```python
+a = 8
+
+# set number of digits
+# add spaces to the right for missing digits
+print(f"{a:<2}")  # "8 "
+#add 0s (can only be number 0) to the right for missing digits
+print(f"{a:<02}")  # "80"
+
+# add spaces to the left for missing digits
+print(f"{a:>2}")  # " 8"
+# add 0s (can only be number 0) to the right for missing digits
+print(f"{a:>02}")  # "08"
 ```
 ### javascript ES5
 ```javascript
