@@ -371,7 +371,7 @@ multi-line comments
 [back to top](#table-of-contents)
 ## Data types
 ### python
-#### 7 main data types
+#### 8 main data types
 - Text type
   - ```str```, ```x = "Hello World"	```, ```x = str("Hello World")```
 - Numeric types
@@ -393,6 +393,8 @@ multi-line comments
   - ```bytes```, ```x = b"Hello"```, ```x = bytes(5)```
   - ```bytearray```, ```x = bytearray(5)```, ```x = bytearray(5)```
   - ```memoryview```, ```x = memoryview(bytes(5))```, ```x = memoryview(bytes(5))```
+- None type
+  - ```None```, ```x = None```
 ### javascript
 #### 1 primitive structural root
 - null
