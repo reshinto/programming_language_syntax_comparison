@@ -2062,6 +2062,16 @@ list_name.sort(reverse=True)  # [4, 3, 2, 1]
 # sort an array of dictionaries in descending order
 # sort by value
 dict_name2 = sorted(dict_name, key=lambda k: k["key_name"], reverse=True)
+
+# Join array into a string
+list_name = ["a", "b", "c"]
+x = ", ".join(list_name)
+print(x)  # "a, b, c"
+
+# Split string into an array
+y = x.split(", ")
+print(y)  # ['a', 'b', 'c']
+
 ```
 ### javascript
 ```javascript
@@ -3726,7 +3736,7 @@ newDict = dict(key1="value1", key2="value2")
 
 # Add or reassign key value pair
 newDict["Key"] = "Value"  # method 1
-newDict.update({"key": "value"})
+newDict.update({"key": "value"})  # method 2
 
 # Set multiple keys with a similar value
 newKeys = ("key1", "key2", "key3")
