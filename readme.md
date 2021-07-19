@@ -773,6 +773,7 @@ Decimal(.1) + Decimal(.2) + Decimal(.3)  # Decimal('0.60000000000000000555111512
 # do this: convert float to a string first
 x = Decimal(".1") + Decimal(".2") + Decimal(".3")  # Decimal('0.6')
 f"{x}"  # "0.6
+print(type(x))  # <class 'decimal.Decimal'>
 ```
 ### javascript ES5
 ```javascript
