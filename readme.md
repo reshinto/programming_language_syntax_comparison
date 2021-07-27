@@ -7709,6 +7709,7 @@ f({3: 'yes', 4: 'no'})
 x: MyClass = MyClass()
 
 # "typing.Match" describes regex matches from the re module
+import re
 x: Match[str] = re.match(r'[0-9]+', "15")
 
 # Use IO[] for functions that should accept or return any
