@@ -48,6 +48,7 @@
 - [Iterators](#iterators)
 - [Generators](#generators)
 - [Fetching Web Data](#fetching-web-data)
+- [Enum](#enum)
 - [Language Specific](#language-specific)
 ## Interpreted Language
 ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
@@ -7494,6 +7495,162 @@ for skill in skills:
 ### c#
 ### c++
 [back to top](#table-of-contents)
+## Enum
+### python 3
+```python
+from enum import Enum
+```
+```python
+class Methods(Enum):
+  GET = "GET_VALUE"
+
+# get value
+print(Method.GET.value)  # "GET_VALUE"
+print(Method("GET_VALUE").value)  # "GET_VALUE"
+
+# get key
+print(Method.GET.name)  # "GET"
+print(Method("GET_VALUE").name)  # "GET"
+
+# check if value exist in Enum
+print("GET_VALUE" in Methods._value2member_map_)  # True
+print("GET" in Methods._value2member_map_)  # False
+
+# check if name exist in Enum
+print("GET_VALUE" in Methods._member_names_)  # False
+print("GET" in Methods._member_names_)  # True
+```
+### Javascript
+### Typescript
+- Enum: By default, enums begin numbering their members starting at 0
+```typescript
+enum Color {
+  Red,
+  Green,
+  Blue,
+}
+let c: Color = Color.Green;  // 1
+let colorName: string = Color[1];  // "Green"
+
+enum Color {
+  Red = 1,
+  Green,
+  Blue,
+}
+let c: Color = Color.Green;  // 2
+let colorName: string = Color[2];  // "Green"
+```
+### ruby
+### java
+- ENUM
+ - Enumerations are lists of possible values that you can use for any particular variable
+ - An enumeration in java is called an enum class.
+```java
+// usual enums
+public enum Names1 {
+  JOHN, PETER;
+}
+
+// setting a string value for enums
+public enum Names2 {
+  JOHN("John"), PETER("Peter");
+  
+  private String name;
+  
+  Names2(String name) {
+    this.name = name;
+  }
+  
+  @Override
+  public String toString() {
+    return this.name;
+  }
+}
+
+public class Person {
+  private Names1 name1 = Names1.JOHN;  // using enum to set a constant variable
+  private Names2 name2 = Names2.JOHN;
+  
+  public Names1 getName1() {
+    return this.name1;
+  }
+  
+  public Names2 getName2() {
+    return this.name2;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Person p = new Person();
+    System.out.println(p.getName1());  // "JOHN"
+    System.out.println(p.getName2());  // "John"
+  }
+}
+```
+### c#
+* Enum
+  * Used to manage number type constants for better clarity and maintainability
+  * Can be declared in namespace, in classes
+  * By default, enums begin numbering their members starting at 0
+```c#
+// not reccommended method
+const int RegularAirMail = 1;
+const int RegisteredAirMail = 2;
+const int Express = 3;
+
+// Use enums for better management and for clarity
+// default data type is an integer
+public enum ShippingMethod : byte  // use : byte to change default data type
+{
+  // if value is not assigned, 1st value will start with 0
+  // subsequent value will be incremented by 1 automatically if value is not assigned
+  RegularAirMail = 1,
+  RegisteredAirMail = 2,
+  Express = 3
+}
+
+// get string value (ToString method not required if using System.Console.WriteLine)
+ShippingMethod method = ShippingMethod.Express.ToString();  // Express
+// get number value
+ShippingMethod method = (int) ShippingMethod.Express;  // 3
+
+// retrieve string value with number value
+ShippingMethod methodType = (ShippingMethod) 3;  // Express
+```
+### c++
+```c++
+enum Color { red, green, blue };
+
+// enum limitations
+// 2 enumerations cannot share the same names (use enum class instead)
+enum Color2 { red, green, blue };  // throws a compilation error
+
+// no variable can have a name which is already in some enumeration
+int red = 0;  // throws a compilation error
+
+// enums are not type safe
+enum Gender { male, female };
+Gender gender = male; 
+Color color = red;
+if (gender == color)  // gender != color but will return true as both value are 0
+{
+   cout << "Equal";
+}
+```
+* Enum class / scoped enumerations
+  * makes enumeration both strongly typed & strongly scoped
+  * does not allow implicit conversion to int
+  * does not compare enumerators from a different enumerations
+```c++
+// Declaration
+enum class Color{ Red, Green, Blue};
+
+// Initialisation
+Color col = Color::Red;
+```
+
+[back to top](#table-of-contents)
 ## Language Specific
 ### python
 - Shebang line / hashbang
@@ -7841,24 +7998,6 @@ x = ["hello", 10]; // OK
 // Initialize it incorrectly
 x = [10, "hello"]; // Error
 ```
-* Enum: By default, enums begin numbering their members starting at 0
-```typescript
-enum Color {
-  Red,
-  Green,
-  Blue,
-}
-let c: Color = Color.Green;  // 1
-let colorName: string = Color[1];  // "Green"
-
-enum Color {
-  Red = 1,
-  Green,
-  Blue,
-}
-let c: Color = Color.Green;  // 2
-let colorName: string = Color[2];  // "Green"
-```
 * Generics
 ```typescript
 // "T" can be name as anything, used "T" due to convention
@@ -7872,52 +8011,6 @@ console.log(genericFunc(false));
 ```
 ### ruby
 ### java
-- ENUM
- - Enumerations are lists of possible values that you can use for any particular variable
- - An enumeration in java is called an enum class.
-```java
-// usual enums
-public enum Names1 {
-  JOHN, PETER;
-}
-
-// setting a string value for enums
-public enum Names2 {
-  JOHN("John"), PETER("Peter");
-  
-  private String name;
-  
-  Names2(String name) {
-    this.name = name;
-  }
-  
-  @Override
-  public String toString() {
-    return this.name;
-  }
-}
-
-public class Person {
-  private Names1 name1 = Names1.JOHN;  // using enum to set a constant variable
-  private Names2 name2 = Names2.JOHN;
-  
-  public Names1 getName1() {
-    return this.name1;
-  }
-  
-  public Names2 getName2() {
-    return this.name2;
-  }
-}
-
-public class Main {
-  public static void main(String[] args) {
-    Person p = new Person();
-    System.out.println(p.getName1());  // "JOHN"
-    System.out.println(p.getName2());  // "John"
-  }
-}
-```
 - Number formatting
 ```java
 long longValue = 10_000_000;
@@ -8181,35 +8274,6 @@ checked {
   byte number = 255;
   number++;
 }
-```
-* Enum
-  * Used to manage number type constants for better clarity and maintainability
-  * Can be declared in namespace, in classes
-  * By default, enums begin numbering their members starting at 0
-```c#
-// not reccommended method
-const int RegularAirMail = 1;
-const int RegisteredAirMail = 2;
-const int Express = 3;
-
-// Use enums for better management and for clarity
-// default data type is an integer
-public enum ShippingMethod : byte  // use : byte to change default data type
-{
-  // if value is not assigned, 1st value will start with 0
-  // subsequent value will be incremented by 1 automatically if value is not assigned
-  RegularAirMail = 1,
-  RegisteredAirMail = 2,
-  Express = 3
-}
-
-// get string value (ToString method not required if using System.Console.WriteLine)
-ShippingMethod method = ShippingMethod.Express.ToString();  // Express
-// get number value
-ShippingMethod method = (int) ShippingMethod.Express;  // 3
-
-// retrieve string value with number value
-ShippingMethod methodType = (ShippingMethod) 3;  // Express
 ```
 * Ref Modifier
   * Modifies value type
@@ -9055,37 +9119,6 @@ int& referenceNum = num;  // add & when referencing
 
 num++;  // num = 11, referenceNum = 11
 referenceNum++;  // num = 12, referenceNum = 12
-```
-* Enum
-```c++
-enum Color { red, green, blue };
-
-// enum limitations
-// 2 enumerations cannot share the same names (use enum class instead)
-enum Color2 { red, green, blue };  // throws a compilation error
-
-// no variable can have a name which is already in some enumeration
-int red = 0;  // throws a compilation error
-
-// enums are not type safe
-enum Gender { male, female };
-Gender gender = male; 
-Color color = red;
-if (gender == color)  // gender != color but will return true as both value are 0
-{
-   cout << "Equal";
-}
-```
-* Enum class / scoped enumerations
-  * makes enumeration both strongly typed & strongly scoped
-  * does not allow implicit conversion to int
-  * does not compare enumerators from a different enumerations
-```c++
-// Declaration
-enum class Color{ Red, Green, Blue};
-
-// Initialisation
-Color col = Color::Red;
 ```
 
 [back to top](#table-of-contents)
