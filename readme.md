@@ -7521,6 +7521,13 @@ print("GET_VALUE" in Methods._member_names_)  # False
 print("GET" in Methods._member_names_)  # True
 ```
 ### Javascript
+```javascript
+const color = {
+  Red: 1,
+  Green: 2,
+  Blue: 3,
+};
+```
 ### Typescript
 - Enum: By default, enums begin numbering their members starting at 0
 ```typescript
