@@ -1044,8 +1044,12 @@ stringName = stringName.toLowerCase();  // "gnirts"
 // capitalize string
 stringName = stringName.charAt(0).toUpperCase() + stringName.slice(1);  // "Gnirts"
 
-// replace string with string, stringName.replace(old, new)
+// replace 1 string occurance with string, stringName.replace(old, new)
 stringName = stringName.replace("G", "xxx");  // "xxxnirts"
+
+let stringName0 = "test_test_123";
+// replace all string occurances with string, stringName.replaceAll(old, new)
+stringName0 = stringName0.replaceAll("_", " ");  // "test test 123"
 
 // extract characters from a string, from start position to but not including end position
 newStringName = stringName.substring(1, 4); // "xxn"
