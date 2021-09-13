@@ -4652,11 +4652,9 @@ class Book {
 
 
 // Interface
-interface ClockConstructor {
-  new (hour: number, minute: number): ClockInterface;
-}
-
 interface ClockInterface {
+  h: number;
+  m: number;
   tick(): void;
 }
 
