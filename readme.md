@@ -194,7 +194,7 @@ p "Hello World"  # same as puts
 ```
 ### kotlin
 ```kotlin
-// fun for function for function declaration
+// fun for function declaration
 fun main() {  // main method, a must to have
     println("Hello, world")  // adds new line after printing
 }
