@@ -1,7 +1,7 @@
 # PROGRAMMING LANGUAGE SYNTAX COMPARISON
 > A syntax summary, which also compares the differences between each programming language.
 * List of languages
-  * Python, Javascript (Typescript), Ruby, Java, C#, C/C++, Groovy
+  * Python, Javascript (Typescript), Ruby, Java, C#, C/C++, Groovy, Kotlin
 ## Table of Contents
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
@@ -191,6 +191,13 @@ console.log("Hello", "World");  // "Hello World"
 print "Hello World"  # takes whatever you give it and prints it to the screen
 puts "Hello World"  # adds a new (blank) line after the thing you want it to print
 p "Hello World"  # same as puts
+```
+### kotlin
+```kotlin
+// fun for function for function declaration
+fun main() {  // main method, a must to have
+    println("Hello, world")  // adds new line after printing
+}
 ```
 ### java
 - java classes are typically organized into packages
