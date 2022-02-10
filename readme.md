@@ -4941,6 +4941,17 @@ public class Person {
     - throw an error Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous sym type: p2.B.display
   - Accessing a protected class
     ```java
+    package p1;
+  
+    // Class A
+    protected class A {
+      void display()
+      {
+        System.out.println("test");
+      }
+    }
+    ```
+    ```java
     package p2;
   
     // import all classes in package p1
