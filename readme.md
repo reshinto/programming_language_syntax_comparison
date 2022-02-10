@@ -4912,116 +4912,88 @@ public class Person {
 }
 ```
 - protected key
-```java
-// class with protected method
-package p1;
-  
-// Class A
-public class A {
-  protected void display()
-  {
-    System.out.println("test");
+  ```java
+  // class with protected method
+  package p1;
+
+  // Class A
+  public class A {
+    protected void display() {
+      System.out.println("test");
+    }
   }
-}
+  ```
+  - Calling protected function without extending the parent class
+    ```java
+    package p2;
 
-//////////////////////////////////
-// usable
-package p2;
+    // import all classes in package p1
+    import p1.*;
+
+    class B {
+      public static void main(String args[]) {
+        B obj = new B();
+        // not be able to access the function “display” since child class has not inherited its value from the main class
+        obj.display();  // throw an exception
+      }
+    }
+    ```
+    - throw an error Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous sym type: p2.B.display
+  - Accessing a protected class
+    ```java
+    package p2;
   
-// import all classes in package p1
-import p1.*;
+    // import all classes in package p1
+    import p1.*;
+
+    // Class B is a subclass of A
+    class B extends A {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.display();  // throw an exception
+        }
+    }
+    ```
+    - throw an error Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous sym type: p2.B.display
+  - Accessing display function from the same package but different class
+    ```java
+    public class C {
+      public static void main(String args[]) {
+        A obj = new A();
+        obj.display();  // test
+      }
+    }
+    ```
+  - Accessing display function from a different package
+    ```java
+    package p2;
   
-// Class B is a subclass of A
-class B extends A {
-  public static void main(String args[])
-  {
-    B obj = new B();
-    obj.display();
-  }
-}
+    // import all classes in package p1
+    import p1.*;
 
-
-//////////////////////////////////
-// usable: Accessing display function from the same package but different class
-package p1;
-
-public class C {
-  public static void main(String args[])
-  {
-    A obj = new A();
-    obj.display();
-  }
-}
-
-
-//////////////////////////////////
-// usable: Accessing display function from a different package
-package p2;
-  
-// import all classes in package p1
-import p1.*;
-  
-// Class B is a subclass of A
-class B extends A {
-  public static void main(String args[])
-  {
-    B obj = new B();
-    obj.display();
-  }
-}
-
-
-//////////////////////////////////
-// usable: Accessing a protected class by overriding to sub-class within same package
-package p1;
-
-public class C extends A {
-  // overridden function
-  protected void display()
-  {
-    System.out.println("Class C");
-  }
-  public static void main(String args[])
-  {
-    C obj1 = new C();
-    obj1.display();
-  }
-}
-
-
-//////////////////////////////////
-// not usable: Calling protected function without extending the parent class
-package p2;
-  
-// import all classes in package p1
-import p1.*;
-  
-// Class B is a subclass of A
-class B {
-  public static void main(String args[])
-  {
-    B obj = new B();
-    obj.display();
-  }
-}
-
-
-//////////////////////////////////
-// not usable: Accessing a protected class
-package p2;
-  
-// import all classes in package p1
-import p1.*;
-  
-// Class B is a subclass of A
-class B extends A {
-  public static void main(String args[])
-  {
-    B obj = new B();
-    obj.display();
-  }
-}
-```
+    // Class B is a subclass of A
+    class B extends A {
+      public static void main(String args[]) {
+        B obj = new B();
+        obj.display();  // test
+      }
+    }
+    ```
+  - Accessing a protected class by overriding to sub-class within same package
+    ```java
+    public class C extends A {
+      // overridden function
+      protected void display() {
+        System.out.println("overridden");
+      }
+      
+      public static void main(String args[]) {
+        C obj1 = new C();
+        obj1.display();  // overridden
+      }
+    }
+    ```
 - Anonymous classes
 ```java
 import java.util.Scanner;
