@@ -6552,6 +6552,8 @@ Math.pow(-4, 2)  // 16, same as (-4) ** 2
 
 // random integer from 0 to 9
 Math.floor(Math.random() * 10);
+// similar to
+~~(Math.random() * 10);
 
 // random integer from 0 to 10
 Math.floor(Math.random() * 11);
