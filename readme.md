@@ -7894,6 +7894,36 @@ async def countdown35(tag: str, count: int) -> str:
     return "Blastoff!"
 ```
 ### javascript
+- Set
+```javascript
+// Create a Set
+const letters = new Set(["a", "b"]);  // or new Set();
+
+// Add Values to the Set
+letters.add("c");
+
+// size of set
+letters.size;  // 3
+
+// check if value exist
+letters.has("a");  // true
+
+// delete an element
+letters.delete("a");
+
+// loop through a set, keys and values are the same
+for (const letter of letters.keys()) {  // similar to letters.values
+  console.log(letter);
+}
+
+// loop through a set and get both keys and values
+for (const letter of letters.entries()) {  // similar to letters.values
+  console.log(letter);  // ["b", "b"]
+}
+
+// delete everything in the set
+letters.clear();
+```
 ```javascript
 // convert character at index 0 to number
 "a".charCodeAt();  // 97
