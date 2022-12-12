@@ -3,6 +3,7 @@
 * List of languages
   * Python, Javascript (Typescript), Ruby, Kotlin, Java, C#, C/C++, Groovy
 ## Table of Contents
+- [Python vs Javascript vs PHP](#python-vs-javascript-vs-php)
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
 - [Both Interpreted And Compiled Language](#both-interpreted-and-compiled-language)
@@ -50,10 +51,64 @@
 - [Fetching Web Data](#fetching-web-data)
 - [Enum](#enum)
 - [Language Specific](#language-specific)
+
+## Python vs Javascript vs PHP
+|        | Python | Javascript | PHP |
+| ------ | ------ | ---------- | --- |
+|Supports DB|Yes|No|Yes|
+|Interchangeable objects and arrays|No|Yes|No|
+|Accepts lower and upper case variables|Yes|No|No|
+
+
+|Important Syntax | Python | Javascript | PHP |
+| ------ | ------ | ---------- | --- |
+|Functions| def myFunc()| function myFunc()| function myFunc()|
+|Arrow Functions||let myFunc = (a, b) => a * b; |$myFunc = fn($a, $b) => $a * $b;|
+|Arrow Functions can modify outside variables|N/A |Yes|No| 
+|Conditional Statement| if, elif, else| if, else if, else| if, else if, else|
+|If | if myVar:| if (myVar === true) {| if ($myVar === true) {|
+|Loops| for, while| for, while| for, while|
+|Class| class MyClass():| class MyClass{}| class MyClass{}|
+|Object| myObj = MyClass()| var myObj = new MyClass();| $myObj = new MyClass();|
+
+|Other Syntax        | Python | Javascript | PHP |
+| ------ | ------ | ---------- | --- |
+|Variable declaration| myVar = 1| var myVar = 1| $myVar = 1|
+|Variable declaration float| myVar = 1.0| var myVar = 1.0| $myVar = 1.0|
+|Variable declaration None| myVar = None| var myVar = null| $myVar = null|
+|Strings| myVar = "Hello World"| var myVar = "Hello World"| $myVar = "Hello World"|
+|Boolean| myVar = True| var myVar = true| $myVar = true|
+|Arithmetic Operators| +, -, *, /, %| +, -, *, /, %| +, -, *, /, %|
+|Comparison Operators| ==, !=, >, <, >=, <=| === ==, !=, >, <, >=, <=| === ==, !=, >, <, >=, <=|
+|Logical Operators| and, or, not| &&, \|\|, !| &&, \|\|, ! |
+|Getting Input| input()| prompt()| readline()|
+|Increment| myVar += 1| myVar++| myVar++|
+|Arrays and Lists| myVar = [1, 2, 3]| var myVar = [1, 2, 3]| $myVar = [1, 2, 3]|
+|Instantiation| myVar = MyClass()| var myVar = new MyClass()| $myVar = new MyClass()|
+|Hash Tables| myVar = {key: value}| var myVar = {key: value}| $myVar = array("key" => "value")|
+|Importing Libraries| import myLib| import myLib| require_once("myLib.php")|
+|Type Conversions| int(), float(), str(), bool()| parseInt(), parseFloat(), toString(), Boolean()| intval(), floatval(), strval(), boolval()|
+|Find Data Type| type(myVar)| typeof myVar| gettype(myVar)|
+|String Concatenation| myVar = "Hello " + "World"| var myVar = "Hello " + "World"| $myVar = "Hello " . "World"|
+|JSON| import json| JSON.parse(), JSON.stringify()| json_decode(), json_encode()|
+|Program Entry Point| if __name__ == "__main__":| | |
+|Swapping values| myVar1, myVar2 = myVar2, myVar1| | |
+|Error Handling| try, except| try, catch| try, catch|
+|Custom Error| class MyError(Exception):| class MyError(Exception):| class MyError(Exception):|
+
+
+
+
+
+
 ## Interpreted Language
 ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
 #### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
 - Python
+  - Features
+    -  Python is an interpreted language and not a compiled one, although compilation is a step. Python code, written in . py file is first compiled to what is called bytecode (discussed in detail further) which is stored with a .pyc extension. This bytecode is then interpreted by the Python Virtual Machine (PVM) to run the program.
+    - Python is a high-level language, which means that it is easy to read and write. It is also a general-purpose language, which means that it can be used to create almost any type of application.
+    
 - Javascript
   - Features
     - based on ECMAScript standard
@@ -380,17 +435,22 @@ multi-line comments
 ## Data types
 ### python
 #### 8 main data types
-- Text type
+- Text type   
+*type*, *variable* = *value*  |  *variable* = *type*(*value*)
   - ```str```, ```x = "Hello World"	```, ```x = str("Hello World")```
 - Numeric types
   - ```int```, ```x = 20	```, ```x = int(20)```
   - ```float```, ```x = 20.5```, ```x = float(20.5)```
   - ```complex```, ```x = 1j```, ```x = complex(1j)```
-- Sequence types
+- Sequence types  
+*type*, *variable* = *[value]*  |  *variable* = *type*((*value*))
+  - empty list: my_list = []
+  - list with mixed data types: my_list = [1, "Hello", 3.4]
   - ```list```, ```x = ["apple", "banana", "cherry"]```, ```x = list(("apple", "banana", "cherry"))```
   - ```tuple```, ```x = ("apple", "banana", "cherry")```, ```x = tuple(("apple", "banana", "cherry"))```
   - ```range```, ```x = range(6)```, ```x = range(6)```
 - Mapping type
+  - capital_city = {"Nepal": "Kathmandu", "Italy": "Rome", "England": "London"}
   - ```dict```, ```x = {"name" : "John", "age" : 36}```, ```x = dict(name="John", age=36)```
 - Set types
   - ```set```, ```x = {"apple", "banana", "cherry"}```, ```x = set(("apple", "banana", "cherry"))```
@@ -2959,8 +3019,8 @@ for (let index_and_value of list_name.entries()) {
     console.log(index_and_value);  // output a list [index, value]
 }
 
-// For in loop
-for (let index in list_name) {
+// For in loop:  
+for (let index in list_name) { // [0, 1, 2, 3]
     console.log(list_name[index]);
 }
 // For in loop normally used to get values from objects (hash table, dictionaries) than to arrays
@@ -3339,6 +3399,12 @@ let myFunction = (a) => {
 function myFunction(a=value) {
     do_something_with_a;
 }
+
+// ES6 
+let myFunction = (a) => {
+    return do_something_with_a
+};
+
 ```
 ### typescript
 ```typescript
