@@ -1,8 +1,12 @@
 # PROGRAMMING LANGUAGE SYNTAX COMPARISON
+
 > A syntax summary, which also compares the differences between each programming language.
-* List of languages
-  * Python, Javascript (Typescript), Ruby, Kotlin, Java, C#, C/C++, Groovy
+
+- List of languages
+  - Python, Javascript (Typescript), Ruby, Kotlin, Java, C#, C/C++, Groovy
+
 ## Table of Contents
+
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
 - [Both Interpreted And Compiled Language](#both-interpreted-and-compiled-language)
@@ -50,9 +54,13 @@
 - [Fetching Web Data](#fetching-web-data)
 - [Enum](#enum)
 - [Language Specific](#language-specific)
+
 ## Interpreted Language
+
 ### Dynamically-typed Language: resolution of types, members, properties, methods are done at run-time
+
 #### lose compile-time checking, have to write more unit tests to ensure app behaves properly at run-time
+
 - Python
 - Javascript
   - Features
@@ -64,10 +72,14 @@
     - managed memory access
     - prototype-based inheritance
 - Ruby
-## Compiled Language  
+
+## Compiled Language
+
 ### Statically-typed Language: resolution of types, members, properties, methods are done at compile-time
+
 #### trying to access a method that is not defined in an object when compiling the app will get an immediate error feedback
-* Java: compiled to bytecode then interpreted by Java virtual machine into machine code
+
+- Java: compiled to bytecode then interpreted by Java virtual machine into machine code
   - Features
     - not compatible with other languages
     - calls to native functions go through Java Native Interface (JNI)
@@ -108,16 +120,16 @@
         }
         ```
     - when Java Virtual Machine runs out of memory for a newly requested object
-      - the system throws ```OutOfMemoryError```
+      - the system throws `OutOfMemoryError`
       - Tips for managing memory
         - minimize the number of objects created
         - find out how much memory is available & is currently in used in the virtual machine
-          - ```Runtime.maxMemory()``` & ```Runtime.totalMemory()```
+          - `Runtime.maxMemory()` & `Runtime.totalMemory()`
         - setting available memory
           - use command line options to manage amount of available heap memory
-            - set inital heap size ```java -Xms256s HelloWord```
-            - set max heap size ```java -Xmx256m HelloWord```
-            - set heap size for new objects ```java -Xmn256n HelloWord```
+            - set inital heap size `java -Xms256s HelloWord`
+            - set max heap size `java -Xmx256m HelloWord`
+            - set heap size for new objects `java -Xmn256n HelloWord`
   - Java Garbage Collector
     - runs in its own thread
     - allocates & deallocates memory
@@ -125,20 +137,20 @@
     - garbage collection is managed by the Virtual Machine
     - cannot force garbage collection as it is an automatic process
       - Can run System methods to call garbage collection
-        - Methods ```System.gc()``` & ```Runtime.gc()``` can request garbage collection
+        - Methods `System.gc()` & `Runtime.gc()` can request garbage collection
           - but there is no guarantee it will happen
   - Identifiers and Keywords
     - Keywords can't be used as class or other identifiers
     - class, method, field, and other names are identifiers
     - identifiers must start with alpha character or underscore
   - Identifier conventions
-   - classes are always Pascal case ```class MyClass {}```
-   - methods and variables are Camel case ```void doSomething(String withThis) {}```
-   - constants are all uppercase ```public static final String FIRSTNAME="Myname";```
-     - ```final``` means once it has been set, it can't be changed
-* C#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
-  * from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
-* C++: compiled into native machine language
+  - classes are always Pascal case `class MyClass {}`
+  - methods and variables are Camel case `void doSomething(String withThis) {}`
+  - constants are all uppercase `public static final String FIRSTNAME="Myname";`
+    - `final` means once it has been set, it can't be changed
+- C#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
+  - from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
+- C++: compiled into native machine language
   - Features
     - compatible with C language
     - allows calls to native system libraries
@@ -146,8 +158,10 @@
     - exposes low-level system functions
     - explicit memory management
     - allows multiple inheritance
+
 ## Both Interpreted And Compiled Language
-* Groovy
+
+- Groovy
   - it is a Java-syntax-compatible object-oriented programming language for the Java platform
   - is both a static and dynamic language with features similar to those of Python
   - can be used as both a programming language and a scripting language for the Java Platform, is compiled to Java virtual machine (JVM) bytecode
@@ -160,58 +174,72 @@
     - jenkins file: to create a built pipeline with jenkins
     - gradle build script
   - requires installation of Java Development Kit (JDK) to work
-  - allows duck typing: provides the option to use the ```def``` keyword to determine the type at runtime
+  - allows duck typing: provides the option to use the `def` keyword to determine the type at runtime
   - can also have a variable assign a concrete type
     - can tell groovy compiler to enforce static typing if needed
   - auto generates getter and setter methods at runtime for class members
-  - contains Abstract Syntax Tree (AST) transformations: provides annotations for generating methods at runtime 
+  - contains Abstract Syntax Tree (AST) transformations: provides annotations for generating methods at runtime
     - such as defining contructors, equals, hashCode, toString methods
   - automatically imports commonly-used packages
-    - like ```java.util.*``` and ```java.io.*```
+    - like `java.util.*` and `java.io.*`
   - makes the default modifier as public, leading to less verbose code
   - semicolons are optional, only required if want to define more than 1 statement on a single line
-## Hello World 
+
+## Hello World
+
 ### python 2
+
 ```python
 print "Hello World"
 ```
+
 ### python 3
+
 ```python
 print("Hello World")  # "Hello World\n"
 print("Hello", "World", sep="/")  # "Hello/World"
 print("Hello World", end="")  # "Hello World"
 ```
+
 ### javascript
+
 ```javascript
-console.log("Hello World");  // "Hello World"
-console.log("Hello", "World");  // "Hello World"
+console.log("Hello World"); // "Hello World"
+console.log("Hello", "World"); // "Hello World"
 ```
+
 ### ruby
+
 ```ruby
 print "Hello World"  # takes whatever you give it and prints it to the screen
 puts "Hello World"  # adds a new (blank) line after the thing you want it to print
 p "Hello World"  # same as puts
 ```
+
 ### kotlin
+
 ```kotlin
 // fun for function declaration
 fun main() {  // main method, a must to have
     println("Hello, world")  // adds new line after printing
 }
 ```
+
 ### java
+
 - java classes are typically organized into packages
   - package is a global unique string that usually starts with your domain name in reverse domain order
     - ensures globally unique identifiers (e.g.: Main)
       - if there are more than 1 class named Main in an app
         - can be distinguished by using the package
 - each source code file will contain 1 public class
-- ```public``` visible to all classes
-- ```protected``` visible to class they belong and any subclasses
-- ```private``` (most restricted): visible only to class they belong
-- ```static``` can be accessed without creating a class instance
-- ```final``` constant value, value cannot be changed
-- ```void``` means that the method doesn't return any value
+- `public` visible to all classes
+- `protected` visible to class they belong and any subclasses
+- `private` (most restricted): visible only to class they belong
+- `static` can be accessed without creating a class instance
+- `final` constant value, value cannot be changed
+- `void` means that the method doesn't return any value
+
 ```java
 package com.example;  // package declaration
 
@@ -226,7 +254,9 @@ public class HelloWorld {
   }
 }
 ```
+
 ### c#
+
 ```c#
 public class HelloWorld {
   public static void Main() {
@@ -235,22 +265,29 @@ public class HelloWorld {
   }
 }
 ```
+
 ### c++
+
 ```c++
 #include <iostream>
 
-int main() 
+int main()
 {
     std::cout << "Hello, World!";
     return 0;
 }
 ```
+
 ### groovy
+
 - using dynamic type method
+
 ```groovy
 println "Hello World"
 ```
+
 - using static type method
+
 ```groovy
 class HelloWorld {
   static void main(String[] args) {
@@ -258,7 +295,9 @@ class HelloWorld {
   }
 }
 ```
+
 ### assembly
+
 ```assembly
 ; x86 32 bit Mac OSX
 ; to run file, compile and run with the following command
@@ -286,6 +325,7 @@ section .data
 msg:    db      "Hello, world!", 10
 .len:   equ     $ - msg
 ```
+
 ```assembly
 ; x86_64 64 bit Mac OSX
 ; to run file, compile and run with the following command
@@ -313,16 +353,21 @@ msg:    db      "Hello, world!", 10
 ```
 
 [back to top](#table-of-contents)
+
 ## Comments
+
 ### python 2 & 3
+
 ```python
 # Single line comment
-    
+
 """
 multi-line comments
 """
 ```
+
 ### javascript
+
 ```javascript
 // Single line comment
 
@@ -330,15 +375,19 @@ multi-line comments
 multi-line comments
 */
 ```
+
 ### ruby
+
 ```ruby
 # Single line comment
-    
+
 =begin
 multi-line comments
 =end
 ```
+
 ### java
+
 ```java
 // Single line comment
 
@@ -349,13 +398,15 @@ multi-line comments
 /**
  * javadoc <b>comments</b> for classes, javadocs can be used to auto generate documentation documents for code commented with javadocs
  */
- 
+
  /**
  * javadoc <b>comments</b> for methods with parameters - example main method
  * @param args - an array of string values
  */
 ```
+
 ### c#
+
 ```c#
 // Single line comment
 
@@ -363,7 +414,9 @@ multi-line comments
 multi-line comments
 */
 ```
+
 ### c++
+
 ```c++
 // Single line comment
 
@@ -371,73 +424,86 @@ multi-line comments
 multi-line comments
 */
 ```
+
 ### assembly
+
 ```assembly
 ; Single line comment
 ```
 
 [back to top](#table-of-contents)
+
 ## Data types
+
 ### python
+
 #### 8 main data types
+
 - Text type
-  - ```str```, ```x = "Hello World"	```, ```x = str("Hello World")```
+  - `str`, `x = "Hello World"	`, `x = str("Hello World")`
 - Numeric types
-  - ```int```, ```x = 20	```, ```x = int(20)```
-  - ```float```, ```x = 20.5```, ```x = float(20.5)```
-  - ```complex```, ```x = 1j```, ```x = complex(1j)```
+  - `int`, `x = 20	`, `x = int(20)`
+  - `float`, `x = 20.5`, `x = float(20.5)`
+  - `complex`, `x = 1j`, `x = complex(1j)`
 - Sequence types
-  - ```list```, ```x = ["apple", "banana", "cherry"]```, ```x = list(("apple", "banana", "cherry"))```
-  - ```tuple```, ```x = ("apple", "banana", "cherry")```, ```x = tuple(("apple", "banana", "cherry"))```
-  - ```range```, ```x = range(6)```, ```x = range(6)```
+  - `list`, `x = ["apple", "banana", "cherry"]`, `x = list(("apple", "banana", "cherry"))`
+  - `tuple`, `x = ("apple", "banana", "cherry")`, `x = tuple(("apple", "banana", "cherry"))`
+  - `range`, `x = range(6)`, `x = range(6)`
 - Mapping type
-  - ```dict```, ```x = {"name" : "John", "age" : 36}```, ```x = dict(name="John", age=36)```
+  - `dict`, `x = {"name" : "John", "age" : 36}`, `x = dict(name="John", age=36)`
 - Set types
-  - ```set```, ```x = {"apple", "banana", "cherry"}```, ```x = set(("apple", "banana", "cherry"))```
-  - frozenset```, ```x = frozenset({"apple", "banana", "cherry"})```, ```x = frozenset(("apple", "banana", "cherry"))```
+  - `set`, `x = {"apple", "banana", "cherry"}`, `x = set(("apple", "banana", "cherry"))`
+  - frozenset`, `x = frozenset({"apple", "banana", "cherry"})`, `x = frozenset(("apple", "banana", "cherry"))```
 - Boolean type
-  - ```bool```, ```x = True```, ```x = bool(5)```
+  - `bool`, `x = True`, `x = bool(5)`
 - Binary types
-  - ```bytes```, ```x = b"Hello"```, ```x = bytes(5)```
-  - ```bytearray```, ```x = bytearray(5)```, ```x = bytearray(5)```
-  - ```memoryview```, ```x = memoryview(bytes(5))```, ```x = memoryview(bytes(5))```
+  - `bytes`, `x = b"Hello"`, `x = bytes(5)`
+  - `bytearray`, `x = bytearray(5)`, `x = bytearray(5)`
+  - `memoryview`, `x = memoryview(bytes(5))`, `x = memoryview(bytes(5))`
 - None type
-  - ```None```, ```x = None```
+  - `None`, `x = None`
+
 ### javascript
+
 #### 1 primitive structural root
+
 - null
   - unknown values – a standalone type that has a single value null
+
 #### 2 Structual types
+
 - object
   - for more complex data structures
   - new Object, new Array, new Map, new Set, new WeakMap, new Date, new ...
+
 #### 6 basic primitive data types
+
 - number
   - for numbers of any kind: integer or floating-point, integers are limited by ±(2^53-1) === ±9007199254740991
   - contain
-    - regular numbers 
+    - regular numbers
       ```javascript
       let n = 123;
       ```
-    - floats 
+    - floats
       ```javascript
       let n = 1.23;
       ```
     - special numeric values
       - Infinity
-        ```javascript 
+        ```javascript
         let n = 1 / 0;
         let n2 = Infinity;
         ```
       - -Infinity
       - NaN
-        ```javascript 
-        let n = "not a number" / 2;  // NaN
+        ```javascript
+        let n = "not a number" / 2; // NaN
         ```
 - bigint
   - no maximum limit to a BigInt
   ```javascript
-  let bigInt = 1234567890123456789012345678901234567890n;  // ends with n
+  let bigInt = 1234567890123456789012345678901234567890n; // ends with n
   ```
 - string
   - may have zero or more characters, there’s no separate single-character type
@@ -446,193 +512,223 @@ multi-line comments
 - undefined
   - unassigned values – a standalone type that has a single value undefined
 - symbol
+
   - for unique identifiers
+
   ```javascript
   // id is a new symbol
   let id = Symbol();
-  
+
   // can give symbol a description (also called a symbol name), mostly useful for debugging purposes
   let _id = Symbol("id2");
-  
+
   // symbol in an object literal
   let obj = {
-    [_id]: 123 // not "id": 123
+    [_id]: 123, // not "id": 123
   };
-  
+
   // guaranteed to be unique
   let id1 = Symbol("id");
   let id2 = Symbol("id");
-  console.log(id1 == id2);  // false
-  
+  console.log(id1 == id2); // false
+
   // convert symbol to string
-  id1.toString();  // "Symbol(id)"
-  
+  id1.toString(); // "Symbol(id)"
+
   // get symbol description
-  id1.description;  // "id"
+  id1.description; // "id"
   ```
+
   - Symbols allow us to create “hidden” properties of an object, that no other part of code can accidentally access or overwrite
+
   ```javascript
-  let user = { // belongs to another code
-    name: "John"
+  let user = {
+    // belongs to another code
+    name: "John",
   };
 
   let id = Symbol("id");
   user[id] = 1;
-  console.log(user[id]);  // 1
-  console.log(user);  // { name: 'John', [Symbol(id)]: 1 }
+  console.log(user[id]); // 1
+  console.log(user); // { name: 'John', [Symbol(id)]: 1 }
   ```
-    - benefit of using symbol over string
-      - objects belongs to another code, and that code also works with them, we shouldn’t just add any fields to it
-      - symbol cannot be accessed accidentally, the third-party code probably won’t even see it
+
+  - benefit of using symbol over string
+    - objects belongs to another code, and that code also works with them, we shouldn’t just add any fields to it
+    - symbol cannot be accessed accidentally, the third-party code probably won’t even see it
   - Symbols are skipped by for...in loop
+
   ```javascript
   let id = Symbol("id");
   let user = {
     name: "John",
     age: 30,
-    [id]: 123
+    [id]: 123,
   };
-  
-  for (let key in user) console.log(key);  // name age undefined
+
+  for (let key in user) console.log(key); // name age undefined
   ```
+
   - Symbol can be cloned with Object.assign
+
   ```javascript
   let id = Symbol("id");
   let user = {
-    [id]: 123
+    [id]: 123,
   };
 
   let clone = Object.assign({}, user);
-  console.log(clone);  // { [Symbol(id)]: 123 }
+  console.log(clone); // { [Symbol(id)]: 123 }
   ```
+
   - global symbols
     - use if want same-named symbols to be same entities
+
   ```javascript
   // get symbol by name
   let id1 = Symbol.for("id");
   let id2 = Symbol.for("id");
-  
-  console.log(id1 === id2);  // true
-  
+
+  console.log(id1 === id2); // true
+
   // get name by symbol, can only use for global symbol
-  console.log(Symbol.keyFor(id1));  // "id"
+  console.log(Symbol.keyFor(id1)); // "id"
   ```
+
 ### java 8
+
 #### 2 major data types
+
 1. Primitive data types
-    - stored in fastest available memory
-    - names are all camel case
-    - Java class library includes helper classes for each primitive
-      - helper classes support conversion and formatting tools
-      - ```import java.lang.Byte;```  import not required from java.lang libraries
-    - all primitive numeric variables default to 0
-    ```java
-    public class Main {
-      private static int myInt;  // must be declared as static of a class to have default value
-    
-      public static void main(String args[]) {
-        System.out.println(myInt);  // 0
-      }
-    }
-    ``` 
-    - data types
-      - numbers
-        - byte
-          - 8 bits
-          - -128 to 127
-          - default value ```0```
-          - helper class ```Byte```
-        - short
-          - 16 bits
-          - -32,768 to 32,767
-          - default value ```0```
-          - helper class ```Short```
-        - int
-          - 32 bits
-          - -2,147,483,648 to 2,147,483,647
-          - default value ```0```
-          - helper class ```Integer```
-        - long
-          - 64 bits
-          - -9.22337E+18 to 9.22337E+18
-          - default value ```0L```
-          - helper class ```Long```
-        - float
-          - 32 bits
-          - default value ```0.0f``` or ```0.0F``` or ```.0f``` or ```.0F```
-          - helper class ```Float```
-        - double
-          - 64 bits
-          - default value ```0.0d``` or ```0.0D``` or ```.0d``` or ```.0D```
-          - helper class ```Double```
-          ```java          
-          double doubleValue = 156.5d;
-          Double doubleObj = new Double(doubleValue);  // declare instance of the double class
-          int intValue = doubleObj.intValue();  // 156, use helper object to convert to desired numeric data type
-          ```
-      - characters
-        - '\u0000' (or 0) to '\uffff' (or 65,535 inclusive)
-        - default value ```'\u0000'```
-      - booleans
-        - default value ```false```
+
+   - stored in fastest available memory
+   - names are all camel case
+   - Java class library includes helper classes for each primitive
+     - helper classes support conversion and formatting tools
+     - `import java.lang.Byte;` import not required from java.lang libraries
+   - all primitive numeric variables default to 0
+
+   ```java
+   public class Main {
+     private static int myInt;  // must be declared as static of a class to have default value
+
+     public static void main(String args[]) {
+       System.out.println(myInt);  // 0
+     }
+   }
+   ```
+
+   - data types
+     - numbers
+       - byte
+         - 8 bits
+         - -128 to 127
+         - default value `0`
+         - helper class `Byte`
+       - short
+         - 16 bits
+         - -32,768 to 32,767
+         - default value `0`
+         - helper class `Short`
+       - int
+         - 32 bits
+         - -2,147,483,648 to 2,147,483,647
+         - default value `0`
+         - helper class `Integer`
+       - long
+         - 64 bits
+         - -9.22337E+18 to 9.22337E+18
+         - default value `0L`
+         - helper class `Long`
+       - float
+         - 32 bits
+         - default value `0.0f` or `0.0F` or `.0f` or `.0F`
+         - helper class `Float`
+       - double
+         - 64 bits
+         - default value `0.0d` or `0.0D` or `.0d` or `.0D`
+         - helper class `Double`
+         ```java
+         double doubleValue = 156.5d;
+         Double doubleObj = new Double(doubleValue);  // declare instance of the double class
+         int intValue = doubleObj.intValue();  // 156, use helper object to convert to desired numeric data type
+         ```
+     - characters
+       - '\u0000' (or 0) to '\uffff' (or 65,535 inclusive)
+       - default value `'\u0000'`
+     - booleans
+       - default value `false`
+
 2. Objects
-    - an object is an instance of a class
-    - nonprimitive variables are references to objects
-    - objects can have multiple references
-    - Object data types
-      - String
-        - a complex object
-        - is an instance of the string class
-        - is an array of characters
-        - string objects are immutable
-        - reasigning the string value creates a new object
-          - the old object can be cleared from memory thrown garbage collection process
-        - helper class is ```java.lang.String```, thus import not required
-        ```java
-        String string1 = new String("Hello");
-        ```
+   - an object is an instance of a class
+   - nonprimitive variables are references to objects
+   - objects can have multiple references
+   - Object data types
+     - String
+       - a complex object
+       - is an instance of the string class
+       - is an array of characters
+       - string objects are immutable
+       - reasigning the string value creates a new object
+         - the old object can be cleared from memory thrown garbage collection process
+       - helper class is `java.lang.String`, thus import not required
+       ```java
+       String string1 = new String("Hello");
+       ```
 
 [back to top](#table-of-contents)
+
 ## Variable declaration int
-* integer ...-2, -1, 0, 1, 2...
-### python 2 
+
+- integer ...-2, -1, 0, 1, 2...
+
+### python 2
+
 ```python
 # int: -2147483648 ~ 2147483647
 integer_name = 123
 # long: -9223372036854775808L ~ 9223372036854775807L
 long_name = 123L  # int beyond int size will automatically be converted to long
 ```
+
 ### python 3
+
 ```python
 # python 3: int and long are combined into int
 integer_name = 123
 ```
+
 ### javascript ES5
+
 ```javascript
 // method 1
 var integer_name;
-integer_name = 123;  // accessible within the function
+integer_name = 123; // accessible within the function
 
 // method 2
 var integer_name = 123;
 ```
+
 ### javascript ES6
+
 ```javascript
 // method 1
 let integer_name;
-integer_name = 123;  // accessible only within the block {}
+integer_name = 123; // accessible only within the block {}
 
 // method 2
 let integer_name = 123;
 
 // method 3
-const integer_name = 123;  // variable value cannot be reassigned
+const integer_name = 123; // variable value cannot be reassigned
 ```
+
 ### typescript
+
 ```typescript
-let integer_name: number = 123;  // method 1
-let integer_name2 = 123;  // method 2, not required to declare type if assigning to value
-let integer_name3: number;  // must declare the value type
+let integer_name: number = 123; // method 1
+let integer_name2 = 123; // method 2, not required to declare type if assigning to value
+let integer_name3: number; // must declare the value type
 integer_name3 = 123;
 
 let decimal: number = 6;
@@ -640,14 +736,18 @@ let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o744;
 ```
+
 ### ruby
+
 ```ruby
 integer_name = 123
 ```
+
 ### java
+
 ```java
 // public/private/protected static final byte/short/int/long integerName = 123;
-/* 
+/*
 public: visible to all classes
 protected: visible to class they belong and any subclasses
 private (most restricted): visible only to class they belong
@@ -670,7 +770,9 @@ long longName1 = 123l;  // 123
 long longName2 = 123L;  // 123
 long longName3 = 10_000;  // 10000, introduced in java 7, just makes it easier to read
 ```
+
 ### c#
+
 ```c#
 // var can be used to handle declarations when the data type is unknown
 // once a variable is declared with var, the variable cannot be reassigned to a different data type
@@ -706,10 +808,12 @@ System.Decimal decimalName4 = 123;
 
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
+
 ### c++
+
 ```c++
 // const unsigned char/short/int/long/long long integer_name = 123;
-/* 
+/*
 const: constant value, value cannot be changed
 integer are signed by default: can assign both positive & negative values
 unsigned integer (use when dealing with bit values): 0 ~ ...
@@ -761,9 +865,13 @@ long long int long_name; long_name = 123;
 ```
 
 [back to top](#table-of-contents)
+
 ## Variable declaration float
-* float, double
+
+- float, double
+
 ### python 2 & 3
+
 ```python
 float_name = 1.123
 float_name = 0.1123e1  # equals to 1.123
@@ -771,7 +879,9 @@ float_name = 0.1123E1  # equals to 1.123
 float_name = 1123e-3  # equals to 1.123
 float_name = 1123E-3  # equals to 1.123
 ```
+
 - float have inaccurate values
+
 ```python
 print(.1 + .2 + .3)  # 0.6000000000000001
 # use the decimal library to make it accurate
@@ -785,21 +895,30 @@ x = Decimal(".1") + Decimal(".2") + Decimal(".3")  # Decimal('0.6')
 f"{x}"  # "0.6
 print(type(x))  # <class 'decimal.Decimal'>
 ```
+
 ### javascript ES5
+
 ```javascript
 var float_name = 1.123;
 ```
+
 ### javascript ES6
+
 ```javascript
 let float_name = 1.123;
 const float_name = 1.123;
 ```
+
 ### typescript
+
 ```typescript
 let float_name: number = 1.123;
 ```
+
 ### ruby
+
 ### java:
+
 ```java
 // float: 32 bits, 4 bytes
 float float_name = 1.123f;  // 1.123, have 7 decimal digits
@@ -818,14 +937,14 @@ public class Main {
     double value = .012;
     double pSum = value + value + value;
     System.out.println(pSum);  // 0.036000000000000004
-    
+
     String strValue = Double.toString(value);
     System.out.println(strValue);  // 0.012
 
     BigDecimal bigValue1 = new BigDecimal(value);
     BigDecimal bSum1 = bigValue1.add(bigValue1).add(bigValue1);
     System.out.println(bSum1.toString());  // 0.0360000000000000007494005416219806647859513759613037109375
-      
+
     BigDecimal bigValue2 = new BigDecimal(strValue);
     BigDecimal bSum2 = bigValue2.add(bigValue2).add(bigValue2);
     System.out.println(bSum2.toString());  // 0.036
@@ -833,7 +952,9 @@ public class Main {
 }
 
 ```
+
 ### c#
+
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
 float floatName1 = 1.123f;  // type Single
@@ -846,7 +967,9 @@ double doubleName2 = 1.123;  // all floats are double by default
 double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 System.Double doubleName4 = 1.123;
 ```
+
 ### c++
+
 ```c++
 // float: 4 bytes
 float float_name;
@@ -868,8 +991,11 @@ double_name = 1.123;  // have 19 decimal digits
 ```
 
 [back to top](#table-of-contents)
+
 ## Variable declaration None
+
 ### python 2 & 3
+
 ```python
 variable_name = None
 
@@ -877,7 +1003,9 @@ variable_name = None
 import math
 math.inf - math.inf  # nan
 ```
+
 ### javascript
+
 ```javascript
 // undefined is reserved for variables whose values have not yet been set.
 let variable_name; // undefined
@@ -888,20 +1016,26 @@ let variable_name2 = null;
 // NaN is a special numeric value meaning “Not a Number”
 let variable_name3 = NaN;
 ```
+
 ### typescript
+
 ```typescript
-let variable_name: void = undefined;  // method 1
-let variable_name2 = undefined;  // method 2
-let variable_name: undefined;  // method 3
+let variable_name: void = undefined; // method 1
+let variable_name2 = undefined; // method 2
+let variable_name: undefined; // method 3
 
 let variable_name2: void = null;
 let variable_name3: number = NaN;
 ```
+
 ### ruby
+
 ```ruby
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ```
+
 ### java
+
 ```java
 String stringName = null;
 
@@ -920,7 +1054,9 @@ System.out.println(2.0 / 0);  // Infinity
 double inf = Double.POSITIVE_INFINITY;  // Infinity
 double inf = Double.NEGATIVE_INFINITY;  // -Infinty
 ```
+
 ### c#
+
 ```c#
 string stringName = null;
 string stringName2 = String.Empty;
@@ -931,10 +1067,15 @@ Nullable<int> integerName1 = null;
 // method 2: value type requires ? during declaration
 int? integerName2 = null;
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Strings
+
 ### python 2 & 3
+
 ```python
 string_name = "string"
 string_name = 'string'
@@ -1028,46 +1169,51 @@ string_name.isdigit()  # False
 arr = ["a", "b"]
 "_".join(arr)  # "a_b"
 ```
+
 ### javascript ES5
+
 ```javascript
 var stringName = "string";
-var stringName = 'string';
+var stringName = "string";
 // back slash required
-var stringName = "multi-line \
+var stringName =
+  "multi-line \
 string";
 
-stringName.length;  // 6
+stringName.length; // 6
 
 // Character unicode point
-string.charCodeAt(stringIndex)
-"abc".charCodeAt(1)  // 98
+string.charCodeAt(stringIndex);
+"abc".charCodeAt(1); // 98
 
 // reverse string
-stringName.split("").reverse().join("");  // "gnirts"
+stringName.split("").reverse().join(""); // "gnirts"
 
-stringName = stringName.toUpperCase();  // "GNIRTS"
-stringName = stringName.toLowerCase();  // "gnirts"
+stringName = stringName.toUpperCase(); // "GNIRTS"
+stringName = stringName.toLowerCase(); // "gnirts"
 
 // capitalize string
-stringName = stringName.charAt(0).toUpperCase() + stringName.slice(1);  // "Gnirts"
+stringName = stringName.charAt(0).toUpperCase() + stringName.slice(1); // "Gnirts"
 
 // replace 1 string occurance with string, stringName.replace(old, new)
-stringName = stringName.replace("G", "xxx");  // "xxxnirts"
+stringName = stringName.replace("G", "xxx"); // "xxxnirts"
 
 let stringName0 = "test_test_123";
 // replace all string occurances with string, stringName.replaceAll(old, new)
-stringName0 = stringName0.replaceAll("_", " ");  // "test test 123"
+stringName0 = stringName0.replaceAll("_", " "); // "test test 123"
 
 // extract characters from a string, from start position to but not including end position
 newStringName = stringName.substring(1, 4); // "xxn"
-    
+
 // Split string into arrays
-stringName = "test string"
-stringName1 = stringName.split()  // ["test string"]
-stringName2 = stringName.split("")  // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
-stringName3 = stringName.split("s")  // ["te", "t ", "tring"]
+stringName = "test string";
+stringName1 = stringName.split(); // ["test string"]
+stringName2 = stringName.split(""); // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g']
+stringName3 = stringName.split("s"); // ["te", "t ", "tring"]
 ```
-### javascript ES6  // Almost all of ES5 are included in ES6
+
+### javascript ES6 // Almost all of ES5 are included in ES6
+
 ```javascript
 // back slash not required, but will produce a new line if not given
 var stringName = `multi-line \
@@ -1076,18 +1222,22 @@ let stringName = "string";
 const stringName = "string";
 
 // raw strings (ignore escape characters)
-String.raw`\n raw string`;  // "\n raw string"
+String.raw`\n raw string`; // "\n raw string"
 ```
+
 ### typescript
+
 ```typescript
 let stringName: string = "string";
 
 // declare string and/or other types
-let strOrNum: (string | number);
+let strOrNum: string | number;
 strOrNum = "abc";
-strOrNum = 123;  // can be reassigned to a declared type
+strOrNum = 123; // can be reassigned to a declared type
 ```
+
 ### ruby
+
 ```ruby
 string_name = <<EOM
 this is a
@@ -1099,22 +1249,22 @@ this is a
 eom
 string_name = 'string'
 string_name = "string"
-    
+
 string_name.length  # 6
-    
+
 string_name = string_name.reverse  # "gnirts"
-    
+
 string_name = string_name.upcase  # "GNIRTS"
 string_name = string_name.swapcase  # "gnirts"
 string_name = string_name.swapcase  # "GNIRTS"
 string_name = string_name.downcase  # "gnirts"
 
-    
+
 string_name = string_name.capitalize  # "Gnirts"
-    
+
 # replace string in string, string_name.gsub!(/old/, new)
 string_name = string_name.gsub!(/G/, "xxx")  # "xxxnirts"
-    
+
 # Split strings into an array
 string_name = string_name.split("i")  # ["xxxn", "rts"]
 string_name = "string"
@@ -1167,7 +1317,9 @@ removeStr.delete("si")  # "trng"
 variable_name = :symbolStringWithoutQuotes
 puts variable_name  # symbolStringWithoutQuotes
 ```
+
 ### java
+
 ```java
 // character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
 char charName1 = 'a';
@@ -1243,19 +1395,22 @@ str3 == str4;  // false
 // need to use .equals()
 str3.equals(str4);  // true
 ```
+
 ### c#
-* Strings (immutable)
-    * each operation that appears to be modifying a string is actually creating a new string
-    * modifying a string repeatedly can cause a significant performance penalty
-    * when to use string
-        * when number of changes that your app will make to a string is small
-            * string builder might offer negligible or no performance improvement
-        * when performing a fixed number of concatenation operations is required
-            * compiler might combine the concatenation operations into a single operation
-        * when performing extensive search operations while building a string is required
-            * string builder lacks search methods (IndexOf, StartsWith)
-            * thus will need to convert string builder to a string for these operations
-            * this can negate the performance benefit from using string builder
+
+- Strings (immutable)
+  - each operation that appears to be modifying a string is actually creating a new string
+  - modifying a string repeatedly can cause a significant performance penalty
+  - when to use string
+    - when number of changes that your app will make to a string is small
+      - string builder might offer negligible or no performance improvement
+    - when performing a fixed number of concatenation operations is required
+      - compiler might combine the concatenation operations into a single operation
+    - when performing extensive search operations while building a string is required
+      - string builder lacks search methods (IndexOf, StartsWith)
+      - thus will need to convert string builder to a string for these operations
+      - this can negate the performance benefit from using string builder
+
 ```c#
 // character: 16 bits
 char charName1 = 'a';  // type Char
@@ -1366,15 +1521,17 @@ stringName.Remove(startIndex, count);  // "str"
 stringName.Remove(startIndex);  // "str"
 stringName.Remove(startIndex, 2);  // "strg"
 ```
-* String builder (muttable)
-    * maintains a buffer to accommodate expansions to the string
-    * new data is appended to the buffer if room is available
-        * otherwise, a larger buffer is allocated
-        * data from the original buffer is copied to the new buffer
-        * then the new data is appended to the new buffer
-    * when to use string builder
-        * when expecting an unknown number of changes to a string at design time (when using a loop to concatenate a random number of strings that contain user input)
-        * when expecting to make a significant number of changes to a string
+
+- String builder (muttable)
+  - maintains a buffer to accommodate expansions to the string
+  - new data is appended to the buffer if room is available
+    - otherwise, a larger buffer is allocated
+    - data from the original buffer is copied to the new buffer
+    - then the new data is appended to the new buffer
+  - when to use string builder
+    - when expecting an unknown number of changes to a string at design time (when using a loop to concatenate a random number of strings that contain user input)
+    - when expecting to make a significant number of changes to a string
+
 ```c#
 // Declaration
 // method 1
@@ -1390,7 +1547,7 @@ var builder3 = new StringBuilder("starting string");  // "starting string"
 // method 1
 if (builder == 0) System.Console.WriteLine("true");  // "true"
 // method 2
-if (System.String.IsNullOrEmpty(builder.ToString())) 
+if (System.String.IsNullOrEmpty(builder.ToString()))
   System.Console.WriteLine("true");  // "true"
 
 
@@ -1438,7 +1595,9 @@ Heading"
 // get character of string builder at index
 builder[0];  // '+'
 ```
+
 ### c++
+
 ```c++
 // character: only have 1 character, must use single quotes ''
 char charName;
@@ -1470,49 +1629,66 @@ std::string stringName ("string");
 ```
 
 [back to top](#table-of-contents)
+
 ## Boolean
+
 ### python 2 & 3
+
 ```python
 boolean_name = True
 boolean_name = False
 not True  # False
 not False  # True
 ```
+
 ### javascript ES5
+
 ```javascript
-var boolean_name; boolean_name = true;
+var boolean_name;
+boolean_name = true;
 var boolean_name = false;
-!true  // false
-!false  // true
+!true; // false
+!false; // true
 ```
-* truthy: "xxx", 1, -1, 2.5, true
-* falsey: false, 0, "", null, undefined, NaN
+
+- truthy: "xxx", 1, -1, 2.5, true
+- falsey: false, 0, "", null, undefined, NaN
+
 ### javascript ES6
+
 ```javascript
-let boolean_name; boolean_name = true;
+let boolean_name;
+boolean_name = true;
 let boolean_name = false;
 const boolean_name = true;
 ```
+
 ### typescript
+
 ```typescript
 let isDone: boolean = false;
 ```
+
 ### ruby
+
 ```ruby
 boolean_name = true
 boolean_name = false
 ```
-* truthy: true, 0, 1, -1, "", 
-* falsey: false, nil
-* Check if method exist
-  * obj.respond_to?(:method)
-    * example 1
-      > [1, 2, 3].respond_to?(:push)  # true
-    * example 2
-      > 123.respond_to?(:next)  # true
-    * example 3: false because array can't be turned into a symbol
+
+- truthy: true, 0, 1, -1, "",
+- falsey: false, nil
+- Check if method exist
+  - obj.respond_to?(:method)
+    - example 1
+      > [1, 2, 3].respond_to?(:push) # true
+    - example 2
+      > 123.respond_to?(:next) # true
+    - example 3: false because array can't be turned into a symbol
       > [1, 2, 3].respond_to?(:to_sym) # false
+
 ### java
+
 ```java
 boolean booleanName1 = true;
 boolean booleanName2 = false;
@@ -1521,14 +1697,18 @@ boolean booleanName3 = !booleanName2;  // true
 String sBoolean = "true";
 boolean booleanName4 = Boolean.parseBoolean(sBoolean);  // true
 ```
+
 ### c#
+
 ```c#
 type Boolean
 bool booleanName = true;  // displayed as True when printed
 bool booleanName = false;  // displayed as False when printed
 System.Boolean booleanName = false;
 ```
+
 ### c++: 8 bits
+
 ```c++
 bool boolean_name; boolean_name = true;  // produces a 1 output
 bool boolean_name = false;  // produces a 0 output
@@ -1537,71 +1717,92 @@ bool boolean_name {false};
 ```
 
 [back to top](#table-of-contents)
+
 ## Arithmetic Operators
+
 ### python 2
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```3.0/2  # output 1.5, 3/2 output 1```
-* modulus: ```%```
-* exponent: ```**```
-* floor division: ```3//2  # output 1```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3.0/2  # output 1.5, 3/2 output 1`
+- modulus: `%`
+- exponent: `**`
+- floor division: `3//2  # output 1`
+
 ### python 3
-* division: ```3/2  # output 1.5```
-* floor division: ```3//2  # output 1```
+
+- division: `3/2  # output 1.5`
+- floor division: `3//2  # output 1`
+
 ### javascript
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```3/2  // output 1.5```
-* modulus: ```%```
-* exponent: ```**```
-* floor division: ```Math.floor(3/2)  // output 1```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3/2  // output 1.5`
+- modulus: `%`
+- exponent: `**`
+- floor division: `Math.floor(3/2)  // output 1`
+
 ### ruby
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```3.0/2  # output 1.5, 3/2 output 1```
-* modulus: ```%```
-* exponent: ```**```
-* floor division: ```3/2.floor```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3.0/2  # output 1.5, 3/2 output 1`
+- modulus: `%`
+- exponent: `**`
+- floor division: `3/2.floor`
+
 ### java
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```double double_name = 3.0/2;  // output 1.5, 3/2 output 1```
-* modulus: ```%```
-* exponent: ```Math.pow(3, 2);  // output 9```
-* floor division: ```int integer_name = 3/2;  // output 1```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `double double_name = 3.0/2;  // output 1.5, 3/2 output 1`
+- modulus: `%`
+- exponent: `Math.pow(3, 2);  // output 9`
+- floor division: `int integer_name = 3/2;  // output 1`
+
 ### c#
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```3.0/2;  // output 1.5, 3/2 output 1```
-* modulus: ```%```
-* exponent: ```Math.Pow(3, 2);  // output 9```
-* floor division: ```3/2;  // output 1```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3.0/2;  // output 1.5, 3/2 output 1`
+- modulus: `%`
+- exponent: `Math.Pow(3, 2);  // output 9`
+- floor division: `3/2;  // output 1`
+
 ### c++
-* addition: ```+```
-* subtraction: ```-```
-* multiplication: ```*```
-* division: ```double double_name = 3.0/2  // output 1.5, 3/2 output 1```
-* modulus: ```%```
-* exponent:
-    * must add this to the top ```#include＜cmath＞```
-    * ```int integer_name = pow(3, 2);  // output 9```
-* floor division: ```3/2  // output 1```
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `double double_name = 3.0/2  // output 1.5, 3/2 output 1`
+- modulus: `%`
+- exponent:
+  - must add this to the top `#include＜cmath＞`
+  - `int integer_name = pow(3, 2);  // output 9`
+- floor division: `3/2  // output 1`
 
 [back to top](#table-of-contents)
+
 ## Comparison Operators
+
 ### python 2 & 3
-* ```==``` condition is True if both operand have equal contents
+
+- `==` condition is True if both operand have equal contents
+
 ```python
 list1 = []
 list2 = []
 list1 == list2  # True
 ```
-* ```is``` condition is True if both operand points to the same identical object
+
+- `is` condition is True if both operand points to the same identical object
+
 ```python
 list1 = []
 list2 = []
@@ -1611,40 +1812,48 @@ list1 = None
 list2 = None
 list1 is list2  # True
 ```
-* ```!=``` condition is True if both operand do not have equal contents
-* ```is not``` condition is True if both operand do not points to the same identical object
-* ```<>``` py2 only, condition is True if both operands do not equal contents
-* ```>``` condition is True if right operand is less than left operand
-* ```<``` condition is True if left operand is less than right operand
-* ```>=``` condition is True if right operand is less than or equal to left operand
-* ```<=``` condition is True is left operand is less than or equal to right operand
+
+- `!=` condition is True if both operand do not have equal contents
+- `is not` condition is True if both operand do not points to the same identical object
+- `<>` py2 only, condition is True if both operands do not equal contents
+- `>` condition is True if right operand is less than left operand
+- `<` condition is True if left operand is less than right operand
+- `>=` condition is True if right operand is less than or equal to left operand
+- `<=` condition is True is left operand is less than or equal to right operand
+
 ### javascript
-* ```==``` not type-safe, e.g.: string or int will be automatically converted before comparison, only checks the value
+
+- `==` not type-safe, e.g.: string or int will be automatically converted before comparison, only checks the value
+
 ```javascript
 var x = 5;
-x == 5;  // is true
-x == "5"  // is also true
+x == 5; // is true
+x == "5"; // is also true
 ```
-* ```===``` string or int will NOT be converted before comparison, checks both the value and type
+
+- `===` string or int will NOT be converted before comparison, checks both the value and type
   - NaN and NaN comparison are not equal
   - +0 and -0 are equal
+
 ```javascript
 var x = 5;
-x === 5;  // is true
-x === "5"  // is false
+x === 5; // is true
+x === "5"; // is false
 ```
-* ```Object.is(var1, var2);``` similar to ```===```
+
+- `Object.is(var1, var2);` similar to `===`
   - NaN and NaN comparison are equal
   - +0 and -0 are not equal
-* ```!=```
-* ```!==```
-* ```>```
-* ```<```
-* ```>=```
-* ```<=```
-* ```??``` Nullish coalescing operator: returns right-hand side operand when left-hand side operand is null or undefined, and otherwise returns its left-hand side operand
+- `!=`
+- `!==`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `??` Nullish coalescing operator: returns right-hand side operand when left-hand side operand is null or undefined, and otherwise returns its left-hand side operand
+
 ```javascript
-const foo = null ?? 'default string';
+const foo = null ?? "default string";
 console.log(foo);
 // expected output: "default string"
 
@@ -1652,15 +1861,18 @@ const baz = 0 ?? 42;
 console.log(baz);
 // expected output: 0
 ```
+
 ### ruby
-* ```==```
-* ```!=```
-* ```>```
-* ```<```
-* ```>=```
-* ```<=```
-* ```<=>```  Combined Comparison Operator
-* ```object1.equal?object2```
+
+- `==`
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `<=>` Combined Comparison Operator
+- `object1.equal?object2`
+
 ```ruby
 string1 = "string"
 string2 = "string"
@@ -1675,7 +1887,7 @@ puts num2 <=> num1  # 1
 num1 = 3
 num2 = 3
 puts num1 <=> num2 # 0
-    
+
 string1 = "b"  # looks at only the 1st letter, "bz" will not change the outcome, unless both strings start with the same 1st letter
 string2 = "e"
 puts string1 <=> string2  # -1
@@ -1684,8 +1896,10 @@ string1 = "c"
 string2 = "c"
 puts string1 <=> string2  # 0
 ```
+
 ### java
-* ```==```
+
+- `==`
   - reference comparison
   ```java
   String s1 = new String("string value");
@@ -1696,99 +1910,130 @@ puts string1 <=> string2  # 0
   ```java
   String s1 = new String("string value");
   String s2 = new String("string value");
-  System.out.println(s1.equals(s2));  // true  
+  System.out.println(s1.equals(s2));  // true
   ```
-* ```!=```
-* ```>```
-* ```<```
-* ```>=```
-* ```<=```
-* ```instanceof``` class membership
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `instanceof` class membership
+
 ```java
 String s = "Hello";
 if (s instanceof java.lang.String) {
   System.out.println(true);
 }
 ```
+
 ### c#
-* ```==```
-* ```!=```
-* ```>```
-* ```<```
-* ```>=```
-* ```<=```
+
+- `==`
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+
 ### c++
-* ```==```
-* ```!=```
-* ```>```
-* ```<```
-* ```>=```
-* ```<=```
+
+- `==`
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
 
 [back to top](#table-of-contents)
+
 ## Logical Operators
+
 ### python 2 & 3
-* ```and```
-* ```or```
-* ```not```
+
+- `and`
+- `or`
+- `not`
+
 ### javascript
-* ```&&``` and
-* ```||``` or
-* ```!``` not
-* truthy and falsey examples
-    * ```truthy1 && truthy2``` truthy2
-    * ```falsey && truthy``` falsey
-    * ```truthy && falsey``` falsey
-    * ```falsey1 && falsey2``` falsey1
-    * ```truthy1 || truthy2``` truthy1
-    * ```truthy || falsey``` truthy
-    * ```falsey1 || falsey2``` falsey2
+
+- `&&` and
+- `||` or
+- `!` not
+- truthy and falsey examples
+  - `truthy1 && truthy2` truthy2
+  - `falsey && truthy` falsey
+  - `truthy && falsey` falsey
+  - `falsey1 && falsey2` falsey1
+  - `truthy1 || truthy2` truthy1
+  - `truthy || falsey` truthy
+  - `falsey1 || falsey2` falsey2
+
 ### ruby
-* ```&&``` and
-* ```||``` or
-* ```!``` not
+
+- `&&` and
+- `||` or
+- `!` not
+
 ### java
-* ```&&``` and
-* ```||``` or
-* ```^``` exclusive or
-* ```!``` not
+
+- `&&` and
+- `||` or
+- `^` exclusive or
+- `!` not
+
 ### c#
-* ```&&``` and
-* ```||``` or
-* ```^``` exclusive or
-* ```!``` not
+
+- `&&` and
+- `||` or
+- `^` exclusive or
+- `!` not
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Getting Input
+
 ### python 2
+
 ```python
 raw_input("What's your name?")
 
 # input must be the same data type as xxx else return an error
 input(xxx)
 ```
+
 ### python 3
+
 ```python
 input("What's your name?")
 ```
+
 ### javascript
+
 ```javascript
 // install readline-sync package locally via npm i readline-sync
-var readlineSync = require('readline-sync'); // import package
+var readlineSync = require("readline-sync"); // import package
 var getInput = readlineSync.question("What's your name?");
 ```
+
 ### ruby
+
 ```ruby
 # print question
 print "What's your name?"
 # get input
 name = gets.chomp
 ```
+
 ### java
-- must import scanner library 
+
+- must import scanner library
+
 ```java
 import java.util.Scanner;
 ```
+
 ```java
 // print question
 System.out.println("What's your name?");
@@ -1806,17 +2051,24 @@ String input1 = scanner.nextLine();
 // convert raw value to int type
 Int input2 = scanner.nextInt();
 ```
+
 ### c#
+
 ```c#
 // print question
 System.Console.WriteLine("What's your name?");
 // get input
 string name = System.Console.ReadLine();
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Bitwise Operators
+
 ### python 2 & 3
+
 ```python
 # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
 a = 60  # 60 = ...0011 1100
@@ -1850,108 +2102,133 @@ zero_fill_right_shift(9, 2)  # 2 = ...0000 0010, count the 1s
 c = -9  # -9 = ...1111 0111
 zero_fill_right_shift(-9, 2)  # 1073741821 = 0011...1111 1101, count the 0s
 ```
+
 ### javascript
+
 ```javascript
 // Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
-let a = 60  // 60 = ...0011 1100
-let b = 13  // 13 = ...0000 1101
-let c = 9  // 9 = ...0000 1001
+let a = 60; // 60 = ...0011 1100
+let b = 13; // 13 = ...0000 1101
+let c = 9; // 9 = ...0000 1001
 // & is binary AND, return 1 if both a and b are 1, count the 1s
-a & b  // 12 = ...0000 1100
-    
+a & b; // 12 = ...0000 1100
+
 // | is binary OR, return 1 if either a and or b HAVE a 1
-a | b  // 61 = ...0011 1101
-    
+a | b; // 61 = ...0011 1101
+
 // ^ is binary XOR, return 1 if both a and b are not 1 or 0
-a ^ b  // 49 = ...0011 0001
-    
+a ^ b; // 49 = ...0011 0001
+
 // ~ is binary ones complement, invert everything, 1 change to 0 and vice versa, count the 0s
-~a  // -61 = ...1100 0011
-    
+~a; // -61 = ...1100 0011
+
 // << is binary left shift, shift everything to the left by n digit(s)
-a << 2  // 240 = ...1111 0000
-    
+a << 2; // 240 = ...1111 0000
+
 // >> is Sign-propagating right shift, a binary right shift, shift everything to the right by n digit(s)
-a >> 2  // 15 = ...0000 1111
-c >> 2  // 3 = ...0000 0010, count the 1s
-c = -9  // -9 = ...1111 0111
-c >> 2  // -3 = ...1111 1101, count the 0s
-    
+a >> 2; // 15 = ...0000 1111
+c >> 2; // 3 = ...0000 0010, count the 1s
+c = -9; // -9 = ...1111 0111
+c >> 2; // -3 = ...1111 1101, count the 0s
+
 // >>> is Zero fill right shift, shift everything to the right by n digits(s), leftmost will add n 0s
-c >>> 2  // 2 = ...0000 0010, count the 1s
-c = -9  // -9 = ...1111 0111
-c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
+c >>> 2; // 2 = ...0000 0010, count the 1s
+c = -9; // -9 = ...1111 0111
+c >>> 2; // 1073741821 = 0011...1111 1101, count the 0s
 ```
+
 ### ruby
+
 ### java
+
 ```java
 // & is binary AND, return 1 if both a and b are 1, count the 1s
 a & b  // 12 = ...0000 1100
-    
+
 // | is binary OR, return 1 if either a and or b HAVE a 1
 a | b  // 61 = ...0011 1101
-    
+
 // ^ is binary XOR, return 1 if both a and b are not 1 or 0
 a ^ b  // 49 = ...0011 0001
-    
+
 // ~ is binary ones complement, invert everything, 1 change to 0 and vice versa, count the 0s
 ~a  // -61 = ...1100 0011
-    
+
 // << is binary left shift, shift everything to the left by n digit(s)
 a << 2  // 240 = ...1111 0000
-    
+
 // >> is Sign-propagating right shift, a binary right shift, shift everything to the right by n digit(s)
 a >> 2  // 15 = ...0000 1111
 c >> 2  // 3 = ...0000 0010, count the 1s
 c = -9  // -9 = ...1111 0111
 c >> 2  // -3 = ...1111 1101, count the 0s
-    
+
 // >>> is Zero fill right shift, shift everything to the right by n digits(s), leftmost will add n 0s
 c >>> 2  // 2 = ...0000 0010, count the 1s
 c = -9  // -9 = ...1111 0111
 c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ```
+
 ### c#
+
 ```c#
 // & is binary AND, return 1 if both a and b are 1, count the 1s
 a & b  // 12 = ...0000 1100
-    
+
 // | is binary OR, return 1 if either a and or b HAVE a 1
 a | b  // 61 = ...0011 1101
 ```
+
 ### c++
-[back to top](#table-of-contents)
-## Increment
-### python 2 & 3
-* ```x = x + 1``` increment
-* ```x += 1```
-### javascript
-* ```x = x + 1;``` add 1 now
-* ```x += 1;``` add 1 now
-* ```++x;``` preincrement, add 1 now
-* ```x++;``` postincrement, display without addition now then add 1 later when called again
-### ruby
-* ```x = x + 1``` increment
-* ```x += 1```
-### java
-* ```x = x + 1;```
-* ```x += 1;```
-* ```++x;``` preincrement, add 1 now
-* ```x++;``` postincrement, display without addition now then add 1 later when called again
-### c#
-* ```x = x + 1;```
-* ```x += 1;```
-* ```++x;``` preincrement, add 1 now
-* ```x++;``` postincrement, display without addition now then add 1 later when called again
-### c++
-* ```x = x + 1;```
-* ```x += 1;```
-* ```++x;``` preincrement, add 1 now
-* ```x++;``` postincrement, display without addition now then add 1 later when called again
 
 [back to top](#table-of-contents)
-## Arrays and Lists
+
+## Increment
+
 ### python 2 & 3
+
+- `x = x + 1` increment
+- `x += 1`
+
+### javascript
+
+- `x = x + 1;` add 1 now
+- `x += 1;` add 1 now
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+### ruby
+
+- `x = x + 1` increment
+- `x += 1`
+
+### java
+
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+### c#
+
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+### c++
+
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+[back to top](#table-of-contents)
+
+## Arrays and Lists
+
+### python 2 & 3
+
 ```python
 # Empty list
 list_name = []
@@ -2041,7 +2318,7 @@ list_name[1::-1]
 list_name[:-3:-1]
 
 # everything except the last two items, reversed
-list_name[-3::-1] 
+list_name[-3::-1]
 
 
 # Reverse an array
@@ -2085,7 +2362,9 @@ y = x.split(", ")
 print(y)  # ['a', 'b', 'c']
 
 ```
+
 ### javascript
+
 ```javascript
 // Method 1: empty list
 var list_name = [];
@@ -2100,15 +2379,15 @@ var list_name = new Array(3).fill("-") // ["-", "-", "-"]
 // Nested lists
 var list_name = [1, ["two", 3]];
 var list_name = new Array(3).fill(new Array(2).fill("-")) // [["-", "-"], ["-", "-"], ["-", "-"]]
-    
-    
+
+
 // Modify an element
 list_name[index] = element;
-    
+
 // Access an element
 list_name[index];
-    
-    
+
+
 // Remove element from list (right to left)
 list_name.pop();
 // Remove element from list (left to right)
@@ -2116,7 +2395,7 @@ list_name.shift();
 // Remove number of elements (left to right) from index and insert new elements (left to right)
 list_name.splice(index, number_of_element);
 
-    
+
 // Add element to list (left to right)
 list_name.push(element);
 // Add element to list (right to left)
@@ -2125,43 +2404,43 @@ list_name.unshift(element);
 list_name.splice(index, 0, new_element1, new_element2...);
 // Add & Remove elements to & from list at index (left to right)
 list_name.splice(index, number_of_element, new_element1, new_element2...);
-    
-    
+
+
 // Return the selected elements in an array, as a new array object
 list_name.slice();
 // Return the elements starting at the given 1st argument,
 // and ends at, but does not include, the given 2nd argument
 list_name.slice(1, 3);
 list_name.slice(1);  // if 1 argument is given, return all elements from array from the 1st argument index
-    
-    
+
+
 // Find list size
 list_name.length;
 // Remove all elements
 list_name = [];
-    
-    
+
+
 // Merge 2 or more arrays together
 list_name1 = [1, 2, 3];
 list_name2 = [4, 5, 6];
 new_list = list_name1.concat(list_name2);
-    
-    
+
+
 // Get index of element, return -1 if not present
 list_name = ["element1", "element2", "element1"]
 list_name.indexOf("element1")  // returns index of 0
 list_name.indexOf("element1", 1);  // returns index of 2
 list_name.indexOf("element1", 2);  // also returns index of 2
 list_name.indexOf("element1", 0);  // returns index of 0
-    
-    
+
+
 // Sort array in ascending order
 list_name = [2, 3, 1, 4];
 list_name.sort();  // [1, 2, 3, 4]  work only only positive integers and strings
 
 list_name = [2, -1, 4, 3];
 list_name.sort((a, b) => a - b);  // [ -1, 2, 3, 4 ] work for negative and positive integers
-    
+
 // Sort array in descending order
 list_name.sort((a, b) => (b - a));  // [4, 3, 2, 1] work for negative and positive integers
 list_nameStr = ["b", "a", "c"];
@@ -2171,12 +2450,12 @@ list_nameStr.sort().reverse(); // ["c", "b", "a"]
 list_nameStr.sort((a, b) => (a > b ? -1 : 1));
 // method 3
 list_nameStr.sort((a, b) => b.localeCompare(a));
-    
-    
+
+
 // Determine whether an array contains a specified element
 list_name = ["a", "b", "c", "a"]
 console.log(list_name.includes("b"))  // true
-    
+
 // Determine whether an array contains a specified element from starting index
 console.log(list_name.includes("b", 2)  // false
 console.log(list_name.includes("a", 2)  // true
@@ -2194,7 +2473,9 @@ list_name.every(helper); // false
 list_name = [1, 2];
 list_name.every(helper); // true
 ```
+
 ### typescript
+
 ```typescript
 // method 1
 let numArr: number[] = [1, 2, 3];
@@ -2206,11 +2487,13 @@ let strArr2: Array<string> = ["a", "bc", "def"];
 
 // declare more than 1 type
 // with tuples
-let strOrNumArr1: [string, number] = ["a", 1];  // must follow and limited to declared format
+let strOrNumArr1: [string, number] = ["a", 1]; // must follow and limited to declared format
 // with union
-let strOrNumArr2: (string | number)[];  // allows unlimited mixture of number and/or string values in 1 array
+let strOrNumArr2: (string | number)[]; // allows unlimited mixture of number and/or string values in 1 array
 ```
+
 ### ruby
+
 ```ruby
 # Empty list
 list_name = []  # method 1
@@ -2227,7 +2510,7 @@ list_name.values_at(0, 1).join(", ")  # "1, two, 3"
 
 # join all elements in array into a string
 list_name.join(", ")  # "1, two, 3"
-    
+
 # Add element to list (left to right)
 # method 1
 list_name.push(element);
@@ -2260,15 +2543,15 @@ list_name.shift()  # [1]
 
 # check if array is empty
 [1, 2].empty?  # false
-    
+
 # Add 0 to 10 to an array
 (0..10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Add 0 to 10 excluding 10 to an array
 (0...10).to_a  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    
+
 # Access an elment
 list_name[index]
-    
+
 # Sort an array in ascending
 list_name = [3, 4, 1, 2]
 # method 1
@@ -2294,7 +2577,9 @@ list_name.collect! {|num| num * 2}  # [8, 6, 4, 2]
 # method 2
 list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ```
+
 ### java
+
 ```java
 // Arrays: can only have 1 data type: string, int, etc.
 // printing this only shows the memory
@@ -2383,8 +2668,11 @@ list.get(index);
 // Find index of an element
 list.indexOf(element);
 ```
+
 ### c#
-* Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
+
+- Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
+
 ```c#
 // Empty string array of desired array size
 string[] stringArray = new string[lengthOfDesiredArray];
@@ -2455,7 +2743,9 @@ System.Array.Reverse(strArr);  // ["a", "b", "c"]
 System.String.Join("", strArr);  // "abc"
 System.String.Join(",", strArr);  // "a,b,c"
 ```
-* List (dynamic array)
+
+- List (dynamic array)
+
 ```c#
 // Empty int array of desired array size
 System.Collections.Generic.List<int> intList = new System.Collections.Generic.List<int>();  // empty list
@@ -2496,7 +2786,9 @@ intList4.RemoveAt(0);  // [3, 4, 5, 6, 7, 8]
 // Remove all elements from the list
 intList4.Clear();  // [];
 ```
-* ArrayList (dynamic list of multiple data types, does not offer the best performance)
+
+- ArrayList (dynamic list of multiple data types, does not offer the best performance)
+
 ```c#
 // Empty array list
 System.Collections.ArrayList list = new System.Collections.ArrayList();  // empty list
@@ -2508,7 +2800,9 @@ list.Add("abc")  // [1, "abc"]
 
 // methods are similar to List
 ```
+
 ### c++
+
 ```c++
 // Arrays
 // Empty int array of desired array size
@@ -2578,8 +2872,11 @@ int_vector.clear();
 ```
 
 [back to top](#table-of-contents)
+
 ## Conditional Statement
+
 ### python 2 & 3
+
 ```python
 # If else statement
 if condition_a:
@@ -2601,49 +2898,51 @@ def switch(choice):
         2: do_B,
     }
     case.get(choice, do_something_else)
-    
- 
+
+
 # comparing between 2 objects (array, dictionaries, etc.) is allowed
 x = [1, 2, 3]
 y = [1, 2, 3]
 x == y  # returns True
 ```
+
 ### javascript
+
 ```javascript
 // If else statement
 if (condition_a) {
-    do_A;
+  do_A;
 } else if (condition_b) {
-    do_B;
+  do_B;
 } else {
-    do_something_else;
+  do_something_else;
 }
-
 
 // Ternary operator
 condition_a ? do_A : do_B;
 
-
 // Switch statement
-switch(choice) {
-    case choice_A:
-        do_A;
-        break;
-    case choice_B:
-        do_B;
-        break;
-    default:
-        do_something_else;
+switch (choice) {
+  case choice_A:
+    do_A;
+    break;
+  case choice_B:
+    do_B;
+    break;
+  default:
+    do_something_else;
 }
 
 // comparing between 2 objects (array, object, etc.) is NOT allowed
-var x = [1, 2, 3]
-var y = [1, 2, 3]
-x === y ? true : false;  // returns false
+var x = [1, 2, 3];
+var y = [1, 2, 3];
+x === y ? true : false; // returns false
 // solution: use JSON.stringify()
-JSON.stringify(x) === JSON.stringify(y) ? true : false  // return true
+JSON.stringify(x) === JSON.stringify(y) ? true : false; // return true
 ```
+
 ### ruby
+
 ```ruby
 # If else statement
 if condition_a
@@ -2713,7 +3012,9 @@ puts favorite_book # "book 1"
 favorite_book ||= "book 2"
 puts favorite_book # "book 1"
 ```
+
 ### java
+
 ```java
 // If else statement
 if (condition_a) {
@@ -2737,6 +3038,9 @@ else
 // Ternary operator
 condition_a ? do_A : do_B;
 
+//Using Boolean Value for Return:
+boolean result = condition_a ? true : false;
+
 
 // Switch statement
 switch(choice) {  // choice value can only be primitive values in java 7, since java 8 strings are also accepted
@@ -2750,8 +3054,15 @@ switch(choice) {  // choice value can only be primitive values in java 7, since 
         do_something_else;
         break;  // not required, but good to have in Java
 }
+
+
+
+
+
 ```
+
 ### c#
+
 ```c#
 // If else statement
 if (condition_a) {
@@ -2783,7 +3094,9 @@ switch(choice) {
 doSomethingSpecial:
   doingSomething;
 ```
+
 ### c++
+
 ```c++
 // If else statement
 if (condition_a) {
@@ -2826,8 +3139,11 @@ switch(choice) {
 ```
 
 [back to top](#table-of-contents)
+
 ## Loops
+
 ### python 2
+
 ```python
 # While loop
 # declare_initial_conditional_value
@@ -2852,11 +3168,11 @@ for i in xrange(5):  # Starts from 0 to 4 (5 - 1)
     break  # Breaks out of the current closest enclosing loop
     continue  # Goes to the top of the closest enclosing loop
     pass  # Does nothing at all
-    
+
 # Looping with xrange() and multiple parameters
 for i in xrange(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
     do_this
-    
+
 # Reverse loop
 for i in xrange(4, -1, -1):  # Start from 4 to 0 at every -1 steps
     do_this
@@ -2871,7 +3187,9 @@ for value in list_name:  # [i1_value, i2_value, i3_value,...]
 for index, value in enumerate(list_name):
     print index, value  # output index, value
 ```
+
 ### python 3
+
 ```python
 # For loop
 # Looping with range()
@@ -2881,11 +3199,11 @@ for i in range(5):  # Starts from 0 to (5 - 1)
     break  # Breaks out of the current closest enclosing loop
     continue  # Goes to the top of the closest enclosing loop
     pass  # Does nothing at all
-    
+
 # Looping with range() and multiple parameters
 for i in range(0, 5, 2):  # Start from 0 to 4 at every 2 steps (0,2,4)
     do_this
-    
+
 # Reverse loop
 for i in range(4, -1, -1):  # Start from 4 to 0 at every -1 steps
     do_this
@@ -2899,26 +3217,29 @@ for value in list_name:  # [value1, value2, value3,...]
 # Looping and getting index and value
 for index, value in enumerate(list_name):
     print(index, value)  # output index, value
-    
-    
+
+
 # Loops and getting both key and value of a dict
 x = { "one": 1, "two": 2}
 for k, v in x.items():
     print(f"k: {k}, v: {v}")
 ```
+
 ### javascript ES5
+
 ```javascript
 // While loop
 // declare_initial_conditional_value
 var i = 0;
 // Set condition
-while (i<5) {  // Start from 0 to 4
-    do_this;
-    // Include condition_increment_or_decrement;
-    i++;
-    // Can use break or continue to add additional functionality, or not use any
-    break;  // Breaks out of the current closest enclosing loop
-    continue;  // Goes to the top of the closest enclosing loop
+while (i < 5) {
+  // Start from 0 to 4
+  do_this;
+  // Include condition_increment_or_decrement;
+  i++;
+  // Can use break or continue to add additional functionality, or not use any
+  break; // Breaks out of the current closest enclosing loop
+  continue; // Goes to the top of the closest enclosing loop
 }
 
 // Do While loop
@@ -2926,50 +3247,58 @@ var i = 0;
 do {
   do_this;
   i++;
-} while (i<5);
+} while (i < 5);
 
 // For loop
-for (var i=0; i<5; i++) {  // Start from 0 to 4
-    do_this;
-    // Can use break or continue to add additional functionality, or not use any
-    break;  // Breaks out of the current closest enclosing loop
-    continue;  // Goes to the top of the closest enclosing loop
+for (var i = 0; i < 5; i++) {
+  // Start from 0 to 4
+  do_this;
+  // Can use break or continue to add additional functionality, or not use any
+  break; // Breaks out of the current closest enclosing loop
+  continue; // Goes to the top of the closest enclosing loop
 }
 
 // Reverse loop
-for (var i=4; i>=0; i--) {  // Start from 4 to 0
-    do_this;
+for (var i = 4; i >= 0; i--) {
+  // Start from 4 to 0
+  do_this;
 }
 
 // forEach loop
 // Looping through a list while calling a function
-list_name.forEach(function(value, index, list){  // do not need to include all 3 parameters, but must be in order
-    console.log(index, value, list);  // outputs index value list
+list_name.forEach(function (value, index, list) {
+  // do not need to include all 3 parameters, but must be in order
+  console.log(index, value, list); // outputs index value list
 });
 ```
+
 ### javascript ES6: Use let in loops when declaring
+
 ```javascript
 // For of loop
 // Looping and getting each value
-for (let value of list_name) {  // [value1, value2, value3,...]
-    console.log(value);  // output value
+for (let value of list_name) {
+  // [value1, value2, value3,...]
+  console.log(value); // output value
 }
 // Looping and getting index and value
 for (let index_and_value of list_name.entries()) {
-    console.log(index_and_value);  // output a list [index, value]
+  console.log(index_and_value); // output a list [index, value]
 }
 
 // For in loop
 for (let index in list_name) {
-    console.log(list_name[index]);
+  console.log(list_name[index]);
 }
 // For in loop normally used to get values from objects (hash table, dictionaries) than to arrays
 // object = {key1:value1, key2:value2,...}
 for (let key in object) {
-    console.log(object[key]);  // outputs value, normally calling this way will not output value from objects
+  console.log(object[key]); // outputs value, normally calling this way will not output value from objects
 }
 ```
+
 ### ruby
+
 ```ruby
 # While loop
 # declare_initial_conditional_value
@@ -3028,8 +3357,8 @@ puts array3  # [1, 2, 3, 4, 5]
 
 # Iterating over Multidimensional Arrays with Each Iterator
 multiArray = [[1, 2], [3, 4], [5, 6]]
-multiArray.each { 
-    |sub_array| sub_array.each { 
+multiArray.each {
+    |sub_array| sub_array.each {
         |value| do_something
     }
 }
@@ -3046,7 +3375,9 @@ n.times { do_this }  # do_this will repeat n times
 # Downto Iterator, "string" don't work
 100.downto(95) { |num| print num, " " }  # 100 99 98 97 96 95
 ```
+
 ### java
+
 ```java
 // While loop
 // declare_initial_conditional_value
@@ -3088,8 +3419,20 @@ char[] chars = {'H', 'e', 'l', 'l', 'o'};  // an array can only have a single da
 for (char c : chars) {  // for each element in the array
   doThis;
 }
+
+
+// some more methods of implementing loops in java while dealing with arrays
+int [] arr={1,2,3,4,5};
+for(int num:arr)
+{
+  System.out.println(num);
+}
+
+
 ```
+
 ### c#
+
 ```c#
 // While loop
 // declare_initial_conditional_value
@@ -3137,7 +3480,9 @@ foreach(char c in stringName) {
   do_this;
 }
 ```
+
 ### c++
+
 ```c++
 // While loop
 // declare_initial_conditional_value
@@ -3190,42 +3535,63 @@ for (;;)
 ```
 
 [back to top](#table-of-contents)
+
 ## Instantiation
+
 ### python 2 & 3
+
 ```python
 t = Thing()  # everything
 ```
+
 ### javascript
+
 ```javascript
-v = getValue();  // plain function
-t = new Thing();  // instantiation
+v = getValue(); // plain function
+t = new Thing(); // instantiation
 ```
+
 ### ruby
+
 ```ruby
 t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
 ```
+
 ### java
+
 ```java
 public class ClassName {
   public String type;  // instance variable
-  
+
   public static void main(String[] args) {
     ClassName t = new ClassName();  // instantiation
     t.type = "something";
     t.display();
-    
+
     doSomething();  // can call static method directly
   }
-  
+
   // instance method
+
+  //Instance methods are functions that belong to a specific object or instance of a class. Imagine a class as a blueprint for creating objects, and instance methods are actions that these objects can perform.
+
+
   private void display() {}
-  
+
   // static method
+  //Static methods are functions defined within a class that are associated with the class itself, rather than any specific instance of the class. This means you can call a static method without creating an object.
+
+  // PRO TIP: Avoid using static methods when security is a primary concern as without object creation manipulating the data is possible
+
+
+
   static void doSomething() {}
 }
 ```
+
 ### c#
+
 ```c#
 // method 1
 ClassName t = new ClassName();  // instantiation
@@ -3251,11 +3617,17 @@ public class Program {
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Functions
+
 ### python 2 & 3
-* Function returns None by default if return statement is not declared
+
+- Function returns None by default if return statement is not declared
+
 ```python
 # Normal function, use return to return values
 def myFunction():
@@ -3264,11 +3636,11 @@ def myFunction():
 # Normal function with parameters
 def myFunction(a):
     do_something_with_a
-    
+
 # Default parameters
 def myFunction(a=value):
     do_something_with_a
-    
+
 # Lambda function: a small anonymous function
 # can take any number of arguments, but can only have 1 expression
 myFunction = lambda a : do_something_with_a
@@ -3277,74 +3649,79 @@ myFunction = lambda a, b : do_something_with_a_and_b
 # Function annotation (python 3)
 def get_sum(num1: int, num2: int):
     return num1 + num2
-    
+
 # Function annotation with default parameters (python 3)
 def get_sum(num1: int=1, num2: int=2):
     return num1 + num2
 ```
+
 ### javascript ES5
-* Function returns undefined by default if return statement is not declared
+
+- Function returns undefined by default if return statement is not declared
+
 ```javascript
 // Normal function, use return to return values
 function myFunction() {
-    do_something;
+  do_something;
 }
 // Normal function with parameters
 function myFunction(a) {
-    do_something_with_a;
+  do_something_with_a;
 }
 
 // Function expression
-let myFunction = function() {
-    do_something;
-}
+let myFunction = function () {
+  do_something;
+};
 // Function expression with parameters
-let myFunction = function(a) {
-    do_something_with_a;
-}
+let myFunction = function (a) {
+  do_something_with_a;
+};
 
 // Arrow function: do not have their own "this" keyword
 // 1 line arrow function
-let myFunction = () => do_something;  // () at (do_something) not necessary if on single line
+let myFunction = () => do_something; // () at (do_something) not necessary if on single line
 // 1 line arrow function with arguments
-let myFunction = (a) => (
-    do_something_with_a
-);
+let myFunction = (a) => do_something_with_a;
 // arrow function, must use return keyword
 let myFunction = () => {
-    return do_something
+  return do_something;
 };
 // arrow function with arguments
 let myFunction = (a) => {
-    return do_something_with_a
+  return do_something_with_a;
 };
 
 // Immediately Invoked Function Expressions (IIFE)
 // method 1
-(function() {
-    do_something;
+(function () {
+  do_something;
 })();
 // method 2
-(function() {
-    do_something;
-}());
+(function () {
+  do_something;
+})();
 // method 3: no returning of value
-!function() {
-    do_something;
-}();
+!(function () {
+  do_something;
+})();
 ```
+
 ### javascript ES6
+
 ```javascript
 // Default parameters
-function myFunction(a=value) {
-    do_something_with_a;
+function myFunction(a = value) {
+  do_something_with_a;
 }
 ```
+
 ### typescript
+
 ```typescript
 // return void
 function greetByName(name: string): void {
-  console.log('Well hi there,', name);
+  console.log("Well hi there,", name);
 }
 
 function makeGreen(name: string): string {
@@ -3365,28 +3742,34 @@ function getArr(): object {
 }
 
 // accept multiple types in the parameter with "|"
-function totalLength(x: string | any[], y: string | any[]): number {  // allow mix of string and array parameters
+function totalLength(x: string | any[], y: string | any[]): number {
+  // allow mix of string and array parameters
   let total: number = x.length + y.length;
   return total;
 }
 
 // function overloading
-function totalLength(x: string, y: string): number;  // allows either only string parameters
-function totalLength(x: any[], y: any[]): number;  // or only array parameters
-function totalLength(x: string | any[], y: string | any[]): number {  // does not allow mix of string and array parameters
+function totalLength(x: string, y: string): number; // allows either only string parameters
+function totalLength(x: any[], y: any[]): number; // or only array parameters
+function totalLength(x: string | any[], y: string | any[]): number {
+  // does not allow mix of string and array parameters
   var total: number = x.length + y.length;
   return total;
 }
 
 // using anonymous types
-function totalLength(x: {length: number}, y: {length: number}): number { // in this case, allow any parameter types that is able to calculate length (string, array)
+function totalLength(x: { length: number }, y: { length: number }): number {
+  // in this case, allow any parameter types that is able to calculate length (string, array)
   var total: number = x.length + y.length;
   return total;
 }
 ```
+
 ### ruby
-* Function returns result regardless of whether return statement is declared or not
-  * Reason: ruby applies Implicit Return feature
+
+- Function returns result regardless of whether return statement is declared or not
+  - Reason: ruby applies Implicit Return feature
+
 ```ruby
 # Normal function, use return to return values
 def myFunction
@@ -3458,7 +3841,9 @@ blockName = Proc.new do |n|
     do_something_with_n
 end
 ```
+
 ### java
+
 ```java
 // Normal functions
 public static void myFunction() {
@@ -3498,7 +3883,9 @@ numbers.forEach( method );
 // using inside forEach loop
 numbers.forEach( (n) -> { System.out.println(n); } );
 ```
+
 - method overloading
+
 ```java
 static double addValues(String s1, String s2) {
   double d1 = Double.parseDouble(s1);
@@ -3515,7 +3902,9 @@ static double addValues(String s1, String s2, String s3) {
   return result;
 }
 ```
+
 ### c#
+
 ```c#
 // Normal functions
 public static void MyFunction() {
@@ -3561,23 +3950,30 @@ var MyFunction = a => { do_something_with_a; };
 // Lambda expression with default parameters
 public static void MyFunction(dataType a=someValue) => do_something_with_a;
 ```
+
 ### c++
-* Function Signature: return type | name of function | (parameters)
-* Signature / prototype
-  * Normally add these in a .hpp or .h file then #include it into the .cpp file
+
+- Function Signature: return type | name of function | (parameters)
+- Signature / prototype
+  - Normally add these in a .hpp or .h file then #include it into the .cpp file
+
 ```c++
 public void functionName();
 
 public void functionName2(int arg1, int arg2);
 ```
-* Function definition
+
+- Function definition
+
 ```c++
 void functionName()
 {
    // do something
 }
 ```
-* Function prototype
+
+- Function prototype
+
 ```c++
 // prototype
 int sumTwoNumbers(int a, int b);
@@ -3596,8 +3992,11 @@ int sumTwoNumbers(int a, int b)
 ```
 
 [back to top](#table-of-contents)
+
 ## Higher order functions
+
 ### python 2
+
 ```python
 # Map: applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results
 # map(function, iterable, ...)
@@ -3629,7 +4028,9 @@ arr1 = [1, 2, 3]
 arr2 = ["1", "2", "3"]
 zpp(arr1, arr2)  # [(1, '1'), (2, '2'), (3, '3')]
 ```
+
 ### python 3
+
 ```python
 # Reduce: executes a function on each element, resulting in a single output value
 arr = [1, 2, 3]
@@ -3642,7 +4043,9 @@ reduce(compute, arr)  # return 6
 list(zip(s, t))  # [(1, '1'), (2, '2'), (3, '3')]
 tuple(zip(s, t)) # ((1, '1'), (2, '2'), (3, '3'))
 ```
+
 ### javascript
+
 ```javascript
 // Map: create a new array from a current array
 // array.map(element, currentIndex, originalArray)
@@ -3718,19 +4121,28 @@ function zip(arrays) {
 }
 zip([arr1, arr2]);  // [[1, '1'], [2, '2'], [3, '3']]
 ```
+
 ### ruby
+
 ```ruby
 # Zip: combine 2 arrays
 arr1 = [1, 2, 3]
 arr2 = ["1", "2", "3"]
 puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
+
 ### java
+
 ### c++
+
 [back to top](#table-of-contents)
-## Hash Tables 
-* Hash Tables, Dictionaries, Objects
+
+## Hash Tables
+
+- Hash Tables, Dictionaries, Objects
+
 ### python 2 & 3
+
 ```python
 # Create dictionary
 newDict = {}
@@ -3779,7 +4191,7 @@ for key in newDict:
 # method 2
 for key in newDict.keys():
     print(key)
-    
+
 # Loop through Dictionary and get each value
 # method 1
 for key in newDict:
@@ -3787,15 +4199,15 @@ for key in newDict:
 # method 2
 for value in newDict.values():
     print(value)
-    
+
 # Loop through both keys and values
 for key, value in newDict.items():
     print(key, value)
-    
+
 # Check if key exists
 if "key" in newDict:
     return True
-    
+
 # Get dictionary length
 len(newDict)
 
@@ -3817,73 +4229,80 @@ newDict.popitem()
 del newDict  # method 1
 newDict.clear()  # method 2
 ```
+
 ### javascript ES5
+
 ```javascript
 // Objects
 // Create object
-let newObj = new Object();  // method 1
-let newObj = {};  // method 2, literal notation
+let newObj = new Object(); // method 1
+let newObj = {}; // method 2, literal notation
 
 // Create object and assign values
 // keys can only be strings without quotes
 let newObj = {
-    key1: "stringValue",
-    key2: 123,
-    key3: true,
-    key4: ["array", "array2"],
-    key5: {anotherKey: anotherValue},
-    key6: function(arg){return do_something_with_arg}
+  key1: "stringValue",
+  key2: 123,
+  key3: true,
+  key4: ["array", "array2"],
+  key5: { anotherKey: anotherValue },
+  key6: function (arg) {
+    return do_something_with_arg;
+  },
 };
 
 // dynamic key
-let myKey = "emotion"
+let myKey = "emotion";
 let newObj2 = {
   [myKey]: "Happy",
-};  // key = "emotion"
+}; // key = "emotion"
 
 // Creates a new object, using an existing object as the prototype of the newly created object
 // method 1
-newObj2 = Object.create(newObj);  // copies the prototype of newObj, key value pairs will become inherited
-let newObj2pt2 = Object.create(null, {  // creates a new object but without default object properties, default object properties can't be used
+newObj2 = Object.create(newObj); // copies the prototype of newObj, key value pairs will become inherited
+let newObj2pt2 = Object.create(null, {
+  // creates a new object but without default object properties, default object properties can't be used
   key1: value,
 });
-let newObj2pt3 = Object.create(null, {  // set object configuration
+let newObj2pt3 = Object.create(null, {
+  // set object configuration
   key: {
     value: "something",
     writable: true,
     enumerable: true,
     configurable: true,
-  }
+  },
 });
-let newObj2pt4 = Object.create(Object.prototype, {  // creates a new object with all default object properties
+let newObj2pt4 = Object.create(Object.prototype, {
+  // creates a new object with all default object properties
   key: {
     value: "something",
     writable: true,
     enumerable: true,
     configurable: true,
-  }
+  },
 });
 // method 2: merge 2 object together
 newObj2 = Object.assign(oldObj, newObj);
 
 // Assign and Reassign values
-newObj["key1"] = "newString";  // method 1, bracket notation
-newObj.key1 = "newString2";  // method 2, dot notation
+newObj["key1"] = "newString"; // method 1, bracket notation
+newObj.key1 = "newString2"; // method 2, dot notation
 
 // Copy the values of all enumerable own properties from one or more source objects to a target object
 // return the target object
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
-const newObj = Object.assign(target, source);  // newObj, target = { a: 1, b: 4, c: 5 }
+const newObj = Object.assign(target, source); // newObj, target = { a: 1, b: 4, c: 5 }
 
 // Copy without mutating the target source
 const target2 = { a: 1, b: 2 };
 const source2 = { b: 4, c: 5 };
-const newObj2 = Object.assign({}, target2, source2);  // newObj2 = { a: 1, b: 4, c: 5 }, target2 = { a: 1, b: 2 }
+const newObj2 = Object.assign({}, target2, source2); // newObj2 = { a: 1, b: 4, c: 5 }, target2 = { a: 1, b: 2 }
 
 // Get value
-newObj["key1"];  // method 1
-newObj.key1;  // method 2
+newObj["key1"]; // method 1
+newObj.key1; // method 2
 
 // Get an array of keys
 Object.keys(newObj);
@@ -3893,7 +4312,9 @@ Object.values(newObj);
 
 // Loop through all key value pairs
 // must be (key, value)
-for (let [key, value] of Object.entries(newObj)) {console.log(`Key: ${key}, Value: ${value}`);}
+for (let [key, value] of Object.entries(newObj)) {
+  console.log(`Key: ${key}, Value: ${value}`);
+}
 
 // Defines a new property directly on an object, or modifies an existing property on an object, and returns the object
 // Object.defineProperty(obj, propertyName, descriptor)
@@ -3902,7 +4323,7 @@ Object.defineProperty(newObj, "property1", {
   writable: true,
   enumerable: true,
   configurable: false,
-});  // newObj.property1 = 123
+}); // newObj.property1 = 123
 
 let descriptor = Object.getOwnPropertyDescriptor(newObj, "property1");
 console.log(descriptor);
@@ -3923,12 +4344,14 @@ Object.seal(newObj);
 // makes the object immutable, meaning no change to defined property allowed, unless they are objects.
 Object.freeze(newObj);
 ```
+
 ### javascript ES6
+
 ```javascript
 // Merge 2 objects
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
-const newObj = {...target, ...source};  // { a: 1, b: 4, c: 5 }
+const newObj = { ...target, ...source }; // { a: 1, b: 4, c: 5 }
 
 // Maps or Hash tables
 // Create new Map or hash table
@@ -3947,12 +4370,12 @@ newDict.values();
 
 // Iterate over Maps to get each key
 for (let key of newDict.keys()) {
-    console.log(key);
+  console.log(key);
 }
 
 // Iterate over Maps to get each value
 for (let value of newDict.values()) {
-    console.log(value);
+  console.log(value);
 }
 
 // Get value
@@ -3968,13 +4391,14 @@ newDict.has(key);
 // method 1, must be (value, key)
 newDict.forEach((value, key) => console.log(`Key: ${key}, Value: ${value}`));
 // method 2, must be (key, value)
-for (let [key, value] of newDict.entries()) {console.log(`Key: ${key}, Value: ${value}`);}
+for (let [key, value] of newDict.entries()) {
+  console.log(`Key: ${key}, Value: ${value}`);
+}
 
 // Delete key value pair
 newDict.delete(key);
 // Delete all key value pairs
-newDict.clear()
-
+newDict.clear();
 
 // WeakMap: similar to Map, but all keys must be objects
 // Create new weak map
@@ -3994,15 +4418,19 @@ newDict.delete(obj);
 // Check if key value pair exist with key input
 newDict.has(obj);
 ```
+
 ### typescript
+
 ```typescript
 // object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined
 let objName: object = {
   key1: 123,
-  key2: "string"
-}
+  key2: "string",
+};
 ```
+
 ### ruby
+
 ```ruby
 # Hash literal notation, OLD SYNTAX
 hash_name = {
@@ -4119,7 +4547,9 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 # Loop all values
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
+
 ### java
+
 ```java
 // Map: it is an interface used to store data in key-value pair
 // import java.util.Map;  // must import
@@ -4146,7 +4576,9 @@ map.remove("sg");  // { jp=Japan, usa=United States }
 // import java.util.Set;  // must import
 Set<String> keys = map.keySet();  // [ usa, jp ]
 ```
+
 ### c#
+
 ```c#
 // method 1 (can be used within a method)
 System.Collections.Generic.Dictionary<string, string> _dictionary = new System.Collections.Generic.Dictionary<string, string>();  // declaration
@@ -4157,7 +4589,7 @@ System.Console.WriteLine(_dictionary["name"]);  // getting value with key
 // method 2: indexer (need to create a class)
 public class Person {
   private readonly System.Collections.Generic.Dictionary<string, string> _dictionary = new System.Collections.Generic.Dictionary<string, string>();
- 
+
   public string this[string key] {  // this keyword is required
     get { return _dictionary[key]; }
     set { _dictionary[key] = value; }  // value is a keyword
@@ -4172,10 +4604,15 @@ class MainClass {
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Destructuring
+
 ### python 2 & 3
+
 ```python
 # Tuples
 xVariable, yVariable = (xValue, yValue)
@@ -4189,51 +4626,62 @@ xVariable, yVariable = "xy"
 # Dictionaries
 xKey, yKey = {"xKey": xValue, "yKey": yValue}
 ```
+
 ### javascript ES6
+
 ```javascript
 // Arrays
 const [xVariable, yVariable] = [xValue, yValue];
 
 // Objects
 const obj = {
-    xKey: xValue,
-    yKey: yValue
-}
+  xKey: xValue,
+  yKey: yValue,
+};
 // declaring variables
-const {xKey, yKey} = obj;  // variable names must be the same as object key names
+const { xKey, yKey } = obj; // variable names must be the same as object key names
 
 // assigning different variable names
-const {xKey: xNewKey, yKey: yNewKey} = obj;
+const { xKey: xNewKey, yKey: yNewKey } = obj;
 
 // Set default values if extracted variables does not exist
-const { xKey, yKey, zKey="test" } = obj;
+const { xKey, yKey, zKey = "test" } = obj;
 
 // Use optional chaining for async code where data type will change
-let data = null;  // value before fetch
-const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
-console.log(a);  // ""
+let data = null; // value before fetch
+const { a = "", b = "" } = data?.[0] || []; // checks if data is undefined or null, then checks if there is value inside array
+console.log(a); // ""
 
-data = [{ a: "hello", b: "world" }];  // value after fetch
-const { a="", b="" } = data?.[0] || [];  // checks if data is undefined or null, then checks if there is value inside array
-console.log(a);  // "hello"
+data = [{ a: "hello", b: "world" }]; // value after fetch
+const { a = "", b = "" } = data?.[0] || []; // checks if data is undefined or null, then checks if there is value inside array
+console.log(a); // "hello"
 ```
+
 ### typescript
+
 ```typescript
 type myFunctionProps = {
-  arg1: string,
-  [k: string]: any,  // to enable ...rest
+  arg1: string;
+  [k: string]: any; // to enable ...rest
 };
 
-function myFunction({arg1, ...rest}: myFunctionProps) {
-  let argsObj = rest;  // args is an object of arguments
+function myFunction({ arg1, ...rest }: myFunctionProps) {
+  let argsObj = rest; // args is an object of arguments
 }
 ```
+
 ### ruby
+
 ### java
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Spread Operator
+
 ### python 2 & 3
+
 ```python
 # *args (splat)
 # Takes an array and transform (unpacks) it into single values
@@ -4247,27 +4695,36 @@ myFunction(*Dict)  # {"a": value1, "b": value2}  only utilize the keys
 # **kwargs
 myFunction(**Dict) # {"a": value1, "b": value2}  utilize both keys and values
 ```
+
 ### javascript ES6
+
 ```javascript
 // Takes an array and transform (unpacks) it into single values
 // Must utitlize all of the element of the array to work
 let arr = [a, b, c];
-myFunction(a, b, c);  // normal method
-myFunction.apply(null, arr)  // using the apply() method
-myFunction(...arr);  // spread method
+myFunction(a, b, c); // normal method
+myFunction.apply(null, arr); // using the apply() method
+myFunction(...arr); // spread method
 
 // join multiple arrays together
 let arr1 = [a, b, c];
 let arr2 = [d, e, f];
-let totalArr = arr1.concat(arr2);  // concat method
+let totalArr = arr1.concat(arr2); // concat method
 let totalArr = [...arr1, ...arr2];
 ```
+
 ### ruby
+
 ### java
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Rest parameters
+
 ### python 2 & 3
+
 ```python
 # *args
 # Receive a couple of single values and transform them into an array
@@ -4281,14 +4738,18 @@ def myFunction(**kwargs):
 # calling example
 myFunction(var1=value1, var2=value2)
 ```
+
 ### javascript ES6
+
 ```javascript
 // Receive a couple of single values and transform them into an array
 function myFunction(...args) {
-    let argsArr = args;  // args is an array of arguments
+  let argsArr = args; // args is an array of arguments
 }
 ```
+
 ### ruby
+
 ```ruby
 # *parameter
 # Receive a couple of single values and transform them into an array
@@ -4296,13 +4757,17 @@ def myFunction(*parameter):
     newArr = args  # args is an array of arugments
 end
 ```
+
 ### java
+
 ```java
 static double myFunction(String ... args) {
   String[] argsArr = args;  // args is an array of arguments
 }
 ```
+
 ### c#
+
 ```c#
 // hard coded method
 public class Calculator1 {
@@ -4351,49 +4816,56 @@ class MainClass {
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Class
+
 ### python 2
-``` python
-class MathClass:
-    def __init__(self, arg1, arg2):
-        self.arg1 = arg1
-        self.arg2 = arg2
-        self.total = self.outterAdd(arg1, arg2)
-        
-    def innerAdd(self, arg3):
-        return self.arg1 + self.arg2 + arg3
-        
-    # Static method knows nothing about the class and just deals with the parameters
-    def outterAdd(number1, number2):
-        return number1 + number2
-    outterAdd = staticmethod(outterAdd)
-    
-    
-test = MathClass(2, 4)
-print (test.total)  # 6
-print (test.innerAdd(2))  # 8
-print (test.outterAdd(3, 7))  # 10
-print (MathClass.outterAdd(4, 5)  # 9
-```
-### python 3
+
 ```python
 class MathClass:
     def __init__(self, arg1, arg2):
         self.arg1 = arg1
         self.arg2 = arg2
         self.total = self.outterAdd(arg1, arg2)
-        
+
     def innerAdd(self, arg3):
         return self.arg1 + self.arg2 + arg3
-        
+
+    # Static method knows nothing about the class and just deals with the parameters
+    def outterAdd(number1, number2):
+        return number1 + number2
+    outterAdd = staticmethod(outterAdd)
+
+
+test = MathClass(2, 4)
+print (test.total)  # 6
+print (test.innerAdd(2))  # 8
+print (test.outterAdd(3, 7))  # 10
+print (MathClass.outterAdd(4, 5)  # 9
+```
+
+### python 3
+
+```python
+class MathClass:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.total = self.outterAdd(arg1, arg2)
+
+    def innerAdd(self, arg3):
+        return self.arg1 + self.arg2 + arg3
+
     # Static method knows nothing about the class and just deals with the parameters
     @staticmethod
     def outterAdd(number1, number2):
         return number1 + number2
-    
-    
+
+
 test = MathClass(2, 4)
 print(test.total)  # 6
 print(test.innerAdd(2))  # 8
@@ -4404,12 +4876,12 @@ print(MathClass.outterAdd(4, 5))  # 9
 # Using classmethod: method 1
 class Person:
     name = "Default name"
-    
+
     @classmethod
     def change_name(clas, new_name):
         cls.name = new_name
-        
-        
+
+
 person1 = Person()
 print(person1.name)  # Default name
 person1.change_name("New name")
@@ -4420,12 +4892,12 @@ print(person1.name)  # New name
 class Person2:
     def __init__(self, name):
         self.name = name
-    
+
     @classmethod
     def use_default_name(cls):
         return cls("Default name")
-        
-     
+
+
 person2 = Person2("My name")
 print(person2.name)  # My name
 person3 = Person2.use_default_name()
@@ -4435,19 +4907,19 @@ print(person3.name)  # Default name
 # Inheritance
 class Employee:  # parent
     raise_amt = 1.04
-    
+
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
         self.pay = pay
-        
+
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
 
 
 class Developer(Employee):  # child
     raise_amt = 1.1
-    
+
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)  # method 1: implement parent class init method
         Employee.__init__(self, first, last, pay)  # method 2: implement parent class init method
@@ -4459,23 +4931,27 @@ print(dev.pay)  # 5000
 dev.apply_raise()
 print(dev.pay)  # 5500
 ```
-* python magic method guide
-  * https://rszalski.github.io/magicmethods/
+
+- python magic method guide
+  - https://rszalski.github.io/magicmethods/
+
 ### javascript ES5
+
 ```javascript
 // method 1
 var MathClass = {
   arg1: 2,
   arg2: 0,
-  
+
   get getTotal() {
     return this.arg1 + this.arg2;
   },
-  
-  set getTotal(arg2) {  // can only have 1 parameter
+
+  set getTotal(arg2) {
+    // can only have 1 parameter
     this.arg2 = arg2;
   },
-}
+};
 
 MathClass.getTotal; // 2
 MathClass.getTotal = 4;
@@ -4483,36 +4959,36 @@ MathClass.getTotal; // 6
 
 // method 2
 // Constructor
-var MathClass = function(arg1) {
+var MathClass = function (arg1) {
   this.arg1 = arg1;
   this.arg2 = 0;
-}
+};
 
 // Instantiation
 var test = new MathClass(2);
 
 // Add method
-MathClass.prototype.innerAdd = function(arg3) {
+MathClass.prototype.innerAdd = function (arg3) {
   return this.arg1 + this.arg2 + arg3;
-}
+};
 
-test.innerAdd(4);  // 6
+test.innerAdd(4); // 6
 
 // Add getter and setter
 Object.defineProperty(MathClass.prototype, "getTotal", {
-  get: function() {
+  get: function () {
     return this.arg1 + this.arg2;
   },
-  set: function(arg2) {  // can only have 1 parameter
+  set: function (arg2) {
+    // can only have 1 parameter
     this.arg2 = arg2;
-  }
+  },
 });
 
 var total = new MathClass(2);
-total.getTotal;  // 2
+total.getTotal; // 2
 total.getTotal = 4;
-total.getTotal;  // 6
-
+total.getTotal; // 6
 
 // inheritance
 function Employee(first, last, pay) {
@@ -4522,9 +4998,9 @@ function Employee(first, last, pay) {
   this.pay = pay;
 }
 
-Employee.prototype.applyRaise = function() {
+Employee.prototype.applyRaise = function () {
   this.pay = parseInt(this.pay * this.raiseAmt);
-}
+};
 
 function Developer(first, last, pay, progLang) {
   Employee.call(this, first, last, pay);
@@ -4536,100 +5012,104 @@ Developer.prototype = Object.create(Employee.prototype);
 
 Developer.prototype.constructor = Developer;
 
-const dev = new Developer("abc", "xyz", 5000, "Javascript")
-console.log(dev.pay)  // 5000
-dev.applyRaise()
-console.log(dev.pay)  // 5500
+const dev = new Developer("abc", "xyz", 5000, "Javascript");
+console.log(dev.pay); // 5000
+dev.applyRaise();
+console.log(dev.pay); // 5500
 ```
+
 ### javascript ES6
+
 ```javascript
 // Case 1: normal javascript way
 class MathClass {
-  #privateVariable  // required if want to declare private variable
-  
+  #privateVariable; // required if want to declare private variable
+
   constructor(arg1, arg2) {
     this.arg1 = arg1;
     this.arg2 = arg2;
-    this.#privateVariable = "this is a real private variable";  // cannot be accessed directly
+    this.#privateVariable = "this is a real private variable"; // cannot be accessed directly
     this.total = this.constructor.outterAdd(arg1, arg2);
   }
-  
+
   innerAdd(arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
-  
+
   // Static method knows nothing about the class and just deals with the parameters
   static outterAdd(number1, number2) {
     return number1 + number2;
   }
-  
+
   get privateVariable() {
     return this.#privateVariable;
   }
-  
-  set privateVariable(newValue) {  // can only have 1 parameter
+
+  set privateVariable(newValue) {
+    // can only have 1 parameter
     this.#privateVariable = newValue;
   }
 }
 
 const test = new MathClass(2, 4);
-console.log(test.total);  // 6
-console.log(test.innerAdd(2));  // 8
-console.log(test.constructor.outterAdd(3, 7));  // 10
-console.log(MathClass.outterAdd(4, 5));  // 9
+console.log(test.total); // 6
+console.log(test.innerAdd(2)); // 8
+console.log(test.constructor.outterAdd(3, 7)); // 10
+console.log(MathClass.outterAdd(4, 5)); // 9
 
-console.log(test.privateVariable);  // "this is a real private variable"
+console.log(test.privateVariable); // "this is a real private variable"
 test.privateVariable = "changed private variable value";
-console.log(test.privateVariable);  // "changed private variable value"
+console.log(test.privateVariable); // "changed private variable value"
 
 // Case 2: event handlers in React
 class MathClass {
   constructor() {
     this.arg1 = 2;
     this.arg2 = 4;
-    this.innerAdd = this.innerAdd.bind(this);  // this is required to prevent TypeError
+    this.innerAdd = this.innerAdd.bind(this); // this is required to prevent TypeError
   }
-  
+
   innerAdd(arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
 }
 const test = new MathClass();
-console.log(test.innerAdd(2));  // 8
-
+console.log(test.innerAdd(2)); // 8
 
 // Inheritance
-class Employee {  // parent
+class Employee {
+  // parent
   raiseAmt = 1.04;
-    
+
   constructor(first, last, pay) {
     this.first = first;
-    this.last = last;     
+    this.last = last;
     this.pay = pay;
   }
-        
+
   applyRaise() {
     this.pay = parseInt(this.pay * this.raiseAmt);
   }
 }
 
-
-class Developer extends Employee {  // child
+class Developer extends Employee {
+  // child
   raiseAmt = 1.1;
-    
+
   constructor(first, last, pay, progLang) {
-    super(first, last, pay)  // implement parent class init method
+    super(first, last, pay); // implement parent class init method
     this.progLang = progLang;
   }
 }
 
-
-const dev = new Developer("abc", "xyz", 5000, "Javascript")
-console.log(dev.pay)  // 5000
-dev.applyRaise()
-console.log(dev.pay)  // 5500
+const dev = new Developer("abc", "xyz", 5000, "Javascript");
+console.log(dev.pay); // 5000
+dev.applyRaise();
+console.log(dev.pay); // 5500
 ```
+
 ### typescript
+
 ```typescript
 class Person {
   name: string;
@@ -4640,7 +5120,7 @@ class Person {
 class Page {
   private content: string;
 
-  constructor(content: string = '') {
+  constructor(content: string = "") {
     this.content = content;
   }
 
@@ -4657,7 +5137,6 @@ class Book {
   }
 }
 
-
 // Interface
 interface ClockInterface {
   h: number;
@@ -4666,7 +5145,7 @@ interface ClockInterface {
 }
 
 class DigitalClock implements ClockInterface {
-  h: number;  // must be declared to use "this.h"
+  h: number; // must be declared to use "this.h"
   m: number;
 
   constructor(h: number, m: number) {
@@ -4694,10 +5173,9 @@ class AnalogClock implements ClockInterface {
 }
 
 const digital = new DigitalClock(12, 17);
-const analog = new AnalogClock(7, 32)
+const analog = new AnalogClock(7, 32);
 digital.tick();
 analog.tick();
-
 
 // abstract
 abstract class Department {
@@ -4710,16 +5188,19 @@ abstract class Department {
   abstract printMeeting(): void; // must be implemented in derived classes
 }
 
-class AccountingDepartment extends Department {  // must use all and only methods declared in the abstract class
+class AccountingDepartment extends Department {
+  // must use all and only methods declared in the abstract class
   constructor() {
     super("Accounting and Auditing"); // constructors in derived classes must call super()
   }
 
-  printMeeting(): void {  // methods can be customized and modified
+  printMeeting(): void {
+    // methods can be customized and modified
     console.log("The Accounting Department meets each Monday at 10am.");
   }
 
-  generateReports(): void {  // does not exist in the abstract class, will produce an error if run
+  generateReports(): void {
+    // does not exist in the abstract class, will produce an error if run
     console.log("Generating accounting reports...");
   }
 }
@@ -4731,19 +5212,22 @@ department.printName();
 department.printMeeting();
 //department.generateReports(); // error: method doesn't exist on declared abstract type
 ```
+
 ### ruby
-* class variables (@@variableName) are like instance variables but belongs to the class
-* global variables ($variableName) must be declared with a $ symbol, if declared within the class
+
+- class variables (@@variableName) are like instance variables but belongs to the class
+- global variables ($variableName) must be declared with a $ symbol, if declared within the class
+
 ```ruby
 class MathClass
   $globalVariable = "global variable"
   @@count = 0
-  
+
   def initialize(arg1, arg2)  # constructor
     @arg1 = arg1  # @ signify that it's an instance variable
     @arg2 = arg2
   end
-  
+
   def innerAdd(arg3)
     @@count += 1
     return @arg1 + @arg2 + arg3
@@ -4761,11 +5245,11 @@ class Student
   def initialize
     puts "New student"
   end
-  
+
   def set_name(new_name)
     @name = new_name
   end
-  
+
   def get_name
     @name
   end
@@ -4805,7 +5289,7 @@ end
 # method 1
 class CalculatorClass1
   include MathClass  # use this to enable method override
-  
+
   def innerAdd(arg1, arg2)
     return arg1 + arg1
   end
@@ -4817,7 +5301,7 @@ calculate1.innerAdd(1, 3)  # 2
 # method 2
 class CalculatorClass2
   prepend MathClass  # use this to disable method override
-  
+
   def innerAdd(arg1, arg2)
     return arg1 + arg1
   end
@@ -4856,17 +5340,20 @@ end
 calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
 ```
+
 ### java
+
 - class
   - if not constructor has been defined, a constructor with no args will be auto generated
   - if a constructor with args has been defined, a constructor with no args will not be auto generated
+
 ```java
 public class Math {
   public int arg1;
   public int arg2;
   public int total;
   public static final String NAME = "Math";  // declaring a constant variable
-  
+
   // constructor (must have the same name as class name, no return data type)
   public Math(int arg1, int arg2) {
     // this keyword is not a must, however, variable name must be different from the parameter
@@ -4874,11 +5361,11 @@ public class Math {
     this.arg2 = arg2;
     this.total = OuterAdd(arg1, arg2);
   }
-  
+
   public int InnerAdd(int arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
-  
+
   public static int OuterAdd(int number1, int number2) {
     return number1 + number2;
   }
@@ -4895,23 +5382,27 @@ class MainClass {
   }
 }
 ```
+
 - private key
+
 ```java
 public class Person {
   private int age = 0;  // cannot be accessed other than within the class
-  
+
   // age can only be modified with the setter method
   public void setAge(int age) {
     this.age = age;
   }
-  
+
   // age can only be retrieve with the getter method
   public int getAge() {
     return this.age;
   }
 }
 ```
+
 - protected key
+
   ```java
   // class with protected method
   package p1;
@@ -4923,7 +5414,9 @@ public class Person {
     }
   }
   ```
+
   - Calling protected function without extending the parent class
+
     ```java
     package p2;
 
@@ -4938,11 +5431,14 @@ public class Person {
       }
     }
     ```
+
     - throw an error Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous sym type: p2.B.display
+
   - Accessing a protected class
+
     ```java
     package p1;
-  
+
     // Class A
     protected class A {
       void display()
@@ -4951,9 +5447,10 @@ public class Person {
       }
     }
     ```
+
     ```java
     package p2;
-  
+
     // import all classes in package p1
     import p1.*;
 
@@ -4966,7 +5463,9 @@ public class Person {
         }
     }
     ```
+
     - throw an error Exception in thread "main" java.lang.RuntimeException: Uncompilable source code - Erroneous sym type: p2.B.display
+
   - Accessing display function from the same package but different class
     ```java
     public class C {
@@ -4977,9 +5476,10 @@ public class Person {
     }
     ```
   - Accessing display function from a different package
+
     ```java
     package p2;
-  
+
     // import all classes in package p1
     import p1.*;
 
@@ -4991,6 +5491,7 @@ public class Person {
       }
     }
     ```
+
   - Accessing a protected class by overriding to sub-class within same package
     ```java
     public class C extends A {
@@ -4998,14 +5499,16 @@ public class Person {
       protected void display() {
         System.out.println("overridden");
       }
-      
+
       public static void main(String args[]) {
         C obj1 = new C();
         obj1.display();  // overridden
       }
     }
     ```
+
 - Anonymous classes
+
 ```java
 import java.util.Scanner;
 
@@ -5014,14 +5517,14 @@ public class Calculator {
     ClassName c = new ClassName();
     c.calculate();
   }
-  
+
   // can be accessed from within the same class, subclasses of same packages,
   // different classes of same packages, subclasses of different packages
   protected void calculate() {
     InputHelper helper = new InputHelper();
     String s1 = helper.getInput("Please do something");
   }
-  
+
   // only Calculator class can use this
   class InputHelper {
     // can only be accessed from the same class
@@ -5033,7 +5536,9 @@ public class Calculator {
   }
 }
 ```
+
 - inheritance
+
 ```java
 // enum
 public enum Names {
@@ -5061,7 +5566,7 @@ public class Person {
   public Names getName() {
     return this.name;
   }
-  
+
   public void whoAmI() {
     System.out.println("I am a Person");
   }
@@ -5072,7 +5577,7 @@ public class John extends Person {
   public John() {
     super(25, Names.JOHN);
   }
-  
+
   // Polymorphism: overriding the parent's method
   @Override  // use this even if it is not required for 2 benefits: take adv of compiler check, easier to read
   public void whoAmI() {
@@ -5092,9 +5597,11 @@ public class Main {
   }
 }
 ```
+
 - interface
   - it is a contract that defines a set of methods with a particular signatures
   - any class that implement that interface must implement those methods
+
 ```java
 // enum
 public enum Names {
@@ -5146,13 +5653,15 @@ public class Person implements Human {
   }
 }
 ```
+
 - abstract
-  - the ```abstract``` keyword is added
+  - the `abstract` keyword is added
   - it can contain a mixture of fully implemented methods & abstract methods
     - abstract method is similar to a method in an interface
       - no implementation & only indicates method signature
       - any subclasses of an abstract method must implement that method
   - cannot be instantiated directly, only their subclasses can be instantiated
+
 ```java
 // enum
 public enum Names {
@@ -5199,7 +5708,7 @@ public abstract class Person implements Human {
   public void whoAmI() {
     System.out.println("I am a Person");
   }
-  
+
   // this means that every subclass of this class must declare its own origin
   public abstract String getOrigin();
 }
@@ -5209,12 +5718,12 @@ public class John extends Person {
   public John() {
     super(25, Names.JOHN);
   }
-  
+
   @Override
   public void whoAmI() {
     System.out.println("I a John");
   }
-  
+
   @Override
   public String getOrigin() {  // this must be declared here, else an error will occur
     return "Japan";
@@ -5232,16 +5741,19 @@ public class Main {
   }
 }
 ```
+
 ### c#
-* Struct vs Class
-  * https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
-* Stuct (structures)
+
+- Struct vs Class
+  - https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
+- Stuct (structures)
+
 ```c#
 public struct Math {
   public int arg1;
   public int arg2;
   public int total;
-  
+
   // constructor (must have the same name as class name, must have parameters)
   public Math(int arg1, int arg2) {
     // this keyword is not a must, however, variable name must be different from the parameter
@@ -5249,11 +5761,11 @@ public struct Math {
     this.arg2 = arg2;
     this.total = OuterAdd(arg1, arg2);
   }
-  
+
   public int InnerAdd(int arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
-  
+
   public static int OuterAdd(int number1, int number2) {
     return number1 + number2;
   }
@@ -5268,13 +5780,15 @@ class MainClass {
   }
 }
 ```
-* Class
+
+- Class
+
 ```c#
 public class Math {
   public int arg1;
   public int arg2;
   public int total;
-  
+
   // constructor (must have the same name as class name, no return data type)
   public Math(int arg1, int arg2) {
     // this keyword is not a must, however, variable name must be different from the parameter
@@ -5282,11 +5796,11 @@ public class Math {
     this.arg2 = arg2;
     this.total = OuterAdd(arg1, arg2);
   }
-  
+
   public int InnerAdd(int arg3) {
     return this.arg1 + this.arg2 + arg3;
   }
-  
+
   public static int OuterAdd(int number1, int number2) {
     return number1 + number2;
   }
@@ -5301,20 +5815,22 @@ class MainClass {
   }
 }
 ```
-* Inheritance
+
+- Inheritance
+
 ```c#
 public class Employee {  // parent
   protected float raiseAmt = 1.04f;  // use protected to allow modification from other classes
   protected string first;
   protected string last;
   public int pay;  // only public allows display of value externally
-    
+
   public Employee(string first, string last, int pay) {
     this.first = first;
-    this.last = last;     
+    this.last = last;
     this.pay = pay;
   }
-        
+
   public void applyRaise() {
     this.pay = System.Convert.ToInt32(this.pay * this.raiseAmt);
   }
@@ -5322,7 +5838,7 @@ public class Employee {  // parent
 
 public class Developer : Employee {  // child
   private string progLang;
-    
+
   public Developer(string first, string last, int pay, string progLang) : base(first, last, pay) { // base initiates the parent's constructor
     raiseAmt = 1.1f;  // this will modifiy the base variable value in the parent class
     this.progLang = progLang;
@@ -5335,20 +5851,20 @@ class MainClass {
     System.Console.WriteLine(developer.pay);  // 5000
     developer.applyRaise();
     System.Console.WriteLine(developer.pay);  // 5500
-    
-    
+
+
     // Upcasting: reduce the methods avaliable to only the parent class
     Empoyee employee = developer;
-    
+
     // Downcasting: add methods avaliable to the child class
     Developer developer2 = (Developer) employee;  // return an exception if cannot be converted
-    
+
     // use "as" keyword if not sure about the runtime type of the object
     Developer developer3 = employee as Developer;  // return a null if cannot be converted
     if (developer3 != null) {
       do_something;
     }
-    
+
     // use "is" keyword to check
     if (employee is Developer) {
       Developer developer4 = (Developer) e;
@@ -5356,7 +5872,9 @@ class MainClass {
   }
 }
 ```
-* Composition
+
+- Composition
+
 ```c#
 public class Employee {  // parent
   protected float raiseAmt;
@@ -5397,11 +5915,13 @@ class MainClass
   }
 }
 ```
-* Polymorphism
+
+- Polymorphism
+
 ```c#
 public class Subject {
   public string subjName;
-  
+
   public virtual void Study() {
     System.Console.WriteLine("Study all subjects");
   }
@@ -5409,7 +5929,7 @@ public class Subject {
 
 public class Math : Subject {
   public string mathName;
-  
+
   public override void Study() {
     System.Console.WriteLine("Study Maths");
   }
@@ -5420,7 +5940,7 @@ class MainClass {
     Subject s = new Subject();
     s.Study();  // "Study all subjects"
     s.subjName;  // accessible
-    
+
     // polymorphism
     Subject sm = new Math();  // create a Subject object but override the Study method with the Math object
     sm.Study();  // "Study Maths"
@@ -5428,19 +5948,21 @@ class MainClass {
   }
 }
 ```
-* Properties
-  * Properties is a kind of class member that is used for providing access to fields of a class
-  * best practive to declare fields as private & create public properties to provide access to them
-  * a property encapsulates a get and a set method
+
+- Properties
+  - Properties is a kind of class member that is used for providing access to fields of a class
+  - best practive to declare fields as private & create public properties to provide access to them
+  - a property encapsulates a get and a set method
+
 ```c#
 // method 1
 public class Person {
   private string _name;
-  
+
   public void SetName(string name) {
     this._name = name;
   }
-  
+
   public string GetName() {
     return _name;
   }
@@ -5458,7 +5980,7 @@ class MainClass {
 // method 2: using setter and getter properties
 public class Person {
   private string _name;
-  
+
   public string name {
     get { return _name; }
     set { _name = value; }  // value is a keyword
@@ -5491,7 +6013,7 @@ class MainClass {
 // method 4: using auto-implemented properties with private set method
 public class Person {
   public string name { get; private set; }  // if private keyword is used, need constructor to set
-  
+
   public Person(string inputName) {  // constructor
     name = inputName;
   }
@@ -5504,14 +6026,16 @@ class MainClass {
   }
 }
 ```
-* Interfaces
-  * it is similar to a class but with abstract methods
-  * use of "interface" keyword is required
-  * does not have implementations (similar to abstract methods)
-  * does not have access modifiers (eg: public, private, etc) in methods
-  * interface is for building loosely-coupled extensible and testable apps
-    * enable easy modifications with less or 0 impact on other components
-  * has polymorphism behavior
+
+- Interfaces
+  - it is similar to a class but with abstract methods
+  - use of "interface" keyword is required
+  - does not have implementations (similar to abstract methods)
+  - does not have access modifiers (eg: public, private, etc) in methods
+  - interface is for building loosely-coupled extensible and testable apps
+    - enable easy modifications with less or 0 impact on other components
+  - has polymorphism behavior
+
 ```c#
 public interface IFeatureName {  // in .net all interfaces start with "I" convention
   int Method1 { get; set; }
@@ -5521,11 +6045,11 @@ public interface IFeatureName {  // in .net all interfaces start with "I" conven
 
 public class ProductName : IFeatureName {  // similar to inheritance, but different because methods have to be declared
   public int Method1 { get; set; }
-  
+
   public void Method2() {
     do_something;
   }
-  
+
   public void Method3(int arg) {
     do_something
   }
@@ -5554,13 +6078,15 @@ public class ProductName : IFeatureName1, IFeatureName2 {
   public void MethodName1() {
     do_something;
   }
-  
+
   public void MethodName2() {
     do_something;
   }
 }
 ```
+
 ### c++
+
 ```c++
 // Math.h
 class Math
@@ -5568,7 +6094,7 @@ class Math
    private:
      int num1 = 2;
      int num2;
-  
+
    public:
      Math();  // constructor
      int sumOfValues();  // class method prototype
@@ -5596,8 +6122,11 @@ int main()
 ```
 
 [back to top](#table-of-contents)
+
 ## Importing Libraries
+
 ### python 2 & 3
+
 ```python
 # import module from libraries
 import module_name  # must call module_name to use
@@ -5621,7 +6150,9 @@ from .module1 import class1  # example 1
 from ..folder2 import function1 # example 2
 from . import class2 # example 3
 ```
+
 ### javascript ES5
+
 ```javascript
 // Before a module can be imported, it has to be exported first
 var objectName.functionName = function();
@@ -5636,28 +6167,33 @@ var {function1, function2} = require("moduleName");  // importing multiple funct
 // import for alternative export
 var mn = require("moduleName").moduleName;
 ```
+
 ### javascript ES6
+
 ```javascript
 // Before a module can be imported, it has to be exported first
-export default objectName;  // exporting a single or nested functions or class
+export default objectName; // exporting a single or nested functions or class
 
 // {} must be used when importing
 // method 1
-export {functionName};  // export only 1 class or function (can be used for importing multiple functions or classes
+export { functionName }; // export only 1 class or function (can be used for importing multiple functions or classes
 // method 2, can be function, class, objects, etc.
-export const functionName = () => {do_something}
-
+export const functionName = () => {
+  do_something;
+};
 
 // import class or function from module
-import "moduleName";  // import module
-import name from "moduleName";  // name can be anything if only have 1 export
-import * as name from "moduleName";  // import multiple exports as name
-import {function1} from "moduleName";  // import a function from a module of multiple exports
-import {function1 as f1} from "moduleName";  // import a function with alias
-import {function1, function2} from "moduleName";  // import multiple functions
-import name, {function1} from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
+import "moduleName"; // import module
+import name from "moduleName"; // name can be anything if only have 1 export
+import * as name from "moduleName"; // import multiple exports as name
+import { function1 } from "moduleName"; // import a function from a module of multiple exports
+import { function1 as f1 } from "moduleName"; // import a function with alias
+import { function1, function2 } from "moduleName"; // import multiple functions
+import name, { function1 } from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
 ```
+
 ### ruby
+
 ```ruby
 # import another ruby file
 load "./anotherFile.rb"  # ./ not mandatory
@@ -5665,7 +6201,9 @@ load "./anotherFile.rb"  # ./ not mandatory
 # import module files
 require_relative "moduleFileName"  # extension not required
 ```
+
 ### java
+
 ```java
 // folder name that the current file is in, all other files that are in this folder can be imported without additional code
 package com.example.demoapi.student;
@@ -5694,22 +6232,27 @@ public class Student {
   private Long id;
   @Transient
   private Integer age;
-  
+
   // using import java.time.LocalDate;
   public Integer getAge1() {
     return Period.between(dob, LocalDate.now()).getYears();
   }
-  
+
   // using import static java.time.LocalDate.*;
   public Integer getAge() {
     return Period.between(dob, now()).getYears();
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Type Conversions
+
 ### python 2 & 3
+
 ```python
 # Convert to Integer, floats will round down
 int(type_to_convert)
@@ -5729,7 +6272,9 @@ tuple(type_to_convert)  # cannot be a number
 # Convert to sets
 set(type_to_convert)  # cannot be a number
 ```
+
 ### javascript
+
 ```javascript
 // number to string
 let num = 123;
@@ -5761,7 +6306,9 @@ num = Number(str) // 12.5
 str = "12.5 kg";
 num = Number(str); // NaN
 ```
+
 ### ruby
+
 ```ruby
 # String to symbol
 # method 1
@@ -5784,7 +6331,9 @@ nums = strings.map(&:to_i)  # [1, 2, 3]
 nums = [1, 2, 3]
 strings = nums.map(&:to_s)
 ```
+
 ### java
+
 ```java
 // implicit type conversion (small value to big only)
 byte b = 1;
@@ -5811,7 +6360,9 @@ String s = "423";
 double d1 = Double.parseDouble(s);
 System.out.println(d1);  // 423.0
 ```
+
 ### c#
+
 ```c#
 // implicit type conversion (small value to big only)
 byte b = 1;
@@ -5865,10 +6416,15 @@ f or F          | fixed point | 1234.567 (F1) -> 1234.5
 x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Find Data Type
+
 ### python 2 & 3
+
 ```python
 # Get data type
 num = 123
@@ -5907,21 +6463,25 @@ y = [1]
 id(x)  # 4360090688
 id(y)  # 4359972032
 ```
+
 ### javascript
+
 ```javascript
 // Get data type: "number", "string", "boolean", "object", "undefined", "function"
 // null and arrays are classified as object
 // classes and methods are classfied as function
 let num = 123;
-typeof num;  // "number"
+typeof num; // "number"
 
 let array = [1, 2, 3];
-typeof array;  // "object"
+typeof array; // "object"
 
-let variable1 = 10 / undefined;  // NaN
-Number.isNaN(variable1);  // true
+let variable1 = 10 / undefined; // NaN
+Number.isNaN(variable1); // true
 ```
+
 ### ruby
+
 ```ruby
 # Get data type, function won't provide a specify class type
 puts "test".class  # String
@@ -5947,11 +6507,15 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 # check if object is the correct type, obj.is_a? data_type
 [1, 2].is_a? Array  # true
 ```
+
 ### java
+
 ### c#
-* typeof: takes a type name (which you specify at compile time)
-* GetType: gets the runtime type of an instance
-* is: returns true if an instance is in the inheritance tree
+
+- typeof: takes a type name (which you specify at compile time)
+- GetType: gets the runtime type of an instance
+- is: returns true if an instance is in the inheritance tree
+
 ```c#
 public class Animal { }
 public class Dog : Animal { }
@@ -5976,10 +6540,15 @@ public class MainClass {
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## String Concatenation
+
 ### python 2
+
 ```python
 string_name = "string1" + "string2"  # "string1string2"
 
@@ -5993,14 +6562,18 @@ string_name = "{} {}".format("string1", "string2")  # "string1 string2"
 # method 2
 string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
 ```
+
 ### python 3
+
 ```python
 # f string: python 3.6 and above
 string1 = "string1"
 string2 = "string2"
 string_name = f"{string1} {string2}"  # "string1 string2"
 ```
+
 - string formatting for numbers
+
 ```python
 a = 8
 
@@ -6015,18 +6588,24 @@ print(f"{a:>2}")  # " 8"
 # add 0s (can only be number 0) to the right for missing digits
 print(f"{a:>02}")  # "08"
 ```
+
 ### javascript ES5
+
 ```javascript
 // javascript allows data type mashups, numbers will be converted to strings when concatenated with a string.
-let stringName = "string1" + "string2" + 123;  // "string1string2123"
+let stringName = "string1" + "string2" + 123; // "string1string2123"
 ```
+
 ### javascript ES6
+
 ```javascript
 let string1 = "string 1 value";
 let string2 = "string 2 value";
-let stringName = `${string1} ${string2} 123`;  // "string 1 value string 2 value 123"
+let stringName = `${string1} ${string2} 123`; // "string 1 value string 2 value 123"
 ```
+
 ### ruby
+
 ```ruby
 string1 = "string1"
 string2 = "string2"
@@ -6040,7 +6619,9 @@ puts "one" + 1.to_s  # "one1"
 # %s for strings, %d for integers, %f for floats, %.3f for float with 3 decimals
 printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
+
 ### java
+
 ```java
 String string1 = "string";
 int num1 = 1;
@@ -6072,8 +6653,11 @@ String newString1 = string1.concat(Integer.toString(num1));  // "string1"
 // method 5 (%s = string, %d = "byte, short, int, long, bigint", %c = char)
 String newString2 = String.format("%s%d", string1, num1);  // "string1"
 ```
+
 - [String format reference](https://www.javatpoint.com/java-string-format)
+
 ### c#
+
 ```c#
 string string1 = "string 1 value";
 string string2 = "string 2 value";
@@ -6085,10 +6669,15 @@ string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 v
 // method 3
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## JSON
+
 ### python 2 & 3
+
 ```python
 import json  # must import to use
 
@@ -6099,37 +6688,52 @@ json.loads(json_object)
 # Convert python to JSON
 json.dumps(python_object)
 ```
+
 ### javascript
+
 ```javascript
 // JSON (JavaScript Object Notation): a lightweight, text-based data format that's based on JavaScript.
 // convert js to JSON
-let objName = {title: 'Black Panther'};
+let objName = { title: "Black Panther" };
 objName = JSON.stringify(objName);
 
 // convert JSON to js
-let objName = {"title": "Black Panther"};
+let objName = { title: "Black Panther" };
 objName = JSON.parse(objName);
 ```
+
 ### ruby
+
 ### java
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Program Entry Point
+
 ### python 2 & 3
+
 ```python
 if __name__ === "__main__":
     # do something
 ```
+
 ### javascript
+
 ```javascript
 // only works in node js
 if (require.main === module) {
   // do something
 }
 ```
+
 ### ruby
+
 ### java
+
 ### c#
+
 ```c#
 class MainClass {
   public static void Main(string[] args) {
@@ -6137,10 +6741,15 @@ class MainClass {
   }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Swapping values
+
 ### python 2 & 3
+
 ```python
 a, b = 1, 2
 # method 1
@@ -6151,7 +6760,9 @@ b = temp
 # method 2
 a, b = b, a
 ```
+
 ### javascript ES5
+
 ```javascript
 let a = 1;
 let b = 2;
@@ -6159,32 +6770,42 @@ const temp = a;
 a = b;
 b = temp;
 ```
+
 ### javascript ES6
+
 ```javascript
 [a, b] = [b, a];
 ```
+
 ### ruby
+
 ### java
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Error Handling
+
 ### python 2 & 3
-* try: lets you test a block of code for errors
-* except: except block lets you handle the error
-  * covers all error types
+
+- try: lets you test a block of code for errors
+- except: except block lets you handle the error
+  - covers all error types
     > except:
-  * define exception type (can write multiple except statements)
+  - define exception type (can write multiple except statements)
     > except NameError:
-  * save error to variable e
+  - save error to variable e
     > except ValueError as e:
-  * list of important error types
-    * AssertionError, AttributeError, EOFError, FloatingPointError, GeneratorExit, ImportError, IndexError, KeyError
-    * KeyboardInterrupt, MemoryError, NameError, NotImplementedError, OSError, OverflowError, ReferenceError, RuntimeError
-    * StopIteration, SyntaxError, IndentationError, TabError, SystemError, TypeError, UnboundLocalError, UnicodeError
-    * UnicodeEncodeError, UnicodeDecodeError, UnicodeTranslateError, ValueError, ZeroDivisionError
-* else: code to be executed if no errors were raised
-* finally: if specified, will be executed regardless if the try block raises an error or not
-  * useful to close objects and clean up resources
+  - list of important error types
+    - AssertionError, AttributeError, EOFError, FloatingPointError, GeneratorExit, ImportError, IndexError, KeyError
+    - KeyboardInterrupt, MemoryError, NameError, NotImplementedError, OSError, OverflowError, ReferenceError, RuntimeError
+    - StopIteration, SyntaxError, IndentationError, TabError, SystemError, TypeError, UnboundLocalError, UnicodeError
+    - UnicodeEncodeError, UnicodeDecodeError, UnicodeTranslateError, ValueError, ZeroDivisionError
+- else: code to be executed if no errors were raised
+- finally: if specified, will be executed regardless if the try block raises an error or not
+  - useful to close objects and clean up resources
+
 ```python
 # similar to if else
 try:  # must start with try
@@ -6196,24 +6817,30 @@ else:  # not required
 finally:  # not required
     do_something_when_try_&_except_or_else_is_completed
 ```
+
 ### javascript
-* try: lets you test a block of code for errors
-* catch: lets you handle the error
-* finally: lets you execute code, after try and catch, regardless of the result
+
+- try: lets you test a block of code for errors
+- catch: lets you handle the error
+- finally: lets you execute code, after try and catch, regardless of the result
+
 ```javascript
 try {
   doSomething;
-} catch(error) {
+} catch (error) {
   doSomethingIfErrorOccurs;
 } finally {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
+
 ### ruby
-* begin: something which might raise an exception
-* rescue: code that deals with some exception
-* else: code that runs only if no exception was raised
-* ensure: ensure that this code always runs, no matter what
+
+- begin: something which might raise an exception
+- rescue: code that deals with some exception
+- else: code that runs only if no exception was raised
+- ensure: ensure that this code always runs, no matter what
+
 ```ruby
 begin
   doSomething
@@ -6225,15 +6852,18 @@ ensure
   doSomethingWhenEverythingIsCompleted
 end
 ```
+
 ### java
-* try: lets you test a block of code for errors
-* catch: lets you handle the error
-  * use "Exception" keyword to catch all exception types
-  * use specific exception types to catch that specific exception
-    * exceptions are from java.lang library, so no imports are required
-  * catch block can be chained (specific exception with highest priority should come first)
-* finally: lets you execute code, after try and catch, regardless of the result
-  * very important for closing a file when an opened file in the try block triggered an exception
+
+- try: lets you test a block of code for errors
+- catch: lets you handle the error
+  - use "Exception" keyword to catch all exception types
+  - use specific exception types to catch that specific exception
+    - exceptions are from java.lang library, so no imports are required
+  - catch block can be chained (specific exception with highest priority should come first)
+- finally: lets you execute code, after try and catch, regardless of the result
+  - very important for closing a file when an opened file in the try block triggered an exception
+
 ```java
 try {
   doSomething;
@@ -6245,10 +6875,12 @@ try {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
+
 - try with resources statement
   - only for java 8 or later versions, can't be used on android
   - it is a try statement that declares 1 or more ressources
   - a resource is an object that must be closed after the program is finished with it
+
 ```java
 // type 1
 import java.io.FileReader;
@@ -6296,14 +6928,17 @@ public class Main {
   }
 }
 ```
+
 ### c#
-* try: lets you test a block of code for errors
-* catch: lets you handle the error
-  * use "Exception" keyword to catch all exception types
-  * use specific exception types to catch that specific exception
-  * catch block can be chained (specific exception with highest priority should come first)
-* finally: lets you execute code, after try and catch, regardless of the result
-  * very important for closing a file when an opened file in the try block triggered an exception
+
+- try: lets you test a block of code for errors
+- catch: lets you handle the error
+  - use "Exception" keyword to catch all exception types
+  - use specific exception types to catch that specific exception
+  - catch block can be chained (specific exception with highest priority should come first)
+- finally: lets you execute code, after try and catch, regardless of the result
+  - very important for closing a file when an opened file in the try block triggered an exception
+
 ```c#
 try {
   doSomething;
@@ -6315,7 +6950,9 @@ try {
   doSomethingWhenTryAndCatchIsCompleted;
 }
 ```
-* Create custom exception
+
+- Create custom exception
+
 ```c#
 public class NewExceptionName : System.Exception {
   public NewExceptionName(string message, System.Exception innerException)
@@ -6323,10 +6960,15 @@ public class NewExceptionName : System.Exception {
     {}
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Custom Error
+
 ### python 2 & 3
+
 ```python
 # raise generic exception
 raise Exception("custom message")
@@ -6334,27 +6976,34 @@ raise Exception("custom message")
 # raise specific exception
 raise ValueError("custom message")
 ```
+
 ### javascript
+
 ```javascript
 throw "custom message"; // throw a text
 
 throw 123; // throw a number
 ```
+
 ### ruby
+
 ```ruby
 # method 1
 raise errorType, "custom error message"
 # method 2
 raise errorType.new("custom error message")
 ```
+
 ### java
+
 - must use either try catch statements or be inside a conditional statement to work
+
 ```java
 // if using try catch, both throw and catch must handle the same Exception type
 try {
   // raise specific exception
   throw new SpecificExceptionName("custom message");
-  
+
   // raise generic exception
   throw new Exception("custom message");
 } catch (SpecificExceptionName e) {
@@ -6367,7 +7016,9 @@ if (true) {
   throw new Exception("custom message");
 }
 ```
+
 ### c#
+
 ```c#
 // raise generic exception
 throw new System.Exception("custom message");
@@ -6376,14 +7027,24 @@ throw new System.Exception("custom message");
 // raise specific exception
 throw new SpecificExceptionName("custom message");
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Asynchronous
-* Handling asynchronous code (making it synchronous)
+
+- Handling asynchronous code (making it synchronous)
+
 ### python
+
 ### javascript ES5
+
 ```javascript
-var posts = [{title: "Post 1", body: "body of post 1"}, {title: "Post 2", body: "body of post 2"}];
+var posts = [
+  { title: "Post 1", body: "body of post 1" },
+  { title: "Post 2", body: "body of post 2" },
+];
 
 // callback is required if need getPost to display data after createPost is called
 // reason is because createPost takes longer time to complete compared to getPost
@@ -6405,11 +7066,11 @@ function getPosts() {
     console.log(output);
   }, 1000);
 }
-createPost({title: "Post 3", body: "body of post 3"}, getPosts);
+createPost({ title: "Post 3", body: "body of post 3" }, getPosts);
 
 // method 2:
 // Using anonymous callback function can lead to callback hell if over used
-createPost({title: "Post 3", body: "body of post 3"}, function() {
+createPost({ title: "Post 3", body: "body of post 3" }, function () {
   setTimeout(() => {
     var output = "";
     posts.forEach((post, index) => {
@@ -6419,17 +7080,19 @@ createPost({title: "Post 3", body: "body of post 3"}, function() {
   }, 1000);
 });
 ```
+
 ### javascript ES6
+
 ```javascript
 // Change createPost to return a Promise
 function createPost(post) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (post) {
-        posts.push(post)
+        posts.push(post);
         resolve();
       } else {
-        reject("error")
+        reject("error");
       }
     }, 2000);
   });
@@ -6437,30 +7100,33 @@ function createPost(post) {
 
 // method 3
 // use .then() instead of callback
-createPost({title: "Post 3", body: "body of post 3"})
-.then(getPosts) // can chain multiple promises by adding .then(do_something)
-.catch(error => console.log(error));
+createPost({ title: "Post 3", body: "body of post 3" })
+  .then(getPosts) // can chain multiple promises by adding .then(do_something)
+  .catch((error) => console.log(error));
 
 // method 4
 // use Promise.all
-Promise.all([ // can chain multiple promises
-  createPost({title: "Post 3", body: "body of post 3"}),
-])
-.then(values => {
+Promise.all([
+  // can chain multiple promises
+  createPost({ title: "Post 3", body: "body of post 3" }),
+]).then((values) => {
   getPosts();
-  console.log(values) // output array of results e.g [promise1_output, promise2_output, ...]
+  console.log(values); // output array of results e.g [promise1_output, promise2_output, ...]
 });
 ```
+
 ### javascript ES8
+
 ```javascript
 // method 5
 // use async / await when calling functions
 async function init() {
-  await createPost({title: "Post 3", body: "body of post 3"});
+  await createPost({ title: "Post 3", body: "body of post 3" });
   getPosts();
 }
 init();
 ```
+
 - the difference between `process.nextTick` vs asynchronous / callback
   - process.nextTick() runs immediately after the current synchronous execution, before I/O and timers.
     - it is not part of the event loop phases! Instead, it uses the Next Tick Queue, which has the highest priority.
@@ -6501,9 +7167,13 @@ await run();
 // promise
 // timeout
 ```
+
 ### ruby
+
 ### java
+
 ### c#
+
 ```c#
 class MainClass {
     public static void Main(string[] args) {
@@ -6524,10 +7194,10 @@ class MainClass {
     }
 }
 
-public class Worker { 
+public class Worker {
     public bool IsComplete { get; private set; }
 
-    public async void DoWork() {  // add async to make function an async 
+    public async void DoWork() {  // add async to make function an async
         this.IsComplete = false;
         System.Console.WriteLine("Doing work");
         await LongOperation();  // wait for the function to finish before proceeding
@@ -6543,10 +7213,15 @@ public class Worker {
     }
 }
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Math
+
 ### python 3
+
 ```python
 import math
 
@@ -6584,11 +7259,13 @@ import random
 # random integer
 random.randint(1, 3)  # any number from 1 to 3
 ```
-### javascript
-```javascript
-Math.abs(-1);  // 1
 
-Math.pow(-4, 2)  // 16, same as (-4) ** 2
+### javascript
+
+```javascript
+Math.abs(-1); // 1
+
+Math.pow(-4, 2); // 16, same as (-4) ** 2
 
 // random integer from 0 to 9
 Math.floor(Math.random() * 10);
@@ -6604,8 +7281,11 @@ Math.floor(Math.random() * 11);
 // random integer from 1 to 10
 Math.floor(Math.random() * 10) + 1;
 ```
+
 ### ruby
+
 ### java
+
 ```java
 import java.util.Random;
 
@@ -6627,7 +7307,9 @@ Random rand = new Random();
 System.out.println("Random Number Between 0 and 10 " + (rand.nextInt(11)));
 System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));  // rand.nextInt((max - min) + 1) + min;
 ```
+
 ### c#
+
 ```c#
 double number1 = 10.5;
 double number2 = 15;
@@ -6644,7 +7326,9 @@ System.Console.WriteLine("Math.Sqrt(number1) " + (Math.Sqrt(number1)));  // Math
 Random rand = new Random();
 System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 ```
+
 ### c++
+
 ```c++
 // Seed the random number generator with the time method, then convert value to integer
 srand((int)time(0));
@@ -6653,8 +7337,11 @@ int randomNumber = rand() % 100;  // number range from 0 to 99
 ```
 
 [back to top](#table-of-contents)
+
 ## Date and Time
+
 ### python3
+
 ```python
 from datetime import date, datetime, timedelta
 import calendar
@@ -6762,14 +7449,20 @@ for m in range(1, 13):
     meetday = weekone[calendar.FRIDAY] if weekone[calendar.FRIDAY] != 0 else weektwo[calendar.FRIDAY]
     print("%10s %2d" % (calendar.month_name[m], meetday))
 ```
+
 ### javascript
+
 ### ruby
+
 ```ruby
 # get current date and time
 Time.now
 ```
+
 ### java
+
 - must import
+
 ```java
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -6779,6 +7472,7 @@ import java.time.LocalDateTime;  // java 8
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 ```
+
 ```java
 Date d = new Date();  // Fri Jul 09 00:46:09 SGT 2021
 
@@ -6811,7 +7505,9 @@ System.out.println(dtf.format(ld));  // 2009-01-28
 DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("M/d/yyyy");
 System.out.println(dtf2.format(ld));  // 1/28/2009
 ```
+
 ### c#
+
 ```c#
 // Set date (time set to default at 12:00:00 AM)
 System.DateTime newDate = new System.DateTime(2015, 1, 1);
@@ -6840,11 +7536,17 @@ System.Console.WriteLine(now.ToString());  // 1/14/2020 10:23:09 AM
 System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
 System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## File System
+
 ### python
+
 - Modifying files
+
 ```python
 # Open a file for writing and create file if it doesn't exist
 # file will be rewritten if contents already exists
@@ -6874,7 +7576,9 @@ if f.mode == "r":
     for x in fl:
         print(x)
 ```
+
 - path utilities
+
 ```python
 import os
 from os import path
@@ -6906,7 +7610,9 @@ td = datetime.datetime.now() - datetime.datetime.fromtimestamp(
 print(td)  # 0:19:02.185160
 print(td.total_seconds())  # 1142.18516
 ```
+
 - copy and zip files
+
 ```python
 import os
 from os import path
@@ -6918,7 +7624,7 @@ from zipfile import ZipFile
 if path.exists("textfile"):
     src = path.realpath("textfile")  # get path of file in current directory
     dst = src + ".bak"  # create a backup copy by appending "bak"
-    
+
     shutil.copy(src, dst)  # copy over only the the contents of file
     shutil.copytree(src, dst)  # copy over contents and all other metadata of file
 
@@ -6932,9 +7638,13 @@ if path.exists("textfile"):
         newzip.write("textfile")
         newzip.write("textfile.bak")
 ```
+
 ### javascript
+
 ### ruby
+
 ### java
+
 ```java
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -6967,6 +7677,7 @@ public class Main {
   }
 }
 ```
+
 ```java
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -6979,7 +7690,7 @@ public class Main {
     String subDirectory = "";  // parent folder where the file is located
     String sourceFilename = "textfile";
     String targetFilename = "newtargetfile3";
-    
+
     // only for java 7 or later versions, not available for android
     Path sourceFile = Paths.get(subDirectory, sourceFilename);
     Path targetFile = Paths.get(subDirectory, targetFilename);
@@ -6993,11 +7704,13 @@ public class Main {
   }
 }
 ```
-- using ```commons-io``` library to copy file
+
+- using `commons-io` library to copy file
   - for latest versions and for android
-  - download the ```commons-io``` jar file
-  - create a ```lib``` folder inside the root folder of your project and move the ```commons-io``` jar file into it
+  - download the `commons-io` jar file
+  - create a `lib` folder inside the root folder of your project and move the `commons-io` jar file into it
   - then add the jar file into the class path
+
 ```java
 import org.apache.commons.io.FileUtils;  // common-io library
 
@@ -7008,7 +7721,7 @@ public class Main {
   public static void main(String[] args) {
     File sourceFile = new File("path/to/file.txt");
     File targetFile = new File("path/to/newfile.txt");
-    
+
     try {
       // use commons-io
       FileUtils.copyFile(sourceFile, targetFile);
@@ -7018,7 +7731,9 @@ public class Main {
   }
 }
 ```
+
 - reading a text file over the internet
+
 ```java
 import java.net.URL;
 import java.io.InputStream;
@@ -7059,7 +7774,9 @@ public class Main {
   }
 }
 ```
+
 ### c#
+
 ```c#
 // Create or Save file
 string filename = @"/my/file/path/fileFolder/filename.txt";
@@ -7135,34 +7852,47 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 // Open file (not in app)
 System.Diagnostics.Process.Start(filename);
 ```
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Access modifier
-* use to hide the implementation details of a class
+
+- use to hide the implementation details of a class
+
 ### python
+
 ### javascript
+
 ### typescript
-* 3 types
-  * Public: 
-    * By default, members (properties and methods) of TypeScript class are public
-    * Public members are accessible everywhere without restrictions
-  * Private: 
-    * A private member cannot be accessed outside of its containing class
-    * Private members can be accessed only within the class.
-  * Protected: 
-    * A protected member cannot be accessed outside of its containing class
-    * Protected members can be accessed only within the class and by the instance of its sub/child class.
+
+- 3 types
+  - Public:
+    - By default, members (properties and methods) of TypeScript class are public
+    - Public members are accessible everywhere without restrictions
+  - Private:
+    - A private member cannot be accessed outside of its containing class
+    - Private members can be accessed only within the class.
+  - Protected:
+    - A protected member cannot be accessed outside of its containing class
+    - Protected members can be accessed only within the class and by the instance of its sub/child class.
+
 ### ruby
+
 ### java
+
 ### c#
-* 6 types
-  * public: accessible from everywhere in project, no accessibility restrictions
+
+- 6 types
+  - public: accessible from everywhere in project, no accessibility restrictions
+
 ```c#
 class NumberClass
 {
     public int number = 10;
 }
- 
+
 class MainClass
 {
     static void Main(string[] args)
@@ -7172,30 +7902,34 @@ class MainClass
     }
 }
 ```
-  * private: accessible only from inside a class or a structure, can't access them outside the class they are created
+
+- private: accessible only from inside a class or a structure, can't access them outside the class they are created
+
 ```c#
 class NumberClass
 {
     private int number = 10;
 }
- 
+
 class MainClass
 {
     static void Main(string[] args)
     {
         NumberClass num = new NumberClass();
-        System.Console.WriteLine(num.number);  // Error. We can't access the number variable because 
+        System.Console.WriteLine(num.number);  // Error. We can't access the number variable because
         // it has the private access modifier and its only accessible in the NumberClass class
     }
 }
 ```
-  * protected: object is accessible inside the class and in all classes that derive from that class
+
+- protected: object is accessible inside the class and in all classes that derive from that class
+
 ```c#
 class NumberClass
 {
     protected int number = 10;  // we can access this variable inside this class
 }
- 
+
 class DerivedClass: NumberClass  // this is inheritance. DerivedClass derives from the NumberClass class
 {
     void Print()
@@ -7203,31 +7937,33 @@ class DerivedClass: NumberClass  // this is inheritance. DerivedClass derives fr
         System.Console.WriteLine(number);  // we can access it in this class as well because it derives from the NumberClass class
     }
 }
- 
+
 class MainClass
 {
     void Print()
     {
         NumberClass num = new NumberClass();
-        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level. 
+        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level.
         // The Program class doesn't derive from the NumberClass
     }
 }
 ```
-  * internal: object is accessible only inside its own assembly (project) but not in other assemblies (projects)
+
+- internal: object is accessible only inside its own assembly (project) but not in other assemblies (projects)
+
 ```c#
 //First Project (ASSEMBLY)
 public class NumberClassInFirstProject
 {
     internal int number = 10;  // we can access this variable inside this class
 }
- 
+
 class Program1
 {
     public static void Main()
     {
         NumberClassInFirstProject num = new NumberClassInFirstProject();
-        System.Console.WriteLine(num.number);  // This is OK. Anywhere in this project (assembly) 
+        System.Console.WriteLine(num.number);  // This is OK. Anywhere in this project (assembly)
         // we can access the number variable.
     }
 }
@@ -7239,19 +7975,21 @@ class Program2
     public static void Main()
     {
         NumberClassInFirstProject num = new NumberClassInFirstProject();
-        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level. 
+        System.Console.WriteLine(num.number);  // Error. The number variable is inaccessible due to its protection level.
         // The Program class in second project can't access the internal members from another project
     }
 }
 ```
-  * protected internal: a combination of protected and internal, can access the protected internal member only in the same assembly (project) or in a derived class in other assemblies (projects)
+
+- protected internal: a combination of protected and internal, can access the protected internal member only in the same assembly (project) or in a derived class in other assemblies (projects)
+
 ```c#
 //First Project (ASSEMBLY)
 public class NumberClassInFirstProject
 {
     protected internal int number = 10;  // we can access this variable inside this class
 }
- 
+
 class Program1
 {
     public static void Main()
@@ -7260,7 +7998,7 @@ class Program1
         System.Console.WriteLine(num.number);  // This is OK. Anywhere in this project (assembly) we can access the number variable.
     }
 }
- 
+
 //Second project (ASSEMBLY)
 class Program2: NumberClassInFirstProject  // Inheritance
 {
@@ -7270,24 +8008,35 @@ class Program2: NumberClassInFirstProject  // Inheritance
     }
 }
 ```
-  * private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
+
+- private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Iterators
+
 ### python
+
 ### javascript
+
 ```javascript
 let i = [1, 2];
 
 let iterator = i[Symbol.iterator]();
 
-iterator.next();  // { value: 1, done: false }
-iterator.next();  // { value: 2, done: false }
-iterator.next();  // { value: undefined, done: true }
+iterator.next(); // { value: 1, done: false }
+iterator.next(); // { value: 2, done: false }
+iterator.next(); // { value: undefined, done: true }
 ```
+
 ### ruby
+
 ### java
+
 - using iterators to loop through collections
+
 ```java
 // import java.util.List;
 // import java.util.ArrayList;
@@ -7335,18 +8084,24 @@ for (String key : keys) {
   System.out.println(map.get(key));
 }
 ```
+
 ### c#
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Generators
+
 ### python
+
 ```python
 def generator_example():
     yield 1
 
 x = generator_example():
 next(x)  # 1
-    
+
 def infinite_maker():
     i = 0
     while True:
@@ -7386,14 +8141,16 @@ for i in x:
     x.send(10 ** (digits))  # 0 12 102
 
 ```
+
 ### javascript
+
 ```javascript
 function* generatorExample1() {
   yield 1;
   yield 2;
 }
 
-function *generatorExample2() {
+function* generatorExample2() {
   yield 1;
   yield 2;
 }
@@ -7401,14 +8158,13 @@ function *generatorExample2() {
 let iterator1 = generatorExample1();
 let iterator2 = generatorExample2();
 
-iterator1.next();  // { value: 1, done: false }
-iterator1.next();  // { value: 2, done: false }
-iterator1.next();  // { value: undefined, done: true }
+iterator1.next(); // { value: 1, done: false }
+iterator1.next(); // { value: 2, done: false }
+iterator1.next(); // { value: undefined, done: true }
 
-iterator2.next();  // { value: 1, done: false }
-iterator2.next();  // { value: 2, done: false }
-iterator2.next();  // { value: undefined, done: true }
-
+iterator2.next(); // { value: 1, done: false }
+iterator2.next(); // { value: 2, done: false }
+iterator2.next(); // { value: undefined, done: true }
 
 // does not cause stackoverflow for infinite loops
 function* infiniteMaker() {
@@ -7420,43 +8176,50 @@ function* infiniteMaker() {
 }
 
 let iterator3 = infiteMaker();
-iterator3.next();  // { value: 0, done: false }
-iterator3.next();  // { value: 1, done: false }
-
+iterator3.next(); // { value: 0, done: false }
+iterator3.next(); // { value: 1, done: false }
 
 // nested generators
 function* nestedGenerator() {
-  yield* generatorExample1();  // add * after yield to add another generator
+  yield* generatorExample1(); // add * after yield to add another generator
   yield 3;
 }
 
 let iterator4 = nestedGenerator();
-iterator4.next();  // { value: 1, done: false }
-iterator4.next();  // { value: 2, done: false }
-iterator4.next();  // { value: 3, done: false }
-iterator4.next();  // { value: undefined, done: true }
-
+iterator4.next(); // { value: 1, done: false }
+iterator4.next(); // { value: 2, done: false }
+iterator4.next(); // { value: 3, done: false }
+iterator4.next(); // { value: undefined, done: true }
 
 // using return keyword will stop the generator
 function* generatorWithReturn() {
   yield 1;
-  return "hello";  // done will become true here
+  return "hello"; // done will become true here
   yield 2;
 }
 
 let iterator5 = generatorWithReturn();
-iterator5.next();  // { value: 1, done: false }
-iterator5.next();  // { value: "hello", done: true }
-iterator5.next();  // { value: undefined, done: true }
+iterator5.next(); // { value: 1, done: false }
+iterator5.next(); // { value: "hello", done: true }
+iterator5.next(); // { value: undefined, done: true }
 ```
+
 ### ruby
+
 ### java
+
 ### c#
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Fetching Web Data
+
 ### python
+
 - fetching a webpage
+
 ```python
 import urllib.request
 
@@ -7467,7 +8230,9 @@ print(response.getcode())  # get response status code
 data = response.read()
 print(data)  # google html tags
 ```
+
 - fetching a json from an api
+
 ```python
 import urllib.request
 import json
@@ -7499,7 +8264,9 @@ if (status_code == 200):
 else:
     print("Error")
 ```
+
 - manipulate XML
+
 ```python
 import xml.dom.minidom
 
@@ -7523,17 +8290,27 @@ print(f"%d skills: {skills.length}")
 for skill in skills:
     print(skill.getAttribute("name"))
 ```
+
 ### Javascript
+
 ### ruby
+
 ### java
+
 ### c#
+
 ### c++
+
 [back to top](#table-of-contents)
+
 ## Enum
+
 ### python 3
+
 ```python
 from enum import Enum
 ```
+
 ```python
 class Methods(Enum):
   GET = "GET_VALUE"
@@ -7554,7 +8331,9 @@ print("GET" in Methods._value2member_map_)  # False
 print("GET_VALUE" in Methods._member_names_)  # False
 print("GET" in Methods._member_names_)  # True
 ```
+
 ### Javascript
+
 ```javascript
 const color = {
   Red: 1,
@@ -7562,30 +8341,37 @@ const color = {
   Blue: 3,
 };
 ```
+
 ### Typescript
+
 - Enum: By default, enums begin numbering their members starting at 0
+
 ```typescript
 enum Color {
   Red,
   Green,
   Blue,
 }
-let c: Color = Color.Green;  // 1
-let colorName: string = Color[1];  // "Green"
+let c: Color = Color.Green; // 1
+let colorName: string = Color[1]; // "Green"
 
 enum Color {
   Red = 1,
   Green,
   Blue,
 }
-let c: Color = Color.Green;  // 2
-let colorName: string = Color[2];  // "Green"
+let c: Color = Color.Green; // 2
+let colorName: string = Color[2]; // "Green"
 ```
+
 ### ruby
+
 ### java
+
 - ENUM
- - Enumerations are lists of possible values that you can use for any particular variable
- - An enumeration in java is called an enum class.
+- Enumerations are lists of possible values that you can use for any particular variable
+- An enumeration in java is called an enum class.
+
 ```java
 // usual enums
 public enum Names1 {
@@ -7595,13 +8381,13 @@ public enum Names1 {
 // setting a string value for enums
 public enum Names2 {
   JOHN("John"), PETER("Peter");
-  
+
   private String name;
-  
+
   Names2(String name) {
     this.name = name;
   }
-  
+
   @Override
   public String toString() {
     return this.name;
@@ -7611,11 +8397,11 @@ public enum Names2 {
 public class Person {
   private Names1 name1 = Names1.JOHN;  // using enum to set a constant variable
   private Names2 name2 = Names2.JOHN;
-  
+
   public Names1 getName1() {
     return this.name1;
   }
-  
+
   public Names2 getName2() {
     return this.name2;
   }
@@ -7629,11 +8415,14 @@ public class Main {
   }
 }
 ```
+
 ### c#
-* Enum
-  * Used to manage number type constants for better clarity and maintainability
-  * Can be declared in namespace, in classes
-  * By default, enums begin numbering their members starting at 0
+
+- Enum
+  - Used to manage number type constants for better clarity and maintainability
+  - Can be declared in namespace, in classes
+  - By default, enums begin numbering their members starting at 0
+
 ```c#
 // not reccommended method
 const int RegularAirMail = 1;
@@ -7659,7 +8448,9 @@ ShippingMethod method = (int) ShippingMethod.Express;  // 3
 // retrieve string value with number value
 ShippingMethod methodType = (ShippingMethod) 3;  // Express
 ```
+
 ### c++
+
 ```c++
 enum Color { red, green, blue };
 
@@ -7672,17 +8463,19 @@ int red = 0;  // throws a compilation error
 
 // enums are not type safe
 enum Gender { male, female };
-Gender gender = male; 
+Gender gender = male;
 Color color = red;
 if (gender == color)  // gender != color but will return true as both value are 0
 {
    cout << "Equal";
 }
 ```
-* Enum class / scoped enumerations
-  * makes enumeration both strongly typed & strongly scoped
-  * does not allow implicit conversion to int
-  * does not compare enumerators from a different enumerations
+
+- Enum class / scoped enumerations
+  - makes enumeration both strongly typed & strongly scoped
+  - does not allow implicit conversion to int
+  - does not compare enumerators from a different enumerations
+
 ```c++
 // Declaration
 enum class Color{ Red, Green, Blue};
@@ -7692,16 +8485,21 @@ Color col = Color::Red;
 ```
 
 [back to top](#table-of-contents)
+
 ## Language Specific
+
 ### python
+
 - Shebang line / hashbang
   - it is a common pattern for unix based systems
   - allows a script to be invoked from the command line
   - written on the first line in the python file
-  - ```#!``` marks the shebang
+  - `#!` marks the shebang
+
 ```python
 #!/usr/bin/env python3
 ```
+
 ```python
 # List comprehension
 # original method
@@ -7753,6 +8551,7 @@ set1.clear()  # set()
 # Create a set that cannot be modified
 set_fixed = frozenset([1, 2, 3])
 ```
+
 ```python
 # modify global variable from local
 var = "from global"
@@ -7765,6 +8564,7 @@ def convert_local_to_global:
 
 print(var)  # from local
 ```
+
 ```python
 # undefine an existing variable
 var = 123
@@ -7775,10 +8575,12 @@ del var
 
 print(var)  # NameError: name 'var' is not defined
 ```
+
 ```python
 # find the sum of values that are True in an array
 sum([True, False, True])  # 2
 ```
+
 ```python
 # convert character to number
 ord("a")  # 97
@@ -7786,12 +8588,14 @@ ord("a")  # 97
 # convert number to character
 chr(97)  # a
 ```
+
 - function annotatins
-- ```int```, ```float```, ```bool```, ```str```, ```bytes```, ```None```
-- python 3.8 & earlier, ```list```, ```set```, ```dict```, ```tuple```
-  - ```list[int]```, ```dict[float, str]```, ```Tuple[int, ...]```
+- `int`, `float`, `bool`, `str`, `bytes`, `None`
+- python 3.8 & earlier, `list`, `set`, `dict`, `tuple`
+  - `list[int]`, `dict[float, str]`, `Tuple[int, ...]`
 - python 3.9+
   - can import types from typing library
+
 ```python
 from typing import List, Set, Dict, Tuple, Optional, Callable, Iterator, Union, Any, cast, Mapping, MutableMapping, Sequence, Match, AnyStr, IO
 
@@ -7799,10 +8603,10 @@ isValid: bool = True;
 
 def foo(a:”int”, b:”float”=5.0)  -> ”int”:
     pass
-    
-  
+
+
 x: Optional[str] = some_function()  # use Optional[] for values that could be None
-  
+
 x: Callable[[int, float], float] = f
 
 # A generator function that yields ints is secretly just a function that
@@ -7821,14 +8625,14 @@ def send_email(address: Union[str, List[str]],
                subject='',
                body: Optional[List[str]] = None
                ) -> bool:
-                 
+
 # An argument can be declared positional-only by giving it a name starting with two underscores:
 def quux(__x: int) -> None:
     pass
 
 quux(3)  # Fine
 quux(__x=3)  # Error
-  
+
 # To find out what type mypy infers for an expression anywhere in
 # your program, wrap it in reveal_type().  Mypy will print an error
 # message with the type; remove it again before running the code.
@@ -7921,7 +8725,9 @@ def get_sys_IO(mode: str = 'w') -> IO[str]:
     else:
         return sys.stdout
 ```
+
 - Async await
+
 ```python
 import asyncio
 
@@ -7933,51 +8739,59 @@ async def countdown35(tag: str, count: int) -> str:
         count -= 1
     return "Blastoff!"
 ```
+
 ### javascript
+
 - Set
+
 ```javascript
 // Create a Set
-const letters = new Set(["a", "b"]);  // or new Set();
+const letters = new Set(["a", "b"]); // or new Set();
 
 // Add Values to the Set
 letters.add("c");
 
 // size of set
-letters.size;  // 3
+letters.size; // 3
 
 // check if value exist
-letters.has("a");  // true
+letters.has("a"); // true
 
 // delete an element
 letters.delete("a");
 
 // loop through a set, keys and values are the same
-for (const letter of letters.keys()) {  // similar to letters.values
+for (const letter of letters.keys()) {
+  // similar to letters.values
   console.log(letter);
 }
 
 // loop through a set and get both keys and values
-for (const letter of letters.entries()) {  // similar to letters.values
-  console.log(letter);  // ["b", "b"]
+for (const letter of letters.entries()) {
+  // similar to letters.values
+  console.log(letter); // ["b", "b"]
 }
 
 // delete everything in the set
 letters.clear();
 ```
+
 ```javascript
 // convert character at index 0 to number
-"a".charCodeAt();  // 97
+"a".charCodeAt(); // 97
 
 // convert character at a specific index to number
-"abc".charCodeAt(1);  // 98
+"abc".charCodeAt(1); // 98
 
 // convert number to character
-String.fromCharCode(97);  // "a"
+String.fromCharCode(97); // "a"
 ```
-* Explicit Binding
-  * choose what we want the context of "this" to be by using call, apply or bind
-  * by refering to the call, apply, or bind methods, you can determine the value of "this"
-  * can only be used on FUNCTIONS
+
+- Explicit Binding
+  - choose what we want the context of "this" to be by using call, apply or bind
+  - by refering to the call, apply, or bind methods, you can determine the value of "this"
+  - can only be used on FUNCTIONS
+
 ```javascript
 /*
 NAME OF METHOD  | PARAMETERS                | INVOKE IMMEDIATELY?
@@ -8028,14 +8842,17 @@ var foo = {
 }
 foo.say(); // prints "Hi Foo", if without bind(this), prints "Hi undefined"
 ```
-* Proxy
-  * checks for the number of times the field in the object has been accessed
-  * each time the field has been accessed, the defined logic will occur
+
+- Proxy
+  - checks for the number of times the field in the object has been accessed
+  - each time the field has been accessed, the defined logic will occur
+
 ```javascript
 const target = {};
 const handler = {
   get: function (targetObj, field) {
-    if (field === "nextId") {  // field name must be the same when called
+    if (field === "nextId") {
+      // field name must be the same when called
       if (targetObj[field] === undefined) {
         targetObj[field] = 1;
         return targetObj[field];
@@ -8048,19 +8865,24 @@ const handler = {
 };
 
 const proxy = new Proxy(target, handler);
-console.log(proxy.nextId);  // 1  (field name must be the same as when doing the conditional check)
-console.log(proxy.nextId);  // 2
-console.log(proxy.nextId);  // 3
+console.log(proxy.nextId); // 1  (field name must be the same as when doing the conditional check)
+console.log(proxy.nextId); // 2
+console.log(proxy.nextId); // 3
 ```
+
 ### typescript
-* Declaring with type as "any": use to declare variable type if you do not know its type
-  * will receive an error if use methods for the wrong type (no auto checking)
+
+- Declaring with type as "any": use to declare variable type if you do not know its type
+  - will receive an error if use methods for the wrong type (no auto checking)
+
 ```typescript
 let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false; // okay, definitely a boolean
 ```
-* Tuples: allow you to express an array with a fixed number of elements whose types are known, but need not be the same (immutable)
+
+- Tuples: allow you to express an array with a fixed number of elements whose types are known, but need not be the same (immutable)
+
 ```typescript
 // Declare a tuple type
 let x: [string, number];
@@ -8069,20 +8891,27 @@ x = ["hello", 10]; // OK
 // Initialize it incorrectly
 x = [10, "hello"]; // Error
 ```
-* Generics
+
+- Generics
+
 ```typescript
 // "T" can be name as anything, used "T" due to convention
-function genericFunc<T>(value: T): T {  // T is the type base on the value type given in the parameter when called
+function genericFunc<T>(value: T): T {
+  // T is the type base on the value type given in the parameter when called
   return value;
 }
 
-console.log(genericFunc("str type"));  // type are declared base on the input value type
+console.log(genericFunc("str type")); // type are declared base on the input value type
 console.log(genericFunc(123));
 console.log(genericFunc(false));
 ```
+
 ### ruby
+
 ### java
+
 - Number formatting
+
 ```java
 long longValue = 10_000_000;
 // method 1
@@ -8095,7 +8924,9 @@ Locale locale = new Locale("da", "DK");  // set as Denmark
 NumberFormat formatter = NumberFormat.getNumberInstance(locale);
 String formatted = formatter.format(lognValue);  // "10.000.000" (dk locale)
 ```
+
 - Currency formatting
+
 ```java
 long longValue = 10_000_000.00;
 // method 1
@@ -8108,7 +8939,9 @@ Locale locale = new Locale("da", "DK");  // set as Denmark
 NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
 String formatted = formatter.format(lognValue);  // "kr10.000.000,00" (dk locale)
 ```
+
 - Integer formatting
+
 ```java
 long longValue = 10_000_000.89;
 // method 1
@@ -8121,13 +8954,17 @@ Locale locale = new Locale("da", "DK");  // set as Denmark
 NumberFormat formatter = NumberFormat.getIntegerInstance(locale);
 String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
 ```
+
 - double colon operator / method reference operator
-  - ```<Class name>::<method name>```
+
+  - `<Class name>::<method name>`
   - can be used for
+
     - a static method
+
     ```java
     import java.util.*;
-  
+
     class GFG {
       // static function to be called
       static void someFunction(String s)
@@ -8141,42 +8978,46 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
         list.add("Geeks");
         list.add("For");
         list.add("GEEKS");
-  
+
         // call the static method
         // using double colon operator
         list.forEach(GFG::someFunction);
       }
     }
     ```
+
     - an instance method
+
     ```java
     import java.util.*;
-  
+
     class GFG {
       // instance function to be called
       void someFunction(String s)
       {
         System.out.println(s);
       }
-  
+
       public static void main(String[] args)
       {
         List<String> list = new ArrayList<String>();
         list.add("Geeks");
         list.add("For");
         list.add("GEEKS");
-  
+
         // call the instance method
         // using double colon operator
         list.forEach((new GFG())::someFunction);
       }
     }
     ```
+
     - super method
+
     ```java
     import java.util.*;
     import java.util.function.*;
-  
+
     class Test {
       // super function to be called
       String print(String str)
@@ -8184,7 +9025,7 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
         return ("Hello " + str + "\n");
       }
     }
-  
+
     class GFG extends Test {
       // instance method to override super method
       @Override
@@ -8193,13 +9034,13 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
         // call the super method
         // using double colon operator
         Function<String, String> func = super::print;
-        
+
         String newValue = func.apply(s);
         newValue += "Bye " + s + "\n";
         System.out.println(newValue);
         return newValue;
       }
-  
+
       // Driver code
       public static void main(String[] args)
       {
@@ -8207,56 +9048,60 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
         list.add("Geeks");
         list.add("For");
         list.add("GEEKS");
-        
+
         // call the instance method
         // using double colon operator
         list.forEach(new GFG()::print);
       }
     }
     ```
+
     - Instance method of an arbitrary object of a particular type
+
     ```java
-    import java.util.*; 
-  
-    class Test { 
+    import java.util.*;
+
+    class Test {
       String str=null;
-      
+
       Test(String s)
       {
         this.str=s;
       }
-      // instance function to be called 
-      void someFunction() 
-      { 
-        System.out.println(this.str); 
-      } 
-    } 
-  
-    class GFG { 
-      public static void main(String[] args) 
-      { 
-        List<Test> list = new ArrayList<Test>(); 
-        list.add(new Test("Geeks")); 
-        list.add(new Test("For")); 
-        list.add(new Test("GEEKS")); 
-  
-        // call the instance method 
-        // using double colon operator 
-        list.forEach(Test::someFunction); 
-      } 
+      // instance function to be called
+      void someFunction()
+      {
+        System.out.println(this.str);
+      }
+    }
+
+    class GFG {
+      public static void main(String[] args)
+      {
+        List<Test> list = new ArrayList<Test>();
+        list.add(new Test("Geeks"));
+        list.add(new Test("For"));
+        list.add(new Test("GEEKS"));
+
+        // call the instance method
+        // using double colon operator
+        list.forEach(Test::someFunction);
+      }
     }
     ```
+
     - a constructor
+
     ```java
     import java.util.*;
-  
+
     class GFG {
       // Class constructor
       public GFG(String s)
       {
         System.out.println("Hello " + s);
       }
-  
+
       // Driver code
       public static void main(String[] args)
       {
@@ -8264,25 +9109,28 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
         list.add("Geeks");
         list.add("For");
         list.add("GEEKS");
-  
+
         // call the class constructor
         // using double colon operator
         list.forEach(GFG::new);
       }
     }
     ```
+
 ### c#
-* Overloading
-  * having multiple similar methods with different signatures
-  * allows multiple different input data types for the same feature
+
+- Overloading
+  - having multiple similar methods with different signatures
+  - allows multiple different input data types for the same feature
+
 ```c#
 // Overloading constructors
-// overloaded constructors are separate 
+// overloaded constructors are separate
 public class Print {
   public Print() {
     System.Console.Write("test");
   }
-  
+
   public Print(string x) {
     System.Console.Write(x);
   }
@@ -8301,7 +9149,7 @@ public class Print {
   public Print() {
     System.Console.Write("first");
   }
-  
+
   public Print(string x) : this() {  // add ": this()" to link with default constructor
     System.Console.Write(x);
   }
@@ -8318,26 +9166,28 @@ class MainClass {
 public class Point {
   public int X;
   public int Y;
-  
+
   public Point(int x, int y) {  // constructor
     this.X = x;
     this.Y = y;
   }
-  
+
   public void Move (int x, int y) {
     this.X = x;
     this.Y = y;
   }
-  
+
   public void Move(Point newLocation) {  // overloading the 1st Move method
     Move(newLocation.X, newLocation.Y);
   }
 }
 ```
-* Overflowing
-  * c# does not check for overflow
-    * this means that value of a variable can be modified during runtime and when the value goes beyond the boundary of it's data type, overflow will occur
-    * e.g.: byte num = 255; num++;  // num value will be the surplus value (in this case 0)
+
+- Overflowing
+  - c# does not check for overflow
+    - this means that value of a variable can be modified during runtime and when the value goes beyond the boundary of it's data type, overflow will occur
+    - e.g.: byte num = 255; num++; // num value will be the surplus value (in this case 0)
+
 ```c#
 // If overflow is not desired, use checked keyword to enable overflow checking
 // In the following example, increment will not occur and an exception will be thrown, which will cause an error
@@ -8346,12 +9196,14 @@ checked {
   number++;
 }
 ```
-* Ref Modifier
-  * Modifies value type
-  * when pasing a value type to a method, a copy of the variable is sent to the method
-    * changes applied to that variable in the method will not be visible upon return from the method
-  * the value type can be modified using the ref modifier
-    * when the ref modifier is used, a reference to the original variable will be sent to the target method
+
+- Ref Modifier
+  - Modifies value type
+  - when pasing a value type to a method, a copy of the variable is sent to the method
+    - changes applied to that variable in the method will not be visible upon return from the method
+  - the value type can be modified using the ref modifier
+    - when the ref modifier is used, a reference to the original variable will be sent to the target method
+
 ```c#
 // typical value type cannot be modified case
 public class Calculator {
@@ -8386,9 +9238,11 @@ class MainClass {
   }
 }
 ```
-* Out Modifier
-  * use to return multiple values from a method
-  * any parameter declared with the out modifier is expected to receive a value at the end of the method
+
+- Out Modifier
+  - use to return multiple values from a method
+  - any parameter declared with the out modifier is expected to receive a value at the end of the method
+
 ```c#
 // not using the "out" keyword will result in an error
 public class Person {
@@ -8423,8 +9277,10 @@ class MainClass {
   }
 }
 ```
-* Readonly modifier
-  * Prevents accidental overwriting of the value
+
+- Readonly modifier
+  - Prevents accidental overwriting of the value
+
 ```c#
 // without readonly modifier
 public System.Collections.Generic.List<int> orders = new System.Collections.Generic.List<int>();
@@ -8441,31 +9297,37 @@ public void MakeOrder() {
   orders = new System.Collections.Generic.List<int>();  // this will produce an error that the variable cannot be assigned
 }
 ```
-* Abstract modifier (polymorphism)
-  * what?
-    * indicates that a class or a member (method) is missing implementation
-    * if a method is declared as abstract, the containing class needs to be declared as abstract too
-    * the abstract methods must be implemented in the child class
-    * abstract classes cannot be instantiated
-  * why?
-    * use abstract when you want to provide some common behavior, while forcing other developers to follow your design
+
+- Abstract modifier (polymorphism)
+  - what?
+    - indicates that a class or a member (method) is missing implementation
+    - if a method is declared as abstract, the containing class needs to be declared as abstract too
+    - the abstract methods must be implemented in the child class
+    - abstract classes cannot be instantiated
+  - why?
+    - use abstract when you want to provide some common behavior, while forcing other developers to follow your design
+
 ```c#
 public abstract class ParentClassName {  // if a method has an abstract keyword, the class must also have the abstract keyword
   public abstract void FunctionName();  // this will allow the child class to override this method
 }
 ```
-* Virtual modifier (polymorphism)
-  * Used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived (child) class
-  * cannot be used with the static, abstract, private, or override modifiers
+
+- Virtual modifier (polymorphism)
+  - Used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived (child) class
+  - cannot be used with the static, abstract, private, or override modifiers
+
 ```c#
-public class ParentClassName { 
+public class ParentClassName {
   public virtual void FunctionName() {  // this will allow the child class to override this method
     do_something;
   }
 }
 ```
-* Override modifier (polymorphism)
-  * required to extend or modify the abstract or virtual implementation of an inherited method, property, indexer, or event
+
+- Override modifier (polymorphism)
+  - required to extend or modify the abstract or virtual implementation of an inherited method, property, indexer, or event
+
 ```c#
 public class ChildClassName : ParentClassName {
   public override void FunctionName() {  // this will override the inherited method
@@ -8473,10 +9335,12 @@ public class ChildClassName : ParentClassName {
   }
 }
 ```
-* Sealed modifier (polymorphism)
-  * prevents other classes from inheriting from it
-  * it is the opposite of abstract classes
-  * Use sealed modifier because selaed classes are slightly faster due to some run-time optimizations
+
+- Sealed modifier (polymorphism)
+  - prevents other classes from inheriting from it
+  - it is the opposite of abstract classes
+  - Use sealed modifier because selaed classes are slightly faster due to some run-time optimizations
+
 ```c#
 // method 1: applying sealed modifier to the child class will prevent us from being able to create a class that derives from the child class
 public sealed class ChildClassName : ParentClassName {  // new class will not be able to inherit from ChildClassName
@@ -8493,9 +9357,11 @@ public class ChildClassName : ParentClassName {
   }
 }
 ```
-* Dynamic type
-  * does not work on Apple products (Mac, IOS)
-  * converting dynamic to static type does not require casting
+
+- Dynamic type
+  - does not work on Apple products (Mac, IOS)
+  - converting dynamic to static type does not require casting
+
 ```c#
 // static type
 string a = "test";  // cannot reassign to a different data type
@@ -8504,9 +9370,11 @@ string a = "test";  // cannot reassign to a different data type
 dynamic b = "test";  // allows variable to be reassigned to a different data type
 b = 123;
 ```
-* Generics
-  * allows the creating of types that use other types
-  * make classes reusable and with type-safety
+
+- Generics
+  - allows the creating of types that use other types
+  - make classes reusable and with type-safety
+
 ```c#
 public class Stack<T> {  // let data type be T
   public T testValue { get; set; }
@@ -8548,18 +9416,21 @@ class MainClass {
   }
 }
 ```
-* Generic contraints
-  * Contraints are validations that we can put on generic type parameter
-  * at the instantiation time of generic class, if client provides invalid type parameter then compiler will give an error
-  * 6 types of contraints
+
+- Generic contraints
+  - Contraints are validations that we can put on generic type parameter
+  - at the instantiation time of generic class, if client provides invalid type parameter then compiler will give an error
+  - 6 types of contraints
+
 1. where T : InterfaceName
+
 ```c#
 // method 1: defining generics in methods with contraints
 public class Maths {
   public int Max(int a, int b) {  // normal method
     return a > b ? a : b;
   }
-  
+
   public T Max<T>(T a, T b) where T : System.IComparable {
     // return a > b ? a : b;  // this will produce an error
     return a.CompareTo(b) > 0 ? a : b;
@@ -8580,7 +9451,7 @@ public class Maths<T> where T : System.IComparable {
   public int Max(int a, int b) {  // normal method
     return a > b ? a : b;
   }
-  
+
   public T Max(T a, T b) {
     return a.CompareTo(b) > 0 ? a : b;
   }
@@ -8595,7 +9466,9 @@ class MainClass {
   }
 }
 ```
+
 2. where T : parentClass
+
 ```c#
 public class Product {
   public string Title { get; set; }
@@ -8616,12 +9489,14 @@ class MainClass {
   }
 }
 ```
+
 3. where T : struct
+
 ```c#
 public class Nullable<T> where T : struct {
     private object _value;
 
-    public bool HasValue { 
+    public bool HasValue {
         get { return _value != null; }
     }
 
@@ -8643,16 +9518,18 @@ class MainClass {
         Nullable<int> num = new Nullable<int>(5);
         System.Console.WriteLine(num.HasValue);  // true
         System.Console.WriteLine(num.GetValueOrDefault());  // 5
-        
+
         Nullable<int> num2 = new Nullable<int>();
         System.Console.WriteLine(num2.HasValue);  // false
         System.Console.WriteLine(num2.GetValueOrDefault());  // 0
-        
+
         Nullable<string> str = new Nullable<string>();  // error as string is not a value type
     }
 }
 ```
+
 4. where T : class
+
 ```c#
 public class NodeList<T> where T : class
 {}
@@ -8666,9 +9543,12 @@ class MainClass {
     }
 }
 ```
+
 5. where T : new()
-  * new() represents default constructor
-  * no parameters allowed
+
+- new() represents default constructor
+- no parameters allowed
+
 ```c#
 public class NodeList<T> where T : new()
 {}
@@ -8690,32 +9570,37 @@ class MainClass {
     }
 }
 ```
+
 6. where T : U
-  * 2 argument types (T and U)
-  * U can be an interface, abstract class, or simple class
-  * T must inherit or implements the U class
+
+- 2 argument types (T and U)
+- U can be an interface, abstract class, or simple class
+- T must inherit or implements the U class
+
 ```c#
 public class NodeList<T, U> where T : U {
     public void DoWork(T subClass, U baseClass)
     {}
 }
- 
+
 public interface IEmployee
 {}
- 
+
 public class Employee : IEmployee
 {}
- 
+
 class MainClass{
     public static void Main() {
         NodeList<Employee, IEmployee> employeeNodes = new NodeList<Employee, IEmployee>();
     }
 }
 ```
-* Delegates
-  * it is an object that knows how to call a method (or a group of methods)
-  * it is a reference or a pointer to a function
-  * it is for designing extensible and flexible apps (eg frameworks)
+
+- Delegates
+  - it is an object that knows how to call a method (or a group of methods)
+  - it is a reference or a pointer to a function
+  - it is for designing extensible and flexible apps (eg frameworks)
+
 ```c#
 // without parameters
 public delegate void DelegateName();  // use of "delegate" keyword is required
@@ -8725,34 +9610,34 @@ class MainClass {
     // initialize delegate
     DelegateName delegateName = new DelegateName(DoSomethingMethod);  // method 1
     delegateName();  // run delegate
-    
+
     DelegateName delegateName2 = DoSomethingMethod;  // method 2
     delegateName2();
-    
+
     DelegateName delegateName3 = DoSomethingMethod;
     RunDelegate(delegateName3);  // method 3
-    
+
     DelegateName delegateName4 = GetMyDelegate();  // method 4
     RunDelegate(delegateName4);
-    
+
     DelegateName delegateName5 = delegate() { doSomething; }  // method 5: using anonymous methods
     delegateName5();
-    
+
     DelegateName delegateName6 = delegate() { return doSomething; }  // method 6: return value with anonymous methods
     dataType variableName = delegateName6();
-    
+
     DelegateName delegateName7 = () => { return doSomething; }  // method 7: return value with lambda expression
     dataType variableName = delegateName7();
   }
-  
+
   public static void DoSomethingMethod() {
     doSomething;
   }
-  
+
   public static void RunDelegate(DelegateName delegateName3) {
     delegateName3();
   }
-  
+
   public static DelegateName GetMyDelegate() {
     return new DelegateName(DoSomethingMethod);
   }
@@ -8767,34 +9652,34 @@ class MainClass {
     // initialize delegate
     DelegateName delegateName = new DelegateName(DoSomethingMethod);  // method 1
     delegateName(argName_contents);  // must pass in argument
-    
+
     DelegateName delegateName2 = DoSomethingMethod;  // method 2
     delegateName2(argName_contents);  // must pass in argument
-    
+
     DelegateName delegateName3 = DoSomethingMethod;
     RunDelegate(delegateName3);  // method 3
-    
+
     DelegateName delegateName4 = GetMyDelegate();  // method 4
     RunDelegate(delegateName4);
-    
+
     DelegateName delegateName5 = delegate(dataType argName) { doSomethingWith_argName; }  // method 5: using anonymous methods
     delegateName5(argName_contents);
-    
+
     DelegateName delegateName6 = delegate(dataType argName) { return doSomethingWith_argName; }  // method 6: return value with anonymous methods
     dataType variableName = delegateName6(argName_contents);
-    
+
     DelegateName delegateName7 = (dataType argName) => { return doSomethingWith_argName; }  // method 7: return value with lambda expression
     dataType variableName = delegateName7(argName_contents);
   }
-  
+
   public static void DoSomethingMethod(dataType argName) {  // dataType must be the same as the delegate
     doSomethingWith_argName;
   }
-  
+
   public static void RunDelegate(DelegateName delegateName3) {
     delegateName3(argName_contents);  // must pass in argument
   }
-  
+
   public static DelegateName GetMyDelegate() {
     return new DelegateName(DoSomethingMethod);
   }
@@ -8813,7 +9698,7 @@ class MainClass
         ExecuteOperation(2, op);  // result 4, display 4
         op = Triple;
         ExecuteOperation(2, op);  // result 6, display 46
-        
+
         // method 2: use chaining
         Operation op2 = Double;
         op2 += Triple;
@@ -8823,7 +9708,7 @@ class MainClass
     public static void Double(int num) {
         System.Console.Write(num * 2);
     }
-    
+
     public static void Triple(int num) {
         System.Console.Write(num * 3);
     }
@@ -8833,9 +9718,11 @@ class MainClass
     }
 }
 ```
-* Generic Delegates
-  * Action: does not return a value
-  * Func: returns a value
+
+- Generic Delegates
+  - Action: does not return a value
+  - Func: returns a value
+
 ```c#
 class MainClass
 {
@@ -8844,7 +9731,7 @@ class MainClass
         // Declares delegate and operation in 1 line, does not return a value
         System.Action<int> op = num => { System.Console.WriteLine(num * 2); };  // similar to the Double example above
         op(3);  // 4
-        
+
         // Declares delegate and operation in 1 line, returns a value
         // set input dataTypes first then output dataType
         System.Func<int, int> op2 = num => { return num * 3; };
@@ -8852,8 +9739,10 @@ class MainClass
     }
 }
 ```
-* Events
-  * it is a way for 1 object to subscribe to events that are happening within another object and then do some sort of logic around that
+
+- Events
+  - it is a way for 1 object to subscribe to events that are happening within another object and then do some sort of logic around that
+
 ```c#
 // naive way of writing events
 public class Person {
@@ -9028,9 +9917,11 @@ class MainClass {
     }
 }
 ```
-* Extension methods
-  * allow us to add methods to an existing class without changing its source code or creating a new class that inherits from it
-  * if have source code, modify source code instead of creating extension methods
+
+- Extension methods
+  - allow us to add methods to an existing class without changing its source code or creating a new class that inherits from it
+  - if have source code, modify source code instead of creating extension methods
+
 ```c#
 public class Person {  // given to us by others, this source code we can't see or modify directly
     public string Name { get; set; }
@@ -9051,30 +9942,32 @@ class MainClass {
     }
 }
 ```
-* LINQ: Language Integrated Query
-  * gives the capability to query objects
-  * can qury
-    * objects in memory, eg collections (LINQ to Objects)
-    * Databases (LINQ to Entities)
-    * XML (LINQ to XML)
-    * ADO.NET Data Sets (LINQ to Data Sets)
-  * keywords
-    * where: set conditions
-    * orderby
-      * ascending order
+
+- LINQ: Language Integrated Query
+  - gives the capability to query objects
+  - can qury
+    - objects in memory, eg collections (LINQ to Objects)
+    - Databases (LINQ to Entities)
+    - XML (LINQ to XML)
+    - ADO.NET Data Sets (LINQ to Data Sets)
+  - keywords
+    - where: set conditions
+    - orderby
+      - ascending order
         > orderby variableName
-      * descending order
+      - descending order
         > orderby variableName descending
-    * select
-      * cannot be used with group keyword
-      * query result will become an array of values
-      * must end with a ;
+    - select
+      - cannot be used with group keyword
+      - query result will become an array of values
+      - must end with a ;
         > select variableName;
-    * group
-      * cannot be used with select keyword
-      * query result will become an array of dictionaries
-      * must end with a ;
+    - group
+      - cannot be used with select keyword
+      - query result will become an array of dictionaries
+      - must end with a ;
         > group variableName by variableName;
+
 ```c#
 
 // simple example
@@ -9083,7 +9976,7 @@ using System.Linq;  // this is required for query usage
 class MainClass {
   public static void Main() {
     string sample = "The quick brown fox jumps over the lazy dog.";
-    
+
     var resultArr = from c in sample.ToLower()
                     where c== 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
                     orderby c
@@ -9112,23 +10005,25 @@ class MainClass {
       new Person{FirstName="John2", LastName="Doe2", Age=26},
       new Person{FirstName="John3", LastName="Doe3", Age=20},
     };
-    
+
     // method 1: LINQ Query Operators
     var resultArr = from p in people
                     where p.Age < 25
                     select p;
-                    
+
     // method 2: LINQ Extension methods
     // var resultArr = person.Where(p => p.Age < 25).Select(p => p);
-    
+
     foreach (var item in resultArr)
       System.Console.WriteLine(item.FirstName);  // prints out firstnames of those with age less than 25
   }
 }
 ```
-* Reflection
+
+- Reflection
+
 ```c#
-public class Sample { 
+public class Sample {
     public string Name { get; set; }
     public int Age;
 
@@ -9142,7 +10037,7 @@ class Program
         var assembly = System.Reflection.Assembly.GetExecutingAssembly();
         System.Console.WriteLine(assembly.FullName);  // Override, Version=1.0.7333.32664, Culture=neutral, PublicKeyToken=null
         var types = assembly.GetTypes();
-        foreach (var type in types) { 
+        foreach (var type in types) {
             System.Console.WriteLine("class: " + type.Name + " BaseType: " + type.BaseType);  // class: Program BaseType: System.Object
             var props = type.GetProperties();
             foreach (var prop in props)
@@ -9173,8 +10068,11 @@ class Program
     }
 }
 ```
+
 ### c++
-* References
+
+- References
+
 ```c++
 // using without references
 int num = 10;
