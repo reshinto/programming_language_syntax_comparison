@@ -6461,6 +6461,46 @@ async function init() {
 }
 init();
 ```
+- the difference between `process.nextTick` vs asynchronous / callback
+  - process.nextTick() runs immediately after the current synchronous execution, before I/O and timers.
+    - it is not part of the event loop phases! Instead, it uses the Next Tick Queue, which has the highest priority.
+  - asynchronous code runs after the event loop finishes processing the current execution, in the Timer Queue.
+- Order which comes first
+  1.	Synchronous Code runs first. (take note that anything in a Promise constructor might come first based on sequential order whichever was called first)
+	 2.	Next Tick Queue (process.nextTick()) runs immediately before moving to the event loop.
+	 3.	Microtask Queue (Promise.then(), queueMicrotask()) runs after the Next Tick Queue before the event loop continues.
+	 4.	Timer Queue (setTimeout(), setInterval()) runs in the Timers Phase of the event loop.
+
+```javascript
+async function example() {
+    return new Promise((resolve) => {
+        console.log("promise constructor");
+        resolve();
+    }).then(() => {
+        console.log("promise");
+    });
+}
+
+async function run() {
+    console.log("start");
+
+    setTimeout(() => console.log("timeout"), 0);
+
+    example();
+
+    process.nextTick(() => console.log("next tick"));
+
+    console.log("end");
+}
+
+await run();
+// start
+// promise constructor ✅ (appears before next tick, because it runs immediately inside the Promise constructor. Unlike Promise.then() (which would defer execution), this runs synchronously)
+// end
+// next tick
+// promise
+// timeout
+```
 ### ruby
 ### java
 ### c#
