@@ -151,13 +151,56 @@
 - C#: compiled to an Intermediate Language (IL), which is then translated by the Common Language Runtime (CLR) into machine code
   - from .NET 4, dynamic capability was added to improve interoperability with COM & Dynamic languages
 - C++: compiled into native machine language
-  - Features
-    - compatible with C language
-    - allows calls to native system libraries
-    - requires porting to other platforms
-    - exposes low-level system functions
-    - explicit memory management
-    - allows multiple inheritance
+
+  - what it is
+    - it is a **standardized, compiled, statically typed, multi-paradigm systems language** built to deliver **high performance with strong abstraction mechanisms**.
+    - Its design centers on **zero-overhead abstractions**, **deterministic resource management (RAII)**, a **formal concurrency/memory model**, and a rich **standard library** that has evolved substantially in **C++20/23** (concepts, modules, coroutines, ranges, expected, mdspan).
+    - It interoperates with C but is not a strict superset, and it remains a foundational tool for building complex, performance-critical software.
+
+  - Design goals & principles
+    - C++ is designed to give **efficient low-level control** together with **high-level abstractions**, guided by the **zero-overhead principle** (“you don’t pay for what you don’t use,” and used abstractions are as efficient as hand-written code).
+    - These principles explain C++’s emphasis on performance with abstractions like classes, templates, and RAII.
+
+  -  Standardization & versions
+      - C++ is maintained via ISO standards with regular releases (e.g., **C++11, C++14, C++17, C++20, C++23**, and ongoing work toward **C++26**).
+      - C++20 introduced **concepts**, **modules**, **coroutines**, and the **ranges** library; `C++23` added new library types such as **`std::expected`** and **`std::mdspan`**.
+      - Compiler support tables are tracked publicly.
+  - Compilation model
+    - C++ is primarily **ahead-of-time (AOT) compiled** to native code.
+    - Traditional organization is by **translation units** and headers; **C++20 modules** add a language mechanism to publish/import interfaces, improving build times and isolation.
+  - Type system & object model
+    - C++ has a **static** and **nominal** type system with fundamental types (integers, floating-point, `bool`, character types, pointer/reference types), user-defined types (enums, classes/structs, unions), function and array types, and **cv-qualification** (`const`/`volatile`).
+    - Objects have precise lifetimes and storage durations; initialization and destruction semantics are part of the core model.
+  - Programming paradigms
+    - C++ is **multi-paradigm**:
+    - **Procedural** (free functions, control flow)
+    - **Object-oriented** (encapsulation, virtual dispatch, class hierarchies)
+    - **Generic programming & templates** (compile-time polymorphism; concepts in C++20)
+    - **Functional style** (lambdas, higher-order algorithms)
+    - **Metaprogramming** (`constexpr`, template metaprogramming)
+  - Resource management & safety model
+    - C++ emphasizes **deterministic destruction** and **RAII** (Resource Acquisition Is Initialization):
+      - acquire resources in constructors, release them in destructors.
+    - Modern guidelines recommend using **resource handles** and **smart pointers** to avoid leaks and dangling resources.
+    - C++ deliberately leaves some behavior **undefined** to enable aggressive optimization (e.g., out-of-bounds access, data races, signed-overflow).
+    - Understanding and avoiding **undefined behavior** is part of writing correct and portable C++.
+  - Error handling
+    - C++ supports **exceptions** (with zero-overhead when absent, but runtime cost when used) and non-exception patterns such as returning status objects.
+    - **`std::expected<T,E>`** (C++23) is a standard vocabulary type for functions that return either a value or an error.
+  - Concurrency & memory model
+    - C++ defines a **formal memory model** and provides **threads**, **atomics**, and **memory orderings** for writing correct concurrent code, including lock-free algorithms when possible.
+    - **Coroutines (C++20)** provide a language mechanism for asynchronous workflows.
+  - Standard library
+    - The C++ Standard Library supplies containers, iterators, algorithms, strings, time utilities, I/O, numerics, concurrency primitives, ranges (C++20), multi-dimensional views (`mdspan`, C++23), and more.
+    - It also exposes C compatibility headers for interop.
+  - Interoperability with C (and ABIs)
+    - C++ interoperates with C at the **linkage** level using `extern "C"` for C function names (no C++ name mangling).
+    - C and C++ are **closely related but different languages**;
+    - C is **not a subset** of C++, and some valid C code is ill-formed or behaves differently in C++.
+    - C++ compilers don’t share a single universal ABI; platforms commonly use ABIs like the Itanium C++ ABI for cross-compiler compatibility.
+  - Typical domains
+    - Because it combines **close-to-the-metal control** with **high-level abstractions**, C++ is widely used for **systems software, embedded, game engines, high-performance computing, finance/low-latency, browsers, databases**, and other performance-critical infrastructure.
+    - (For a concise perspective from the language’s creator on these aims and domains, see Stroustrup’s writings on C++ as an “invisible foundation.”)
 
 ## Both Interpreted And Compiled Language
 
