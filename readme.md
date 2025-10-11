@@ -269,7 +269,7 @@ public class HelloWorld {
 ### c++
 
 ```c++
-#include <iostream>
+#include <iostream> // required for printing
 
 int main()
 {
@@ -676,6 +676,78 @@ multi-line comments
        String string1 = new String("Hello");
        ```
 
+### c++
+- it is a strict data typed language
+- the data type can be changed implicitly or explicitly
+- implicit happens when you have compatible data types
+- can assign a short variable to an integer variable
+- a float can be assigned to a double value
+- must go from smaller to larger for data integrity
+- a bool variable can be assigned to an int
+- a character can also be assigned to an int
+- ``static_cast<>` can be used to change a data type
+```c++
+double x{45.765};
+int y = static_cast<iint>(x);  // 45
+int b = true;  // 1
+int c = 'c';  // 97
+```
+
+#### Fundamental Data Types
+- The Microsoft C++ 32-bit and 64-bit compilers recognize the types below.  
+- If a type name begins with `__`, it is **non-standard**.  
+
+#### Recognized integral type names
+
+`int (unsigned int)`, `__int8 (unsigned __int8)`, `__int16 (unsigned __int16)`, `__int32 (unsigned __int32)`, `__int64 (unsigned __int64)`, `short (unsigned short)`, `long (unsigned long)`, `long long (unsigned long long)`
+
+| Type Name              | Bytes | Other Names                                      | Range of Values                                                                 |
+|------------------------|:-----:|--------------------------------------------------|----------------------------------------------------------------------------------|
+| `int`                  | 4     | `signed`                                         | −2,147,483,648 to 2,147,483,647                                                 |
+| `unsigned int`         | 4     | `unsigned`                                       | 0 to 4,294,967,295                                                               |
+| `__int8`               | 1     | `char`                                           | −128 to 127                                                                      |
+| `unsigned __int8`      | 1     | `unsigned char`                                  | 0 to 255                                                                         |
+| `__int16`              | 2     | `short`, `short int`, `signed short int`         | −32,768 to 32,767                                                                |
+| `unsigned __int16`     | 2     | `unsigned short`, `unsigned short int`           | 0 to 65,535                                                                      |
+| `__int32`              | 4     | `signed`, `signed int`, `int`                    | −2,147,483,648 to 2,147,483,647                                                 |
+| `unsigned __int32`     | 4     | `unsigned`, `unsigned int`                       | 0 to 4,294,967,295                                                               |
+| `__int64`              | 8     | `long long`, `signed long long`                  | −9,223,372,036,854,775,808 to 9,223,372,036,854,775,807                         |
+| `unsigned __int64`     | 8     | `unsigned long long`                             | 0 to 18,446,744,073,709,551,615                                                  |
+| `bool`                 | 1     | —                                                | `false` or `true`                                                                |
+| `char`                 | 1     | —                                                | −128 to 127 (default) <br> **0 to 255 when compiled with `/J`**                  |
+| `signed char`          | 1     | —                                                | −128 to 127                                                                      |
+| `unsigned char`        | 1     | —                                                | 0 to 255                                                                         |
+| `short`                | 2     | `short int`, `signed short int`                  | −32,768 to 32,767                                                                |
+| `unsigned short`       | 2     | `unsigned short int`                             | 0 to 65,535                                                                      |
+| `long`                 | 4     | `long int`, `signed long int`                    | −2,147,483,648 to 2,147,483,647                                                 |
+| `unsigned long`        | 4     | `unsigned long int`                              | 0 to 4,294,967,295                                                               |
+| `long long`            | 8     | — (equivalent to `__int64`)                      | −9,223,372,036,854,775,808 to 9,223,372,036,854,775,807                         |
+| `unsigned long long`   | 8     | — (equivalent to `unsigned __int64`)             | 0 to 18,446,744,073,709,551,615                                                  |
+| `enum`                 | varies| —                                                | implementation-dependent                                                         |
+| `float`                | 4     | —                                                | approx. 3.4E ± 38 (seven digits)                                                |
+| `double`               | 8     | —                                                | approx. 1.7E ± 308 (fifteen digits)                                             |
+| `long double`          | 8     | —                                                | approx. 1.7E ± 308 (fifteen digits)                                             |
+| `wchar_t`              | 2     | `__wchar_t`                                      | 0 to 65,535                                                                      |
+
+#### Notes
+- `signed`/`unsigned` modifiers apply to any integral type **except** `bool`.  
+- `char`, `signed char`, and `unsigned char` are **three distinct types** (affects overloading/templates).  
+- On MSVC, `int`/`unsigned int` are 4 bytes; avoid assuming `int` size in portable code.  
+- MSVC also supports sized integer types: `__int8`, `__int16`, `__int32`, `__int64`.  
+- For precise limits in code, use `<limits>` (`std::numeric_limits<T>`).  
+- `__wchar_t`/`wchar_t`: use the `L` prefix for wide character/string literals.
+
+#### Others
+- `&` a reference value (address of)
+- `*` identifies a point value
+
+#### Compoimd Types
+- string `#include<string>`
+    - A string is an array of characters
+- vector `#include<vector>`
+- array `#include<array>`
+- list `#include<list>`
+
 [back to top](#table-of-contents)
 
 ## Variable declaration int
@@ -1069,6 +1141,15 @@ int? integerName2 = null;
 ```
 
 ### c++
+
+```c++
+#include <iostream>
+
+int main() {
+    int* raw = nullptr;  // explicit "no object"
+    if (raw == nullptr) std::cout << "raw is null\n";
+}
+```
 
 [back to top](#table-of-contents)
 
@@ -1598,8 +1679,8 @@ builder[0];  // '+'
 
 ### c++
 
+character: only have 1 character, must use single quotes ''
 ```c++
-// character: only have 1 character, must use single quotes ''
 char charName;
 charName = 'a';
 
@@ -1607,9 +1688,27 @@ char charName = 'a';
 char charName ('a');
 char charName {'a'};
 
-// strings
-// C-style strings: an ARRAY of characters, must use double quotes ""
-// THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
+char charName = "A";  // error: invalid conversion from 'const char*' to 'char' [-fpermissive]
+char charName = 'AB';  // warning: multi-character character constant [-Wmultichar] error
+
+#include <iostream>
+signed char sc = -1;
+std::cout << sc;  // �
+std::cout << int(sc);  // -1
+
+unsigned char uc = 255;
+cout << uc;  // �
+cout << int(uc);  // 255
+
+char16_t u = u'字';
+char32_t U = U'𐀀';
+char8_t e = u8'é';
+
+```
+strings
+- C-style strings: an ARRAY of characters, must use double quotes ""
+    - THIS IS NOT A TRUE STRING, IT IS AN ARRAY OF CHARACTERS!!!!!!!
+```c++
 char * stringName = "string";
 const char * stringName = "string";  // const is normally used
 char stringName[] = "string";  // creates array of 7 chars, last char is null "\0"
@@ -1617,14 +1716,14 @@ char stringName[7] = "string";  // need give 7 slots for chars and null char
 char stringName[7] = {'s', 't', 'r', 'i', 'n', 'g', 0};  // no 0 = error
 char stringName[7] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};  // no '\0' = error
 
-//C++ strings: must add at the top "#include＜string＞", must use double quotes ""
+// C++ strings: must add at the top "#include＜string＞", must use double quotes ""
 #include＜string＞
 std::string stringName;
 stringName = "string";
 
 // back slash not required, but can use if want to
 std::string stringName = "multi-line"
-                          "string";
+                         "string";
 std::string stringName ("string");
 ```
 
@@ -1989,6 +2088,10 @@ if (s instanceof java.lang.String) {
 - `!` not
 
 ### c++
+
+- `&&` and
+- `||` or
+- `!` not
 
 [back to top](#table-of-contents)
 
