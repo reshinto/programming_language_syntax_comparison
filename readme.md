@@ -4997,6 +4997,95 @@ print (MathClass.outterAdd(4, 5)  # 9
 ### python 3
 
 ```python
+class BasicClass:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+test = BasicClass(2, 4)
+print(test)  # <__main__.BasicClass object at 0x2624c584090>
+print(str(test))  # <__main__.BasicClass object at 0x2624c584090>
+print(repr(test))  # <__main__.BasicClass object at 0x2624c584090>
+
+##################################################################
+class BasicClass:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+	# for developers / debugging (“official” representation)
+	def __repr__(self):
+      	return f"BasicClass(arg1={self.arg1!r}, arg2={self.arg2!r})"
+
+test = BasicClass(2, 4)
+print(test)  # BasicClass(arg1=2, arg2=4)
+print(str(test))  # BasicClass(arg1=2, arg2=4)
+print(repr(test))  # BasicClass(arg1=2, arg2=4)
+
+##################################################################
+class BasicClass:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+	# exist in python 2 as well
+	def __repr__(self):
+      	return f"BasicClass(arg1={self.arg1!r}, arg2={self.arg2!r})"
+
+	# for users / display (“pretty” representation), takes higher priority than __repr__, unless called with repr function
+	# exist in python 2 as well
+    def __str__(self):
+      	return "this takes higher priority"
+
+test = BasicClass(2, 4)
+print(test)  # this takes higher priority
+print(str(test))  # this takes higher priority
+print(repr(test))  # BasicClass(arg1=2, arg2=4)
+
+##################################################################
+from dataclasses import dataclass
+
+@dataclass
+class BasicClass:
+    # def __init__(self, arg1, arg2):
+    #     self.arg1 = arg1
+    #     self.arg2 = arg2
+
+    # def __repr__(self):
+    #     return f"BasicClass(arg1={self.arg1!r}, arg2={self.arg2!r})"
+
+    def __str__(self):
+      	return "this takes higher priority"
+
+test = BasicClass(2, 4)
+print(test)  # TypeError: BasicClass.__init__() takes 1 positional argument but 3 were given
+print(str(test))  # TypeError: BasicClass.__init__() takes 1 positional argument but 3 were given
+print(repr(test))  # TypeError: BasicClass.__init__() takes 1 positional argument but 3 were given
+
+##################################################################
+from dataclasses import dataclass
+
+@dataclass  # auto-generate __init__, __repr__, etc., for simple “data holder” classes, so you don’t write boilerplate
+class BasicClass:
+    arg1: int  # arguments with type declaration required
+    arg2: int
+
+    # def __init__(self, arg1, arg2):
+    #     self.arg1 = arg1
+    #     self.arg2 = arg2
+
+    # def __repr__(self):
+    #     return f"BasicClass(arg1={self.arg1!r}, arg2={self.arg2!r})"
+
+    def __str__(self):
+      	return "this takes higher priority"
+
+test = BasicClass(2, 4)
+print(test)  # this takes higher priority
+print(str(test))  # this takes higher priority
+print(repr(test))  # BasicClass(arg1=2, arg2=4)
+
+##################################################################
 class MathClass:
     def __init__(self, arg1, arg2):
         self.arg1 = arg1
