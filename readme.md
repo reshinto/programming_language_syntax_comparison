@@ -994,7 +994,10 @@ int c = 'c';  // 97
 
 - integer ...-2, -1, 0, 1, 2...
 
-### Python 2
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
 
 ```python
 # int: -2147483648 ~ 2147483647
@@ -1224,7 +1227,10 @@ section .text
 
 - float, double
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 float_name = 1.123
@@ -1250,33 +1256,58 @@ f"{x}"  # "0.6
 print(type(x))  # <class 'decimal.Decimal'>
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 var float_name = 1.123;
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
 
 ```javascript
 let float_name = 1.123;
 const float_name = 1.123;
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let float_name: number = 1.123;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 float_name = 1.123
 float_name = 0.1123e1  # equals to 1.123
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 val floatName: Float = 1.123f
@@ -1284,7 +1315,12 @@ val doubleName: Double = 1.123
 var doubleName2 = 1.123  // type inferred as Double
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 // float: 32 bits, 4 bytes
@@ -1320,7 +1356,12 @@ public class Main {
 
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
@@ -1335,7 +1376,12 @@ double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 System.Double doubleName4 = 1.123;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 // float: 4 bytes
@@ -1357,7 +1403,12 @@ double_name = 1.123;  // have 19 decimal digits
 // similar to the rest of int variable declaration
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // def: dynamically typed (BigDecimal by default for decimals)
@@ -1369,11 +1420,16 @@ double doubleName = 1.123d
 BigDecimal bigDecimalName = 1.123
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Variable declaration None
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 variable_name = None
@@ -1383,7 +1439,12 @@ import math
 math.inf - math.inf  # nan
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // undefined is reserved for variables whose values have not yet been set.
@@ -1396,7 +1457,12 @@ let variable_name2 = null;
 let variable_name3 = NaN;
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let variable_name: void = undefined; // method 1
@@ -1407,13 +1473,23 @@ let variable_name2: void = null;
 let variable_name3: number = NaN;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // Kotlin has null safety built into the type system
@@ -1427,7 +1503,12 @@ val intName: Int? = null
 val nanValue = Double.NaN
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 String stringName = null;
@@ -1448,7 +1529,12 @@ double inf = Double.POSITIVE_INFINITY;  // Infinity
 double inf = Double.NEGATIVE_INFINITY;  // -Infinty
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 string stringName = null;
@@ -1461,7 +1547,12 @@ Nullable<int> integerName1 = null;
 int? integerName2 = null;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 #include <iostream>
@@ -1472,7 +1563,12 @@ int main() {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def variableName = null
@@ -1492,6 +1588,8 @@ if (!variableName) {
 // NaN
 double nanValue = Double.NaN
 ```
+
+</details>
 
 [back to top](#table-of-contents)
 
@@ -2115,7 +2213,12 @@ std::string stringName = "multi-line"
 std::string stringName ("string");
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // single-quoted strings (java.lang.String, no interpolation)
@@ -2148,6 +2251,8 @@ stringName.trim()  // removes whitespace
 // slashy strings (useful for regex, no escaping needed)
 def regex = /\d+\.\d+/
 ```
+
+</details>
 
 [back to top](#table-of-contents)
 
@@ -10238,7 +10343,10 @@ You are ${age} years old.
 
 ## JSON
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 import json  # must import to use
@@ -10251,7 +10359,12 @@ json.loads(json_object)
 json.dumps(python_object)
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // JSON (JavaScript Object Notation): a lightweight, text-based data format that's based on JavaScript.
@@ -10264,7 +10377,12 @@ let objName = { title: "Black Panther" };
 objName = JSON.parse(objName);
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // TypeScript uses the same JSON methods as JavaScript, with type assertions
@@ -10280,7 +10398,12 @@ const jsonString: string = JSON.stringify(obj);
 const parsed = JSON.parse(jsonString) as Movie;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 require 'json'
@@ -10292,7 +10415,12 @@ hash = JSON.parse('{"title": "Black Panther"}')
 json_string = JSON.generate({ title: "Black Panther" })
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // using kotlinx.serialization
@@ -10306,7 +10434,12 @@ val jsonString = Json.encodeToString(Movie("Black Panther"))
 val movie = Json.decodeFromString<Movie>(jsonString)
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 // using org.json library
@@ -10322,7 +10455,12 @@ JSONObject parsed = new JSONObject(jsonString);
 String title = parsed.getString("title");
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```csharp
 using System.Text.Json;
@@ -10339,7 +10477,12 @@ public class Movie {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 // C++ has no built-in JSON support; use a library like nlohmann/json
@@ -10355,7 +10498,12 @@ json obj = { {"title", "Black Panther"} };
 std::string jsonString = obj.dump();
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 import groovy.json.JsonSlurper
@@ -10370,16 +10518,26 @@ def jsonString = JsonOutput.toJson([title: "Black Panther"])
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Program Entry Point
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 if __name__ === "__main__":
     # do something
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // only works in node js
@@ -10388,7 +10546,12 @@ if (require.main === module) {
 }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // no special entry point needed, code runs top-to-bottom
@@ -10401,7 +10564,12 @@ function main(): void {
 main();
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # no special entry point, code runs top-to-bottom
@@ -10412,7 +10580,12 @@ if __FILE__ == $0
 end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // basic entry point
@@ -10426,7 +10599,12 @@ fun main(args: Array<String>) {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 public class Main {
@@ -10436,7 +10614,12 @@ public class Main {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```csharp
 // traditional entry point
@@ -10450,7 +10633,12 @@ class MainClass {
 Console.WriteLine("Hello, World!");
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 // basic entry point
@@ -10466,7 +10654,12 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // no special entry point, code runs top-to-bottom
@@ -10482,9 +10675,14 @@ class Main {
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Swapping values
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 a, b = 1, 2
@@ -10497,7 +10695,12 @@ b = temp
 a, b = b, a
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 let a = 1;
@@ -10507,13 +10710,23 @@ a = b;
 b = temp;
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
 
 ```javascript
 [a, b] = [b, a];
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let a: number = 1;
@@ -10521,14 +10734,24 @@ let b: number = 2;
 [a, b] = [b, a];
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 a, b = 1, 2
 a, b = b, a
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 var a = 1
@@ -10536,7 +10759,12 @@ var b = 2
 a = b.also { b = a }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 int a = 1;
@@ -10546,7 +10774,12 @@ a = b;
 b = temp;
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```csharp
 int a = 1;
@@ -10555,7 +10788,12 @@ int b = 2;
 (a, b) = (b, a);
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 int a = 1;
@@ -10570,7 +10808,12 @@ a = b;
 b = temp;
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def a = 1
@@ -10580,9 +10823,14 @@ def b = 2
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Error Handling
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 - try: lets you test a block of code for errors
 - except: except block lets you handle the error
@@ -10613,7 +10861,12 @@ finally:  # not required
     do_something_when_try_&_except_or_else_is_completed
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -10629,7 +10882,12 @@ try {
 }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 try {
@@ -10644,7 +10902,12 @@ try {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 - begin: something which might raise an exception
 - rescue: code that deals with some exception
@@ -10663,7 +10926,12 @@ ensure
 end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 try {
@@ -10684,7 +10952,12 @@ val result = try {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -10760,7 +11033,12 @@ public class Main {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -10792,7 +11070,12 @@ public class NewExceptionName : System.Exception {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 #include <stdexcept>
@@ -10812,7 +11095,12 @@ try {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 try {
@@ -10828,9 +11116,14 @@ try {
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Custom Error
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 # raise generic exception
@@ -10840,7 +11133,12 @@ raise Exception("custom message")
 raise ValueError("custom message")
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 throw "custom message"; // throw a text
@@ -10848,7 +11146,12 @@ throw "custom message"; // throw a text
 throw 123; // throw a number
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // throw an Error object
@@ -10865,7 +11168,12 @@ class CustomError extends Error {
 throw new CustomError("custom message");
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # method 1
@@ -10874,7 +11182,12 @@ raise errorType, "custom error message"
 raise errorType.new("custom error message")
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // throw an exception
@@ -10886,7 +11199,12 @@ class CustomException(message: String) : Exception(message)
 throw CustomException("custom message")
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - must use either try catch statements or be inside a conditional statement to work
 
@@ -10909,7 +11227,12 @@ if (true) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // raise generic exception
@@ -10920,7 +11243,12 @@ throw new System.Exception("custom message");
 throw new SpecificExceptionName("custom message");
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 #include <stdexcept>
@@ -10941,7 +11269,12 @@ public:
 throw CustomError("custom message");
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // define custom exception
@@ -10957,11 +11290,18 @@ throw new CustomError("custom message")
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Asynchronous
+
 
 - Handling asynchronous code (making it synchronous)
 
-### Python
+
+**Jump to:** [Python](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [JavaScript ES8](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 ```python
 import asyncio
@@ -10984,7 +11324,12 @@ async def main():
 asyncio.run(main())
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 var posts = [
@@ -11027,7 +11372,12 @@ createPost({ title: "Post 3", body: "body of post 3" }, function () {
 });
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
 
 ```javascript
 // Change createPost to return a Promise
@@ -11061,7 +11411,12 @@ Promise.all([
 });
 ```
 
-### JavaScript ES8
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES8</h3></summary>
 
 ```javascript
 // method 5
@@ -11114,7 +11469,12 @@ await run();
 // timeout
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // async/await with typed Promises
@@ -11135,7 +11495,12 @@ async function main(): Promise<void> {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # using Thread
@@ -11155,7 +11520,12 @@ puts fiber.resume  # "first"
 puts fiber.resume  # "second"
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 import kotlinx.coroutines.*
@@ -11185,7 +11555,12 @@ suspend fun fetchData(): String {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 import java.util.concurrent.*;
@@ -11211,7 +11586,12 @@ System.out.println(result.get());  // blocks until complete
 executor.shutdown();
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 class MainClass {
@@ -11253,7 +11633,12 @@ public class Worker {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```cpp
 #include <future>
@@ -11277,7 +11662,12 @@ std::cout << future.get() << std::endl;
 t.join();
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 import groovyx.gpars.GParsPool
@@ -11299,9 +11689,14 @@ println future.get()  // blocks until complete
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Math
 
-### Python 3
+**Jump to:** [Python 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 3</h3></summary>
 
 ```python
 import math
@@ -11341,7 +11736,12 @@ import random
 random.randint(1, 3)  # any number from 1 to 3
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 Math.abs(-1); // 1
@@ -11363,7 +11763,12 @@ Math.floor(Math.random() * 11);
 Math.floor(Math.random() * 10) + 1;
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 const abs: number = Math.abs(-1);          // 1
@@ -11383,7 +11788,12 @@ const randomInt: number = Math.floor(Math.random() * 10);
 const randomRange: number = Math.floor(Math.random() * 10) + 1;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 Math.sqrt(100)       # 10.0
@@ -11409,7 +11819,12 @@ rand(10)             # random integer from 0 to 9
 rand(1..10)          # random integer from 1 to 10
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 import kotlin.math.*
@@ -11435,7 +11850,12 @@ val randomInt = (0..9).random()           // random int from 0 to 9
 val randomDouble = Math.random()          // random double from 0.0 to 1.0
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 import java.util.Random;
@@ -11459,7 +11879,12 @@ System.out.println("Random Number Between 0 and 10 " + (rand.nextInt(11)));
 System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));  // rand.nextInt((max - min) + 1) + min;
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 double number1 = 10.5;
@@ -11478,7 +11903,12 @@ Random rand = new Random();
 System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 // Seed the random number generator with the time method, then convert value to integer
@@ -11487,7 +11917,12 @@ srand((int)time(0));
 int randomNumber = rand() % 100;  // number range from 0 to 99
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def number1 = 10.5
@@ -11511,9 +11946,14 @@ println random.nextInt(10) + 1   // random integer from 1 to 10
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Date and Time
 
-### Python 3
+**Jump to:** [Python 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 3</h3></summary>
 
 ```python
 from datetime import date, datetime, timedelta
@@ -11623,7 +12063,12 @@ for m in range(1, 13):
     print("%10s %2d" % (calendar.month_name[m], meetday))
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // current date and time
@@ -11657,7 +12102,12 @@ now.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long
 // "Friday, July 16, 2021"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 const now: Date = new Date();
@@ -11681,14 +12131,24 @@ const tomorrow: Date = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # get current date and time
 Time.now
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 import java.time.LocalDate
@@ -11722,7 +12182,12 @@ val lastMonth = today.minusMonths(1)
 val daysBetween = ChronoUnit.DAYS.between(date, today)
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - must import
 
@@ -11769,7 +12234,12 @@ DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("M/d/yyyy");
 System.out.println(dtf2.format(ld));  // 1/28/2009
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // Set date (time set to default at 12:00:00 AM)
@@ -11800,7 +12270,12 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
 System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 #include <iostream>
@@ -11829,7 +12304,12 @@ auto duration = future - now;
 auto hours = std::chrono::duration_cast<std::chrono::hours>(duration).count();  // 24
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // current date and time
@@ -11861,9 +12341,14 @@ def parsed = Date.parse("yyyy-MM-dd", "2021-07-16")
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## File System
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 - Modifying files
 
@@ -11959,7 +12444,12 @@ if path.exists("textfile"):
         newzip.write("textfile.bak")
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 const fs = require("fs");
@@ -12004,7 +12494,12 @@ path.extname("file.txt");                  // ".txt"
 path.dirname("/users/docs/file.txt");      // "/users/docs"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 import * as fs from "fs";
@@ -12039,7 +12534,12 @@ const fullPath: string = path.join("/users", "docs", "file.txt");
 const ext: string = path.extname("file.txt");  // ".txt"
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # read entire file
@@ -12083,7 +12583,12 @@ Dir.entries(".")          # [".", "..", "file1.txt", ...]
 Dir.glob("*.txt")         # ["file1.txt", "file2.txt"]
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 import java.io.File
@@ -12135,7 +12640,12 @@ file.copyTo(File("copy.txt"), overwrite = true)
 file.delete()
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 import java.io.FileReader;
@@ -12267,7 +12777,12 @@ public class Main {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // Create or Save file
@@ -12345,7 +12860,12 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 System.Diagnostics.Process.Start(filename);
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 #include <fstream>
@@ -12399,7 +12919,12 @@ std::cout << p.extension() << std::endl;  // ".txt"
 std::cout << p.parent_path() << std::endl;  // "/users/docs"
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def file = new File("textfile.txt")
@@ -12449,11 +12974,18 @@ file.delete()
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Access modifier
+
 
 - use to hide the implementation details of a class
 
-### Python
+
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 - No true access modifiers, uses naming conventions
 
@@ -12480,7 +13012,12 @@ print(obj._protected_var)      # "convention: treat as protected" (still accessi
 print(obj._MyClass__private_var)  # "name-mangled to _MyClass__private_var" (still accessible via mangled name)
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 - No traditional access modifiers, uses `#` for private fields (ES2022)
 
@@ -12508,7 +13045,12 @@ console.log(obj.publicField);     // "accessible everywhere"
 console.log(obj.getPrivate());    // "only accessible inside class"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 - 3 types
   - Public:
@@ -12521,7 +13063,12 @@ console.log(obj.getPrivate());    // "only accessible inside class"
     - A protected member cannot be accessed outside of its containing class
     - Protected members can be accessed only within the class and by the instance of its sub/child class.
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 - 3 types: public (default), private, protected
 
@@ -12556,7 +13103,12 @@ class ChildClass < MyClass
 end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 - 4 types: public (default), private, protected, internal
 
@@ -12577,7 +13129,12 @@ private fun topLevelPrivate() {}   // visible within the file
 internal fun topLevelInternal() {} // visible within the module
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - 4 types: public, protected, default (package-private), private
 
@@ -12595,7 +13152,12 @@ public class MyClass {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - 6 types
   - public: accessible from everywhere in project, no accessibility restrictions
@@ -12724,7 +13286,12 @@ class Program2: NumberClassInFirstProject  // Inheritance
 
 - private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - 3 types: public, protected, private (default in class, public in struct)
 
@@ -12757,7 +13324,12 @@ struct MyStruct {
 };
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 - public (default), private, protected
 
@@ -12780,9 +13352,14 @@ println obj.privateField      // "only within this class" (accessible but not re
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Iterators
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 ```python
 # using __iter__ and __next__ on built-in types
@@ -12813,7 +13390,12 @@ for num in CountUp(1, 3):
     print(num)  # 1, 2, 3
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 let i = [1, 2];
@@ -12825,7 +13407,12 @@ iterator.next(); // { value: 2, done: false }
 iterator.next(); // { value: undefined, done: true }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // Symbol.iterator protocol
@@ -12852,7 +13439,12 @@ for (const num of range) {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # each (most common iterator)
@@ -12883,7 +13475,12 @@ counter.next  # 0
 counter.next  # 1
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 val list = listOf("Japan", "China", "USA")
@@ -12916,7 +13513,12 @@ for (num in CountUp(1, 3)) {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - using iterators to loop through collections
 
@@ -12968,7 +13570,12 @@ for (String key : keys) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // IEnumerable and IEnumerator
@@ -13008,7 +13615,12 @@ foreach (int num in counter.GetNumbers(1, 3))
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 #include <vector>
@@ -13044,7 +13656,12 @@ for (auto it = ages.begin(); it != ages.end(); ++it) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def list = ["Japan", "China", "USA"]
@@ -13072,9 +13689,14 @@ def result = list.findAll { it.length() > 3 }  // ["Japan", "China"]
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Generators
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 ```python
 def generator_example():
@@ -13123,7 +13745,12 @@ for i in x:
 
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 function* generatorExample1() {
@@ -13185,7 +13812,12 @@ iterator5.next(); // { value: "hello", done: true }
 iterator5.next(); // { value: undefined, done: true }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // Generator with types: Generator<Yield, Return, Next>
@@ -13222,7 +13854,12 @@ for (const num of range(1, 5)) {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # Enumerator.new acts as a generator
@@ -13264,7 +13901,12 @@ natural_numbers = (1..Float::INFINITY).lazy
 first_five_squares = natural_numbers.map { |n| n ** 2 }.first(5)  # [1, 4, 9, 16, 25]
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // sequence with yield
@@ -13304,7 +13946,12 @@ val fibonacci = sequence {
 println(fibonacci.take(8).toList())  // [0, 1, 1, 2, 3, 5, 8, 13]
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - Java has no built-in generator syntax. Use Stream.iterate or custom Iterator instead.
 
@@ -13340,7 +13987,12 @@ for (int i = 0; i < 8; i++) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // yield return creates a generator-like method
@@ -13386,7 +14038,12 @@ using System.Linq;
 var fibs = Fibonacci().Take(8).ToList();  // [0, 1, 1, 2, 3, 5, 8, 13]
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - C++20 introduced coroutines with co_yield, but requires custom boilerplate. Limited built-in support.
 
@@ -13425,7 +14082,12 @@ while (gen.next()) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 - Groovy has no built-in generator syntax. Use iterators or closures instead.
 
@@ -13461,9 +14123,14 @@ println fibonacci(8)  // [0, 1, 1, 2, 3, 5, 8, 13]
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Fetching Web Data
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 - fetching a webpage
 
@@ -13538,7 +14205,12 @@ for skill in skills:
     print(skill.getAttribute("name"))
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // fetch API (modern)
@@ -13576,7 +14248,12 @@ xhr.onload = function () {
 xhr.send();
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // fetch with typed response
@@ -13605,7 +14282,12 @@ async function createUser(name: string): Promise<User> {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 require 'net/http'
@@ -13634,7 +14316,12 @@ require 'open-uri'
 content = URI.open("https://api.example.com/data").read
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 import java.net.URL
@@ -13665,7 +14352,12 @@ val result = conn.inputStream.bufferedReader().readText()
 conn.disconnect()
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 import java.net.HttpURLConnection;
@@ -13707,7 +14399,12 @@ System.out.println(response.statusCode());  // 200
 System.out.println(response.body());
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 using System.Net.Http;
@@ -13735,7 +14432,12 @@ string result = await postResponse.Content.ReadAsStringAsync();
 string data = await client.GetStringAsync("https://api.example.com/data");
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - C++ has no built-in HTTP library. Common options: libcurl, cpp-httplib, Boost.Beast.
 
@@ -13765,7 +14467,12 @@ if (curl) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // simplest GET request
@@ -13797,9 +14504,14 @@ println conn.inputStream.text
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Enum
 
-### Python 3
+**Jump to:** [Python 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 3</h3></summary>
 
 ```python
 from enum import Enum
@@ -13826,7 +14538,12 @@ print("GET_VALUE" in Methods._member_names_)  # False
 print("GET" in Methods._member_names_)  # True
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 const color = {
@@ -13836,7 +14553,12 @@ const color = {
 };
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 - Enum: By default, enums begin numbering their members starting at 0
 
@@ -13858,7 +14580,12 @@ let c: Color = Color.Green; // 2
 let colorName: string = Color[2]; // "Green"
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 - Ruby has no built-in enum type. Use module constants or frozen hashes.
 
@@ -13892,7 +14619,12 @@ end
 direction = Direction::NORTH
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // basic enum class
@@ -13925,7 +14657,12 @@ Color.values().forEach { println(it) }
 val color = Color.valueOf("RED")  // Color.RED
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - ENUM
 - Enumerations are lists of possible values that you can use for any particular variable
@@ -13975,7 +14712,12 @@ public class Main {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - Enum
   - Used to manage number type constants for better clarity and maintainability
@@ -14008,7 +14750,12 @@ ShippingMethod method = (int) ShippingMethod.Express;  // 3
 ShippingMethod methodType = (ShippingMethod) 3;  // Express
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 enum Color { red, green, blue };
@@ -14043,7 +14790,12 @@ enum class Color{ Red, Green, Blue};
 Color col = Color::Red;
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // basic enum
@@ -14084,9 +14836,14 @@ Color.values().each { println it }
 
 [back to top](#table-of-contents)
 
+</details>
+
 ## Language Specific
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 - Shebang line / hashbang
   - it is a common pattern for unix based systems
@@ -14338,7 +15095,12 @@ async def countdown35(tag: str, count: int) -> str:
     return "Blastoff!"
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 - Set
 
@@ -14468,7 +15230,12 @@ console.log(proxy.nextId); // 2
 console.log(proxy.nextId); // 3
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 - Declaring with type as "any": use to declare variable type if you do not know its type
   - will receive an error if use methods for the wrong type (no auto checking)
@@ -14504,7 +15271,12 @@ console.log(genericFunc(123));
 console.log(genericFunc(false));
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 - Blocks, Procs, and Lambdas
 
@@ -14604,7 +15376,12 @@ person.email = "alice@example.com"  # dynamically add attributes
 person.email  # "alice@example.com"
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 - Null Safety
 
@@ -14692,7 +15469,12 @@ fun main() = runBlocking {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - Number formatting
 
@@ -14901,7 +15683,12 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
     }
     ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - Overloading
   - having multiple similar methods with different signatures
@@ -15853,7 +16640,12 @@ class Program
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - References
 
@@ -15874,7 +16666,12 @@ num++;  // num = 11, referenceNum = 11
 referenceNum++;  // num = 12, referenceNum = 12
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 - Closures
 
@@ -15995,3 +16792,5 @@ println employees.sort()  // sorted by name, then age
 ```
 
 [back to top](#table-of-contents)
+
+</details>
