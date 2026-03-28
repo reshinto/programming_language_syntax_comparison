@@ -10448,6 +10448,76 @@ Math.floor(Math.random() * 10) + 1;
 
 ### Ruby
 
+```ruby
+Math.sqrt(100)       # 10.0
+Math.cbrt(27)        # 3.0
+Math::PI             # 3.141592653589793
+Math::E              # 2.718281828459045
+Math.log(1)          # 0.0 (natural log)
+Math.log10(100)      # 2.0
+Math.sin(0)          # 0.0
+Math.cos(0)          # 1.0
+
+(-5).abs             # 5
+4.5.ceil             # 5
+4.5.floor            # 4
+4.5.round            # 5
+[5, 10].max          # 10
+[5, 10].min          # 5
+2 ** 10              # 1024
+
+# random numbers
+rand()               # random float between 0.0 and 1.0
+rand(10)             # random integer from 0 to 9
+rand(1..10)          # random integer from 1 to 10
+```
+
+### TypeScript
+
+```typescript
+const abs: number = Math.abs(-1);          // 1
+const pow: number = Math.pow(2, 3);        // 8
+const sqrt: number = Math.sqrt(100);       // 10
+const ceil: number = Math.ceil(4.2);       // 5
+const floor: number = Math.floor(4.9);     // 4
+const round: number = Math.round(4.5);     // 5
+const max: number = Math.max(5, 10);       // 10
+const min: number = Math.min(5, 10);       // 5
+const pi: number = Math.PI;               // 3.141592653589793
+
+// random integer from 0 to 9
+const randomInt: number = Math.floor(Math.random() * 10);
+
+// random integer from 1 to 10
+const randomRange: number = Math.floor(Math.random() * 10) + 1;
+```
+
+### Kotlin
+
+```kotlin
+import kotlin.math.*
+
+val number = 10.5
+
+println(abs(-1))           // 1
+println(sqrt(100.0))       // 10.0
+println(10.0.pow(2))       // 100.0
+println(ceil(4.2))         // 5.0
+println(floor(4.9))        // 4.0
+println(round(4.5))        // 4.0
+println(max(5, 10))        // 10
+println(min(5, 10))        // 5
+println(ln(E))             // 1.0
+println(log10(100.0))      // 2.0
+println(sin(0.0))          // 0.0
+println(cos(0.0))          // 1.0
+println(PI)                // 3.141592653589793
+
+// random numbers
+val randomInt = (0..9).random()           // random int from 0 to 9
+val randomDouble = Math.random()          // random double from 0.0 to 1.0
+```
+
 ### Java
 
 ```java
@@ -10498,6 +10568,28 @@ System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 srand((int)time(0));
 // Get the random number from the seed & save it to a variable
 int randomNumber = rand() % 100;  // number range from 0 to 99
+```
+
+### Groovy
+
+```groovy
+def number1 = 10.5
+def number2 = 15
+
+println Math.abs(-1)             // 1
+println Math.ceil(number1)       // 11.0
+println Math.floor(number1)      // 10.0
+println Math.max(number1, number2)  // 15.0
+println Math.min(number1, number2)  // 10.5
+println Math.pow(number1, 2)     // 110.25
+println Math.round(number1)      // 11
+println Math.sqrt(number1)       // 3.24037034920393
+println Math.PI                  // 3.141592653589793
+
+// random numbers
+def random = new Random()
+println random.nextInt(11)       // random integer from 0 to 10
+println random.nextInt(10) + 1   // random integer from 1 to 10
 ```
 
 [back to top](#table-of-contents)
@@ -10616,6 +10708,62 @@ for m in range(1, 13):
 
 ### JavaScript
 
+```javascript
+// current date and time
+const now = new Date();
+console.log(now.toString());       // "Fri Jul 16 2021 18:30:00 GMT+0800"
+console.log(now.toISOString());    // "2021-07-16T10:30:00.000Z"
+console.log(now.toLocaleDateString());  // "7/16/2021"
+console.log(now.toLocaleTimeString());  // "6:30:00 PM"
+
+// individual components
+console.log(now.getFullYear());    // 2021
+console.log(now.getMonth());       // 6 (0-indexed, 6 = July)
+console.log(now.getDate());        // 16
+console.log(now.getDay());         // 5 (0 = Sunday)
+console.log(now.getHours());       // 18
+console.log(now.getMinutes());     // 30
+
+// create specific date
+const date = new Date(2021, 6, 16);  // July 16, 2021 (month is 0-indexed)
+const date2 = new Date("2021-07-16");
+
+// date arithmetic
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+// get timestamp in milliseconds
+Date.now();  // 1626432600000
+
+// formatting
+now.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+// "Friday, July 16, 2021"
+```
+
+### TypeScript
+
+```typescript
+const now: Date = new Date();
+const year: number = now.getFullYear();
+const month: number = now.getMonth();  // 0-indexed
+const day: number = now.getDate();
+
+const isoString: string = now.toISOString();
+const localDate: string = now.toLocaleDateString();
+const localTime: string = now.toLocaleTimeString();
+
+// create specific date
+const date: Date = new Date(2021, 6, 16);
+const date2: Date = new Date("2021-07-16");
+
+// timestamp
+const timestamp: number = Date.now();
+
+// date arithmetic
+const tomorrow: Date = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+```
+
 ### Ruby
 
 ```ruby
@@ -10702,6 +10850,97 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 
 ### C++
+
+```c++
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+
+// get current time
+auto now = std::chrono::system_clock::now();
+std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
+std::cout << std::ctime(&currentTime);  // "Fri Jul 16 18:30:00 2021\n"
+
+// formatted output
+std::tm* localTime = std::localtime(&currentTime);
+std::cout << std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << std::endl;  // "2021-07-16 18:30:00"
+std::cout << std::put_time(localTime, "%A, %B %d, %Y") << std::endl;     // "Friday, July 16, 2021"
+
+// individual components
+std::cout << localTime->tm_year + 1900 << std::endl;  // 2021
+std::cout << localTime->tm_mon + 1 << std::endl;      // 7 (1-indexed after +1)
+std::cout << localTime->tm_mday << std::endl;          // 16
+
+// time arithmetic with chrono
+auto future = now + std::chrono::hours(24);  // 24 hours from now
+auto duration = future - now;
+auto hours = std::chrono::duration_cast<std::chrono::hours>(duration).count();  // 24
+```
+
+### Kotlin
+
+```kotlin
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+
+val now = LocalDateTime.now()
+println(now)  // 2021-07-16T18:30:00.000
+
+val today = LocalDate.now()
+println(today)           // 2021-07-16
+println(today.year)      // 2021
+println(today.monthValue)  // 7
+println(today.dayOfMonth)  // 16
+println(today.dayOfWeek)   // FRIDAY
+
+// create specific date
+val date = LocalDate.of(2021, 7, 16)
+
+// formatting
+val formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy")
+println(today.format(formatter))  // "Friday, July 16, 2021"
+
+// date arithmetic
+val tomorrow = today.plusDays(1)
+val nextWeek = today.plusWeeks(1)
+val lastMonth = today.minusMonths(1)
+
+// difference between dates
+val daysBetween = ChronoUnit.DAYS.between(date, today)
+```
+
+### Groovy
+
+```groovy
+// current date and time
+def now = new Date()
+println now  // Fri Jul 16 18:30:00 SGT 2021
+
+// formatting
+println now.format("yyyy-MM-dd")           // "2021-07-16"
+println now.format("EEEE, MMMM dd, yyyy") // "Friday, July 16, 2021"
+
+// date arithmetic
+def tomorrow = now + 1     // add 1 day
+def yesterday = now - 1    // subtract 1 day
+
+// using java.time (Groovy 2.5+)
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+def today = LocalDate.now()
+println today  // 2021-07-16
+
+def formatted = today.format(DateTimeFormatter.ofPattern("M/d/yyyy"))
+println formatted  // 7/16/2021
+
+// parsing
+def parsed = Date.parse("yyyy-MM-dd", "2021-07-16")
+```
 
 [back to top](#table-of-contents)
 
@@ -10805,7 +11044,127 @@ if path.exists("textfile"):
 
 ### JavaScript
 
+```javascript
+const fs = require("fs");
+const path = require("path");
+
+// read file (async)
+fs.readFile("textfile.txt", "utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+// read file (sync)
+const content = fs.readFileSync("textfile.txt", "utf8");
+
+// write file
+fs.writeFile("textfile.txt", "Hello World", (err) => {
+  if (err) throw err;
+  console.log("File written");
+});
+
+// append to file
+fs.appendFile("textfile.txt", "\nNew line", (err) => {
+  if (err) throw err;
+});
+
+// check if file exists
+fs.existsSync("textfile.txt");  // true
+
+// delete file
+fs.unlinkSync("textfile.txt");
+
+// read directory
+fs.readdirSync("./");  // ["file1.txt", "file2.txt", ...]
+
+// create directory
+fs.mkdirSync("newFolder", { recursive: true });
+
+// path utilities
+path.join("/users", "docs", "file.txt");  // "/users/docs/file.txt"
+path.basename("/users/docs/file.txt");     // "file.txt"
+path.extname("file.txt");                  // ".txt"
+path.dirname("/users/docs/file.txt");      // "/users/docs"
+```
+
+### TypeScript
+
+```typescript
+import * as fs from "fs";
+import * as path from "path";
+import { promises as fsp } from "fs";
+
+// read file (async with promises)
+const content: string = await fsp.readFile("textfile.txt", "utf8");
+
+// write file (async with promises)
+await fsp.writeFile("textfile.txt", "Hello World");
+
+// read file (sync)
+const data: string = fs.readFileSync("textfile.txt", "utf8");
+
+// write file (sync)
+fs.writeFileSync("textfile.txt", "Hello World");
+
+// check if file exists
+const exists: boolean = fs.existsSync("textfile.txt");
+
+// read directory
+const files: string[] = await fsp.readdir("./");
+
+// file stats
+const stats: fs.Stats = await fsp.stat("textfile.txt");
+const isFile: boolean = stats.isFile();
+const isDir: boolean = stats.isDirectory();
+
+// path utilities
+const fullPath: string = path.join("/users", "docs", "file.txt");
+const ext: string = path.extname("file.txt");  // ".txt"
+```
+
 ### Ruby
+
+```ruby
+# read entire file
+content = File.read("textfile.txt")
+
+# read file line by line
+File.foreach("textfile.txt") do |line|
+  puts line
+end
+
+# write to file (overwrites)
+File.write("textfile.txt", "Hello World")
+
+# write with File.open
+File.open("textfile.txt", "w") do |f|
+  f.write("Hello World")
+end
+
+# append to file
+File.open("textfile.txt", "a") do |f|
+  f.write("\nNew line")
+end
+
+# check if file exists
+File.exist?("textfile.txt")  # true
+File.file?("textfile.txt")   # true
+File.directory?("mydir")     # true
+
+# delete file
+File.delete("textfile.txt")
+
+# file info
+File.size("textfile.txt")     # file size in bytes
+File.basename("/path/to/file.txt")  # "file.txt"
+File.extname("file.txt")      # ".txt"
+File.dirname("/path/to/file.txt")   # "/path/to"
+
+# directory operations
+Dir.mkdir("newFolder")
+Dir.entries(".")          # [".", "..", "file1.txt", ...]
+Dir.glob("*.txt")         # ["file1.txt", "file2.txt"]
+```
 
 ### Java
 
@@ -11019,6 +11378,158 @@ System.Diagnostics.Process.Start(filename);
 
 ### C++
 
+```c++
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <filesystem>  // C++17
+
+// write to file
+std::ofstream outFile("textfile.txt");
+outFile << "Hello World" << std::endl;
+outFile.close();
+
+// append to file
+std::ofstream appendFile("textfile.txt", std::ios::app);
+appendFile << "New line" << std::endl;
+appendFile.close();
+
+// read file
+std::ifstream inFile("textfile.txt");
+std::string line;
+while (std::getline(inFile, line)) {
+    std::cout << line << std::endl;
+}
+inFile.close();
+
+// C++17 filesystem
+namespace fs = std::filesystem;
+
+fs::exists("textfile.txt");           // true
+fs::is_regular_file("textfile.txt");  // true
+fs::is_directory("mydir");            // false
+fs::file_size("textfile.txt");        // file size in bytes
+
+// create directory
+fs::create_directory("newFolder");
+fs::create_directories("path/to/newFolder");  // recursive
+
+// iterate directory
+for (const auto& entry : fs::directory_iterator(".")) {
+    std::cout << entry.path() << std::endl;
+}
+
+// copy and remove
+fs::copy("source.txt", "dest.txt");
+fs::remove("textfile.txt");
+
+// path utilities
+fs::path p("/users/docs/file.txt");
+std::cout << p.filename() << std::endl;   // "file.txt"
+std::cout << p.extension() << std::endl;  // ".txt"
+std::cout << p.parent_path() << std::endl;  // "/users/docs"
+```
+
+### Kotlin
+
+```kotlin
+import java.io.File
+
+val file = File("textfile.txt")
+
+// write to file
+file.writeText("Hello World")
+
+// append to file
+file.appendText("\nNew line")
+
+// read entire file
+val content = file.readText()
+
+// read file line by line
+file.forEachLine { line ->
+    println(line)
+}
+
+// read lines into list
+val lines: List<String> = file.readLines()
+
+// buffered reader
+file.bufferedReader().use { reader ->
+    reader.forEachLine { println(it) }
+}
+
+// check if file exists
+file.exists()       // true
+file.isFile         // true
+file.isDirectory    // false
+
+// file info
+file.name           // "textfile.txt"
+file.extension       // "txt"
+file.absolutePath    // "/path/to/textfile.txt"
+file.length()        // file size in bytes
+
+// directory operations
+val dir = File("mydir")
+dir.mkdir()          // create single directory
+dir.mkdirs()         // create directory and parents
+dir.listFiles()      // array of File objects
+dir.list()           // array of filenames
+
+// copy and delete
+file.copyTo(File("copy.txt"), overwrite = true)
+file.delete()
+```
+
+### Groovy
+
+```groovy
+def file = new File("textfile.txt")
+
+// write to file
+file.text = "Hello World"
+
+// append to file
+file.append("\nNew line")
+
+// read entire file
+def content = file.text
+
+// read file line by line
+file.eachLine { line ->
+    println line
+}
+
+// read lines into list
+def lines = file.readLines()
+
+// write with writer
+file.withWriter { writer ->
+    writer.writeLine("Hello World")
+}
+
+// check if file exists
+file.exists()       // true
+file.isFile()       // true
+file.isDirectory()  // false
+
+// file info
+file.name           // "textfile.txt"
+file.absolutePath   // "/path/to/textfile.txt"
+file.length()       // file size in bytes
+
+// directory operations
+def dir = new File("mydir")
+dir.mkdir()
+dir.mkdirs()        // create directory and parents
+dir.eachFile { f -> println f.name }
+dir.eachFileRecurse { f -> println f.name }
+
+// delete
+file.delete()
+```
+
 [back to top](#table-of-contents)
 
 ## Access modifier
@@ -11027,7 +11538,58 @@ System.Diagnostics.Process.Start(filename);
 
 ### Python
 
+- No true access modifiers, uses naming conventions
+
+```python
+class MyClass:
+    def __init__(self):
+        self.public_var = "accessible everywhere"
+        self._protected_var = "convention: treat as protected"
+        self.__private_var = "name-mangled to _MyClass__private_var"
+
+    def public_method(self):
+        return "public"
+
+    def _protected_method(self):
+        return "convention: treat as protected"
+
+    def __private_method(self):
+        return "name-mangled, hard to access from outside"
+
+obj = MyClass()
+print(obj.public_var)          # "accessible everywhere"
+print(obj._protected_var)      # "convention: treat as protected" (still accessible)
+# print(obj.__private_var)     # AttributeError
+print(obj._MyClass__private_var)  # "name-mangled to _MyClass__private_var" (still accessible via mangled name)
+```
+
 ### JavaScript
+
+- No traditional access modifiers, uses `#` for private fields (ES2022)
+
+```javascript
+class MyClass {
+  publicField = "accessible everywhere";
+  #privateField = "only accessible inside class";
+
+  getPrivate() {
+    return this.#privateField;
+  }
+
+  #privateMethod() {
+    return "private method";
+  }
+
+  callPrivate() {
+    return this.#privateMethod();
+  }
+}
+
+const obj = new MyClass();
+console.log(obj.publicField);     // "accessible everywhere"
+// console.log(obj.#privateField); // SyntaxError
+console.log(obj.getPrivate());    // "only accessible inside class"
+```
 
 ### TypeScript
 
@@ -11044,7 +11606,77 @@ System.Diagnostics.Process.Start(filename);
 
 ### Ruby
 
+- 3 types: public (default), private, protected
+
+```ruby
+class MyClass
+  def public_method
+    "accessible everywhere"  # public by default
+  end
+
+  private
+
+  def private_method
+    "only accessible within the class"
+  end
+
+  protected
+
+  def protected_method
+    "accessible within the class and subclasses"
+  end
+end
+
+obj = MyClass.new
+obj.public_method       # "accessible everywhere"
+# obj.private_method    # NoMethodError
+# obj.protected_method  # NoMethodError
+
+class ChildClass < MyClass
+  def call_protected
+    protected_method  # accessible in subclass
+  end
+end
+```
+
+### Kotlin
+
+- 4 types: public (default), private, protected, internal
+
+```kotlin
+class MyClass {
+    val publicProp = "accessible everywhere"            // public by default
+    private val privateProp = "only within this class"
+    protected val protectedProp = "class and subclasses"
+    internal val internalProp = "within the same module"
+
+    private fun privateMethod(): String = "private"
+    protected fun protectedMethod(): String = "protected"
+    internal fun internalMethod(): String = "internal"
+}
+
+// top-level declarations
+private fun topLevelPrivate() {}   // visible within the file
+internal fun topLevelInternal() {} // visible within the module
+```
+
 ### Java
+
+- 4 types: public, protected, default (package-private), private
+
+```java
+public class MyClass {
+    public String publicField = "accessible everywhere";
+    protected String protectedField = "class, subclasses, and same package";
+    String defaultField = "same package only (package-private)";  // no modifier
+    private String privateField = "only within this class";
+
+    public void publicMethod() {}
+    protected void protectedMethod() {}
+    void defaultMethod() {}          // package-private
+    private void privateMethod() {}
+}
+```
 
 ### C#
 
@@ -11177,11 +11809,92 @@ class Program2: NumberClassInFirstProject  // Inheritance
 
 ### C++
 
+- 3 types: public, protected, private (default in class, public in struct)
+
+```c++
+class MyClass {
+public:
+    int publicVar;          // accessible everywhere
+    void publicMethod() {}
+
+protected:
+    int protectedVar;       // accessible in class and derived classes
+    void protectedMethod() {}
+
+private:
+    int privateVar;         // only accessible within this class
+    void privateMethod() {}
+};
+
+class ChildClass : public MyClass {
+    void accessMembers() {
+        publicVar = 1;      // OK
+        protectedVar = 2;   // OK
+        // privateVar = 3;  // Error: inaccessible
+    }
+};
+
+// struct members are public by default
+struct MyStruct {
+    int publicByDefault;
+};
+```
+
+### Groovy
+
+- public (default), private, protected
+
+```groovy
+class MyClass {
+    String publicField = "accessible everywhere"  // public by default
+    private String privateField = "only within this class"
+    protected String protectedField = "class and subclasses"
+
+    def publicMethod() { "public" }
+    private def privateMethod() { "private" }
+    protected def protectedMethod() { "protected" }
+}
+
+def obj = new MyClass()
+println obj.publicField       // "accessible everywhere"
+// Note: Groovy does not enforce private at runtime (uses reflection)
+println obj.privateField      // "only within this class" (accessible but not recommended)
+```
+
 [back to top](#table-of-contents)
 
 ## Iterators
 
 ### Python
+
+```python
+# using __iter__ and __next__ on built-in types
+nums = [1, 2, 3]
+iterator = iter(nums)
+print(next(iterator))  # 1
+print(next(iterator))  # 2
+print(next(iterator))  # 3
+# next(iterator)       # raises StopIteration
+
+# custom iterator class
+class CountUp:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current > self.end:
+            raise StopIteration
+        value = self.current
+        self.current += 1
+        return value
+
+for num in CountUp(1, 3):
+    print(num)  # 1, 2, 3
+```
 
 ### JavaScript
 
@@ -11195,7 +11908,63 @@ iterator.next(); // { value: 2, done: false }
 iterator.next(); // { value: undefined, done: true }
 ```
 
+### TypeScript
+
+```typescript
+// Symbol.iterator protocol
+class Range implements Iterable<number> {
+  constructor(private start: number, private end: number) {}
+
+  [Symbol.iterator](): Iterator<number> {
+    let current = this.start;
+    const end = this.end;
+    return {
+      next(): IteratorResult<number> {
+        if (current <= end) {
+          return { value: current++, done: false };
+        }
+        return { value: undefined as any, done: true };
+      },
+    };
+  }
+}
+
+const range = new Range(1, 3);
+for (const num of range) {
+  console.log(num); // 1, 2, 3
+}
+```
+
 ### Ruby
+
+```ruby
+# each (most common iterator)
+[1, 2, 3].each { |n| puts n }  # 1, 2, 3
+
+# Enumerator
+enum = [1, 2, 3].each  # returns an Enumerator
+enum.next  # 1
+enum.next  # 2
+enum.next  # 3
+# enum.next  # raises StopIteration
+
+# Enumerable methods
+[1, 2, 3].map { |n| n * 2 }       # [2, 4, 6]
+[1, 2, 3].select { |n| n > 1 }    # [2, 3]
+[1, 2, 3].reduce(0) { |sum, n| sum + n }  # 6
+
+# custom iterator with Enumerator
+counter = Enumerator.new do |yielder|
+  i = 0
+  loop do
+    yielder.yield i
+    i += 1
+  end
+end
+
+counter.next  # 0
+counter.next  # 1
+```
 
 ### Java
 
