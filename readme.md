@@ -4796,7 +4796,79 @@ public class Program {
 }
 ```
 
+### TypeScript
+
+```typescript
+// Instantiation with type
+let t: ClassName = new ClassName();
+let t2: ClassName = new ClassName(argument);
+
+// Using interfaces
+interface Person {
+  name: string;
+  age: number;
+}
+let p: Person = { name: "Alice", age: 30 };
+```
+
+### Kotlin
+
+```kotlin
+// Instantiation (no "new" keyword needed)
+val t = ClassName()
+val t2 = ClassName(argument)
+
+// Primary constructor
+class Person(val name: String, val age: Int)
+val p = Person("Alice", 30)
+
+// Secondary constructor
+class Person {
+    var name: String
+    constructor(name: String) {
+        this.name = name
+    }
+}
+```
+
 ### C++
+
+```c++
+// Stack allocation (automatically destroyed when out of scope)
+ClassName t;  // default constructor
+ClassName t2(arg1, arg2);  // parameterized constructor
+ClassName t3 = ClassName(arg1, arg2);  // explicit constructor call
+ClassName t4{arg1, arg2};  // uniform initialization (C++11)
+
+// Heap allocation (must be manually deleted)
+ClassName* t5 = new ClassName();
+ClassName* t6 = new ClassName(arg1, arg2);
+delete t5;
+delete t6;
+
+// Smart pointers (C++11, preferred over raw pointers)
+#include <memory>
+std::unique_ptr<ClassName> t7 = std::make_unique<ClassName>(arg1, arg2);
+std::shared_ptr<ClassName> t8 = std::make_shared<ClassName>(arg1, arg2);
+```
+
+### Groovy
+
+```groovy
+// Instantiation
+def t = new ClassName()
+def t2 = new ClassName(argument)
+
+// Named constructor parameters (map-based)
+class Person {
+    String name
+    int age
+}
+def p = new Person(name: "Alice", age: 30)
+
+// Groovy also allows omitting parentheses
+def t3 = new ClassName()
+```
 
 [back to top](#table-of-contents)
 
@@ -5169,6 +5241,77 @@ int sumTwoNumbers(int a, int b)
 }
 ```
 
+### Kotlin
+
+```kotlin
+// Normal function
+fun myFunction() {
+    // do_something
+}
+
+// Function with parameters
+fun myFunction(a: Int) {
+    // do_something_with_a
+}
+
+// Function with return type
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+
+// Single-expression function
+fun sum(a: Int, b: Int): Int = a + b
+
+// Default parameters
+fun myFunction(a: Int = 10, b: String = "hello") {
+    // do_something
+}
+
+// Named parameters
+fun greet(name: String, greeting: String = "Hello") {
+    println("$greeting, $name")
+}
+greet(name = "Alice", greeting = "Hi")
+greet(name = "Bob")  // uses default greeting
+
+// Lambda expression
+val square: (Int) -> Int = { x -> x * x }
+val sum = { a: Int, b: Int -> a + b }
+```
+
+### Groovy
+
+```groovy
+// Normal function
+def myFunction() {
+    // do_something
+}
+
+// Function with parameters
+def myFunction(a) {
+    // do_something_with_a
+}
+
+// Function with return type
+int sum(int a, int b) {
+    return a + b
+}
+
+// Default parameters
+def myFunction(a = 10, b = "hello") {
+    // do_something
+}
+
+// Closures (similar to lambdas)
+def square = { x -> x * x }
+def sum = { a, b -> a + b }
+square(5)  // 25
+
+// Closure with implicit parameter "it"
+def greet = { "Hello, $it" }
+greet("Alice")  // "Hello, Alice"
+```
+
 [back to top](#table-of-contents)
 
 ## Higher order functions
@@ -5309,9 +5452,172 @@ arr2 = ["1", "2", "3"]
 puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 
+### TypeScript
+
+```typescript
+// Map: with type annotations
+const numbers: number[] = [1, 2, 3];
+const doubled: number[] = numbers.map((n: number): number => n * 2);  // [2, 4, 6]
+
+// Filter: with type annotations
+const ages: number[] = [15, 18, 21, 12];
+const canDrink: number[] = ages.filter((age: number): boolean => age >= 18);  // [18, 21]
+
+// Reduce: with type annotations
+const arr: number[] = [1, 2, 3];
+const sum: number = arr.reduce((acc: number, curr: number): number => acc + curr, 0);  // 6
+
+// Typed callback functions
+type MapFn<T, U> = (item: T, index: number) => U;
+const toStr: MapFn<number, string> = (n) => n.toString();
+const result: string[] = [1, 2, 3].map(toStr);  // ["1", "2", "3"]
+```
+
+### Kotlin
+
+```kotlin
+// Map: transform each element
+val numbers = listOf(1, 2, 3)
+val doubled = numbers.map { it * 2 }  // [2, 4, 6]
+
+// Filter: keep elements matching condition
+val ages = listOf(15, 18, 21, 12)
+val canDrink = ages.filter { it >= 18 }  // [18, 21]
+
+// Reduce: accumulate into single value
+val sum = numbers.reduce { acc, n -> acc + n }  // 6
+
+// Fold: like reduce but with initial value
+val sum2 = numbers.fold(10) { acc, n -> acc + n }  // 16
+
+// ForEach: iterate with side effects
+numbers.forEach { println(it) }
+
+// Chaining
+val result = listOf(1, 2, 3, 4, 5)
+    .filter { it % 2 == 0 }
+    .map { it * 10 }  // [20, 40]
+```
+
 ### Java
 
+```java
+// import java.util.Arrays;
+// import java.util.List;
+// import java.util.stream.Collectors;
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Map: transform each element using Stream API
+List<Integer> doubled = numbers.stream()
+    .map(n -> n * 2)
+    .collect(Collectors.toList());  // [2, 4, 6, 8, 10]
+
+// Filter: keep elements matching condition
+List<Integer> evens = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .collect(Collectors.toList());  // [2, 4]
+
+// Reduce: accumulate into single value
+int sum = numbers.stream()
+    .reduce(0, (acc, n) -> acc + n);  // 15
+
+// ForEach: iterate with lambda
+numbers.forEach(n -> System.out.println(n));
+
+// Method reference
+numbers.forEach(System.out::println);
+
+// Chaining
+List<String> result = numbers.stream()
+    .filter(n -> n > 2)
+    .map(n -> "Value: " + n)
+    .collect(Collectors.toList());  // ["Value: 3", "Value: 4", "Value: 5"]
+```
+
+### C#
+
+```c#
+// using System.Linq;
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+// Select (Map): transform each element
+var doubled = numbers.Select(n => n * 2).ToList();  // [2, 4, 6, 8, 10]
+
+// Where (Filter): keep elements matching condition
+var evens = numbers.Where(n => n % 2 == 0).ToList();  // [2, 4]
+
+// Aggregate (Reduce): accumulate into single value
+var sum = numbers.Aggregate(0, (acc, n) => acc + n);  // 15
+
+// Func<> and Action<> delegates
+Func<int, int> square = x => x * x;
+Action<int> print = x => Console.WriteLine(x);
+
+square(5);  // 25
+numbers.ForEach(print);  // prints each number
+
+// Chaining LINQ methods
+var result = numbers
+    .Where(n => n > 2)
+    .Select(n => $"Value: {n}")
+    .ToList();  // ["Value: 3", "Value: 4", "Value: 5"]
+```
+
 ### C++
+
+```c++
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <functional>
+
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// std::transform (Map): transform each element into a new container
+std::vector<int> doubled(numbers.size());
+std::transform(numbers.begin(), numbers.end(), doubled.begin(),
+    [](int n) { return n * 2; });  // {2, 4, 6, 8, 10}
+
+// std::copy_if (Filter): copy elements matching condition
+std::vector<int> evens;
+std::copy_if(numbers.begin(), numbers.end(), std::back_inserter(evens),
+    [](int n) { return n % 2 == 0; });  // {2, 4}
+
+// std::accumulate (Reduce): accumulate into single value
+int sum = std::accumulate(numbers.begin(), numbers.end(), 0);  // 15
+
+// std::for_each: iterate with side effects
+std::for_each(numbers.begin(), numbers.end(),
+    [](int n) { std::cout << n << " "; });
+
+// Function pointers and lambdas
+auto square = [](int x) -> int { return x * x; };
+std::function<int(int)> cube = [](int x) { return x * x * x; };
+```
+
+### Groovy
+
+```groovy
+def numbers = [1, 2, 3, 4, 5]
+
+// collect (Map): transform each element
+def doubled = numbers.collect { it * 2 }  // [2, 4, 6, 8, 10]
+
+// findAll (Filter): keep elements matching condition
+def evens = numbers.findAll { it % 2 == 0 }  // [2, 4]
+
+// inject (Reduce): accumulate into single value
+def sum = numbers.inject(0) { acc, n -> acc + n }  // 15
+
+// each: iterate with side effects
+numbers.each { println it }
+
+// Chaining
+def result = numbers
+    .findAll { it > 2 }
+    .collect { "Value: $it" }  // ["Value: 3", "Value: 4", "Value: 5"]
+```
 
 [back to top](#table-of-contents)
 
@@ -5785,6 +6091,118 @@ class MainClass {
 
 ### C++
 
+```c++
+#include <map>
+#include <unordered_map>
+#include <string>
+
+// std::map: ordered by keys (uses Red-Black tree)
+std::map<std::string, int> orderedMap;
+orderedMap["alice"] = 100;
+orderedMap["bob"] = 92;
+orderedMap.insert({"chris", 95});
+
+// Access value
+int score = orderedMap["alice"];  // 100
+int score2 = orderedMap.at("bob");  // 92 (throws if key not found)
+
+// Check if key exists
+if (orderedMap.find("alice") != orderedMap.end()) {
+    // key exists
+}
+if (orderedMap.count("alice") > 0) {
+    // key exists
+}
+
+// Remove key
+orderedMap.erase("bob");
+
+// Iterate
+for (const auto& [key, value] : orderedMap) {  // C++17 structured bindings
+    std::cout << key << ": " << value << std::endl;
+}
+
+// std::unordered_map: hash table (faster average lookup)
+std::unordered_map<std::string, int> hashMap;
+hashMap["key1"] = 1;
+hashMap["key2"] = 2;
+
+// Get size
+hashMap.size();
+```
+
+### Kotlin
+
+```kotlin
+// Immutable map
+val map = mapOf("jp" to "Japan", "sg" to "Singapore", "usa" to "United States")
+
+// Mutable map
+val mutableMap = mutableMapOf("jp" to "Japan", "sg" to "Singapore")
+mutableMap["usa"] = "United States"  // add or reassign
+
+// HashMap (hash table implementation)
+val hashMap = hashMapOf("key1" to 1, "key2" to 2)
+
+// Get value
+map["jp"]  // "Japan"
+map.getOrDefault("uk", "Unknown")  // "Unknown"
+
+// Check if key/value exists
+map.containsKey("jp")  // true
+map.containsValue("Japan")  // true
+
+// Remove
+mutableMap.remove("sg")
+
+// Iterate
+for ((key, value) in map) {
+    println("$key: $value")
+}
+
+// Get keys and values
+map.keys   // [jp, sg, usa]
+map.values // [Japan, Singapore, United States]
+```
+
+### Groovy
+
+```groovy
+// Map literal
+def map = [jp: "Japan", sg: "Singapore", usa: "United States"]
+
+// Empty map
+def emptyMap = [:]
+
+// Add or reassign
+map["uk"] = "United Kingdom"  // method 1
+map.put("au", "Australia")    // method 2
+
+// Get value
+map["jp"]       // "Japan"
+map.get("jp")   // "Japan"
+map.get("xx", "Unknown")  // "Unknown" (default value)
+
+// Check if key/value exists
+map.containsKey("jp")     // true
+map.containsValue("Japan") // true
+
+// Remove
+map.remove("sg")
+
+// Iterate
+map.each { key, value ->
+    println "$key: $value"
+}
+
+// Get keys and values
+map.keySet()   // [jp, usa, uk, au]
+map.values()   // [Japan, United States, United Kingdom, Australia]
+
+// Get size
+map.size()
+```
+
 [back to top](#table-of-contents)
 
 ## Destructuring
@@ -5850,9 +6268,124 @@ function myFunction({ arg1, ...rest }: myFunctionProps) {
 
 ### Ruby
 
+```ruby
+# Array destructuring
+a, b, c = [1, 2, 3]  # a=1, b=2, c=3
+
+# Splat operator: capture remaining elements
+first, *rest = [1, 2, 3, 4]  # first=1, rest=[2, 3, 4]
+*head, last = [1, 2, 3, 4]   # head=[1, 2, 3], last=4
+first, *middle, last = [1, 2, 3, 4]  # first=1, middle=[2, 3], last=4
+
+# Ignoring values
+a, _, c = [1, 2, 3]  # a=1, c=3 (2 is ignored)
+```
+
+### Kotlin
+
+```kotlin
+// Destructuring declarations
+val (name, age) = Pair("Alice", 30)
+
+// Destructuring data classes (uses componentN functions)
+data class Person(val name: String, val age: Int)
+val (name, age) = Person("Alice", 30)
+
+// Destructuring in loops
+val map = mapOf("a" to 1, "b" to 2)
+for ((key, value) in map) {
+    println("$key -> $value")
+}
+
+// Destructuring lists (up to component5)
+val (first, second, third) = listOf(1, 2, 3)
+
+// Ignoring values with underscore
+val (_, age) = Person("Alice", 30)
+```
+
 ### Java
 
+```java
+// Java does not have direct destructuring syntax
+// Record pattern matching (Java 16+)
+record Point(int x, int y) {}
+
+Object obj = new Point(1, 2);
+if (obj instanceof Point(int x, int y)) {  // Java 21+
+    System.out.println(x + ", " + y);  // 1, 2
+}
+
+// Workaround: manual extraction
+int[] arr = {1, 2, 3};
+int a = arr[0];
+int b = arr[1];
+```
+
+### C#
+
+```c#
+// Tuple deconstruction (C# 7+)
+var (name, age) = ("Alice", 30);
+
+// Deconstructing objects
+public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public void Deconstruct(out string name, out int age) {
+        name = Name;
+        age = Age;
+    }
+}
+var (name, age) = new Person { Name = "Alice", Age = 30 };
+
+// Pattern matching (C# 8+)
+var point = (X: 1, Y: 2);
+var (x, y) = point;
+
+// Discard with underscore
+var (name, _) = ("Alice", 30);
+```
+
 ### C++
+
+```c++
+// Structured bindings (C++17)
+#include <tuple>
+#include <map>
+
+// Bind elements of a pair
+std::pair<std::string, int> p = {"Alice", 30};
+auto [name, age] = p;  // name="Alice", age=30
+
+// Bind elements of a tuple
+std::tuple<int, double, std::string> t = {1, 2.5, "hello"};
+auto [a, b, c] = t;
+
+// Bind in range-based for loop with maps
+std::map<std::string, int> m = {{"alice", 100}, {"bob", 92}};
+for (const auto& [key, value] : m) {
+    std::cout << key << ": " << value << std::endl;
+}
+
+// Bind struct members
+struct Point { int x; int y; };
+Point pt = {1, 2};
+auto [x, y] = pt;
+```
+
+### Groovy
+
+```groovy
+// Multiple assignment
+def (a, b, c) = [1, 2, 3]  // a=1, b=2, c=3
+
+// Swap values
+def (x, y) = [y, x]
+
+// With typed variables
+def (String name, int age) = ["Alice", 30]
+```
 
 [back to top](#table-of-contents)
 
@@ -5891,11 +6424,156 @@ let totalArr = arr1.concat(arr2); // concat method
 let totalArr = [...arr1, ...arr2];
 ```
 
+### TypeScript
+
+```typescript
+// Spread with typed arrays
+const arr1: number[] = [1, 2, 3];
+const arr2: number[] = [4, 5, 6];
+const combined: number[] = [...arr1, ...arr2];  // [1, 2, 3, 4, 5, 6]
+
+// Spread with objects
+interface Person { name: string; age: number; }
+const defaults: Person = { name: "Unknown", age: 0 };
+const person: Person = { ...defaults, name: "Alice" };  // { name: "Alice", age: 0 }
+
+// Spread in function calls
+const args: [number, number] = [1, 2];
+function add(a: number, b: number): number { return a + b; }
+add(...args);
+```
+
 ### Ruby
+
+```ruby
+# Splat * operator: spread array into arguments
+def my_method(a, b, c)
+  puts "#{a}, #{b}, #{c}"
+end
+arr = [1, 2, 3]
+my_method(*arr)  # 1, 2, 3
+
+# Spread array into another array
+arr1 = [1, 2, 3]
+arr2 = [0, *arr1, 4]  # [0, 1, 2, 3, 4]
+
+# Double splat ** operator: spread hash into keyword arguments
+def greet(name:, greeting:)
+  puts "#{greeting}, #{name}"
+end
+opts = { name: "Alice", greeting: "Hi" }
+greet(**opts)  # "Hi, Alice"
+
+# Merge hashes with double splat
+h1 = { a: 1, b: 2 }
+h2 = { **h1, c: 3 }  # { a: 1, b: 2, c: 3 }
+```
+
+### Kotlin
+
+```kotlin
+// Spread operator * for varargs
+fun printAll(vararg items: String) {
+    items.forEach { println(it) }
+}
+val arr = arrayOf("a", "b", "c")
+printAll(*arr)  // spreads array into varargs
+
+// Combine arrays with spread
+val arr1 = arrayOf(1, 2, 3)
+val arr2 = arrayOf(0, *arr1, 4)  // [0, 1, 2, 3, 4]
+
+// Note: * only works with arrays, not lists
+// Convert list to array first
+val list = listOf("a", "b")
+printAll(*list.toTypedArray())
+```
 
 ### Java
 
+```java
+// Java does not have a spread operator
+// Use varargs to accept variable arguments
+static void printAll(String... items) {
+    for (String item : items) {
+        System.out.println(item);
+    }
+}
+
+// Collections.addAll to merge
+List<String> list1 = new ArrayList<>(Arrays.asList("a", "b"));
+List<String> list2 = Arrays.asList("c", "d");
+list1.addAll(list2);  // ["a", "b", "c", "d"]
+
+// Stream.concat to merge streams
+List<Integer> combined = Stream.concat(
+    Arrays.asList(1, 2).stream(),
+    Arrays.asList(3, 4).stream()
+).collect(Collectors.toList());  // [1, 2, 3, 4]
+```
+
+### C#
+
+```c#
+// C# does not have a direct spread operator
+// params keyword for variable arguments
+static void PrintAll(params string[] items) {
+    foreach (var item in items) Console.WriteLine(item);
+}
+PrintAll("a", "b", "c");
+
+// Merge arrays with LINQ Concat
+int[] arr1 = { 1, 2, 3 };
+int[] arr2 = { 4, 5, 6 };
+int[] combined = arr1.Concat(arr2).ToArray();  // [1, 2, 3, 4, 5, 6]
+
+// Collection expressions (C# 12)
+int[] combined2 = [..arr1, ..arr2];  // [1, 2, 3, 4, 5, 6]
+```
+
 ### C++
+
+```c++
+// C++ does not have a direct spread operator
+// Use initializer_list to combine elements
+#include <vector>
+#include <algorithm>
+
+std::vector<int> arr1 = {1, 2, 3};
+std::vector<int> arr2 = {4, 5, 6};
+
+// Merge vectors
+std::vector<int> combined;
+combined.insert(combined.end(), arr1.begin(), arr1.end());
+combined.insert(combined.end(), arr2.begin(), arr2.end());
+// combined = {1, 2, 3, 4, 5, 6}
+
+// std::copy alternative
+std::vector<int> combined2(arr1.size() + arr2.size());
+std::copy(arr1.begin(), arr1.end(), combined2.begin());
+std::copy(arr2.begin(), arr2.end(), combined2.begin() + arr1.size());
+```
+
+### Groovy
+
+```groovy
+// Spread operator * to unpack a list
+def arr = [1, 2, 3]
+def method(a, b, c) { println "$a, $b, $c" }
+method(*arr)  // 1, 2, 3
+
+// Spread into another list
+def arr1 = [1, 2, 3]
+def arr2 = [0, *arr1, 4]  // [0, 1, 2, 3, 4]
+
+// Spread-dot operator *. to call method on each element
+def names = ["alice", "bob", "chris"]
+def upper = names*.toUpperCase()  // ["ALICE", "BOB", "CHRIS"]
+
+// Spread maps with *:
+def map1 = [a: 1, b: 2]
+def map2 = [*:map1, c: 3]  // [a: 1, b: 2, c: 3]
+```
 
 [back to top](#table-of-contents)
 
@@ -5995,7 +6673,104 @@ class MainClass {
 }
 ```
 
+### TypeScript
+
+```typescript
+// Rest params with types
+function myFunction(...args: number[]): number {
+    return args.reduce((acc, val) => acc + val, 0);
+}
+myFunction(1, 2, 3);  // 6
+
+// Rest with other params
+function greet(greeting: string, ...names: string[]): void {
+    names.forEach(name => console.log(`${greeting}, ${name}`));
+}
+greet("Hello", "Alice", "Bob");
+
+// Rest in tuple types
+type StringAndNumbers = [string, ...number[]];
+const data: StringAndNumbers = ["sum", 1, 2, 3];
+```
+
+### Kotlin
+
+```kotlin
+// vararg keyword
+fun myFunction(vararg args: Int): Int {
+    return args.sum()
+}
+myFunction(1, 2, 3)  // 6
+
+// vararg with other parameters
+fun greet(greeting: String, vararg names: String) {
+    names.forEach { println("$greeting, $it") }
+}
+greet("Hello", "Alice", "Bob")
+
+// Access vararg as array
+fun printAll(vararg items: String) {
+    for (item in items) println(item)
+    println(items.size)  // array property
+}
+```
+
 ### C++
+
+```c++
+// Variadic templates (C++11): type-safe variable arguments
+template<typename... Args>
+void printAll(Args... args) {
+    // Fold expression (C++17)
+    ((std::cout << args << " "), ...);
+}
+printAll(1, "hello", 3.14);  // 1 hello 3.14
+
+// Parameter pack with recursion (C++11)
+// Base case
+void printAll() {}
+// Recursive case
+template<typename T, typename... Args>
+void printAll(T first, Args... rest) {
+    std::cout << first << " ";
+    printAll(rest...);
+}
+
+// C-style variadic function (not type-safe)
+#include <cstdarg>
+double average(int count, ...) {
+    va_list args;
+    va_start(args, count);
+    double sum = 0;
+    for (int i = 0; i < count; i++) {
+        sum += va_arg(args, double);
+    }
+    va_end(args);
+    return sum / count;
+}
+```
+
+### Groovy
+
+```groovy
+// Object... args (varargs)
+def myFunction(Object... args) {
+    args.each { println it }
+}
+myFunction(1, "hello", true)
+
+// Typed varargs
+int sum(int... numbers) {
+    return numbers.sum()
+}
+sum(1, 2, 3)  // 6
+
+// Varargs with other parameters
+def greet(String greeting, String... names) {
+    names.each { println "$greeting, $it" }
+}
+greet("Hello", "Alice", "Bob")
+```
 
 [back to top](#table-of-contents)
 
