@@ -2175,6 +2175,15 @@ boolean_name = false
     - example 3: false because array can't be turned into a symbol
       > [1, 2, 3].respond_to?(:to_sym) # false
 
+### Kotlin
+
+```kotlin
+val booleanName: Boolean = true
+val booleanName2: Boolean = false
+!true  // false
+!false  // true
+```
+
 ### Java
 
 ```java
@@ -2193,15 +2202,6 @@ type Boolean
 bool booleanName = true;  // displayed as True when printed
 bool booleanName = false;  // displayed as False when printed
 System.Boolean booleanName = false;
-```
-
-### Kotlin
-
-```kotlin
-val booleanName: Boolean = true
-val booleanName2: Boolean = false
-!true  // false
-!false  // true
 ```
 
 ### C++
@@ -2262,6 +2262,16 @@ mov al, 0   ; false
 - exponent: `**`
 - floor division: `Math.floor(3/2)  // output 1`
 
+### TypeScript
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3 / 2  // output 1.5`
+- modulus: `%`
+- exponent: `**`
+- floor division: `Math.floor(3 / 2)  // output 1`
+
 ### Ruby
 
 - addition: `+`
@@ -2271,6 +2281,16 @@ mov al, 0   ; false
 - modulus: `%`
 - exponent: `**`
 - floor division: `3/2.floor`
+
+### Kotlin
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3.0 / 2  // output 1.5, 3 / 2 output 1`
+- modulus: `%`
+- exponent: `Math.pow(3.0, 2.0)  // output 9.0`
+- floor division: `3 / 2  // output 1`
 
 ### Java
 
@@ -2291,26 +2311,6 @@ mov al, 0   ; false
 - modulus: `%`
 - exponent: `Math.Pow(3, 2);  // output 9`
 - floor division: `3/2;  // output 1`
-
-### TypeScript
-
-- addition: `+`
-- subtraction: `-`
-- multiplication: `*`
-- division: `3 / 2  // output 1.5`
-- modulus: `%`
-- exponent: `**`
-- floor division: `Math.floor(3 / 2)  // output 1`
-
-### Kotlin
-
-- addition: `+`
-- subtraction: `-`
-- multiplication: `*`
-- division: `3.0 / 2  // output 1.5, 3 / 2 output 1`
-- modulus: `%`
-- exponent: `Math.pow(3.0, 2.0)  // output 9.0`
-- floor division: `3 / 2  // output 1`
 
 ### C++
 
@@ -2353,7 +2353,6 @@ idiv ecx        ; eax = 3 (quotient), edx = 1 (remainder)
 ## Comparison Operators
 
 ### Python 2 & 3
-
 - `==` condition is True if both operand have equal contents
 
 ```python
@@ -2383,7 +2382,6 @@ list1 is list2  # True
 - `<=` condition is True is left operand is less than or equal to right operand
 
 ### JavaScript
-
 - `==` not type-safe, e.g.: string or int will be automatically converted before comparison, only checks the value
 
 ```javascript
@@ -2423,8 +2421,17 @@ console.log(baz);
 // expected output: 0
 ```
 
-### Ruby
+### TypeScript
+- `===` strict equality, checks both value and type
+- `!==` strict inequality
+- `==` loose equality (not recommended)
+- `!=` loose inequality (not recommended)
+- `>`
+- `<`
+- `>=`
+- `<=`
 
+### Ruby
 - `==`
 - `!=`
 - `>`
@@ -2458,8 +2465,17 @@ string2 = "c"
 puts string1 <=> string2  # 0
 ```
 
-### Java
+### Kotlin
+- `==` structural equality (calls `equals()`)
+- `!=` structural inequality
+- `===` referential equality (same object)
+- `!==` referential inequality
+- `>`
+- `<`
+- `>=`
+- `<=`
 
+### Java
 - `==`
   - reference comparison
   ```java
@@ -2488,7 +2504,6 @@ if (s instanceof java.lang.String) {
 ```
 
 ### C#
-
 - `==`
 - `!=`
 - `>`
@@ -2496,30 +2511,7 @@ if (s instanceof java.lang.String) {
 - `>=`
 - `<=`
 
-### TypeScript
-
-- `===` strict equality, checks both value and type
-- `!==` strict inequality
-- `==` loose equality (not recommended)
-- `!=` loose inequality (not recommended)
-- `>`
-- `<`
-- `>=`
-- `<=`
-
-### Kotlin
-
-- `==` structural equality (calls `equals()`)
-- `!=` structural inequality
-- `===` referential equality (same object)
-- `!==` referential inequality
-- `>`
-- `<`
-- `>=`
-- `<=`
-
 ### C++
-
 - `==`
 - `!=`
 - `>`
@@ -2528,7 +2520,6 @@ if (s instanceof java.lang.String) {
 - `<=`
 
 ### Groovy
-
 - `==` calls `equals()`, null-safe
 - `!=`
 - `>`
@@ -2553,13 +2544,11 @@ a.is(b)     // may be true (string interning) or false
 ## Logical Operators
 
 ### Python 2 & 3
-
 - `and`
 - `or`
 - `not`
 
 ### JavaScript
-
 - `&&` and
 - `||` or
 - `!` not
@@ -2572,46 +2561,39 @@ a.is(b)     // may be true (string interning) or false
   - `truthy || falsey` truthy
   - `falsey1 || falsey2` falsey2
 
-### Ruby
+### TypeScript
+- `&&` and
+- `||` or
+- `!` not
 
+### Ruby
+- `&&` and
+- `||` or
+- `!` not
+
+### Kotlin
 - `&&` and
 - `||` or
 - `!` not
 
 ### Java
-
 - `&&` and
 - `||` or
 - `^` exclusive or
 - `!` not
 
 ### C#
-
 - `&&` and
 - `||` or
 - `^` exclusive or
 - `!` not
 
-### TypeScript
-
-- `&&` and
-- `||` or
-- `!` not
-
-### Kotlin
-
-- `&&` and
-- `||` or
-- `!` not
-
 ### C++
-
 - `&&` and
 - `||` or
 - `!` not
 
 ### Groovy
-
 - `&&` and
 - `||` or
 - `!` not
@@ -2621,7 +2603,6 @@ a.is(b)     // may be true (string interning) or false
 ## Getting Input
 
 ### Python 2
-
 ```python
 raw_input("What's your name?")
 
@@ -2630,21 +2611,34 @@ input(xxx)
 ```
 
 ### Python 3
-
 ```python
 input("What's your name?")
 ```
 
 ### JavaScript
-
 ```javascript
 // install readline-sync package locally via npm i readline-sync
 var readlineSync = require("readline-sync"); // import package
 var getInput = readlineSync.question("What's your name?");
 ```
 
-### Ruby
+### TypeScript
+```typescript
+// using readline module (Node.js)
+import * as readline from "readline";
 
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("What's your name? ", (answer: string) => {
+  console.log(`Hello, ${answer}`);
+  rl.close();
+});
+```
+
+### Ruby
 ```ruby
 # print question
 print "What's your name?"
@@ -2652,8 +2646,14 @@ print "What's your name?"
 name = gets.chomp
 ```
 
-### Java
+### Kotlin
+```kotlin
+print("What's your name? ")
+val name: String? = readLine()
+println("Hello, $name")
+```
 
+### Java
 - must import scanner library
 
 ```java
@@ -2679,7 +2679,6 @@ Int input2 = scanner.nextInt();
 ```
 
 ### C#
-
 ```c#
 // print question
 System.Console.WriteLine("What's your name?");
@@ -2687,33 +2686,7 @@ System.Console.WriteLine("What's your name?");
 string name = System.Console.ReadLine();
 ```
 
-### TypeScript
-
-```typescript
-// using readline module (Node.js)
-import * as readline from "readline";
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-rl.question("What's your name? ", (answer: string) => {
-  console.log(`Hello, ${answer}`);
-  rl.close();
-});
-```
-
-### Kotlin
-
-```kotlin
-print("What's your name? ")
-val name: String? = readLine()
-println("Hello, $name")
-```
-
 ### C++
-
 ```c++
 #include <iostream>
 #include <string>
@@ -2729,7 +2702,6 @@ std::getline(std::cin, fullName);
 ```
 
 ### Groovy
-
 ```groovy
 // using System.console()
 def name = System.console().readLine("What's your name? ")
@@ -2743,7 +2715,6 @@ def name2 = scanner.nextLine()
 ```
 
 ### Assembly
-
 ```nasm
 ; x86 Linux syscall to read input
 section .bss
@@ -2944,60 +2915,51 @@ a >>> 2 // 15, unsigned right shift
 ## Increment
 
 ### Python 2 & 3
-
 - `x = x + 1` increment
 - `x += 1`
 
 ### JavaScript
-
 - `x = x + 1;` add 1 now
 - `x += 1;` add 1 now
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### Ruby
+### TypeScript
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
 
+### Ruby
 - `x = x + 1` increment
 - `x += 1`
 
-### Java
-
-- `x = x + 1;`
-- `x += 1;`
-- `++x;` preincrement, add 1 now
-- `x++;` postincrement, display without addition now then add 1 later when called again
-
-### C#
-
-- `x = x + 1;`
-- `x += 1;`
-- `++x;` preincrement, add 1 now
-- `x++;` postincrement, display without addition now then add 1 later when called again
-
-### TypeScript
-
-- `x = x + 1;`
-- `x += 1;`
-- `++x;` preincrement, add 1 now
-- `x++;` postincrement, display without addition now then add 1 later when called again
-
 ### Kotlin
-
 - `var x = 1; x = x + 1`
 - `x += 1`
 - `++x` preincrement
 - `x++` postincrement
 - note: `val` (immutable) cannot be incremented, must use `var`
 
-### C++
+### Java
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
 
+### C#
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+### C++
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
 ### Groovy
-
 - `x = x + 1`
 - `x += 1`
 - `++x` preincrement, add 1 now
@@ -3978,6 +3940,49 @@ favorite_book ||= "book 2"
 puts favorite_book # "book 1"
 ```
 
+### Kotlin
+
+```kotlin
+// If else statement (if is an expression in Kotlin)
+val max = if (a > b) {
+    a
+} else {
+    b
+}
+
+// If else as a single line expression
+val max = if (a > b) a else b
+
+
+// When expression (replacement for switch)
+when (choice) {
+    1 -> doA()
+    2 -> doB()
+    else -> doSomethingElse()
+}
+
+// When with multiple values
+when (choice) {
+    1, 2 -> doAorB()
+    in 3..10 -> doC()
+    else -> doSomethingElse()
+}
+
+// When as expression
+val result = when (choice) {
+    "a" -> 1
+    "b" -> 2
+    else -> 0
+}
+
+// When with type checking
+when (value) {
+    is String -> println(value.length)
+    is Int -> println(value + 1)
+    else -> println("unknown type")
+}
+```
+
 ### Java
 
 ```java
@@ -4100,6 +4105,55 @@ switch(choice) {
         break;
     default:
         do_something_else;
+}
+```
+
+### Groovy
+
+```groovy
+// If else statement
+if (condition_a) {
+    doA()
+} else if (condition_b) {
+    doB()
+} else {
+    doSomethingElse()
+}
+
+
+// Ternary operator
+def result = condition_a ? "yes" : "no"
+
+
+// Elvis operator (null coalescing)
+def name = nullableValue ?: "default"
+
+
+// Switch statement
+switch (choice) {
+    case 1:
+        doA()
+        break
+    case 2:
+        doB()
+        break
+    default:
+        doSomethingElse()
+}
+
+// Switch with ranges and types
+switch (value) {
+    case 1..10:
+        println("between 1 and 10")
+        break
+    case String:
+        println("is a string")
+        break
+    case ~/regex/:
+        println("matches regex")
+        break
+    default:
+        println("something else")
 }
 ```
 
@@ -4264,6 +4318,52 @@ for (let key in object) {
 }
 ```
 
+### TypeScript
+
+```typescript
+// While loop
+let i: number = 0;
+while (i < 5) {  // Start from 0 to 4
+  doThis();
+  i++;
+  break;  // Breaks out of the current closest enclosing loop
+  continue;  // Goes to the top of the closest enclosing loop
+}
+
+// Do while loop
+let j: number = 0;
+do {
+  doThis();
+  j++;
+} while (j < 5);
+
+// For loop
+for (let i: number = 0; i < 5; i++) {  // Start from 0 to 4
+  doThis();
+}
+
+// Reverse loop
+for (let i: number = 4; i >= 0; i--) {  // Start from 4 to 0
+  doThis();
+}
+
+// For of loop: loop through values
+const list: number[] = [10, 20, 30];
+for (const value of list) {
+  console.log(value);  // 10, 20, 30
+}
+
+// For in loop: loop through indexes/keys
+for (const index in list) {
+  console.log(index);  // "0", "1", "2"
+}
+
+// forEach with types
+list.forEach((value: number, index: number) => {
+  console.log(index, value);
+});
+```
+
 ### Ruby
 
 ```ruby
@@ -4341,6 +4441,65 @@ n.times { do_this }  # do_this will repeat n times
 
 # Downto Iterator, "string" don't work
 100.downto(95) { |num| print num, " " }  # 100 99 98 97 96 95
+```
+
+### Kotlin
+
+```kotlin
+// For loop with range
+for (i in 0..4) {  // Start from 0 to 4 (inclusive)
+    doThis()
+}
+
+// For loop with until (exclusive end)
+for (i in 0 until 5) {  // Start from 0 to 4
+    doThis()
+}
+
+// For loop with step
+for (i in 0..10 step 2) {  // 0, 2, 4, 6, 8, 10
+    doThis()
+}
+
+// Reverse loop
+for (i in 4 downTo 0) {  // Start from 4 to 0
+    doThis()
+}
+
+// Reverse loop with step
+for (i in 10 downTo 0 step 2) {  // 10, 8, 6, 4, 2, 0
+    doThis()
+}
+
+// While loop
+var i = 0
+while (i < 5) {
+    doThis()
+    i++
+}
+
+// Do while loop
+var j = 0
+do {
+    doThis()
+    j++
+} while (j < 5)
+
+// For each loop
+val list = listOf(1, 2, 3)
+for (value in list) {
+    println(value)
+}
+
+// forEach with lambda
+list.forEach { value ->
+    println(value)
+}
+
+// forEachIndexed
+list.forEachIndexed { index, value ->
+    println("$index: $value")
+}
 ```
 
 ### Java
