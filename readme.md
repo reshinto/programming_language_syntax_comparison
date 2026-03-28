@@ -681,6 +681,95 @@ multi-line comments
   console.log(Symbol.keyFor(id1)); // "id"
   ```
 
+### TypeScript
+
+#### All JavaScript types plus additional static types
+
+- number
+  - `let x: number = 42;`
+- string
+  - `let s: string = "hello";`
+- boolean
+  - `let b: boolean = true;`
+- null
+  - `let n: null = null;`
+- undefined
+  - `let u: undefined = undefined;`
+- any
+  - `let a: any = "anything";` — opts out of type checking
+- void
+  - `function log(): void { console.log("hi"); }` — absence of a return value
+- never
+  - `function error(): never { throw new Error(); }` — function never returns
+- unknown
+  - `let val: unknown = 42;` — type-safe counterpart of `any`
+- enum
+  - `enum Color { Red, Green, Blue }`
+- tuple
+  - `let t: [string, number] = ["hello", 42];`
+- array
+  - `let arr: number[] = [1, 2, 3];`
+  - `let arr2: Array<string> = ["a", "b"];`
+- object
+  - `let obj: { name: string; age: number } = { name: "John", age: 30 };`
+
+### Ruby
+
+#### Core data types
+
+- Integer
+  - `x = 42`
+  - `x = 1_000_000` — underscores for readability
+- Float
+  - `x = 3.14`
+- String
+  - `x = "hello"`
+  - `x = 'hello'`
+- Symbol
+  - `x = :hello` — immutable, unique identifier
+- Boolean (TrueClass / FalseClass)
+  - `x = true`
+  - `x = false`
+- Array
+  - `x = [1, "two", :three]`
+- Hash
+  - `x = { name: "John", age: 30 }`
+  - `x = { "name" => "John", "age" => 30 }`
+- NilClass
+  - `x = nil`
+- Range
+  - `x = (1..10)` — inclusive
+  - `x = (1...10)` — exclusive of end
+
+### Kotlin
+
+#### Core data types (all are objects — no primitives)
+
+- Numbers
+  - `val i: Int = 42` — 32 bits
+  - `val l: Long = 123L` — 64 bits
+  - `val f: Float = 3.14f` — 32 bits
+  - `val d: Double = 3.14` — 64 bits
+  - `val b: Byte = 127` — 8 bits
+  - `val s: Short = 32767` — 16 bits
+- Boolean
+  - `val flag: Boolean = true`
+- Char
+  - `val c: Char = 'a'`
+- String
+  - `val str: String = "hello"`
+- Array
+  - `val arr: Array<Int> = arrayOf(1, 2, 3)`
+- Collections
+  - `val list: List<String> = listOf("a", "b")` — immutable
+  - `val mutableList: MutableList<String> = mutableListOf("a", "b")`
+  - `val map: Map<String, Int> = mapOf("a" to 1, "b" to 2)`
+  - `val set: Set<Int> = setOf(1, 2, 3)`
+- Nothing
+  - `fun fail(): Nothing { throw Exception("error") }` — function never returns
+- Unit
+  - `fun log(): Unit { println("hi") }` — equivalent to `void`
+
 ### Java 8
 
 #### 2 major data types
@@ -762,6 +851,30 @@ multi-line comments
        String string1 = new String("Hello");
        ```
 
+### C#
+
+#### 2 major data types
+
+1. Value types (stored on the stack)
+   - `int` — 32 bits, `int x = 42;`
+   - `long` — 64 bits, `long x = 123L;`
+   - `float` — 32 bits, `float x = 3.14f;`
+   - `double` — 64 bits, `double x = 3.14;`
+   - `decimal` — 128 bits, `decimal x = 3.14m;` — high precision
+   - `bool` — `bool x = true;`
+   - `char` — 16 bits, `char x = 'a';`
+   - `byte` — 8 bits, `byte x = 255;`
+   - `short` — 16 bits, `short x = 123;`
+   - `struct`, `enum`
+
+2. Reference types (stored on the heap)
+   - `string` — `string s = "hello";`
+   - `object` — `object obj = 42;` — base type for all types
+   - `dynamic` — `dynamic d = "hello";` — bypasses compile-time type checking
+   - `var` — `var x = 42;` — compiler infers the type
+   - arrays — `int[] arr = { 1, 2, 3 };`
+   - classes, interfaces, delegates
+
 ### C++
 - it is a strict data typed language
 - the data type can be changed implicitly or explicitly
@@ -833,6 +946,27 @@ int c = 'c';  // 97
 - vector `#include<vector>`
 - array `#include<array>`
 - list `#include<list>`
+
+### Groovy
+
+#### Data types (similar to Java, with dynamic typing via `def`)
+
+- `def` — dynamically typed, type inferred at runtime
+  - `def x = 42`
+  - `def s = "hello"`
+  - `def list = [1, 2, 3]`
+- `int` / `Integer` — `int x = 42`
+- `long` / `Long` — `long x = 123L`
+- `float` / `Float` — `float x = 3.14f`
+- `double` / `Double` — `double x = 3.14`
+- `boolean` / `Boolean` — `boolean x = true`
+- `char` / `Character` — `char x = 'a'`
+- `String` — `String s = "hello"`
+- `BigDecimal` — `def x = 3.14` — Groovy uses BigDecimal for decimal literals by default
+- `BigInteger` — `def x = 123456789012345678901234567890`
+- `List` — `def list = [1, 2, 3]`
+- `Map` — `def map = [name: "John", age: 30]`
+- `Set` — `def set = [1, 2, 3] as Set`
 
 [back to top](#table-of-contents)
 
