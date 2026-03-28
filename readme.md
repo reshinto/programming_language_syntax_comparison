@@ -250,13 +250,21 @@
 
 ## Hello World
 
-### Python 2
+**Jump to:** [Python](#) | [JavaScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
 
 ```python
 print "Hello World"
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
 
 ```python
 print("Hello World")  # "Hello World\n"
@@ -264,14 +272,24 @@ print("Hello", "World", sep="/")  # "Hello/World"
 print("Hello World", end="")  # "Hello World"
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 console.log("Hello World"); // "Hello World"
 console.log("Hello", "World"); // "Hello World"
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 print "Hello World"  # takes whatever you give it and prints it to the screen
@@ -279,7 +297,12 @@ puts "Hello World"  # adds a new (blank) line after the thing you want it to pri
 p "Hello World"  # same as puts
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // fun for function declaration
@@ -288,7 +311,12 @@ fun main() {  // main method, a must to have
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - java classes are typically organized into packages
   - package is a global unique string that usually starts with your domain name in reverse domain order
@@ -318,7 +346,12 @@ public class HelloWorld {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 public class HelloWorld {
@@ -329,7 +362,12 @@ public class HelloWorld {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 #include <iostream> // required for printing
@@ -341,7 +379,12 @@ int main()
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 - using dynamic type method
 
@@ -359,7 +402,12 @@ class HelloWorld {
 }
 ```
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
 
 ```assembly
 ; x86 32 bit Mac OSX
@@ -415,11 +463,16 @@ msg:    db      "Hello, world!", 10
 .len:   equ     $ - msg
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Comments
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 # Single line comment
@@ -429,7 +482,12 @@ multi-line comments
 """
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // Single line comment
@@ -439,7 +497,12 @@ multi-line comments
 */
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // Single line comment
@@ -449,7 +512,12 @@ multi-line comments
 */
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 # Single line comment
@@ -459,7 +527,12 @@ multi-line comments
 =end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // Single line comment
@@ -474,7 +547,12 @@ multi-line comments
  */
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 // Single line comment
@@ -493,7 +571,12 @@ multi-line comments
  */
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // Single line comment
@@ -507,7 +590,12 @@ multi-line comments
 /// </summary>
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 // Single line comment
@@ -517,7 +605,12 @@ multi-line comments
 */
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // Single line comment
@@ -531,17 +624,27 @@ multi-line comments
  */
 ```
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
 
 ```assembly
 ; Single line comment
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Data types
 
-### Python
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python</h3></summary>
 
 #### 8 main data types
 
@@ -569,7 +672,12 @@ multi-line comments
 - None type
   - `None`, `x = None`
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 #### 1 primitive structural root
 
@@ -701,7 +809,12 @@ multi-line comments
   console.log(Symbol.keyFor(id1)); // "id"
   ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 #### All JavaScript types plus additional static types
 
@@ -733,7 +846,12 @@ multi-line comments
 - object
   - `let obj: { name: string; age: number } = { name: "John", age: 30 };`
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 #### Core data types
 
@@ -761,7 +879,12 @@ multi-line comments
   - `x = (1..10)` — inclusive
   - `x = (1...10)` — exclusive of end
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 #### Core data types (all are objects — no primitives)
 
@@ -790,7 +913,12 @@ multi-line comments
 - Unit
   - `fun log(): Unit { println("hi") }` — equivalent to `void`
 
-### Java 8
+</details>
+
+---
+
+<details>
+<summary><h3>Java 8</h3></summary>
 
 #### 2 major data types
 
@@ -871,7 +999,12 @@ multi-line comments
        String string1 = new String("Hello");
        ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 #### 2 major data types
 
@@ -895,7 +1028,13 @@ multi-line comments
    - arrays — `int[] arr = { 1, 2, 3 };`
    - classes, interfaces, delegates
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 - it is a strict data typed language
 - the data type can be changed implicitly or explicitly
 - implicit happens when you have compatible data types
@@ -967,7 +1106,12 @@ int c = 'c';  // 97
 - array `#include<array>`
 - list `#include<list>`
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 #### Data types (similar to Java, with dynamic typing via `def`)
 
@@ -987,6 +1131,8 @@ int c = 'c';  // 97
 - `List` — `def list = [1, 2, 3]`
 - `Map` — `def map = [name: "John", age: 30]`
 - `Set` — `def set = [1, 2, 3] as Set`
+
+</details>
 
 [back to top](#table-of-contents)
 
@@ -1053,7 +1199,12 @@ let integer_name = 123;
 const integer_name = 123; // variable value cannot be reassigned
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let integer_name: number = 123; // method 1
@@ -1067,13 +1218,23 @@ let binary: number = 0b1010;
 let octal: number = 0o744;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 integer_name = 123
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 // val: immutable (read-only), var: mutable
@@ -1086,7 +1247,12 @@ val shortName: Short = 123
 val longName: Long = 123L
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 // public/private/protected static final byte/short/int/long integerName = 123;
@@ -1114,7 +1280,12 @@ long longName2 = 123L;  // 123
 long longName3 = 10_000;  // 10000, introduced in java 7, just makes it easier to read
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // var can be used to handle declarations when the data type is unknown
@@ -1152,7 +1323,12 @@ System.Decimal decimalName4 = 123;
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 // const unsigned char/short/int/long/long long integer_name = 123;
@@ -1207,7 +1383,12 @@ long long int long_name; long_name = 123;
 // similar to the rest of int variable declaration
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 // def: dynamically typed
@@ -1221,7 +1402,12 @@ Integer integerName3 = 123
 final int CONSTANT_NAME = 123
 ```
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
 
 ```assembly
 ; x86 Assembly (NASM syntax)
@@ -1235,6 +1421,8 @@ section .text
     mov eax, 123             ; store 123 in the 32-bit register eax
     mov ebx, dword [integer_name]  ; load value from memory into ebx
 ```
+
+</details>
 
 [back to top](#table-of-contents)
 
@@ -2273,7 +2461,10 @@ def regex = /\d+\.\d+/
 
 ## Boolean
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 boolean_name = True
@@ -2282,7 +2473,12 @@ not True  # False
 not False  # True
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 var boolean_name;
@@ -2295,7 +2491,12 @@ var boolean_name = false;
 - truthy: "xxx", 1, -1, 2.5, true
 - falsey: false, 0, "", null, undefined, NaN
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
 
 ```javascript
 let boolean_name;
@@ -2304,13 +2505,23 @@ let boolean_name = false;
 const boolean_name = true;
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let isDone: boolean = false;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 boolean_name = true
@@ -2328,7 +2539,12 @@ boolean_name = false
     - example 3: false because array can't be turned into a symbol
       > [1, 2, 3].respond_to?(:to_sym) # false
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 val booleanName: Boolean = true
@@ -2337,7 +2553,12 @@ val booleanName2: Boolean = false
 !false  // true
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 boolean booleanName1 = true;
@@ -2348,7 +2569,12 @@ String sBoolean = "true";
 boolean booleanName4 = Boolean.parseBoolean(sBoolean);  // true
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 type Boolean
@@ -2357,7 +2583,12 @@ bool booleanName = false;  // displayed as False when printed
 System.Boolean booleanName = false;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - 8 bits
 
@@ -2402,7 +2633,10 @@ mov al, 0   ; false
 
 ## Arithmetic Operators
 
-### Python 2
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2412,12 +2646,22 @@ mov al, 0   ; false
 - exponent: `**`
 - floor division: `3//2  # output 1`
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
 
 - division: `3/2  # output 1.5`
 - floor division: `3//2  # output 1`
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2427,7 +2671,12 @@ mov al, 0   ; false
 - exponent: `**`
 - floor division: `Math.floor(3/2)  // output 1`
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2437,7 +2686,12 @@ mov al, 0   ; false
 - exponent: `**`
 - floor division: `Math.floor(3 / 2)  // output 1`
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2447,7 +2701,12 @@ mov al, 0   ; false
 - exponent: `**`
 - floor division: `3/2.floor`
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2457,7 +2716,12 @@ mov al, 0   ; false
 - exponent: `Math.pow(3.0, 2.0)  // output 9.0`
 - floor division: `3 / 2  // output 1`
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2467,7 +2731,12 @@ mov al, 0   ; false
 - exponent: `Math.pow(3, 2);  // output 9`
 - floor division: `int integer_name = 3/2;  // output 1`
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2477,7 +2746,12 @@ mov al, 0   ; false
 - exponent: `Math.Pow(3, 2);  // output 9`
 - floor division: `3/2;  // output 1`
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2489,7 +2763,12 @@ mov al, 0   ; false
   - `int integer_name = pow(3, 2);  // output 9`
 - floor division: `3/2  // output 1`
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 - addition: `+`
 - subtraction: `-`
@@ -2499,7 +2778,12 @@ mov al, 0   ; false
 - exponent: `3 ** 2  // output 9`
 - floor division: `3.intdiv(2)  // output 1`
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
 
 ```nasm
 ; x86 assembly arithmetic (operating on registers)
@@ -2513,11 +2797,17 @@ mov ecx, 3
 idiv ecx        ; eax = 3 (quotient), edx = 1 (remainder)
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Comparison Operators
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 - `==` condition is True if both operand have equal contents
 
 ```python
@@ -2546,7 +2836,13 @@ list1 is list2  # True
 - `>=` condition is True if right operand is less than or equal to left operand
 - `<=` condition is True is left operand is less than or equal to right operand
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 - `==` not type-safe, e.g.: string or int will be automatically converted before comparison, only checks the value
 
 ```javascript
@@ -2586,7 +2882,13 @@ console.log(baz);
 // expected output: 0
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 - `===` strict equality, checks both value and type
 - `!==` strict inequality
 - `==` loose equality (not recommended)
@@ -2596,7 +2898,13 @@ console.log(baz);
 - `>=`
 - `<=`
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 - `==`
 - `!=`
 - `>`
@@ -2630,7 +2938,13 @@ string2 = "c"
 puts string1 <=> string2  # 0
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 - `==` structural equality (calls `equals()`)
 - `!=` structural inequality
 - `===` referential equality (same object)
@@ -2640,7 +2954,13 @@ puts string1 <=> string2  # 0
 - `>=`
 - `<=`
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 - `==`
   - reference comparison
   ```java
@@ -2668,7 +2988,13 @@ if (s instanceof java.lang.String) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 - `==`
 - `!=`
 - `>`
@@ -2676,7 +3002,13 @@ if (s instanceof java.lang.String) {
 - `>=`
 - `<=`
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 - `==`
 - `!=`
 - `>`
@@ -2684,7 +3016,13 @@ if (s instanceof java.lang.String) {
 - `>=`
 - `<=`
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 - `==` calls `equals()`, null-safe
 - `!=`
 - `>`
@@ -2704,16 +3042,27 @@ a.is(b)     // may be true (string interning) or false
 3 <=> 2     // 1
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Logical Operators
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 - `and`
 - `or`
 - `not`
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 - `&&` and
 - `||` or
 - `!` not
@@ -2726,48 +3075,96 @@ a.is(b)     // may be true (string interning) or false
   - `truthy || falsey` truthy
   - `falsey1 || falsey2` falsey2
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 - `&&` and
 - `||` or
 - `!` not
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 - `&&` and
 - `||` or
 - `!` not
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 - `&&` and
 - `||` or
 - `!` not
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 - `&&` and
 - `||` or
 - `^` exclusive or
 - `!` not
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 - `&&` and
 - `||` or
 - `^` exclusive or
 - `!` not
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 - `&&` and
 - `||` or
 - `!` not
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 - `&&` and
 - `||` or
 - `!` not
+
+</details>
 
 [back to top](#table-of-contents)
 
 ## Getting Input
 
-### Python 2
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#) | [Assembly](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
+
 ```python
 raw_input("What's your name?")
 
@@ -2775,19 +3172,36 @@ raw_input("What's your name?")
 input(xxx)
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
+
 ```python
 input("What's your name?")
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 ```javascript
 // install readline-sync package locally via npm i readline-sync
 var readlineSync = require("readline-sync"); // import package
 var getInput = readlineSync.question("What's your name?");
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 ```typescript
 // using readline module (Node.js)
 import * as readline from "readline";
@@ -2803,7 +3217,13 @@ rl.question("What's your name? ", (answer: string) => {
 });
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 ```ruby
 # print question
 print "What's your name?"
@@ -2811,14 +3231,26 @@ print "What's your name?"
 name = gets.chomp
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 ```kotlin
 print("What's your name? ")
 val name: String? = readLine()
 println("Hello, $name")
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 - must import scanner library
 
 ```java
@@ -2843,7 +3275,13 @@ String input1 = scanner.nextLine();
 Int input2 = scanner.nextInt();
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 ```c#
 // print question
 System.Console.WriteLine("What's your name?");
@@ -2851,7 +3289,13 @@ System.Console.WriteLine("What's your name?");
 string name = System.Console.ReadLine();
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 ```c++
 #include <iostream>
 #include <string>
@@ -2866,7 +3310,13 @@ std::string fullName;
 std::getline(std::cin, fullName);
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 ```groovy
 // using System.console()
 def name = System.console().readLine("What's your name? ")
@@ -2879,7 +3329,13 @@ print "What's your name? "
 def name2 = scanner.nextLine()
 ```
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
+
 ```nasm
 ; x86 Linux syscall to read input
 section .bss
@@ -2893,11 +3349,16 @@ section .text
     int 0x80              ; invoke syscall
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Bitwise Operators
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
@@ -2933,7 +3394,12 @@ c = -9  # -9 = ...1111 0111
 zero_fill_right_shift(-9, 2)  # 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
 
 ```javascript
 // Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
@@ -2967,7 +3433,12 @@ c = -9; // -9 = ...1111 0111
 c >>> 2; // 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 // Same operators as JavaScript, operates on 32-bit integers
@@ -2982,7 +3453,12 @@ a >> 2;  // 15, sign-propagating right shift
 a >>> 2; // 15, zero-fill right shift
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
 
 ```ruby
 a = 60  # 60 = ...0011 1100
@@ -2995,7 +3471,12 @@ a << 2  # 240, left shift
 a >> 2  # 15, right shift
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
 
 ```kotlin
 val a = 60  // 60 = ...0011 1100
@@ -3009,7 +3490,12 @@ a shr 2     // 15, signed right shift
 a ushr 2    // 15, unsigned right shift
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
 
 ```java
 // & is binary AND, return 1 if both a and b are 1, count the 1s
@@ -3039,7 +3525,12 @@ c = -9  // -9 = ...1111 0111
 c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 ```c#
 // & is binary AND, return 1 if both a and b are 1, count the 1s
@@ -3049,7 +3540,12 @@ a & b  // 12 = ...0000 1100
 a | b  // 61 = ...0011 1101
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 ```c++
 int a = 60; // 60 = ...0011 1100
@@ -3062,7 +3558,12 @@ a << 2;  // 240, left shift
 a >> 2;  // 15, right shift
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 def a = 60  // 60 = ...0011 1100
@@ -3075,60 +3576,117 @@ a << 2  // 240, left shift
 a >> 2  // 15, right shift
 a >>> 2 // 15, unsigned right shift
 ```
+
+</details>
+
 [back to top](#table-of-contents)
 
 ## Increment
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 - `x = x + 1` increment
 - `x += 1`
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 - `x = x + 1;` add 1 now
 - `x += 1;` add 1 now
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 - `x = x + 1` increment
 - `x += 1`
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 - `var x = 1; x = x + 1`
 - `x += 1`
 - `++x` preincrement
 - `x++` postincrement
 - note: `val` (immutable) cannot be incremented, must use `var`
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 - `x = x + 1`
 - `x += 1`
 - `++x` preincrement, add 1 now
 - `x++` postincrement, display without addition now then add 1 later when called again
+
+</details>
 
 [back to top](#table-of-contents)
 
