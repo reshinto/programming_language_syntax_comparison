@@ -3320,6 +3320,74 @@ list_name.collect! {|num| num * 2}  # [8, 6, 4, 2]
 list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ```
 
+### Kotlin
+
+```kotlin
+// Arrays: fixed size
+val intArray = arrayOf(1, 2, 3)
+val strArray = arrayOf("a", "b", "c")
+val emptyArray = emptyArray<Int>()
+
+// Access an element
+intArray[0]  // 1
+
+// Modify an element
+intArray[0] = 10
+
+// Find array size
+intArray.size  // 3
+
+
+// Immutable List: cannot add or remove elements
+val list = listOf(1, 2, 3)
+val emptyList = emptyList<Int>()
+
+// Access an element
+list[0]  // 1
+
+// Find list size
+list.size  // 3
+
+// Check if element exists
+list.contains(2)  // true
+
+// Get index of element
+list.indexOf(2)  // 1
+
+
+// Mutable List: can add and remove elements
+val mutableList = mutableListOf(1, 2, 3)
+
+// Add element to list (left to right)
+mutableList.add(4)  // [1, 2, 3, 4]
+
+// Add element at index
+mutableList.add(0, 0)  // [0, 1, 2, 3, 4]
+
+// Modify an element
+mutableList[0] = 10
+
+// Remove element at index
+mutableList.removeAt(0)
+
+// Remove first occurrence of element
+mutableList.remove(2)
+
+// Remove all elements
+mutableList.clear()
+
+
+// Sort a list
+val sorted = listOf(3, 1, 2).sorted()  // [1, 2, 3]
+val sortedDesc = listOf(3, 1, 2).sortedDescending()  // [3, 2, 1]
+
+// Merge 2 lists
+val merged = listOf(1, 2) + listOf(3, 4)  // [1, 2, 3, 4]
+
+// Join list into a string
+listOf("a", "b", "c").joinToString(", ")  // "a, b, c"
+```
+
 ### Java
 
 ```java
@@ -3611,74 +3679,6 @@ int_vector.resize(length_of_desired_array);
 
 // Remove all elements
 int_vector.clear();
-```
-
-### Kotlin
-
-```kotlin
-// Arrays: fixed size
-val intArray = arrayOf(1, 2, 3)
-val strArray = arrayOf("a", "b", "c")
-val emptyArray = emptyArray<Int>()
-
-// Access an element
-intArray[0]  // 1
-
-// Modify an element
-intArray[0] = 10
-
-// Find array size
-intArray.size  // 3
-
-
-// Immutable List: cannot add or remove elements
-val list = listOf(1, 2, 3)
-val emptyList = emptyList<Int>()
-
-// Access an element
-list[0]  // 1
-
-// Find list size
-list.size  // 3
-
-// Check if element exists
-list.contains(2)  // true
-
-// Get index of element
-list.indexOf(2)  // 1
-
-
-// Mutable List: can add and remove elements
-val mutableList = mutableListOf(1, 2, 3)
-
-// Add element to list (left to right)
-mutableList.add(4)  // [1, 2, 3, 4]
-
-// Add element at index
-mutableList.add(0, 0)  // [0, 1, 2, 3, 4]
-
-// Modify an element
-mutableList[0] = 10
-
-// Remove element at index
-mutableList.removeAt(0)
-
-// Remove first occurrence of element
-mutableList.remove(2)
-
-// Remove all elements
-mutableList.clear()
-
-
-// Sort a list
-val sorted = listOf(3, 1, 2).sorted()  // [1, 2, 3]
-val sortedDesc = listOf(3, 1, 2).sortedDescending()  // [3, 2, 1]
-
-// Merge 2 lists
-val merged = listOf(1, 2) + listOf(3, 4)  // [1, 2, 3, 4]
-
-// Join list into a string
-listOf("a", "b", "c").joinToString(", ")  // "a, b, c"
 ```
 
 ### Groovy
@@ -4658,6 +4658,58 @@ for (auto value : array_name) {
 // Infinite for loops
 for (;;)
     cout << "This will print forever" << endl;
+```
+
+### Groovy
+
+```groovy
+// While loop
+def i = 0
+while (i < 5) {  // Start from 0 to 4
+    doThis()
+    i++
+}
+
+// For loop (classic)
+for (int i = 0; i < 5; i++) {  // Start from 0 to 4
+    doThis()
+}
+
+// For-in loop with range
+for (i in 0..4) {  // Start from 0 to 4 (inclusive)
+    doThis()
+}
+
+// For-in loop with list
+def list = [1, 2, 3]
+for (value in list) {
+    println(value)
+}
+
+// Each iterator
+list.each { value ->
+    println(value)
+}
+
+// Each with index
+list.eachWithIndex { value, index ->
+    println("${index}: ${value}")
+}
+
+// Times loop
+5.times {
+    doThis()  // repeats 5 times
+}
+
+// Upto loop
+0.upto(4) { i ->
+    println(i)  // 0, 1, 2, 3, 4
+}
+
+// Step loop
+0.step(10, 2) { i ->
+    println(i)  // 0, 2, 4, 6, 8
+}
 ```
 
 [back to top](#table-of-contents)
