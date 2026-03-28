@@ -230,13 +230,13 @@
 
 ## Hello World
 
-### python 2
+### Python 2
 
 ```python
 print "Hello World"
 ```
 
-### python 3
+### Python 3
 
 ```python
 print("Hello World")  # "Hello World\n"
@@ -244,14 +244,14 @@ print("Hello", "World", sep="/")  # "Hello/World"
 print("Hello World", end="")  # "Hello World"
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 console.log("Hello World"); // "Hello World"
 console.log("Hello", "World"); // "Hello World"
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 print "Hello World"  # takes whatever you give it and prints it to the screen
@@ -259,7 +259,7 @@ puts "Hello World"  # adds a new (blank) line after the thing you want it to pri
 p "Hello World"  # same as puts
 ```
 
-### kotlin
+### Kotlin
 
 ```kotlin
 // fun for function declaration
@@ -268,7 +268,7 @@ fun main() {  // main method, a must to have
 }
 ```
 
-### java
+### Java
 
 - java classes are typically organized into packages
   - package is a global unique string that usually starts with your domain name in reverse domain order
@@ -298,7 +298,7 @@ public class HelloWorld {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 public class HelloWorld {
@@ -309,7 +309,7 @@ public class HelloWorld {
 }
 ```
 
-### c++
+### C++
 
 ```c++
 #include <iostream> // required for printing
@@ -321,7 +321,7 @@ int main()
 }
 ```
 
-### groovy
+### Groovy
 
 - using dynamic type method
 
@@ -339,7 +339,7 @@ class HelloWorld {
 }
 ```
 
-### assembly
+### Assembly
 
 ```assembly
 ; x86 32 bit Mac OSX
@@ -399,7 +399,7 @@ msg:    db      "Hello, world!", 10
 
 ## Comments
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Single line comment
@@ -409,7 +409,7 @@ multi-line comments
 """
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // Single line comment
@@ -419,7 +419,17 @@ multi-line comments
 */
 ```
 
-### ruby
+### TypeScript
+
+```typescript
+// Single line comment
+
+/*
+multi-line comments
+*/
+```
+
+### Ruby
 
 ```ruby
 # Single line comment
@@ -429,7 +439,22 @@ multi-line comments
 =end
 ```
 
-### java
+### Kotlin
+
+```kotlin
+// Single line comment
+
+/*
+multi-line comments
+*/
+
+/**
+ * KDoc comment for documentation generation
+ * @param args command line arguments
+ */
+```
+
+### Java
 
 ```java
 // Single line comment
@@ -448,7 +473,7 @@ multi-line comments
  */
 ```
 
-### c#
+### C#
 
 ```c#
 // Single line comment
@@ -456,9 +481,13 @@ multi-line comments
 /*
 multi-line comments
 */
+
+/// <summary>
+/// XML documentation comment for classes and methods
+/// </summary>
 ```
 
-### c++
+### C++
 
 ```c++
 // Single line comment
@@ -468,7 +497,21 @@ multi-line comments
 */
 ```
 
-### assembly
+### Groovy
+
+```groovy
+// Single line comment
+
+/*
+multi-line comments
+*/
+
+/**
+ * Groovydoc comment (same as Javadoc)
+ */
+```
+
+### Assembly
 
 ```assembly
 ; Single line comment
@@ -478,7 +521,7 @@ multi-line comments
 
 ## Data types
 
-### python
+### Python
 
 #### 8 main data types
 
@@ -506,7 +549,7 @@ multi-line comments
 - None type
   - `None`, `x = None`
 
-### javascript
+### JavaScript
 
 #### 1 primitive structural root
 
@@ -638,7 +681,7 @@ multi-line comments
   console.log(Symbol.keyFor(id1)); // "id"
   ```
 
-### java 8
+### Java 8
 
 #### 2 major data types
 
@@ -719,7 +762,7 @@ multi-line comments
        String string1 = new String("Hello");
        ```
 
-### c++
+### C++
 - it is a strict data typed language
 - the data type can be changed implicitly or explicitly
 - implicit happens when you have compatible data types
@@ -797,7 +840,7 @@ int c = 'c';  // 97
 
 - integer ...-2, -1, 0, 1, 2...
 
-### python 2
+### Python 2
 
 ```python
 # int: -2147483648 ~ 2147483647
@@ -806,14 +849,14 @@ integer_name = 123
 long_name = 123L  # int beyond int size will automatically be converted to long
 ```
 
-### python 3
+### Python 3
 
 ```python
 # python 3: int and long are combined into int
 integer_name = 123
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // method 1
@@ -824,7 +867,7 @@ integer_name = 123; // accessible within the function
 var integer_name = 123;
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // method 1
@@ -838,7 +881,7 @@ let integer_name = 123;
 const integer_name = 123; // variable value cannot be reassigned
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 let integer_name: number = 123; // method 1
@@ -852,13 +895,13 @@ let binary: number = 0b1010;
 let octal: number = 0o744;
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 integer_name = 123
 ```
 
-### java
+### Java
 
 ```java
 // public/private/protected static final byte/short/int/long integerName = 123;
@@ -886,7 +929,7 @@ long longName2 = 123L;  // 123
 long longName3 = 10_000;  // 10000, introduced in java 7, just makes it easier to read
 ```
 
-### c#
+### C#
 
 ```c#
 // var can be used to handle declarations when the data type is unknown
@@ -924,7 +967,7 @@ System.Decimal decimalName4 = 123;
 // use System.Numerics.BigInteger for larger values (need add references to System.Numerics.dll)
 ```
 
-### c++
+### C++
 
 ```c++
 // const unsigned char/short/int/long/long long integer_name = 123;
@@ -985,7 +1028,7 @@ long long int long_name; long_name = 123;
 
 - float, double
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 float_name = 1.123
@@ -1011,28 +1054,28 @@ f"{x}"  # "0.6
 print(type(x))  # <class 'decimal.Decimal'>
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 var float_name = 1.123;
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 let float_name = 1.123;
 const float_name = 1.123;
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 let float_name: number = 1.123;
 ```
 
-### ruby
+### Ruby
 
-### java:
+### Java
 
 ```java
 // float: 32 bits, 4 bytes
@@ -1068,7 +1111,7 @@ public class Main {
 
 ```
 
-### c#
+### C#
 
 ```c#
 // float: 32 bit max value with 7 decimals of precision 3.402823E+38
@@ -1083,7 +1126,7 @@ double doubleName3 = double.MaxValue;  // 1.79769313486232E+308
 System.Double doubleName4 = 1.123;
 ```
 
-### c++
+### C++
 
 ```c++
 // float: 4 bytes
@@ -1109,7 +1152,7 @@ double_name = 1.123;  // have 19 decimal digits
 
 ## Variable declaration None
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 variable_name = None
@@ -1119,7 +1162,7 @@ import math
 math.inf - math.inf  # nan
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // undefined is reserved for variables whose values have not yet been set.
@@ -1132,7 +1175,7 @@ let variable_name2 = null;
 let variable_name3 = NaN;
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 let variable_name: void = undefined; // method 1
@@ -1143,13 +1186,13 @@ let variable_name2: void = null;
 let variable_name3: number = NaN;
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
 ```
 
-### java
+### Java
 
 ```java
 String stringName = null;
@@ -1170,7 +1213,7 @@ double inf = Double.POSITIVE_INFINITY;  // Infinity
 double inf = Double.NEGATIVE_INFINITY;  // -Infinty
 ```
 
-### c#
+### C#
 
 ```c#
 string stringName = null;
@@ -1183,7 +1226,7 @@ Nullable<int> integerName1 = null;
 int? integerName2 = null;
 ```
 
-### c++
+### C++
 
 ```c++
 #include <iostream>
@@ -1198,7 +1241,7 @@ int main() {
 
 ## Strings
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 string_name = "string"
@@ -1294,7 +1337,7 @@ arr = ["a", "b"]
 "_".join(arr)  # "a_b"
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 var stringName = "string";
@@ -1336,7 +1379,7 @@ stringName2 = stringName.split(""); // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 
 stringName3 = stringName.split("s"); // ["te", "t ", "tring"]
 ```
 
-### javascript ES6 // Almost all of ES5 are included in ES6
+### JavaScript ES6 // Almost all of ES5 are included in ES6
 
 ```javascript
 // back slash not required, but will produce a new line if not given
@@ -1349,7 +1392,7 @@ const stringName = "string";
 String.raw`\n raw string`; // "\n raw string"
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 let stringName: string = "string";
@@ -1360,7 +1403,7 @@ strOrNum = "abc";
 strOrNum = 123; // can be reassigned to a declared type
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 string_name = <<EOM
@@ -1442,7 +1485,7 @@ variable_name = :symbolStringWithoutQuotes
 puts variable_name  # symbolStringWithoutQuotes
 ```
 
-### java
+### Java
 
 ```java
 // character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -1520,7 +1563,7 @@ str3 == str4;  // false
 str3.equals(str4);  // true
 ```
 
-### c#
+### C#
 
 - Strings (immutable)
   - each operation that appears to be modifying a string is actually creating a new string
@@ -1720,7 +1763,7 @@ Heading"
 builder[0];  // '+'
 ```
 
-### c++
+### C++
 
 character: only have 1 character, must use single quotes ''
 ```c++
@@ -1774,7 +1817,7 @@ std::string stringName ("string");
 
 ## Boolean
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 boolean_name = True
@@ -1783,7 +1826,7 @@ not True  # False
 not False  # True
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 var boolean_name;
@@ -1796,7 +1839,7 @@ var boolean_name = false;
 - truthy: "xxx", 1, -1, 2.5, true
 - falsey: false, 0, "", null, undefined, NaN
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 let boolean_name;
@@ -1805,13 +1848,13 @@ let boolean_name = false;
 const boolean_name = true;
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 let isDone: boolean = false;
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 boolean_name = true
@@ -1829,7 +1872,7 @@ boolean_name = false
     - example 3: false because array can't be turned into a symbol
       > [1, 2, 3].respond_to?(:to_sym) # false
 
-### java
+### Java
 
 ```java
 boolean booleanName1 = true;
@@ -1840,7 +1883,7 @@ String sBoolean = "true";
 boolean booleanName4 = Boolean.parseBoolean(sBoolean);  // true
 ```
 
-### c#
+### C#
 
 ```c#
 type Boolean
@@ -1849,7 +1892,18 @@ bool booleanName = false;  // displayed as False when printed
 System.Boolean booleanName = false;
 ```
 
-### c++: 8 bits
+### Kotlin
+
+```kotlin
+val booleanName: Boolean = true
+val booleanName2: Boolean = false
+!true  // false
+!false  // true
+```
+
+### C++
+
+- 8 bits
 
 ```c++
 bool boolean_name; boolean_name = true;  // produces a 1 output
@@ -1858,11 +1912,29 @@ bool boolean_name (true);
 bool boolean_name {false};
 ```
 
+### Groovy
+
+```groovy
+boolean booleanName = true
+boolean booleanName2 = false
+def booleanName3 = true  // type inferred as Boolean
+!true  // false
+!false  // true
+```
+
+### Assembly
+
+```nasm
+; Assembly has no boolean type; use 0 and 1 (typically in a byte or register)
+mov al, 1   ; true
+mov al, 0   ; false
+```
+
 [back to top](#table-of-contents)
 
 ## Arithmetic Operators
 
-### python 2
+### Python 2
 
 - addition: `+`
 - subtraction: `-`
@@ -1872,12 +1944,12 @@ bool boolean_name {false};
 - exponent: `**`
 - floor division: `3//2  # output 1`
 
-### python 3
+### Python 3
 
 - division: `3/2  # output 1.5`
 - floor division: `3//2  # output 1`
 
-### javascript
+### JavaScript
 
 - addition: `+`
 - subtraction: `-`
@@ -1887,7 +1959,7 @@ bool boolean_name {false};
 - exponent: `**`
 - floor division: `Math.floor(3/2)  // output 1`
 
-### ruby
+### Ruby
 
 - addition: `+`
 - subtraction: `-`
@@ -1897,7 +1969,7 @@ bool boolean_name {false};
 - exponent: `**`
 - floor division: `3/2.floor`
 
-### java
+### Java
 
 - addition: `+`
 - subtraction: `-`
@@ -1907,7 +1979,7 @@ bool boolean_name {false};
 - exponent: `Math.pow(3, 2);  // output 9`
 - floor division: `int integer_name = 3/2;  // output 1`
 
-### c#
+### C#
 
 - addition: `+`
 - subtraction: `-`
@@ -1917,7 +1989,27 @@ bool boolean_name {false};
 - exponent: `Math.Pow(3, 2);  // output 9`
 - floor division: `3/2;  // output 1`
 
-### c++
+### TypeScript
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3 / 2  // output 1.5`
+- modulus: `%`
+- exponent: `**`
+- floor division: `Math.floor(3 / 2)  // output 1`
+
+### Kotlin
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3.0 / 2  // output 1.5, 3 / 2 output 1`
+- modulus: `%`
+- exponent: `Math.pow(3.0, 2.0)  // output 9.0`
+- floor division: `3 / 2  // output 1`
+
+### C++
 
 - addition: `+`
 - subtraction: `-`
@@ -1929,11 +2021,35 @@ bool boolean_name {false};
   - `int integer_name = pow(3, 2);  // output 9`
 - floor division: `3/2  // output 1`
 
+### Groovy
+
+- addition: `+`
+- subtraction: `-`
+- multiplication: `*`
+- division: `3 / 2  // output 1, 3.0 / 2 output 1.5`
+- modulus: `%`
+- exponent: `3 ** 2  // output 9`
+- floor division: `3.intdiv(2)  // output 1`
+
+### Assembly
+
+```nasm
+; x86 assembly arithmetic (operating on registers)
+add eax, ebx   ; eax = eax + ebx
+sub eax, ebx   ; eax = eax - ebx
+imul eax, ebx  ; eax = eax * ebx
+; division: divide edx:eax by ecx, quotient in eax, remainder in edx
+mov edx, 0
+mov eax, 10
+mov ecx, 3
+idiv ecx        ; eax = 3 (quotient), edx = 1 (remainder)
+```
+
 [back to top](#table-of-contents)
 
 ## Comparison Operators
 
-### python 2 & 3
+### Python 2 & 3
 
 - `==` condition is True if both operand have equal contents
 
@@ -1963,7 +2079,7 @@ list1 is list2  # True
 - `>=` condition is True if right operand is less than or equal to left operand
 - `<=` condition is True is left operand is less than or equal to right operand
 
-### javascript
+### JavaScript
 
 - `==` not type-safe, e.g.: string or int will be automatically converted before comparison, only checks the value
 
@@ -2004,7 +2120,7 @@ console.log(baz);
 // expected output: 0
 ```
 
-### ruby
+### Ruby
 
 - `==`
 - `!=`
@@ -2039,7 +2155,7 @@ string2 = "c"
 puts string1 <=> string2  # 0
 ```
 
-### java
+### Java
 
 - `==`
   - reference comparison
@@ -2068,7 +2184,7 @@ if (s instanceof java.lang.String) {
 }
 ```
 
-### c#
+### C#
 
 - `==`
 - `!=`
@@ -2077,7 +2193,29 @@ if (s instanceof java.lang.String) {
 - `>=`
 - `<=`
 
-### c++
+### TypeScript
+
+- `===` strict equality, checks both value and type
+- `!==` strict inequality
+- `==` loose equality (not recommended)
+- `!=` loose inequality (not recommended)
+- `>`
+- `<`
+- `>=`
+- `<=`
+
+### Kotlin
+
+- `==` structural equality (calls `equals()`)
+- `!=` structural inequality
+- `===` referential equality (same object)
+- `!==` referential inequality
+- `>`
+- `<`
+- `>=`
+- `<=`
+
+### C++
 
 - `==`
 - `!=`
@@ -2085,18 +2223,39 @@ if (s instanceof java.lang.String) {
 - `<`
 - `>=`
 - `<=`
+
+### Groovy
+
+- `==` calls `equals()`, null-safe
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `<=>` spaceship operator (returns -1, 0, or 1)
+- `.is()` identity comparison (same object)
+
+```groovy
+def a = "hello"
+def b = "hello"
+a == b      // true (structural equality)
+a.is(b)     // may be true (string interning) or false
+1 <=> 2     // -1
+2 <=> 2     // 0
+3 <=> 2     // 1
+```
 
 [back to top](#table-of-contents)
 
 ## Logical Operators
 
-### python 2 & 3
+### Python 2 & 3
 
 - `and`
 - `or`
 - `not`
 
-### javascript
+### JavaScript
 
 - `&&` and
 - `||` or
@@ -2110,27 +2269,45 @@ if (s instanceof java.lang.String) {
   - `truthy || falsey` truthy
   - `falsey1 || falsey2` falsey2
 
-### ruby
+### Ruby
 
 - `&&` and
 - `||` or
 - `!` not
 
-### java
-
-- `&&` and
-- `||` or
-- `^` exclusive or
-- `!` not
-
-### c#
+### Java
 
 - `&&` and
 - `||` or
 - `^` exclusive or
 - `!` not
 
-### c++
+### C#
+
+- `&&` and
+- `||` or
+- `^` exclusive or
+- `!` not
+
+### TypeScript
+
+- `&&` and
+- `||` or
+- `!` not
+
+### Kotlin
+
+- `&&` and
+- `||` or
+- `!` not
+
+### C++
+
+- `&&` and
+- `||` or
+- `!` not
+
+### Groovy
 
 - `&&` and
 - `||` or
@@ -2140,7 +2317,7 @@ if (s instanceof java.lang.String) {
 
 ## Getting Input
 
-### python 2
+### Python 2
 
 ```python
 raw_input("What's your name?")
@@ -2149,13 +2326,13 @@ raw_input("What's your name?")
 input(xxx)
 ```
 
-### python 3
+### Python 3
 
 ```python
 input("What's your name?")
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // install readline-sync package locally via npm i readline-sync
@@ -2163,7 +2340,7 @@ var readlineSync = require("readline-sync"); // import package
 var getInput = readlineSync.question("What's your name?");
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # print question
@@ -2172,7 +2349,7 @@ print "What's your name?"
 name = gets.chomp
 ```
 
-### java
+### Java
 
 - must import scanner library
 
@@ -2198,7 +2375,7 @@ String input1 = scanner.nextLine();
 Int input2 = scanner.nextInt();
 ```
 
-### c#
+### C#
 
 ```c#
 // print question
@@ -2207,13 +2384,81 @@ System.Console.WriteLine("What's your name?");
 string name = System.Console.ReadLine();
 ```
 
-### c++
+### TypeScript
+
+```typescript
+// using readline module (Node.js)
+import * as readline from "readline";
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("What's your name? ", (answer: string) => {
+  console.log(`Hello, ${answer}`);
+  rl.close();
+});
+```
+
+### Kotlin
+
+```kotlin
+print("What's your name? ")
+val name: String? = readLine()
+println("Hello, $name")
+```
+
+### C++
+
+```c++
+#include <iostream>
+#include <string>
+
+// print question
+std::cout << "What's your name? ";
+// get single word input
+std::string name;
+std::cin >> name;
+// get full line input (including spaces)
+std::string fullName;
+std::getline(std::cin, fullName);
+```
+
+### Groovy
+
+```groovy
+// using System.console()
+def name = System.console().readLine("What's your name? ")
+println "Hello, ${name}"
+
+// using Scanner
+import java.util.Scanner
+def scanner = new Scanner(System.in)
+print "What's your name? "
+def name2 = scanner.nextLine()
+```
+
+### Assembly
+
+```nasm
+; x86 Linux syscall to read input
+section .bss
+    buffer resb 256       ; reserve 256 bytes for input
+
+section .text
+    mov eax, 3            ; sys_read
+    mov ebx, 0            ; stdin
+    mov ecx, buffer       ; buffer address
+    mov edx, 256          ; max bytes to read
+    int 0x80              ; invoke syscall
+```
 
 [back to top](#table-of-contents)
 
 ## Bitwise Operators
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
@@ -2249,7 +2494,7 @@ c = -9  # -9 = ...1111 0111
 zero_fill_right_shift(-9, 2)  # 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // Each digit is 1 bit, all bitwise operators converts to signed 32-bit integers, except for zero-fill right shift which results to unsigned 32 bit integer
@@ -2283,9 +2528,9 @@ c = -9; // -9 = ...1111 0111
 c >>> 2; // 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 ```java
 // & is binary AND, return 1 if both a and b are 1, count the 1s
@@ -2315,7 +2560,7 @@ c = -9  // -9 = ...1111 0111
 c >>> 2  // 1073741821 = 0011...1111 1101, count the 0s
 ```
 
-### c#
+### C#
 
 ```c#
 // & is binary AND, return 1 if both a and b are 1, count the 1s
@@ -2325,44 +2570,44 @@ a & b  // 12 = ...0000 1100
 a | b  // 61 = ...0011 1101
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Increment
 
-### python 2 & 3
+### Python 2 & 3
 
 - `x = x + 1` increment
 - `x += 1`
 
-### javascript
+### JavaScript
 
 - `x = x + 1;` add 1 now
 - `x += 1;` add 1 now
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### ruby
+### Ruby
 
 - `x = x + 1` increment
 - `x += 1`
 
-### java
+### Java
 
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### c#
+### C#
 
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
-### c++
+### C++
 
 - `x = x + 1;`
 - `x += 1;`
@@ -2373,7 +2618,7 @@ a | b  // 61 = ...0011 1101
 
 ## Arrays and Lists
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Empty list
@@ -2509,7 +2754,7 @@ print(y)  # ['a', 'b', 'c']
 
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // Method 1: empty list
@@ -2620,7 +2865,7 @@ list_name = [1, 2];
 list_name.every(helper); // true
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 // method 1
@@ -2638,7 +2883,7 @@ let strOrNumArr1: [string, number] = ["a", 1]; // must follow and limited to dec
 let strOrNumArr2: (string | number)[]; // allows unlimited mixture of number and/or string values in 1 array
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # Empty list
@@ -2724,7 +2969,7 @@ list_name.collect! {|num| num * 2}  # [8, 6, 4, 2]
 list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ```
 
-### java
+### Java
 
 ```java
 // Arrays: can only have 1 data type: string, int, etc.
@@ -2815,7 +3060,7 @@ list.get(index);
 list.indexOf(element);
 ```
 
-### c#
+### C#
 
 - Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
 
@@ -2947,7 +3192,7 @@ list.Add("abc")  // [1, "abc"]
 // methods are similar to List
 ```
 
-### c++
+### C++
 
 ```c++
 // Arrays
@@ -3021,7 +3266,7 @@ int_vector.clear();
 
 ## Conditional Statement
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # If else statement
@@ -3052,7 +3297,7 @@ y = [1, 2, 3]
 x == y  # returns True
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // If else statement
@@ -3087,7 +3332,7 @@ x === y ? true : false; // returns false
 JSON.stringify(x) === JSON.stringify(y) ? true : false; // return true
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # If else statement
@@ -3159,7 +3404,7 @@ favorite_book ||= "book 2"
 puts favorite_book # "book 1"
 ```
 
-### java
+### Java
 
 ```java
 // If else statement
@@ -3207,7 +3452,7 @@ switch(choice) {  // choice value can only be primitive values in java 7, since 
 
 ```
 
-### c#
+### C#
 
 ```c#
 // If else statement
@@ -3241,7 +3486,7 @@ doSomethingSpecial:
   doingSomething;
 ```
 
-### c++
+### C++
 
 ```c++
 // If else statement
@@ -3288,7 +3533,7 @@ switch(choice) {
 
 ## Loops
 
-### python 2
+### Python 2
 
 ```python
 # While loop
@@ -3334,7 +3579,7 @@ for index, value in enumerate(list_name):
     print index, value  # output index, value
 ```
 
-### python 3
+### Python 3
 
 ```python
 # For loop
@@ -3371,7 +3616,7 @@ for k, v in x.items():
     print(f"k: {k}, v: {v}")
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // While loop
@@ -3418,7 +3663,9 @@ list_name.forEach(function (value, index, list) {
 });
 ```
 
-### javascript ES6: Use let in loops when declaring
+### JavaScript ES6
+
+> Use `let` in loops when declaring
 
 ```javascript
 // For of loop
@@ -3443,7 +3690,7 @@ for (let key in object) {
 }
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # While loop
@@ -3522,7 +3769,7 @@ n.times { do_this }  # do_this will repeat n times
 100.downto(95) { |num| print num, " " }  # 100 99 98 97 96 95
 ```
 
-### java
+### Java
 
 ```java
 // While loop
@@ -3577,7 +3824,7 @@ for(int num:arr)
 
 ```
 
-### c#
+### C#
 
 ```c#
 // While loop
@@ -3627,7 +3874,7 @@ foreach(char c in stringName) {
 }
 ```
 
-### c++
+### C++
 
 ```c++
 // While loop
@@ -3684,27 +3931,27 @@ for (;;)
 
 ## Instantiation
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 t = Thing()  # everything
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 v = getValue(); // plain function
 t = new Thing(); // instantiation
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
 ```
 
-### java
+### Java
 
 ```java
 public class ClassName {
@@ -3736,7 +3983,7 @@ public class ClassName {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 // method 1
@@ -3764,13 +4011,13 @@ public class Program {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Functions
 
-### python 2 & 3
+### Python 2 & 3
 
 - Function returns None by default if return statement is not declared
 
@@ -3801,7 +4048,7 @@ def get_sum(num1: int=1, num2: int=2):
     return num1 + num2
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 - Function returns undefined by default if return statement is not declared
 
@@ -3853,7 +4100,7 @@ let myFunction = (a) => {
 })();
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Default parameters
@@ -3862,7 +4109,7 @@ function myFunction(a = value) {
 }
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 // return void
@@ -3911,7 +4158,7 @@ function totalLength(x: { length: number }, y: { length: number }): number {
 }
 ```
 
-### ruby
+### Ruby
 
 - Function returns result regardless of whether return statement is declared or not
   - Reason: ruby applies Implicit Return feature
@@ -3988,7 +4235,7 @@ blockName = Proc.new do |n|
 end
 ```
 
-### java
+### Java
 
 ```java
 // Normal functions
@@ -4049,7 +4296,7 @@ static double addValues(String s1, String s2, String s3) {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 // Normal functions
@@ -4097,7 +4344,7 @@ var MyFunction = a => { do_something_with_a; };
 public static void MyFunction(dataType a=someValue) => do_something_with_a;
 ```
 
-### c++
+### C++
 
 - Function Signature: return type | name of function | (parameters)
 - Signature / prototype
@@ -4141,7 +4388,7 @@ int sumTwoNumbers(int a, int b)
 
 ## Higher order functions
 
-### python 2
+### Python 2
 
 ```python
 # Map: applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results
@@ -4175,7 +4422,7 @@ arr2 = ["1", "2", "3"]
 zpp(arr1, arr2)  # [(1, '1'), (2, '2'), (3, '3')]
 ```
 
-### python 3
+### Python 3
 
 ```python
 # Reduce: executes a function on each element, resulting in a single output value
@@ -4190,7 +4437,7 @@ list(zip(s, t))  # [(1, '1'), (2, '2'), (3, '3')]
 tuple(zip(s, t)) # ((1, '1'), (2, '2'), (3, '3'))
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // Map: create a new array from a current array
@@ -4268,7 +4515,7 @@ function zip(arrays) {
 zip([arr1, arr2]);  // [[1, '1'], [2, '2'], [3, '3']]
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # Zip: combine 2 arrays
@@ -4277,9 +4524,9 @@ arr2 = ["1", "2", "3"]
 puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 
-### java
+### Java
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
@@ -4287,7 +4534,7 @@ puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 
 - Hash Tables, Dictionaries, Objects
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Create dictionary
@@ -4376,7 +4623,7 @@ del newDict  # method 1
 newDict.clear()  # method 2
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // Objects
@@ -4491,7 +4738,7 @@ Object.seal(newObj);
 Object.freeze(newObj);
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Merge 2 objects
@@ -4565,7 +4812,7 @@ newDict.delete(obj);
 newDict.has(obj);
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 // object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined
@@ -4575,7 +4822,7 @@ let objName: object = {
 };
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # Hash literal notation, OLD SYNTAX
@@ -4694,7 +4941,7 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 
-### java
+### Java
 
 ```java
 // Map: it is an interface used to store data in key-value pair
@@ -4723,7 +4970,7 @@ map.remove("sg");  // { jp=Japan, usa=United States }
 Set<String> keys = map.keySet();  // [ usa, jp ]
 ```
 
-### c#
+### C#
 
 ```c#
 // method 1 (can be used within a method)
@@ -4751,13 +4998,13 @@ class MainClass {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Destructuring
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Tuples
@@ -4773,7 +5020,7 @@ xVariable, yVariable = "xy"
 xKey, yKey = {"xKey": xValue, "yKey": yValue}
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Arrays
@@ -4803,7 +5050,7 @@ const { a = "", b = "" } = data?.[0] || []; // checks if data is undefined or nu
 console.log(a); // "hello"
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 type myFunctionProps = {
@@ -4816,17 +5063,17 @@ function myFunction({ arg1, ...rest }: myFunctionProps) {
 }
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Spread Operator
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # *args (splat)
@@ -4842,7 +5089,7 @@ myFunction(*Dict)  # {"a": value1, "b": value2}  only utilize the keys
 myFunction(**Dict) # {"a": value1, "b": value2}  utilize both keys and values
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Takes an array and transform (unpacks) it into single values
@@ -4859,17 +5106,17 @@ let totalArr = arr1.concat(arr2); // concat method
 let totalArr = [...arr1, ...arr2];
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Rest parameters
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # *args
@@ -4885,7 +5132,7 @@ def myFunction(**kwargs):
 myFunction(var1=value1, var2=value2)
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Receive a couple of single values and transform them into an array
@@ -4894,7 +5141,7 @@ function myFunction(...args) {
 }
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # *parameter
@@ -4904,7 +5151,7 @@ def myFunction(*parameter):
 end
 ```
 
-### java
+### Java
 
 ```java
 static double myFunction(String ... args) {
@@ -4912,7 +5159,7 @@ static double myFunction(String ... args) {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 // hard coded method
@@ -4963,13 +5210,13 @@ class MainClass {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Class
 
-### python 2
+### Python 2
 
 ```python
 class MathClass:
@@ -4994,7 +5241,7 @@ print (test.outterAdd(3, 7))  # 10
 print (MathClass.outterAdd(4, 5)  # 9
 ```
 
-### python 3
+### Python 3
 
 ```python
 class BasicClass:
@@ -5170,7 +5417,7 @@ print(dev.pay)  # 5500
 - python magic method guide
   - https://rszalski.github.io/magicmethods/
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // method 1
@@ -5253,7 +5500,7 @@ dev.applyRaise();
 console.log(dev.pay); // 5500
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Case 1: normal javascript way
@@ -5343,7 +5590,7 @@ dev.applyRaise();
 console.log(dev.pay); // 5500
 ```
 
-### typescript
+### TypeScript
 
 ```typescript
 class Person {
@@ -5448,7 +5695,7 @@ department.printMeeting();
 //department.generateReports(); // error: method doesn't exist on declared abstract type
 ```
 
-### ruby
+### Ruby
 
 - class variables (@@variableName) are like instance variables but belongs to the class
 - global variables ($variableName) must be declared with a $ symbol, if declared within the class
@@ -5576,7 +5823,7 @@ calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
 ```
 
-### java
+### Java
 
 - class
   - if not constructor has been defined, a constructor with no args will be auto generated
@@ -5977,7 +6224,7 @@ public class Main {
 }
 ```
 
-### c#
+### C#
 
 - Struct vs Class
   - https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
@@ -6320,7 +6567,7 @@ public class ProductName : IFeatureName1, IFeatureName2 {
 }
 ```
 
-### c++
+### C++
 
 ```c++
 // Math.h
@@ -6360,7 +6607,7 @@ int main()
 
 ## Importing Libraries
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # import module from libraries
@@ -6386,7 +6633,7 @@ from ..folder2 import function1 # example 2
 from . import class2 # example 3
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // Before a module can be imported, it has to be exported first
@@ -6403,7 +6650,7 @@ var {function1, function2} = require("moduleName");  // importing multiple funct
 var mn = require("moduleName").moduleName;
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Before a module can be imported, it has to be exported first
@@ -6427,7 +6674,7 @@ import { function1, function2 } from "moduleName"; // import multiple functions
 import name, { function1 } from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # import another ruby file
@@ -6437,7 +6684,7 @@ load "./anotherFile.rb"  # ./ not mandatory
 require_relative "moduleFileName"  # extension not required
 ```
 
-### java
+### Java
 
 ```java
 // folder name that the current file is in, all other files that are in this folder can be imported without additional code
@@ -6480,13 +6727,13 @@ public class Student {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Type Conversions
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Convert to Integer, floats will round down
@@ -6508,7 +6755,7 @@ tuple(type_to_convert)  # cannot be a number
 set(type_to_convert)  # cannot be a number
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // number to string
@@ -6542,7 +6789,7 @@ str = "12.5 kg";
 num = Number(str); // NaN
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # String to symbol
@@ -6567,7 +6814,7 @@ nums = [1, 2, 3]
 strings = nums.map(&:to_s)
 ```
 
-### java
+### Java
 
 ```java
 // implicit type conversion (small value to big only)
@@ -6596,7 +6843,7 @@ double d1 = Double.parseDouble(s);
 System.out.println(d1);  // 423.0
 ```
 
-### c#
+### C#
 
 ```c#
 // implicit type conversion (small value to big only)
@@ -6652,13 +6899,13 @@ x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Find Data Type
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # Get data type
@@ -6699,7 +6946,7 @@ id(x)  # 4360090688
 id(y)  # 4359972032
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // Get data type: "number", "string", "boolean", "object", "undefined", "function"
@@ -6715,7 +6962,7 @@ let variable1 = 10 / undefined; // NaN
 Number.isNaN(variable1); // true
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # Get data type, function won't provide a specify class type
@@ -6743,9 +6990,9 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 [1, 2].is_a? Array  # true
 ```
 
-### java
+### Java
 
-### c#
+### C#
 
 - typeof: takes a type name (which you specify at compile time)
 - GetType: gets the runtime type of an instance
@@ -6776,13 +7023,13 @@ public class MainClass {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## String Concatenation
 
-### python 2
+### Python 2
 
 ```python
 string_name = "string1" + "string2"  # "string1string2"
@@ -6798,7 +7045,7 @@ string_name = "{} {}".format("string1", "string2")  # "string1 string2"
 string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
 ```
 
-### python 3
+### Python 3
 
 ```python
 # f string: python 3.6 and above
@@ -6824,14 +7071,14 @@ print(f"{a:>2}")  # " 8"
 print(f"{a:>02}")  # "08"
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 // javascript allows data type mashups, numbers will be converted to strings when concatenated with a string.
 let stringName = "string1" + "string2" + 123; // "string1string2123"
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 let string1 = "string 1 value";
@@ -6839,7 +7086,7 @@ let string2 = "string 2 value";
 let stringName = `${string1} ${string2} 123`; // "string 1 value string 2 value 123"
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 string1 = "string1"
@@ -6855,7 +7102,7 @@ puts "one" + 1.to_s  # "one1"
 printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
 
-### java
+### Java
 
 ```java
 String string1 = "string";
@@ -6891,7 +7138,7 @@ String newString2 = String.format("%s%d", string1, num1);  // "string1"
 
 - [String format reference](https://www.javatpoint.com/java-string-format)
 
-### c#
+### C#
 
 ```c#
 string string1 = "string 1 value";
@@ -6905,13 +7152,13 @@ string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 v
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## JSON
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 import json  # must import to use
@@ -6924,7 +7171,7 @@ json.loads(json_object)
 json.dumps(python_object)
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // JSON (JavaScript Object Notation): a lightweight, text-based data format that's based on JavaScript.
@@ -6937,24 +7184,24 @@ let objName = { title: "Black Panther" };
 objName = JSON.parse(objName);
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Program Entry Point
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 if __name__ === "__main__":
     # do something
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 // only works in node js
@@ -6963,11 +7210,11 @@ if (require.main === module) {
 }
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c#
+### C#
 
 ```c#
 class MainClass {
@@ -6977,13 +7224,13 @@ class MainClass {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Swapping values
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 a, b = 1, 2
@@ -6996,7 +7243,7 @@ b = temp
 a, b = b, a
 ```
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 let a = 1;
@@ -7006,23 +7253,23 @@ a = b;
 b = temp;
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 [a, b] = [b, a];
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Error Handling
 
-### python 2 & 3
+### Python 2 & 3
 
 - try: lets you test a block of code for errors
 - except: except block lets you handle the error
@@ -7053,7 +7300,7 @@ finally:  # not required
     do_something_when_try_&_except_or_else_is_completed
 ```
 
-### javascript
+### JavaScript
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -7069,7 +7316,7 @@ try {
 }
 ```
 
-### ruby
+### Ruby
 
 - begin: something which might raise an exception
 - rescue: code that deals with some exception
@@ -7088,7 +7335,7 @@ ensure
 end
 ```
 
-### java
+### Java
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -7164,7 +7411,7 @@ public class Main {
 }
 ```
 
-### c#
+### C#
 
 - try: lets you test a block of code for errors
 - catch: lets you handle the error
@@ -7196,13 +7443,13 @@ public class NewExceptionName : System.Exception {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Custom Error
 
-### python 2 & 3
+### Python 2 & 3
 
 ```python
 # raise generic exception
@@ -7212,7 +7459,7 @@ raise Exception("custom message")
 raise ValueError("custom message")
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 throw "custom message"; // throw a text
@@ -7220,7 +7467,7 @@ throw "custom message"; // throw a text
 throw 123; // throw a number
 ```
 
-### ruby
+### Ruby
 
 ```ruby
 # method 1
@@ -7229,7 +7476,7 @@ raise errorType, "custom error message"
 raise errorType.new("custom error message")
 ```
 
-### java
+### Java
 
 - must use either try catch statements or be inside a conditional statement to work
 
@@ -7252,7 +7499,7 @@ if (true) {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 // raise generic exception
@@ -7263,7 +7510,7 @@ throw new System.Exception("custom message");
 throw new SpecificExceptionName("custom message");
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
@@ -7271,9 +7518,9 @@ throw new SpecificExceptionName("custom message");
 
 - Handling asynchronous code (making it synchronous)
 
-### python
+### Python
 
-### javascript ES5
+### JavaScript ES5
 
 ```javascript
 var posts = [
@@ -7316,7 +7563,7 @@ createPost({ title: "Post 3", body: "body of post 3" }, function () {
 });
 ```
 
-### javascript ES6
+### JavaScript ES6
 
 ```javascript
 // Change createPost to return a Promise
@@ -7350,7 +7597,7 @@ Promise.all([
 });
 ```
 
-### javascript ES8
+### JavaScript ES8
 
 ```javascript
 // method 5
@@ -7403,11 +7650,11 @@ await run();
 // timeout
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c#
+### C#
 
 ```c#
 class MainClass {
@@ -7449,13 +7696,13 @@ public class Worker {
 }
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Math
 
-### python 3
+### Python 3
 
 ```python
 import math
@@ -7495,7 +7742,7 @@ import random
 random.randint(1, 3)  # any number from 1 to 3
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 Math.abs(-1); // 1
@@ -7517,9 +7764,9 @@ Math.floor(Math.random() * 11);
 Math.floor(Math.random() * 10) + 1;
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 ```java
 import java.util.Random;
@@ -7543,7 +7790,7 @@ System.out.println("Random Number Between 0 and 10 " + (rand.nextInt(11)));
 System.out.println("Random Number Between 1 and 10 " + (rand.nextInt(10 - 1 + 1) + 1));  // rand.nextInt((max - min) + 1) + min;
 ```
 
-### c#
+### C#
 
 ```c#
 double number1 = 10.5;
@@ -7562,7 +7809,7 @@ Random rand = new Random();
 System.Console.WriteLine("Random Number Between 1 and 10 " + (rand.Next(1,11)));
 ```
 
-### c++
+### C++
 
 ```c++
 // Seed the random number generator with the time method, then convert value to integer
@@ -7575,7 +7822,7 @@ int randomNumber = rand() % 100;  // number range from 0 to 99
 
 ## Date and Time
 
-### python3
+### Python 3
 
 ```python
 from datetime import date, datetime, timedelta
@@ -7685,16 +7932,16 @@ for m in range(1, 13):
     print("%10s %2d" % (calendar.month_name[m], meetday))
 ```
 
-### javascript
+### JavaScript
 
-### ruby
+### Ruby
 
 ```ruby
 # get current date and time
 Time.now
 ```
 
-### java
+### Java
 
 - must import
 
@@ -7741,7 +7988,7 @@ DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("M/d/yyyy");
 System.out.println(dtf2.format(ld));  // 1/28/2009
 ```
 
-### c#
+### C#
 
 ```c#
 // Set date (time set to default at 12:00:00 AM)
@@ -7772,13 +8019,13 @@ System.Console.WriteLine(now.ToString("yyyy-MM-dd"));  // 2020-01-14
 System.Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));  // 2020-01-14 10:26
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## File System
 
-### python
+### Python
 
 - Modifying files
 
@@ -7874,11 +8121,11 @@ if path.exists("textfile"):
         newzip.write("textfile.bak")
 ```
 
-### javascript
+### JavaScript
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 ```java
 import java.io.FileReader;
@@ -8010,7 +8257,7 @@ public class Main {
 }
 ```
 
-### c#
+### C#
 
 ```c#
 // Create or Save file
@@ -8088,7 +8335,7 @@ Path.GetDirectoryName(toBeCopiedFile);  // "fileFolder"
 System.Diagnostics.Process.Start(filename);
 ```
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
@@ -8096,11 +8343,11 @@ System.Diagnostics.Process.Start(filename);
 
 - use to hide the implementation details of a class
 
-### python
+### Python
 
-### javascript
+### JavaScript
 
-### typescript
+### TypeScript
 
 - 3 types
   - Public:
@@ -8113,11 +8360,11 @@ System.Diagnostics.Process.Start(filename);
     - A protected member cannot be accessed outside of its containing class
     - Protected members can be accessed only within the class and by the instance of its sub/child class.
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c#
+### C#
 
 - 6 types
   - public: accessible from everywhere in project, no accessibility restrictions
@@ -8246,15 +8493,15 @@ class Program2: NumberClassInFirstProject  // Inheritance
 
 - private protected: a combination of private and protected, can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly (project)
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Iterators
 
-### python
+### Python
 
-### javascript
+### JavaScript
 
 ```javascript
 let i = [1, 2];
@@ -8266,9 +8513,9 @@ iterator.next(); // { value: 2, done: false }
 iterator.next(); // { value: undefined, done: true }
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 - using iterators to loop through collections
 
@@ -8320,15 +8567,15 @@ for (String key : keys) {
 }
 ```
 
-### c#
+### C#
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Generators
 
-### python
+### Python
 
 ```python
 def generator_example():
@@ -8377,7 +8624,7 @@ for i in x:
 
 ```
 
-### javascript
+### JavaScript
 
 ```javascript
 function* generatorExample1() {
@@ -8439,19 +8686,19 @@ iterator5.next(); // { value: "hello", done: true }
 iterator5.next(); // { value: undefined, done: true }
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c#
+### C#
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Fetching Web Data
 
-### python
+### Python
 
 - fetching a webpage
 
@@ -8526,21 +8773,21 @@ for skill in skills:
     print(skill.getAttribute("name"))
 ```
 
-### Javascript
+### JavaScript
 
-### ruby
+### Ruby
 
-### java
+### Java
 
-### c#
+### C#
 
-### c++
+### C++
 
 [back to top](#table-of-contents)
 
 ## Enum
 
-### python 3
+### Python 3
 
 ```python
 from enum import Enum
@@ -8567,7 +8814,7 @@ print("GET_VALUE" in Methods._member_names_)  # False
 print("GET" in Methods._member_names_)  # True
 ```
 
-### Javascript
+### JavaScript
 
 ```javascript
 const color = {
@@ -8577,7 +8824,7 @@ const color = {
 };
 ```
 
-### Typescript
+### TypeScript
 
 - Enum: By default, enums begin numbering their members starting at 0
 
@@ -8599,9 +8846,9 @@ let c: Color = Color.Green; // 2
 let colorName: string = Color[2]; // "Green"
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 - ENUM
 - Enumerations are lists of possible values that you can use for any particular variable
@@ -8651,7 +8898,7 @@ public class Main {
 }
 ```
 
-### c#
+### C#
 
 - Enum
   - Used to manage number type constants for better clarity and maintainability
@@ -8684,7 +8931,7 @@ ShippingMethod method = (int) ShippingMethod.Express;  // 3
 ShippingMethod methodType = (ShippingMethod) 3;  // Express
 ```
 
-### c++
+### C++
 
 ```c++
 enum Color { red, green, blue };
@@ -8723,7 +8970,7 @@ Color col = Color::Red;
 
 ## Language Specific
 
-### python
+### Python
 
 - Shebang line / hashbang
   - it is a common pattern for unix based systems
@@ -8975,7 +9222,7 @@ async def countdown35(tag: str, count: int) -> str:
     return "Blastoff!"
 ```
 
-### javascript
+### JavaScript
 
 - Set
 
@@ -9105,7 +9352,7 @@ console.log(proxy.nextId); // 2
 console.log(proxy.nextId); // 3
 ```
 
-### typescript
+### TypeScript
 
 - Declaring with type as "any": use to declare variable type if you do not know its type
   - will receive an error if use methods for the wrong type (no auto checking)
@@ -9141,9 +9388,9 @@ console.log(genericFunc(123));
 console.log(genericFunc(false));
 ```
 
-### ruby
+### Ruby
 
-### java
+### Java
 
 - Number formatting
 
@@ -9352,7 +9599,7 @@ String formatted = formatter.format(lognValue);  // "10.000.001" (dk locale)
     }
     ```
 
-### c#
+### C#
 
 - Overloading
   - having multiple similar methods with different signatures
@@ -10304,7 +10551,7 @@ class Program
 }
 ```
 
-### c++
+### C++
 
 - References
 
