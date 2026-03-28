@@ -1035,6 +1035,19 @@ let octal: number = 0o744;
 integer_name = 123
 ```
 
+### Kotlin
+
+```kotlin
+// val: immutable (read-only), var: mutable
+val integerName: Int = 123
+var integerName2 = 123  // type inferred as Int
+
+// explicit types
+val byteName: Byte = 127
+val shortName: Short = 123
+val longName: Long = 123L
+```
+
 ### Java
 
 ```java
@@ -1156,6 +1169,35 @@ long long int long_name; long_name = 123;
 // similar to the rest of int variable declaration
 ```
 
+### Groovy
+
+```groovy
+// def: dynamically typed
+def integerName = 123
+
+// typed declarations
+int integerName2 = 123
+Integer integerName3 = 123
+
+// constants
+final int CONSTANT_NAME = 123
+```
+
+### Assembly
+
+```assembly
+; x86 Assembly (NASM syntax)
+section .data
+    integer_name dd 123      ; define a 32-bit integer (double word)
+    short_name   dw 123      ; define a 16-bit integer (word)
+    byte_name    db 123      ; define an 8-bit integer (byte)
+    long_name    dq 123      ; define a 64-bit integer (quad word)
+
+section .text
+    mov eax, 123             ; store 123 in the 32-bit register eax
+    mov ebx, dword [integer_name]  ; load value from memory into ebx
+```
+
 [back to top](#table-of-contents)
 
 ## Variable declaration float
@@ -1208,6 +1250,19 @@ let float_name: number = 1.123;
 ```
 
 ### Ruby
+
+```ruby
+float_name = 1.123
+float_name = 0.1123e1  # equals to 1.123
+```
+
+### Kotlin
+
+```kotlin
+val floatName: Float = 1.123f
+val doubleName: Double = 1.123
+var doubleName2 = 1.123  // type inferred as Double
+```
 
 ### Java
 
@@ -1282,6 +1337,18 @@ double_name = 1.123;  // have 19 decimal digits
 // similar to the rest of int variable declaration
 ```
 
+### Groovy
+
+```groovy
+// def: dynamically typed (BigDecimal by default for decimals)
+def floatName = 1.123  // BigDecimal
+
+// typed declarations
+float floatName2 = 1.123f
+double doubleName = 1.123d
+BigDecimal bigDecimalName = 1.123
+```
+
 [back to top](#table-of-contents)
 
 ## Variable declaration None
@@ -1324,6 +1391,20 @@ let variable_name3: number = NaN;
 
 ```ruby
 variable_name = nil  # nil is returned when no values are assigned, but nothing is displayed on screen
+```
+
+### Kotlin
+
+```kotlin
+// Kotlin has null safety built into the type system
+var stringName: String? = null  // ? allows null
+val intName: Int? = null
+
+// non-nullable types cannot be null
+// var name: String = null  // compile error
+
+// NaN
+val nanValue = Double.NaN
 ```
 
 ### Java
@@ -1369,6 +1450,27 @@ int main() {
     int* raw = nullptr;  // explicit "no object"
     if (raw == nullptr) std::cout << "raw is null\n";
 }
+```
+
+### Groovy
+
+```groovy
+def variableName = null
+
+String stringName = null
+
+// check for null
+if (variableName == null) {
+    println "is null"
+}
+
+// Groovy truth: null is falsy
+if (!variableName) {
+    println "is null or falsy"
+}
+
+// NaN
+double nanValue = Double.NaN
 ```
 
 [back to top](#table-of-contents)
@@ -1617,6 +1719,39 @@ removeStr.delete("si")  # "trng"
 # commonly used in hashed for keys
 variable_name = :symbolStringWithoutQuotes
 puts variable_name  # symbolStringWithoutQuotes
+```
+
+### Kotlin
+
+```kotlin
+// strings: must use double quotes ""
+val stringName: String = "string"
+val stringName2 = "string"  // type inferred
+
+// multi-line strings (raw/trimmed)
+val multiLine = """
+    |multi-line
+    |string
+""".trimMargin()
+
+// string templates
+val name = "World"
+val greeting = "Hello, $name!"  // "Hello, World!"
+val calc = "2 + 2 = ${2 + 2}"  // "2 + 2 = 4"
+
+// string operations
+stringName.length  // 6
+stringName.uppercase()  // "STRING"
+stringName.lowercase()  // "string"
+stringName.reversed()  // "gnirts"
+stringName.replace("s", "xxx")  // "xxxtring"
+stringName.split("r")  // ["st", "ing"]
+stringName.substring(0, 3)  // "str"
+stringName.indexOf("r")  // 2
+stringName.trim()  // removes whitespace
+
+// characters: must use single quotes ''
+val charName: Char = 'a'
 ```
 
 ### Java
@@ -1945,6 +2080,40 @@ stringName = "string";
 std::string stringName = "multi-line"
                          "string";
 std::string stringName ("string");
+```
+
+### Groovy
+
+```groovy
+// single-quoted strings (java.lang.String, no interpolation)
+def stringName = 'string'
+
+// double-quoted strings (GString with interpolation)
+def name = "World"
+def greeting = "Hello, ${name}!"  // "Hello, World!"
+def simple = "Hello, $name!"  // "Hello, World!" (simple variable)
+
+// multi-line strings
+def multiLine = '''multi-line
+string'''
+
+// multi-line with interpolation (GString)
+def multiLineInterp = """Hello,
+${name}!"""
+
+// string operations
+stringName.length()  // 6
+stringName.toUpperCase()  // "STRING"
+stringName.toLowerCase()  // "string"
+stringName.reverse()  // "gnirts"
+stringName.replace("s", "xxx")  // "xxxtring"
+stringName.split("r")  // ["st", "ing"]
+stringName.substring(0, 3)  // "str"
+stringName.indexOf("r")  // 2
+stringName.trim()  // removes whitespace
+
+// slashy strings (useful for regex, no escaping needed)
+def regex = /\d+\.\d+/
 ```
 
 [back to top](#table-of-contents)
@@ -2662,7 +2831,47 @@ c = -9; // -9 = ...1111 0111
 c >>> 2; // 1073741821 = 0011...1111 1101, count the 0s
 ```
 
+### TypeScript
+
+```typescript
+// Same operators as JavaScript, operates on 32-bit integers
+let a: number = 60; // 60 = ...0011 1100
+let b: number = 13; // 13 = ...0000 1101
+a & b;   // 12, binary AND
+a | b;   // 61, binary OR
+a ^ b;   // 49, binary XOR
+~a;      // -61, binary NOT
+a << 2;  // 240, left shift
+a >> 2;  // 15, sign-propagating right shift
+a >>> 2; // 15, zero-fill right shift
+```
+
 ### Ruby
+
+```ruby
+a = 60  # 60 = ...0011 1100
+b = 13  # 13 = ...0000 1101
+a & b   # 12, binary AND
+a | b   # 61, binary OR
+a ^ b   # 49, binary XOR
+~a      # -61, binary NOT
+a << 2  # 240, left shift
+a >> 2  # 15, right shift
+```
+
+### Kotlin
+
+```kotlin
+val a = 60  // 60 = ...0011 1100
+val b = 13  // 13 = ...0000 1101
+a and b     // 12, binary AND
+a or b      // 61, binary OR
+a xor b     // 49, binary XOR
+a.inv()     // -61, binary NOT (invert)
+a shl 2     // 240, left shift
+a shr 2     // 15, signed right shift
+a ushr 2    // 15, unsigned right shift
+```
 
 ### Java
 
@@ -2706,6 +2915,30 @@ a | b  // 61 = ...0011 1101
 
 ### C++
 
+```c++
+int a = 60; // 60 = ...0011 1100
+int b = 13; // 13 = ...0000 1101
+a & b;   // 12, binary AND
+a | b;   // 61, binary OR
+a ^ b;   // 49, binary XOR
+~a;      // -61, binary NOT
+a << 2;  // 240, left shift
+a >> 2;  // 15, right shift
+```
+
+### Groovy
+
+```groovy
+def a = 60  // 60 = ...0011 1100
+def b = 13  // 13 = ...0000 1101
+a & b   // 12, binary AND
+a | b   // 61, binary OR
+a ^ b   // 49, binary XOR
+~a      // -61, binary NOT
+a << 2  // 240, left shift
+a >> 2  // 15, right shift
+a >>> 2 // 15, unsigned right shift
+```
 [back to top](#table-of-contents)
 
 ## Increment
@@ -2741,12 +2974,34 @@ a | b  // 61 = ...0011 1101
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
 
+### TypeScript
+
+- `x = x + 1;`
+- `x += 1;`
+- `++x;` preincrement, add 1 now
+- `x++;` postincrement, display without addition now then add 1 later when called again
+
+### Kotlin
+
+- `var x = 1; x = x + 1`
+- `x += 1`
+- `++x` preincrement
+- `x++` postincrement
+- note: `val` (immutable) cannot be incremented, must use `var`
+
 ### C++
 
 - `x = x + 1;`
 - `x += 1;`
 - `++x;` preincrement, add 1 now
 - `x++;` postincrement, display without addition now then add 1 later when called again
+
+### Groovy
+
+- `x = x + 1`
+- `x += 1`
+- `++x` preincrement, add 1 now
+- `x++` postincrement, display without addition now then add 1 later when called again
 
 [back to top](#table-of-contents)
 
@@ -3396,6 +3651,149 @@ int_vector.resize(length_of_desired_array);
 int_vector.clear();
 ```
 
+### Kotlin
+
+```kotlin
+// Arrays: fixed size
+val intArray = arrayOf(1, 2, 3)
+val strArray = arrayOf("a", "b", "c")
+val emptyArray = emptyArray<Int>()
+
+// Access an element
+intArray[0]  // 1
+
+// Modify an element
+intArray[0] = 10
+
+// Find array size
+intArray.size  // 3
+
+
+// Immutable List: cannot add or remove elements
+val list = listOf(1, 2, 3)
+val emptyList = emptyList<Int>()
+
+// Access an element
+list[0]  // 1
+
+// Find list size
+list.size  // 3
+
+// Check if element exists
+list.contains(2)  // true
+
+// Get index of element
+list.indexOf(2)  // 1
+
+
+// Mutable List: can add and remove elements
+val mutableList = mutableListOf(1, 2, 3)
+
+// Add element to list (left to right)
+mutableList.add(4)  // [1, 2, 3, 4]
+
+// Add element at index
+mutableList.add(0, 0)  // [0, 1, 2, 3, 4]
+
+// Modify an element
+mutableList[0] = 10
+
+// Remove element at index
+mutableList.removeAt(0)
+
+// Remove first occurrence of element
+mutableList.remove(2)
+
+// Remove all elements
+mutableList.clear()
+
+
+// Sort a list
+val sorted = listOf(3, 1, 2).sorted()  // [1, 2, 3]
+val sortedDesc = listOf(3, 1, 2).sortedDescending()  // [3, 2, 1]
+
+// Merge 2 lists
+val merged = listOf(1, 2) + listOf(3, 4)  // [1, 2, 3, 4]
+
+// Join list into a string
+listOf("a", "b", "c").joinToString(", ")  // "a, b, c"
+```
+
+### Groovy
+
+```groovy
+// Empty list
+def listName = []
+
+// List with elements
+def listName = [1, "one", true]
+
+// Nested lists
+def listName = [1, ["two", 3]]
+
+// Typed list
+List<Integer> intList = [1, 2, 3]
+def arrayList = [1, 2, 3] as ArrayList
+
+
+// Find list size
+listName.size()  // 3
+
+
+// Access an element
+listName[0]  // 1
+
+// Modify an element
+listName[0] = 10
+
+
+// Add element to list (left to right)
+listName.add(element)
+listName << element
+
+// Add element at index
+listName.add(0, element)
+
+
+// Remove element at index
+listName.remove(0)
+
+// Remove first occurrence of element (must cast to Object to avoid index removal)
+listName.remove((Object) element)
+
+// Remove all elements
+listName.clear()
+
+
+// Get index of element
+listName.indexOf(element)
+
+// Check if element exists
+listName.contains(element)
+
+
+// Merge 2 lists
+def merged = [1, 2] + [3, 4]  // [1, 2, 3, 4]
+
+
+// Sort a list in ascending order
+def sorted = [3, 1, 2].sort()  // [1, 2, 3]
+
+// Sort a list in descending order
+def sortedDesc = [3, 1, 2].sort { a, b -> b <=> a }  // [3, 2, 1]
+
+
+// Transform elements with collect
+def doubled = [1, 2, 3].collect { it * 2 }  // [2, 4, 6]
+
+
+// Join list into a string
+["a", "b", "c"].join(", ")  // "a, b, c"
+
+// Flatten nested lists
+[[1, 2], [3, 4]].flatten()  // [1, 2, 3, 4]
+```
+
 [back to top](#table-of-contents)
 
 ## Conditional Statement
@@ -3441,6 +3839,48 @@ if (condition_a) {
   do_B;
 } else {
   do_something_else;
+
+### TypeScript
+
+```typescript
+// If else statement
+let value: number = 10;
+if (value > 0) {
+  doA();
+} else if (value === 0) {
+  doB();
+} else {
+  doSomethingElse();
+}
+
+
+// Ternary operator
+const result: string = condition ? "yes" : "no";
+
+
+// Switch statement
+const choice: string = "a";
+switch (choice) {
+  case "a":
+    doA();
+    break;
+  case "b":
+    doB();
+    break;
+  default:
+    doSomethingElse();
+}
+
+
+// Type narrowing with typeof
+function example(value: string | number) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());  // value is string here
+  } else {
+    console.log(value.toFixed(2));  // value is number here
+  }
+}
+```
 }
 
 // Ternary operator
