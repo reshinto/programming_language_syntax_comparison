@@ -10446,6 +10446,26 @@ Math.floor(Math.random() * 11);
 Math.floor(Math.random() * 10) + 1;
 ```
 
+### TypeScript
+
+```typescript
+const abs: number = Math.abs(-1);          // 1
+const pow: number = Math.pow(2, 3);        // 8
+const sqrt: number = Math.sqrt(100);       // 10
+const ceil: number = Math.ceil(4.2);       // 5
+const floor: number = Math.floor(4.9);     // 4
+const round: number = Math.round(4.5);     // 5
+const max: number = Math.max(5, 10);       // 10
+const min: number = Math.min(5, 10);       // 5
+const pi: number = Math.PI;               // 3.141592653589793
+
+// random integer from 0 to 9
+const randomInt: number = Math.floor(Math.random() * 10);
+
+// random integer from 1 to 10
+const randomRange: number = Math.floor(Math.random() * 10) + 1;
+```
+
 ### Ruby
 
 ```ruby
@@ -10470,26 +10490,6 @@ Math.cos(0)          # 1.0
 rand()               # random float between 0.0 and 1.0
 rand(10)             # random integer from 0 to 9
 rand(1..10)          # random integer from 1 to 10
-```
-
-### TypeScript
-
-```typescript
-const abs: number = Math.abs(-1);          // 1
-const pow: number = Math.pow(2, 3);        // 8
-const sqrt: number = Math.sqrt(100);       // 10
-const ceil: number = Math.ceil(4.2);       // 5
-const floor: number = Math.floor(4.9);     // 4
-const round: number = Math.round(4.5);     // 5
-const max: number = Math.max(5, 10);       // 10
-const min: number = Math.min(5, 10);       // 5
-const pi: number = Math.PI;               // 3.141592653589793
-
-// random integer from 0 to 9
-const randomInt: number = Math.floor(Math.random() * 10);
-
-// random integer from 1 to 10
-const randomRange: number = Math.floor(Math.random() * 10) + 1;
 ```
 
 ### Kotlin
@@ -10771,6 +10771,40 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 Time.now
 ```
 
+### Kotlin
+
+```kotlin
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+
+val now = LocalDateTime.now()
+println(now)  // 2021-07-16T18:30:00.000
+
+val today = LocalDate.now()
+println(today)           // 2021-07-16
+println(today.year)      // 2021
+println(today.monthValue)  // 7
+println(today.dayOfMonth)  // 16
+println(today.dayOfWeek)   // FRIDAY
+
+// create specific date
+val date = LocalDate.of(2021, 7, 16)
+
+// formatting
+val formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy")
+println(today.format(formatter))  // "Friday, July 16, 2021"
+
+// date arithmetic
+val tomorrow = today.plusDays(1)
+val nextWeek = today.plusWeeks(1)
+val lastMonth = today.minusMonths(1)
+
+// difference between dates
+val daysBetween = ChronoUnit.DAYS.between(date, today)
+```
+
 ### Java
 
 - must import
@@ -10876,40 +10910,6 @@ std::cout << localTime->tm_mday << std::endl;          // 16
 auto future = now + std::chrono::hours(24);  // 24 hours from now
 auto duration = future - now;
 auto hours = std::chrono::duration_cast<std::chrono::hours>(duration).count();  // 24
-```
-
-### Kotlin
-
-```kotlin
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.temporal.ChronoUnit
-
-val now = LocalDateTime.now()
-println(now)  // 2021-07-16T18:30:00.000
-
-val today = LocalDate.now()
-println(today)           // 2021-07-16
-println(today.year)      // 2021
-println(today.monthValue)  // 7
-println(today.dayOfMonth)  // 16
-println(today.dayOfWeek)   // FRIDAY
-
-// create specific date
-val date = LocalDate.of(2021, 7, 16)
-
-// formatting
-val formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy")
-println(today.format(formatter))  // "Friday, July 16, 2021"
-
-// date arithmetic
-val tomorrow = today.plusDays(1)
-val nextWeek = today.plusWeeks(1)
-val lastMonth = today.minusMonths(1)
-
-// difference between dates
-val daysBetween = ChronoUnit.DAYS.between(date, today)
 ```
 
 ### Groovy
@@ -11164,6 +11164,58 @@ File.dirname("/path/to/file.txt")   # "/path/to"
 Dir.mkdir("newFolder")
 Dir.entries(".")          # [".", "..", "file1.txt", ...]
 Dir.glob("*.txt")         # ["file1.txt", "file2.txt"]
+```
+
+### Kotlin
+
+```kotlin
+import java.io.File
+
+val file = File("textfile.txt")
+
+// write to file
+file.writeText("Hello World")
+
+// append to file
+file.appendText("\nNew line")
+
+// read entire file
+val content = file.readText()
+
+// read file line by line
+file.forEachLine { line ->
+    println(line)
+}
+
+// read lines into list
+val lines: List<String> = file.readLines()
+
+// buffered reader
+file.bufferedReader().use { reader ->
+    reader.forEachLine { println(it) }
+}
+
+// check if file exists
+file.exists()       // true
+file.isFile         // true
+file.isDirectory    // false
+
+// file info
+file.name           // "textfile.txt"
+file.extension       // "txt"
+file.absolutePath    // "/path/to/textfile.txt"
+file.length()        // file size in bytes
+
+// directory operations
+val dir = File("mydir")
+dir.mkdir()          // create single directory
+dir.mkdirs()         // create directory and parents
+dir.listFiles()      // array of File objects
+dir.list()           // array of filenames
+
+// copy and delete
+file.copyTo(File("copy.txt"), overwrite = true)
+file.delete()
 ```
 
 ### Java
@@ -11428,58 +11480,6 @@ fs::path p("/users/docs/file.txt");
 std::cout << p.filename() << std::endl;   // "file.txt"
 std::cout << p.extension() << std::endl;  // ".txt"
 std::cout << p.parent_path() << std::endl;  // "/users/docs"
-```
-
-### Kotlin
-
-```kotlin
-import java.io.File
-
-val file = File("textfile.txt")
-
-// write to file
-file.writeText("Hello World")
-
-// append to file
-file.appendText("\nNew line")
-
-// read entire file
-val content = file.readText()
-
-// read file line by line
-file.forEachLine { line ->
-    println(line)
-}
-
-// read lines into list
-val lines: List<String> = file.readLines()
-
-// buffered reader
-file.bufferedReader().use { reader ->
-    reader.forEachLine { println(it) }
-}
-
-// check if file exists
-file.exists()       // true
-file.isFile         // true
-file.isDirectory    // false
-
-// file info
-file.name           // "textfile.txt"
-file.extension       // "txt"
-file.absolutePath    // "/path/to/textfile.txt"
-file.length()        // file size in bytes
-
-// directory operations
-val dir = File("mydir")
-dir.mkdir()          // create single directory
-dir.mkdirs()         // create directory and parents
-dir.listFiles()      // array of File objects
-dir.list()           // array of filenames
-
-// copy and delete
-file.copyTo(File("copy.txt"), overwrite = true)
-file.delete()
 ```
 
 ### Groovy
@@ -11966,6 +11966,39 @@ counter.next  # 0
 counter.next  # 1
 ```
 
+### Kotlin
+
+```kotlin
+val list = listOf("Japan", "China", "USA")
+
+// using for loop
+for (item in list) {
+    println(item)
+}
+
+// using iterator explicitly
+val iterator = list.iterator()
+while (iterator.hasNext()) {
+    println(iterator.next())
+}
+
+// forEach
+list.forEach { println(it) }
+
+// custom iterable
+class CountUp(private val start: Int, private val end: Int) : Iterable<Int> {
+    override fun iterator(): Iterator<Int> = object : Iterator<Int> {
+        var current = start
+        override fun hasNext() = current <= end
+        override fun next() = current++
+    }
+}
+
+for (num in CountUp(1, 3)) {
+    println(num)  // 1, 2, 3
+}
+```
+
 ### Java
 
 - using iterators to loop through collections
@@ -12020,7 +12053,105 @@ for (String key : keys) {
 
 ### C#
 
+```c#
+// IEnumerable and IEnumerator
+using System.Collections.Generic;
+
+List<string> list = new List<string> { "Japan", "China", "USA" };
+
+// method 1: using IEnumerator
+IEnumerator<string> enumerator = list.GetEnumerator();
+while (enumerator.MoveNext())
+{
+    System.Console.WriteLine(enumerator.Current);
+}
+
+// method 2: foreach (uses IEnumerable internally)
+foreach (string item in list)
+{
+    System.Console.WriteLine(item);
+}
+
+// custom iterator with yield return
+public class CountUp
+{
+    public IEnumerable<int> GetNumbers(int start, int end)
+    {
+        for (int i = start; i <= end; i++)
+        {
+            yield return i;
+        }
+    }
+}
+
+var counter = new CountUp();
+foreach (int num in counter.GetNumbers(1, 3))
+{
+    System.Console.WriteLine(num);  // 1, 2, 3
+}
+```
+
 ### C++
+
+```c++
+#include <vector>
+#include <iostream>
+
+std::vector<int> nums = {1, 2, 3};
+
+// range-based for loop (uses begin/end iterators)
+for (int n : nums) {
+    std::cout << n << std::endl;  // 1, 2, 3
+}
+
+// explicit iterator usage
+for (auto it = nums.begin(); it != nums.end(); ++it) {
+    std::cout << *it << std::endl;  // 1, 2, 3
+}
+
+// reverse iterator
+for (auto it = nums.rbegin(); it != nums.rend(); ++it) {
+    std::cout << *it << std::endl;  // 3, 2, 1
+}
+
+// const iterator (read-only)
+for (auto it = nums.cbegin(); it != nums.cend(); ++it) {
+    std::cout << *it << std::endl;
+}
+
+// iterator with maps
+#include <map>
+std::map<std::string, int> ages = {{"Alice", 30}, {"Bob", 25}};
+for (auto it = ages.begin(); it != ages.end(); ++it) {
+    std::cout << it->first << ": " << it->second << std::endl;
+}
+```
+
+### Groovy
+
+```groovy
+def list = ["Japan", "China", "USA"]
+
+// each
+list.each { println it }
+
+// eachWithIndex
+list.eachWithIndex { item, index ->
+    println "$index: $item"
+}
+
+// collect (map)
+def upper = list.collect { it.toUpperCase() }  // ["JAPAN", "CHINA", "USA"]
+
+// iterator
+def iter = list.iterator()
+while (iter.hasNext()) {
+    println iter.next()
+}
+
+// findAll (filter)
+def result = list.findAll { it.length() > 3 }  // ["Japan", "China"]
+```
 
 [back to top](#table-of-contents)
 
@@ -12137,13 +12268,279 @@ iterator5.next(); // { value: "hello", done: true }
 iterator5.next(); // { value: undefined, done: true }
 ```
 
+### TypeScript
+
+```typescript
+// Generator with types: Generator<Yield, Return, Next>
+function* counter(): Generator<number, string, unknown> {
+  yield 1;
+  yield 2;
+  yield 3;
+  return "done";
+}
+
+const gen = counter();
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+console.log(gen.next()); // { value: 3, done: false }
+console.log(gen.next()); // { value: "done", done: true }
+
+// infinite generator
+function* infiniteCounter(): Generator<number, never, unknown> {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+// iterable generator
+function* range(start: number, end: number): Generator<number> {
+  for (let i = start; i <= end; i++) {
+    yield i;
+  }
+}
+
+for (const num of range(1, 5)) {
+  console.log(num); // 1, 2, 3, 4, 5
+}
+```
+
 ### Ruby
+
+```ruby
+# Enumerator.new acts as a generator
+gen = Enumerator.new do |yielder|
+  yielder.yield 1
+  yielder.yield 2
+  yielder.yield 3
+end
+
+gen.next  # 1
+gen.next  # 2
+gen.next  # 3
+
+# infinite generator
+infinite = Enumerator.new do |yielder|
+  i = 0
+  loop do
+    yielder.yield i
+    i += 1
+  end
+end
+
+infinite.next  # 0
+infinite.next  # 1
+
+# Fiber (lightweight cooperative concurrency)
+fiber = Fiber.new do
+  Fiber.yield 1
+  Fiber.yield 2
+  3  # last value returned on final resume
+end
+
+fiber.resume  # 1
+fiber.resume  # 2
+fiber.resume  # 3
+
+# lazy enumerator (infinite sequence)
+natural_numbers = (1..Float::INFINITY).lazy
+first_five_squares = natural_numbers.map { |n| n ** 2 }.first(5)  # [1, 4, 9, 16, 25]
+```
+
+### Kotlin
+
+```kotlin
+// sequence with yield
+val counter = sequence {
+    yield(1)
+    yield(2)
+    yield(3)
+}
+
+counter.forEach { println(it) }  // 1, 2, 3
+
+// infinite sequence
+val naturals = generateSequence(0) { it + 1 }
+val firstFive = naturals.take(5).toList()  // [0, 1, 2, 3, 4]
+
+// sequence with yieldAll
+val combined = sequence {
+    yield(1)
+    yieldAll(listOf(2, 3))
+    yieldAll(generateSequence(4) { it + 1 })
+}
+
+println(combined.take(6).toList())  // [1, 2, 3, 4, 5, 6]
+
+// fibonacci sequence
+val fibonacci = sequence {
+    var a = 0
+    var b = 1
+    while (true) {
+        yield(a)
+        val temp = a + b
+        a = b
+        b = temp
+    }
+}
+
+println(fibonacci.take(8).toList())  // [0, 1, 1, 2, 3, 5, 8, 13]
+```
 
 ### Java
 
+- Java has no built-in generator syntax. Use Stream.iterate or custom Iterator instead.
+
+```java
+import java.util.stream.Stream;
+import java.util.Iterator;
+
+// Stream.iterate (Java 9+)
+Stream.iterate(0, n -> n + 1)
+      .limit(5)
+      .forEach(System.out::println);  // 0, 1, 2, 3, 4
+
+// custom generator-like Iterator
+class FibonacciIterator implements Iterator<Integer> {
+    private int a = 0, b = 1;
+
+    @Override
+    public boolean hasNext() { return true; }  // infinite
+
+    @Override
+    public Integer next() {
+        int result = a;
+        int temp = a + b;
+        a = b;
+        b = temp;
+        return result;
+    }
+}
+
+Iterator<Integer> fib = new FibonacciIterator();
+for (int i = 0; i < 8; i++) {
+    System.out.println(fib.next());  // 0, 1, 1, 2, 3, 5, 8, 13
+}
+```
+
 ### C#
 
+```c#
+// yield return creates a generator-like method
+using System.Collections.Generic;
+
+IEnumerable<int> Counter()
+{
+    yield return 1;
+    yield return 2;
+    yield return 3;
+}
+
+foreach (int num in Counter())
+{
+    System.Console.WriteLine(num);  // 1, 2, 3
+}
+
+// infinite generator
+IEnumerable<int> InfiniteCounter()
+{
+    int i = 0;
+    while (true)
+    {
+        yield return i++;
+    }
+}
+
+// fibonacci generator
+IEnumerable<int> Fibonacci()
+{
+    int a = 0, b = 1;
+    while (true)
+    {
+        yield return a;
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+}
+
+// take first 8 fibonacci numbers
+using System.Linq;
+var fibs = Fibonacci().Take(8).ToList();  // [0, 1, 1, 2, 3, 5, 8, 13]
+```
+
 ### C++
+
+- C++20 introduced coroutines with co_yield, but requires custom boilerplate. Limited built-in support.
+
+```c++
+// C++20 coroutine-based generator (requires custom Generator type)
+#include <coroutine>
+#include <iostream>
+
+// simplified Generator template (typically provided by a library)
+template<typename T>
+struct Generator {
+    struct promise_type {
+        T current_value;
+        auto yield_value(T value) { current_value = value; return std::suspend_always{}; }
+        auto initial_suspend() { return std::suspend_always{}; }
+        auto final_suspend() noexcept { return std::suspend_always{}; }
+        Generator get_return_object() { return Generator{std::coroutine_handle<promise_type>::from_promise(*this)}; }
+        void return_void() {}
+        void unhandled_exception() { std::terminate(); }
+    };
+    std::coroutine_handle<promise_type> handle;
+    bool next() { handle.resume(); return !handle.done(); }
+    T value() { return handle.promise().current_value; }
+};
+
+Generator<int> counter() {
+    co_yield 1;
+    co_yield 2;
+    co_yield 3;
+}
+
+// usage
+auto gen = counter();
+while (gen.next()) {
+    std::cout << gen.value() << std::endl;  // 1, 2, 3
+}
+```
+
+### Groovy
+
+- Groovy has no built-in generator syntax. Use iterators or closures instead.
+
+```groovy
+// iterator-based approach
+class Counter implements Iterator<Integer> {
+    int current = 0
+    int max
+
+    Counter(int max) { this.max = max }
+
+    boolean hasNext() { current < max }
+    Integer next() { current++ }
+}
+
+def counter = new Counter(5)
+while (counter.hasNext()) {
+    println counter.next()  // 0, 1, 2, 3, 4
+}
+
+// closure-based lazy sequence
+def fibonacci = { int n ->
+    def a = 0, b = 1
+    (1..n).collect {
+        def result = a
+        (a, b) = [b, a + b]
+        result
+    }
+}
+
+println fibonacci(8)  // [0, 1, 1, 2, 3, 5, 8, 13]
+```
 
 [back to top](#table-of-contents)
 
@@ -12226,13 +12623,260 @@ for skill in skills:
 
 ### JavaScript
 
+```javascript
+// fetch API (modern)
+fetch("https://api.example.com/data")
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
+
+// async/await with fetch
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+// fetch with options
+fetch("https://api.example.com/data", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ key: "value" }),
+});
+
+// XMLHttpRequest (older approach)
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data");
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    console.log(JSON.parse(xhr.responseText));
+  }
+};
+xhr.send();
+```
+
+### TypeScript
+
+```typescript
+// fetch with typed response
+interface User {
+  id: number;
+  name: string;
+}
+
+async function fetchUser(): Promise<User> {
+  const response: Response = await fetch("https://api.example.com/user/1");
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data: User = await response.json();
+  return data;
+}
+
+// fetch with POST
+async function createUser(name: string): Promise<User> {
+  const response = await fetch("https://api.example.com/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name }),
+  });
+  return response.json() as Promise<User>;
+}
+```
+
 ### Ruby
+
+```ruby
+require 'net/http'
+require 'uri'
+require 'json'
+
+# simple GET request
+uri = URI("https://api.example.com/data")
+response = Net::HTTP.get_response(uri)
+puts response.code      # "200"
+puts response.body       # response body string
+
+# GET with parsed JSON
+data = JSON.parse(Net::HTTP.get(uri))
+
+# POST request
+uri = URI("https://api.example.com/data")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+request = Net::HTTP::Post.new(uri, { "Content-Type" => "application/json" })
+request.body = { key: "value" }.to_json
+response = http.request(request)
+
+# using open-uri (simple GET)
+require 'open-uri'
+content = URI.open("https://api.example.com/data").read
+```
+
+### Kotlin
+
+```kotlin
+import java.net.URL
+import java.net.HttpURLConnection
+
+// simple GET with URL
+val content = URL("https://api.example.com/data").readText()
+println(content)
+
+// HttpURLConnection for more control
+val url = URL("https://api.example.com/data")
+val connection = url.openConnection() as HttpURLConnection
+connection.requestMethod = "GET"
+
+val responseCode = connection.responseCode  // 200
+val response = connection.inputStream.bufferedReader().readText()
+println(response)
+connection.disconnect()
+
+// POST request
+val postUrl = URL("https://api.example.com/data")
+val conn = postUrl.openConnection() as HttpURLConnection
+conn.requestMethod = "POST"
+conn.setRequestProperty("Content-Type", "application/json")
+conn.doOutput = true
+conn.outputStream.write("""{"key": "value"}""".toByteArray())
+val result = conn.inputStream.bufferedReader().readText()
+conn.disconnect()
+```
 
 ### Java
 
+```java
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+// HttpURLConnection
+URL url = new URL("https://api.example.com/data");
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+conn.setRequestMethod("GET");
+
+int responseCode = conn.getResponseCode();  // 200
+BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+StringBuilder response = new StringBuilder();
+String line;
+while ((line = reader.readLine()) != null) {
+    response.append(line);
+}
+reader.close();
+System.out.println(response.toString());
+```
+
+```java
+// Java 11+ HttpClient
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
+
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.example.com/data"))
+    .GET()
+    .build();
+
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.statusCode());  // 200
+System.out.println(response.body());
+```
+
 ### C#
 
+```c#
+using System.Net.Http;
+using System.Threading.Tasks;
+
+// HttpClient GET
+HttpClient client = new HttpClient();
+HttpResponseMessage response = await client.GetAsync("https://api.example.com/data");
+string content = await response.Content.ReadAsStringAsync();
+System.Console.WriteLine(content);
+
+// check status
+response.EnsureSuccessStatusCode();  // throws if not 2xx
+
+// POST request
+var json = new System.Net.Http.StringContent(
+    "{\"key\": \"value\"}",
+    System.Text.Encoding.UTF8,
+    "application/json"
+);
+HttpResponseMessage postResponse = await client.PostAsync("https://api.example.com/data", json);
+string result = await postResponse.Content.ReadAsStringAsync();
+
+// synchronous GET (simpler)
+string data = await client.GetStringAsync("https://api.example.com/data");
+```
+
 ### C++
+
+- C++ has no built-in HTTP library. Common options: libcurl, cpp-httplib, Boost.Beast.
+
+```c++
+// using libcurl
+#include <curl/curl.h>
+#include <string>
+#include <iostream>
+
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
+    output->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+CURL* curl = curl_easy_init();
+if (curl) {
+    std::string response;
+    curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+    CURLcode res = curl_easy_perform(curl);
+    if (res == CURLE_OK) {
+        std::cout << response << std::endl;
+    }
+    curl_easy_cleanup(curl);
+}
+```
+
+### Groovy
+
+```groovy
+// simplest GET request
+def content = new URL("https://api.example.com/data").text
+println content
+
+// GET with parsed JSON
+import groovy.json.JsonSlurper
+
+def json = new JsonSlurper().parse(new URL("https://api.example.com/data"))
+println json
+
+// HttpURLConnection for more control
+def url = new URL("https://api.example.com/data")
+def connection = url.openConnection()
+connection.requestMethod = "GET"
+def response = connection.inputStream.text
+println response
+
+// POST request
+def postUrl = new URL("https://api.example.com/data")
+def conn = postUrl.openConnection()
+conn.requestMethod = "POST"
+conn.setRequestProperty("Content-Type", "application/json")
+conn.doOutput = true
+conn.outputStream.write('{"key": "value"}'.bytes)
+println conn.inputStream.text
+```
 
 [back to top](#table-of-contents)
 
@@ -12298,6 +12942,71 @@ let colorName: string = Color[2]; // "Green"
 ```
 
 ### Ruby
+
+- Ruby has no built-in enum type. Use module constants or frozen hashes.
+
+```ruby
+# method 1: module constants
+module Color
+  RED = 0
+  GREEN = 1
+  BLUE = 2
+end
+
+Color::RED    # 0
+Color::GREEN  # 1
+
+# method 2: frozen hash
+COLOR = { red: 0, green: 1, blue: 2 }.freeze
+COLOR[:red]   # 0
+
+# method 3: array of symbols
+COLORS = [:red, :green, :blue].freeze
+COLORS.index(:green)  # 1
+
+# method 4: using Comparable with class
+class Direction
+  NORTH = new
+  SOUTH = new
+  EAST = new
+  WEST = new
+end
+
+direction = Direction::NORTH
+```
+
+### Kotlin
+
+```kotlin
+// basic enum class
+enum class Color {
+    RED, GREEN, BLUE
+}
+
+val c = Color.GREEN
+println(c)          // GREEN
+println(c.name)     // "GREEN"
+println(c.ordinal)  // 1
+
+// enum with properties
+enum class Direction(val degrees: Int) {
+    NORTH(0),
+    EAST(90),
+    SOUTH(180),
+    WEST(270);
+
+    fun isHorizontal(): Boolean = this == EAST || this == WEST
+}
+
+println(Direction.EAST.degrees)        // 90
+println(Direction.EAST.isHorizontal()) // true
+
+// iterate enum values
+Color.values().forEach { println(it) }
+
+// get enum from string
+val color = Color.valueOf("RED")  // Color.RED
+```
 
 ### Java
 
@@ -12415,6 +13124,45 @@ enum class Color{ Red, Green, Blue};
 
 // Initialisation
 Color col = Color::Red;
+```
+
+### Groovy
+
+```groovy
+// basic enum
+enum Color {
+    RED, GREEN, BLUE
+}
+
+def c = Color.GREEN
+println c          // GREEN
+println c.name()   // "GREEN"
+println c.ordinal()  // 1
+
+// enum with properties and methods
+enum Planet {
+    MERCURY(3.303e+23, 2.4397e6),
+    VENUS(4.869e+24, 6.0518e6),
+    EARTH(5.976e+24, 6.37814e6)
+
+    final double mass
+    final double radius
+
+    Planet(double mass, double radius) {
+        this.mass = mass
+        this.radius = radius
+    }
+
+    double surfaceGravity() {
+        final double G = 6.67300E-11
+        return G * mass / (radius * radius)
+    }
+}
+
+println Planet.EARTH.surfaceGravity()  // 9.802652743337129
+
+// iterate enum values
+Color.values().each { println it }
 ```
 
 [back to top](#table-of-contents)
@@ -12840,6 +13588,192 @@ console.log(genericFunc(false));
 ```
 
 ### Ruby
+
+- Blocks, Procs, and Lambdas
+
+```ruby
+# Block: chunk of code passed to a method
+[1, 2, 3].each { |n| puts n }
+
+[1, 2, 3].each do |n|
+  puts n
+end
+
+# custom method with block
+def greet(name)
+  yield name if block_given?
+end
+greet("Alice") { |name| puts "Hello, #{name}!" }  # "Hello, Alice!"
+
+# Proc: saved block, can be stored in a variable
+my_proc = Proc.new { |n| puts n * 2 }
+my_proc.call(5)  # 10
+[1, 2, 3].each(&my_proc)  # 2, 4, 6
+
+# Lambda: stricter Proc (checks argument count, return behavior differs)
+my_lambda = lambda { |n| n * 2 }
+my_lambda = ->(n) { n * 2 }  # shorthand
+my_lambda.call(5)  # 10
+
+# Proc vs Lambda: return behavior
+def proc_test
+  p = Proc.new { return "from proc" }
+  p.call
+  "after proc"  # never reached
+end
+
+def lambda_test
+  l = lambda { return "from lambda" }
+  l.call
+  "after lambda"  # this IS reached
+end
+```
+
+- Symbols
+
+```ruby
+# Symbols are immutable, reusable identifiers
+:my_symbol
+:name
+
+# commonly used as hash keys
+person = { name: "Alice", age: 30 }  # same as { :name => "Alice", :age => 30 }
+
+# symbols vs strings
+"hello".object_id == "hello".object_id  # false (different objects)
+:hello.object_id == :hello.object_id    # true (same object)
+
+# convert between symbol and string
+:hello.to_s   # "hello"
+"hello".to_sym  # :hello
+```
+
+- Monkey Patching and method_missing
+
+```ruby
+# Monkey Patching: reopen and modify existing classes
+class String
+  def shout
+    upcase + "!!!"
+  end
+end
+"hello".shout  # "HELLO!!!"
+
+# method_missing: catch calls to undefined methods
+class DynamicClass
+  def method_missing(name, *args)
+    if name.to_s.start_with?("say_")
+      word = name.to_s.sub("say_", "")
+      puts word
+    else
+      super
+    end
+  end
+end
+
+obj = DynamicClass.new
+obj.say_hello  # "hello"
+obj.say_world  # "world"
+```
+
+- Open Struct
+
+```ruby
+require 'ostruct'
+
+person = OpenStruct.new(name: "Alice", age: 30)
+person.name   # "Alice"
+person.email = "alice@example.com"  # dynamically add attributes
+person.email  # "alice@example.com"
+```
+
+### Kotlin
+
+- Null Safety
+
+```kotlin
+// nullable types use ?
+var name: String? = null
+// name.length          // compile error
+name?.length            // null (safe call)
+name?.length ?: 0       // 0 (Elvis operator)
+name!!.length           // throws NullPointerException (non-null assertion)
+
+// safe cast
+val x: Any = "hello"
+val s: String? = x as? String  // "hello"
+val n: Int? = x as? Int        // null (no ClassCastException)
+```
+
+- Extension Functions
+
+```kotlin
+// add methods to existing classes without modifying them
+fun String.addExclamation(): String = this + "!"
+
+"Hello".addExclamation()  // "Hello!"
+
+fun Int.isEven(): Boolean = this % 2 == 0
+4.isEven()  // true
+```
+
+- Data Classes
+
+```kotlin
+// auto-generates equals, hashCode, toString, copy
+data class User(val name: String, val age: Int)
+
+val user = User("Alice", 30)
+println(user)                       // User(name=Alice, age=30)
+val copy = user.copy(age = 31)      // User(name=Alice, age=31)
+val (name, age) = user              // destructuring
+```
+
+- Sealed Classes
+
+```kotlin
+// restricted class hierarchies (known subtypes at compile time)
+sealed class Result {
+    data class Success(val data: String) : Result()
+    data class Error(val message: String) : Result()
+    object Loading : Result()
+}
+
+fun handleResult(result: Result) = when (result) {
+    is Result.Success -> println(result.data)
+    is Result.Error -> println(result.message)
+    Result.Loading -> println("Loading...")
+    // no else needed - compiler knows all cases
+}
+```
+
+- Coroutines
+
+```kotlin
+import kotlinx.coroutines.*
+
+// launch a coroutine
+fun main() = runBlocking {
+    launch {
+        delay(1000L)
+        println("World!")
+    }
+    println("Hello")
+    // prints: Hello, then World! after 1 second
+}
+
+// async/await
+suspend fun fetchData(): String {
+    delay(1000L)
+    return "data"
+}
+
+fun main() = runBlocking {
+    val deferred = async { fetchData() }
+    val result = deferred.await()
+    println(result)  // "data"
+}
+```
 
 ### Java
 
@@ -14021,6 +14955,126 @@ int& referenceNum = num;  // add & when referencing
 
 num++;  // num = 11, referenceNum = 11
 referenceNum++;  // num = 12, referenceNum = 12
+```
+
+### Groovy
+
+- Closures
+
+```groovy
+// closures are anonymous blocks of code
+def greet = { name -> "Hello, $name!" }
+println greet("Alice")  // "Hello, Alice!"
+
+// implicit parameter "it"
+def double = { it * 2 }
+println double(5)  // 10
+
+// closures with delegation
+class Person {
+    String name
+}
+
+def configure = {
+    name = "Alice"
+}
+def person = new Person()
+configure.delegate = person
+configure.resolveStrategy = Closure.DELEGATE_FIRST
+configure()
+println person.name  // "Alice"
+```
+
+- GString (String Interpolation)
+
+```groovy
+def name = "Alice"
+def age = 30
+
+// GString with interpolation (double quotes)
+println "Name: $name, Age: $age"           // "Name: Alice, Age: 30"
+println "Next year: ${age + 1}"            // "Next year: 31"
+
+// regular string (single quotes, no interpolation)
+println 'Name: $name'                      // "Name: $name"
+
+// multiline string
+def text = """
+    Hello $name,
+    You are $age years old.
+""".stripIndent()
+```
+
+- Safe Navigation and Spread Operator
+
+```groovy
+// safe navigation operator ?.
+def person = null
+println person?.name  // null (no NullPointerException)
+
+// spread operator *. (invoke method on all elements)
+def names = ["Alice", "Bob", "Charlie"]
+println names*.toUpperCase()  // ["ALICE", "BOB", "CHARLIE"]
+println names*.size()         // [5, 3, 7]
+```
+
+- Traits
+
+```groovy
+// traits are like interfaces with default implementations
+trait Greetable {
+    String greet() { "Hello, I'm ${getName()}" }
+    abstract String getName()
+}
+
+trait Farewell {
+    String farewell() { "Goodbye!" }
+}
+
+class Person implements Greetable, Farewell {
+    String name
+    String getName() { name }
+}
+
+def p = new Person(name: "Alice")
+println p.greet()     // "Hello, I'm Alice"
+println p.farewell()  // "Goodbye!"
+```
+
+- AST Transformations
+
+```groovy
+import groovy.transform.*
+
+// @ToString auto-generates toString
+@ToString
+class Person {
+    String name
+    int age
+}
+println new Person(name: "Alice", age: 30)  // "Person(Alice, 30)"
+
+// @EqualsAndHashCode
+@EqualsAndHashCode
+class Point {
+    int x, y
+}
+
+// @Immutable (makes class immutable)
+@Immutable
+class Color {
+    int r, g, b
+}
+
+// @Sortable
+@Sortable
+class Employee {
+    String name
+    int age
+}
+
+def employees = [new Employee(name: "Bob", age: 25), new Employee(name: "Alice", age: 30)]
+println employees.sort()  // sorted by name, then age
 ```
 
 [back to top](#table-of-contents)
