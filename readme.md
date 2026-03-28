@@ -6604,6 +6604,26 @@ function myFunction(...args) {
 }
 ```
 
+### TypeScript
+
+```typescript
+// Rest params with types
+function myFunction(...args: number[]): number {
+    return args.reduce((acc, val) => acc + val, 0);
+}
+myFunction(1, 2, 3);  // 6
+
+// Rest with other params
+function greet(greeting: string, ...names: string[]): void {
+    names.forEach(name => console.log(`${greeting}, ${name}`));
+}
+greet("Hello", "Alice", "Bob");
+
+// Rest in tuple types
+type StringAndNumbers = [string, ...number[]];
+const data: StringAndNumbers = ["sum", 1, 2, 3];
+```
+
 ### Ruby
 
 ```ruby
@@ -6612,6 +6632,28 @@ function myFunction(...args) {
 def myFunction(*parameter):
     newArr = args  # args is an array of arugments
 end
+```
+
+### Kotlin
+
+```kotlin
+// vararg keyword
+fun myFunction(vararg args: Int): Int {
+    return args.sum()
+}
+myFunction(1, 2, 3)  // 6
+
+// vararg with other parameters
+fun greet(greeting: String, vararg names: String) {
+    names.forEach { println("$greeting, $it") }
+}
+greet("Hello", "Alice", "Bob")
+
+// Access vararg as array
+fun printAll(vararg items: String) {
+    for (item in items) println(item)
+    println(items.size)  // array property
+}
 ```
 
 ### Java
@@ -6670,48 +6712,6 @@ class MainClass {
     int result = cal.Add(new int[]{1, 2});  // method 1: initialize a new array
     int result2 = cal.Add(1, 2);  // method 2: only possible if used params keyword
   }
-}
-```
-
-### TypeScript
-
-```typescript
-// Rest params with types
-function myFunction(...args: number[]): number {
-    return args.reduce((acc, val) => acc + val, 0);
-}
-myFunction(1, 2, 3);  // 6
-
-// Rest with other params
-function greet(greeting: string, ...names: string[]): void {
-    names.forEach(name => console.log(`${greeting}, ${name}`));
-}
-greet("Hello", "Alice", "Bob");
-
-// Rest in tuple types
-type StringAndNumbers = [string, ...number[]];
-const data: StringAndNumbers = ["sum", 1, 2, 3];
-```
-
-### Kotlin
-
-```kotlin
-// vararg keyword
-fun myFunction(vararg args: Int): Int {
-    return args.sum()
-}
-myFunction(1, 2, 3)  // 6
-
-// vararg with other parameters
-fun greet(greeting: String, vararg names: String) {
-    names.forEach { println("$greeting, $it") }
-}
-greet("Hello", "Alice", "Bob")
-
-// Access vararg as array
-fun printAll(vararg items: String) {
-    for (item in items) println(item)
-    println(items.size)  // array property
 }
 ```
 
@@ -7381,6 +7381,92 @@ end
 
 calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
+```
+
+### Kotlin
+
+```kotlin
+// Basic class with constructor
+class MathClass(val arg1: Int, val arg2: Int) {
+    val total = arg1 + arg2
+
+    fun innerAdd(arg3: Int): Int {
+        return arg1 + arg2 + arg3
+    }
+
+    companion object {
+        fun outerAdd(number1: Int, number2: Int): Int {
+            return number1 + number2
+        }
+    }
+}
+
+val test = MathClass(2, 4)
+println(test.total)  // 6
+println(test.innerAdd(2))  // 8
+println(MathClass.outerAdd(4, 5))  // 9
+
+// Data class: auto-generates equals(), hashCode(), toString(), copy()
+data class Person(val name: String, val age: Int)
+
+val person = Person("Alice", 30)
+println(person)  // Person(name=Alice, age=30)
+val older = person.copy(age = 31)
+
+// Secondary constructor
+class Employee {
+    var name: String
+    var pay: Int
+
+    constructor(name: String) {
+        this.name = name
+        this.pay = 0
+    }
+
+    constructor(name: String, pay: Int) {
+        this.name = name
+        this.pay = pay
+    }
+}
+
+// Inheritance (classes are final by default, use "open" to allow inheritance)
+open class Employee2(val first: String, val last: String, var pay: Int) {
+    open val raiseAmt: Double = 1.04
+
+    fun applyRaise() {
+        pay = (pay * raiseAmt).toInt()
+    }
+}
+
+class Developer(first: String, last: String, pay: Int, val progLang: String)
+    : Employee2(first, last, pay) {
+    override val raiseAmt: Double = 1.1
+}
+
+val dev = Developer("abc", "xyz", 5000, "Kotlin")
+println(dev.pay)  // 5000
+dev.applyRaise()
+println(dev.pay)  // 5500
+
+// Interface
+interface Clickable {
+    fun click()
+    fun showOff() = println("I'm clickable!")  // default implementation
+}
+
+class Button : Clickable {
+    override fun click() = println("Button clicked")
+}
+
+// Abstract class
+abstract class Department(val name: String) {
+    abstract fun printMeeting()
+    fun printName() = println("Department: $name")
+}
+
+class Accounting : Department("Accounting") {
+    override fun printMeeting() = println("Meets each Monday at 10am")
+}
 ```
 
 ### Java
@@ -8127,92 +8213,6 @@ public class ProductName : IFeatureName1, IFeatureName2 {
 }
 ```
 
-### Kotlin
-
-```kotlin
-// Basic class with constructor
-class MathClass(val arg1: Int, val arg2: Int) {
-    val total = arg1 + arg2
-
-    fun innerAdd(arg3: Int): Int {
-        return arg1 + arg2 + arg3
-    }
-
-    companion object {
-        fun outerAdd(number1: Int, number2: Int): Int {
-            return number1 + number2
-        }
-    }
-}
-
-val test = MathClass(2, 4)
-println(test.total)  // 6
-println(test.innerAdd(2))  // 8
-println(MathClass.outerAdd(4, 5))  // 9
-
-// Data class: auto-generates equals(), hashCode(), toString(), copy()
-data class Person(val name: String, val age: Int)
-
-val person = Person("Alice", 30)
-println(person)  // Person(name=Alice, age=30)
-val older = person.copy(age = 31)
-
-// Secondary constructor
-class Employee {
-    var name: String
-    var pay: Int
-
-    constructor(name: String) {
-        this.name = name
-        this.pay = 0
-    }
-
-    constructor(name: String, pay: Int) {
-        this.name = name
-        this.pay = pay
-    }
-}
-
-// Inheritance (classes are final by default, use "open" to allow inheritance)
-open class Employee2(val first: String, val last: String, var pay: Int) {
-    open val raiseAmt: Double = 1.04
-
-    fun applyRaise() {
-        pay = (pay * raiseAmt).toInt()
-    }
-}
-
-class Developer(first: String, last: String, pay: Int, val progLang: String)
-    : Employee2(first, last, pay) {
-    override val raiseAmt: Double = 1.1
-}
-
-val dev = Developer("abc", "xyz", 5000, "Kotlin")
-println(dev.pay)  // 5000
-dev.applyRaise()
-println(dev.pay)  // 5500
-
-// Interface
-interface Clickable {
-    fun click()
-    fun showOff() = println("I'm clickable!")  // default implementation
-}
-
-class Button : Clickable {
-    override fun click() = println("Button clicked")
-}
-
-// Abstract class
-abstract class Department(val name: String) {
-    abstract fun printMeeting()
-    fun printName() = println("Department: $name")
-}
-
-class Accounting : Department("Accounting") {
-    override fun printMeeting() = println("Meets each Monday at 10am")
-}
-```
-
 ### C++
 
 ```c++
@@ -8408,6 +8408,32 @@ import { function1, function2 } from "moduleName"; // import multiple functions
 import name, { function1 } from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
 ```
 
+### TypeScript
+
+```typescript
+// Named imports
+import { functionName } from "./moduleName";
+import { functionName as alias } from "./moduleName";
+
+// Default import
+import defaultExport from "./moduleName";
+
+// Import all as namespace
+import * as moduleName from "./moduleName";
+
+// Import type only (removed at compile time)
+import type { MyType } from "./moduleName";
+import { type MyType, myFunction } from "./moduleName";
+
+// Side-effect import
+import "./polyfill";
+
+// Re-export
+export { functionName } from "./moduleName";
+export default class MyClass {}
+export type MyType = string | number;
+```
+
 ### Ruby
 
 ```ruby
@@ -8416,6 +8442,25 @@ load "./anotherFile.rb"  # ./ not mandatory
 
 # import module files
 require_relative "moduleFileName"  # extension not required
+```
+
+### Kotlin
+
+```kotlin
+// Import a class
+import com.example.MyClass
+
+// Import all from a package
+import com.example.*
+
+// Import with alias
+import com.example.MyClass as MC
+
+// Import a function
+import com.example.utils.helperFunction
+
+// Import enum entries
+import com.example.Color.RED
 ```
 
 ### Java
@@ -8459,51 +8504,6 @@ public class Student {
     return Period.between(dob, now()).getYears();
   }
 }
-```
-
-### TypeScript
-
-```typescript
-// Named imports
-import { functionName } from "./moduleName";
-import { functionName as alias } from "./moduleName";
-
-// Default import
-import defaultExport from "./moduleName";
-
-// Import all as namespace
-import * as moduleName from "./moduleName";
-
-// Import type only (removed at compile time)
-import type { MyType } from "./moduleName";
-import { type MyType, myFunction } from "./moduleName";
-
-// Side-effect import
-import "./polyfill";
-
-// Re-export
-export { functionName } from "./moduleName";
-export default class MyClass {}
-export type MyType = string | number;
-```
-
-### Kotlin
-
-```kotlin
-// Import a class
-import com.example.MyClass
-
-// Import all from a package
-import com.example.*
-
-// Import with alias
-import com.example.MyClass as MC
-
-// Import a function
-import com.example.utils.helperFunction
-
-// Import enum entries
-import com.example.Color.RED
 ```
 
 ### C#
@@ -8631,6 +8631,32 @@ str = "12.5 kg";
 num = Number(str); // NaN
 ```
 
+### TypeScript
+
+```typescript
+// Type assertions (does not convert at runtime, only tells compiler)
+let value: unknown = "hello";
+let strLength: number = (value as string).length;
+// Alternative angle-bracket syntax
+let strLength2: number = (<string>value).length;
+
+// Actual conversions using JavaScript functions
+let num: number = Number("123");    // 123
+let str: string = String(123);      // "123"
+let bool: boolean = Boolean(1);     // true
+let int: number = parseInt("12.5"); // 12
+let float: number = parseFloat("12.5"); // 12.5
+
+// Type guards
+function isString(value: unknown): value is string {
+    return typeof value === "string";
+}
+
+if (isString(value)) {
+    console.log(value.toUpperCase());  // TypeScript knows value is string
+}
+```
+
 ### Ruby
 
 ```ruby
@@ -8654,6 +8680,29 @@ nums = strings.map(&:to_i)  # [1, 2, 3]
 # array of integers to array of strings
 nums = [1, 2, 3]
 strings = nums.map(&:to_s)
+```
+
+### Kotlin
+
+```kotlin
+// Explicit type conversions
+val i: Int = "123".toInt()
+val d: Double = "12.5".toDouble()
+val l: Long = 123.toLong()
+val s: String = 123.toString()
+val f: Float = 123.toFloat()
+val b: Byte = 123.toByte()
+
+// Safe conversion (returns null on failure)
+val num: Int? = "abc".toIntOrNull()  // null
+
+// Type casting with "as"
+val obj: Any = "Hello"
+val str: String = obj as String  // throws ClassCastException if wrong type
+
+// Safe cast with "as?" (returns null if cast fails)
+val str2: String? = obj as? String  // "Hello"
+val num2: Int? = obj as? Int        // null
 ```
 
 ### Java
@@ -8739,55 +8788,6 @@ e or E          | exponential | 1052.0329112756 (E) -> 1.052033E+003
 f or F          | fixed point | 1234.567 (F1) -> 1234.5
 x or X          | Hexadecimal | 255 (X) -> FF
 */
-```
-
-### TypeScript
-
-```typescript
-// Type assertions (does not convert at runtime, only tells compiler)
-let value: unknown = "hello";
-let strLength: number = (value as string).length;
-// Alternative angle-bracket syntax
-let strLength2: number = (<string>value).length;
-
-// Actual conversions using JavaScript functions
-let num: number = Number("123");    // 123
-let str: string = String(123);      // "123"
-let bool: boolean = Boolean(1);     // true
-let int: number = parseInt("12.5"); // 12
-let float: number = parseFloat("12.5"); // 12.5
-
-// Type guards
-function isString(value: unknown): value is string {
-    return typeof value === "string";
-}
-
-if (isString(value)) {
-    console.log(value.toUpperCase());  // TypeScript knows value is string
-}
-```
-
-### Kotlin
-
-```kotlin
-// Explicit type conversions
-val i: Int = "123".toInt()
-val d: Double = "12.5".toDouble()
-val l: Long = 123.toLong()
-val s: String = 123.toString()
-val f: Float = 123.toFloat()
-val b: Byte = 123.toByte()
-
-// Safe conversion (returns null on failure)
-val num: Int? = "abc".toIntOrNull()  // null
-
-// Type casting with "as"
-val obj: Any = "Hello"
-val str: String = obj as String  // throws ClassCastException if wrong type
-
-// Safe cast with "as?" (returns null if cast fails)
-val str2: String? = obj as? String  // "Hello"
-val num2: Int? = obj as? Int        // null
 ```
 
 ### C++
@@ -8906,6 +8906,39 @@ let variable1 = 10 / undefined; // NaN
 Number.isNaN(variable1); // true
 ```
 
+### TypeScript
+
+```typescript
+// typeof: get type of primitive values
+let num = 123;
+console.log(typeof num);  // "number"
+
+let str = "hello";
+console.log(typeof str);  // "string"
+
+// instanceof: check if object is instance of a class
+class Animal {}
+class Dog extends Animal {}
+
+const dog = new Dog();
+console.log(dog instanceof Dog);     // true
+console.log(dog instanceof Animal);  // true
+
+// Type guards: narrow types in conditional blocks
+function printValue(value: string | number) {
+    if (typeof value === "string") {
+        console.log(value.toUpperCase());  // TypeScript knows it's string
+    } else {
+        console.log(value.toFixed(2));     // TypeScript knows it's number
+    }
+}
+
+// Custom type guard
+function isDog(animal: Animal): animal is Dog {
+    return animal instanceof Dog;
+}
+```
+
 ### Ruby
 
 ```ruby
@@ -8932,6 +8965,27 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 
 # check if object is the correct type, obj.is_a? data_type
 [1, 2].is_a? Array  # true
+```
+
+### Kotlin
+
+```kotlin
+// "is" keyword: check type (like instanceof)
+val str: Any = "hello"
+println(str is String)   // true
+println(str !is Int)     // true
+
+// Smart cast: after "is" check, type is automatically cast
+if (str is String) {
+    println(str.length)  // no explicit cast needed
+}
+
+// ::class: get KClass reference
+println(str::class)            // class kotlin.String
+println(str::class.simpleName) // String
+
+// ::class.java: get Java Class reference
+println(str::class.java)       // class java.lang.String
 ```
 
 ### Java
@@ -8988,60 +9042,6 @@ public class MainClass {
     System.Console.WriteLine(a is Dog);  // true (Dog is Dog)
   }
 }
-```
-
-### TypeScript
-
-```typescript
-// typeof: get type of primitive values
-let num = 123;
-console.log(typeof num);  // "number"
-
-let str = "hello";
-console.log(typeof str);  // "string"
-
-// instanceof: check if object is instance of a class
-class Animal {}
-class Dog extends Animal {}
-
-const dog = new Dog();
-console.log(dog instanceof Dog);     // true
-console.log(dog instanceof Animal);  // true
-
-// Type guards: narrow types in conditional blocks
-function printValue(value: string | number) {
-    if (typeof value === "string") {
-        console.log(value.toUpperCase());  // TypeScript knows it's string
-    } else {
-        console.log(value.toFixed(2));     // TypeScript knows it's number
-    }
-}
-
-// Custom type guard
-function isDog(animal: Animal): animal is Dog {
-    return animal instanceof Dog;
-}
-```
-
-### Kotlin
-
-```kotlin
-// "is" keyword: check type (like instanceof)
-val str: Any = "hello"
-println(str is String)   // true
-println(str !is Int)     // true
-
-// Smart cast: after "is" check, type is automatically cast
-if (str is String) {
-    println(str.length)  // no explicit cast needed
-}
-
-// ::class: get KClass reference
-println(str::class)            // class kotlin.String
-println(str::class.simpleName) // String
-
-// ::class.java: get Java Class reference
-println(str::class.java)       // class java.lang.String
 ```
 
 ### C++
@@ -9155,6 +9155,26 @@ let string2 = "string 2 value";
 let stringName = `${string1} ${string2} 123`; // "string 1 value string 2 value 123"
 ```
 
+### TypeScript
+
+```typescript
+// + operator (same as JavaScript, but type-safe)
+let str1: string = "hello";
+let str2: string = "world";
+let result: string = str1 + " " + str2;  // "hello world"
+
+// Template literals with type expressions
+let name: string = "Alice";
+let age: number = 30;
+let greeting: string = `${name} is ${age} years old`;  // "Alice is 30 years old"
+
+// number + string requires explicit conversion
+let num: number = 123;
+let str: string = `Value: ${num}`;     // "Value: 123"
+let str2b: string = "Value: " + num;   // "Value: 123"
+// let bad: string = num + "test";     // works but discouraged
+```
+
 ### Ruby
 
 ```ruby
@@ -9169,6 +9189,30 @@ puts "one" + 1.to_s  # "one1"
 
 # %s for strings, %d for integers, %f for floats, %.3f for float with 3 decimals
 printf "%s %s", "string1", "string2"  # "string1 string2"
+```
+
+### Kotlin
+
+```kotlin
+// + operator
+val str1 = "hello"
+val str2 = "world"
+val result = str1 + " " + str2  // "hello world"
+
+// String templates with $
+val name = "Alice"
+val age = 30
+val greeting = "$name is $age years old"  // "Alice is 30 years old"
+
+// Expressions in templates use ${}
+val result2 = "${str1.uppercase()} ${str2.length}"  // "HELLO 5"
+
+// StringBuilder for complex concatenation
+val sb = StringBuilder()
+sb.append("hello")
+sb.append(" ")
+sb.append("world")
+println(sb.toString())  // "hello world"
 ```
 
 ### Java
@@ -9219,50 +9263,6 @@ string stringName1 = string1 + string2;  // "string 1 value string 2 value"
 string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 value string 2 value"
 // method 3
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
-```
-
-### TypeScript
-
-```typescript
-// + operator (same as JavaScript, but type-safe)
-let str1: string = "hello";
-let str2: string = "world";
-let result: string = str1 + " " + str2;  // "hello world"
-
-// Template literals with type expressions
-let name: string = "Alice";
-let age: number = 30;
-let greeting: string = `${name} is ${age} years old`;  // "Alice is 30 years old"
-
-// number + string requires explicit conversion
-let num: number = 123;
-let str: string = `Value: ${num}`;     // "Value: 123"
-let str2b: string = "Value: " + num;   // "Value: 123"
-// let bad: string = num + "test";     // works but discouraged
-```
-
-### Kotlin
-
-```kotlin
-// + operator
-val str1 = "hello"
-val str2 = "world"
-val result = str1 + " " + str2  // "hello world"
-
-// String templates with $
-val name = "Alice"
-val age = 30
-val greeting = "$name is $age years old"  // "Alice is 30 years old"
-
-// Expressions in templates use ${}
-val result2 = "${str1.uppercase()} ${str2.length}"  // "HELLO 5"
-
-// StringBuilder for complex concatenation
-val sb = StringBuilder()
-sb.append("hello")
-sb.append(" ")
-sb.append("world")
-println(sb.toString())  // "hello world"
 ```
 
 ### C++
