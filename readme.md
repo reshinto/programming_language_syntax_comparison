@@ -1,58 +1,78 @@
 # PROGRAMMING LANGUAGE SYNTAX COMPARISON
 
-> A syntax summary, which also compares the differences between each programming language.
+> A syntax reference comparing **Python**, **JavaScript**, **TypeScript**, **Ruby**, **Kotlin**, **Java**, **C#**, **C++**, **Groovy**, and **Assembly**.
 
-- List of languages
-  - Python, Javascript (Typescript), Ruby, Kotlin, Java, C#, C/C++, Groovy
+---
 
 ## Table of Contents
 
+### Language Overview
 - [Interpreted Language](#interpreted-language)
 - [Compiled Language](#compiled-language)
 - [Both Interpreted And Compiled Language](#both-interpreted-and-compiled-language)
+
+### Basics & Setup
 - [Hello World](#hello-world)
 - [Comments](#comments)
-- [Data types](#data-types)
-- [Variable declaration int](#variable-declaration-int)
-- [Variable declaration float](#variable-declaration-float)
-- [Variable declaration None](#variable-declaration-none)
-- [Strings](#strings)
+- [Program Entry Point](#program-entry-point)
+
+### Types & Variables
+- [Data Types](#data-types)
+- [Variable Declaration: int](#variable-declaration-int)
+- [Variable Declaration: float](#variable-declaration-float)
+- [Variable Declaration: None/Null](#variable-declaration-none)
 - [Boolean](#boolean)
+- [Find Data Type](#find-data-type)
+- [Type Conversions](#type-conversions)
+
+### Strings & Data
+- [Strings](#strings)
+- [String Concatenation](#string-concatenation)
+- [JSON](#json)
+
+### Operators
 - [Arithmetic Operators](#arithmetic-operators)
 - [Comparison Operators](#comparison-operators)
 - [Logical Operators](#logical-operators)
-- [Getting Input](#getting-input)
 - [Bitwise Operators](#bitwise-operators)
 - [Increment](#increment)
-- [Arrays and Lists](#arrays-and-lists)
+
+### Control Flow & Data Structures
+- [Getting Input](#getting-input)
 - [Conditional Statement](#conditional-statement)
 - [Loops](#loops)
-- [Instantiation](#instantiation)
-- [Functions](#functions)
-- [Higher order functions](#higher-order-functions)
+- [Arrays and Lists](#arrays-and-lists)
 - [Hash Tables](#hash-tables)
+- [Swapping Values](#swapping-values)
+
+### Functions & Functional Programming
+- [Functions](#functions)
+- [Higher Order Functions](#higher-order-functions)
 - [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
-- [Rest parameters](#rest-parameters)
+- [Rest Parameters](#rest-parameters)
+
+### Object-Oriented Programming
+- [Instantiation](#instantiation)
 - [Class](#class)
+- [Access Modifier](#access-modifier)
+- [Enum](#enum)
 - [Importing Libraries](#importing-libraries)
-- [Type Conversions](#type-conversions)
-- [Find Data Type](#find-data-type)
-- [String Concatenation](#string-concatenation)
-- [JSON](#json)
-- [Program Entry Point](#program-entry-point)
-- [Swapping values](#swapping-values)
+
+### Advanced Topics
 - [Error Handling](#error-handling)
 - [Custom Error](#custom-error)
-- [Asynchronous](#asynchronous)
-- [Math](#math)
-- [Date and Time](#date-and-time)
-- [Access modifier](#access-modifier)
-- [File System](#file-system)
 - [Iterators](#iterators)
 - [Generators](#generators)
+- [Asynchronous](#asynchronous)
 - [Fetching Web Data](#fetching-web-data)
-- [Enum](#enum)
+- [File System](#file-system)
+
+### Standard Library
+- [Math](#math)
+- [Date and Time](#date-and-time)
+
+### Language-Specific Features
 - [Language Specific](#language-specific)
 
 ## Interpreted Language
