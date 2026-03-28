@@ -1497,7 +1497,10 @@ double nanValue = Double.NaN
 
 ## Strings
 
-### Python 2 & 3
+**Jump to:** [Python](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
 
 ```python
 string_name = "string"
@@ -1593,7 +1596,12 @@ arr = ["a", "b"]
 "_".join(arr)  # "a_b"
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 var stringName = "string";
@@ -1635,7 +1643,12 @@ stringName2 = stringName.split(""); // ['t', 'e', 's', 't', ' ', 's', 't', 'r', 
 stringName3 = stringName.split("s"); // ["te", "t ", "tring"]
 ```
 
-### JavaScript ES6 // Almost all of ES5 are included in ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6 // Almost all of ES5 are included in ES6</h3></summary>
 
 ```javascript
 // back slash not required, but will produce a new line if not given
@@ -2235,7 +2248,12 @@ bool boolean_name (true);
 bool boolean_name {false};
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
 
 ```groovy
 boolean booleanName = true
@@ -2245,13 +2263,20 @@ def booleanName3 = true  // type inferred as Boolean
 !false  // true
 ```
 
-### Assembly
+</details>
+
+---
+
+<details>
+<summary><h3>Assembly</h3></summary>
 
 ```nasm
 ; Assembly has no boolean type; use 0 and 1 (typically in a byte or register)
 mov al, 1   ; true
 mov al, 0   ; false
 ```
+
+</details>
 
 [back to top](#table-of-contents)
 
@@ -2989,7 +3014,11 @@ a >>> 2 // 15, unsigned right shift
 
 ## Arrays and Lists
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # Empty list
@@ -3125,7 +3154,13 @@ print(y)  # ['a', 'b', 'c']
 
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 // Method 1: empty list
@@ -3236,7 +3271,13 @@ list_name = [1, 2];
 list_name.every(helper); // true
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // method 1
@@ -3254,7 +3295,13 @@ let strOrNumArr1: [string, number] = ["a", 1]; // must follow and limited to dec
 let strOrNumArr2: (string | number)[]; // allows unlimited mixture of number and/or string values in 1 array
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Empty list
@@ -3340,7 +3387,13 @@ list_name.collect! {|num| num * 2}  # [8, 6, 4, 2]
 list_name.map! {|num| num / 2}  # [4, 3, 2, 1]
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Arrays: fixed size
@@ -3408,7 +3461,13 @@ val merged = listOf(1, 2) + listOf(3, 4)  // [1, 2, 3, 4]
 listOf("a", "b", "c").joinToString(", ")  // "a, b, c"
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // Arrays: can only have 1 data type: string, int, etc.
@@ -3499,7 +3558,13 @@ list.get(index);
 list.indexOf(element);
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 - Arrays: can only have 1 data type: string, int, etc. (size cannot be modified after declaration)
 
@@ -3631,7 +3696,13 @@ list.Add("abc")  // [1, "abc"]
 // methods are similar to List
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Arrays
@@ -3701,7 +3772,13 @@ int_vector.resize(length_of_desired_array);
 int_vector.clear();
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Empty list
@@ -3776,11 +3853,17 @@ def doubled = [1, 2, 3].collect { it * 2 }  // [2, 4, 6]
 [[1, 2], [3, 4]].flatten()  // [1, 2, 3, 4]
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Conditional Statement
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # If else statement
@@ -3811,7 +3894,13 @@ y = [1, 2, 3]
 x == y  # returns True
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 // If else statement
@@ -3822,7 +3911,13 @@ if (condition_a) {
 } else {
   do_something_else;
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // If else statement
@@ -3888,7 +3983,13 @@ x === y ? true : false; // returns false
 JSON.stringify(x) === JSON.stringify(y) ? true : false; // return true
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # If else statement
@@ -3960,7 +4061,13 @@ favorite_book ||= "book 2"
 puts favorite_book # "book 1"
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // If else statement (if is an expression in Kotlin)
@@ -4003,7 +4110,13 @@ when (value) {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // If else statement
@@ -4051,7 +4164,13 @@ switch(choice) {  // choice value can only be primitive values in java 7, since 
 
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // If else statement
@@ -4085,7 +4204,13 @@ doSomethingSpecial:
   doingSomething;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // If else statement
@@ -4128,7 +4253,13 @@ switch(choice) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // If else statement
@@ -4177,11 +4308,17 @@ switch (value) {
 }
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Loops
 
-### Python 2
+**Jump to:** [Python 2](#) | [Python 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
+
 
 ```python
 # While loop
@@ -4227,7 +4364,13 @@ for index, value in enumerate(list_name):
     print index, value  # output index, value
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
+
 
 ```python
 # For loop
@@ -4264,7 +4407,13 @@ for k, v in x.items():
     print(f"k: {k}, v: {v}")
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 ```javascript
 // While loop
@@ -4311,7 +4460,13 @@ list_name.forEach(function (value, index, list) {
 });
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 > Use `let` in loops when declaring
 
@@ -4338,7 +4493,13 @@ for (let key in object) {
 }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // While loop
@@ -4384,7 +4545,13 @@ list.forEach((value: number, index: number) => {
 });
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # While loop
@@ -4463,7 +4630,13 @@ n.times { do_this }  # do_this will repeat n times
 100.downto(95) { |num| print num, " " }  # 100 99 98 97 96 95
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // For loop with range
@@ -4522,7 +4695,13 @@ list.forEachIndexed { index, value ->
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // While loop
@@ -4577,7 +4756,13 @@ for(int num:arr)
 
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // While loop
@@ -4627,7 +4812,13 @@ foreach(char c in stringName) {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // While loop
@@ -4680,7 +4871,13 @@ for (;;)
     cout << "This will print forever" << endl;
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // While loop
@@ -4732,24 +4929,42 @@ list.eachWithIndex { value, index ->
 }
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Instantiation
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 t = Thing()  # everything
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 v = getValue(); // plain function
 t = new Thing(); // instantiation
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Instantiation with type
@@ -4764,14 +4979,26 @@ interface Person {
 let p: Person = { name: "Alice", age: 30 };
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Instantiation (no "new" keyword needed)
@@ -4791,7 +5018,13 @@ class Person {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 public class ClassName {
@@ -4823,7 +5056,13 @@ public class ClassName {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // method 1
@@ -4851,7 +5090,13 @@ public class Program {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Stack allocation (automatically destroyed when out of scope)
@@ -4872,7 +5117,13 @@ std::unique_ptr<ClassName> t7 = std::make_unique<ClassName>(arg1, arg2);
 std::shared_ptr<ClassName> t8 = std::make_shared<ClassName>(arg1, arg2);
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Instantiation
@@ -4890,11 +5141,17 @@ def p = new Person(name: "Alice", age: 30)
 def t3 = new ClassName()
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Functions
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 - Function returns None by default if return statement is not declared
 
@@ -4925,7 +5182,13 @@ def get_sum(num1: int=1, num2: int=2):
     return num1 + num2
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 - Function returns undefined by default if return statement is not declared
 
@@ -4977,7 +5240,13 @@ let myFunction = (a) => {
 })();
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Default parameters
@@ -4986,7 +5255,13 @@ function myFunction(a = value) {
 }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // return void
@@ -5035,7 +5310,13 @@ function totalLength(x: { length: number }, y: { length: number }): number {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 - Function returns result regardless of whether return statement is declared or not
   - Reason: ruby applies Implicit Return feature
@@ -5112,7 +5393,13 @@ blockName = Proc.new do |n|
 end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Normal function
@@ -5150,7 +5437,13 @@ val square: (Int) -> Int = { x -> x * x }
 val sum = { a: Int, b: Int -> a + b }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // Normal functions
@@ -5211,7 +5504,13 @@ static double addValues(String s1, String s2, String s3) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // Normal functions
@@ -5259,7 +5558,13 @@ var MyFunction = a => { do_something_with_a; };
 public static void MyFunction(dataType a=someValue) => do_something_with_a;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 - Function Signature: return type | name of function | (parameters)
 - Signature / prototype
@@ -5299,7 +5604,13 @@ int sumTwoNumbers(int a, int b)
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Normal function
@@ -5332,11 +5643,17 @@ def greet = { "Hello, $it" }
 greet("Alice")  // "Hello, Alice"
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Higher order functions
 
-### Python 2
+**Jump to:** [Python 2](#) | [Python 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
+
 
 ```python
 # Map: applies a given function to each item of an iterable (list, tuple etc.) and returns a list of the results
@@ -5370,7 +5687,13 @@ arr2 = ["1", "2", "3"]
 zpp(arr1, arr2)  # [(1, '1'), (2, '2'), (3, '3')]
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
+
 
 ```python
 # Reduce: executes a function on each element, resulting in a single output value
@@ -5385,7 +5708,13 @@ list(zip(s, t))  # [(1, '1'), (2, '2'), (3, '3')]
 tuple(zip(s, t)) # ((1, '1'), (2, '2'), (3, '3'))
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 // Map: create a new array from a current array
@@ -5463,7 +5792,13 @@ function zip(arrays) {
 zip([arr1, arr2]);  // [[1, '1'], [2, '2'], [3, '3']]
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Map: with type annotations
@@ -5484,7 +5819,13 @@ const toStr: MapFn<number, string> = (n) => n.toString();
 const result: string[] = [1, 2, 3].map(toStr);  // ["1", "2", "3"]
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Zip: combine 2 arrays
@@ -5493,7 +5834,13 @@ arr2 = ["1", "2", "3"]
 puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Map: transform each element
@@ -5519,7 +5866,13 @@ val result = listOf(1, 2, 3, 4, 5)
     .map { it * 10 }  // [20, 40]
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // import java.util.Arrays;
@@ -5555,7 +5908,13 @@ List<String> result = numbers.stream()
     .collect(Collectors.toList());  // ["Value: 3", "Value: 4", "Value: 5"]
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // using System.Linq;
@@ -5584,7 +5943,13 @@ var result = numbers
     .ToList();  // ["Value: 3", "Value: 4", "Value: 5"]
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 #include <vector>
@@ -5616,7 +5981,13 @@ auto square = [](int x) -> int { return x * x; };
 std::function<int(int)> cube = [](int x) { return x * x * x; };
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 def numbers = [1, 2, 3, 4, 5]
@@ -5639,13 +6010,21 @@ def result = numbers
     .collect { "Value: $it" }  // ["Value: 3", "Value: 4", "Value: 5"]
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Hash Tables
 
+
 - Hash Tables, Dictionaries, Objects
 
-### Python 2 & 3
+
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # Create dictionary
@@ -5734,7 +6113,13 @@ del newDict  # method 1
 newDict.clear()  # method 2
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 ```javascript
 // Objects
@@ -5849,7 +6234,13 @@ Object.seal(newObj);
 Object.freeze(newObj);
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Merge 2 objects
@@ -5923,7 +6314,13 @@ newDict.delete(obj);
 newDict.has(obj);
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, symbol, null, or undefined
@@ -5933,7 +6330,13 @@ let objName: object = {
 };
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Hash literal notation, OLD SYNTAX
@@ -6052,7 +6455,13 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Immutable map
@@ -6086,7 +6495,13 @@ map.keys   // [jp, sg, usa]
 map.values // [Japan, Singapore, United States]
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // Map: it is an interface used to store data in key-value pair
@@ -6115,7 +6530,13 @@ map.remove("sg");  // { jp=Japan, usa=United States }
 Set<String> keys = map.keySet();  // [ usa, jp ]
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // method 1 (can be used within a method)
@@ -6143,7 +6564,13 @@ class MainClass {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 #include <map>
@@ -6185,7 +6612,13 @@ hashMap["key2"] = 2;
 hashMap.size();
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Map literal
@@ -6223,11 +6656,17 @@ map.values()   // [Japan, United States, United Kingdom, Australia]
 map.size()
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Destructuring
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # Tuples
@@ -6243,7 +6682,13 @@ xVariable, yVariable = "xy"
 xKey, yKey = {"xKey": xValue, "yKey": yValue}
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Arrays
@@ -6273,7 +6718,13 @@ const { a = "", b = "" } = data?.[0] || []; // checks if data is undefined or nu
 console.log(a); // "hello"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 type myFunctionProps = {
@@ -6286,7 +6737,13 @@ function myFunction({ arg1, ...rest }: myFunctionProps) {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Array destructuring
@@ -6301,7 +6758,13 @@ first, *middle, last = [1, 2, 3, 4]  # first=1, middle=[2, 3], last=4
 a, _, c = [1, 2, 3]  # a=1, c=3 (2 is ignored)
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Destructuring declarations
@@ -6324,7 +6787,13 @@ val (first, second, third) = listOf(1, 2, 3)
 val (_, age) = Person("Alice", 30)
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // Java does not have direct destructuring syntax
@@ -6342,7 +6811,13 @@ int a = arr[0];
 int b = arr[1];
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // Tuple deconstruction (C# 7+)
@@ -6367,7 +6842,13 @@ var (x, y) = point;
 var (name, _) = ("Alice", 30);
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Structured bindings (C++17)
@@ -6394,7 +6875,13 @@ Point pt = {1, 2};
 auto [x, y] = pt;
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Multiple assignment
@@ -6407,11 +6894,17 @@ def (x, y) = [y, x]
 def (String name, int age) = ["Alice", 30]
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Spread Operator
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # *args (splat)
@@ -6427,7 +6920,13 @@ myFunction(*Dict)  # {"a": value1, "b": value2}  only utilize the keys
 myFunction(**Dict) # {"a": value1, "b": value2}  utilize both keys and values
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Takes an array and transform (unpacks) it into single values
@@ -6444,7 +6943,13 @@ let totalArr = arr1.concat(arr2); // concat method
 let totalArr = [...arr1, ...arr2];
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Spread with typed arrays
@@ -6463,7 +6968,13 @@ function add(a: number, b: number): number { return a + b; }
 add(...args);
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Splat * operator: spread array into arguments
@@ -6489,7 +7000,13 @@ h1 = { a: 1, b: 2 }
 h2 = { **h1, c: 3 }  # { a: 1, b: 2, c: 3 }
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Spread operator * for varargs
@@ -6509,7 +7026,13 @@ val list = listOf("a", "b")
 printAll(*list.toTypedArray())
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // Java does not have a spread operator
@@ -6532,7 +7055,13 @@ List<Integer> combined = Stream.concat(
 ).collect(Collectors.toList());  // [1, 2, 3, 4]
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // C# does not have a direct spread operator
@@ -6551,7 +7080,13 @@ int[] combined = arr1.Concat(arr2).ToArray();  // [1, 2, 3, 4, 5, 6]
 int[] combined2 = [..arr1, ..arr2];  // [1, 2, 3, 4, 5, 6]
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // C++ does not have a direct spread operator
@@ -6574,7 +7109,13 @@ std::copy(arr1.begin(), arr1.end(), combined2.begin());
 std::copy(arr2.begin(), arr2.end(), combined2.begin() + arr1.size());
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Spread operator * to unpack a list
@@ -6595,11 +7136,17 @@ def map1 = [a: 1, b: 2]
 def map2 = [*:map1, c: 3]  // [a: 1, b: 2, c: 3]
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Rest parameters
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # *args
@@ -6615,7 +7162,13 @@ def myFunction(**kwargs):
 myFunction(var1=value1, var2=value2)
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Receive a couple of single values and transform them into an array
@@ -6624,7 +7177,13 @@ function myFunction(...args) {
 }
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Rest params with types
@@ -6644,7 +7203,13 @@ type StringAndNumbers = [string, ...number[]];
 const data: StringAndNumbers = ["sum", 1, 2, 3];
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # *parameter
@@ -6654,7 +7219,13 @@ def myFunction(*parameter):
 end
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // vararg keyword
@@ -6676,7 +7247,13 @@ fun printAll(vararg items: String) {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 static double myFunction(String ... args) {
@@ -6684,7 +7261,13 @@ static double myFunction(String ... args) {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // hard coded method
@@ -6735,7 +7318,13 @@ class MainClass {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Variadic templates (C++11): type-safe variable arguments
@@ -6770,7 +7359,13 @@ double average(int count, ...) {
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Object... args (varargs)
@@ -6792,11 +7387,17 @@ def greet(String greeting, String... names) {
 greet("Hello", "Alice", "Bob")
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Class
 
-### Python 2
+**Jump to:** [Python 2](#) | [Python 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
+
 
 ```python
 class MathClass:
@@ -6821,7 +7422,13 @@ print (test.outterAdd(3, 7))  # 10
 print (MathClass.outterAdd(4, 5)  # 9
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
+
 
 ```python
 class BasicClass:
@@ -6997,7 +7604,13 @@ print(dev.pay)  # 5500
 - python magic method guide
   - https://rszalski.github.io/magicmethods/
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 ```javascript
 // method 1
@@ -7080,7 +7693,13 @@ dev.applyRaise();
 console.log(dev.pay); // 5500
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Case 1: normal javascript way
@@ -7170,7 +7789,13 @@ dev.applyRaise();
 console.log(dev.pay); // 5500
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 class Person {
@@ -7275,7 +7900,13 @@ department.printMeeting();
 //department.generateReports(); // error: method doesn't exist on declared abstract type
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 - class variables (@@variableName) are like instance variables but belongs to the class
 - global variables ($variableName) must be declared with a $ symbol, if declared within the class
@@ -7403,7 +8034,13 @@ calculate = CalculatorClass.new(2, 4)
 puts calculate.innerAdd(2)  # 8 2
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Basic class with constructor
@@ -7489,7 +8126,13 @@ class Accounting : Department("Accounting") {
 }
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 - class
   - if not constructor has been defined, a constructor with no args will be auto generated
@@ -7890,7 +8533,13 @@ public class Main {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 - Struct vs Class
   - https://github.com/reshinto/Basic_technologies_revision/blob/master/c%23_summary.md#classes-vs-structs
@@ -8233,7 +8882,13 @@ public class ProductName : IFeatureName1, IFeatureName2 {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Math.h
@@ -8269,7 +8924,13 @@ int main()
 }
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Basic class
@@ -8357,11 +9018,17 @@ println duck.fly()   // "I can fly!"
 println duck.swim()  // "I can swim!"
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Importing Libraries
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # import module from libraries
@@ -8387,7 +9054,13 @@ from ..folder2 import function1 # example 2
 from . import class2 # example 3
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 ```javascript
 // Before a module can be imported, it has to be exported first
@@ -8404,7 +9077,13 @@ var {function1, function2} = require("moduleName");  // importing multiple funct
 var mn = require("moduleName").moduleName;
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 // Before a module can be imported, it has to be exported first
@@ -8428,7 +9107,13 @@ import { function1, function2 } from "moduleName"; // import multiple functions
 import name, { function1 } from "/modules/path/moduleName"; // function1 can be used directly or via name.function1
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Named imports
@@ -8454,7 +9139,13 @@ export default class MyClass {}
 export type MyType = string | number;
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # import another ruby file
@@ -8464,7 +9155,13 @@ load "./anotherFile.rb"  # ./ not mandatory
 require_relative "moduleFileName"  # extension not required
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Import a class
@@ -8483,7 +9180,13 @@ import com.example.utils.helperFunction
 import com.example.Color.RED
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // folder name that the current file is in, all other files that are in this folder can be imported without additional code
@@ -8526,7 +9229,13 @@ public class Student {
 }
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // Import namespace
@@ -8545,7 +9254,13 @@ using Project = PC.MyCompany.Project;
 global using System.Linq;
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 // Include standard library headers
@@ -8566,7 +9281,13 @@ using std::cout;
 using std::string;
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Import a class
@@ -8591,11 +9312,17 @@ import org.apache.commons.lang3.StringUtils
 println StringUtils.capitalize("hello")  // "Hello"
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Type Conversions
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # Convert to Integer, floats will round down
@@ -8617,7 +9344,13 @@ tuple(type_to_convert)  # cannot be a number
 set(type_to_convert)  # cannot be a number
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 // number to string
@@ -8651,7 +9384,13 @@ str = "12.5 kg";
 num = Number(str); // NaN
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // Type assertions (does not convert at runtime, only tells compiler)
@@ -8677,7 +9416,13 @@ if (isString(value)) {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # String to symbol
@@ -8702,7 +9447,13 @@ nums = [1, 2, 3]
 strings = nums.map(&:to_s)
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // Explicit type conversions
@@ -8725,7 +9476,13 @@ val str2: String? = obj as? String  // "Hello"
 val num2: Int? = obj as? Int        // null
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // implicit type conversion (small value to big only)
@@ -8754,7 +9511,13 @@ double d1 = Double.parseDouble(s);
 System.out.println(d1);  // 423.0
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 // implicit type conversion (small value to big only)
@@ -8810,7 +9573,13 @@ x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 #include <iostream>
@@ -8846,7 +9615,13 @@ int n = std::stoi("123");                  // 123
 double db = std::stod("12.5");             // 12.5
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // Using "as" keyword
@@ -8865,11 +9640,17 @@ def num2 = "123".asType(Integer)  // 123
 def list = [1, 2, 3] as Set       // converts List to Set
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## Find Data Type
 
-### Python 2 & 3
+**Jump to:** [Python 2 & 3](#) | [JavaScript](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2 & 3</h3></summary>
+
 
 ```python
 # Get data type
@@ -8910,7 +9691,13 @@ id(x)  # 4360090688
 id(y)  # 4359972032
 ```
 
-### JavaScript
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript</h3></summary>
+
 
 ```javascript
 // Get data type: "number", "string", "boolean", "object", "undefined", "function"
@@ -8926,7 +9713,13 @@ let variable1 = 10 / undefined; // NaN
 Number.isNaN(variable1); // true
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // typeof: get type of primitive values
@@ -8959,7 +9752,13 @@ function isDog(animal: Animal): animal is Dog {
 }
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 # Get data type, function won't provide a specify class type
@@ -8987,7 +9786,13 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 [1, 2].is_a? Array  # true
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // "is" keyword: check type (like instanceof)
@@ -9008,7 +9813,13 @@ println(str::class.simpleName) // String
 println(str::class.java)       // class java.lang.String
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // instanceof: check if object is instance of a class
@@ -9033,7 +9844,13 @@ System.out.println(numObj.getClass().getSimpleName());  // Integer
 System.out.println(str.getClass() == String.class);  // true
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 - typeof: takes a type name (which you specify at compile time)
 - GetType: gets the runtime type of an instance
@@ -9064,7 +9881,13 @@ public class MainClass {
 }
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 #include <iostream>
@@ -9093,7 +9916,13 @@ Base* ptr = new Derived();
 std::cout << typeid(*ptr).name();  // shows Derived type
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // instanceof: check type
@@ -9114,11 +9943,17 @@ def num = 123
 println(num.class == Integer)  // true
 ```
 
+</details>
+
 [back to top](#table-of-contents)
 
 ## String Concatenation
 
-### Python 2
+**Jump to:** [Python 2](#) | [Python 3](#) | [JavaScript ES5](#) | [JavaScript ES6](#) | [TypeScript](#) | [Ruby](#) | [Kotlin](#) | [Java](#) | [C#](#) | [C++](#) | [Groovy](#)
+
+<details open>
+<summary><h3>Python 2</h3></summary>
+
 
 ```python
 string_name = "string1" + "string2"  # "string1string2"
@@ -9134,7 +9969,13 @@ string_name = "{} {}".format("string1", "string2")  # "string1 string2"
 string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
+
 
 ```python
 # f string: python 3.6 and above
@@ -9160,14 +10001,26 @@ print(f"{a:>2}")  # " 8"
 print(f"{a:>02}")  # "08"
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
+
 
 ```javascript
 // javascript allows data type mashups, numbers will be converted to strings when concatenated with a string.
 let stringName = "string1" + "string2" + 123; // "string1string2123"
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
+
 
 ```javascript
 let string1 = "string 1 value";
@@ -9175,7 +10028,13 @@ let string2 = "string 2 value";
 let stringName = `${string1} ${string2} 123`; // "string 1 value string 2 value 123"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
+
 
 ```typescript
 // + operator (same as JavaScript, but type-safe)
@@ -9195,7 +10054,13 @@ let str2b: string = "Value: " + num;   // "Value: 123"
 // let bad: string = num + "test";     // works but discouraged
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 string1 = "string1"
@@ -9211,7 +10076,13 @@ puts "one" + 1.to_s  # "one1"
 printf "%s %s", "string1", "string2"  # "string1 string2"
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // + operator
@@ -9235,7 +10106,13 @@ sb.append("world")
 println(sb.toString())  // "hello world"
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 String string1 = "string";
@@ -9271,7 +10148,13 @@ String newString2 = String.format("%s%d", string1, num1);  // "string1"
 
 - [String format reference](https://www.javatpoint.com/java-string-format)
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
+
 
 ```c#
 string string1 = "string 1 value";
@@ -9285,7 +10168,13 @@ string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 v
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
+
 
 ```c++
 #include <iostream>
@@ -9311,7 +10200,13 @@ std::string result2 = ss.str();  // "Value: 123 and 3.14"
 // std::string result3 = std::format("{} is {} years old", "Alice", 30);
 ```
 
-### Groovy
+</details>
+
+---
+
+<details>
+<summary><h3>Groovy</h3></summary>
+
 
 ```groovy
 // + operator
@@ -9336,6 +10231,8 @@ Hello ${name},
 You are ${age} years old.
 """
 ```
+
+</details>
 
 [back to top](#table-of-contents)
 
