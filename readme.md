@@ -5443,15 +5443,6 @@ function zip(arrays) {
 zip([arr1, arr2]);  // [[1, '1'], [2, '2'], [3, '3']]
 ```
 
-### Ruby
-
-```ruby
-# Zip: combine 2 arrays
-arr1 = [1, 2, 3]
-arr2 = ["1", "2", "3"]
-puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
-```
-
 ### TypeScript
 
 ```typescript
@@ -5471,6 +5462,15 @@ const sum: number = arr.reduce((acc: number, curr: number): number => acc + curr
 type MapFn<T, U> = (item: T, index: number) => U;
 const toStr: MapFn<number, string> = (n) => n.toString();
 const result: string[] = [1, 2, 3].map(toStr);  // ["1", "2", "3"]
+```
+
+### Ruby
+
+```ruby
+# Zip: combine 2 arrays
+arr1 = [1, 2, 3]
+arr2 = ["1", "2", "3"]
+puts arr1.zip(arr2)  # [[1, '1'], [2, '2'], [3, '3']]
 ```
 
 ### Kotlin
