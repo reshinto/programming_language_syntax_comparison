@@ -1949,7 +1949,9 @@ stringName3 = stringName.split("s"); // ["te", "t ", "tring"]
 ---
 
 <details>
-<summary><h3>JavaScript ES6 // Almost all of ES5 are included in ES6</h3></summary>
+<summary><h3>JavaScript ES6</h3></summary>
+
+> Almost all of ES5 are included in ES6
 
 ```javascript
 // back slash not required, but will produce a new line if not given
@@ -1962,7 +1964,12 @@ const stringName = "string";
 String.raw`\n raw string`; // "\n raw string"
 ```
 
-### TypeScript
+</details>
+
+---
+
+<details>
+<summary><h3>TypeScript</h3></summary>
 
 ```typescript
 let stringName: string = "string";
@@ -1973,7 +1980,13 @@ strOrNum = "abc";
 strOrNum = 123; // can be reassigned to a declared type
 ```
 
-### Ruby
+</details>
+
+---
+
+<details>
+<summary><h3>Ruby</h3></summary>
+
 
 ```ruby
 string_name = <<EOM
@@ -2055,7 +2068,13 @@ variable_name = :symbolStringWithoutQuotes
 puts variable_name  # symbolStringWithoutQuotes
 ```
 
-### Kotlin
+</details>
+
+---
+
+<details>
+<summary><h3>Kotlin</h3></summary>
+
 
 ```kotlin
 // strings: must use double quotes ""
@@ -2088,7 +2107,13 @@ stringName.trim()  // removes whitespace
 val charName: Char = 'a'
 ```
 
-### Java
+</details>
+
+---
+
+<details>
+<summary><h3>Java</h3></summary>
+
 
 ```java
 // character: 16 bits, 2 bytes, only 1 letter or symbol, must use single quotes ''
@@ -2166,7 +2191,12 @@ str3 == str4;  // false
 str3.equals(str4);  // true
 ```
 
-### C#
+</details>
+
+---
+
+<details>
+<summary><h3>C#</h3></summary>
 
 - Strings (immutable)
   - each operation that appears to be modifying a string is actually creating a new string
@@ -2366,7 +2396,12 @@ Heading"
 builder[0];  // '+'
 ```
 
-### C++
+</details>
+
+---
+
+<details>
+<summary><h3>C++</h3></summary>
 
 character: only have 1 character, must use single quotes ''
 ```c++
