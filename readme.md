@@ -4729,11 +4729,46 @@ v = getValue(); // plain function
 t = new Thing(); // instantiation
 ```
 
+### TypeScript
+
+```typescript
+// Instantiation with type
+let t: ClassName = new ClassName();
+let t2: ClassName = new ClassName(argument);
+
+// Using interfaces
+interface Person {
+  name: string;
+  age: number;
+}
+let p: Person = { name: "Alice", age: 30 };
+```
+
 ### Ruby
 
 ```ruby
 t = thing.new  # instantiation
 t = thing.new(argument)  # instantiation with arguments
+```
+
+### Kotlin
+
+```kotlin
+// Instantiation (no "new" keyword needed)
+val t = ClassName()
+val t2 = ClassName(argument)
+
+// Primary constructor
+class Person(val name: String, val age: Int)
+val p = Person("Alice", 30)
+
+// Secondary constructor
+class Person {
+    var name: String
+    constructor(name: String) {
+        this.name = name
+    }
+}
 ```
 
 ### Java
@@ -4793,41 +4828,6 @@ public class Program {
   public static void increment(Person person) {
     person.Age += 10;
   }
-}
-```
-
-### TypeScript
-
-```typescript
-// Instantiation with type
-let t: ClassName = new ClassName();
-let t2: ClassName = new ClassName(argument);
-
-// Using interfaces
-interface Person {
-  name: string;
-  age: number;
-}
-let p: Person = { name: "Alice", age: 30 };
-```
-
-### Kotlin
-
-```kotlin
-// Instantiation (no "new" keyword needed)
-val t = ClassName()
-val t2 = ClassName(argument)
-
-// Primary constructor
-class Person(val name: String, val age: Int)
-val p = Person("Alice", 30)
-
-// Secondary constructor
-class Person {
-    var name: String
-    constructor(name: String) {
-        this.name = name
-    }
 }
 ```
 
@@ -5092,6 +5092,44 @@ blockName = Proc.new do |n|
 end
 ```
 
+### Kotlin
+
+```kotlin
+// Normal function
+fun myFunction() {
+    // do_something
+}
+
+// Function with parameters
+fun myFunction(a: Int) {
+    // do_something_with_a
+}
+
+// Function with return type
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+
+// Single-expression function
+fun sum(a: Int, b: Int): Int = a + b
+
+// Default parameters
+fun myFunction(a: Int = 10, b: String = "hello") {
+    // do_something
+}
+
+// Named parameters
+fun greet(name: String, greeting: String = "Hello") {
+    println("$greeting, $name")
+}
+greet(name = "Alice", greeting = "Hi")
+greet(name = "Bob")  // uses default greeting
+
+// Lambda expression
+val square: (Int) -> Int = { x -> x * x }
+val sum = { a: Int, b: Int -> a + b }
+```
+
 ### Java
 
 ```java
@@ -5239,44 +5277,6 @@ int sumTwoNumbers(int a, int b)
 {
    return a + b;
 }
-```
-
-### Kotlin
-
-```kotlin
-// Normal function
-fun myFunction() {
-    // do_something
-}
-
-// Function with parameters
-fun myFunction(a: Int) {
-    // do_something_with_a
-}
-
-// Function with return type
-fun sum(a: Int, b: Int): Int {
-    return a + b
-}
-
-// Single-expression function
-fun sum(a: Int, b: Int): Int = a + b
-
-// Default parameters
-fun myFunction(a: Int = 10, b: String = "hello") {
-    // do_something
-}
-
-// Named parameters
-fun greet(name: String, greeting: String = "Hello") {
-    println("$greeting, $name")
-}
-greet(name = "Alice", greeting = "Hi")
-greet(name = "Bob")  // uses default greeting
-
-// Lambda expression
-val square: (Int) -> Int = { x -> x * x }
-val sum = { a: Int, b: Int -> a + b }
 ```
 
 ### Groovy
@@ -6032,6 +6032,40 @@ grades.each_key { |key| print key, " " }  # alice bob chris dave
 grades.each_value { |value| print value, " " }  # 100 92 95 97
 ```
 
+### Kotlin
+
+```kotlin
+// Immutable map
+val map = mapOf("jp" to "Japan", "sg" to "Singapore", "usa" to "United States")
+
+// Mutable map
+val mutableMap = mutableMapOf("jp" to "Japan", "sg" to "Singapore")
+mutableMap["usa"] = "United States"  // add or reassign
+
+// HashMap (hash table implementation)
+val hashMap = hashMapOf("key1" to 1, "key2" to 2)
+
+// Get value
+map["jp"]  // "Japan"
+map.getOrDefault("uk", "Unknown")  // "Unknown"
+
+// Check if key/value exists
+map.containsKey("jp")  // true
+map.containsValue("Japan")  // true
+
+// Remove
+mutableMap.remove("sg")
+
+// Iterate
+for ((key, value) in map) {
+    println("$key: $value")
+}
+
+// Get keys and values
+map.keys   // [jp, sg, usa]
+map.values // [Japan, Singapore, United States]
+```
+
 ### Java
 
 ```java
@@ -6129,40 +6163,6 @@ hashMap["key2"] = 2;
 
 // Get size
 hashMap.size();
-```
-
-### Kotlin
-
-```kotlin
-// Immutable map
-val map = mapOf("jp" to "Japan", "sg" to "Singapore", "usa" to "United States")
-
-// Mutable map
-val mutableMap = mutableMapOf("jp" to "Japan", "sg" to "Singapore")
-mutableMap["usa"] = "United States"  // add or reassign
-
-// HashMap (hash table implementation)
-val hashMap = hashMapOf("key1" to 1, "key2" to 2)
-
-// Get value
-map["jp"]  // "Japan"
-map.getOrDefault("uk", "Unknown")  // "Unknown"
-
-// Check if key/value exists
-map.containsKey("jp")  // true
-map.containsValue("Japan")  // true
-
-// Remove
-mutableMap.remove("sg")
-
-// Iterate
-for ((key, value) in map) {
-    println("$key: $value")
-}
-
-// Get keys and values
-map.keys   // [jp, sg, usa]
-map.values // [Japan, Singapore, United States]
 ```
 
 ### Groovy
@@ -8127,6 +8127,92 @@ public class ProductName : IFeatureName1, IFeatureName2 {
 }
 ```
 
+### Kotlin
+
+```kotlin
+// Basic class with constructor
+class MathClass(val arg1: Int, val arg2: Int) {
+    val total = arg1 + arg2
+
+    fun innerAdd(arg3: Int): Int {
+        return arg1 + arg2 + arg3
+    }
+
+    companion object {
+        fun outerAdd(number1: Int, number2: Int): Int {
+            return number1 + number2
+        }
+    }
+}
+
+val test = MathClass(2, 4)
+println(test.total)  // 6
+println(test.innerAdd(2))  // 8
+println(MathClass.outerAdd(4, 5))  // 9
+
+// Data class: auto-generates equals(), hashCode(), toString(), copy()
+data class Person(val name: String, val age: Int)
+
+val person = Person("Alice", 30)
+println(person)  // Person(name=Alice, age=30)
+val older = person.copy(age = 31)
+
+// Secondary constructor
+class Employee {
+    var name: String
+    var pay: Int
+
+    constructor(name: String) {
+        this.name = name
+        this.pay = 0
+    }
+
+    constructor(name: String, pay: Int) {
+        this.name = name
+        this.pay = pay
+    }
+}
+
+// Inheritance (classes are final by default, use "open" to allow inheritance)
+open class Employee2(val first: String, val last: String, var pay: Int) {
+    open val raiseAmt: Double = 1.04
+
+    fun applyRaise() {
+        pay = (pay * raiseAmt).toInt()
+    }
+}
+
+class Developer(first: String, last: String, pay: Int, val progLang: String)
+    : Employee2(first, last, pay) {
+    override val raiseAmt: Double = 1.1
+}
+
+val dev = Developer("abc", "xyz", 5000, "Kotlin")
+println(dev.pay)  // 5000
+dev.applyRaise()
+println(dev.pay)  // 5500
+
+// Interface
+interface Clickable {
+    fun click()
+    fun showOff() = println("I'm clickable!")  // default implementation
+}
+
+class Button : Clickable {
+    override fun click() = println("Button clicked")
+}
+
+// Abstract class
+abstract class Department(val name: String) {
+    abstract fun printMeeting()
+    fun printName() = println("Department: $name")
+}
+
+class Accounting : Department("Accounting") {
+    override fun printMeeting() = println("Meets each Monday at 10am")
+}
+```
+
 ### C++
 
 ```c++
@@ -8161,6 +8247,94 @@ int main()
    Math math;
    std::cout << math.sumOfValues();
 }
+```
+
+### Groovy
+
+```groovy
+// Basic class
+class MathClass {
+    int arg1
+    int arg2
+    int total
+
+    MathClass(int arg1, int arg2) {
+        this.arg1 = arg1
+        this.arg2 = arg2
+        this.total = outerAdd(arg1, arg2)
+    }
+
+    int innerAdd(int arg3) {
+        return arg1 + arg2 + arg3
+    }
+
+    static int outerAdd(int number1, int number2) {
+        return number1 + number2
+    }
+}
+
+def test = new MathClass(2, 4)
+println test.total  // 6
+println test.innerAdd(2)  // 8
+println MathClass.outerAdd(4, 5)  // 9
+
+// Properties: Groovy auto-generates getters and setters
+class Person {
+    String name
+    int age
+}
+
+def p = new Person(name: "Alice", age: 30)  // named constructor args
+println p.name  // "Alice"
+
+// Inheritance
+class Employee {
+    String first, last
+    int pay
+    double raiseAmt = 1.04
+
+    Employee(String first, String last, int pay) {
+        this.first = first
+        this.last = last
+        this.pay = pay
+    }
+
+    void applyRaise() {
+        this.pay = (int)(this.pay * this.raiseAmt)
+    }
+}
+
+class Developer extends Employee {
+    String progLang
+
+    Developer(String first, String last, int pay, String progLang) {
+        super(first, last, pay)
+        this.raiseAmt = 1.1
+        this.progLang = progLang
+    }
+}
+
+def dev = new Developer("abc", "xyz", 5000, "Groovy")
+println dev.pay  // 5000
+dev.applyRaise()
+println dev.pay  // 5500
+
+// Traits (similar to interfaces with implementation)
+trait Flyable {
+    String fly() { "I can fly!" }
+}
+
+trait Swimmable {
+    String swim() { "I can swim!" }
+}
+
+class Duck implements Flyable, Swimmable {
+    String name
+}
+
+def duck = new Duck(name: "Donald")
+println duck.fly()   // "I can fly!"
+println duck.swim()  // "I can swim!"
 ```
 
 [back to top](#table-of-contents)
@@ -8287,7 +8461,115 @@ public class Student {
 }
 ```
 
+### TypeScript
+
+```typescript
+// Named imports
+import { functionName } from "./moduleName";
+import { functionName as alias } from "./moduleName";
+
+// Default import
+import defaultExport from "./moduleName";
+
+// Import all as namespace
+import * as moduleName from "./moduleName";
+
+// Import type only (removed at compile time)
+import type { MyType } from "./moduleName";
+import { type MyType, myFunction } from "./moduleName";
+
+// Side-effect import
+import "./polyfill";
+
+// Re-export
+export { functionName } from "./moduleName";
+export default class MyClass {}
+export type MyType = string | number;
+```
+
+### Kotlin
+
+```kotlin
+// Import a class
+import com.example.MyClass
+
+// Import all from a package
+import com.example.*
+
+// Import with alias
+import com.example.MyClass as MC
+
+// Import a function
+import com.example.utils.helperFunction
+
+// Import enum entries
+import com.example.Color.RED
+```
+
+### C#
+
+```c#
+// Import namespace
+using System;
+using System.Collections.Generic;
+
+// Using static: import static members directly
+using static System.Math;
+// Now can use Sqrt() instead of Math.Sqrt()
+double result = Sqrt(144);  // 12
+
+// Using alias
+using Project = PC.MyCompany.Project;
+
+// Global using (C# 10+): applies to entire project
+global using System.Linq;
+```
+
 ### C++
+
+```c++
+// Include standard library headers
+#include <iostream>   // for std::cout, std::cin
+#include <string>     // for std::string
+#include <vector>     // for std::vector
+#include <algorithm>  // for std::sort, std::find
+
+// Include local/project headers
+#include "MyClass.h"
+
+// Using namespace (avoid in headers, OK in .cpp files)
+using namespace std;
+cout << "Hello" << endl;  // instead of std::cout
+
+// Using specific declarations
+using std::cout;
+using std::string;
+```
+
+### Groovy
+
+```groovy
+// Import a class
+import groovy.json.JsonSlurper
+
+// Import all classes from a package
+import groovy.json.*
+
+// Import with alias
+import groovy.json.JsonSlurper as Parser
+
+// Import static method
+import static java.lang.Math.sqrt
+
+// Import static with alias
+import static java.lang.Math.PI as pi
+
+// @Grab: download and use external dependencies
+@Grab('org.apache.commons:commons-lang3:3.12.0')
+import org.apache.commons.lang3.StringUtils
+
+println StringUtils.capitalize("hello")  // "Hello"
+```
 
 [back to top](#table-of-contents)
 
@@ -8459,7 +8741,109 @@ x or X          | Hexadecimal | 255 (X) -> FF
 */
 ```
 
+### TypeScript
+
+```typescript
+// Type assertions (does not convert at runtime, only tells compiler)
+let value: unknown = "hello";
+let strLength: number = (value as string).length;
+// Alternative angle-bracket syntax
+let strLength2: number = (<string>value).length;
+
+// Actual conversions using JavaScript functions
+let num: number = Number("123");    // 123
+let str: string = String(123);      // "123"
+let bool: boolean = Boolean(1);     // true
+let int: number = parseInt("12.5"); // 12
+let float: number = parseFloat("12.5"); // 12.5
+
+// Type guards
+function isString(value: unknown): value is string {
+    return typeof value === "string";
+}
+
+if (isString(value)) {
+    console.log(value.toUpperCase());  // TypeScript knows value is string
+}
+```
+
+### Kotlin
+
+```kotlin
+// Explicit type conversions
+val i: Int = "123".toInt()
+val d: Double = "12.5".toDouble()
+val l: Long = 123.toLong()
+val s: String = 123.toString()
+val f: Float = 123.toFloat()
+val b: Byte = 123.toByte()
+
+// Safe conversion (returns null on failure)
+val num: Int? = "abc".toIntOrNull()  // null
+
+// Type casting with "as"
+val obj: Any = "Hello"
+val str: String = obj as String  // throws ClassCastException if wrong type
+
+// Safe cast with "as?" (returns null if cast fails)
+val str2: String? = obj as? String  // "Hello"
+val num2: Int? = obj as? Int        // null
+```
+
 ### C++
+
+```c++
+#include <iostream>
+#include <string>
+
+// C++ style casts
+// static_cast: compile-time checked cast for related types
+double pi = 3.14;
+int intPi = static_cast<int>(pi);  // 3
+
+// dynamic_cast: runtime checked cast for polymorphic types (requires virtual methods)
+class Base { virtual void foo() {} };
+class Derived : public Base {};
+Base* base = new Derived();
+Derived* derived = dynamic_cast<Derived*>(base);  // returns nullptr if fails
+
+// const_cast: add or remove const qualifier
+const int* constPtr = &intPi;
+int* mutablePtr = const_cast<int*>(constPtr);
+
+// reinterpret_cast: reinterpret bit pattern (dangerous, low-level)
+int num = 42;
+int* ptr = &num;
+long addr = reinterpret_cast<long>(ptr);
+
+// C-style cast (not recommended, tries various casts)
+double d = 3.14;
+int i = (int)d;  // 3
+
+// String conversions
+std::string str = std::to_string(123);     // "123"
+int n = std::stoi("123");                  // 123
+double db = std::stod("12.5");             // 12.5
+```
+
+### Groovy
+
+```groovy
+// Using "as" keyword
+def num = "123" as int        // 123
+def dbl = "12.5" as double    // 12.5
+def str = 123 as String       // "123"
+
+// Using conversion methods
+def i = "123".toInteger()     // 123
+def d = "12.5".toDouble()     // 12.5
+def l = "123".toLong()        // 123
+def f = "12.5".toFloat()      // 12.5
+
+// Using asType()
+def num2 = "123".asType(Integer)  // 123
+def list = [1, 2, 3] as Set       // converts List to Set
+```
 
 [back to top](#table-of-contents)
 
@@ -8552,6 +8936,29 @@ puts "string".object_id  # 2343215, some random number where object is stored in
 
 ### Java
 
+```java
+// instanceof: check if object is instance of a class
+String str = "hello";
+System.out.println(str instanceof String);  // true
+
+Object obj = "hello";
+System.out.println(obj instanceof String);  // true
+
+// getClass().getName(): get fully qualified class name
+System.out.println(str.getClass().getName());  // java.lang.String
+
+// getClass().getSimpleName(): get simple class name
+System.out.println(str.getClass().getSimpleName());  // String
+
+// For primitive types, use wrapper classes
+int num = 123;
+Integer numObj = num;  // autoboxing
+System.out.println(numObj.getClass().getSimpleName());  // Integer
+
+// Check type with getClass()
+System.out.println(str.getClass() == String.class);  // true
+```
+
 ### C#
 
 - typeof: takes a type name (which you specify at compile time)
@@ -8583,7 +8990,109 @@ public class MainClass {
 }
 ```
 
+### TypeScript
+
+```typescript
+// typeof: get type of primitive values
+let num = 123;
+console.log(typeof num);  // "number"
+
+let str = "hello";
+console.log(typeof str);  // "string"
+
+// instanceof: check if object is instance of a class
+class Animal {}
+class Dog extends Animal {}
+
+const dog = new Dog();
+console.log(dog instanceof Dog);     // true
+console.log(dog instanceof Animal);  // true
+
+// Type guards: narrow types in conditional blocks
+function printValue(value: string | number) {
+    if (typeof value === "string") {
+        console.log(value.toUpperCase());  // TypeScript knows it's string
+    } else {
+        console.log(value.toFixed(2));     // TypeScript knows it's number
+    }
+}
+
+// Custom type guard
+function isDog(animal: Animal): animal is Dog {
+    return animal instanceof Dog;
+}
+```
+
+### Kotlin
+
+```kotlin
+// "is" keyword: check type (like instanceof)
+val str: Any = "hello"
+println(str is String)   // true
+println(str !is Int)     // true
+
+// Smart cast: after "is" check, type is automatically cast
+if (str is String) {
+    println(str.length)  // no explicit cast needed
+}
+
+// ::class: get KClass reference
+println(str::class)            // class kotlin.String
+println(str::class.simpleName) // String
+
+// ::class.java: get Java Class reference
+println(str::class.java)       // class java.lang.String
+```
+
 ### C++
+
+```c++
+#include <iostream>
+#include <typeinfo>
+
+// typeid(): get type information at runtime
+int num = 123;
+std::cout << typeid(num).name();  // "i" (implementation-defined, often mangled)
+
+double d = 3.14;
+std::cout << typeid(d).name();   // "d"
+
+std::string str = "hello";
+std::cout << typeid(str).name();  // implementation-defined
+
+// decltype: get type at compile time
+decltype(num) anotherNum = 456;  // anotherNum is int
+
+// Comparing types
+std::cout << (typeid(num) == typeid(int));  // 1 (true)
+
+// For polymorphic types (with virtual methods), typeid works at runtime
+class Base { virtual void foo() {} };
+class Derived : public Base {};
+Base* ptr = new Derived();
+std::cout << typeid(*ptr).name();  // shows Derived type
+```
+
+### Groovy
+
+```groovy
+// instanceof: check type
+def str = "hello"
+println(str instanceof String)   // true
+println(str instanceof Integer)  // false
+
+// .class: get the class
+println(str.class)          // class java.lang.String
+println(str.class.name)     // java.lang.String
+
+// .getClass(): same as .class
+println(str.getClass())              // class java.lang.String
+println(str.getClass().simpleName)   // String
+
+// Check with in keyword
+def num = 123
+println(num.class == Integer)  // true
+```
 
 [back to top](#table-of-contents)
 
@@ -8712,7 +9221,101 @@ string stringName2 = String.Format("{0} {1}", string1, string2);  // "string 1 v
 string stringName3 = $"{string1} {string2}";  // "string 1 value string 2 value"
 ```
 
+### TypeScript
+
+```typescript
+// + operator (same as JavaScript, but type-safe)
+let str1: string = "hello";
+let str2: string = "world";
+let result: string = str1 + " " + str2;  // "hello world"
+
+// Template literals with type expressions
+let name: string = "Alice";
+let age: number = 30;
+let greeting: string = `${name} is ${age} years old`;  // "Alice is 30 years old"
+
+// number + string requires explicit conversion
+let num: number = 123;
+let str: string = `Value: ${num}`;     // "Value: 123"
+let str2b: string = "Value: " + num;   // "Value: 123"
+// let bad: string = num + "test";     // works but discouraged
+```
+
+### Kotlin
+
+```kotlin
+// + operator
+val str1 = "hello"
+val str2 = "world"
+val result = str1 + " " + str2  // "hello world"
+
+// String templates with $
+val name = "Alice"
+val age = 30
+val greeting = "$name is $age years old"  // "Alice is 30 years old"
+
+// Expressions in templates use ${}
+val result2 = "${str1.uppercase()} ${str2.length}"  // "HELLO 5"
+
+// StringBuilder for complex concatenation
+val sb = StringBuilder()
+sb.append("hello")
+sb.append(" ")
+sb.append("world")
+println(sb.toString())  // "hello world"
+```
+
 ### C++
+
+```c++
+#include <iostream>
+#include <string>
+#include <sstream>
+
+// + operator
+std::string str1 = "hello";
+std::string str2 = " world";
+std::string result = str1 + str2;  // "hello world"
+
+// append() method
+std::string str3 = "hello";
+str3.append(" world");  // "hello world"
+
+// stringstream: for concatenating mixed types
+std::stringstream ss;
+ss << "Value: " << 123 << " and " << 3.14;
+std::string result2 = ss.str();  // "Value: 123 and 3.14"
+
+// std::format (C++20)
+// #include <format>
+// std::string result3 = std::format("{} is {} years old", "Alice", 30);
+```
+
+### Groovy
+
+```groovy
+// + operator
+def str1 = "hello"
+def str2 = "world"
+def result = str1 + " " + str2  // "hello world"
+
+// GString interpolation with "${}"
+def name = "Alice"
+def age = 30
+def greeting = "${name} is ${age} years old"  // "Alice is 30 years old"
+
+// Simple variable interpolation with $
+def simple = "$name is great"  // "Alice is great"
+
+// Expressions in GString
+def result2 = "${str1.toUpperCase()} ${str2.length()}"  // "HELLO 5"
+
+// Multiline strings
+def multi = """
+Hello ${name},
+You are ${age} years old.
+"""
+```
 
 [back to top](#table-of-contents)
 
@@ -8744,11 +9347,109 @@ let objName = { title: "Black Panther" };
 objName = JSON.parse(objName);
 ```
 
+### TypeScript
+
+```typescript
+// TypeScript uses the same JSON methods as JavaScript, with type assertions
+interface Movie {
+  title: string;
+}
+
+// convert object to JSON string
+const obj: Movie = { title: "Black Panther" };
+const jsonString: string = JSON.stringify(obj);
+
+// convert JSON string to object
+const parsed = JSON.parse(jsonString) as Movie;
+```
+
 ### Ruby
+
+```ruby
+require 'json'
+
+# convert JSON string to Ruby hash
+hash = JSON.parse('{"title": "Black Panther"}')
+
+# convert Ruby hash to JSON string
+json_string = JSON.generate({ title: "Black Panther" })
+```
+
+### Kotlin
+
+```kotlin
+// using kotlinx.serialization
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+
+@Serializable
+data class Movie(val title: String)
+
+val jsonString = Json.encodeToString(Movie("Black Panther"))
+val movie = Json.decodeFromString<Movie>(jsonString)
+```
 
 ### Java
 
+```java
+// using org.json library
+import org.json.JSONObject;
+
+// create JSON object
+JSONObject obj = new JSONObject();
+obj.put("title", "Black Panther");
+String jsonString = obj.toString();
+
+// parse JSON string
+JSONObject parsed = new JSONObject(jsonString);
+String title = parsed.getString("title");
+```
+
+### C#
+
+```csharp
+using System.Text.Json;
+
+// convert object to JSON string
+var obj = new Movie { Title = "Black Panther" };
+string jsonString = JsonSerializer.Serialize(obj);
+
+// convert JSON string to object
+Movie parsed = JsonSerializer.Deserialize<Movie>(jsonString);
+
+public class Movie {
+    public string Title { get; set; }
+}
+```
+
 ### C++
+
+```cpp
+// C++ has no built-in JSON support; use a library like nlohmann/json
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+// parse JSON string
+json parsed = json::parse("{\"title\": \"Black Panther\"}");
+std::string title = parsed["title"];
+
+// create JSON and convert to string
+json obj = { {"title", "Black Panther"} };
+std::string jsonString = obj.dump();
+```
+
+### Groovy
+
+```groovy
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// parse JSON string to map
+def parsed = new JsonSlurper().parseText('{"title": "Black Panther"}')
+
+// convert object to JSON string
+def jsonString = JsonOutput.toJson([title: "Black Panther"])
+```
 
 [back to top](#table-of-contents)
 
@@ -8770,21 +9471,97 @@ if (require.main === module) {
 }
 ```
 
+### TypeScript
+
+```typescript
+// no special entry point needed, code runs top-to-bottom
+console.log("Hello, World!");
+
+// in a module context, use a main function by convention
+function main(): void {
+  // do something
+}
+main();
+```
+
 ### Ruby
+
+```ruby
+# no special entry point, code runs top-to-bottom
+
+# check if the file is being run directly (not required/imported)
+if __FILE__ == $0
+  # do something
+end
+```
+
+### Kotlin
+
+```kotlin
+// basic entry point
+fun main() {
+    // do something
+}
+
+// with command-line arguments
+fun main(args: Array<String>) {
+    // do something
+}
+```
 
 ### Java
 
+```java
+public class Main {
+    public static void main(String[] args) {
+        // do something
+    }
+}
+```
+
 ### C#
 
-```c#
+```csharp
+// traditional entry point
 class MainClass {
   public static void Main(string[] args) {
     // do something
   }
 }
+
+// C# 9+ top-level statements (no Main method needed)
+Console.WriteLine("Hello, World!");
 ```
 
 ### C++
+
+```cpp
+// basic entry point
+int main() {
+    // do something
+    return 0;
+}
+
+// with command-line arguments
+int main(int argc, char* argv[]) {
+    // do something
+    return 0;
+}
+```
+
+### Groovy
+
+```groovy
+// no special entry point, code runs top-to-bottom
+println "Hello, World!"
+
+// or use a main method
+class Main {
+    static void main(String[] args) {
+        // do something
+    }
+}
+```
 
 [back to top](#table-of-contents)
 
@@ -8819,11 +9596,70 @@ b = temp;
 [a, b] = [b, a];
 ```
 
+### TypeScript
+
+```typescript
+let a: number = 1;
+let b: number = 2;
+[a, b] = [b, a];
+```
+
 ### Ruby
+
+```ruby
+a, b = 1, 2
+a, b = b, a
+```
+
+### Kotlin
+
+```kotlin
+var a = 1
+var b = 2
+a = b.also { b = a }
+```
 
 ### Java
 
+```java
+int a = 1;
+int b = 2;
+int temp = a;
+a = b;
+b = temp;
+```
+
+### C#
+
+```csharp
+int a = 1;
+int b = 2;
+// tuple swap (C# 7+)
+(a, b) = (b, a);
+```
+
 ### C++
+
+```cpp
+int a = 1;
+int b = 2;
+
+// method 1: std::swap
+std::swap(a, b);
+
+// method 2: temp variable
+int temp = a;
+a = b;
+b = temp;
+```
+
+### Groovy
+
+```groovy
+def a = 1
+def b = 2
+(a, b) = [b, a]
+```
 
 [back to top](#table-of-contents)
 
@@ -8876,6 +9712,21 @@ try {
 }
 ```
 
+### TypeScript
+
+```typescript
+try {
+  doSomething();
+} catch (error: unknown) {
+  // error is 'unknown' type by default in TypeScript
+  if (error instanceof Error) {
+    console.log(error.message);
+  }
+} finally {
+  doSomethingWhenCompleted();
+}
+```
+
 ### Ruby
 
 - begin: something which might raise an exception
@@ -8893,6 +9744,27 @@ else
 ensure
   doSomethingWhenEverythingIsCompleted
 end
+```
+
+### Kotlin
+
+```kotlin
+try {
+    doSomething()
+} catch (e: SpecificException) {
+    doSomethingIfErrorOccurs()
+} catch (e: Exception) {
+    doSomethingIfAnyErrorOccurs()
+} finally {
+    doSomethingWhenCompleted()
+}
+
+// try as expression
+val result = try {
+    parseInt(input)
+} catch (e: NumberFormatException) {
+    null
+}
 ```
 
 ### Java
@@ -9005,6 +9877,38 @@ public class NewExceptionName : System.Exception {
 
 ### C++
 
+```cpp
+#include <stdexcept>
+
+try {
+    // do something
+    throw std::runtime_error("something went wrong");
+} catch (const std::runtime_error& e) {
+    // handle specific exception
+    std::cerr << e.what() << std::endl;
+} catch (const std::exception& e) {
+    // handle all standard exceptions
+    std::cerr << e.what() << std::endl;
+} catch (...) {
+    // handle any exception
+    std::cerr << "unknown error" << std::endl;
+}
+```
+
+### Groovy
+
+```groovy
+try {
+    doSomething()
+} catch (SpecificException e) {
+    doSomethingIfErrorOccurs()
+} catch (Exception e) {
+    doSomethingIfAnyErrorOccurs()
+} finally {
+    doSomethingWhenCompleted()
+}
+```
+
 [back to top](#table-of-contents)
 
 ## Custom Error
@@ -9027,6 +9931,23 @@ throw "custom message"; // throw a text
 throw 123; // throw a number
 ```
 
+### TypeScript
+
+```typescript
+// throw an Error object
+throw new Error("custom message");
+
+// define custom error class
+class CustomError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "CustomError";
+    }
+}
+
+throw new CustomError("custom message");
+```
+
 ### Ruby
 
 ```ruby
@@ -9034,6 +9955,18 @@ throw 123; // throw a number
 raise errorType, "custom error message"
 # method 2
 raise errorType.new("custom error message")
+```
+
+### Kotlin
+
+```kotlin
+// throw an exception
+throw Exception("custom message")
+
+// define custom exception class
+class CustomException(message: String) : Exception(message)
+
+throw CustomException("custom message")
 ```
 
 ### Java
@@ -9072,6 +10005,39 @@ throw new SpecificExceptionName("custom message");
 
 ### C++
 
+```cpp
+#include <stdexcept>
+#include <string>
+
+// custom exception class
+class CustomError : public std::exception {
+private:
+    std::string message;
+public:
+    CustomError(const std::string& msg) : message(msg) {}
+    const char* what() const noexcept override {
+        return message.c_str();
+    }
+};
+
+// usage
+throw CustomError("custom message");
+```
+
+### Groovy
+
+```groovy
+// define custom exception
+class CustomError extends Exception {
+    CustomError(String message) {
+        super(message)
+    }
+}
+
+// usage
+throw new CustomError("custom message")
+```
+
 [back to top](#table-of-contents)
 
 ## Asynchronous
@@ -9079,6 +10045,27 @@ throw new SpecificExceptionName("custom message");
 - Handling asynchronous code (making it synchronous)
 
 ### Python
+
+```python
+import asyncio
+
+# define an async function
+async def fetch_data():
+    await asyncio.sleep(2)  # simulate async operation
+    return "data"
+
+# call async functions
+async def main():
+    result = await fetch_data()
+    print(result)
+
+    # run multiple async tasks concurrently
+    results = await asyncio.gather(fetch_data(), fetch_data())
+    print(results)
+
+# run the event loop
+asyncio.run(main())
+```
 
 ### JavaScript ES5
 
@@ -9210,9 +10197,102 @@ await run();
 // timeout
 ```
 
+### TypeScript
+
+```typescript
+// async/await with typed Promises
+async function fetchData(): Promise<string> {
+  const response = await fetch("https://api.example.com/data");
+  const data: string = await response.text();
+  return data;
+}
+
+// handle async errors
+async function main(): Promise<void> {
+  try {
+    const result = await fetchData();
+    console.log(result);
+  } catch (error: unknown) {
+    console.error(error);
+  }
+}
+```
+
 ### Ruby
 
+```ruby
+# using Thread
+thread = Thread.new do
+  # do something asynchronously
+  sleep(2)
+  "result"
+end
+result = thread.value  # wait for thread to finish
+
+# using Fiber (cooperative concurrency)
+fiber = Fiber.new do
+  Fiber.yield "first"
+  "second"
+end
+puts fiber.resume  # "first"
+puts fiber.resume  # "second"
+```
+
+### Kotlin
+
+```kotlin
+import kotlinx.coroutines.*
+
+// launch a coroutine
+fun main() = runBlocking {
+    launch {
+        delay(2000L)
+        println("World!")
+    }
+    println("Hello,")
+}
+
+// async/await to get a result
+fun main() = runBlocking {
+    val deferred = async {
+        delay(1000L)
+        "result"
+    }
+    println(deferred.await())
+}
+
+// suspend function
+suspend fun fetchData(): String {
+    delay(1000L)
+    return "data"
+}
+```
+
 ### Java
+
+```java
+import java.util.concurrent.*;
+
+// using CompletableFuture
+CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+    // simulate long operation
+    try { Thread.sleep(2000); } catch (InterruptedException e) {}
+    return "result";
+});
+
+// chain operations
+future.thenApply(result -> result.toUpperCase())
+      .thenAccept(result -> System.out.println(result));
+
+// using ExecutorService
+ExecutorService executor = Executors.newFixedThreadPool(2);
+Future<String> result = executor.submit(() -> {
+    Thread.sleep(2000);
+    return "result";
+});
+System.out.println(result.get());  // blocks until complete
+executor.shutdown();
+```
 
 ### C#
 
@@ -9257,6 +10337,48 @@ public class Worker {
 ```
 
 ### C++
+
+```cpp
+#include <future>
+#include <iostream>
+
+// using std::async and std::future
+std::future<int> result = std::async(std::launch::async, []() {
+    // simulate long operation
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    return 42;
+});
+std::cout << result.get() << std::endl;  // blocks until complete
+
+// using std::promise
+std::promise<std::string> promise;
+std::future<std::string> future = promise.get_future();
+std::thread t([&promise]() {
+    promise.set_value("result");
+});
+std::cout << future.get() << std::endl;
+t.join();
+```
+
+### Groovy
+
+```groovy
+import groovyx.gpars.GParsPool
+
+// using GPars for parallel execution
+GParsPool.withPool {
+    def result = [1, 2, 3].collectParallel { it * 2 }
+}
+
+// using CompletableFuture (Java interop)
+import java.util.concurrent.CompletableFuture
+
+def future = CompletableFuture.supplyAsync {
+    Thread.sleep(2000)
+    return "result"
+}
+println future.get()  // blocks until complete
+```
 
 [back to top](#table-of-contents)
 
