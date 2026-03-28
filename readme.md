@@ -1006,14 +1006,24 @@ integer_name = 123
 long_name = 123L  # int beyond int size will automatically be converted to long
 ```
 
-### Python 3
+</details>
+
+---
+
+<details>
+<summary><h3>Python 3</h3></summary>
 
 ```python
 # python 3: int and long are combined into int
 integer_name = 123
 ```
 
-### JavaScript ES5
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES5</h3></summary>
 
 ```javascript
 // method 1
@@ -1024,7 +1034,12 @@ integer_name = 123; // accessible within the function
 var integer_name = 123;
 ```
 
-### JavaScript ES6
+</details>
+
+---
+
+<details>
+<summary><h3>JavaScript ES6</h3></summary>
 
 ```javascript
 // method 1
